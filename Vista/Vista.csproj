@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B1583E9-F460-4664-AFD3-FECBF3342CBB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Vista</RootNamespace>
+    <AssemblyName>Vista</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAgregarLubriPu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAgregarLubriPu.Designer.cs">
+      <DependentUpon>MenuAgregarLubriPu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAgregarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAgregarProducto.Designer.cs">
+      <DependentUpon>MenuAgregarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuClientes.Designer.cs">
+      <DependentUpon>MenuClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuControlDeStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuControlDeStock.Designer.cs">
+      <DependentUpon>MenuControlDeStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuCrearTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCrearTurnos.Designer.cs">
+      <DependentUpon>MenuCrearTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDatosEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuDatosEmpresa.Designer.cs">
+      <DependentUpon>MenuDatosEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuEmpleado.Designer.cs">
+      <DependentUpon>MenuEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuFacturaGenerada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuFacturaGenerada.Designer.cs">
+      <DependentUpon>MenuFacturaGenerada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuHistorialcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuHistorialcs.Designer.cs">
+      <DependentUpon>MenuHistorialcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuHistorialDeTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuHistorialDeTurnos.Designer.cs">
+      <DependentUpon>MenuHistorialDeTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuHistorialLubriPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuHistorialLubriPuntos.Designer.cs">
+      <DependentUpon>MenuHistorialLubriPuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuModificarTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuModificarTurno.Designer.cs">
+      <DependentUpon>MenuModificarTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuProductosFaltantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuProductosFaltantes.Designer.cs">
+      <DependentUpon>MenuProductosFaltantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuServiPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuServiPuntos.Designer.cs">
+      <DependentUpon>MenuServiPuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuTurnos.Designer.cs">
+      <DependentUpon>MenuTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuVehiculos.Designer.cs">
+      <DependentUpon>MenuVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuVentas.Designer.cs">
+      <DependentUpon>MenuVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaMenuPrincipal.Designer.cs">
+      <DependentUpon>PantallaMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgregarLubriPu.resx">
+      <DependentUpon>MenuAgregarLubriPu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAgregarProducto.resx">
+      <DependentUpon>MenuAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuClientes.resx">
+      <DependentUpon>MenuClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuControlDeStock.resx">
+      <DependentUpon>MenuControlDeStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCrearTurnos.resx">
+      <DependentUpon>MenuCrearTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuDatosEmpresa.resx">
+      <DependentUpon>MenuDatosEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuEmpleado.resx">
+      <DependentUpon>MenuEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuFacturaGenerada.resx">
+      <DependentUpon>MenuFacturaGenerada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuHistorialcs.resx">
+      <DependentUpon>MenuHistorialcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuHistorialDeTurnos.resx">
+      <DependentUpon>MenuHistorialDeTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuHistorialLubriPuntos.resx">
+      <DependentUpon>MenuHistorialLubriPuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuModificarTurno.resx">
+      <DependentUpon>MenuModificarTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuProductosFaltantes.resx">
+      <DependentUpon>MenuProductosFaltantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuServiPuntos.resx">
+      <DependentUpon>MenuServiPuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuTurnos.resx">
+      <DependentUpon>MenuTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuVehiculos.resx">
+      <DependentUpon>MenuVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuVentas.resx">
+      <DependentUpon>MenuVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaMenuPrincipal.resx">
+      <DependentUpon>PantallaMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{2a2dddce-e32f-4537-ae8a-267726998119}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaInicioSesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuPrincipal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnVentas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnTurnos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnHistorial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnOrdenDeTrabajo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnConfiguracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnLubriPuntos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCerrarSesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuVentas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnClientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnVehiculos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaConfiguracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnDatosEmpresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnHistorialBitacora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuTurnos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCrearTurno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCancelarTurno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuHistorial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnHistorialVentas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnHistorialTurnos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnHistorialLubriPuntos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEmpleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEmpresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAgregarProducto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnControlDeStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnProductosFaltantes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaProductoFaltantes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnVolver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnVolver1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaControlDeStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaProductoFaltantes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaControlDeStock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEditar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaServiPuntos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAgregarProductos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCanjear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaAgregarProductoLubriPu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAgregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuEmpledos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEditar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaHistorialLubriPuntos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaAgregarProducto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaHistorialDeTurnos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnVerTurno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEditarTurno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaFacturaGenerada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnImprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaDatosEmpresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnConfirmar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuClientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnVehiculo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuVehiculos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuCrearTurno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAgregarClientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCrearTurnoBlanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaModificarTurno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnModificar.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
