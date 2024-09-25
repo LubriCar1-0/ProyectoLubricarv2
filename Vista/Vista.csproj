@@ -52,11 +52,11 @@
     <Compile Include="Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="InicioSesion.Designer.cs">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuAgregarLubriPu.cs">
       <SubType>Form</SubType>
@@ -75,6 +75,12 @@
     </Compile>
     <Compile Include="MenuClientes.Designer.cs">
       <DependentUpon>MenuClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuConfiguracion.Designer.cs">
+      <DependentUpon>MenuConfiguracion.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuControlDeStock.cs">
       <SubType>Form</SubType>
@@ -106,11 +112,11 @@
     <Compile Include="MenuFacturaGenerada.Designer.cs">
       <DependentUpon>MenuFacturaGenerada.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuHistorialcs.cs">
+    <Compile Include="MenuHistorial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuHistorialcs.Designer.cs">
-      <DependentUpon>MenuHistorialcs.cs</DependentUpon>
+    <Compile Include="MenuHistorial.Designer.cs">
+      <DependentUpon>MenuHistorial.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuHistorialDeTurnos.cs">
       <SubType>Form</SubType>
@@ -130,17 +136,29 @@
     <Compile Include="MenuModificarTurno.Designer.cs">
       <DependentUpon>MenuModificarTurno.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuOrdenDeTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuOrdenDeTrabajo.Designer.cs">
+      <DependentUpon>MenuOrdenDeTrabajo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuProductosFaltantes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuProductosFaltantes.Designer.cs">
       <DependentUpon>MenuProductosFaltantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuServiPuntos.cs">
+    <Compile Include="MenuLubriPuntos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuServiPuntos.Designer.cs">
-      <DependentUpon>MenuServiPuntos.cs</DependentUpon>
+    <Compile Include="MenuLubriPuntos.Designer.cs">
+      <DependentUpon>MenuLubriPuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuStock.Designer.cs">
+      <DependentUpon>MenuStock.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuTurnos.cs">
       <SubType>Form</SubType>
@@ -171,8 +189,8 @@
     <EmbeddedResource Include="Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="InicioSesion.resx">
+      <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAgregarLubriPu.resx">
       <DependentUpon>MenuAgregarLubriPu.cs</DependentUpon>
@@ -182,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuClientes.resx">
       <DependentUpon>MenuClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuConfiguracion.resx">
+      <DependentUpon>MenuConfiguracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuControlDeStock.resx">
       <DependentUpon>MenuControlDeStock.cs</DependentUpon>
@@ -198,8 +219,8 @@
     <EmbeddedResource Include="MenuFacturaGenerada.resx">
       <DependentUpon>MenuFacturaGenerada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuHistorialcs.resx">
-      <DependentUpon>MenuHistorialcs.cs</DependentUpon>
+    <EmbeddedResource Include="MenuHistorial.resx">
+      <DependentUpon>MenuHistorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuHistorialDeTurnos.resx">
       <DependentUpon>MenuHistorialDeTurnos.cs</DependentUpon>
@@ -210,11 +231,17 @@
     <EmbeddedResource Include="MenuModificarTurno.resx">
       <DependentUpon>MenuModificarTurno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuOrdenDeTrabajo.resx">
+      <DependentUpon>MenuOrdenDeTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuProductosFaltantes.resx">
       <DependentUpon>MenuProductosFaltantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuServiPuntos.resx">
-      <DependentUpon>MenuServiPuntos.cs</DependentUpon>
+    <EmbeddedResource Include="MenuLubriPuntos.resx">
+      <DependentUpon>MenuLubriPuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuStock.resx">
+      <DependentUpon>MenuStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuTurnos.resx">
       <DependentUpon>MenuTurnos.cs</DependentUpon>
@@ -442,6 +469,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BtnModificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantMenuOrdenDeTrabajo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantMenuStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAgregarProducto1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnControlStock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnProductosFaltantes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantMenuOrdenDeTrabajo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantMenuOrdenDeTrabajo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAgregar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCancelar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuLubri-Punts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuConfiguracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEmpleados1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEmpresa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnHistorialBitacora1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnHistorialBitacora2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

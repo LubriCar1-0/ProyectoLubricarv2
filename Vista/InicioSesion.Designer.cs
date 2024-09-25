@@ -58,6 +58,7 @@
             this.BtnIngresar.TabIndex = 2;
             this.BtnIngresar.Text = "Ingresar";
             this.BtnIngresar.UseVisualStyleBackColor = true;
+            this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
             // 
             // BtnCerrar
             // 

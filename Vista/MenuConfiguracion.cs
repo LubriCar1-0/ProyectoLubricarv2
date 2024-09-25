@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class MenuHistorialcs : Form
+    public partial class MenuConfiguracion : Form
     {
-        public MenuHistorialcs()
+        public MenuConfiguracion()
         {
             InitializeComponent();
         }

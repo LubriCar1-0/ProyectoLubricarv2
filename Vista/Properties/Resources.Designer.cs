@@ -73,6 +73,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnAgregar1 {
+            get {
+                object obj = ResourceManager.GetObject("BtnAgregar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnAgregarClientes {
             get {
                 object obj = ResourceManager.GetObject("BtnAgregarClientes", resourceCulture);
@@ -93,6 +103,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnAgregarProducto1 {
+            get {
+                object obj = ResourceManager.GetObject("BtnAgregarProducto1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnAgregarProductos {
             get {
                 object obj = ResourceManager.GetObject("BtnAgregarProductos", resourceCulture);
@@ -106,6 +126,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap BtnCancelar {
             get {
                 object obj = ResourceManager.GetObject("BtnCancelar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BtnCancelar1 {
+            get {
+                object obj = ResourceManager.GetObject("BtnCancelar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +206,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap BtnControlDeStock {
             get {
                 object obj = ResourceManager.GetObject("BtnControlDeStock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BtnControlStock {
+            get {
+                object obj = ResourceManager.GetObject("BtnControlStock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +303,29 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnEmpleados1 {
+            get {
+                object obj = ResourceManager.GetObject("BtnEmpleados1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnEmpresa {
             get {
                 object obj = ResourceManager.GetObject("BtnEmpresa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BtnEmpresa1 {
+            get {
+                object obj = ResourceManager.GetObject("BtnEmpresa1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +346,26 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap BtnHistorialBitacora {
             get {
                 object obj = ResourceManager.GetObject("BtnHistorialBitacora", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BtnHistorialBitacora1 {
+            get {
+                object obj = ResourceManager.GetObject("BtnHistorialBitacora1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BtnHistorialBitacora2 {
+            get {
+                object obj = ResourceManager.GetObject("BtnHistorialBitacora2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,6 +453,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnProductosFaltantes1 {
+            get {
+                object obj = ResourceManager.GetObject("BtnProductosFaltantes1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnStock {
             get {
                 object obj = ResourceManager.GetObject("BtnStock", resourceCulture);
@@ -446,6 +536,26 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap BtnVolver1 {
             get {
                 object obj = ResourceManager.GetObject("BtnVolver1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuConfiguracion {
+            get {
+                object obj = ResourceManager.GetObject("MenuConfiguracion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuLubri_Punts {
+            get {
+                object obj = ResourceManager.GetObject("MenuLubri-Punts", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -686,6 +796,46 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap PantallaServiPuntos {
             get {
                 object obj = ResourceManager.GetObject("PantallaServiPuntos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantMenuOrdenDeTrabajo {
+            get {
+                object obj = ResourceManager.GetObject("PantMenuOrdenDeTrabajo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantMenuOrdenDeTrabajo1 {
+            get {
+                object obj = ResourceManager.GetObject("PantMenuOrdenDeTrabajo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantMenuOrdenDeTrabajo2 {
+            get {
+                object obj = ResourceManager.GetObject("PantMenuOrdenDeTrabajo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantMenuStock {
+            get {
+                object obj = ResourceManager.GetObject("PantMenuStock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

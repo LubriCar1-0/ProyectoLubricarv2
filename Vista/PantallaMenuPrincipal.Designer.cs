@@ -48,6 +48,7 @@
             this.BtnVentas.Size = new System.Drawing.Size(245, 98);
             this.BtnVentas.TabIndex = 0;
             this.BtnVentas.UseVisualStyleBackColor = true;
+            this.BtnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
             // 
             // BtnTurnos
             // 
@@ -59,6 +60,7 @@
             this.BtnTurnos.Size = new System.Drawing.Size(245, 98);
             this.BtnTurnos.TabIndex = 1;
             this.BtnTurnos.UseVisualStyleBackColor = true;
+            this.BtnTurnos.Click += new System.EventHandler(this.BtnTurnos_Click);
             // 
             // BtnHistorial
             // 
@@ -70,6 +72,7 @@
             this.BtnHistorial.Size = new System.Drawing.Size(245, 98);
             this.BtnHistorial.TabIndex = 2;
             this.BtnHistorial.UseVisualStyleBackColor = true;
+            this.BtnHistorial.Click += new System.EventHandler(this.BtnHistorial_Click);
             // 
             // BtnOrdenDeTrabajo
             // 
@@ -81,6 +84,7 @@
             this.BtnOrdenDeTrabajo.Size = new System.Drawing.Size(245, 98);
             this.BtnOrdenDeTrabajo.TabIndex = 3;
             this.BtnOrdenDeTrabajo.UseVisualStyleBackColor = true;
+            this.BtnOrdenDeTrabajo.Click += new System.EventHandler(this.BtnOrdenDeTrabajo_Click);
             // 
             // BtnStock
             // 
@@ -92,17 +96,19 @@
             this.BtnStock.Size = new System.Drawing.Size(245, 98);
             this.BtnStock.TabIndex = 4;
             this.BtnStock.UseVisualStyleBackColor = true;
+            this.BtnStock.Click += new System.EventHandler(this.BtnStock_Click);
             // 
             // BtnConfiguracion
             // 
             this.BtnConfiguracion.BackgroundImage = global::Vista.Properties.Resources.BtnConfiguracion;
             this.BtnConfiguracion.FlatAppearance.BorderSize = 0;
             this.BtnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfiguracion.Location = new System.Drawing.Point(724, 355);
+            this.BtnConfiguracion.Location = new System.Drawing.Point(721, 355);
             this.BtnConfiguracion.Name = "BtnConfiguracion";
             this.BtnConfiguracion.Size = new System.Drawing.Size(245, 98);
             this.BtnConfiguracion.TabIndex = 5;
             this.BtnConfiguracion.UseVisualStyleBackColor = true;
+            this.BtnConfiguracion.Click += new System.EventHandler(this.BtnConfiguracion_Click);
             // 
             // BtnLubriPuntos
             // 
