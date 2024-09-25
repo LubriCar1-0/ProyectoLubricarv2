@@ -31,6 +31,7 @@
             this.BtnClientesMeVentas = new System.Windows.Forms.Button();
             this.BtnVentasMeVentas = new System.Windows.Forms.Button();
             this.BtnVehiculosMeVentas = new System.Windows.Forms.Button();
+            this.BtnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnClientesMeVentas
@@ -43,6 +44,7 @@
             this.BtnClientesMeVentas.Size = new System.Drawing.Size(246, 98);
             this.BtnClientesMeVentas.TabIndex = 0;
             this.BtnClientesMeVentas.UseVisualStyleBackColor = true;
+            this.BtnClientesMeVentas.Click += new System.EventHandler(this.BtnClientesMeVentas_Click);
             // 
             // BtnVentasMeVentas
             // 
@@ -66,12 +68,27 @@
             this.BtnVehiculosMeVentas.TabIndex = 2;
             this.BtnVehiculosMeVentas.UseVisualStyleBackColor = true;
             // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnVolver.FlatAppearance.BorderSize = 0;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver;
+            this.BtnVolver.Location = new System.Drawing.Point(190, 105);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(104, 65);
+            this.BtnVolver.TabIndex = 3;
+            this.BtnVolver.Text = "Volver";
+            this.BtnVolver.UseVisualStyleBackColor = false;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
             // MenuVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVentas;
             this.ClientSize = new System.Drawing.Size(1151, 653);
+            this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnVehiculosMeVentas);
             this.Controls.Add(this.BtnVentasMeVentas);
             this.Controls.Add(this.BtnClientesMeVentas);
@@ -86,5 +103,6 @@
         private System.Windows.Forms.Button BtnClientesMeVentas;
         private System.Windows.Forms.Button BtnVentasMeVentas;
         private System.Windows.Forms.Button BtnVehiculosMeVentas;
+        private System.Windows.Forms.Button BtnVolver;
     }
 }

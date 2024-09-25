@@ -16,5 +16,20 @@ namespace Vista
         {
             InitializeComponent();
         }
+
+        private void BtnClientesMeVentas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            PantallaMenuPrin();
+        }
+        public static void PantallaMenuPrin()
+        {
+            PantallaMenuPrincipal LlamarMenuPrincipal = new PantallaMenuPrincipal();
+            LlamarMenuPrincipal.ShowDialog();
+        }
     }
 }

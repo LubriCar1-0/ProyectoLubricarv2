@@ -51,11 +51,13 @@ namespace Vista
             MenuConfiguracion PantallaMenuConfiguracion = new MenuConfiguracion();
             PantallaMenuConfiguracion.ShowDialog();
         }
-        //public static void LlamarMenuLubriPuntos()
-        //{
-        //    MenuLubriPuntos PantallaMenuLubriPuntos = new MenuLubriPuntos();
-        //    PantallaMenuLubriPuntos.ShowDialog();
-        //}
+        public static void LlamarMenuLubriPuntos()
+        {
+            MenuLubriPuntos PantallaMenuLubriPuntos = new MenuLubriPuntos();
+            PantallaMenuLubriPuntos.ShowDialog();
+        }
+
+
         #endregion
         private void BtnVentas_Click(object sender, EventArgs e)
         {
@@ -86,6 +88,16 @@ namespace Vista
         private void BtnConfiguracion_Click(object sender, EventArgs e)
         {
             LlamarMenuConfiguracion();
+        }
+
+        private void BtnLubriPuntos_Click(object sender, EventArgs e)
+        {
+            LlamarMenuLubriPuntos();
+        }
+
+        private void PantallaMenuPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

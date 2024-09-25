@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class BtnCanjear
+    partial class MenuLubriPuntos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,62 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvServiPuntos = new System.Windows.Forms.DataGridView();
-            this.BtnAgregarProducto = new System.Windows.Forms.Button();
+            this.PtbLubriPuntos = new System.Windows.Forms.PictureBox();
+            this.BtnAgregarProductos = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvServiPuntos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PtbLubriPuntos)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvServiPuntos
+            // PtbLubriPuntos
             // 
-            this.DgvServiPuntos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvServiPuntos.Location = new System.Drawing.Point(181, 151);
-            this.DgvServiPuntos.Name = "DgvServiPuntos";
-            this.DgvServiPuntos.Size = new System.Drawing.Size(815, 356);
-            this.DgvServiPuntos.TabIndex = 0;
+            this.PtbLubriPuntos.Image = global::Vista.Properties.Resources.MenuLubri_Punts;
+            this.PtbLubriPuntos.Location = new System.Drawing.Point(1, 0);
+            this.PtbLubriPuntos.Name = "PtbLubriPuntos";
+            this.PtbLubriPuntos.Size = new System.Drawing.Size(1189, 671);
+            this.PtbLubriPuntos.TabIndex = 0;
+            this.PtbLubriPuntos.TabStop = false;
             // 
-            // BtnAgregarProducto
+            // BtnAgregarProductos
             // 
-            this.BtnAgregarProducto.BackgroundImage = global::Vista.Properties.Resources.BtnAgregarProductos;
-            this.BtnAgregarProducto.FlatAppearance.BorderSize = 0;
-            this.BtnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarProducto.Location = new System.Drawing.Point(252, 557);
-            this.BtnAgregarProducto.Name = "BtnAgregarProducto";
-            this.BtnAgregarProducto.Size = new System.Drawing.Size(247, 43);
-            this.BtnAgregarProducto.TabIndex = 6;
-            this.BtnAgregarProducto.UseVisualStyleBackColor = true;
+            this.BtnAgregarProductos.FlatAppearance.BorderSize = 0;
+            this.BtnAgregarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregarProductos.Image = global::Vista.Properties.Resources.BtnAgregarProductos;
+            this.BtnAgregarProductos.Location = new System.Drawing.Point(253, 572);
+            this.BtnAgregarProductos.Name = "BtnAgregarProductos";
+            this.BtnAgregarProductos.Size = new System.Drawing.Size(245, 43);
+            this.BtnAgregarProductos.TabIndex = 1;
+            this.BtnAgregarProductos.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.BtnCanjear;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(675, 557);
+            this.button1.Image = global::Vista.Properties.Resources.BtnCanjear;
+            this.button1.Location = new System.Drawing.Point(678, 572);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 43);
-            this.button1.TabIndex = 7;
+            this.button1.Size = new System.Drawing.Size(245, 43);
+            this.button1.TabIndex = 2;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // BtnCanjear
+            // MenuLubriPuntos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuLubri_Punts;
-            this.ClientSize = new System.Drawing.Size(1128, 668);
+            this.ClientSize = new System.Drawing.Size(1189, 670);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.BtnAgregarProducto);
-            this.Controls.Add(this.DgvServiPuntos);
-            this.Name = "BtnCanjear";
-            this.Text = "MenuServiPuntos";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvServiPuntos)).EndInit();
+            this.Controls.Add(this.BtnAgregarProductos);
+            this.Controls.Add(this.PtbLubriPuntos);
+            this.Name = "MenuLubriPuntos";
+            this.Text = "MenuLubriPuntos";
+            ((System.ComponentModel.ISupportInitialize)(this.PtbLubriPuntos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvServiPuntos;
-        private System.Windows.Forms.Button BtnAgregarProducto;
+        private System.Windows.Forms.PictureBox PtbLubriPuntos;
+        private System.Windows.Forms.Button BtnAgregarProductos;
         private System.Windows.Forms.Button button1;
     }
 }

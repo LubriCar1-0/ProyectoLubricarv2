@@ -119,7 +119,9 @@
             this.BtnLubriPuntos.Name = "BtnLubriPuntos";
             this.BtnLubriPuntos.Size = new System.Drawing.Size(245, 98);
             this.BtnLubriPuntos.TabIndex = 6;
+            this.BtnLubriPuntos.Text = " ";
             this.BtnLubriPuntos.UseVisualStyleBackColor = true;
+            this.BtnLubriPuntos.Click += new System.EventHandler(this.BtnLubriPuntos_Click);
             // 
             // BtnCerrarSesion
             // 
@@ -150,6 +152,7 @@
             this.DoubleBuffered = true;
             this.Name = "PantallaMenuPrincipal";
             this.Text = "PantallaMenuPrincipal";
+            this.Load += new System.EventHandler(this.PantallaMenuPrincipal_Load);
             this.ResumeLayout(false);
 
         }

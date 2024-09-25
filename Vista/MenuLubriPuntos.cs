@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class BtnCanjear : Form
+    public partial class MenuLubriPuntos : Form
     {
-        public BtnCanjear()
+        public MenuLubriPuntos()
         {
             InitializeComponent();
         }

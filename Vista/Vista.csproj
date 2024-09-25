@@ -130,6 +130,12 @@
     <Compile Include="MenuHistorialLubriPuntos.Designer.cs">
       <DependentUpon>MenuHistorialLubriPuntos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuLubriPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuLubriPuntos.Designer.cs">
+      <DependentUpon>MenuLubriPuntos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuModificarTurno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,12 +153,6 @@
     </Compile>
     <Compile Include="MenuProductosFaltantes.Designer.cs">
       <DependentUpon>MenuProductosFaltantes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MenuLubriPuntos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MenuLubriPuntos.Designer.cs">
-      <DependentUpon>MenuLubriPuntos.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuStock.cs">
       <SubType>Form</SubType>
@@ -228,6 +228,9 @@
     <EmbeddedResource Include="MenuHistorialLubriPuntos.resx">
       <DependentUpon>MenuHistorialLubriPuntos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuLubriPuntos.resx">
+      <DependentUpon>MenuLubriPuntos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuModificarTurno.resx">
       <DependentUpon>MenuModificarTurno.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,9 +239,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuProductosFaltantes.resx">
       <DependentUpon>MenuProductosFaltantes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MenuLubriPuntos.resx">
-      <DependentUpon>MenuLubriPuntos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuStock.resx">
       <DependentUpon>MenuStock.cs</DependentUpon>
@@ -514,6 +514,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BtnHistorialBitacora2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo-arrow_icon-icons.com_53849.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flechita volver.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

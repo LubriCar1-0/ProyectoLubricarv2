@@ -543,6 +543,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Flechita_volver {
+            get {
+                object obj = ResourceManager.GetObject("Flechita volver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuConfiguracion {
             get {
                 object obj = ResourceManager.GetObject("MenuConfiguracion", resourceCulture);
@@ -836,6 +846,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap PantMenuStock {
             get {
                 object obj = ResourceManager.GetObject("PantMenuStock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap undo_arrow_icon_icons_com_53849 {
+            get {
+                object obj = ResourceManager.GetObject("undo-arrow_icon-icons.com_53849", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
