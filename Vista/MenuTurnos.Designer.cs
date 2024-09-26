@@ -31,6 +31,7 @@
             this.BtnCrearTurno = new System.Windows.Forms.Button();
             this.BtnTurnosMeTurnos = new System.Windows.Forms.Button();
             this.BtnCancelacionTurno = new System.Windows.Forms.Button();
+            this.BtnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnCrearTurno
@@ -43,6 +44,7 @@
             this.BtnCrearTurno.Size = new System.Drawing.Size(243, 98);
             this.BtnCrearTurno.TabIndex = 2;
             this.BtnCrearTurno.UseVisualStyleBackColor = true;
+            this.BtnCrearTurno.Click += new System.EventHandler(this.BtnCrearTurno_Click);
             // 
             // BtnTurnosMeTurnos
             // 
@@ -54,6 +56,7 @@
             this.BtnTurnosMeTurnos.Size = new System.Drawing.Size(243, 98);
             this.BtnTurnosMeTurnos.TabIndex = 3;
             this.BtnTurnosMeTurnos.UseVisualStyleBackColor = true;
+            this.BtnTurnosMeTurnos.Click += new System.EventHandler(this.BtnTurnosMeTurnos_Click);
             // 
             // BtnCancelacionTurno
             // 
@@ -65,6 +68,20 @@
             this.BtnCancelacionTurno.Size = new System.Drawing.Size(243, 98);
             this.BtnCancelacionTurno.TabIndex = 4;
             this.BtnCancelacionTurno.UseVisualStyleBackColor = true;
+            this.BtnCancelacionTurno.Click += new System.EventHandler(this.BtnCancelacionTurno_Click);
+            // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnVolver.FlatAppearance.BorderSize = 0;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Location = new System.Drawing.Point(164, 105);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(64, 40);
+            this.BtnVolver.TabIndex = 5;
+            this.BtnVolver.Text = "Volver";
+            this.BtnVolver.UseVisualStyleBackColor = false;
             // 
             // MenuTurnos
             // 
@@ -72,6 +89,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuTurnos;
             this.ClientSize = new System.Drawing.Size(1149, 646);
+            this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnCancelacionTurno);
             this.Controls.Add(this.BtnTurnosMeTurnos);
             this.Controls.Add(this.BtnCrearTurno);
@@ -86,5 +104,6 @@
         private System.Windows.Forms.Button BtnCrearTurno;
         private System.Windows.Forms.Button BtnTurnosMeTurnos;
         private System.Windows.Forms.Button BtnCancelacionTurno;
+        private System.Windows.Forms.Button BtnVolver;
     }
 }

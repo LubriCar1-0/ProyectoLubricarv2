@@ -16,5 +16,15 @@ namespace Vista
         {
             InitializeComponent();
         }
+
+        private void BtnEmpleados_Click(object sender, EventArgs e)
+        {
+            PantallaMenuEmpleados();
+        }
+        public static void PantallaMenuEmpleados()
+        {
+            MenuEmpleado LlamarMenuEmpleado = new MenuEmpleado();
+            LlamarMenuEmpleado.ShowDialog();
+        }
     }
 }

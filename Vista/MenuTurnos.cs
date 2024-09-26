@@ -16,5 +16,39 @@ namespace Vista
         {
             InitializeComponent();
         }
+        #region Llamados
+        public static void PantallaMenuCrearTurnos()
+        {
+            MenuCrearTurnos LlamarMenuCrearTurnos = new MenuCrearTurnos();
+            LlamarMenuCrearTurnos.ShowDialog(); 
+        }
+        public static void PantallaMenuModificarTurnos()
+        {
+            
+        }
+        public static void PantallaMenuCancelarTurnos()
+        {
+           
+        }
+
+
+
+
+
+        #endregion
+        private void BtnCrearTurno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnTurnosMeTurnos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancelacionTurno_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

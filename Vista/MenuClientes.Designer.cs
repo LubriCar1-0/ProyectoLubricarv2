@@ -37,6 +37,7 @@
             this.BtnEditarMeClientes = new System.Windows.Forms.Button();
             this.BtnAgregarMeClientes = new System.Windows.Forms.Button();
             this.BtnVehiculoMeCliente = new System.Windows.Forms.Button();
+            this.BtnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,12 +126,26 @@
             this.BtnVehiculoMeCliente.TabIndex = 8;
             this.BtnVehiculoMeCliente.UseVisualStyleBackColor = true;
             // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnVolver.FlatAppearance.BorderSize = 0;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Location = new System.Drawing.Point(178, 107);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(72, 49);
+            this.BtnVolver.TabIndex = 9;
+            this.BtnVolver.Text = "Volver";
+            this.BtnVolver.UseVisualStyleBackColor = false;
+            // 
             // MenuClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuClientes;
             this.ClientSize = new System.Drawing.Size(1173, 670);
+            this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnVehiculoMeCliente);
             this.Controls.Add(this.BtnAgregarMeClientes);
             this.Controls.Add(this.BtnEditarMeClientes);
@@ -159,5 +174,6 @@
         private System.Windows.Forms.Button BtnEditarMeClientes;
         private System.Windows.Forms.Button BtnAgregarMeClientes;
         private System.Windows.Forms.Button BtnVehiculoMeCliente;
+        private System.Windows.Forms.Button BtnVolver;
     }
 }

@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuracion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Configuracion.Designer.cs">
-      <DependentUpon>Configuracion.cs</DependentUpon>
-    </Compile>
     <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +166,12 @@
     <Compile Include="MenuVehiculos.Designer.cs">
       <DependentUpon>MenuVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuVentaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuVentaProductos.Designer.cs">
+      <DependentUpon>MenuVentaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,9 +186,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Configuracion.resx">
-      <DependentUpon>Configuracion.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +247,9 @@
     <EmbeddedResource Include="MenuVehiculos.resx">
       <DependentUpon>MenuVehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuVentaProductos.resx">
+      <DependentUpon>MenuVentaProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuVentas.resx">
       <DependentUpon>MenuVentas.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +280,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{D1D843BA-B6B3-4CFB-BE56-E1E4EBE5441F}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{2a2dddce-e32f-4537-ae8a-267726998119}</Project>
       <Name>Negocio</Name>
@@ -520,6 +525,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Flechita volver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuVentaDeProductos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flechita volver 64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuEmpleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuEmpleado1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

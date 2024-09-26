@@ -16,7 +16,7 @@ namespace Vista
         {
             InitializeComponent();
         }
-        #region
+        #region Llamados 
 
         public static void LlamarMenuVentas()
         {
@@ -58,7 +58,7 @@ namespace Vista
         }
 
 
-        #endregion
+        #endregion 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
             LlamarMenuVentas();

@@ -55,6 +55,7 @@
             this.BtnEmpleados.Size = new System.Drawing.Size(361, 139);
             this.BtnEmpleados.TabIndex = 1;
             this.BtnEmpleados.UseVisualStyleBackColor = true;
+            this.BtnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
             // 
             // pictureBox1
             // 

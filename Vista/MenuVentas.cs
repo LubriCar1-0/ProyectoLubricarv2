@@ -16,10 +16,30 @@ namespace Vista
         {
             InitializeComponent();
         }
+        #region Llamados
 
+        public static void PantallaMenuClientes()
+        {
+            MenuClientes LlamarMenuClientes = new MenuClientes();
+            LlamarMenuClientes.ShowDialog();
+        }
+        public static void PantallaMenuVentas()
+        {
+            MenuVentaProductos LlamarMenuVentaProductos = new MenuVentaProductos();
+            LlamarMenuVentaProductos.ShowDialog();
+        }
+
+        public static void PantallaMenuVehiculos()
+        {
+            MenuVehiculos LlamarMenuVehiculos = new MenuVehiculos();
+            LlamarMenuVehiculos.ShowDialog();
+        }
+
+
+        #endregion
         private void BtnClientesMeVentas_Click(object sender, EventArgs e)
         {
-
+            PantallaMenuClientes();
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)
@@ -30,6 +50,17 @@ namespace Vista
         {
             PantallaMenuPrincipal LlamarMenuPrincipal = new PantallaMenuPrincipal();
             LlamarMenuPrincipal.ShowDialog();
+        }
+        
+
+        private void BtnVentasMeVentas_Click(object sender, EventArgs e)
+        {
+            PantallaMenuVentas();
+        }
+
+        private void BtnVehiculosMeVentas_Click(object sender, EventArgs e)
+        {
+            PantallaMenuVehiculos();
         }
     }
 }

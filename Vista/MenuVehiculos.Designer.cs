@@ -38,6 +38,7 @@
             this.TxtPatenteVehiculo = new System.Windows.Forms.TextBox();
             this.TxtAñoVehiculos = new System.Windows.Forms.TextBox();
             this.TxtKilometrajeVehiculos = new System.Windows.Forms.TextBox();
+            this.BtnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,12 +132,26 @@
             this.TxtKilometrajeVehiculos.Size = new System.Drawing.Size(234, 26);
             this.TxtKilometrajeVehiculos.TabIndex = 13;
             // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnVolver.FlatAppearance.BorderSize = 0;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Location = new System.Drawing.Point(163, 104);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(64, 40);
+            this.BtnVolver.TabIndex = 14;
+            this.BtnVolver.Text = "Volver";
+            this.BtnVolver.UseVisualStyleBackColor = false;
+            // 
             // MenuVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVehiculos;
             this.ClientSize = new System.Drawing.Size(1173, 646);
+            this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.TxtKilometrajeVehiculos);
             this.Controls.Add(this.TxtAñoVehiculos);
             this.Controls.Add(this.TxtPatenteVehiculo);
@@ -167,5 +182,6 @@
         private System.Windows.Forms.TextBox TxtPatenteVehiculo;
         private System.Windows.Forms.TextBox TxtAñoVehiculos;
         private System.Windows.Forms.TextBox TxtKilometrajeVehiculos;
+        private System.Windows.Forms.Button BtnVolver;
     }
 }
