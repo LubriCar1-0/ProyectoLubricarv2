@@ -54,6 +54,26 @@ namespace Datos
 
         }
 
+        public static void AgregarCliente (string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl )
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "InsertarCliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NomCL", NomCliente);
+            comando.Parameters.AddWithValue("@ApeCL", ApeCliente);
+            comando.Parameters.AddWithValue("@RazSocialCL", RazSocCliente);
+            comando.Parameters.AddWithValue("@claveIdenCL", ClaveCliente);
+            comando.Parameters.AddWithValue("@localidadCL", LocalidadCL);
+            comando.Parameters.AddWithValue("@calleCL", CalleCliente);
+            comando.Parameters.AddWithValue("@numeracionCL", NumeracionCl);
+            comando.Parameters.AddWithValue("@condicionIvaCL", CondicionIVA);
+            comando.Parameters.AddWithValue("@telefonoCL", Telefonocl);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
+
 
 
 
