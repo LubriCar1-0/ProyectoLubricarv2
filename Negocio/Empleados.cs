@@ -52,11 +52,14 @@ namespace Negocio
 
 
             }
-            public static void CargaDeEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int permiso, int categoria)
+            public static void CargaDeEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, string categoria)
             {
                 Conectar capaDatos = new Conectar();
                 DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
+                DataTable TablaCategorias = capaDatos.TraerTablaCategorias();
                 bool usuarioEncontrado = false;
+                int idCategoria = 0;
+                int permisoCat = 0;
 
                 foreach (DataRow Fila in TablaEmpleados.Rows)
                 {
@@ -73,12 +76,28 @@ namespace Negocio
                 }
                 if (!usuarioEncontrado) 
                 {
+                    foreach (DataRow row in TablaCategorias.Rows)
+                    {
+                        if (row["NombreCat"].ToString().Trim() == categoria)
+                        {
+                            idCategoria = Convert.ToInt32(row["idCategoria"]);  
+                            permisoCat = Convert.ToInt32(row["PermisoCat"]);    
+                            break;
+                        }
+                    }
 
-                    Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, permiso, categoria);
+                    Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, permisoCat, idCategoria);
                     // agregar un registro a la bitacora de que se agrega un empleado 
 
                 }
             }
+            public DataTable ObtenerCategorias()
+            {
+                Conectar capaDatos = new Conectar();
+
+                return capaDatos.TraerTablaCategorias();
+            }
+
 
 
 

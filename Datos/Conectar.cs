@@ -23,7 +23,7 @@ namespace Datos
         {
             conexion.Close();
         }
-
+        
         public DataTable BuscarEmpleados()
         {
             conectar();
@@ -35,7 +35,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public static void AgregarEmpleados(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int permiso, int categoria)
+        public static void AgregarEmpleados(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int permisoCat, int idCategoria)
         {
             conectar();
             comando.Connection = conexion;
@@ -46,14 +46,31 @@ namespace Datos
             comando.Parameters.AddWithValue("@documentoTR", Documento);
             comando.Parameters.AddWithValue("@contraseñaTR", Contraseña);
             comando.Parameters.AddWithValue("@telefonoTR", Telefono);
-            comando.Parameters.AddWithValue("@permiso", permiso);
-            comando.Parameters.AddWithValue("@idCategoria", categoria);
+            comando.Parameters.AddWithValue("@permiso", permisoCat);
+            comando.Parameters.AddWithValue("@idCategoria", idCategoria);
             comando.ExecuteNonQuery();  
             comando.Parameters.Clear();
             desconectar();
 
         }
+        
+        public DataTable TraerTablaCategorias()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaCategorias";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
 
+
+       
+
+
+      
         public static void AgregarCliente (string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl )
         {
             conectar();
@@ -73,7 +90,6 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
-
 
 
 

@@ -33,7 +33,6 @@
             this.TxtDniEmpleado = new System.Windows.Forms.TextBox();
             this.TxtCelularEmpleado = new System.Windows.Forms.TextBox();
             this.CmbCategoriaEmple = new System.Windows.Forms.ComboBox();
-            this.CmbPermisoEmpleado = new System.Windows.Forms.ComboBox();
             this.DgvMenuEmpleado = new System.Windows.Forms.DataGridView();
             this.BtnAgregarMeEmpleado = new System.Windows.Forms.Button();
             this.BtnEditarMeEmpleado = new System.Windows.Forms.Button();
@@ -82,20 +81,12 @@
             this.CmbCategoriaEmple.Name = "CmbCategoriaEmple";
             this.CmbCategoriaEmple.Size = new System.Drawing.Size(243, 24);
             this.CmbCategoriaEmple.TabIndex = 4;
-            // 
-            // CmbPermisoEmpleado
-            // 
-            this.CmbPermisoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CmbPermisoEmpleado.FormattingEnabled = true;
-            this.CmbPermisoEmpleado.Location = new System.Drawing.Point(768, 435);
-            this.CmbPermisoEmpleado.Name = "CmbPermisoEmpleado";
-            this.CmbPermisoEmpleado.Size = new System.Drawing.Size(243, 24);
-            this.CmbPermisoEmpleado.TabIndex = 5;
+            this.CmbCategoriaEmple.SelectedIndexChanged += new System.EventHandler(this.CmbCategoriaEmple_SelectedIndexChanged);
             // 
             // DgvMenuEmpleado
             // 
             this.DgvMenuEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMenuEmpleado.Location = new System.Drawing.Point(315, 501);
+            this.DgvMenuEmpleado.Location = new System.Drawing.Point(315, 473);
             this.DgvMenuEmpleado.Name = "DgvMenuEmpleado";
             this.DgvMenuEmpleado.Size = new System.Drawing.Size(657, 150);
             this.DgvMenuEmpleado.TabIndex = 6;
@@ -105,7 +96,7 @@
             this.BtnAgregarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(259, 667);
+            this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(315, 657);
             this.BtnAgregarMeEmpleado.Name = "BtnAgregarMeEmpleado";
             this.BtnAgregarMeEmpleado.Size = new System.Drawing.Size(129, 43);
             this.BtnAgregarMeEmpleado.TabIndex = 8;
@@ -117,7 +108,7 @@
             this.BtnEditarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnEditar1;
             this.BtnEditarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnEditarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditarMeEmpleado.Location = new System.Drawing.Point(606, 667);
+            this.BtnEditarMeEmpleado.Location = new System.Drawing.Point(610, 657);
             this.BtnEditarMeEmpleado.Name = "BtnEditarMeEmpleado";
             this.BtnEditarMeEmpleado.Size = new System.Drawing.Size(95, 43);
             this.BtnEditarMeEmpleado.TabIndex = 9;
@@ -128,9 +119,9 @@
             this.BtnEliminarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnEliminar;
             this.BtnEliminarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnEliminarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarMeEmpleado.Location = new System.Drawing.Point(889, 667);
+            this.BtnEliminarMeEmpleado.Location = new System.Drawing.Point(843, 657);
             this.BtnEliminarMeEmpleado.Name = "BtnEliminarMeEmpleado";
-            this.BtnEliminarMeEmpleado.Size = new System.Drawing.Size(151, 43);
+            this.BtnEliminarMeEmpleado.Size = new System.Drawing.Size(168, 43);
             this.BtnEliminarMeEmpleado.TabIndex = 10;
             this.BtnEliminarMeEmpleado.UseVisualStyleBackColor = true;
             // 
@@ -146,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuEmpleado1;
+            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuEmpleados1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1284, 722);
             this.Controls.Add(this.txtContraseña);
@@ -154,7 +145,6 @@
             this.Controls.Add(this.BtnEditarMeEmpleado);
             this.Controls.Add(this.BtnAgregarMeEmpleado);
             this.Controls.Add(this.DgvMenuEmpleado);
-            this.Controls.Add(this.CmbPermisoEmpleado);
             this.Controls.Add(this.CmbCategoriaEmple);
             this.Controls.Add(this.TxtCelularEmpleado);
             this.Controls.Add(this.TxtDniEmpleado);
@@ -175,7 +165,6 @@
         private System.Windows.Forms.TextBox TxtDniEmpleado;
         private System.Windows.Forms.TextBox TxtCelularEmpleado;
         private System.Windows.Forms.ComboBox CmbCategoriaEmple;
-        private System.Windows.Forms.ComboBox CmbPermisoEmpleado;
         private System.Windows.Forms.DataGridView DgvMenuEmpleado;
         private System.Windows.Forms.Button BtnAgregarMeEmpleado;
         private System.Windows.Forms.Button BtnEditarMeEmpleado;
