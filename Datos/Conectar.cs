@@ -67,11 +67,20 @@ namespace Datos
         }
 
 
-       
+        public DataTable BuscarClientes()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaClientes";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
 
+        }
 
-      
-        public static void AgregarCliente (string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl )
+            public static void AgregarCliente (string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl )
         {
             conectar();
             comando.Connection = conexion;
