@@ -21,42 +21,54 @@ namespace Negocio
             public string permiso { get; set; }
             #endregion
 
-            public static void IngresoEmpleados (int documento, string contraseña)
+            public static void IngresoEmpleados(int documento, string contraseña)
             {
                 Conectar capaDatos = new Conectar();
                 DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
                 bool usuarioEncontrado = false;
-             
 
                 foreach (DataRow Fila in TablaEmpleados.Rows)
                 {
-                    string DocumentoEnBD = Fila["documentoTR"].ToString();
-                    string ContraseñaEnBD = Fila["contraseñaTR"].ToString();
-                    int Documentoint = Convert.ToInt32(DocumentoEnBD);
-                    if (Documentoint == documento && ContraseñaEnBD == contraseña)
-                    {
-                        //AccederBitacora(); agregar la funcion a la bitacora 
-                        usuarioEncontrado = true;
-                        return;
-                    }
-                    else if (Documentoint != documento/*.ToString()*/ && ContraseñaEnBD == contraseña)
-                    {
-                        throw new Exception("Empleado no encontrado");
-                    }
-                    else if (Documentoint != documento/*.ToString()*/ && ContraseñaEnBD != contraseña)
-                    {
-                        throw new Exception("Contraseña no valida");
-                    }
                     
+                    if (Fila["documentoTR"] != DBNull.Value)
+                    {
+                        int Documentoint = Convert.ToInt32(Fila["documentoTR"]);
+
+                        
+                        if (Documentoint == documento)
+                        {
+                            // Verificar si la contraseña es correcta
+                            string ContraseñaEnBD = Fila["contraseñaTR"].ToString();
+                            if (ContraseñaEnBD == contraseña)
+                            {
+                                usuarioEncontrado = true;
+                                return;
+                            }
+                            else
+                            {
+                                throw new Exception("Contraseña no válida");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        
+                        throw new Exception("El numero de documento es inválido.");
+                    }
                 }
 
-
+                
+                if (!usuarioEncontrado)
+                {
+                    throw new Exception("Empleado no encontrado");
+                }
             }
+
+
             public static void CargaDeEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, string categoria)
             {
                 Conectar capaDatos = new Conectar();
                 DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
-                DataTable TablaCategorias = capaDatos.TraerTablaCategorias();
                 bool usuarioEncontrado = false;
                 int idCategoria = 0;
                 int permisoCat = 0;
@@ -76,12 +88,15 @@ namespace Negocio
                 }
                 if (!usuarioEncontrado) 
                 {
-                    foreach (DataRow row in TablaCategorias.Rows)
+                    DataTable TablaCategorias = capaDatos.TraerTablaCategorias();
+
+                    foreach (DataRow Fila in TablaCategorias.Rows)
                     {
-                        if (row["NombreCat"].ToString().Trim() == categoria)
+                        String FilaCategoria = Fila["NombreCat"].ToString(); 
+                        if (FilaCategoria == categoria)
                         {
-                            idCategoria = Convert.ToInt32(row["idCategoria"]);  
-                            permisoCat = Convert.ToInt32(row["PermisoCat"]);    
+                            idCategoria = Convert.ToInt32( Fila ["idCategoria"]);  
+                            permisoCat = Convert.ToInt32( Fila   ["PermisoCat"]);    
                             break;
                         }
                     }

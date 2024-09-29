@@ -21,18 +21,28 @@ namespace Vista
         {
             try
             {
-                Validaciones.DatosEmpleado(Convert.ToInt32(TbxDocumento.Text), TbxContra.Text.Trim());
+                
+                if (int.TryParse(TbxDocumento.Text, out int documento))
+                {
+                    
+                    Validaciones.DatosEmpleado(documento, TbxContra.Text.Trim());
 
-                PantallaMenuPrin();
-                //agregar la accion de acceder a la base de datos
+                    // Bitacora Acceder a la pantalla principal
+                    PantallaMenuPrin();
+                }
+                else
+                {
+                    
+                    MessageBox.Show("El documento debe ser un número válido.");
+                }
             }
             catch (Exception ex)
             {
+                
                 MessageBox.Show(ex.Message);
-                // agregar el intento fallido de acceder 
             }
-            
         }
+
 
         public static void PantallaMenuPrin()
         {
