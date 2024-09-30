@@ -21,24 +21,55 @@ namespace Vista
 
         private void BtnAgregarMeEmpleado_Click(object sender, EventArgs e)
         {
-                try
-                {
-                    int dniEmpleado = Convert.ToInt32(TxtDniEmpleado.Text.Trim());
-                    int celularEmpleado = Convert.ToInt32(TxtCelularEmpleado.Text.Trim());
-                    string categoriaSeleccionada = CmbCategoriaEmple.SelectedItem.ToString();
-                    Validaciones.AgregarUnEmpleado(TxtNombreEmpleado.Text.Trim(), TxtApellidoEmpleado.Text.Trim(), dniEmpleado, txtContraseña.Text.Trim(), celularEmpleado, categoriaSeleccionada);
+            try
+            {
+                int permiso = 0;
+                int categoriaSeleccionada = 0;
 
-                    
-                    //agregar la accion de agregar un empleado
-                }
-                catch (Exception ex)
+                switch (CmbCategoriaEmple.SelectedItem.ToString())
                 {
-                    MessageBox.Show(ex.Message);
-                    // agregar el intento fallido de acceder 
+                    case "Dueño":
+                        permiso = 9;
+                        categoriaSeleccionada = 1;
+                        break;
+                    case "Mostrador":
+                        permiso = 5;
+                        categoriaSeleccionada = 2;
+                        break;
+                    case "Mecanico":
+                        permiso = 3;
+                        categoriaSeleccionada = 3;
+                        break;
+                    case "Repositor":
+                        permiso = 4;
+                        categoriaSeleccionada = 4;
+                        break;
+                    default:
+                        throw new Exception("No selecciono una categoria");
                 }
 
-            
-        }
+                // Validar y convertir el DNI y el celular
+                if (!int.TryParse(TxtDniEmpleado.Text.Trim(), out int dniEmpleado))
+                {
+                    throw new Exception("El DNI debe ser un número válido.");
+                }
+
+                if (!int.TryParse(TxtCelularEmpleado.Text.Trim(), out int celularEmpleado))
+                {
+                    throw new Exception("El número de celular debe ser un número válido.");
+                }
+
+                // Llamar a la capa de validaciones con las variables de permiso y categoría
+                Validaciones.AgregarUnEmpleado(TxtNombreEmpleado.Text.Trim(),TxtApellidoEmpleado.Text.Trim(), dniEmpleado,txtContraseña.Text.Trim(),celularEmpleado, permiso, categoriaSeleccionada);
+                MessageBox.Show("El empleado ha sido cargado con exito");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        } 
+
+
 
         private void CmbCategoriaEmple_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -16,9 +16,9 @@ namespace Vista
         {
             Trabajores.IngresoEmpleados(Documento, contraseña);
         }
-        public static void AgregarUnEmpleado (string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, string categoria )
+        public static void AgregarUnEmpleado (string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int Permiso, int categoria )
         {
-            Trabajores.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, categoria);
+            Trabajores.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, Permiso, categoria);
         }
         public static Dictionary<string, int> ObtenerCategoriasProcesadas()
         {
