@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CbxCondicionIvaMeClientes = new System.Windows.Forms.ComboBox();
             this.TxtNombreCliente = new System.Windows.Forms.TextBox();
-            this.TxtDomicilioCliente = new System.Windows.Forms.TextBox();
+            this.TxtLocalidadCliente = new System.Windows.Forms.TextBox();
             this.TxtCuilCliente = new System.Windows.Forms.TextBox();
             this.DgvTablaClientes = new System.Windows.Forms.DataGridView();
             this.BtnEliminarMeClientes = new System.Windows.Forms.Button();
@@ -38,22 +37,14 @@
             this.BtnAgregarMeClientes = new System.Windows.Forms.Button();
             this.BtnVehiculoMeCliente = new System.Windows.Forms.Button();
             this.BtnVolver = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.TxtRazonSocialCliente = new System.Windows.Forms.TextBox();
+            this.TxtapellidoCliente = new System.Windows.Forms.TextBox();
+            this.TxtNumCasaCliente = new System.Windows.Forms.TextBox();
+            this.TxtCalleCliente = new System.Windows.Forms.TextBox();
+            this.TxtTelefonoCliente = new System.Windows.Forms.TextBox();
+            this.TxtIvaCliente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).BeginInit();
             this.SuspendLayout();
-            // 
-            // CbxCondicionIvaMeClientes
-            // 
-            this.CbxCondicionIvaMeClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxCondicionIvaMeClientes.FormattingEnabled = true;
-            this.CbxCondicionIvaMeClientes.Location = new System.Drawing.Point(689, 367);
-            this.CbxCondicionIvaMeClientes.Name = "CbxCondicionIvaMeClientes";
-            this.CbxCondicionIvaMeClientes.Size = new System.Drawing.Size(234, 28);
-            this.CbxCondicionIvaMeClientes.TabIndex = 0;
             // 
             // TxtNombreCliente
             // 
@@ -63,18 +54,18 @@
             this.TxtNombreCliente.Size = new System.Drawing.Size(234, 26);
             this.TxtNombreCliente.TabIndex = 1;
             // 
-            // TxtDomicilioCliente
+            // TxtLocalidadCliente
             // 
-            this.TxtDomicilioCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDomicilioCliente.Location = new System.Drawing.Point(308, 284);
-            this.TxtDomicilioCliente.Name = "TxtDomicilioCliente";
-            this.TxtDomicilioCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtDomicilioCliente.TabIndex = 2;
+            this.TxtLocalidadCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtLocalidadCliente.Location = new System.Drawing.Point(308, 284);
+            this.TxtLocalidadCliente.Name = "TxtLocalidadCliente";
+            this.TxtLocalidadCliente.Size = new System.Drawing.Size(234, 26);
+            this.TxtLocalidadCliente.TabIndex = 2;
             // 
             // TxtCuilCliente
             // 
             this.TxtCuilCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCuilCliente.Location = new System.Drawing.Point(689, 148);
+            this.TxtCuilCliente.Location = new System.Drawing.Point(689, 219);
             this.TxtCuilCliente.Name = "TxtCuilCliente";
             this.TxtCuilCliente.Size = new System.Drawing.Size(234, 26);
             this.TxtCuilCliente.TabIndex = 3;
@@ -119,6 +110,7 @@
             this.BtnAgregarMeClientes.Size = new System.Drawing.Size(123, 43);
             this.BtnAgregarMeClientes.TabIndex = 7;
             this.BtnAgregarMeClientes.UseVisualStyleBackColor = true;
+            this.BtnAgregarMeClientes.Click += new System.EventHandler(this.BtnAgregarMeClientes_Click);
             // 
             // BtnVehiculoMeCliente
             // 
@@ -144,45 +136,53 @@
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // TxtRazonSocialCliente
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(308, 219);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 26);
-            this.textBox1.TabIndex = 10;
+            this.TxtRazonSocialCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtRazonSocialCliente.Location = new System.Drawing.Point(308, 219);
+            this.TxtRazonSocialCliente.Name = "TxtRazonSocialCliente";
+            this.TxtRazonSocialCliente.Size = new System.Drawing.Size(234, 26);
+            this.TxtRazonSocialCliente.TabIndex = 10;
             // 
-            // textBox2
+            // TxtapellidoCliente
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(689, 219);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(234, 26);
-            this.textBox2.TabIndex = 11;
+            this.TxtapellidoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtapellidoCliente.Location = new System.Drawing.Point(689, 148);
+            this.TxtapellidoCliente.Name = "TxtapellidoCliente";
+            this.TxtapellidoCliente.Size = new System.Drawing.Size(234, 26);
+            this.TxtapellidoCliente.TabIndex = 11;
             // 
-            // textBox3
+            // TxtNumCasaCliente
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(308, 369);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(234, 26);
-            this.textBox3.TabIndex = 12;
+            this.TxtNumCasaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNumCasaCliente.Location = new System.Drawing.Point(308, 369);
+            this.TxtNumCasaCliente.Name = "TxtNumCasaCliente";
+            this.TxtNumCasaCliente.Size = new System.Drawing.Size(234, 26);
+            this.TxtNumCasaCliente.TabIndex = 12;
             // 
-            // textBox4
+            // TxtCalleCliente
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(689, 284);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(234, 26);
-            this.textBox4.TabIndex = 13;
+            this.TxtCalleCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCalleCliente.Location = new System.Drawing.Point(689, 284);
+            this.TxtCalleCliente.Name = "TxtCalleCliente";
+            this.TxtCalleCliente.Size = new System.Drawing.Size(234, 26);
+            this.TxtCalleCliente.TabIndex = 13;
             // 
-            // textBox5
+            // TxtTelefonoCliente
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(308, 449);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(234, 26);
-            this.textBox5.TabIndex = 14;
+            this.TxtTelefonoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtTelefonoCliente.Location = new System.Drawing.Point(308, 449);
+            this.TxtTelefonoCliente.Name = "TxtTelefonoCliente";
+            this.TxtTelefonoCliente.Size = new System.Drawing.Size(234, 26);
+            this.TxtTelefonoCliente.TabIndex = 14;
+            // 
+            // TxtIvaCliente
+            // 
+            this.TxtIvaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIvaCliente.Location = new System.Drawing.Point(689, 369);
+            this.TxtIvaCliente.Name = "TxtIvaCliente";
+            this.TxtIvaCliente.Size = new System.Drawing.Size(234, 26);
+            this.TxtIvaCliente.TabIndex = 15;
             // 
             // MenuClientes
             // 
@@ -190,11 +190,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.MenuClientes1;
             this.ClientSize = new System.Drawing.Size(1182, 656);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TxtIvaCliente);
+            this.Controls.Add(this.TxtTelefonoCliente);
+            this.Controls.Add(this.TxtCalleCliente);
+            this.Controls.Add(this.TxtNumCasaCliente);
+            this.Controls.Add(this.TxtapellidoCliente);
+            this.Controls.Add(this.TxtRazonSocialCliente);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnVehiculoMeCliente);
             this.Controls.Add(this.BtnAgregarMeClientes);
@@ -202,9 +203,8 @@
             this.Controls.Add(this.BtnEliminarMeClientes);
             this.Controls.Add(this.DgvTablaClientes);
             this.Controls.Add(this.TxtCuilCliente);
-            this.Controls.Add(this.TxtDomicilioCliente);
+            this.Controls.Add(this.TxtLocalidadCliente);
             this.Controls.Add(this.TxtNombreCliente);
-            this.Controls.Add(this.CbxCondicionIvaMeClientes);
             this.Name = "MenuClientes";
             this.Text = "MenuClientes";
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).EndInit();
@@ -214,10 +214,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox CbxCondicionIvaMeClientes;
         private System.Windows.Forms.TextBox TxtNombreCliente;
-        private System.Windows.Forms.TextBox TxtDomicilioCliente;
+        private System.Windows.Forms.TextBox TxtLocalidadCliente;
         private System.Windows.Forms.TextBox TxtCuilCliente;
         private System.Windows.Forms.DataGridView DgvTablaClientes;
         private System.Windows.Forms.Button BtnEliminarMeClientes;
@@ -225,10 +223,11 @@
         private System.Windows.Forms.Button BtnAgregarMeClientes;
         private System.Windows.Forms.Button BtnVehiculoMeCliente;
         private System.Windows.Forms.Button BtnVolver;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox TxtRazonSocialCliente;
+        private System.Windows.Forms.TextBox TxtapellidoCliente;
+        private System.Windows.Forms.TextBox TxtNumCasaCliente;
+        private System.Windows.Forms.TextBox TxtCalleCliente;
+        private System.Windows.Forms.TextBox TxtTelefonoCliente;
+        private System.Windows.Forms.TextBox TxtIvaCliente;
     }
 }

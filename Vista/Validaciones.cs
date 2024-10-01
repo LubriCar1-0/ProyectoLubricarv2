@@ -6,6 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Negocio.Cliente;
+
 
 
 namespace Vista
@@ -34,6 +36,13 @@ namespace Vista
             }
 
             return categorias;
+        }
+        public class Validar : Cliente
+        {
+            public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
+            {
+                Personas.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
+            }
         }
 
     }
