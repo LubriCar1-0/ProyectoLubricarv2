@@ -80,7 +80,7 @@ namespace Datos
 
         }
 
-        public static void AgregarCliente (string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl )
+        public static void AgregarCliente (string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl )
         {
             conectar();
             comando.Connection = conexion;

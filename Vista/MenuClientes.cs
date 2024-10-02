@@ -20,9 +20,22 @@ namespace Vista
 
         private void BtnAgregarMeClientes_Click(object sender, EventArgs e)
         {
-            int NumeracioncasaCliente = Convert.ToInt32(TxtNumCasaCliente.Text.Trim());
-            int TelefonoCliente = Convert.ToInt32(TxtTelefonoCliente.Text.Trim());
-            Validar.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), TxtCuilCliente.Text.Trim(), TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), NumeracioncasaCliente, TxtIvaCliente.Text.Trim(), TelefonoCliente);
+            
+            if (!int.TryParse(TxtNumCasaCliente.Text.Trim(), out int NumeracioncasaCliente))
+            {
+                throw new Exception("La numeracion de la casa debe ser valida");
+            }
+
+            if (!int.TryParse(TxtTelefonoCliente.Text.Trim(), out int TelefonoCliente))
+            {
+                throw new Exception("El número de celular debe ser un número válido.");
+            }
+            if (!int.TryParse(TxtCuilCliente.Text.Trim(), out int CuilCliente))
+            {
+                throw new Exception("El número de identificacion debe ser un número válido.");
+            }
+
+            Validar.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), CuilCliente, TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), NumeracioncasaCliente, CMBIVA.SelectedItem.ToString(), TelefonoCliente);
             MessageBox.Show("Se registro correctamente");
         }
     }

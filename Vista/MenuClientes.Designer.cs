@@ -42,7 +42,7 @@
             this.TxtNumCasaCliente = new System.Windows.Forms.TextBox();
             this.TxtCalleCliente = new System.Windows.Forms.TextBox();
             this.TxtTelefonoCliente = new System.Windows.Forms.TextBox();
-            this.TxtIvaCliente = new System.Windows.Forms.TextBox();
+            this.CMBIVA = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,13 +176,16 @@
             this.TxtTelefonoCliente.Size = new System.Drawing.Size(234, 26);
             this.TxtTelefonoCliente.TabIndex = 14;
             // 
-            // TxtIvaCliente
+            // CMBIVA
             // 
-            this.TxtIvaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtIvaCliente.Location = new System.Drawing.Point(689, 369);
-            this.TxtIvaCliente.Name = "TxtIvaCliente";
-            this.TxtIvaCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtIvaCliente.TabIndex = 15;
+            this.CMBIVA.FormattingEnabled = true;
+            this.CMBIVA.Items.AddRange(new object[] {
+            "Responsable inscripto",
+            "Sujeto Exento"});
+            this.CMBIVA.Location = new System.Drawing.Point(689, 374);
+            this.CMBIVA.Name = "CMBIVA";
+            this.CMBIVA.Size = new System.Drawing.Size(234, 21);
+            this.CMBIVA.TabIndex = 16;
             // 
             // MenuClientes
             // 
@@ -190,7 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.MenuClientes1;
             this.ClientSize = new System.Drawing.Size(1182, 656);
-            this.Controls.Add(this.TxtIvaCliente);
+            this.Controls.Add(this.CMBIVA);
             this.Controls.Add(this.TxtTelefonoCliente);
             this.Controls.Add(this.TxtCalleCliente);
             this.Controls.Add(this.TxtNumCasaCliente);
@@ -228,6 +231,6 @@
         private System.Windows.Forms.TextBox TxtNumCasaCliente;
         private System.Windows.Forms.TextBox TxtCalleCliente;
         private System.Windows.Forms.TextBox TxtTelefonoCliente;
-        private System.Windows.Forms.TextBox TxtIvaCliente;
+        private System.Windows.Forms.ComboBox CMBIVA;
     }
 }
