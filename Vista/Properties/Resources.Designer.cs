@@ -93,6 +93,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnAgregar2 {
+            get {
+                object obj = ResourceManager.GetObject("BtnAgregar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnAgregarClientes {
             get {
                 object obj = ResourceManager.GetObject("BtnAgregarClientes", resourceCulture);
@@ -573,6 +583,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MenuAgregarProductos {
+            get {
+                object obj = ResourceManager.GetObject("MenuAgregarProductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuClientes {
             get {
                 object obj = ResourceManager.GetObject("MenuClientes", resourceCulture);
@@ -596,6 +616,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap MenuConfiguracion {
             get {
                 object obj = ResourceManager.GetObject("MenuConfiguracion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuControlDeStock {
+            get {
+                object obj = ResourceManager.GetObject("MenuControlDeStock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

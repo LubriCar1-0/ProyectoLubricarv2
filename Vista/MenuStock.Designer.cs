@@ -44,7 +44,6 @@
             this.BtnProductosFaltantes.Name = "BtnProductosFaltantes";
             this.BtnProductosFaltantes.Size = new System.Drawing.Size(329, 124);
             this.BtnProductosFaltantes.TabIndex = 3;
-            this.BtnProductosFaltantes.Text = "button1";
             this.BtnProductosFaltantes.UseVisualStyleBackColor = true;
             // 
             // BtnControlDeStock
