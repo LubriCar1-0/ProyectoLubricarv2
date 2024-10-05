@@ -26,5 +26,12 @@ namespace Vista
             MenuEmpleado LlamarMenuEmpleado = new MenuEmpleado();
             LlamarMenuEmpleado.ShowDialog();
         }
+
+        private void BtnEmpresa_Click(object sender, EventArgs e)
+        {
+            MenuDatosEmpresa LlamarMenuEmpresa = new MenuDatosEmpresa();
+            LlamarMenuEmpresa.ShowDialog();
+
+        }
     }
 }

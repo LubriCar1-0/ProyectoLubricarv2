@@ -47,17 +47,19 @@
             this.BtnEditarEmpresa.Size = new System.Drawing.Size(95, 43);
             this.BtnEditarEmpresa.TabIndex = 8;
             this.BtnEditarEmpresa.UseVisualStyleBackColor = true;
+            this.BtnEditarEmpresa.Click += new System.EventHandler(this.BtnEditarEmpresa_Click);
             // 
             // BtnConfirmarEmpresa
             // 
             this.BtnConfirmarEmpresa.BackgroundImage = global::Vista.Properties.Resources.BtnConfirmar;
             this.BtnConfirmarEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnConfirmarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfirmarEmpresa.Location = new System.Drawing.Point(370, 424);
+            this.BtnConfirmarEmpresa.Location = new System.Drawing.Point(453, 424);
             this.BtnConfirmarEmpresa.Name = "BtnConfirmarEmpresa";
             this.BtnConfirmarEmpresa.Size = new System.Drawing.Size(164, 43);
             this.BtnConfirmarEmpresa.TabIndex = 9;
             this.BtnConfirmarEmpresa.UseVisualStyleBackColor = true;
+            this.BtnConfirmarEmpresa.Click += new System.EventHandler(this.BtnConfirmarEmpresa_Click);
             // 
             // CbxCondicionIva
             // 
@@ -67,6 +69,7 @@
             this.CbxCondicionIva.Name = "CbxCondicionIva";
             this.CbxCondicionIva.Size = new System.Drawing.Size(157, 28);
             this.CbxCondicionIva.TabIndex = 10;
+          
             // 
             // TxtNombreEmpresa
             // 

@@ -10,10 +10,11 @@ namespace Datos
 {
     public class Conectar
     {
+        #region ConexionBD
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -23,7 +24,8 @@ namespace Datos
         {
             conexion.Close();
         }
-        
+#endregion
+        #region Empleados
         public DataTable BuscarEmpleados()
         {
             conectar();
@@ -65,8 +67,8 @@ namespace Datos
             desconectar();
             return dt;
         }
-
-
+        #endregion
+        #region Clientes/Vehiculos
         public DataTable BuscarClientes()
         {
             conectar();
@@ -99,9 +101,45 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
-
-
-
+        #endregion
+        #region Empresa
+        public DataTable BuscarEmpresa()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaEmpresa";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+        public static void AgregarEmpresa(string RazonSocial, string ClaveIdent, string Domicilio, string CondicionIVA, string PuntodVenta)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "AgregarEmpresa";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@RazSocial", RazonSocial);
+            comando.Parameters.AddWithValue("@ClaveIdentif", ClaveIdent);
+            comando.Parameters.AddWithValue("@Domicilio", Domicilio);
+            comando.Parameters.AddWithValue("@CondicionIVA", CondicionIVA);
+            comando.Parameters.AddWithValue("@PuntoVenta", PuntodVenta);           
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            /*create procedure AgregarEmpresa(
+            @RazSocial char(255),
+            @ClaveIdentif nvarchar(50),
+            @Domicilio nvarchar(255),
+            @CondicionIVA nvarchar(50),
+            @PuntoVenta nvarchar(50))
+            as begin 
+            insert into Empresa(razonSocialEMP,claveIdenEMP,domicilioEMP,condicionIvaEMP,ptoVentaEMP) 
+            values (@RazSocial,@ClaveIdentif,@Domicilio,@CondicionIVA,@PuntoVenta)
+            end*/
+        }
+        #endregion
 
 
 

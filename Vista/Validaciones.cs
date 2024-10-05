@@ -36,14 +36,22 @@ namespace Vista
             }
 
             return categorias;
-        }
-        public class Validar : Cliente
+        }              
+    }
+    public class Validar : Cliente
+    {
+        public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
-            public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
-            {
-                Personas.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
-            }
+            Personas.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
         }
+    }
+    public class CargaEmpresa : Empresa
+    {
+        public static void AgregarUnaEmpresa(string RazonSocial, string ClaveIdent, string Domicilio, string CondicionIVA, string PuntodVenta)
+        {
+            Empresa.AgregarEmpresa(RazonSocial, ClaveIdent, Domicilio, CondicionIVA, PuntodVenta);
+        }
+
 
     }
 }

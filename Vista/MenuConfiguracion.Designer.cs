@@ -44,6 +44,7 @@
             this.BtnEmpresa.Size = new System.Drawing.Size(364, 137);
             this.BtnEmpresa.TabIndex = 2;
             this.BtnEmpresa.UseVisualStyleBackColor = true;
+            this.BtnEmpresa.Click += new System.EventHandler(this.BtnEmpresa_Click);
             // 
             // BtnEmpleados
             // 
