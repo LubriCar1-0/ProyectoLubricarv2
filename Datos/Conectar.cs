@@ -24,7 +24,7 @@ namespace Datos
         {
             conexion.Close();
         }
-#endregion
+        #endregion
         #region Empleados
         public DataTable BuscarEmpleados()
         {
@@ -42,20 +42,20 @@ namespace Datos
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "InsertarEmpleado";
-            comando.CommandType=CommandType.StoredProcedure;
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@Apellido", Apellido);
             comando.Parameters.AddWithValue("@Documento", Documento);
             comando.Parameters.AddWithValue("@Contraseña", Contraseña);
             comando.Parameters.AddWithValue("@Telefono", Telefono);
-            comando.Parameters.AddWithValue("@permiso", permisoCat);    
+            comando.Parameters.AddWithValue("@permiso", permisoCat);
             comando.Parameters.AddWithValue("@categoria", idCategoria);
-            comando.ExecuteNonQuery();  
+            comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
 
         }
-        
+
         public DataTable TraerTablaCategorias()
         {
             conectar();
@@ -82,7 +82,7 @@ namespace Datos
 
         }
 
-        public static void AgregarCliente (string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl )
+        public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
             conectar();
             comando.Connection = conexion;
@@ -124,7 +124,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@ClaveIdentif", ClaveIdent);
             comando.Parameters.AddWithValue("@Domicilio", Domicilio);
             comando.Parameters.AddWithValue("@CondicionIVA", CondicionIVA);
-            comando.Parameters.AddWithValue("@PuntoVenta", PuntodVenta);           
+            comando.Parameters.AddWithValue("@PuntoVenta", PuntodVenta);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -139,11 +139,47 @@ namespace Datos
             values (@RazSocial,@ClaveIdentif,@Domicilio,@CondicionIVA,@PuntoVenta)
             end*/
         }
+
+
+        public static void AgregarProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, string CodigoProducto, string PrecioListaProducto, string PrecioVentaProducto, string DescripcionProducto)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "AgregarProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombreproducto" , NombreProducto);
+            comando.Parameters.AddWithValue("@marcaproducto", MarcaProducto);
+            comando.Parameters.AddWithValue("@categoriaproducto", CategoriaProducto);
+            comando.Parameters.AddWithValue("@codigoproducto", CodigoProducto);
+            comando.Parameters.AddWithValue("@preciolistaproducto", PrecioListaProducto);
+            comando.Parameters.AddWithValue("@precioventaproducto", PrecioVentaProducto);
+            comando.Parameters.AddWithValue("@descripcionproducto", DescripcionProducto);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+
+            /*
+            create proc AgregarProducto
+            @nombreproducto nvarchar (200),
+            @marcaproducto nvarchar(200),
+            @categoriaproducto nvarchar(200),
+            @codigoproducto int,
+            @preciolistaproducto float,
+            @precioventaproducto float,
+            @descrpcionproducto nvarchar(500)
+            as
+            insert into Producto values (@nombreproducto, @marcaproducto, @categoriaproducto, @codigoproducto, @preciolistaproducto, @precioventaproducto, @descripcionproducto)
+            go
+            */
+
+        }
+    }
+
         #endregion
 
 
 
 
 
-    }
+    
 }
