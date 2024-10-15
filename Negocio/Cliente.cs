@@ -1,9 +1,11 @@
 ﻿using Datos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using static Negocio.Cliente;
 
 namespace Negocio
@@ -25,10 +27,28 @@ namespace Negocio
         public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
             Conectar capaDatos = new Conectar();
+            DataTable TablaClientes = capaDatos.BuscarClientes();
+            bool clienteencontrado = false;
 
-            Conectar.AgregarCliente(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
-            string detalle = "Carga de cliente al sistema";
-            AgregarBitacora(Empleados.IdTrabajador, Empleados.NombreTrabajador, detalle);
+
+            foreach (DataRow Fila in TablaClientes.Rows)
+            {
+                string Clavecliente = Fila["ClaveIdenCL"].ToString();
+                int clave = Convert.ToInt32(Clavecliente);
+                if (clave == ClaveCliente)
+                {
+                    clienteencontrado = true;
+                    throw new Exception("Ya existe un cliente con ese documento");
+
+
+                }
+                if (!clienteencontrado)
+                {
+                    Conectar.AgregarCliente(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
+                    string detalle = "Carga de cliente al sistema";
+                    AgregarBitacora(Empleados.IdTrabajador, Empleados.NombreTrabajador, detalle);
+                }
+            } 
         }
         public class cliente : Empleados
         {
