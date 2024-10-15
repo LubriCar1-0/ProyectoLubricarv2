@@ -25,7 +25,14 @@ namespace Negocio
         public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
             Conectar capaDatos = new Conectar();
+
             Conectar.AgregarCliente(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
+            string detalle = "Carga de cliente al sistema";
+            AgregarBitacora(Empleados.IdTrabajador, Empleados.NombreTrabajador, detalle);
+        }
+        public class cliente : Empleados
+        {
+            
         }
     }
     

@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,8 +11,8 @@ namespace Negocio
 {
     public class Empleados : Conectar
     {
-        public class Trabajores: Empleados 
-        {
+        //public class Trabajores: Empleados 
+        //{
             #region Variables
             public int idTrabajador { get; set; }
             public string nomApetr { get; set; }
@@ -19,6 +20,13 @@ namespace Negocio
             public string contraseñaTR { get; set; }
             public int telefonoTR { get; set; }
             public string permiso { get; set; }
+            public static int IdTrabajador { get; private set; }
+            public static string NombreTrabajador { get; private set; }
+            //public int mandarid()
+            //{
+            //    int Idpasar = IdTrabajador;
+            //    return Idpasar;
+            //}
             #endregion
 
             public static void IngresoEmpleados(int documento, string contraseña)
@@ -42,6 +50,12 @@ namespace Negocio
                             if (ContraseñaEnBD == contraseña)
                             {
                                 usuarioEncontrado = true;
+                                int Idtrabajador = capaDatos.TraeId(documento);
+                                IdTrabajador = Idtrabajador;//para usarla por fuera de este metodo
+                                string Nomtrabajador = capaDatos.BuscarEmp(Idtrabajador);
+                                NombreTrabajador = Nomtrabajador;
+                                string detalle = "Acceso al sistema";
+                                AgregarBitacora(Idtrabajador, Nomtrabajador, detalle);
                                 return;
                             }
                             else
@@ -87,9 +101,11 @@ namespace Negocio
                 }
                 if (!usuarioEncontrado) 
                 {
-                    Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, permiso, categoria);
+                Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, permiso, categoria);
+                    string detalle = "Cargar un empleado";
+                    AgregarBitacora(IdTrabajador, NombreTrabajador, detalle);
                     return;
-                    // agregar un registro a la bitacora de que se agrega un empleado 
+                    // agrega un registro a la bitacora de que se agrega un empleado 
 
                 }
             }
@@ -107,7 +123,7 @@ namespace Negocio
 
 
 
-        }
+        //}
 
 
     }

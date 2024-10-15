@@ -16,11 +16,11 @@ namespace Vista
     {
         public static void DatosEmpleado(int Documento, string contraseña)
         {
-            Trabajores.IngresoEmpleados(Documento, contraseña);
+            Empleados.IngresoEmpleados(Documento, contraseña);
         }
         public static void AgregarUnEmpleado (string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int Permiso, int categoria )
         {
-            Trabajores.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, Permiso, categoria);
+            Empleados.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, Permiso, categoria);
         }
         public static Dictionary<string, int> ObtenerCategoriasProcesadas()
         {

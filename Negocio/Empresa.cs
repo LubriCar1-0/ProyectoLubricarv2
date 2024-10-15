@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using static Negocio.Empresa;
 
+
 namespace Negocio
 {
     public class Empresa: Conectar
@@ -44,12 +45,21 @@ namespace Negocio
                 if (!EMPEncontrado)
                 {
                     Conectar.AgregarEmpresa(RazonSocial, ClaveIdent, Domicilio, CondicionIVA, PuntodVenta);
+                    string detalle = "Carga de datos de la empresa";
+                    AgregarBitacora(Empleados.IdTrabajador, Empleados.NombreTrabajador, detalle);
                     return;
                     throw new Exception("Empresa cargada con exito");
                     // agregar un registro a la bitacora de que se agrega una empresa
 
                 }
 
+            }
+
+
+            public void TraerDatosEmpleados()
+            {
+                int trabajadorID = Empleados.IdTrabajador;
+                string Nombredeltrabajador = Empleados.NombreTrabajador;
             }
         }
         

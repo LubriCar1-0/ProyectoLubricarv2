@@ -14,7 +14,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -66,6 +66,40 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
+        }
+        public int TraeId(int documento)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "BuscaIdEmp";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@documento", documento);
+            int id = Convert.ToInt32(comando.ExecuteScalar());
+            comando.Parameters.Clear();
+            desconectar();
+            return id;
+            /* create procedure BuscaIdEmp(
+               @documento int)
+               as begin 
+               select idTrabajador from Trabajador where documentoTR=@documento;
+               end*/
+        }
+        public string BuscarEmp(int Idtrabajador)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "BuscarEmp";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idTrabajador", Idtrabajador);
+            string Usuario = Convert.ToString(comando.ExecuteScalar());
+            comando.Parameters.Clear();
+            desconectar();
+            return Usuario;
+            /*  create procedure BuscarEmp(
+                @idtrabajador int)
+                as begin 
+                select NomTR from Trabajador where idTrabajador=@idtrabajador;
+                end*/
         }
         #endregion
         #region Clientes/Vehiculos
@@ -173,13 +207,43 @@ namespace Datos
             */
 
         }
-    }
+
+        public static void AgregarBitacora(int IdTrabajador, string Trabajador, string detalle)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "AgregarBitacora";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idTrabajador", IdTrabajador);
+            comando.Parameters.AddWithValue("@Trabajador", Trabajador);
+            comando.Parameters.AddWithValue("@Detalle", detalle);
+            comando.Parameters.AddWithValue("@Fecha", DateTime.Now.Date);
+            comando.Parameters.AddWithValue("@Time", DateTime.Now.TimeOfDay);
+            comando.ExecuteNonQuery();  
+            comando.Parameters.Clear();
+            desconectar();
+           /*create procedure AgregarBitacora(
+           @idTrabajador int,
+           @Trabajador nvarchar(255),
+           @Detalle nvarchar(255),
+           @Fecha Date,
+           @Time time)
+           as begin
+           insert into Bitacora(idTrabajador, Trabajador, Detalle, Fecha, Hora) values(@idTrabajador, @Trabajador, @Detalle, @Fecha, @Time)
+           end*/
+        }
+
+
+
 
         #endregion
+    }
 
 
 
 
 
-    
+
+
+
 }
