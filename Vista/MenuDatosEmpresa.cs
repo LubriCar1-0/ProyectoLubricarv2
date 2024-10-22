@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Negocio.Empresa.DatosEmpresa;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Vista
@@ -16,13 +18,19 @@ namespace Vista
         public MenuDatosEmpresa()
         {
             InitializeComponent();
-            
+            cargarempresas();
             var datos = new List<string> { "Responsable Inscripto","Responsable No Inscripto","Exento", "Monotributista","No Alcanzado" };          
             CbxCondicionIva.Items.Clear();//Borra los valores del combo box
             CbxCondicionIva.Items.AddRange(datos.ToArray());//Los carga
         }
+        
+        private void cargarempresas()
+        {
+            DataTable empresas = Empresa.DatosEmpresa.EmpresaTB.ObtenerEmpresa();
 
 
+            GridEmpresa.DataSource = empresas;
+        }
         private void BtnConfirmarEmpresa_Click(object sender, EventArgs e)
         {
             try
@@ -31,7 +39,7 @@ namespace Vista
                 {
                     // Guarda el valor seleccionado en una variable
                     string perfilSeleccionado = CbxCondicionIva.SelectedItem.ToString();
-                    Validaciones.AgregarEmpresa(TxtNombreEmpresa.Text, TxtCuilEmpresa.Text, TxtDomicilio.Text, perfilSeleccionado, TxtPuntoDeVenta.Text);
+                    CargaEmpresa.AgregarUnaEmpresa(TxtNombreEmpresa.Text, TxtCuilEmpresa.Text, TxtDomicilio.Text, perfilSeleccionado, TxtPuntoDeVenta.Text);
                 }
                 else
                 {
@@ -49,26 +57,5 @@ namespace Vista
         {
 
         }
-        
-
-        //private void CbxCondicionIva_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    List<string> perfilesIva = new List<string>
-        //    {
-        //        "Responsable Inscripto",
-        //        "Responsable No Inscripto",
-        //        "Exento",
-        //        "Monotributista",
-        //        "No Alcanzado"
-        //    };
-        //    // Limpiar el ComboBox (si es necesario)
-        //    CbxCondicionIva.Items.Clear();
-
-        //    // Cargar los perfiles en el ComboBox
-        //    CbxCondicionIva.Items.AddRange(perfilesIva.ToArray());
-
-        //    // Seleccionar un perfil por defecto (opcional)
-        //    CbxCondicionIva.SelectedIndex = 0; // Selecciona "Responsable Inscripto" por defecto
-        //}
     }
 }

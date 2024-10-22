@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Negocio.Cliente;
+using static Negocio.Empresa;
 
 
 
@@ -49,7 +50,7 @@ namespace Vista
     {
         public static void AgregarUnaEmpresa(string RazonSocial, string ClaveIdent, string Domicilio, string CondicionIVA, string PuntodVenta)
         {
-            Empresa.AgregarEmpresa(RazonSocial, ClaveIdent, Domicilio, CondicionIVA, PuntodVenta);
+            Empresa.DatosEmpresa.CargaDeEmpresa(RazonSocial, ClaveIdent, Domicilio, CondicionIVA, PuntodVenta);
         }
 
 

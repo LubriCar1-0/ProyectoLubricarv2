@@ -35,6 +35,8 @@
             this.TxtCuilEmpresa = new System.Windows.Forms.TextBox();
             this.TxtDomicilio = new System.Windows.Forms.TextBox();
             this.TxtPuntoDeVenta = new System.Windows.Forms.TextBox();
+            this.GridEmpresa = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.GridEmpresa)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnEditarEmpresa
@@ -42,7 +44,7 @@
             this.BtnEditarEmpresa.BackgroundImage = global::Vista.Properties.Resources.BtnEditar;
             this.BtnEditarEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnEditarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditarEmpresa.Location = new System.Drawing.Point(249, 424);
+            this.BtnEditarEmpresa.Location = new System.Drawing.Point(742, 428);
             this.BtnEditarEmpresa.Name = "BtnEditarEmpresa";
             this.BtnEditarEmpresa.Size = new System.Drawing.Size(95, 43);
             this.BtnEditarEmpresa.TabIndex = 8;
@@ -54,7 +56,7 @@
             this.BtnConfirmarEmpresa.BackgroundImage = global::Vista.Properties.Resources.BtnConfirmar;
             this.BtnConfirmarEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnConfirmarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfirmarEmpresa.Location = new System.Drawing.Point(453, 424);
+            this.BtnConfirmarEmpresa.Location = new System.Drawing.Point(742, 501);
             this.BtnConfirmarEmpresa.Name = "BtnConfirmarEmpresa";
             this.BtnConfirmarEmpresa.Size = new System.Drawing.Size(164, 43);
             this.BtnConfirmarEmpresa.TabIndex = 9;
@@ -69,7 +71,6 @@
             this.CbxCondicionIva.Name = "CbxCondicionIva";
             this.CbxCondicionIva.Size = new System.Drawing.Size(157, 28);
             this.CbxCondicionIva.TabIndex = 10;
-          
             // 
             // TxtNombreEmpresa
             // 
@@ -103,12 +104,21 @@
             this.TxtPuntoDeVenta.Size = new System.Drawing.Size(201, 26);
             this.TxtPuntoDeVenta.TabIndex = 14;
             // 
+            // GridEmpresa
+            // 
+            this.GridEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridEmpresa.Location = new System.Drawing.Point(204, 389);
+            this.GridEmpresa.Name = "GridEmpresa";
+            this.GridEmpresa.Size = new System.Drawing.Size(508, 223);
+            this.GridEmpresa.TabIndex = 15;
+            // 
             // MenuDatosEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaDatosEmpresa;
             this.ClientSize = new System.Drawing.Size(1145, 644);
+            this.Controls.Add(this.GridEmpresa);
             this.Controls.Add(this.TxtPuntoDeVenta);
             this.Controls.Add(this.TxtDomicilio);
             this.Controls.Add(this.TxtCuilEmpresa);
@@ -118,6 +128,7 @@
             this.Controls.Add(this.BtnEditarEmpresa);
             this.Name = "MenuDatosEmpresa";
             this.Text = "MenuDatosEmpresa";
+            ((System.ComponentModel.ISupportInitialize)(this.GridEmpresa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,5 +143,6 @@
         private System.Windows.Forms.TextBox TxtCuilEmpresa;
         private System.Windows.Forms.TextBox TxtDomicilio;
         private System.Windows.Forms.TextBox TxtPuntoDeVenta;
+        private System.Windows.Forms.DataGridView GridEmpresa;
     }
 }

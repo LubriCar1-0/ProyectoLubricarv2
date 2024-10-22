@@ -147,6 +147,28 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
+            /*CREATE PROCEDURE TraerTablaEmpresa
+              AS BEGIN
+              SELECT * FROM Empresa;
+              END
+            */
+        }
+        public static DataTable TraerEmpresa()
+        {
+            DataTable dt = new DataTable();
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaEmpresa";
+            comando.CommandType = CommandType.StoredProcedure;
+            SqlDataReader leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+            /*CREATE PROCEDURE TraerTablaEmpresa
+              AS BEGIN
+              SELECT * FROM Empresa;
+              END
+            */
         }
         public static void AgregarEmpresa(string RazonSocial, string ClaveIdent, string Domicilio, string CondicionIVA, string PuntodVenta)
         {
@@ -207,7 +229,7 @@ namespace Datos
             */
 
         }
-
+        
         public static void AgregarBitacora(int IdTrabajador, string Trabajador, string detalle)
         {
             conectar();

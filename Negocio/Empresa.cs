@@ -11,21 +11,21 @@ using static Negocio.Empresa;
 
 namespace Negocio
 {
-    public class Empresa: Conectar
+    public class Empresa : Conectar
     {
         #region Variables
-        public int idEmpresa {  get; set; }
-        public string razonSocialEMP {  get; set; }
-        public int claveIdenEMP {  get; set; }
-        public string domicilioEMP {  get; set; }
-        public string condicionIvaEMP {  get; set; }
-        public string ptoVentaEMP {  get; set; }
+        public int idEmpresa { get; set; }
+        public string razonSocialEMP { get; set; }
+        public int claveIdenEMP { get; set; }
+        public string domicilioEMP { get; set; }
+        public string condicionIvaEMP { get; set; }
+        public string ptoVentaEMP { get; set; }
         #endregion
 
         public class DatosEmpresa : Empresa
         {
             public static void CargaDeEmpresa(string RazonSocial, string ClaveIdent, string Domicilio, string CondicionIVA, string PuntodVenta)
-            {               
+            {
                 Conectar capaDatos = new Conectar();
                 DataTable TablaEmpleados = capaDatos.BuscarEmpresa();
                 bool EMPEncontrado = false;
@@ -34,8 +34,9 @@ namespace Negocio
                 {
                     string RzSocEnBD = Fila["razonSocialEMP"].ToString();
                     string ClaveIdentEnBD = Fila["claveIdenEMP"].ToString();
-                    
-                    if (RazonSocial == RzSocEnBD && ClaveIdentEnBD == ClaveIdent)
+
+
+                    if (RazonSocial.Trim().ToUpper() == RzSocEnBD.Trim().ToUpper() && ClaveIdentEnBD.Trim() == ClaveIdent.Trim())
                     {
                         EMPEncontrado = true;
                         throw new Exception("Ya existe la empresa");
@@ -54,22 +55,29 @@ namespace Negocio
                 }
 
             }
-
-
-            public void TraerDatosEmpleados()
+            public class EmpresaTB : Conectar
             {
-                int trabajadorID = Empleados.IdTrabajador;
-                string Nombredeltrabajador = Empleados.NombreTrabajador;
+                public static DataTable ObtenerEmpresa()
+                {
+                    return TraerEmpresa();
+                }
+
+
+                public void TraerDatosEmpleados()
+                {
+                    int trabajadorID = Empleados.IdTrabajador;
+                    string Nombredeltrabajador = Empleados.NombreTrabajador;
+                }
             }
+
         }
-        
+
+
+
+
+
+
+
+
     }
-
-    
-
-
-
-
-
-
 }
