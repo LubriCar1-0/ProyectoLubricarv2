@@ -1,4 +1,5 @@
 ﻿using Datos;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -42,12 +43,13 @@ namespace Negocio
 
 
                 }
-                if (!clienteencontrado)
-                {
+            }
+            if (!clienteencontrado)
+            {
                     Conectar.AgregarCliente(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
                     string detalle = "Carga de cliente al sistema";
                     AgregarBitacora(Empleados.IdTrabajador, Empleados.NombreTrabajador, detalle);
-                }
+            }
             } 
         }
         public class cliente : Empleados
@@ -56,4 +58,4 @@ namespace Negocio
         }
     }
     
-}
+
