@@ -38,6 +38,7 @@
             this.BtnEditarMeEmpleado = new System.Windows.Forms.Button();
             this.BtnEliminarMeEmpleado = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMenuEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,6 +135,18 @@
             this.txtContraseña.Size = new System.Drawing.Size(243, 22);
             this.txtContraseña.TabIndex = 11;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(202, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 57);
+            this.button1.TabIndex = 13;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // MenuEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +154,7 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuEmpleados1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1284, 722);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.BtnEliminarMeEmpleado);
             this.Controls.Add(this.BtnEditarMeEmpleado);
@@ -171,5 +185,6 @@
         private System.Windows.Forms.Button BtnEditarMeEmpleado;
         private System.Windows.Forms.Button BtnEliminarMeEmpleado;
         private System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.Button button1;
     }
 }

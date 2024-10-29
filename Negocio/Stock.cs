@@ -17,5 +17,15 @@ namespace Negocio
         public float precio { get; set; }
         public int cantidadEnStock {  get; set; }
 
+
+
+
+        public static void InsertarProductos()
+        {
+
+
+
+        }
     }
+
 }

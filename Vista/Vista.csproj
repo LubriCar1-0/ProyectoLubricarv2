@@ -574,5 +574,20 @@
   <ItemGroup>
     <None Include="Resources\BtnAgregar2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuControlDeStock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantMenuStock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuStock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuStock2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuStock3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
