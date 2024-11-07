@@ -28,18 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.BtnEmpresa = new System.Windows.Forms.Button();
             this.BtnEmpleados = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(174, 115);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 54);
+            this.button1.TabIndex = 14;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // BtnEmpresa
             // 
             this.BtnEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEmpresa.Image = global::Vista.Properties.Resources.BtnEmpresa1;
-            this.BtnEmpresa.Location = new System.Drawing.Point(577, 369);
+            this.BtnEmpresa.Location = new System.Drawing.Point(623, 386);
             this.BtnEmpresa.Name = "BtnEmpresa";
             this.BtnEmpresa.Size = new System.Drawing.Size(364, 137);
             this.BtnEmpresa.TabIndex = 2;
@@ -51,41 +62,31 @@
             this.BtnEmpleados.FlatAppearance.BorderSize = 0;
             this.BtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEmpleados.Image = global::Vista.Properties.Resources.BtnEmpleados1;
-            this.BtnEmpleados.Location = new System.Drawing.Point(580, 193);
+            this.BtnEmpleados.Location = new System.Drawing.Point(626, 210);
             this.BtnEmpleados.Name = "BtnEmpleados";
             this.BtnEmpleados.Size = new System.Drawing.Size(361, 139);
             this.BtnEmpleados.TabIndex = 1;
             this.BtnEmpleados.UseVisualStyleBackColor = true;
             this.BtnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Vista.Properties.Resources.MenuConfiguracion;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1197, 672);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // MenuConfiguracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 671);
+            this.BackgroundImage = global::Vista.Properties.Resources.PantMenuConfiguracion;
+            this.ClientSize = new System.Drawing.Size(1284, 724);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnEmpresa);
             this.Controls.Add(this.BtnEmpleados);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "MenuConfiguracion";
             this.Text = "MenuConfiguracion";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BtnEmpleados;
         private System.Windows.Forms.Button BtnEmpresa;
+        private System.Windows.Forms.Button button1;
     }
 }

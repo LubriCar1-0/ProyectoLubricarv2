@@ -79,9 +79,9 @@
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(191, 105);
+            this.BtnVolver.Location = new System.Drawing.Point(204, 114);
             this.BtnVolver.Name = "BtnVolver";
-            this.BtnVolver.Size = new System.Drawing.Size(64, 40);
+            this.BtnVolver.Size = new System.Drawing.Size(64, 47);
             this.BtnVolver.TabIndex = 3;
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;

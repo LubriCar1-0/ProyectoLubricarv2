@@ -73,9 +73,9 @@
             // DgvTablaClientes
             // 
             this.DgvTablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvTablaClientes.Location = new System.Drawing.Point(202, 481);
+            this.DgvTablaClientes.Location = new System.Drawing.Point(213, 481);
             this.DgvTablaClientes.Name = "DgvTablaClientes";
-            this.DgvTablaClientes.Size = new System.Drawing.Size(788, 95);
+            this.DgvTablaClientes.Size = new System.Drawing.Size(732, 95);
             this.DgvTablaClientes.TabIndex = 4;
             // 
             // BtnEliminarMeClientes
@@ -192,7 +192,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.MenuClientes1;
-            this.ClientSize = new System.Drawing.Size(1182, 656);
+            this.ClientSize = new System.Drawing.Size(1159, 651);
             this.Controls.Add(this.CMBIVA);
             this.Controls.Add(this.TxtTelefonoCliente);
             this.Controls.Add(this.TxtCalleCliente);

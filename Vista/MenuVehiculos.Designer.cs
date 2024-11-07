@@ -150,7 +150,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVehiculos;
-            this.ClientSize = new System.Drawing.Size(1173, 646);
+            this.ClientSize = new System.Drawing.Size(1165, 656);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.TxtKilometrajeVehiculos);
             this.Controls.Add(this.TxtAñoVehiculos);

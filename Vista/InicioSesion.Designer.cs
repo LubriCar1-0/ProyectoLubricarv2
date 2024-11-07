@@ -37,7 +37,7 @@
             // TbxDocumento
             // 
             this.TbxDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbxDocumento.Location = new System.Drawing.Point(304, 144);
+            this.TbxDocumento.Location = new System.Drawing.Point(313, 187);
             this.TbxDocumento.Name = "TbxDocumento";
             this.TbxDocumento.Size = new System.Drawing.Size(156, 26);
             this.TbxDocumento.TabIndex = 0;
@@ -45,14 +45,14 @@
             // TbxContra
             // 
             this.TbxContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbxContra.Location = new System.Drawing.Point(304, 220);
+            this.TbxContra.Location = new System.Drawing.Point(313, 289);
             this.TbxContra.Name = "TbxContra";
             this.TbxContra.Size = new System.Drawing.Size(156, 26);
             this.TbxContra.TabIndex = 1;
             // 
             // BtnIngresar
             // 
-            this.BtnIngresar.Location = new System.Drawing.Point(304, 274);
+            this.BtnIngresar.Location = new System.Drawing.Point(313, 343);
             this.BtnIngresar.Name = "BtnIngresar";
             this.BtnIngresar.Size = new System.Drawing.Size(75, 23);
             this.BtnIngresar.TabIndex = 2;
@@ -62,7 +62,7 @@
             // 
             // BtnCerrar
             // 
-            this.BtnCerrar.Location = new System.Drawing.Point(385, 274);
+            this.BtnCerrar.Location = new System.Drawing.Point(394, 343);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(75, 23);
             this.BtnCerrar.TabIndex = 3;
@@ -75,7 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaInicioSesion;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1121, 450);
+            this.ClientSize = new System.Drawing.Size(1147, 581);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.BtnIngresar);
             this.Controls.Add(this.TbxContra);

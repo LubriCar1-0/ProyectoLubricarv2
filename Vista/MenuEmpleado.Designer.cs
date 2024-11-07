@@ -109,7 +109,7 @@
             this.BtnEditarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnEditar1;
             this.BtnEditarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnEditarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditarMeEmpleado.Location = new System.Drawing.Point(610, 657);
+            this.BtnEditarMeEmpleado.Location = new System.Drawing.Point(644, 657);
             this.BtnEditarMeEmpleado.Name = "BtnEditarMeEmpleado";
             this.BtnEditarMeEmpleado.Size = new System.Drawing.Size(95, 43);
             this.BtnEditarMeEmpleado.TabIndex = 9;

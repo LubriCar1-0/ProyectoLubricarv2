@@ -589,5 +589,14 @@
   <ItemGroup>
     <None Include="Resources\PantallaMenuStock3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantMenuConfig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantMenuConfig1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantMenuConfiguracion.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
