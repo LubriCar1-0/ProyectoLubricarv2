@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using static Negocio.Cliente;
 using static Negocio.Empresa;
+using static Negocio.Vehiculo;
 
 
 
 namespace Vista
 {
+    #region empleados
     public class Validaciones: Empleados
     {
         public static void DatosEmpleado(int Documento, string contraseña)
@@ -37,8 +39,11 @@ namespace Vista
             }
 
             return categorias;
-        }              
+        }
     }
+    #endregion
+
+    #region cliente
     public class Validar : Cliente
     {
         public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
@@ -46,6 +51,31 @@ namespace Vista
             Personas.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
         }
     }
+
+
+    #endregion
+
+    #region vehiculo
+    public class ValidarClientes : Vehiculo
+    {
+        public static Dictionary<int, string> ObtenerClientesProcesados()
+        {
+            List<Vehiculo> listaClientes = Vehiculo.ObtenerClientes();
+            Dictionary<int, string> clientesProcesados = new Dictionary<int, string>();
+
+            foreach (var cliente in listaClientes)
+            {
+                clientesProcesados.Add(cliente.IdCliente, $"{cliente.NombreCliente} {cliente.ApellidoCliente}");
+            }
+
+            return clientesProcesados;
+        }
+    }
+
+
+    #endregion
+
+    #region empresa
     public class CargaEmpresa : Empresa
     {
         public static void AgregarUnaEmpresa(string RazonSocial, string ClaveIdent, string Domicilio, string CondicionIVA, string PuntodVenta)
@@ -55,5 +85,6 @@ namespace Vista
 
 
     }
+    #endregion
 
 }

@@ -92,6 +92,7 @@
             this.CbxClienteMeVehiculos.Name = "CbxClienteMeVehiculos";
             this.CbxClienteMeVehiculos.Size = new System.Drawing.Size(234, 28);
             this.CbxClienteMeVehiculos.TabIndex = 8;
+            this.CbxClienteMeVehiculos.SelectedIndexChanged += new System.EventHandler(this.CbxClienteMeVehiculos_SelectedIndexChanged);
             // 
             // TxtMarcaVehiculos
             // 
