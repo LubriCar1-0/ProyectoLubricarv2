@@ -48,7 +48,7 @@ namespace Vista
                         throw new Exception("No selecciono una categoria");
                 }
 
-                // Validar y convertir el DNI y el celular
+                
                 if (!int.TryParse(TxtDniEmpleado.Text.Trim(), out int dniEmpleado))
                 {
                     throw new Exception("El DNI debe ser un número válido.");
@@ -59,7 +59,7 @@ namespace Vista
                     throw new Exception("El número de celular debe ser un número válido.");
                 }
 
-                // Llamar a la capa de validaciones con las variables de permiso y categoría
+                
                 Validaciones.AgregarUnEmpleado(TxtNombreEmpleado.Text.Trim(),TxtApellidoEmpleado.Text.Trim(), dniEmpleado,txtContraseña.Text.Trim(),celularEmpleado, permiso, categoriaSeleccionada);
                 MessageBox.Show("El empleado ha sido cargado con exito");
             }
@@ -91,6 +91,16 @@ namespace Vista
             {
                 CmbCategoriaEmple.Items.Add(categoria.Key); 
             }
+        }
+
+        private void TxtNombreEmpleado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuEmpleado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

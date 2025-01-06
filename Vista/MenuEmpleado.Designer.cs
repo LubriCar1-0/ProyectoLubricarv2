@@ -49,6 +49,7 @@
             this.TxtNombreEmpleado.Name = "TxtNombreEmpleado";
             this.TxtNombreEmpleado.Size = new System.Drawing.Size(243, 22);
             this.TxtNombreEmpleado.TabIndex = 0;
+            this.TxtNombreEmpleado.TextChanged += new System.EventHandler(this.TxtNombreEmpleado_TextChanged);
             // 
             // TxtApellidoEmpleado
             // 
@@ -87,7 +88,7 @@
             // DgvMenuEmpleado
             // 
             this.DgvMenuEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvMenuEmpleado.Location = new System.Drawing.Point(315, 473);
+            this.DgvMenuEmpleado.Location = new System.Drawing.Point(315, 420);
             this.DgvMenuEmpleado.Name = "DgvMenuEmpleado";
             this.DgvMenuEmpleado.Size = new System.Drawing.Size(657, 150);
             this.DgvMenuEmpleado.TabIndex = 6;
@@ -97,7 +98,7 @@
             this.BtnAgregarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(315, 657);
+            this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(315, 603);
             this.BtnAgregarMeEmpleado.Name = "BtnAgregarMeEmpleado";
             this.BtnAgregarMeEmpleado.Size = new System.Drawing.Size(129, 43);
             this.BtnAgregarMeEmpleado.TabIndex = 8;
@@ -109,7 +110,7 @@
             this.BtnEditarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnEditar1;
             this.BtnEditarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnEditarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditarMeEmpleado.Location = new System.Drawing.Point(644, 657);
+            this.BtnEditarMeEmpleado.Location = new System.Drawing.Point(614, 603);
             this.BtnEditarMeEmpleado.Name = "BtnEditarMeEmpleado";
             this.BtnEditarMeEmpleado.Size = new System.Drawing.Size(95, 43);
             this.BtnEditarMeEmpleado.TabIndex = 9;
@@ -120,7 +121,7 @@
             this.BtnEliminarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnEliminar;
             this.BtnEliminarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnEliminarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarMeEmpleado.Location = new System.Drawing.Point(843, 657);
+            this.BtnEliminarMeEmpleado.Location = new System.Drawing.Point(843, 603);
             this.BtnEliminarMeEmpleado.Name = "BtnEliminarMeEmpleado";
             this.BtnEliminarMeEmpleado.Size = new System.Drawing.Size(168, 43);
             this.BtnEliminarMeEmpleado.TabIndex = 10;
@@ -141,7 +142,7 @@
             this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(202, 117);
+            this.button1.Location = new System.Drawing.Point(179, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 57);
             this.button1.TabIndex = 13;
@@ -167,6 +168,7 @@
             this.Controls.Add(this.TxtNombreEmpleado);
             this.DoubleBuffered = true;
             this.Name = "MenuEmpleado";
+            this.Load += new System.EventHandler(this.MenuEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMenuEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

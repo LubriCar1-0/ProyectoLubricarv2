@@ -25,6 +25,7 @@ namespace Datos
             conexion.Close();
         }
         #endregion
+
         #region Empleados
         public DataTable BuscarEmpleados()
         {
@@ -102,6 +103,7 @@ namespace Datos
                 end*/
         }
         #endregion
+
         #region Clientes/Vehiculos
         public DataTable BuscarClientes()
         {
@@ -135,7 +137,9 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
+
         #endregion
+
         #region Empresa
         public DataTable BuscarEmpresa()
         {
@@ -259,6 +263,7 @@ namespace Datos
 
 
         #endregion
+
     }
 
 

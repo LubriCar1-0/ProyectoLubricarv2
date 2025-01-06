@@ -52,6 +52,7 @@
             this.BtnAgregarMeVehiculos.Size = new System.Drawing.Size(127, 43);
             this.BtnAgregarMeVehiculos.TabIndex = 4;
             this.BtnAgregarMeVehiculos.UseVisualStyleBackColor = true;
+            this.BtnAgregarMeVehiculos.Click += new System.EventHandler(this.BtnAgregarMeVehiculos_Click);
             // 
             // BtnEditarMeVehiculos
             // 
@@ -99,6 +100,7 @@
             this.TxtMarcaVehiculos.Name = "TxtMarcaVehiculos";
             this.TxtMarcaVehiculos.Size = new System.Drawing.Size(234, 26);
             this.TxtMarcaVehiculos.TabIndex = 9;
+            this.TxtMarcaVehiculos.TextChanged += new System.EventHandler(this.TxtMarcaVehiculos_TextChanged);
             // 
             // TxtModeloVehiculos
             // 

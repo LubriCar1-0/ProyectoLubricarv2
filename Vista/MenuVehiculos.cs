@@ -16,5 +16,25 @@ namespace Vista
         {
             InitializeComponent();
         }
+
+        private void TxtMarcaVehiculos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAgregarMeVehiculos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                Validaciones.AgregarUnEmpleado(TxtNombreEmpleado.Text.Trim(), TxtApellidoEmpleado.Text.Trim(), dniEmpleado, txtContraseña.Text.Trim(), celularEmpleado, permiso, categoriaSeleccionada);
+                MessageBox.Show("El empleado ha sido cargado con exito");
+            }
+            catch 
+            {
+                
+            }
+        }
     }
 }
