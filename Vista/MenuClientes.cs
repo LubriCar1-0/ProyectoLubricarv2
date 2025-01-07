@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,15 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Negocio.Cliente;
 using static Vista.Validaciones;
 
 namespace Vista
 {
     public partial class MenuClientes : Form
     {
+        
         public MenuClientes()
         {
             InitializeComponent();
+
+        }
+        private void ConfigurarDataGridView()
+        {
+            DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvTablaClientes.ReadOnly = true; 
         }
 
         private void BtnAgregarMeClientes_Click(object sender, EventArgs e)
@@ -37,6 +46,18 @@ namespace Vista
 
             Validar.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), CuilCliente, TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), NumeracioncasaCliente, CMBIVA.SelectedItem.ToString(), TelefonoCliente);
             MessageBox.Show("Se registro correctamente");
+
+            DataTable tablaClientes = Personas.ObtenerClientes();
+
+
+            if (tablaClientes != null && tablaClientes.Rows.Count > 0)
+            {
+                DgvTablaClientes.DataSource = tablaClientes;
+                ConfigurarDataGridView();
+            }
+             
+
+
         }
     }
 }

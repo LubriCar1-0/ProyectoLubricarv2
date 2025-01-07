@@ -25,6 +25,12 @@ namespace Negocio
             public int telefonoCL { get; set; }
 
         }
+        public static DataTable ObtenerClientes()
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable TablaClientes = capaDatos.BuscarClientes();
+            return TablaClientes;
+        }
         public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
             Conectar capaDatos = new Conectar();
