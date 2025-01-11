@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,28 @@ namespace Negocio
 
             return clientes;
         }
+        public static void CargaDeVehiculos(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable TablaClientes = capaDatos.BuscarClientes();
+            bool clienteEncontrado = false; 
+            foreach (DataRow fila in TablaClientes.Rows)
+            {
+                string idBD = fila["idCliente"].ToString();
+                int idInt = Convert.ToInt32(idBD);
+                if (idInt == id) {
+                    clienteEncontrado = true;
+                    Conectar.AgregarVehiculo(id, Modelo, Marca, año, Patente, Kilometraje);
+                    //agregar la bitacora 
+                    
+                
+                }
+
+
+
+            }
+        }
+
 
     } 
 }

@@ -101,6 +101,7 @@ namespace Negocio
                 }
                 if (!usuarioEncontrado) 
                 {
+
                 Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, permiso, categoria);
                     string detalle = "Cargar un empleado";
                     AgregarBitacora(IdTrabajador, NombreTrabajador, detalle);

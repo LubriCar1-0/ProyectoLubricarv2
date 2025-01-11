@@ -70,6 +70,12 @@ namespace Vista
 
             return clientesProcesados;
         }
+
+        public static void AgregarUnVehiculo(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        {
+            Vehiculo.CargaDeVehiculos(id, Modelo, Marca, año, Patente, Kilometraje);
+        }
+
     }
 
 

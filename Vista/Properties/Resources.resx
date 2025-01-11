@@ -355,6 +355,9 @@
   <data name="MenuConfiguracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuConfiguracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PantallaMenuVehiculos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuVehiculos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BtnStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -378,6 +381,9 @@
   </data>
   <data name="PantallaMenuStock3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaMenuStock3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PantMenuConfiguracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantMenuConfiguracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnAgregarProducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnAgregarProducto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -418,7 +424,7 @@
   <data name="BtnVerTurno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnVerTurno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantMenuConfiguracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantMenuConfiguracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PantallaMenuVehiculos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuVehiculos2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

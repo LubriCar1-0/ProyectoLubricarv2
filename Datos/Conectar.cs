@@ -137,6 +137,34 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
+        public static void AgregarVehiculo(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "InsertarVehiculo";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idCliente", id);
+            comando.Parameters.AddWithValue("@modeloVH", Modelo);
+            comando.Parameters.AddWithValue("@marcaVH", Marca);
+            comando.Parameters.AddWithValue("@añoVH", año);
+            comando.Parameters.AddWithValue("@patenteVH", Patente);
+            comando.Parameters.AddWithValue("@kilometrajeVH",Kilometraje);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            /* 
+            create procedure InsertarVehiculo (
+            @idCliente numeric(18,0),
+            @modeloVH nvarchar(255),
+            @marcaVH nvarchar(255),
+            @añoVH float,
+            @patenteVH nvarchar(255),
+            @KilometrajeVH nvarchar(255))
+            as begin
+            insert into Vehiculo (idCliente, modeloVH, marcaVH, añoVH, patenteVH, kilometrajeVH) values (@idCliente, @modeloVH, @marcaVH, @añoVH, @patenteVH, @KilometrajeVH)
+            end
+             */
+        }
 
         #endregion
 

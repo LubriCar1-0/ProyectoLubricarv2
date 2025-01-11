@@ -47,12 +47,11 @@ namespace Vista
                         return;
                     }
 
-                    // Aquí asocia el vehículo con el cliente seleccionado
-                    // Llama al método necesario para guardar en la base de datos
-                    // Validaciones.AgregarUnVehiculo(TxtMarcaVehiculos.Text.Trim(), TxtPatenteVehiculo.Text.Trim(), TxtModeloVehiculos.Text.Trim(), TxtAñoVehiculos.Text.Trim(), idCliente, TxtKilometrajeVehiculos.Text.Trim());
-                
-                
-                
+                ValidarClientes.AgregarUnVehiculo(idCliente, TxtModeloVehiculos.Text.Trim(), TxtMarcaVehiculos.Text.Trim(), Convert.ToInt32(TxtAñoVehiculos.Text.Trim()), TxtPatenteVehiculo.Text.Trim(), Convert.ToInt32(TxtKilometrajeVehiculos.Text.Trim()));
+
+
+
+
                 MessageBox.Show("El vehiculo ha sido cargado con exito");
             }
             catch 
@@ -66,6 +65,7 @@ namespace Vista
             if (CbxClienteMeVehiculos.SelectedItem is KeyValuePair<int, string> clienteSeleccionado)
             {
                 idCliente = clienteSeleccionado.Key;
+              
             }
         }
 

@@ -598,5 +598,11 @@
   <ItemGroup>
     <None Include="Resources\PantMenuConfiguracion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuVehiculos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuVehiculos2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
