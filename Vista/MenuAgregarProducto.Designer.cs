@@ -40,6 +40,7 @@
             this.txtPrecioVent = new System.Windows.Forms.TextBox();
             this.txtLitros = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtcodigoProducto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TxtNombreProducto
@@ -93,6 +94,7 @@
             this.btnAgregar.Size = new System.Drawing.Size(134, 43);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // BtnCancelar
             // 
@@ -149,12 +151,21 @@
             this.button1.TabIndex = 12;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // txtcodigoProducto
+            // 
+            this.txtcodigoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcodigoProducto.Location = new System.Drawing.Point(675, 235);
+            this.txtcodigoProducto.Name = "txtcodigoProducto";
+            this.txtcodigoProducto.Size = new System.Drawing.Size(270, 26);
+            this.txtcodigoProducto.TabIndex = 13;
+            // 
             // MenuAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuStock3;
             this.ClientSize = new System.Drawing.Size(1285, 723);
+            this.Controls.Add(this.txtcodigoProducto);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtLitros);
             this.Controls.Add(this.txtPrecioVent);
@@ -169,6 +180,7 @@
             this.Controls.Add(this.TxtNombreProducto);
             this.Name = "MenuAgregarProducto";
             this.Text = "MenuAgregarProducto";
+            this.Load += new System.EventHandler(this.MenuAgregarProducto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +200,6 @@
         private System.Windows.Forms.TextBox txtPrecioVent;
         private System.Windows.Forms.TextBox txtLitros;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtcodigoProducto;
     }
 }

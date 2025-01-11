@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using static Negocio.Cliente;
 using static Negocio.Empresa;
 using static Negocio.Vehiculo;
+using static Negocio.Producto;
 
 
 
@@ -93,4 +94,11 @@ namespace Vista
     }
     #endregion
 
+    public class ValidarProducto : Producto
+    {
+        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, int PrecioLista, int PrecioVenta, int LitrosDisponibles)
+        {
+            Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto, DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
+        }
+    }
 }

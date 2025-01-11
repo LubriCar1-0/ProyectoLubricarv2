@@ -229,7 +229,7 @@ namespace Datos
         }
 
 
-        public static void AgregarProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, string CodigoProducto, string PrecioListaProducto, string PrecioVentaProducto, string DescripcionProducto)
+        public static void AgregarProductos(string NombreProducto, string MarcaProducto, string CategoriaProducto, string CodigoProducto, string PrecioListaProducto, string PrecioVentaProducto, string DescripcionProducto)
         {
             conectar();
             comando.Connection = conexion;
@@ -291,6 +291,25 @@ namespace Datos
 
 
         #endregion
+        public static void AgregarProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, int PrecioLista, int PrecioVenta, int LitrosDisponibles)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "AgregarProduc";
+            comando.CommandType= CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Nomproducto", NombreProducto);
+            comando.Parameters.AddWithValue("@MarcaProduc", MarcaProducto);
+            comando.Parameters.AddWithValue("@CategoriaProduc", CategoriaProducto);
+            comando.Parameters.AddWithValue("@CodigoProduc", CodigoProducto);
+            comando.Parameters.AddWithValue("@DescripcionProduc", DescripcionProducto);
+            comando.Parameters.AddWithValue("@CantidadProduc", CantidadProducto);
+            comando.Parameters.AddWithValue("@PrecioLista", PrecioLista);
+            comando.Parameters.AddWithValue("@PrecioVenta", PrecioVenta);
+            comando.Parameters.AddWithValue("@LitrosDisponibles", LitrosDisponibles);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
 
     }
 
