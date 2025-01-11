@@ -16,5 +16,15 @@ namespace Vista
         {
             InitializeComponent();
         }
+        public static void LlamarMenuAgregarProducto()
+        {
+            MenuAgregarProducto PantallaAgregarProducto = new MenuAgregarProducto();
+            PantallaAgregarProducto.ShowDialog();
+        }
+
+        private void BtnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            LlamarMenuAgregarProducto();
+        }
     }
 }

@@ -110,6 +110,8 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "22"});
             this.cmbCategoria.Location = new System.Drawing.Point(200, 240);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(270, 21);

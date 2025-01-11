@@ -67,6 +67,7 @@
             this.BtnAgregarProducto.Size = new System.Drawing.Size(330, 124);
             this.BtnAgregarProducto.TabIndex = 1;
             this.BtnAgregarProducto.UseVisualStyleBackColor = true;
+            this.BtnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
             // 
             // PtbMenuStock
             // 
