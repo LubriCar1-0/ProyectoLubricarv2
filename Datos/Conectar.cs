@@ -230,38 +230,7 @@ namespace Datos
         }
 
 
-        public static void AgregarProductos(string NombreProducto, string MarcaProducto, string CategoriaProducto, string CodigoProducto, string PrecioListaProducto, string PrecioVentaProducto, string DescripcionProducto)
-        {
-            conectar();
-            comando.Connection = conexion;
-            comando.CommandText = "AgregarProducto";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombreproducto" , NombreProducto);
-            comando.Parameters.AddWithValue("@marcaproducto", MarcaProducto);
-            comando.Parameters.AddWithValue("@categoriaproducto", CategoriaProducto);
-            comando.Parameters.AddWithValue("@codigoproducto", CodigoProducto);
-            comando.Parameters.AddWithValue("@preciolistaproducto", PrecioListaProducto);
-            comando.Parameters.AddWithValue("@precioventaproducto", PrecioVentaProducto);
-            comando.Parameters.AddWithValue("@descripcionproducto", DescripcionProducto);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            desconectar();
-
-            /*
-            create proc AgregarProducto
-            @nombreproducto nvarchar (200),
-            @marcaproducto nvarchar(200),
-            @categoriaproducto nvarchar(200),
-            @codigoproducto int,
-            @preciolistaproducto float,
-            @precioventaproducto float,
-            @descrpcionproducto nvarchar(500)
-            as
-            insert into Producto values (@nombreproducto, @marcaproducto, @categoriaproducto, @codigoproducto, @preciolistaproducto, @precioventaproducto, @descripcionproducto)
-            go
-            */
-
-        }
+        
         
         public static void AgregarBitacora(int IdTrabajador, string Trabajador, string detalle)
         {
@@ -292,7 +261,7 @@ namespace Datos
 
 
         #endregion
-        public static void AgregarProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, int PrecioLista, int PrecioVenta, int LitrosDisponibles)
+        public static void AgregarProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, decimal PrecioLista, decimal PrecioVenta, decimal LitrosDisponibles)
         {
             conectar();
             comando.Connection = conexion;

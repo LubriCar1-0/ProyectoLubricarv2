@@ -23,10 +23,10 @@ namespace Vista
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             int cantidad = int.Parse(TxtCantidad.Text.Trim()); 
-            int precioLista = int.Parse(TxtPrecioList.Text.Trim()); 
-            int precioVenta = int.Parse(txtPrecioVent.Text.Trim());
+            decimal precioLista = decimal.Parse(TxtPrecioList.Text.Trim());
+            decimal precioVenta = decimal.Parse(txtPrecioVent.Text.Trim());
             int CodigoProducto = int.Parse(txtcodigoProducto.Text.Trim());
-            int LitrosDisponibles = int.Parse(txtLitros.Text.Trim());
+            decimal LitrosDisponibles = decimal.Parse(txtLitros.Text.Trim());
 
 
             ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), cmbCategoria.SelectedItem.ToString(), CodigoProducto, TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, LitrosDisponibles);
