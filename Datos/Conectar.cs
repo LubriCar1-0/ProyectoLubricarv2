@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Datos
 {
@@ -309,6 +310,32 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
+
+           /* create procedure AgregarProduc(
+            @Nomproducto varchar(60),
+            @CategoriaProduc varchar,
+            @CodigoProduc int,
+            @DescripcionProduc varchar(255),
+            @CantidadProduc int,
+            @PrecioLista Decimal,
+            @PrecioVenta Decimal,
+            @LitrosDisponibles decimal)
+            as begin
+            Insert into Producto(Nombre, Marca, Categoria, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles)
+            end*/
+
+           /*CREATE TABLE [dbo].[Producto](
+             [idProd] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+             [Nombre] [nvarchar](60) NOT NULL,
+             [Marca] [nvarchar](60) NULL,
+             [Categoria] [nvarchar](60) NULL,
+             [CodProd] [int] NOT NULL,
+             [Descripcion] [nvarchar](255) NULL,
+             [Cantidad] [int] NULL,
+             [Precio_lista] [decimal](10, 2) NULL,
+             [PrecioVenta] [decimal](10, 2) NULL,
+             [LitrosDisp] [decimal](10, 2) NULL,*/
+
         }
 
     }
