@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.BtnEmpresa = new System.Windows.Forms.Button();
             this.BtnEmpleados = new System.Windows.Forms.Button();
+            this.btnABMCategoriasProductos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -50,7 +51,7 @@
             this.BtnEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEmpresa.Image = global::Vista.Properties.Resources.BtnEmpresa1;
-            this.BtnEmpresa.Location = new System.Drawing.Point(623, 386);
+            this.BtnEmpresa.Location = new System.Drawing.Point(623, 282);
             this.BtnEmpresa.Name = "BtnEmpresa";
             this.BtnEmpresa.Size = new System.Drawing.Size(364, 137);
             this.BtnEmpresa.TabIndex = 2;
@@ -62,12 +63,24 @@
             this.BtnEmpleados.FlatAppearance.BorderSize = 0;
             this.BtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEmpleados.Image = global::Vista.Properties.Resources.BtnEmpleados1;
-            this.BtnEmpleados.Location = new System.Drawing.Point(626, 210);
+            this.BtnEmpleados.Location = new System.Drawing.Point(626, 124);
             this.BtnEmpleados.Name = "BtnEmpleados";
             this.BtnEmpleados.Size = new System.Drawing.Size(361, 139);
             this.BtnEmpleados.TabIndex = 1;
             this.BtnEmpleados.UseVisualStyleBackColor = true;
             this.BtnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
+            // 
+            // btnABMCategoriasProductos
+            // 
+            this.btnABMCategoriasProductos.FlatAppearance.BorderSize = 0;
+            this.btnABMCategoriasProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnABMCategoriasProductos.Image = global::Vista.Properties.Resources.BTNAgregarCategorias;
+            this.btnABMCategoriasProductos.Location = new System.Drawing.Point(626, 425);
+            this.btnABMCategoriasProductos.Name = "btnABMCategoriasProductos";
+            this.btnABMCategoriasProductos.Size = new System.Drawing.Size(290, 109);
+            this.btnABMCategoriasProductos.TabIndex = 15;
+            this.btnABMCategoriasProductos.UseVisualStyleBackColor = true;
+            this.btnABMCategoriasProductos.Click += new System.EventHandler(this.btnABMCategoriasProductos_Click_1);
             // 
             // MenuConfiguracion
             // 
@@ -75,6 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantMenuConfiguracion;
             this.ClientSize = new System.Drawing.Size(1284, 724);
+            this.Controls.Add(this.btnABMCategoriasProductos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnEmpresa);
             this.Controls.Add(this.BtnEmpleados);
@@ -88,5 +102,6 @@
         private System.Windows.Forms.Button BtnEmpleados;
         private System.Windows.Forms.Button BtnEmpresa;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnABMCategoriasProductos;
     }
 }

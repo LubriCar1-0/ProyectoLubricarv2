@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Negocio.Producto;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static Vista.Validaciones;
 
 
@@ -18,11 +19,17 @@ namespace Vista
         public MenuAgregarProducto()
         {
             InitializeComponent();
+            Cargatabla();
+        }
+        private void MenuAgregarProducto_Load(object sender, EventArgs e)
+        {
+
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            int cantidad = int.Parse(TxtCantidad.Text.Trim()); 
+            int cantidad = int.Parse(TxtCantidad.Text.Trim());
             decimal precioLista = decimal.Parse(TxtPrecioList.Text.Trim());
             decimal precioVenta = decimal.Parse(txtPrecioVent.Text.Trim());
             int CodigoProducto = int.Parse(txtcodigoProducto.Text.Trim());
@@ -32,9 +39,39 @@ namespace Vista
             ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), cmbCategoria.SelectedItem.ToString(), CodigoProducto, TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, LitrosDisponibles);
         }
 
-        private void MenuAgregarProducto_Load(object sender, EventArgs e)
+
+        private void Cargatabla()
         {
+            try
+            {
+                DGVProductos.DataSource = null;
+                DGVProductos.DataSource = ValidarProducto.TraeProductos();          
+                DGVProductos.Columns["IdProd"].Visible = false;
+        }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los productos: {ex.Message}");
+            }
+
+}
+
+        private void DGVProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex >= 0) // Asegúrate de que se hace clic en una fila válida
+            //{
+            //    // Obtén la fila seleccionada
+            //    DataGridViewRow filaSeleccionada = DGVProductos.Rows[e.RowIndex];
+
+            //    // Carga los valores de las celdas en los TextBox
+            //    textBoxId.Text = filaSeleccionada.Cells["Id"].Value.ToString();        // Columna "Id"
+            //    textBoxNombre.Text = filaSeleccionada.Cells["Nombre"].Value.ToString(); // Columna "Nombre"
+            //    textBoxPrecio.Text = filaSeleccionada.Cells["Precio"].Value.ToString(); // Columna "Precio"
+            //}
 
         }
+
+
+
+
     }
 }

@@ -70,6 +70,12 @@
     <Compile Include="MenuAgregarProducto.Designer.cs">
       <DependentUpon>MenuAgregarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuCategoriaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCategoriaProductos.Designer.cs">
+      <DependentUpon>MenuCategoriaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAgregarProducto.resx">
       <DependentUpon>MenuAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCategoriaProductos.resx">
+      <DependentUpon>MenuCategoriaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuClientes.resx">
       <DependentUpon>MenuClientes.cs</DependentUpon>
@@ -603,6 +612,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PantallaMenuVehiculos2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ABMcategoriasProductos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTNCambiarEstado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTNAgregarCategorias.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

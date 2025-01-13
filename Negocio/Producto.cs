@@ -26,7 +26,16 @@ namespace Negocio
             Conectar capaDatos = new Conectar();
             Conectar.AgregarProducto(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto, DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
         }
+        public static void IngresaCatergorias(string nombreCat, string catedescripcion, string estado)
+        {
+            Conectar.IngresaCategoria(nombreCat, catedescripcion, estado);
+        }
+       
+        public static void UpdateCatergorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado)
+        {
+            Conectar.UpdateCategorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado);
+        }
     }
 
-    
+
 }

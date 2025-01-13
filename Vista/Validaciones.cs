@@ -94,11 +94,39 @@ namespace Vista
     }
     #endregion
 
+    #region Producto
     public class ValidarProducto : Producto
     {
         public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, decimal PrecioLista, decimal PrecioVenta, decimal LitrosDisponibles)
         {
             Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto, DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
         }
+
+        public static DataTable TraeProductos()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.BuscarProductos();
+            return TablasDeLaBD;
+
+        }
+        public static DataTable TraeCategoriasProductos()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.TraerCategorias();
+            return TablasDeLaBD;
+
+        }
+
+        public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado)
+        {
+            Productos.IngresaCatergorias(nombreCat, catedescripcion, estado);
+        }
+
+        public static void UpdateCategoria(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado)
+        {
+            Productos.UpdateCatergorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado);
+        }
     }
+
+    #endregion
 }

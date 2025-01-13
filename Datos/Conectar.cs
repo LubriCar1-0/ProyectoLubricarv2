@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-Car Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -149,7 +149,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@marcaVH", Marca);
             comando.Parameters.AddWithValue("@añoVH", año);
             comando.Parameters.AddWithValue("@patenteVH", Patente);
-            comando.Parameters.AddWithValue("@kilometrajeVH",Kilometraje);
+            comando.Parameters.AddWithValue("@kilometrajeVH", Kilometraje);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -230,8 +230,8 @@ namespace Datos
         }
 
 
-        
-        
+
+
         public static void AgregarBitacora(int IdTrabajador, string Trabajador, string detalle)
         {
             conectar();
@@ -243,30 +243,32 @@ namespace Datos
             comando.Parameters.AddWithValue("@Detalle", detalle);
             comando.Parameters.AddWithValue("@Fecha", DateTime.Now.Date);
             comando.Parameters.AddWithValue("@Time", DateTime.Now.TimeOfDay);
-            comando.ExecuteNonQuery();  
+            comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-           /*create procedure AgregarBitacora(
-           @idTrabajador int,
-           @Trabajador nvarchar(255),
-           @Detalle nvarchar(255),
-           @Fecha Date,
-           @Time time)
-           as begin
-           insert into Bitacora(idTrabajador, Trabajador, Detalle, Fecha, Hora) values(@idTrabajador, @Trabajador, @Detalle, @Fecha, @Time)
-           end*/
+            /*create procedure AgregarBitacora(
+            @idTrabajador int,
+            @Trabajador nvarchar(255),
+            @Detalle nvarchar(255),
+            @Fecha Date,
+            @Time time)
+            as begin
+            insert into Bitacora(idTrabajador, Trabajador, Detalle, Fecha, Hora) values(@idTrabajador, @Trabajador, @Detalle, @Fecha, @Time)
+            end*/
         }
 
 
 
 
         #endregion
+
+        #region Productos
         public static void AgregarProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, decimal PrecioLista, decimal PrecioVenta, decimal LitrosDisponibles)
         {
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "AgregarProduc";
-            comando.CommandType= CommandType.StoredProcedure;
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Nomproducto", NombreProducto);
             comando.Parameters.AddWithValue("@MarcaProduc", MarcaProducto);
             comando.Parameters.AddWithValue("@CategoriaProduc", CategoriaProducto);
@@ -280,39 +282,119 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
 
-           /* create procedure AgregarProduc(
-            @Nomproducto varchar(60),
-            @CategoriaProduc varchar,
-            @CodigoProduc int,
-            @DescripcionProduc varchar(255),
-            @CantidadProduc int,
-            @PrecioLista Decimal,
-            @PrecioVenta Decimal,
-            @LitrosDisponibles decimal)
-            as begin
-            Insert into Producto(Nombre, Marca, Categoria, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles)
-            end*/
+            /* create procedure AgregarProduc(
+             @Nomproducto varchar(60),
+             @CategoriaProduc varchar,
+             @CodigoProduc int,
+             @DescripcionProduc varchar(255),
+             @CantidadProduc int,
+             @PrecioLista Decimal,
+             @PrecioVenta Decimal,
+             @LitrosDisponibles decimal)
+             as begin
+             Insert into Producto(Nombre, Marca, Categoria, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles)
+             end*/
 
-           /*CREATE TABLE [dbo].[Producto](
-             [idProd] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-             [Nombre] [nvarchar](60) NOT NULL,
-             [Marca] [nvarchar](60) NULL,
-             [Categoria] [nvarchar](60) NULL,
-             [CodProd] [int] NOT NULL,
-             [Descripcion] [nvarchar](255) NULL,
-             [Cantidad] [int] NULL,
-             [Precio_lista] [decimal](10, 2) NULL,
-             [PrecioVenta] [decimal](10, 2) NULL,
-             [LitrosDisp] [decimal](10, 2) NULL,*/
+            /*CREATE TABLE [dbo].[Producto](
+              [idProd] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+              [Nombre] [nvarchar](60) NOT NULL,
+              [Marca] [nvarchar](60) NULL,
+              [Categoria] [nvarchar](60) NULL,
+              [CodProd] [int] NOT NULL,
+              [Descripcion] [nvarchar](255) NULL,
+              [Cantidad] [int] NULL,
+              [Precio_lista] [decimal](10, 2) NULL,
+              [PrecioVenta] [decimal](10, 2) NULL,
+              [LitrosDisp] [decimal](10, 2) NULL,*/
 
         }
+        public DataTable BuscarProductos()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+            /*  create procedure TraerTablaProductos
+                as begin 
+                select * from Producto;
+                end*/
+        }
+
+        public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "IngresaCategoria";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Nombre", nombreCat);
+            comando.Parameters.AddWithValue("@Descripcion", catedescripcion);
+            comando.Parameters.AddWithValue("@Estado", estado);
+            comando.Parameters.AddWithValue("@FechaCreacion", fechaHoraActual);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            /*create procedure IngresaCategoria(
+            @Nombre char(30),
+            @Descripcion char(144),
+            @Estado char (3),
+            @FechaCreacion DateTime)
+            as begin 
+            Insert into CategoriasProductos (NombreCategoria, Descripcion, Estado, FechaCreacion) values (@Nombre,@Descripcion, @Estado,@FechaCreacion)
+            end
+            */
+        }
+
+        public DataTable TraerCategorias()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaCategoriasProducto";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+            /*  create procedure TraerTablaCategoriasProducto
+                as begin 
+                select * from CategoriasProductos;
+                end*/
+        }
+         public static void UpdateCategorias(int IdCategoriaUPD,string NombreCategoria, string Descripcion, string Estado)
+         {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "UpdateCategorias";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Ids", IdCategoriaUPD);
+            comando.Parameters.AddWithValue("@Nombre", NombreCategoria);
+            comando.Parameters.AddWithValue("@Descripcion", Descripcion);
+            comando.Parameters.AddWithValue("@Estado", Estado);
+            comando.Parameters.AddWithValue("@FechaCreacion", fechaHoraActual);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            /*create procedure IngresaCategoria(
+            @Nombre char(30),
+            @Descripcion char(144),
+            @Estado char (3),
+            @FechaCreacion DateTime)
+            as begin 
+            Insert into CategoriasProductos (NombreCategoria, Descripcion, Estado, FechaCreacion) values (@Nombre,@Descripcion, @Estado,@FechaCreacion)
+            end
+            */
+         }
+    
+        #endregion
+
+
 
     }
-
-
-
-
-
 
 
 

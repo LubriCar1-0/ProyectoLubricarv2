@@ -63,6 +63,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ABMcategoriasProductos {
+            get {
+                object obj = ResourceManager.GetObject("ABMcategoriasProductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blanco {
             get {
                 object obj = ResourceManager.GetObject("blanco", resourceCulture);
@@ -103,6 +113,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BTNAgregarCategorias {
+            get {
+                object obj = ResourceManager.GetObject("BTNAgregarCategorias", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnAgregarClientes {
             get {
                 object obj = ResourceManager.GetObject("BtnAgregarClientes", resourceCulture);
@@ -136,6 +156,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap BtnAgregarProductos {
             get {
                 object obj = ResourceManager.GetObject("BtnAgregarProductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BTNCambiarEstado {
+            get {
+                object obj = ResourceManager.GetObject("BTNCambiarEstado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -586,6 +616,26 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap MenuAgregarProductos {
             get {
                 object obj = ResourceManager.GetObject("MenuAgregarProductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuAgregarProductos1 {
+            get {
+                object obj = ResourceManager.GetObject("MenuAgregarProductos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuAgregarProductos2 {
+            get {
+                object obj = ResourceManager.GetObject("MenuAgregarProductos2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
