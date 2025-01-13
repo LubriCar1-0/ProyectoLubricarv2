@@ -100,12 +100,11 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Items.AddRange(new object[] {
-            "22"});
             this.cmbCategoria.Location = new System.Drawing.Point(211, 188);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(156, 21);
             this.cmbCategoria.TabIndex = 8;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // TxtPrecioList
             // 

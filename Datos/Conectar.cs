@@ -440,7 +440,22 @@ namespace Datos
                 select * from CategoriasProductos;
                 end*/
         }
-         public static void UpdateCategorias(int IdCategoriaUPD,string NombreCategoria, string Descripcion, string Estado)
+        public DataTable TraerCategoriasActivas()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerCategoriasActivas";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+            /*  create procedure TraerCategoriasActivas
+                as begin 
+                select * from CategoriasProductos where Estado= 'ACT';
+                end*/
+        }
+        public static void UpdateCategorias(int IdCategoriaUPD,string NombreCategoria, string Descripcion, string Estado)
          {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();

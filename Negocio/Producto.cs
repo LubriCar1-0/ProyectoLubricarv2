@@ -1,6 +1,7 @@
 ﻿using Datos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace Negocio
             public int idProducto { get; set; }
             public string nombre { get; set; }
             public int codProd { get; set; }
-            public string categoria { get; set; }
+            public string Idcategoria { get; set; }
             public string descripcion { get; set; }
             public float precio { get; set; }
             public int cantDisp { get; set; }
@@ -30,12 +31,13 @@ namespace Negocio
         {
             Conectar.IngresaCategoria(nombreCat, catedescripcion, estado);
         }
-       
+
         public static void UpdateCatergorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado)
         {
             Conectar.UpdateCategorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado);
-        }
+        } 
+        
     }
-
+    
 
 }

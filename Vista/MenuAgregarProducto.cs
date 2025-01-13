@@ -16,10 +16,12 @@ namespace Vista
 {
     public partial class MenuAgregarProducto : Form
     {
+        
         public MenuAgregarProducto()
         {
             InitializeComponent();
             Cargatabla();
+            CargarCategorias();
         }
         private void MenuAgregarProducto_Load(object sender, EventArgs e)
         {
@@ -39,7 +41,7 @@ namespace Vista
             ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), cmbCategoria.SelectedItem.ToString(), CodigoProducto, TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, LitrosDisponibles);
         }
 
-
+        
         private void Cargatabla()
         {
             try
@@ -69,9 +71,27 @@ namespace Vista
             //}
 
         }
+        
+        private void CargarCategorias()
+        {
+            Dictionary<int, string> categorias = ValidadCategoriasProducto.ObtenerCategoriasProductos();
+            foreach (var cat in categorias)
+            {
+                cmbCategoria.Items.Add(new KeyValuePair<int, string>(cat.Key, cat.Value));
+            }
+            cmbCategoria.DisplayMember = "Value";
+            cmbCategoria.ValueMember = "Key";
+        }
 
 
+        private int IdCategoria;
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCategoria.SelectedItem is KeyValuePair<int, string> categoriaSelect)
+            {
+                IdCategoria = categoriaSelect.Key;
 
-
+            }
+        }
     }
 }

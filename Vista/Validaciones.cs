@@ -10,19 +10,19 @@ using static Negocio.Cliente;
 using static Negocio.Empresa;
 using static Negocio.Vehiculo;
 using static Negocio.Producto;
-
+using static Negocio.Categorias;
 
 
 namespace Vista
 {
     #region empleados
-    public class Validaciones: Empleados
+    public class Validaciones : Empleados
     {
         public static void DatosEmpleado(int Documento, string contraseña)
         {
             Empleados.IngresoEmpleados(Documento, contraseña);
         }
-        public static void AgregarUnEmpleado (string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int Permiso, int categoria )
+        public static void AgregarUnEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int Permiso, int categoria)
         {
             Empleados.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, Permiso, categoria);
         }
@@ -34,7 +34,7 @@ namespace Vista
 
             foreach (DataRow row in TablaCategorias.Rows)
             {
-                string nombreCat = row["NombreCat"].ToString().Trim();  
+                string nombreCat = row["NombreCat"].ToString().Trim();
                 int permisoCat = Convert.ToInt32(row["PermisoCat"]);
                 categorias.Add(nombreCat, permisoCat);
             }
@@ -145,6 +145,21 @@ namespace Vista
             Productos.UpdateCatergorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado);
         }
     }
+    public class ValidadCategoriasProducto : Categorias
+    {
+        public static Dictionary<int, string> ObtenerCategoriasProductos()
+        {
+            List<Categorias> listaCategorias = Categorias.ObtenerCategorias();
+            Dictionary<int, string> CategoriasProcesadas = new Dictionary<int, string>();
 
-    #endregion
+            foreach (var cat in listaCategorias)
+            {
+                CategoriasProcesadas.Add(cat.IdCategoria, $"{cat.NombreCategoria}");
+            }
+
+            return CategoriasProcesadas;
+        }
+
+        #endregion
+    }
 }
