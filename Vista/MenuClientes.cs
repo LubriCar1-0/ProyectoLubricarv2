@@ -19,6 +19,16 @@ namespace Vista
         public MenuClientes()
         {
             InitializeComponent();
+            CargarClientes();
+            ConfigurarDataGridView();
+
+        }
+       
+        private void CargarClientes() 
+        {
+            DataTable tablaClientes = Personas.ObtenerClientes();
+            DgvTablaClientes.DataSource = null;
+            DgvTablaClientes.DataSource = tablaClientes;
 
         }
         private void ConfigurarDataGridView()
@@ -47,14 +57,8 @@ namespace Vista
             Validar.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), CuilCliente, TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), NumeracioncasaCliente, CMBIVA.SelectedItem.ToString(), TelefonoCliente);
             MessageBox.Show("Se registro correctamente");
 
-            DataTable tablaClientes = Personas.ObtenerClientes();
-
-
-            if (tablaClientes != null && tablaClientes.Rows.Count > 0)
-            {
-                DgvTablaClientes.DataSource = tablaClientes;
-                ConfigurarDataGridView();
-            }
+            CargarClientes();
+           
              
 
 
