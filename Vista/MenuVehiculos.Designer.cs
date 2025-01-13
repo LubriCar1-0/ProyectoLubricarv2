@@ -39,6 +39,7 @@
             this.TxtAñoVehiculos = new System.Windows.Forms.TextBox();
             this.TxtKilometrajeVehiculos = new System.Windows.Forms.TextBox();
             this.BtnVolver = new System.Windows.Forms.Button();
+            this.chbEditar = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,12 +149,24 @@
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
             // 
+            // chbEditar
+            // 
+            this.chbEditar.AutoSize = true;
+            this.chbEditar.BackColor = System.Drawing.Color.Transparent;
+            this.chbEditar.Location = new System.Drawing.Point(1065, 540);
+            this.chbEditar.Name = "chbEditar";
+            this.chbEditar.Size = new System.Drawing.Size(90, 17);
+            this.chbEditar.TabIndex = 15;
+            this.chbEditar.Text = "Permitir Editar";
+            this.chbEditar.UseVisualStyleBackColor = false;
+            // 
             // MenuVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVehiculos2;
             this.ClientSize = new System.Drawing.Size(1347, 758);
+            this.Controls.Add(this.chbEditar);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.TxtKilometrajeVehiculos);
             this.Controls.Add(this.TxtAñoVehiculos);
@@ -186,5 +199,6 @@
         private System.Windows.Forms.TextBox TxtAñoVehiculos;
         private System.Windows.Forms.TextBox TxtKilometrajeVehiculos;
         private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.CheckBox chbEditar;
     }
 }

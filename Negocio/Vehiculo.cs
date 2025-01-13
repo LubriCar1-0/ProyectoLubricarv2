@@ -14,6 +14,7 @@ namespace Negocio
         public int IdCliente { get; set; }
         public string NombreCliente { get; set; }
         public string ApellidoCliente { get; set; }
+
         public static List<Vehiculo> ObtenerClientes()
         {
             Conectar conexion = new Conectar();
@@ -36,24 +37,37 @@ namespace Negocio
         {
             Conectar capaDatos = new Conectar();
             DataTable TablaClientes = capaDatos.BuscarClientes();
-            bool clienteEncontrado = false; 
+            DataTable TablaVehiculos = capaDatos.BuscarVehiculos();
+            bool VehiculoEncontrado = false;
             foreach (DataRow fila in TablaClientes.Rows)
             {
                 string idBD = fila["idCliente"].ToString();
                 int idInt = Convert.ToInt32(idBD);
-                if (idInt == id) {
-                    clienteEncontrado = true;
-                    Conectar.AgregarVehiculo(id, Modelo, Marca, año, Patente, Kilometraje);
-                    //agregar la bitacora 
-                    
-                
+                if (idInt == id)
+                {
+
+                    string PatenteExistente = fila["patenteVH"].ToString();
+                    if (Patente == PatenteExistente)
+                    {
+                        VehiculoEncontrado = true;
+                        throw new Exception("Ya existe un vehiculo con esa patente");
+
+                    }
                 }
-
-
-
+            }
+            if (!VehiculoEncontrado)
+            {
+                Conectar.AgregarVehiculo(id, Modelo, Marca, año, Patente, Kilometraje);
+                //agregar la bitacora
             }
         }
 
+        public static void ActualizarVehiculo(int idVehiculo, int idCliente, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        {
 
-    } 
+            Conectar.ActualizarVehiculo(idVehiculo, idCliente, Modelo, Marca, año, Patente, Kilometraje);
+
+        }
+    }
 }
+

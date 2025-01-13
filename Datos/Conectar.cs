@@ -119,6 +119,22 @@ namespace Datos
 
         }
 
+        public DataTable BuscarVehiculos()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaVehiculos";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+        //create procedure TraerTablaVehiculos
+        //as begin
+        //select * from Vehiculo
+        //end
+
         public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
             conectar();
@@ -153,18 +169,78 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            /* 
-            create procedure InsertarVehiculo (
-            @idCliente numeric(18,0),
-            @modeloVH nvarchar(255),
-            @marcaVH nvarchar(255),
-            @añoVH float,
-            @patenteVH nvarchar(255),
-            @KilometrajeVH nvarchar(255))
-            as begin
-            insert into Vehiculo (idCliente, modeloVH, marcaVH, añoVH, patenteVH, kilometrajeVH) values (@idCliente, @modeloVH, @marcaVH, @añoVH, @patenteVH, @KilometrajeVH)
-            end
-             */
+        }
+        /* 
+        create procedure InsertarVehiculo (
+        @idCliente numeric(18,0),
+        @modeloVH nvarchar(255),
+        @marcaVH nvarchar(255),
+        @añoVH float,
+        @patenteVH nvarchar(255),
+        @KilometrajeVH nvarchar(255))
+        as begin
+        insert into Vehiculo (idCliente, modeloVH, marcaVH, añoVH, patenteVH, kilometrajeVH) values (@idCliente, @modeloVH, @marcaVH, @añoVH, @patenteVH, @KilometrajeVH)
+        end
+         */
+
+        public string ObtenerCliente(int idCliente)
+        {
+            string nombreCompleto = string.Empty;
+
+            try
+            {
+                conectar();
+                comando.Connection = conexion;
+                comando.CommandText = "ObtenerCliente";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@idCliente", idCliente);
+
+                leer = comando.ExecuteReader();
+
+                if (leer.Read())
+                {
+                    string nombreCliente = leer["NomCL"].ToString();
+                    string apellidoCliente = leer["ApeCl"].ToString();
+
+
+                    nombreCompleto = $"{nombreCliente} {apellidoCliente}";
+                }
+
+                desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el cliente: " + ex.Message);
+            }
+
+            return nombreCompleto;
+        }
+
+        //CREATE PROCEDURE ObtenerCliente
+        //    @idCliente INT
+        //AS
+        //BEGIN
+        //    SELECT Nombre
+        //    FROM Clientes
+        //    WHERE idCliente = @idCliente;
+        //END;
+        public static void ActualizarVehiculo(int idVehiculo, int idCliente, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ActualizarVehiculo";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo);
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+            comando.Parameters.AddWithValue("@modeloVH", Modelo);
+            comando.Parameters.AddWithValue("@marcaVH", Marca);
+            comando.Parameters.AddWithValue("@añoVH", año);
+            comando.Parameters.AddWithValue("@patenteVH", Patente);
+            comando.Parameters.AddWithValue("@kilometrajeVH", Kilometraje);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
         }
 
         #endregion

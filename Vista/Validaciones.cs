@@ -76,6 +76,24 @@ namespace Vista
         {
             Vehiculo.CargaDeVehiculos(id, Modelo, Marca, año, Patente, Kilometraje);
         }
+        public static DataTable BuscarVehiculos()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.BuscarVehiculos();
+            return TablasDeLaBD;
+
+        }
+        public static string ObtNomCliente(int idCliente)
+
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.ObtenerCliente(idCliente);
+        }
+        public static void ModificarVehiculo(int idVehiculo, int idCliente, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        {
+            Vehiculo.ActualizarVehiculo(idVehiculo, idCliente, Modelo, Marca, año, Patente, Kilometraje);
+        }
+
 
     }
 
