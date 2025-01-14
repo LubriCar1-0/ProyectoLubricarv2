@@ -21,7 +21,7 @@ namespace Vista
             InitializeComponent();
             CargarClientes();
             ConfigurarDataGridView();
-
+            Llenarcombobox();
         }
        
         private void CargarClientes() 
@@ -29,6 +29,21 @@ namespace Vista
             DataTable tablaClientes = Personas.ObtenerClientes();
             DgvTablaClientes.DataSource = null;
             DgvTablaClientes.DataSource = tablaClientes;
+
+        }
+        private void Llenarcombobox()
+        {
+            DataTable dt = Cliente.CondicionesIva();
+            CMBIVA.Items.Clear();
+            foreach (DataRow row in dt.Rows)
+            {
+                CMBIVA.Items.Add(new ComboBoxItem
+                {
+                    Value = row["idCondicionIva"],
+                    Text = row["descripcion"].ToString()
+                });
+            }
+
 
         }
         private void ConfigurarDataGridView()
@@ -62,6 +77,16 @@ namespace Vista
              
 
 
+        }
+        public class ComboBoxItem
+        {
+            public object Value { get; set; }
+            public string Text { get; set; }
+
+            public override string ToString()
+            {
+                return Text;
+            }
         }
     }
 }

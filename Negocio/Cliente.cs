@@ -31,6 +31,12 @@ namespace Negocio
             DataTable TablaClientes = capaDatos.BuscarClientes();
             return TablaClientes;
         }
+        public static DataTable CondicionesIva()
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable Tablacondiciones = capaDatos.TraerCodindionIva();
+            return Tablacondiciones;
+        }
         public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
             Conectar capaDatos = new Conectar();

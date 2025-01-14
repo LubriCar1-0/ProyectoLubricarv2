@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-Car Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -118,6 +118,22 @@ namespace Datos
             return dt;
 
         }
+        public DataTable TraerCodindionIva()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerCondicionIVA";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+        /*CREATE PROCEDURE TraerCondicionIVA
+               AS
+               BEGIN
+              SELECT idCondicionIva, descripcion FROM CondicionIva;
+              END*/
 
         public DataTable BuscarVehiculos()
         {
