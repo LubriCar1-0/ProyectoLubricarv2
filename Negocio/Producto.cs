@@ -22,7 +22,7 @@ namespace Negocio
             public int cantDisp { get; set; }
 
         }
-        public static void CargaProductos(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, decimal PrecioLista, decimal PrecioVenta, decimal LitrosDisponibles)
+        public static void CargaProductos(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles)
         {
             Conectar capaDatos = new Conectar();
             Conectar.AgregarProducto(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto, DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);

@@ -90,9 +90,9 @@
             this.btnAgregar.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(818, 369);
+            this.btnAgregar.Location = new System.Drawing.Point(652, 112);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(126, 42);
+            this.btnAgregar.Size = new System.Drawing.Size(125, 38);
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -129,6 +129,7 @@
             this.txtLitros.Name = "txtLitros";
             this.txtLitros.Size = new System.Drawing.Size(101, 26);
             this.txtLitros.TabIndex = 11;
+            this.txtLitros.Text = "0.0";
             // 
             // button1
             // 

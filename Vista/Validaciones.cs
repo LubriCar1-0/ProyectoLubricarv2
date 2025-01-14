@@ -115,9 +115,10 @@ namespace Vista
     #region Producto
     public class ValidarProducto : Producto
     {
-        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, decimal PrecioLista, decimal PrecioVenta, decimal LitrosDisponibles)
+        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles)
         {
-            Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto, DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
+            
+            Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto.Trim(), DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
         }
 
         public static DataTable TraeProductos()
@@ -134,6 +135,7 @@ namespace Vista
             return TablasDeLaBD;
 
         }
+
 
         public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado)
         {

@@ -63,7 +63,6 @@ namespace Vista
 
                     if (resultado == DialogResult.Yes)
                     {
-                        MessageBox.Show(IdCategoriaUPD + " " + NombreCategoria.Trim() + " " + Descripcion.Trim()+" " + Estado.Trim());
                         ValidarProducto.UpdateCategoria(IdCategoriaUPD, NombreCategoria.Trim(), Descripcion.Trim(), Estado.Trim());
                         Console.WriteLine("Cambio realizado.");
                         CargarTablaCategoria();

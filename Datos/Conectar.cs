@@ -226,7 +226,8 @@ namespace Datos
         //    WHERE idCliente = @idCliente;
         //END;
         public static void ActualizarVehiculo(int idVehiculo, int idCliente, string Modelo, string Marca, int año, string Patente, float Kilometraje)
-        {
+        {   
+            
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "ActualizarVehiculo";
@@ -339,7 +340,7 @@ namespace Datos
         #endregion
 
         #region Productos
-        public static void AgregarProducto(string NombreProducto, string MarcaProducto, string CategoriaProducto, int CodigoProducto, string DescripcionProducto, int CantidadProducto, decimal PrecioLista, decimal PrecioVenta, decimal LitrosDisponibles)
+        public static void AgregarProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles)
         {
             conectar();
             comando.Connection = conexion;
@@ -358,18 +359,19 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
 
-            /* create procedure AgregarProduc(
-             @Nomproducto varchar(60),
-             @CategoriaProduc varchar,
-             @CodigoProduc int,
-             @DescripcionProduc varchar(255),
-             @CantidadProduc int,
-             @PrecioLista Decimal,
-             @PrecioVenta Decimal,
-             @LitrosDisponibles decimal)
-             as begin
-             Insert into Producto(Nombre, Marca, Categoria, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles)
-             end*/
+            /*create procedure AgregarProduc(
+            @Nomproducto char(60),
+            @MarcaProduc char(60),
+            @CategoriaProduc int,
+            @CodigoProduc Char(5),
+            @DescripcionProduc char(255),
+            @CantidadProduc int,
+            @PrecioLista Decimal,
+            @PrecioVenta Decimal,
+            @LitrosDisponibles decimal)
+            as begin
+            Insert into Producto(Nombre, Marca, IdCategoria, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles)
+            end*/
 
             /*CREATE TABLE [dbo].[Producto](
               [idProd] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
