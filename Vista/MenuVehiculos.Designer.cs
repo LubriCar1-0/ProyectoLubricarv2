@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.BtnAgregarMeVehiculos = new System.Windows.Forms.Button();
-            this.BtnEditarMeVehiculos = new System.Windows.Forms.Button();
-            this.BtnEliminarMeVehiculos = new System.Windows.Forms.Button();
             this.DgvTablaMeVehiculos = new System.Windows.Forms.DataGridView();
             this.CbxClienteMeVehiculos = new System.Windows.Forms.ComboBox();
             this.TxtMarcaVehiculos = new System.Windows.Forms.TextBox();
@@ -40,6 +38,7 @@
             this.TxtKilometrajeVehiculos = new System.Windows.Forms.TextBox();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.chbEditar = new System.Windows.Forms.CheckBox();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,38 +47,18 @@
             this.BtnAgregarMeVehiculos.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeVehiculos.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarMeVehiculos.Location = new System.Drawing.Point(338, 677);
+            this.BtnAgregarMeVehiculos.Location = new System.Drawing.Point(305, 677);
             this.BtnAgregarMeVehiculos.Name = "BtnAgregarMeVehiculos";
             this.BtnAgregarMeVehiculos.Size = new System.Drawing.Size(127, 43);
             this.BtnAgregarMeVehiculos.TabIndex = 4;
             this.BtnAgregarMeVehiculos.UseVisualStyleBackColor = true;
             this.BtnAgregarMeVehiculos.Click += new System.EventHandler(this.BtnAgregarMeVehiculos_Click);
             // 
-            // BtnEditarMeVehiculos
-            // 
-            this.BtnEditarMeVehiculos.BackgroundImage = global::Vista.Properties.Resources.BtnEditar;
-            this.BtnEditarMeVehiculos.FlatAppearance.BorderSize = 0;
-            this.BtnEditarMeVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditarMeVehiculos.Location = new System.Drawing.Point(626, 677);
-            this.BtnEditarMeVehiculos.Name = "BtnEditarMeVehiculos";
-            this.BtnEditarMeVehiculos.Size = new System.Drawing.Size(95, 43);
-            this.BtnEditarMeVehiculos.TabIndex = 5;
-            this.BtnEditarMeVehiculos.UseVisualStyleBackColor = true;
-            // 
-            // BtnEliminarMeVehiculos
-            // 
-            this.BtnEliminarMeVehiculos.BackgroundImage = global::Vista.Properties.Resources.BtnEliminar;
-            this.BtnEliminarMeVehiculos.FlatAppearance.BorderSize = 0;
-            this.BtnEliminarMeVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarMeVehiculos.Location = new System.Drawing.Point(834, 677);
-            this.BtnEliminarMeVehiculos.Name = "BtnEliminarMeVehiculos";
-            this.BtnEliminarMeVehiculos.Size = new System.Drawing.Size(162, 43);
-            this.BtnEliminarMeVehiculos.TabIndex = 6;
-            this.BtnEliminarMeVehiculos.UseVisualStyleBackColor = true;
-            // 
             // DgvTablaMeVehiculos
             // 
             this.DgvTablaMeVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvTablaMeVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar});
             this.DgvTablaMeVehiculos.Location = new System.Drawing.Point(282, 521);
             this.DgvTablaMeVehiculos.Name = "DgvTablaMeVehiculos";
             this.DgvTablaMeVehiculos.Size = new System.Drawing.Size(777, 150);
@@ -160,6 +139,11 @@
             this.chbEditar.Text = "Permitir Editar";
             this.chbEditar.UseVisualStyleBackColor = false;
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
             // MenuVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,8 +159,6 @@
             this.Controls.Add(this.TxtMarcaVehiculos);
             this.Controls.Add(this.CbxClienteMeVehiculos);
             this.Controls.Add(this.DgvTablaMeVehiculos);
-            this.Controls.Add(this.BtnEliminarMeVehiculos);
-            this.Controls.Add(this.BtnEditarMeVehiculos);
             this.Controls.Add(this.BtnAgregarMeVehiculos);
             this.Name = "MenuVehiculos";
             this.Text = "MenuVehiculos";
@@ -189,8 +171,6 @@
         #endregion
 
         private System.Windows.Forms.Button BtnAgregarMeVehiculos;
-        private System.Windows.Forms.Button BtnEditarMeVehiculos;
-        private System.Windows.Forms.Button BtnEliminarMeVehiculos;
         private System.Windows.Forms.DataGridView DgvTablaMeVehiculos;
         private System.Windows.Forms.ComboBox CbxClienteMeVehiculos;
         private System.Windows.Forms.TextBox TxtMarcaVehiculos;
@@ -200,5 +180,6 @@
         private System.Windows.Forms.TextBox TxtKilometrajeVehiculos;
         private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.CheckBox chbEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

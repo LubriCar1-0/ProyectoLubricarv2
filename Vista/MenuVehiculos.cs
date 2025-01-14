@@ -113,39 +113,45 @@ namespace Vista
 
         private void DgvTablaMeVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            DataGridViewRow filaSeleccionada = DgvTablaMeVehiculos.Rows[e.RowIndex];
+            int idVehiculo = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
+            int idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+            CbxClienteMeVehiculos.Text = ValidarClientes.ObtNomCliente(idCliente);
+            TxtMarcaVehiculos.Text = filaSeleccionada.Cells["marcaVH"].Value.ToString().Trim();
+            TxtModeloVehiculos.Text = filaSeleccionada.Cells["modeloVH"].Value.ToString().Trim();
+            TxtAñoVehiculos.Text = filaSeleccionada.Cells["añoVh"].Value.ToString().Trim();
+            TxtPatenteVehiculo.Text = filaSeleccionada.Cells["patenteVH"].Value.ToString().Trim();
+            TxtKilometrajeVehiculos.Text = filaSeleccionada.Cells["KilometrajeVH"].Value.ToString().Trim();
 
             if (DgvTablaMeVehiculos.Columns[e.ColumnIndex].Name == "Editar")
             {
                 if (e.RowIndex >= 0)
                 {
-                    DataGridViewRow filaSeleccionada = DgvTablaMeVehiculos.Rows[e.RowIndex];
+                    DataGridViewRow filaSeleccionadaUPD = DgvTablaMeVehiculos.Rows[e.RowIndex];
 
-                    int idVehiculo = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
-                    int idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+                    int idVehiculoUPD = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
+                    int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
                     CbxClienteMeVehiculos.Text = ValidarClientes.ObtNomCliente(idCliente);
-                    TxtMarcaVehiculos.Text = filaSeleccionada.Cells["marcaVH"].Value.ToString().Trim();
-                    TxtModeloVehiculos.Text = filaSeleccionada.Cells["modeloVH"].Value.ToString().Trim();
-                    TxtAñoVehiculos.Text = filaSeleccionada.Cells["añoVh"].Value.ToString().Trim();
-                    TxtPatenteVehiculo.Text = filaSeleccionada.Cells["patenteVH"].Value.ToString().Trim();
-                    TxtKilometrajeVehiculos.Text = filaSeleccionada.Cells["KilometrajeVH"].Value.ToString().Trim();
-
-                    ValidarClientes.ModificarVehiculo(idVehiculo, idCliente, TxtModeloVehiculos.Text.Trim(), TxtMarcaVehiculos.Text.Trim(), Convert.ToInt32(TxtAñoVehiculos.Text.Trim()), TxtPatenteVehiculo.Text.Trim(), Convert.ToInt32(TxtKilometrajeVehiculos.Text.Trim()));
-                }
-            }
-            else if (DgvTablaMeVehiculos.Columns[e.ColumnIndex].Name == "Eliminar")
-            {
-                if (e.RowIndex >= 0)
-                {
-                    DataGridViewRow filaSeleccionada = DgvTablaMeVehiculos.Rows[e.RowIndex];
+                    string ModeloUPD = filaSeleccionada.Cells["modeloVH"].Value.ToString().Trim();
+                    string MarcaUPD = filaSeleccionada.Cells["marcaVH"].Value.ToString().Trim();
+                    string AñoUPD = filaSeleccionada.Cells["añoVh"].Value.ToString().Trim();
+                    string PatenteUPD = filaSeleccionada.Cells["patenteVH"].Value.ToString().Trim();
+                    string KilometrajeUPD = filaSeleccionada.Cells["KilometrajeVH"].Value.ToString().Trim();
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
 
-                    int idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
-                    CbxClienteMeVehiculos.Text = ValidarClientes.ObtNomCliente(idCliente);
-                    TxtMarcaVehiculos.Text = filaSeleccionada.Cells["marcaVH"].Value.ToString().Trim();
-                    TxtModeloVehiculos.Text = filaSeleccionada.Cells["modeloVH"].Value.ToString().Trim();
-                    TxtAñoVehiculos.Text = filaSeleccionada.Cells["añoVh"].Value.ToString().Trim();
-                    TxtPatenteVehiculo.Text = filaSeleccionada.Cells["patenteVH"].Value.ToString().Trim();
-                    TxtKilometrajeVehiculos.Text = filaSeleccionada.Cells["KilometrajeVH"].Value.ToString().Trim();
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        MessageBox.Show(idVehiculo + " " + ModeloUPD.Trim() + " " + MarcaUPD.Trim() + " " + PatenteUPD.Trim());
+                        ValidarClientes.ModificarVehiculo(idVehiculo, idCliente, ModeloUPD.Trim(), MarcaUPD.Trim(), Convert.ToInt32(AñoUPD.Trim()), PatenteUPD.Trim(), Convert.ToInt32(KilometrajeUPD.Trim()));
+                        Console.WriteLine("Cambio realizado.");
+                        CargarDatosEnGrid();
+                    }
+                    else if (resultado == DialogResult.No)
+                    {
+                        CargarDatosEnGrid();
+                    }
                 }
             }
 
@@ -154,7 +160,15 @@ namespace Vista
 
         }
 
+        private void LimpiaTextBox()
+        {
+            TxtMarcaVehiculos.Text = string.Empty;
+            TxtModeloVehiculos.Text = string.Empty;
+            TxtAñoVehiculos.Text = string.Empty;
+            TxtPatenteVehiculo.Text = string.Empty;
+            TxtKilometrajeVehiculos.Text = string.Empty;
 
+        }
 
 
 

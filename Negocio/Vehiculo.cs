@@ -58,7 +58,7 @@ namespace Negocio
             if (!VehiculoEncontrado)
             {
                 Conectar.AgregarVehiculo(id, Modelo, Marca, año, Patente, Kilometraje);
-                //agregar la bitacora
+                //agregar a la bitacora
             }
         }
 
@@ -66,6 +66,7 @@ namespace Negocio
         {
 
             Conectar.ActualizarVehiculo(idVehiculo, idCliente, Modelo, Marca, año, Patente, Kilometraje);
+            //agregar a la bitacora
 
         }
     }
