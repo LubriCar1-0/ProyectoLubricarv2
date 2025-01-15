@@ -95,9 +95,16 @@ namespace Vista
             Conectar capaDatos = new Conectar();
             return capaDatos.ObtenerCliente(idCliente);
         }
-        public static void ModificarVehiculo(int idVehiculo, int idCliente, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        public static void ModificacionVehiculo(int idVehiculo, int idCliente, string modelo, string marca, int año, string patente, int kilometraje)
         {
-            Vehiculo.ActualizarVehiculo(idVehiculo, idCliente, Modelo, Marca, año, Patente, Kilometraje);
+            try
+            {
+                Vehiculo.ModificarVehiculo(idVehiculo, idCliente, modelo, marca, año, patente, kilometraje);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error en la validación de datos: {ex.Message}");
+            }
         }
 
 

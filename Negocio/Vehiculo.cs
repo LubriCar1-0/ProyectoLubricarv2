@@ -62,12 +62,17 @@ namespace Negocio
             }
         }
 
-        public static void ActualizarVehiculo(int idVehiculo, int idCliente, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        public static void ModificarVehiculo(int idVehiculo, int idCliente, string modelo, string marca, int año, string patente, int kilometraje)
         {
-
-            Conectar.ActualizarVehiculo(idVehiculo, idCliente, Modelo, Marca, año, Patente, Kilometraje);
-            //agregar a la bitacora
-
+            try
+            {
+                Conectar.ActualizarVehiculo(idVehiculo, idCliente, modelo, marca, año, patente, kilometraje);
+                // agregar a la bitacora 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al actualizar el vehículo en la base de datos: {ex.Message}");
+            }
         }
     }
 }

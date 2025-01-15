@@ -38,6 +38,7 @@
             this.TxtKilometrajeVehiculos = new System.Windows.Forms.TextBox();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.chbEditar = new System.Windows.Forms.CheckBox();
+            this.btnBorraCampos = new System.Windows.Forms.Button();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).BeginInit();
             this.SuspendLayout();
@@ -139,6 +140,20 @@
             this.chbEditar.Text = "Permitir Editar";
             this.chbEditar.UseVisualStyleBackColor = false;
             // 
+            // btnBorraCampos
+            // 
+            this.btnBorraCampos.BackgroundImage = global::Vista.Properties.Resources.blanco;
+            this.btnBorraCampos.FlatAppearance.BorderSize = 0;
+            this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorraCampos.Location = new System.Drawing.Point(920, 677);
+            this.btnBorraCampos.Name = "btnBorraCampos";
+            this.btnBorraCampos.Size = new System.Drawing.Size(139, 30);
+            this.btnBorraCampos.TabIndex = 22;
+            this.btnBorraCampos.Text = "Borrar campos";
+            this.btnBorraCampos.UseVisualStyleBackColor = true;
+            this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
+            // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
@@ -150,6 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVehiculos2;
             this.ClientSize = new System.Drawing.Size(1347, 758);
+            this.Controls.Add(this.btnBorraCampos);
             this.Controls.Add(this.chbEditar);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.TxtKilometrajeVehiculos);
@@ -180,6 +196,7 @@
         private System.Windows.Forms.TextBox TxtKilometrajeVehiculos;
         private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.CheckBox chbEditar;
+        private System.Windows.Forms.Button btnBorraCampos;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

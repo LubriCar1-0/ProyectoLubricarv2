@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-Car Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -112,12 +112,13 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "TraerTablaClientes";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear(); 
             leer = comando.ExecuteReader();
             dt.Load(leer);
             desconectar();
             return dt;
-
         }
+
         public DataTable TraerCodindionIva()
         {
             conectar();
@@ -141,11 +142,13 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "TraerTablaVehiculos";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear(); 
             leer = comando.ExecuteReader();
             dt.Load(leer);
             desconectar();
             return dt;
         }
+
         //create procedure TraerTablaVehiculos
         //as begin
         //select * from Vehiculo
@@ -241,24 +244,37 @@ namespace Datos
         //    FROM Clientes
         //    WHERE idCliente = @idCliente;
         //END;
-        public static void ActualizarVehiculo(int idVehiculo, int idCliente, string Modelo, string Marca, int año, string Patente, float Kilometraje)
-        {   
-            
+        public static void ActualizarVehiculo(int idVehiculo, int idCliente, string modelo, string marca, int año, string patente, int kilometraje)
+        {
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "ActualizarVehiculo";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idVehiculo", idVehiculo);
             comando.Parameters.AddWithValue("@idCliente", idCliente);
-            comando.Parameters.AddWithValue("@modeloVH", Modelo);
-            comando.Parameters.AddWithValue("@marcaVH", Marca);
+            comando.Parameters.AddWithValue("@modeloVH", modelo);
+            comando.Parameters.AddWithValue("@marcaVH", marca);
             comando.Parameters.AddWithValue("@añoVH", año);
-            comando.Parameters.AddWithValue("@patenteVH", Patente);
-            comando.Parameters.AddWithValue("@kilometrajeVH", Kilometraje);
+            comando.Parameters.AddWithValue("@patenteVH", patente);
+            comando.Parameters.AddWithValue("@kilometrajeVH", kilometraje);
             comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
             desconectar();
         }
+
+        //Alter PROCEDURE ActualizarVehiculo
+        //@idVehiculo INT,
+        //@idCliente INT,
+        //@modeloVH NVARCHAR(255),
+        //@marcaVH NVARCHAR(255),
+        //@añoVH INT,
+        //@patenteVH NVARCHAR(255),
+        //@kilometrajeVH INT
+        //AS BEGIN
+        //UPDATE Vehiculo
+        //SET idCliente = @idCliente, modeloVH = @modeloVH, marcaVH = @marcaVH, añoVH = @añoVH, patenteVH = @patenteVH, kilometrajeVH = @kilometrajeVH
+        //WHERE idVehiculo = @idVehiculo;
+        //END
 
         #endregion
 

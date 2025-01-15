@@ -26,9 +26,9 @@ namespace Vista
        
         private void CargarClientes() 
         {
-            DataTable tablaClientes = Clientes.AgregarCondicionIva();
-            DgvTablaClientes.DataSource = null;
-            DgvTablaClientes.DataSource = tablaClientes;
+            //DataTable tablaClientes = Clientes.AgregarCondicionIva();
+            //DgvTablaClientes.DataSource = null;
+            //DgvTablaClientes.DataSource = tablaClientes;
 
         }
         private void CargarCategorias()
