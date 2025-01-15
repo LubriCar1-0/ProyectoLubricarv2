@@ -192,5 +192,10 @@ namespace Vista
         {
             LimpiaTextBox();
         }
+
+        private void DgvTablaMeVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

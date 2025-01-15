@@ -43,6 +43,8 @@
             this.TxtCalleCliente = new System.Windows.Forms.TextBox();
             this.TxtTelefonoCliente = new System.Windows.Forms.TextBox();
             this.CMBIVA = new System.Windows.Forms.ComboBox();
+            this.chbeditar = new System.Windows.Forms.CheckBox();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +75,8 @@
             // DgvTablaClientes
             // 
             this.DgvTablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvTablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar});
             this.DgvTablaClientes.Location = new System.Drawing.Point(213, 481);
             this.DgvTablaClientes.Name = "DgvTablaClientes";
             this.DgvTablaClientes.Size = new System.Drawing.Size(732, 95);
@@ -179,13 +183,29 @@
             // CMBIVA
             // 
             this.CMBIVA.FormattingEnabled = true;
-            this.CMBIVA.Items.AddRange(new object[] {
-            "Responsable inscripto",
-            "Sujeto Exento"});
             this.CMBIVA.Location = new System.Drawing.Point(689, 374);
             this.CMBIVA.Name = "CMBIVA";
             this.CMBIVA.Size = new System.Drawing.Size(234, 21);
             this.CMBIVA.TabIndex = 16;
+            this.CMBIVA.SelectedIndexChanged += new System.EventHandler(this.CMBIVA_SelectedIndexChanged);
+            // 
+            // chbeditar
+            // 
+            this.chbeditar.AutoSize = true;
+            this.chbeditar.BackColor = System.Drawing.Color.Transparent;
+            this.chbeditar.Location = new System.Drawing.Point(900, 456);
+            this.chbeditar.Name = "chbeditar";
+            this.chbeditar.Size = new System.Drawing.Size(90, 17);
+            this.chbeditar.TabIndex = 17;
+            this.chbeditar.Text = "Permitir Editar";
+            this.chbeditar.UseVisualStyleBackColor = false;
+            this.chbeditar.CheckedChanged += new System.EventHandler(this.chbeditar_CheckedChanged);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
             // 
             // MenuClientes
             // 
@@ -193,6 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.MenuClientes1;
             this.ClientSize = new System.Drawing.Size(1159, 651);
+            this.Controls.Add(this.chbeditar);
             this.Controls.Add(this.CMBIVA);
             this.Controls.Add(this.TxtTelefonoCliente);
             this.Controls.Add(this.TxtCalleCliente);
@@ -232,5 +253,7 @@
         private System.Windows.Forms.TextBox TxtCalleCliente;
         private System.Windows.Forms.TextBox TxtTelefonoCliente;
         private System.Windows.Forms.ComboBox CMBIVA;
+        private System.Windows.Forms.CheckBox chbeditar;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

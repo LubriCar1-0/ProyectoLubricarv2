@@ -30,6 +30,7 @@
         {
             this.BtnAgregarMeVehiculos = new System.Windows.Forms.Button();
             this.DgvTablaMeVehiculos = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CbxClienteMeVehiculos = new System.Windows.Forms.ComboBox();
             this.TxtMarcaVehiculos = new System.Windows.Forms.TextBox();
             this.TxtModeloVehiculos = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.BtnVolver = new System.Windows.Forms.Button();
             this.chbEditar = new System.Windows.Forms.CheckBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +64,12 @@
             this.DgvTablaMeVehiculos.Name = "DgvTablaMeVehiculos";
             this.DgvTablaMeVehiculos.Size = new System.Drawing.Size(777, 150);
             this.DgvTablaMeVehiculos.TabIndex = 7;
+            this.DgvTablaMeVehiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTablaMeVehiculos_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
             // 
             // CbxClienteMeVehiculos
             // 
@@ -153,11 +159,6 @@
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
             // 
             // MenuVehiculos
             // 

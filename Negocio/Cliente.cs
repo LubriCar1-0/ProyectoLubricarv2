@@ -23,23 +23,34 @@ namespace Negocio
             public int numeracionCl { get; set; }
             public string condicionIvaCl { get; set; }
             public int telefonoCL { get; set; }
+            public int IdCondicion {  get; set; }
+            public string DescripcionIva {  get; set; }
 
         }
-        public static DataTable ObtenerClientes()
-        {
-            Conectar capaDatos = new Conectar();
-            DataTable TablaClientes = capaDatos.BuscarClientes();
-            return TablaClientes;
-        }
+        
         public static DataTable CondicionesIva()
         {
             Conectar capaDatos = new Conectar();
             DataTable Tablacondiciones = capaDatos.TraerCodindionIva();
             return Tablacondiciones;
         }
-        public static void IngresoCondiciones()
+        public static List<Clientes> CodindionIva()
         {
+            Conectar conexion = new Conectar();
+            DataTable CondicionesTabla = conexion.TraerCodindionIva();
 
+            List<Clientes> Condiciones = new List<Clientes>();
+            foreach (DataRow row in CondicionesTabla.Rows)
+            {
+                Condiciones.Add(new Clientes
+                {
+                     IdCondicion = Convert.ToInt32(row["idCondicionIva"]),
+                    DescripcionIva = row["descripcion"].ToString(),
+
+                });
+            }
+
+            return Condiciones;
         }
         public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {

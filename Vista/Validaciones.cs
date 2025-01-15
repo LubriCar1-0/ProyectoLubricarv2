@@ -51,9 +51,21 @@ namespace Vista
         {
             Clientes.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
         }
-        public static  void AgregarCondicionIva()
+        public static  Dictionary<int, string> ObtenerCondicionesIva()
         {
-             
+            List<Clientes> ListaCondiciones = Cliente.CodindionIva();
+            Dictionary<int, string> Condicionesobtenidas = new Dictionary<int, string>();
+            foreach (var Condicion  in ListaCondiciones) 
+            {
+                Condicionesobtenidas.Add(Condicion.IdCondicion, $"{Condicion.DescripcionIva}");
+            }
+            return Condicionesobtenidas;
+        }
+        public static DataTable ObtenerClientes()
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable TablaClientes = capaDatos.BuscarClientes();
+            return TablaClientes;
         }
     }
 
