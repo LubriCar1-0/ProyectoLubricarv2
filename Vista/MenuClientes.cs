@@ -21,31 +21,27 @@ namespace Vista
             InitializeComponent();
             CargarClientes();
             ConfigurarDataGridView();
-            Llenarcombobox();
+           
         }
        
         private void CargarClientes() 
         {
-            DataTable tablaClientes = Personas.ObtenerClientes();
+            DataTable tablaClientes = Clientes.AgregarCondicionIva();
             DgvTablaClientes.DataSource = null;
             DgvTablaClientes.DataSource = tablaClientes;
 
         }
-        private void Llenarcombobox()
+        private void CargarCategorias()
         {
-            DataTable dt = Cliente.CondicionesIva();
-            CMBIVA.Items.Clear();
-            foreach (DataRow row in dt.Rows)
+            Dictionary<int, string> categorias = ValidadCategoriasProducto.ObtenerCategoriasProductos();
+            foreach (var cat in categorias)
             {
-                CMBIVA.Items.Add(new ComboBoxItem
-                {
-                    Value = row["idCondicionIva"],
-                    Text = row["descripcion"].ToString()
-                });
+                CMBIVA.Items.Add(new KeyValuePair<int, string>(cat.Key, cat.Value));
             }
-
-
+            CMBIVA.DisplayMember = "Value";
+            CMBIVA.ValueMember = "Key";
         }
+        
         private void ConfigurarDataGridView()
         {
             DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -69,7 +65,9 @@ namespace Vista
                 throw new Exception("El número de identificacion debe ser un número válido.");
             }
 
-            Validar.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), CuilCliente, TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), NumeracioncasaCliente, CMBIVA.SelectedItem.ToString(), TelefonoCliente);
+
+
+            Validarcliente.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), CuilCliente, TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), NumeracioncasaCliente, CMBIVA.SelectedItem.ToString(), TelefonoCliente);
             MessageBox.Show("Se registro correctamente");
 
             CargarClientes();
@@ -78,15 +76,7 @@ namespace Vista
 
 
         }
-        public class ComboBoxItem
-        {
-            public object Value { get; set; }
-            public string Text { get; set; }
 
-            public override string ToString()
-            {
-                return Text;
-            }
-        }
+        
     }
 }

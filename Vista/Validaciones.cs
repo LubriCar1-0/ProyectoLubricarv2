@@ -45,13 +45,19 @@ namespace Vista
     #endregion
 
     #region cliente
-    public class Validar : Cliente
+    public class Validarcliente : Cliente
     {
         public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
-            Personas.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
+            Clientes.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
+        }
+        public static  void AgregarCondicionIva()
+        {
+             
         }
     }
+
+    
 
 
     #endregion

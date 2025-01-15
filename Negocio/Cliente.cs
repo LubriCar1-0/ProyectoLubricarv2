@@ -13,7 +13,7 @@ namespace Negocio
 {
     public class Cliente : Conectar
     {
-        public class Personas : Cliente
+        public class Clientes : Cliente
         {
             public int idCliente { get; set; }
             public string RazSocialCL { get; set; }
@@ -36,6 +36,10 @@ namespace Negocio
             Conectar capaDatos = new Conectar();
             DataTable Tablacondiciones = capaDatos.TraerCodindionIva();
             return Tablacondiciones;
+        }
+        public static void IngresoCondiciones()
+        {
+
         }
         public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
         {
