@@ -162,15 +162,9 @@ namespace Vista
         }
 
 
-        public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado)
-        {
-            Productos.IngresaCatergorias(nombreCat, catedescripcion, estado);
-        }
+        
 
-        public static void UpdateCategoria(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado)
-        {
-            Productos.UpdateCatergorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado);
-        }
+
     }
     public class ValidadCategoriasProducto : Categorias
     {
@@ -186,7 +180,21 @@ namespace Vista
 
             return CategoriasProcesadas;
         }
+        public static int ChequeaLiquido(int Id)
+        {
+            int valor = Categorias.ChequeaLiquido(Id);
+           return valor; 
+        }
 
+        public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado, string liquido)
+        {
+            ValidadCategoriasProducto.IngresaCatergorias(nombreCat, catedescripcion, estado, liquido);
+        }
+
+        public static void UpdateCategoria(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
+        {
+            ValidadCategoriasProducto.UpdateCatergorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido);
+        }
         #endregion
     }
 }

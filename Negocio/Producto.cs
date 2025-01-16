@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static Negocio.Producto;
 
@@ -24,19 +25,19 @@ namespace Negocio
         }
         public static void CargaProductos(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles)
         {
-            Conectar capaDatos = new Conectar();
-            Conectar.AgregarProducto(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto, DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
-        }
-        public static void IngresaCatergorias(string nombreCat, string catedescripcion, string estado)
-        {
-            Conectar.IngresaCategoria(nombreCat, catedescripcion, estado);
-        }
 
-        public static void UpdateCatergorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado)
-        {
-            Conectar.UpdateCategorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado);
-        } 
-        
+            int encontro = Conectar.BuscaDuplicadoProducto(NombreProducto, MarcaProducto, CategoriaProducto);
+            if (encontro == 0)
+            {
+                Conectar.AgregarProducto(NombreProducto.ToUpper(), MarcaProducto.ToUpper(), CategoriaProducto, CodigoProducto.ToUpper(), DescripcionProducto.ToUpper(), CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
+                
+            }
+            else
+            {
+                throw new Exception("Ya se encontro un producto registrado con el nombre, marca y categoria de producto");
+            }
+        }
+   
     }
     
 

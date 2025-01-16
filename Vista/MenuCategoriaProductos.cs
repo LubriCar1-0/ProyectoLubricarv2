@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,15 @@ namespace Vista
             txtEstado.Text = " ";
             string NombreProd = TxtNombreProducto.Text;
             string Desc = TXTDescripcion.Text;
-            ValidarProducto.IngresaCategoria(NombreProd.Trim(),Desc.Trim(), "ACT");
+            if (cbxLiquido.Checked)
+            {
+                ValidarProducto.IngresaCategoria(NombreProd.Trim(), Desc.Trim(), "ACT", "N");
+            }
+            else
+            {
+                ValidarProducto.IngresaCategoria(NombreProd.Trim(), Desc.Trim(), "ACT","N");
+            }
+               
             LimpiaTextBox();
             CargarTablaCategoria();
         }
@@ -57,13 +66,14 @@ namespace Vista
                     string NombreCategoria = filaSeleccionada.Cells["NombreCategoria"].Value.ToString().Trim();
                     string Descripcion = filaSeleccionada.Cells["Descripcion"].Value.ToString().Trim();
                     string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
+                    string liquido = filaSeleccionada.Cells["Liquido"].Value.ToString().Trim();
 
-                    
+
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?",  "Confirmación",MessageBoxButtons.YesNo,MessageBoxIcon.Question);                
 
                     if (resultado == DialogResult.Yes)
                     {
-                        ValidarProducto.UpdateCategoria(IdCategoriaUPD, NombreCategoria.Trim(), Descripcion.Trim(), Estado.Trim());
+                        Categorias.UpdateCatergorias(IdCategoriaUPD, NombreCategoria.Trim(), Descripcion.Trim(), Estado.Trim(), liquido);
                         Console.WriteLine("Cambio realizado.");
                         CargarTablaCategoria();
                     }
@@ -102,6 +112,11 @@ namespace Vista
         private void btnBorraCampos_Click(object sender, EventArgs e)
         {
             LimpiaTextBox();
+        }
+
+        private void cbxLiquido_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-Car Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -434,7 +434,7 @@ namespace Datos
                 end*/
         }
 
-        public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado)
+        public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado, string liquido)
         {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
@@ -445,6 +445,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@Descripcion", catedescripcion);
             comando.Parameters.AddWithValue("@Estado", estado);
             comando.Parameters.AddWithValue("@FechaCreacion", fechaHoraActual);
+            comando.Parameters.AddWithValue("@Liquido", liquido);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -489,18 +490,19 @@ namespace Datos
                 select * from CategoriasProductos where Estado= 'ACT';
                 end*/
         }
-        public static void UpdateCategorias(int IdCategoriaUPD,string NombreCategoria, string Descripcion, string Estado)
+        public static void UpdateCategorias(int IdCategoriaUPD,string NombreCategoria, string Descripcion, string Estado, string liquido)
          {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "UpdateCategorias";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@Ids", IdCategoriaUPD);
+            comando.Parameters.AddWithValue("@IdCategoria", IdCategoriaUPD);
             comando.Parameters.AddWithValue("@Nombre", NombreCategoria);
             comando.Parameters.AddWithValue("@Descripcion", Descripcion);
             comando.Parameters.AddWithValue("@Estado", Estado);
-            comando.Parameters.AddWithValue("@FechaCreacion", fechaHoraActual);
+            comando.Parameters.AddWithValue("@FechaActualizacion", fechaHoraActual);
+            comando.Parameters.AddWithValue("@Liquido", liquido);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -514,7 +516,47 @@ namespace Datos
             end
             */
          }
-    
+
+        public static int TraeLiquido(int Id)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ChequeaLiquido";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdCategoria", Id);
+            int id = Convert.ToInt32(comando.ExecuteScalar());
+            comando.Parameters.Clear();
+            desconectar();
+            return id;
+            /* create procedure BuscaIdEmp(
+               @documento int)
+               as begin 
+               select COUNT(*) from CategoriasProductos where IdCategoria = @Id;
+               end*/
+        }
+
+        public static int BuscaDuplicadoProducto(string nombre, string marca, int cat)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "BuscaDuplicadoProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@nombre", nombre.Trim());
+            comando.Parameters.AddWithValue("@marca", marca.Trim());
+            comando.Parameters.AddWithValue("@categoria", cat);
+            int valor = Convert.ToInt32(comando.ExecuteScalar());
+            comando.Parameters.Clear();
+            desconectar();
+            return valor;
+            /* cREATE PROCEDURE BuscaDuplicadoProductos
+              @nombre char (60),
+	          @marca char(60),
+	          @categoria int
+              AS
+              BEGIN
+              select count(*) from Producto where  Nombre= @nombre and Marca=@marca and IdCategoria = @categoria
+              END;*/
+        }
         #endregion
 
 

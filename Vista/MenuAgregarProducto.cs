@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,25 +34,28 @@ namespace Vista
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            double LitrosDisponibles;
-            int ValorCategoria = 0;
-            int cantidad = Convert.ToInt32(TxtCantidad.Text.Trim());
-            double precioLista = Convert.ToDouble(TxtPrecioList.Text.Trim());
-            double precioVenta = Convert.ToDouble(txtPrecioVent.Text.Trim());
-            string CodigoProducto = txtcodigoProducto.Text.Trim();
-            string litro = txtLitros.Text.Trim();
-            ValorCategoria = IdCategoria;
-            if (litro == "0.0")
-            {
-                double cantidadLT = 0.0;
-                ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria, CodigoProducto.Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, cantidadLT);
-            }
-            else
-            {
-                LitrosDisponibles = Convert.ToDouble(litro.Trim());
-                ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria, CodigoProducto.Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, LitrosDisponibles);
-            }
+                double LitrosDisponibles;
+                int ValorCategoria = 0;
+                int cantidad = Convert.ToInt32(TxtCantidad.Text.Trim());
+                double precioLista = Convert.ToDouble(TxtPrecioList.Text.Trim());
+                double precioVenta = Convert.ToDouble(txtPrecioVent.Text.Trim());
+                string CodigoProducto = txtcodigoProducto.Text.Trim();
+                string litro = txtLitros.Text.Trim();
+                ValorCategoria = IdCategoria;
+            int resultado = Producto.Resultado();
+                if (litro == "0.0")
+                {
+                    double cantidadLT = 0.0;
+                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria, CodigoProducto.Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, cantidadLT);
+                }
+                else
+                {
+                    LitrosDisponibles = Convert.ToDouble(litro.Trim());
+                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria, CodigoProducto.Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, LitrosDisponibles);
+                }
             
+            
+
         }
 
         
@@ -109,8 +113,9 @@ namespace Vista
         }
 
         private void VerificaLiquido(int ValorCategoria)
-        {                   
-            if (ValorCategoria == 8)
+        {
+            int Liquido = ValidadCategoriasProducto.ChequeaLiquido(ValorCategoria);
+            if (Liquido == 1)
             {
                 txtLitros.Enabled = true;
             }
@@ -126,6 +131,8 @@ namespace Vista
             DGVProductos.DataSource = ValidarProducto.TraeProductos();
             DGVProductos.Columns["IdCategorias"].Visible = false;
         }
+
+
 
     }
 }

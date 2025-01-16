@@ -10,30 +10,52 @@ using Datos;
 namespace Negocio
 {
 
-        public class Categorias 
+    public class Categorias
+    {
+        public int IdCategoria { get; set; }
+        public string NombreCategoria { get; set; }
+        public string Descripcion { get; set; }
+        public string Estado { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public string Liquido { get; set; }
+
+
+
+        public static List<Categorias> ObtenerCategorias()
         {
-            public int IdCategoria { get; set; }
-            public string NombreCategoria { get; set; }
-            public string Descripcion { get; set; }
-            public string Estado { get; set; }
-            public DateTime FechaCreacion { get; set; }
-            public static List<Categorias> ObtenerCategorias()
+            Conectar conexion = new Conectar();
+            DataTable categoriaTabla = conexion.TraerCategoriasActivas();
+
+            List<Categorias> categorias = new List<Categorias>();
+            foreach (DataRow row in categoriaTabla.Rows)
             {
-                Conectar conexion = new Conectar();
-                DataTable categoriaTabla = conexion.TraerCategoriasActivas();
-
-                List<Categorias> categorias = new List<Categorias>();
-                foreach (DataRow row in categoriaTabla.Rows)
+                categorias.Add(new Categorias
                 {
-                        categorias.Add(new Categorias
-                    {
-                            IdCategoria = Convert.ToInt32(row["IdCategorias"]),
-                            NombreCategoria = row["NombreCategoria"].ToString()
-                    });
-                }
-
-                return categorias;
+                    IdCategoria = Convert.ToInt32(row["IdCategorias"]),
+                    NombreCategoria = row["NombreCategoria"].ToString(),
+                    Liquido = row["Liquido"].ToString()
+                });
             }
+
+            return categorias;
         }
-   
+        public static void IngresaCatergorias(string nombreCat, string catedescripcion, string estado, string liquido)
+        {
+            Conectar.IngresaCategoria(nombreCat, catedescripcion, estado, liquido);
+
+        }
+        public static void UpdateCatergorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
+        {
+            Conectar.UpdateCategorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido);
+        }
+
+        public static int ChequeaLiquido(int Id)
+        {
+           int valor = Conectar.TraeLiquido(Id);
+           return valor;
+        }
+
+    } 
+
+
 }

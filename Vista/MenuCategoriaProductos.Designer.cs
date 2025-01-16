@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.chPermiteEditar = new System.Windows.Forms.CheckBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
+            this.cbxLiquido = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCategoriasProdc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,12 +184,26 @@
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
             // 
+            // cbxLiquido
+            // 
+            this.cbxLiquido.AutoSize = true;
+            this.cbxLiquido.BackColor = System.Drawing.Color.Transparent;
+            this.cbxLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxLiquido.Location = new System.Drawing.Point(448, 188);
+            this.cbxLiquido.Name = "cbxLiquido";
+            this.cbxLiquido.Size = new System.Drawing.Size(90, 22);
+            this.cbxLiquido.TabIndex = 22;
+            this.cbxLiquido.Text = "Liquido?";
+            this.cbxLiquido.UseVisualStyleBackColor = false;
+            this.cbxLiquido.CheckedChanged += new System.EventHandler(this.cbxLiquido_CheckedChanged);
+            // 
             // MenuCategoriaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.ABMcategoriasProductos;
             this.ClientSize = new System.Drawing.Size(1175, 653);
+            this.Controls.Add(this.cbxLiquido);
             this.Controls.Add(this.btnBorraCampos);
             this.Controls.Add(this.chPermiteEditar);
             this.Controls.Add(this.label4);
@@ -224,5 +239,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox chPermiteEditar;
         private System.Windows.Forms.Button btnBorraCampos;
+        private System.Windows.Forms.CheckBox cbxLiquido;
     }
 }
