@@ -11,6 +11,7 @@ using static Negocio.Empresa;
 using static Negocio.Vehiculo;
 using static Negocio.Producto;
 using static Negocio.Categorias;
+using System.Security.Policy;
 
 
 namespace Vista
@@ -161,12 +162,16 @@ namespace Vista
 
         }
 
+        public static void UpdateProductos(int IdProdUPD, string Nombreprd , string marca, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje)
+        {
+            Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marca.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje);
+        }
 
         
 
 
     }
-    public class ValidadCategoriasProducto : Categorias
+    public class ValidaCategoriasProducto : Categorias
     {
         public static Dictionary<int, string> ObtenerCategoriasProductos()
         {
@@ -188,12 +193,12 @@ namespace Vista
 
         public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado, string liquido)
         {
-            ValidadCategoriasProducto.IngresaCatergorias(nombreCat, catedescripcion, estado, liquido);
+            ValidaCategoriasProducto.IngresaCatergorias(nombreCat, catedescripcion, estado, liquido);
         }
 
         public static void UpdateCategoria(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
         {
-            ValidadCategoriasProducto.UpdateCatergorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido);
+            ValidaCategoriasProducto.UpdateCategoria(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido);
         }
         #endregion
     }

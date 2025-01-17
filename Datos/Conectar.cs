@@ -374,6 +374,7 @@ namespace Datos
         #region Productos
         public static void AgregarProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles)
         {
+            DateTime fechaHoraActual = DateTime.Now;
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "AgregarProduc";
@@ -387,6 +388,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@PrecioLista", PrecioLista);
             comando.Parameters.AddWithValue("@PrecioVenta", PrecioVenta);
             comando.Parameters.AddWithValue("@LitrosDisponibles", LitrosDisponibles);
+            comando.Parameters.AddWithValue("@FechaCreacionModificacion", LitrosDisponibles);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -402,7 +404,7 @@ namespace Datos
             @PrecioVenta Decimal,
             @LitrosDisponibles decimal)
             as begin
-            Insert into Producto(Nombre, Marca, IdCategoria, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles)
+            Insert into Producto(Nombre, Marca, IdCategoria, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp,FechaCreacionModificacion) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles,@FechaCreacionModificacion)
             end*/
 
             /*CREATE TABLE [dbo].[Producto](
@@ -415,8 +417,9 @@ namespace Datos
               [Cantidad] [int] NULL,
               [Precio_lista] [decimal](10, 2) NULL,
               [PrecioVenta] [decimal](10, 2) NULL,
-              [LitrosDisp] [decimal](10, 2) NULL,*/
-
+              [LitrosDisp] [decimal](10, 2) NULL,
+             [FechaCreacionModificacion][datetime]*/
+      
         }
         public DataTable BuscarProductos()
         {
@@ -506,16 +509,25 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            /*create procedure IngresaCategoria(
-            @Nombre char(30),
-            @Descripcion char(144),
-            @Estado char (3),
-            @FechaCreacion DateTime)
-            as begin 
-            Insert into CategoriasProductos (NombreCategoria, Descripcion, Estado, FechaCreacion) values (@Nombre,@Descripcion, @Estado,@FechaCreacion)
-            end
+            /*CREATE PROCEDURE UpdateCategoria
+                @IdCategoria INT,
+                @Nombre CHAR(30),
+                @Descripcion CHAR(144),
+                @Estado CHAR(3),
+                @FechaModificacion DATETIME
+            AS
+            BEGIN
+                UPDATE CategoriasProductos
+                SET 
+                    NombreCategoria = @Nombre,
+                    Descripcion = @Descripcion,
+                    Estado = @Estado,
+                    FechaModificacion = @FechaModificacion
+                WHERE 
+                    IdCategoria = @IdCategoria;
+            END
             */
-         }
+        }
 
         public static int TraeLiquido(int Id)
         {
@@ -557,6 +569,60 @@ namespace Datos
               select count(*) from Producto where  Nombre= @nombre and Marca=@marca and IdCategoria = @categoria
               END;*/
         }
+        public static void UpdateProductos(int IdProdUPD, string Nombreprd, string MarcaProducto, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "UpdateProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("IdProducto" , IdProdUPD);
+            comando.Parameters.AddWithValue("@Nomproducto", Nombreprd);
+            comando.Parameters.AddWithValue("@MarcaProduc", MarcaProducto);
+            comando.Parameters.AddWithValue("@CategoriaProduc", categoria);
+            comando.Parameters.AddWithValue("@CodigoProduc", codigoproducto);
+            comando.Parameters.AddWithValue("@DescripcionProduc", descripcion);
+            comando.Parameters.AddWithValue("@CantidadProduc", cantidad);
+            comando.Parameters.AddWithValue("@PrecioLista", preciolista);
+            comando.Parameters.AddWithValue("@PrecioVenta", precioventa);
+            comando.Parameters.AddWithValue("@LitrosDisponibles", litraje);
+            comando.Parameters.AddWithValue("@FechaCreacionModificacion", fechaHoraActual);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+
+            /* CREATE PROCEDURE UpdateProductos
+                (
+                    @IdProducto INT,
+                    @Nomproducto CHAR(60),
+                    @MarcaProduc CHAR(60),
+                    @CategoriaProduc INT,
+                    @CodigoProduc CHAR(5),
+                    @DescripcionProduc CHAR(255),
+                    @CantidadProduc INT,
+                    @PrecioLista DECIMAL(18, 2),
+                    @PrecioVenta DECIMAL(18, 2),
+                    @LitrosDisponibles DECIMAL(18, 2),
+                    @FechaCreacionModificacion DATETIME
+                )
+                AS
+                BEGIN
+                    UPDATE Productos -- Cambié de CategoriasProductos a Productos
+                    SET 
+                        Nombre = @Nomproducto,
+                        Marca = @MarcaProduc,
+                        IdCategoria = @CategoriaProduc,
+                        CodProd = @CodigoProduc,
+                        Descripcion = @DescripcionProduc,
+                        Cantidad = @CantidadProduc,
+                        Precio_lista = @PrecioLista,
+                        PrecioVenta = @PrecioVenta,
+                        LitrosDisp = @LitrosDisponibles,
+                        FechaCreacionModificacion = @FechaCreacionModificacion
+                    WHERE 
+                        IdProd = @IdProducto; -- Condición para actualizar el producto con ese Id
+                END */
+                        }
         #endregion
 
 

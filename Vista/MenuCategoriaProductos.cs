@@ -31,7 +31,7 @@ namespace Vista
             string Desc = TXTDescripcion.Text;
             if (cbxLiquido.Checked)
             {
-                ValidarProducto.IngresaCategoria(NombreProd.Trim(), Desc.Trim(), "ACT", "N");
+                ValidarProducto.IngresaCategoria(NombreProd.Trim(), Desc.Trim(), "ACT", "S");
             }
             else
             {

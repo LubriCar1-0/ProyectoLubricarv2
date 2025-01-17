@@ -23,17 +23,26 @@ namespace Negocio
             public int cantDisp { get; set; }
 
         }
+        public static void UpdateProductos(int IdProdUPD, string Nombreprd, string marcaeprd, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje)
+        {
+            Conectar.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marcaeprd.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje);
+        }
         public static void CargaProductos(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles)
         {
 
             int encontro = Conectar.BuscaDuplicadoProducto(NombreProducto, MarcaProducto, CategoriaProducto);
-            if (encontro == 0)
+            try
             {
-                Conectar.AgregarProducto(NombreProducto.ToUpper(), MarcaProducto.ToUpper(), CategoriaProducto, CodigoProducto.ToUpper(), DescripcionProducto.ToUpper(), CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
-                
+                if (encontro == 0)
+                {
+                    Conectar.AgregarProducto(NombreProducto.ToUpper(), MarcaProducto.ToUpper(), CategoriaProducto, CodigoProducto.ToUpper(), DescripcionProducto.ToUpper(), CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles);
+
+                }
             }
-            else
-            {
+            
+            catch (Exception ex) {
+
+            
                 throw new Exception("Ya se encontro un producto registrado con el nombre, marca y categoria de producto");
             }
         }
