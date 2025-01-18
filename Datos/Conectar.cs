@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-Car Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -39,7 +39,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public static void AgregarEmpleados(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int permisoCat, int idCategoria)
+        public static void AgregarEmpleados(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int idCategoria)
         {
             conectar();
             comando.Connection = conexion;
@@ -50,7 +50,6 @@ namespace Datos
             comando.Parameters.AddWithValue("@Documento", Documento);
             comando.Parameters.AddWithValue("@Contraseña", Contraseña);
             comando.Parameters.AddWithValue("@Telefono", Telefono);
-            comando.Parameters.AddWithValue("@permiso", permisoCat);
             comando.Parameters.AddWithValue("@categoria", idCategoria);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
@@ -102,6 +101,19 @@ namespace Datos
                 as begin 
                 select NomTR from Trabajador where idTrabajador=@idtrabajador;
                 end*/
+        }
+        public string ObtenerCategoria(int idCat)
+        {
+                conectar();
+                comando.Connection = conexion;
+                comando.CommandText = "ObtenerNomCat";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@idCategoria", idCat);
+                string Categoria = Convert.ToString(comando.ExecuteScalar());
+                comando.Parameters.Clear();
+                desconectar();
+                return Categoria;
         }
         #endregion
 

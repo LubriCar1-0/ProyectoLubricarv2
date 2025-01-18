@@ -34,11 +34,13 @@
             this.TxtCelularEmpleado = new System.Windows.Forms.TextBox();
             this.CmbCategoriaEmple = new System.Windows.Forms.ComboBox();
             this.DgvMenuEmpleado = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnAgregarMeEmpleado = new System.Windows.Forms.Button();
-            this.BtnEditarMeEmpleado = new System.Windows.Forms.Button();
-            this.BtnEliminarMeEmpleado = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.chbEditar = new System.Windows.Forms.CheckBox();
+            this.btnBorraCampos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMenuEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,44 +90,35 @@
             // DgvMenuEmpleado
             // 
             this.DgvMenuEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvMenuEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Eliminar});
             this.DgvMenuEmpleado.Location = new System.Drawing.Point(315, 420);
             this.DgvMenuEmpleado.Name = "DgvMenuEmpleado";
-            this.DgvMenuEmpleado.Size = new System.Drawing.Size(657, 150);
+            this.DgvMenuEmpleado.Size = new System.Drawing.Size(696, 150);
             this.DgvMenuEmpleado.TabIndex = 6;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
             // 
             // BtnAgregarMeEmpleado
             // 
             this.BtnAgregarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(315, 603);
+            this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(315, 576);
             this.BtnAgregarMeEmpleado.Name = "BtnAgregarMeEmpleado";
             this.BtnAgregarMeEmpleado.Size = new System.Drawing.Size(129, 43);
             this.BtnAgregarMeEmpleado.TabIndex = 8;
             this.BtnAgregarMeEmpleado.UseVisualStyleBackColor = true;
             this.BtnAgregarMeEmpleado.Click += new System.EventHandler(this.BtnAgregarMeEmpleado_Click);
-            // 
-            // BtnEditarMeEmpleado
-            // 
-            this.BtnEditarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnEditar1;
-            this.BtnEditarMeEmpleado.FlatAppearance.BorderSize = 0;
-            this.BtnEditarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditarMeEmpleado.Location = new System.Drawing.Point(614, 603);
-            this.BtnEditarMeEmpleado.Name = "BtnEditarMeEmpleado";
-            this.BtnEditarMeEmpleado.Size = new System.Drawing.Size(95, 43);
-            this.BtnEditarMeEmpleado.TabIndex = 9;
-            this.BtnEditarMeEmpleado.UseVisualStyleBackColor = true;
-            // 
-            // BtnEliminarMeEmpleado
-            // 
-            this.BtnEliminarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnEliminar;
-            this.BtnEliminarMeEmpleado.FlatAppearance.BorderSize = 0;
-            this.BtnEliminarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarMeEmpleado.Location = new System.Drawing.Point(843, 603);
-            this.BtnEliminarMeEmpleado.Name = "BtnEliminarMeEmpleado";
-            this.BtnEliminarMeEmpleado.Size = new System.Drawing.Size(168, 43);
-            this.BtnEliminarMeEmpleado.TabIndex = 10;
-            this.BtnEliminarMeEmpleado.UseVisualStyleBackColor = true;
             // 
             // txtContraseña
             // 
@@ -148,6 +141,32 @@
             this.button1.TabIndex = 13;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // chbEditar
+            // 
+            this.chbEditar.AutoSize = true;
+            this.chbEditar.BackColor = System.Drawing.Color.Transparent;
+            this.chbEditar.Location = new System.Drawing.Point(1017, 445);
+            this.chbEditar.Name = "chbEditar";
+            this.chbEditar.Size = new System.Drawing.Size(90, 17);
+            this.chbEditar.TabIndex = 14;
+            this.chbEditar.Text = "Permitir Editar";
+            this.chbEditar.UseVisualStyleBackColor = false;
+            this.chbEditar.CheckedChanged += new System.EventHandler(this.chbEditar_CheckedChanged);
+            // 
+            // btnBorraCampos
+            // 
+            this.btnBorraCampos.BackgroundImage = global::Vista.Properties.Resources.blanco;
+            this.btnBorraCampos.FlatAppearance.BorderSize = 0;
+            this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorraCampos.Location = new System.Drawing.Point(872, 576);
+            this.btnBorraCampos.Name = "btnBorraCampos";
+            this.btnBorraCampos.Size = new System.Drawing.Size(139, 30);
+            this.btnBorraCampos.TabIndex = 23;
+            this.btnBorraCampos.Text = "Borrar campos";
+            this.btnBorraCampos.UseVisualStyleBackColor = true;
+            this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
+            // 
             // MenuEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,10 +174,10 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuEmpleados1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1284, 722);
+            this.Controls.Add(this.btnBorraCampos);
+            this.Controls.Add(this.chbEditar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.BtnEliminarMeEmpleado);
-            this.Controls.Add(this.BtnEditarMeEmpleado);
             this.Controls.Add(this.BtnAgregarMeEmpleado);
             this.Controls.Add(this.DgvMenuEmpleado);
             this.Controls.Add(this.CmbCategoriaEmple);
@@ -184,9 +203,11 @@
         private System.Windows.Forms.ComboBox CmbCategoriaEmple;
         private System.Windows.Forms.DataGridView DgvMenuEmpleado;
         private System.Windows.Forms.Button BtnAgregarMeEmpleado;
-        private System.Windows.Forms.Button BtnEditarMeEmpleado;
-        private System.Windows.Forms.Button BtnEliminarMeEmpleado;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.CheckBox chbEditar;
+        private System.Windows.Forms.Button btnBorraCampos;
     }
 }

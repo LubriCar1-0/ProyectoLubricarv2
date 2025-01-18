@@ -23,9 +23,9 @@ namespace Vista
         {
             Empleados.IngresoEmpleados(Documento, contraseña);
         }
-        public static void AgregarUnEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int Permiso, int categoria)
+        public static void AgregarUnEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int categoria)
         {
-            Empleados.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, Permiso, categoria);
+            Empleados.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, categoria);
         }
         public static Dictionary<string, int> ObtenerCategoriasProcesadas()
         {
@@ -42,6 +42,38 @@ namespace Vista
 
             return categorias;
         }
+        public static DataTable TraeEmpleados() 
+        { 
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasEmpleados= CapaDatos.BuscarEmpleados();
+            return TablasEmpleados;
+        
+        
+        }
+        public static List<Categoria> ObtenerCategorias()
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable tablaCategorias = capaDatos.TraerTablaCategorias();
+            var listaCategorias = new List<Categoria>();
+
+            foreach (DataRow row in tablaCategorias.Rows)
+            {
+                listaCategorias.Add(new Categoria
+                {
+                    IdCategoria = Convert.ToInt32(row["IdCategoria"]),
+                    NombreCat = row["NombreCat"].ToString()
+                });
+            }
+
+            return listaCategorias;
+        }
+        public static string ObtCat(int idCategoria)
+
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.ObtenerCategoria(idCategoria);
+        }
+
     }
     #endregion
 
@@ -98,8 +130,8 @@ namespace Vista
         public static DataTable BuscarVehiculos()
         {
             Conectar CapaDatos = new Conectar();
-            DataTable TablasDeLaBD = CapaDatos.BuscarVehiculos();
-            return TablasDeLaBD;
+            DataTable TablasVehiculos = CapaDatos.BuscarVehiculos();
+            return TablasVehiculos;
 
         }
         public static string ObtNomCliente(int idCliente)

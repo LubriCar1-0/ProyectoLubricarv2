@@ -11,25 +11,18 @@ namespace Negocio
 {
     public class Empleados : Conectar
     {
-        //public class Trabajores: Empleados 
-        //{
+        
             #region Variables
-            public int idTrabajador { get; set; }
-            public string nomApetr { get; set; }
-            public int documentoTR { get; set; }
-            public string contraseñaTR { get; set; }
-            public int telefonoTR { get; set; }
-            public string permiso { get; set; }
             public static int IdTrabajador { get; private set; }
             public static string NombreTrabajador { get; private set; }
-            //public int mandarid()
-            //{
-            //    int Idpasar = IdTrabajador;
-            //    return Idpasar;
-            //}
-            #endregion
+            public class Categoria
+            {
+                public int IdCategoria { get; set; }
+                public string NombreCat { get; set; }
+            }
+        #endregion
 
-            public static void IngresoEmpleados(int documento, string contraseña)
+        public static void IngresoEmpleados(int documento, string contraseña)
             {
                 Conectar capaDatos = new Conectar();
                 DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
@@ -45,13 +38,13 @@ namespace Negocio
                         
                         if (Documentoint == documento)
                         {
-                            // Verificar si la contraseña es correcta
+                            
                             string ContraseñaEnBD = Fila["contraseñaTR"].ToString();
                             if (ContraseñaEnBD == contraseña)
                             {
                                 usuarioEncontrado = true;
                                 int Idtrabajador = capaDatos.TraeId(documento);
-                                IdTrabajador = Idtrabajador;//para usarla por fuera de este metodo
+                                IdTrabajador = Idtrabajador;
                                 string Nomtrabajador = capaDatos.BuscarEmp(Idtrabajador);
                                 NombreTrabajador = Nomtrabajador;
                                 string detalle = "Acceso al sistema";
@@ -79,7 +72,7 @@ namespace Negocio
             }
 
 
-            public static void CargaDeEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono,int permiso, int categoria)
+            public static void CargaDeEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int categoria)
             {
                 Conectar capaDatos = new Conectar();
                 DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
@@ -102,11 +95,11 @@ namespace Negocio
                 if (!usuarioEncontrado) 
                 {
 
-                Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, permiso, categoria);
+                Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, categoria);
                     string detalle = "Cargar un empleado";
                     AgregarBitacora(IdTrabajador, NombreTrabajador, detalle);
                     return;
-                    // agrega un registro a la bitacora de que se agrega un empleado 
+                    // agregar un registro a la bitacora de que se agrega un empleado 
 
                 }
             }
@@ -116,17 +109,6 @@ namespace Negocio
 
                 return capaDatos.TraerTablaCategorias();
             }
-
-
-
-
-
-
-
-
-        //}
-
-
     }
 
 }
