@@ -50,19 +50,22 @@ namespace Vista
         
         
         }
-        public static List<Categoria> ObtenerCategorias()
+        public static List<Empleados> ObtenerCategorias()
         {
             Conectar capaDatos = new Conectar();
             DataTable tablaCategorias = capaDatos.TraerTablaCategorias();
-            var listaCategorias = new List<Categoria>();
+            var listaCategorias = new List<Empleados>();
 
             foreach (DataRow row in tablaCategorias.Rows)
             {
-                listaCategorias.Add(new Categoria
+                if (row["idCategoria"] != DBNull.Value && row["NombreCat"] != DBNull.Value)
                 {
-                    IdCategoria = Convert.ToInt32(row["IdCategorias"]),
-                    NombreCat = row["NombreCat"].ToString()
-                });
+                    listaCategorias.Add(new Empleados
+                    {
+                        idCategoria = Convert.ToInt32(row["idCategoria"]),
+                        NombreCat = row["NombreCat"].ToString()
+                    });
+                }
             }
 
             return listaCategorias;
@@ -72,6 +75,44 @@ namespace Vista
         {
             Conectar capaDatos = new Conectar();
             return capaDatos.ObtenerCategoria(idCategoria);
+        }
+
+
+        public static void ModificacionEmpleado(int idTrabajadorUPD, int idCategoriaUPD, string NombreUPD, string ApellidoUPD, int DNIUPD, string ContraseñaUPD, int CelularUPD)
+        {
+            try
+            {
+                Vehiculo.ModificarVehiculo(idTrabajadorUPD, idCategoriaUPD, NombreUPD, ApellidoUPD, DNIUPD, ContraseñaUPD, CelularUPD);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error en la validación de datos: {ex.Message}");
+            }
+        }
+        public static void EstadoEmpleado(int idTrabajador)
+        {
+            try
+            {
+                Empleados.CambiarEstado(idTrabajador);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cambiar el estado:{ex.Message}");
+            }
+
+
+        }
+        public static Dictionary<int, string> ObtenerCategoriasEmpleados()
+        {
+            List<Empleados> listaCategorias = Empleados.ObtenerCategoriasEmp();
+            Dictionary<int, string> CategoriasEmpleados = new Dictionary<int, string>();
+
+            foreach (var cat in listaCategorias)
+            {
+                CategoriasEmpleados.Add(cat.idCategoria, $"{cat.NombreCat}");
+            }
+
+            return CategoriasEmpleados;
         }
 
     }
@@ -244,6 +285,8 @@ namespace Vista
             Categorias.CambiarEstado(IdCategoriaUPD, estado);
 
         }
-        #endregion
+        
     }
+    #endregion
+
 }

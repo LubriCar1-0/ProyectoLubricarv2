@@ -97,6 +97,7 @@
             this.DgvMenuEmpleado.Name = "DgvMenuEmpleado";
             this.DgvMenuEmpleado.Size = new System.Drawing.Size(696, 150);
             this.DgvMenuEmpleado.TabIndex = 6;
+            this.DgvMenuEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMenuEmpleado_CellContentClick);
             // 
             // Editar
             // 

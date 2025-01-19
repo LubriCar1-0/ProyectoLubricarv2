@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-Car Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -114,6 +114,52 @@ namespace Datos
                 comando.Parameters.Clear();
                 desconectar();
                 return Categoria;
+        }
+        public static void ActualizarEmpleado(int idTrabajadorUPD, int idCategoriaUPD, string NombreUPD, string ApellidoUPD, int DNIUPD, string ContraseñaUPD, int CelularUPD)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ActualizarEmpleado";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idTrabajador", idTrabajadorUPD);
+            comando.Parameters.AddWithValue("@NomTR", NombreUPD);
+            comando.Parameters.AddWithValue("@ApeTR", ApellidoUPD);
+            comando.Parameters.AddWithValue("@documentoTR", DNIUPD);
+            comando.Parameters.AddWithValue("@contraseñaTR", ContraseñaUPD);
+            comando.Parameters.AddWithValue("@telefonoTR", CelularUPD);
+            comando.Parameters.AddWithValue("@idCategoria", idCategoriaUPD);
+            comando.ExecuteNonQuery();
+            desconectar();
+        }
+        public static void EstadoEmpleado(int idTrabajador, string Estado)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "EstadoEmpleado";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idTrabajador", idTrabajador);
+            comando.Parameters.AddWithValue("@Estado", Estado);
+            comando.ExecuteNonQuery();
+            desconectar();
+
+        }
+
+        public DataTable TraerCategoriasEmpleados()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerCategoriasEmpleados";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+            /*  create procedure TraerCategoriasEmpleados
+                as begin 
+                select * from Categorias ;
+                end*/
         }
         #endregion
 
@@ -405,6 +451,9 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
 
+
+            //AGREGAR COLUMNA ESTADO ACORDATE ESTEBAN LA CONCHA TUYA 
+
             /*create procedure AgregarProduc(
             @Nomproducto char(60),
             @MarcaProduc char(60),
@@ -430,8 +479,17 @@ namespace Datos
               [Precio_lista] [decimal](10, 2) NULL,
               [PrecioVenta] [decimal](10, 2) NULL,
               [LitrosDisp] [decimal](10, 2) NULL,
-             [FechaCreacionModificacion][datetime]*/
-      
+             [FechaCreacionModificacion][datetime]
+            
+            alter table producto 
+            add Estado char(3)
+             
+             EXEC sp_rename 'Producto.IdCategoria', 'IdCategorias', 'COLUMN';
+             
+             */
+
+
+
         }
         public DataTable BuscarProductos()
         {
