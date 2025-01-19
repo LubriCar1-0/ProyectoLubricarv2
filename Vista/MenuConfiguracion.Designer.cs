@@ -53,7 +53,7 @@
             this.BtnEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEmpresa.Location = new System.Drawing.Point(1066, 479);
+            this.BtnEmpresa.Location = new System.Drawing.Point(1066, 414);
             this.BtnEmpresa.Name = "BtnEmpresa";
             this.BtnEmpresa.Size = new System.Drawing.Size(411, 168);
             this.BtnEmpresa.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.btnABMCategoriasProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnABMCategoriasProductos.FlatAppearance.BorderSize = 0;
             this.btnABMCategoriasProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnABMCategoriasProductos.Location = new System.Drawing.Point(1066, 751);
+            this.btnABMCategoriasProductos.Location = new System.Drawing.Point(1066, 599);
             this.btnABMCategoriasProductos.Name = "btnABMCategoriasProductos";
             this.btnABMCategoriasProductos.Size = new System.Drawing.Size(411, 168);
             this.btnABMCategoriasProductos.TabIndex = 15;

@@ -648,8 +648,53 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
+            /*CREATE PROCEDURE EliminarProductos
+            (
+                @IdProducto INT,
+                @Valor char(3)
+            )
+            AS
+            BEGIN
+                UPDATE Producto --Cambié de CategoriasProductos a Productos
+                SET
+                    Estado = @Valor
+                WHERE
+                    IdProd = @IdProducto; --Condición para actualizar el producto con ese Id
+            END
+            */
+
         }
 
+        public static void CambiarEstado(int IdCategoriaUPD, string valorNuevo)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "CambiarEstado";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdCategorias", IdCategoriaUPD);
+            comando.Parameters.AddWithValue("@valor", valorNuevo);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            /*CREATE PROCEDURE CambiarEstado
+            (
+                @IdCategorias INT,
+                @Valor char(3)
+            )
+            AS
+            BEGIN
+                UPDATE CategoriasProductos 
+                SET
+                    Estado = @Valor
+                WHERE
+                    IdCategorias = @IdCategorias; 
+            END
+            */
+
+
+
+        }
 
         #endregion
 

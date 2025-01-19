@@ -73,8 +73,8 @@ namespace Vista
 
                     if (resultado == DialogResult.Yes)
                     {
-                        Categorias.UpdateCatergorias(IdCategoriaUPD, NombreCategoria.Trim(), Descripcion.Trim(), Estado.Trim(), liquido);
-                        Console.WriteLine("Cambio realizado.");
+                        ValidaCategoriasProducto.UpdateCatergorias(IdCategoriaUPD, NombreCategoria.Trim(), Descripcion.Trim(), Estado.Trim(), liquido);
+                        MessageBox.Show("Cambio realizado.");
                         CargarTablaCategoria();
                     }
                     else if (resultado == DialogResult.No)
@@ -84,6 +84,31 @@ namespace Vista
 
 
                 }
+            }
+            else if (DGVCategoriasProdc.Columns[e.ColumnIndex].Name == "EstadoNuevo")
+            {
+                DataGridViewRow filaSeleccionadaUPD = DGVCategoriasProdc.Rows[e.RowIndex];
+                int IdCategoriaUPD = Convert.ToInt32(filaSeleccionada.Cells["IdCategorias"].Value);
+                string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
+
+
+                if(Estado == "ACT")
+                {
+                    ValidaCategoriasProducto.CambiarEstado(IdCategoriaUPD, "DES");
+                    MessageBox.Show("Estado Modificado.");
+                    CargarTablaCategoria();
+                }
+                else if(Estado == "DES")
+                {
+                    ValidaCategoriasProducto.CambiarEstado(IdCategoriaUPD, "ACT");
+                    MessageBox.Show("Estado Modificado.");
+                    CargarTablaCategoria();
+                }
+
+
+
+
+
             }
 
 
@@ -117,6 +142,18 @@ namespace Vista
         private void cbxLiquido_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TXTDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuConfiguracion LlamarMenuConfiguracion = new MenuConfiguracion();
+            Hide();
+            LlamarMenuConfiguracion.ShowDialog();
         }
     }
 }

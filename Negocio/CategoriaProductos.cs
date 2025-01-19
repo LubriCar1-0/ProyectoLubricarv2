@@ -55,6 +55,19 @@ namespace Negocio
            return valor;
         }
 
+        public static void CambiarEstado(int IdCategoriaUPD, string estadoNuevo)
+        {
+
+            Conectar.CambiarEstado(IdCategoriaUPD, estadoNuevo);
+
+
+        }
+
+
+
+
+
+
     } 
 
 

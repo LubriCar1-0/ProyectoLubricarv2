@@ -235,7 +235,14 @@ namespace Vista
 
         public static void UpdateCategoria(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
         {
-            ValidaCategoriasProducto.UpdateCategoria(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido);
+            Categorias.UpdateCatergorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido);
+        }
+
+
+        public static void CambiarEstado(int IdCategoriaUPD, string estado)
+        {
+            Categorias.CambiarEstado(IdCategoriaUPD, estado);
+
         }
         #endregion
     }
