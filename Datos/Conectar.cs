@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-Car Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -588,7 +588,7 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "UpdateProductos";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("IdProducto" , IdProdUPD);
+            comando.Parameters.AddWithValue("@IdProducto" , IdProdUPD);
             comando.Parameters.AddWithValue("@Nomproducto", Nombreprd);
             comando.Parameters.AddWithValue("@MarcaProduc", MarcaProducto);
             comando.Parameters.AddWithValue("@CategoriaProduc", categoria);
@@ -619,11 +619,11 @@ namespace Datos
                 )
                 AS
                 BEGIN
-                    UPDATE Productos -- Cambié de CategoriasProductos a Productos
+                    UPDATE Producto -- Cambié de CategoriasProductos a Productos
                     SET 
                         Nombre = @Nomproducto,
                         Marca = @MarcaProduc,
-                        IdCategoria = @CategoriaProduc,
+                        IdCategorias = @CategoriaProduc,
                         CodProd = @CodigoProduc,
                         Descripcion = @DescripcionProduc,
                         Cantidad = @CantidadProduc,
@@ -635,6 +635,22 @@ namespace Datos
                         IdProd = @IdProducto; -- Condición para actualizar el producto con ese Id
                 END */
                         }
+
+        public static void EliminarProducto(int IdProd, string valor)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "EliminarProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdProducto", IdProd);
+            comando.Parameters.AddWithValue("@valor", valor);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
+
+
         #endregion
 
 

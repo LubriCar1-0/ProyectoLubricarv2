@@ -29,76 +29,77 @@
         private void InitializeComponent()
         {
             this.BtnProductosFaltantes = new System.Windows.Forms.Button();
-            this.BtnControlDeStock = new System.Windows.Forms.Button();
             this.BtnAgregarProducto = new System.Windows.Forms.Button();
-            this.PtbMenuStock = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PtbMenuStock)).BeginInit();
+            this.BtnControlDeStock = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnProductosFaltantes
             // 
+            this.BtnProductosFaltantes.AutoSize = true;
+            this.BtnProductosFaltantes.BackgroundImage = global::Vista.Properties.Resources.BtnProductosFaltantes;
+            this.BtnProductosFaltantes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnProductosFaltantes.FlatAppearance.BorderSize = 0;
             this.BtnProductosFaltantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnProductosFaltantes.Image = global::Vista.Properties.Resources.BtnProductosFaltantes1;
-            this.BtnProductosFaltantes.Location = new System.Drawing.Point(718, 496);
+            this.BtnProductosFaltantes.Location = new System.Drawing.Point(1107, 722);
             this.BtnProductosFaltantes.Name = "BtnProductosFaltantes";
-            this.BtnProductosFaltantes.Size = new System.Drawing.Size(329, 124);
-            this.BtnProductosFaltantes.TabIndex = 3;
+            this.BtnProductosFaltantes.Size = new System.Drawing.Size(346, 164);
+            this.BtnProductosFaltantes.TabIndex = 5;
             this.BtnProductosFaltantes.UseVisualStyleBackColor = true;
-            // 
-            // BtnControlDeStock
-            // 
-            this.BtnControlDeStock.FlatAppearance.BorderSize = 0;
-            this.BtnControlDeStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnControlDeStock.Image = global::Vista.Properties.Resources.BtnControlStock;
-            this.BtnControlDeStock.Location = new System.Drawing.Point(718, 334);
-            this.BtnControlDeStock.Name = "BtnControlDeStock";
-            this.BtnControlDeStock.Size = new System.Drawing.Size(330, 125);
-            this.BtnControlDeStock.TabIndex = 2;
-            this.BtnControlDeStock.UseVisualStyleBackColor = true;
             // 
             // BtnAgregarProducto
             // 
+            this.BtnAgregarProducto.AutoSize = true;
+            this.BtnAgregarProducto.BackgroundImage = global::Vista.Properties.Resources.BtnAgregarProducto;
+            this.BtnAgregarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAgregarProducto.FlatAppearance.BorderSize = 0;
             this.BtnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarProducto.Image = global::Vista.Properties.Resources.BtnAgregarProducto1;
-            this.BtnAgregarProducto.Location = new System.Drawing.Point(718, 173);
+            this.BtnAgregarProducto.Location = new System.Drawing.Point(1107, 244);
             this.BtnAgregarProducto.Name = "BtnAgregarProducto";
-            this.BtnAgregarProducto.Size = new System.Drawing.Size(330, 124);
-            this.BtnAgregarProducto.TabIndex = 1;
+            this.BtnAgregarProducto.Size = new System.Drawing.Size(346, 164);
+            this.BtnAgregarProducto.TabIndex = 6;
             this.BtnAgregarProducto.UseVisualStyleBackColor = true;
             this.BtnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
             // 
-            // PtbMenuStock
+            // BtnControlDeStock
             // 
-            this.PtbMenuStock.Image = global::Vista.Properties.Resources.PantMenuStock;
-            this.PtbMenuStock.Location = new System.Drawing.Point(12, 12);
-            this.PtbMenuStock.Name = "PtbMenuStock";
-            this.PtbMenuStock.Size = new System.Drawing.Size(1277, 724);
-            this.PtbMenuStock.TabIndex = 0;
-            this.PtbMenuStock.TabStop = false;
+            this.BtnControlDeStock.AutoSize = true;
+            this.BtnControlDeStock.BackgroundImage = global::Vista.Properties.Resources.BtnControlDeStock;
+            this.BtnControlDeStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnControlDeStock.FlatAppearance.BorderSize = 0;
+            this.BtnControlDeStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnControlDeStock.Location = new System.Drawing.Point(1107, 477);
+            this.BtnControlDeStock.Name = "BtnControlDeStock";
+            this.BtnControlDeStock.Size = new System.Drawing.Size(346, 164);
+            this.BtnControlDeStock.TabIndex = 7;
+            this.BtnControlDeStock.UseVisualStyleBackColor = true;
             // 
             // MenuStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1276, 722);
-            this.Controls.Add(this.BtnProductosFaltantes);
+            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuStock;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.BtnControlDeStock);
             this.Controls.Add(this.BtnAgregarProducto);
-            this.Controls.Add(this.PtbMenuStock);
+            this.Controls.Add(this.BtnProductosFaltantes);
+            this.DoubleBuffered = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuStock";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "MenuStock";
-            ((System.ComponentModel.ISupportInitialize)(this.PtbMenuStock)).EndInit();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox PtbMenuStock;
+        private System.Windows.Forms.Button BtnProductosFaltantes;
         private System.Windows.Forms.Button BtnAgregarProducto;
         private System.Windows.Forms.Button BtnControlDeStock;
-        private System.Windows.Forms.Button BtnProductosFaltantes;
     }
 }

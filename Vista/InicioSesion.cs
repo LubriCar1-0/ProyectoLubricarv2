@@ -28,7 +28,9 @@ namespace Vista
                     Validaciones.DatosEmpleado(documento, TbxContra.Text.Trim());
 
                     // Bitacora Acceder a la pantalla principal
+                    Hide();
                     PantallaMenuPrin();
+                    
                 }
                 else
                 {
@@ -46,8 +48,14 @@ namespace Vista
 
         public static void PantallaMenuPrin()
         {
+          
             PantallaMenuPrincipal LlamarMenuPrincipal = new PantallaMenuPrincipal();
             LlamarMenuPrincipal.ShowDialog();
+        }
+
+        private void BtnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

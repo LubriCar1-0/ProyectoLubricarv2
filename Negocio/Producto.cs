@@ -46,7 +46,14 @@ namespace Negocio
                 throw new Exception("Ya se encontro un producto registrado con el nombre, marca y categoria de producto");
             }
         }
-   
+
+        public static void EliminarProducto(int IdProd, string valor)
+        {
+            Conectar.EliminarProducto(IdProd, valor);
+
+        }
+
+
     }
     
 

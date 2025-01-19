@@ -12,7 +12,7 @@ namespace Negocio
 
     public class Categorias
     {
-        public int IdCategoria { get; set; }
+        public int IdCategorias { get; set; }
         public string NombreCategoria { get; set; }
         public string Descripcion { get; set; }
         public string Estado { get; set; }
@@ -31,7 +31,7 @@ namespace Negocio
             {
                 categorias.Add(new Categorias
                 {
-                    IdCategoria = Convert.ToInt32(row["IdCategorias"]),
+                    IdCategorias = Convert.ToInt32(row["IdCategorias"]),
                     NombreCategoria = row["NombreCategoria"].ToString(),
                     Liquido = row["Liquido"].ToString()
                 });

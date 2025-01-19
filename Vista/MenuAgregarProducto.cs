@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Negocio.Empleados;
 using static Negocio.Producto;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static Vista.Validaciones;
@@ -25,7 +26,12 @@ namespace Vista
             ConfigurarDataGridView();
             Cargatabla();
             CargarCategorias();
+            Acomodartabla();
+            DGVProductos.Visible = false;
+            chPermiteEditar.Visible = false;
+            DGVProductos.ReadOnly = true;
             txtLitros.Enabled = false;
+           
 
         }
         private void MenuAgregarProducto_Load(object sender, EventArgs e)
@@ -33,6 +39,9 @@ namespace Vista
 
 
         }
+        
+
+        
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -44,7 +53,7 @@ namespace Vista
             double precioVenta = Convert.ToDouble(txtPrecioVent.Text.Trim());
             string CodigoProducto = txtcodigoProducto.Text.Trim();
             string litro = txtLitros.Text.Trim();
-            ValorCategoria = IdCategoria;
+            ValorCategoria = IdCategorias;
 
             int Chequea = Conectar.BuscaDuplicadoProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria);
             if (Chequea == 0)
@@ -67,46 +76,6 @@ namespace Vista
                 MessageBox.Show("Hay un duplicado del producto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void Cargatabla()
-        {
-            //try
-            //{
-            //    DGVProductos.DataSource = null;
-            //    DGVProductos.DataSource = ValidarProducto.TraeProductos();
-            //    DGVProductos.Columns["IdProd"].Visible = false;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error al cargar los productos: {ex.Message}");
-            //}
-            
-            
-            try
-            {
-                DGVProductos.DataSource = null;
-                var productos = ValidarProducto.TraeProductos();
-
-                // Vincula el DataSource
-                DGVProductos.DataSource = productos;
-
-                // Ocultar columnas innecesarias
-                DGVProductos.Columns["IdProd"].Visible = false;
-
-                // Configurar valores iniciales del ComboBox
-                foreach (DataGridViewRow row in DGVProductos.Rows)
-                {
-                    if (row.Cells["IdCategoria"] != null && row.Cells["CategoriaColumn"] is DataGridViewComboBoxCell comboBoxCell)
-                    {
-                        comboBoxCell.Value = row.Cells["IdCategoria"].Value; // Asigna el valor inicial
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
         private void DGVProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (DGVProductos.Columns[e.ColumnIndex].Name == "Editar")
@@ -117,7 +86,7 @@ namespace Vista
                     int IdProdUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["IdProd"].Value);
                     string Nombreprd = filaSeleccionadaUPD.Cells["Nombre"].Value.ToString().Trim();
                     string marcaeprd = filaSeleccionadaUPD.Cells["Marca"].Value.ToString().Trim();
-                    int categoria = Convert.ToInt32(filaSeleccionadaUPD.Cells["IdCategoria"].Value);
+                    int categoria = Convert.ToInt32(filaSeleccionadaUPD.Cells["CategoriaColumn"].Value);
                     string codigoproducto = filaSeleccionadaUPD.Cells["CodProd"].Value.ToString().Trim();
                     string descripcion = filaSeleccionadaUPD.Cells["Descripcion"].Value.ToString().Trim();
                     int cantidad = Convert.ToInt32(filaSeleccionadaUPD.Cells["Cantidad"].Value);
@@ -130,16 +99,52 @@ namespace Vista
 
                     if (resultado == DialogResult.Yes)
                     {
-                        Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marcaeprd.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje);
+                        ValidarProducto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marcaeprd.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje);
                         Console.WriteLine("Cambio realizado.");
-                        CargarTablaCategoria();
+                        Cargatabla();
+                        ConfigurarDataGridView();
+                        Acomodartabla();
+                        DGVProductos.Columns["IdCategorias"].Visible = false;
+                        DGVProductos.Columns["IdProd"].Visible = false;
+
                     }
                     else if (resultado == DialogResult.No)
                     {
-                        CargarTablaCategoria();
+                        Cargatabla();
+                        ConfigurarDataGridView();
+                        Acomodartabla();
+
+                        DGVProductos.Columns["IdProd"].Visible = false;
                     }
 
 
+                }
+            }
+            else if (DGVProductos.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                DataGridViewRow filaSeleccionadaUPD = DGVProductos.Rows[e.RowIndex];
+                int IdProd = Convert.ToInt32(filaSeleccionadaUPD.Cells["IdProd"].Value);
+                string Nombreprd = filaSeleccionadaUPD.Cells["Nombre"].Value.ToString().Trim();
+
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres ELIMINAR EL PRODUCTO: "+ Nombreprd + "?", "Confirmación" , MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    ValidarProducto.EliminarProducto(IdProd, "DES");
+                    Console.WriteLine("Cambio realizado.");
+                    Cargatabla();
+                    ConfigurarDataGridView();
+                    Acomodartabla();
+                    DGVProductos.Columns["IdCategorias"].Visible = false;
+                    DGVProductos.Columns["IdProd"].Visible = false;
+
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    Cargatabla();
+                    ConfigurarDataGridView();
+                    Acomodartabla();
+
+                    DGVProductos.Columns["IdProd"].Visible = false;
                 }
             }
         }
@@ -156,13 +161,13 @@ namespace Vista
         }
 
 
-        private int IdCategoria;
+        private int IdCategorias;
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbCategoria.SelectedItem is KeyValuePair<int, string> categoriaSelect)
             {
-                IdCategoria = categoriaSelect.Key;
-                VerificaLiquido(IdCategoria);
+                IdCategorias = categoriaSelect.Key;
+                VerificaLiquido(IdCategorias);
 
             }
         }
@@ -188,12 +193,11 @@ namespace Vista
         }
         private void ConfigurarDataGridView()
         {
-            // Configura la columna ComboBox
             var comboBoxColumn = new DataGridViewComboBoxColumn
             {
                 Name = "CategoriaColumn",
                 HeaderText = "Categoría",
-                DataPropertyName = "IdCategoria", // Vincula la propiedad
+                DataPropertyName = "IdCategorias", // Vincula la propiedad
                 DisplayMember = "Value",
                 ValueMember = "Key"
             };
@@ -207,13 +211,76 @@ namespace Vista
 
             // Agrega la columna al DataGridView
             DGVProductos.Columns.Add(comboBoxColumn);
+
+
+
         }
 
+        private void Cargatabla()
+        {
+            try
+            {
+                DGVProductos.DataSource = null;
+                var productos = ValidarProducto.TraeProductos();
+                DGVProductos.DataSource = productos;
+                DGVProductos.Columns["IdProd"].Visible = false;
+                //DGVProductos.Columns["IdCategorias"].Visible = false;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void chPermiteEditar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chPermiteEditar.Checked)
+            {
+                DGVProductos.ReadOnly = false;
+            }
+            else
+            {
+                DGVProductos.ReadOnly = true;
+            }
+        }
 
-    }
-    
+        private void cbxMostrarProductos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxMostrarProductos.Checked)
+            {
+                chPermiteEditar.Visible = true;
+                DGVProductos.Visible = true;
+            }
+            else
+            {
+                chPermiteEditar.Visible = false;
+                DGVProductos.Visible = false;
+            }
+        }
+
+        private void Acomodartabla()
+        {
+            DGVProductos.RowHeadersVisible = false;
+            DGVProductos.Columns["Editar"].DisplayIndex = 0;
+            DGVProductos.Columns["Editar"].Width = 75;
+            DGVProductos.Columns["Eliminar"].DisplayIndex = 1;
+            DGVProductos.Columns["Eliminar"].Width = 75;
+            DGVProductos.Columns["IdProd"].DisplayIndex = 2;
+            DGVProductos.Columns["Nombre"].DisplayIndex = 3;
+            DGVProductos.Columns["Marca"].DisplayIndex = 4;
+            DGVProductos.Columns["CategoriaColumn"].DisplayIndex = 5;
+            DGVProductos.Columns["CodProd"].DisplayIndex = 6;
+            DGVProductos.Columns["Descripcion"].DisplayIndex = 7;
+            DGVProductos.Columns["Cantidad"].DisplayIndex = 8;
+            DGVProductos.Columns["Precio_Lista"].DisplayIndex = 9;
+            DGVProductos.Columns["precioventa"].DisplayIndex = 10;
+            DGVProductos.Columns["LitrosDisp"].DisplayIndex = 11;
+            DGVProductos.Columns["FechaCreacionModificacion"].DisplayIndex = 12;
+           
+
+        }
+    }    
 
 }
 

@@ -38,5 +38,12 @@ namespace Vista
             MenuCategoriaProductos LlamarMenuCategoriasProductos = new MenuCategoriaProductos();
             LlamarMenuCategoriasProductos.ShowDialog();
         }
+
+        private void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            PantallaMenuPrincipal LlamarMenuPrincipal = new PantallaMenuPrincipal();
+            Hide();
+            LlamarMenuPrincipal.ShowDialog();
+        }
     }
 }

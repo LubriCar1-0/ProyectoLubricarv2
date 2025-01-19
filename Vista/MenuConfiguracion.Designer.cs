@@ -28,56 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnRegresar = new System.Windows.Forms.Button();
             this.BtnEmpresa = new System.Windows.Forms.Button();
             this.BtnEmpleados = new System.Windows.Forms.Button();
             this.btnABMCategoriasProductos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // BtnRegresar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(174, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 54);
-            this.button1.TabIndex = 14;
-            this.button1.UseVisualStyleBackColor = false;
+            this.BtnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnRegresar.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnRegresar.FlatAppearance.BorderSize = 0;
+            this.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRegresar.Location = new System.Drawing.Point(283, 180);
+            this.BtnRegresar.Name = "BtnRegresar";
+            this.BtnRegresar.Size = new System.Drawing.Size(63, 54);
+            this.BtnRegresar.TabIndex = 14;
+            this.BtnRegresar.UseVisualStyleBackColor = false;
+            this.BtnRegresar.Click += new System.EventHandler(this.BtnRegresar_Click);
             // 
             // BtnEmpresa
             // 
+            this.BtnEmpresa.BackgroundImage = global::Vista.Properties.Resources.BtnEmpresa1;
+            this.BtnEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEmpresa.Image = global::Vista.Properties.Resources.BtnEmpresa1;
-            this.BtnEmpresa.Location = new System.Drawing.Point(623, 282);
+            this.BtnEmpresa.Location = new System.Drawing.Point(1066, 479);
             this.BtnEmpresa.Name = "BtnEmpresa";
-            this.BtnEmpresa.Size = new System.Drawing.Size(364, 137);
+            this.BtnEmpresa.Size = new System.Drawing.Size(411, 168);
             this.BtnEmpresa.TabIndex = 2;
             this.BtnEmpresa.UseVisualStyleBackColor = true;
             this.BtnEmpresa.Click += new System.EventHandler(this.BtnEmpresa_Click);
             // 
             // BtnEmpleados
             // 
+            this.BtnEmpleados.BackgroundImage = global::Vista.Properties.Resources.BtnEmpleados1;
+            this.BtnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnEmpleados.FlatAppearance.BorderSize = 0;
             this.BtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEmpleados.Image = global::Vista.Properties.Resources.BtnEmpleados1;
-            this.BtnEmpleados.Location = new System.Drawing.Point(626, 124);
+            this.BtnEmpleados.Location = new System.Drawing.Point(1066, 216);
             this.BtnEmpleados.Name = "BtnEmpleados";
-            this.BtnEmpleados.Size = new System.Drawing.Size(361, 139);
+            this.BtnEmpleados.Size = new System.Drawing.Size(411, 168);
             this.BtnEmpleados.TabIndex = 1;
             this.BtnEmpleados.UseVisualStyleBackColor = true;
             this.BtnEmpleados.Click += new System.EventHandler(this.BtnEmpleados_Click);
             // 
             // btnABMCategoriasProductos
             // 
+            this.btnABMCategoriasProductos.BackgroundImage = global::Vista.Properties.Resources.BTNAgregarCategorias;
+            this.btnABMCategoriasProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnABMCategoriasProductos.FlatAppearance.BorderSize = 0;
             this.btnABMCategoriasProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnABMCategoriasProductos.Image = global::Vista.Properties.Resources.BTNAgregarCategorias;
-            this.btnABMCategoriasProductos.Location = new System.Drawing.Point(626, 425);
+            this.btnABMCategoriasProductos.Location = new System.Drawing.Point(1066, 751);
             this.btnABMCategoriasProductos.Name = "btnABMCategoriasProductos";
-            this.btnABMCategoriasProductos.Size = new System.Drawing.Size(290, 109);
+            this.btnABMCategoriasProductos.Size = new System.Drawing.Size(411, 168);
             this.btnABMCategoriasProductos.TabIndex = 15;
             this.btnABMCategoriasProductos.UseVisualStyleBackColor = true;
             this.btnABMCategoriasProductos.Click += new System.EventHandler(this.btnABMCategoriasProductos_Click_1);
@@ -87,13 +91,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantMenuConfiguracion;
-            this.ClientSize = new System.Drawing.Size(1284, 724);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.btnABMCategoriasProductos);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.BtnEmpresa);
             this.Controls.Add(this.BtnEmpleados);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuConfiguracion";
             this.Text = "MenuConfiguracion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
@@ -101,7 +111,7 @@
         #endregion
         private System.Windows.Forms.Button BtnEmpleados;
         private System.Windows.Forms.Button BtnEmpresa;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnRegresar;
         private System.Windows.Forms.Button btnABMCategoriasProductos;
     }
 }

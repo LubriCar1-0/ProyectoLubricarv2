@@ -60,7 +60,7 @@ namespace Vista
             {
                 listaCategorias.Add(new Categoria
                 {
-                    IdCategoria = Convert.ToInt32(row["IdCategoria"]),
+                    IdCategoria = Convert.ToInt32(row["IdCategorias"]),
                     NombreCat = row["NombreCat"].ToString()
                 });
             }
@@ -199,6 +199,11 @@ namespace Vista
             Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marca.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje);
         }
 
+        public static void EliminarProducto(int IdProd, string valor)
+        {
+            Producto.EliminarProducto(IdProd, valor);
+
+        }
         
 
 
@@ -212,7 +217,7 @@ namespace Vista
 
             foreach (var cat in listaCategorias)
             {
-                CategoriasProcesadas.Add(cat.IdCategoria, $"{cat.NombreCategoria}");
+                CategoriasProcesadas.Add(cat.IdCategorias, $"{cat.NombreCategoria}");
             }
 
             return CategoriasProcesadas;
