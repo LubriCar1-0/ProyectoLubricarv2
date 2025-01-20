@@ -22,7 +22,7 @@ namespace Vista
             CargarClientes();
             ConfigurarDataGridView();
             CargarCategorias();
-
+            DgvTablaClientes.CellClick += DgvTablaClientes_CellClick;
 
         }
        
@@ -31,16 +31,16 @@ namespace Vista
 
             DgvTablaClientes.DataSource = null;
             DgvTablaClientes.DataSource = Validarcliente.ObtenerClientes();
-
-
-
+            if (DgvTablaClientes.Columns.Contains("idCliente"))
+            {
+                DgvTablaClientes.Columns["idCliente"].Visible = false;
+            }
         }
         private void CargarCategorias()
         {
             Dictionary<int, string> condiciones = Validarcliente.ObtenerCondicionesiva();
             foreach (var condicion in condiciones)
             {
-
                 CMBIVA.Items.Add(new KeyValuePair<int, string>(condicion.Key, condicion.Value));
             }
             CMBIVA.DisplayMember = "Value";
