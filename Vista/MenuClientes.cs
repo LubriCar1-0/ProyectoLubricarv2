@@ -28,22 +28,20 @@ namespace Vista
        
         private void CargarClientes() 
         {
-            
+
             DgvTablaClientes.DataSource = null;
             DgvTablaClientes.DataSource = Validarcliente.ObtenerClientes();
-            if (DgvTablaClientes.Columns.Contains("idCondicion"))
-            {
-                DgvTablaClientes.Columns["idCondicion"].Visible = false;
-            }
+
 
 
         }
         private void CargarCategorias()
         {
-            Dictionary<int, string> Condiciones = Validarcliente.ObtenerCondicionesIva();
-            foreach (var Cond in Condiciones)
+            Dictionary<int, string> condiciones = Validarcliente.ObtenerCondicionesiva();
+            foreach (var condicion in condiciones)
             {
-                CMBIVA.Items.Add(new KeyValuePair<int, string>(Cond.Key, Cond.Value));
+
+                CMBIVA.Items.Add(new KeyValuePair<int, string>(condicion.Key, condicion.Value));
             }
             CMBIVA.DisplayMember = "Value";
             CMBIVA.ValueMember = "Key";
@@ -66,7 +64,7 @@ namespace Vista
 
 
 
-            Validarcliente.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), Convert.ToInt32(TxtCuilCliente.Text.Trim()), TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), Convert.ToInt32(TxtTelefonoCliente.Text.Trim()), CMBIVA.SelectedItem.ToString(), Convert.ToInt32(TxtNumCasaCliente.Text.Trim()));
+            Validarcliente.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), Convert.ToInt32(TxtCuilCliente.Text.Trim()), TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), Convert.ToInt32(TxtTelefonoCliente.Text.Trim()),  Convert.ToInt32(TxtNumCasaCliente.Text.Trim()), idCondicion);
             MessageBox.Show("Se registro correctamente");
             LimpiarTextBox();
             CargarClientes();
@@ -78,9 +76,9 @@ namespace Vista
 
         private void CMBIVA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CMBIVA.SelectedItem is KeyValuePair<int, string> Condicionseleccionada)
+            if (CMBIVA.SelectedItem is KeyValuePair<int, string> condicionSeleccionada)
             {
-                idCondicion = Condicionseleccionada.Key;
+                idCondicion = condicionSeleccionada.Key;
             }
         }
 

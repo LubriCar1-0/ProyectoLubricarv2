@@ -119,22 +119,26 @@ namespace Vista
     #endregion
 
     #region cliente
-    public class Validarcliente : Cliente
+    public class Validarcliente : Clientes
     {
-        public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
+        public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
-            Clientes.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, CondicionIVA, Telefonocl);
+            Clientes.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA);
         }
-        public static  Dictionary<int, string> ObtenerCondicionesIva()
+
+        public static Dictionary<int, string> ObtenerCondicionesiva()
         {
-            List<Clientes> ListaCondiciones = Cliente.CodindionIva();
-            Dictionary<int, string> Condicionesobtenidas = new Dictionary<int, string>();
-            foreach (var Condicion  in ListaCondiciones) 
+            List<Clientes> listaCondiciones = Clientes.ObtenerCondiciones();
+            Dictionary<int, string> CondicionesProcesadas = new Dictionary<int, string>();
+
+            foreach (var cond in listaCondiciones)
             {
-                Condicionesobtenidas.Add(Condicion.IdCondicion, $"{Condicion.DescripcionIva}");
+                CondicionesProcesadas.Add(cond.IdCondicionIva, $"{cond.descripcionIva}");
             }
-            return Condicionesobtenidas;
+
+            return CondicionesProcesadas;
         }
+
         public static DataTable ObtenerClientes()
         {
             Conectar capaDatos = new Conectar();
@@ -143,7 +147,7 @@ namespace Vista
         }
     }
 
-    
+
 
 
     #endregion

@@ -177,23 +177,45 @@ namespace Datos
             return dt;
         }
 
-        public DataTable TraerCodindionIva()
+        public string TraerCodindionIva(int IdCondicionIVA)
         {
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "TraerCondicionIVA";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idCondicionIva", IdCondicionIVA);
+            string Condicion = Convert.ToString(comando.ExecuteScalar());
+            comando.Parameters.Clear();
+            desconectar();
+            return Condicion;
+
+        }
+
+        /*CREATE PROCEDURE TraerCondicionIVA
+              @idCondicionIva INT
+              AS
+             BEGIN
+                SELECT descripcion
+                FROM CondicionIva
+                WHERE idCondicionIva = @idCondicionIva;
+             END;*/
+        public DataTable TraerCondicionesIva()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerCondiciones";
+            comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
             desconectar();
             return dt;
+            /*  Create procedure TraerCondiciones
+                as
+                begin
+                select * from CondicionIva
+                end*/
         }
-        /*CREATE PROCEDURE TraerCondicionIVA
-               AS
-               BEGIN
-              SELECT idCondicionIva, descripcion FROM CondicionIva;
-              END*/
-
         public DataTable BuscarVehiculos()
         {
             conectar();
@@ -212,7 +234,7 @@ namespace Datos
         //select * from Vehiculo
         //end
 
-        public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, string CondicionIVA, int Telefonocl)
+        public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
             conectar();
             comando.Connection = conexion;
@@ -225,8 +247,8 @@ namespace Datos
             comando.Parameters.AddWithValue("@LocalidadCliente", LocalidadCL);
             comando.Parameters.AddWithValue("@CalleCL", CalleCliente);
             comando.Parameters.AddWithValue("@NumeracionCL", NumeracionCl);
-            comando.Parameters.AddWithValue("@CondicionIvaCL", CondicionIVA);
             comando.Parameters.AddWithValue("@TelefonoCL", Telefonocl);
+            comando.Parameters.AddWithValue("@IDCondicionIVACL", CondicionIVA);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
