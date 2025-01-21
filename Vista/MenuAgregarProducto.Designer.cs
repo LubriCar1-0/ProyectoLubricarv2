@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreProducto = new System.Windows.Forms.TextBox();
             this.TxtMarcaProducto = new System.Windows.Forms.TextBox();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
@@ -43,10 +43,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtcodigoProducto = new System.Windows.Forms.TextBox();
             this.DGVProductos = new System.Windows.Forms.DataGridView();
-            this.chPermiteEditar = new System.Windows.Forms.CheckBox();
-            this.cbxMostrarProductos = new System.Windows.Forms.CheckBox();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.chPermiteEditar = new System.Windows.Forms.CheckBox();
+            this.cbxMostrarProductos = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,12 +164,44 @@
             this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.Eliminar});
-            this.DGVProductos.Location = new System.Drawing.Point(211, 157);
+            this.DGVProductos.Location = new System.Drawing.Point(189, 314);
             this.DGVProductos.Name = "DGVProductos";
             this.DGVProductos.RowHeadersWidth = 62;
-            this.DGVProductos.Size = new System.Drawing.Size(783, 478);
+            this.DGVProductos.Size = new System.Drawing.Size(805, 321);
             this.DGVProductos.TabIndex = 14;
             this.DGVProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductos_CellContentClick);
+            // 
+            // Editar
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Editar.HeaderText = "";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "Editar";
+            this.Editar.ToolTipText = "Se editara la fila seleccionada";
+            this.Editar.UseColumnTextForButtonValue = true;
+            // 
+            // Eliminar
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminar.HeaderText = "";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.ToolTipText = "Se eliminara la fila seleccionada";
+            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // chPermiteEditar
             // 
@@ -197,38 +229,6 @@
             this.cbxMostrarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.cbxMostrarProductos.UseVisualStyleBackColor = false;
             this.cbxMostrarProductos.CheckedChanged += new System.EventHandler(this.cbxMostrarProductos_CheckedChanged);
-            // 
-            // Editar
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Editar.HeaderText = "";
-            this.Editar.Name = "Editar";
-            this.Editar.Text = "Editar";
-            this.Editar.ToolTipText = "Se editara la fila seleccionada";
-            this.Editar.UseColumnTextForButtonValue = true;
-            // 
-            // Eliminar
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.ToolTipText = "Se eliminara la fila seleccionada";
-            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // MenuAgregarProducto
             // 

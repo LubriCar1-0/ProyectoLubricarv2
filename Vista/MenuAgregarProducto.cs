@@ -62,13 +62,15 @@ namespace Vista
                 {
                     double cantidadLT = 0.0;
                     ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, cantidadLT);
-                    MessageBox.Show("Éxito", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Cargatabla();
                 }
                 else
                 {
                     LitrosDisponibles = Convert.ToDouble(litro.Trim());
                     ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, LitrosDisponibles);
                     MessageBox.Show("Producto agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Cargatabla();
                 }
             }
             else

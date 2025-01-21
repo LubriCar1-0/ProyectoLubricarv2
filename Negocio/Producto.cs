@@ -17,7 +17,7 @@ namespace Negocio
             public int idProducto { get; set; }
             public string nombre { get; set; }
             public int codProd { get; set; }
-            public string Idcategoria { get; set; }
+            public string Idcategorias { get; set; }
             public string descripcion { get; set; }
             public float precio { get; set; }
             public int cantDisp { get; set; }
