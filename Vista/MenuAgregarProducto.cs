@@ -31,6 +31,7 @@ namespace Vista
             chPermiteEditar.Visible = false;
             DGVProductos.ReadOnly = true;
             txtLitros.Enabled = false;
+            cmbCategoria.Enabled = true;
            
 
         }
@@ -49,29 +50,36 @@ namespace Vista
             double LitrosDisponibles;
             int ValorCategoria = 0;
             int cantidad = Convert.ToInt32(TxtCantidad.Text.Trim());
+            int cantidadmin = Convert.ToInt32(TxtCantMin.Text.Trim());
             double precioLista = Convert.ToDouble(TxtPrecioList.Text.Trim());
             double precioVenta = Convert.ToDouble(txtPrecioVent.Text.Trim());
             string CodigoProducto = txtcodigoProducto.Text.Trim();
-            string litro = txtLitros.Text.Trim();
+            double litro = Convert.ToDouble(txtLitros.Text.Trim());
+            double litroMin = Convert.ToDouble(txtLitrosMinimos.Text.Trim());
             ValorCategoria = IdCategorias;
 
             int Chequea = Conectar.BuscaDuplicadoProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria);
             if (Chequea == 0)
             {
-                if (litro == "0.0")
-                {
-                    double cantidadLT = 0.0;
-                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, cantidadLT);
-                    MessageBox.Show("Éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Cargatabla();
-                }
-                else
-                {
-                    LitrosDisponibles = Convert.ToDouble(litro.Trim());
-                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, LitrosDisponibles);
+                //int liquido = ValidaCategoriasProducto.ChequeaLiquido(ValorCategoria);
+                //if (liquido == 1)
+                //{
+                //    txtLitros.Enabled = true;
+                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, litro, litroMin,cantidadmin);
                     MessageBox.Show("Producto agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Cargatabla();
-                }
+                //}
+                //else
+                //{
+                //    txtLitros.Enabled = false;
+                //    TxtCantidad.Enabled = false;
+                //    TxtCantMin.Enabled = false;
+                //    //double cantidadLT = 0.0;
+                //    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, litro, litroMin);
+                //    MessageBox.Show("Éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    Cargatabla();
+                //}
+
             }
             else
             {
@@ -174,16 +182,23 @@ namespace Vista
             }
         }
 
+
         private void VerificaLiquido(int ValorCategoria)
         {
             int Liquido = ValidaCategoriasProducto.ChequeaLiquido(ValorCategoria);
             if (Liquido == 1)
             {
                 txtLitros.Enabled = true;
+                txtLitrosMinimos.Enabled = true;    
+                TxtCantMin.Enabled = false;
+                TxtCantidad.Enabled = false;    
             }
             else
             {
                 txtLitros.Enabled = false;
+                txtLitrosMinimos.Enabled = false;
+                TxtCantMin.Enabled = true;
+                TxtCantidad.Enabled = true;
             }
 
         }
@@ -275,12 +290,76 @@ namespace Vista
             DGVProductos.Columns["CodProd"].DisplayIndex = 6;
             DGVProductos.Columns["Descripcion"].DisplayIndex = 7;
             DGVProductos.Columns["Cantidad"].DisplayIndex = 8;
-            DGVProductos.Columns["Precio_Lista"].DisplayIndex = 9;
-            DGVProductos.Columns["precioventa"].DisplayIndex = 10;
-            DGVProductos.Columns["LitrosDisp"].DisplayIndex = 11;
-            DGVProductos.Columns["FechaCreacionModificacion"].DisplayIndex = 12;
-           
+            DGVProductos.Columns["CantidadMinima"].DisplayIndex = 9;
+            DGVProductos.Columns["Precio_Lista"].DisplayIndex = 10;
+            DGVProductos.Columns["precioventa"].DisplayIndex = 11;
+            DGVProductos.Columns["LitrosDisp"].DisplayIndex = 12;
+            DGVProductos.Columns["LitrosMinimo"].DisplayIndex = 13;
 
+
+        }
+
+        private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Solo numeros
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquea el caracter
+            }
+        }
+
+        private void TxtCantMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquea el caracter
+            }
+        }
+
+        private void txtLitros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquea el caracter
+            }
+        }
+
+        private void TxtPrecioList_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquea el caracter
+            }
+        }
+
+        private void txtPrecioVent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquea el caracter
+            }
+        }
+
+
+        private void VerificaLetras()
+        {
+
+
+
+
+
+        }
+
+        private void TxtCantMin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MenuStock LlamarMenuStock = new MenuStock();
+            Hide();
+            LlamarMenuStock.ShowDialog();
         }
     }    
 

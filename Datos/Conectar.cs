@@ -452,7 +452,7 @@ namespace Datos
         #endregion
 
         #region Productos
-        public static void AgregarProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles)
+        public static void AgregarProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles,double litroMin, int cantidadmin )
         {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
@@ -468,7 +468,8 @@ namespace Datos
             comando.Parameters.AddWithValue("@PrecioLista", PrecioLista);
             comando.Parameters.AddWithValue("@PrecioVenta", PrecioVenta);
             comando.Parameters.AddWithValue("@LitrosDisponibles", LitrosDisponibles);
-            comando.Parameters.AddWithValue("@FechaCreacionModificacion", LitrosDisponibles);
+            comando.Parameters.AddWithValue("@Minlitro", litroMin);
+            comando.Parameters.AddWithValue("@Minimo", cantidadmin);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -485,10 +486,12 @@ namespace Datos
             @CantidadProduc int,
             @PrecioLista Decimal,
             @PrecioVenta Decimal,
-            @LitrosDisponibles decimal)
+            @LitrosDisponibles decimal,
+			@Minlitro Decimal,
+			@Minimo int)
             as begin
-            Insert into Producto(Nombre, Marca, IdCategoria, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp,FechaCreacionModificacion) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles,@FechaCreacionModificacion)
-            end*/
+            Insert into Producto(Nombre, Marca, IdCategorias, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp,CantidadMinima,LitrosMinimo) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles,@Minimo,@Minlitro)
+            end
 
             /*CREATE TABLE [dbo].[Producto](
               [idProd] [numeric](18, 0) IDENTITY(1,1) NOT NULL,

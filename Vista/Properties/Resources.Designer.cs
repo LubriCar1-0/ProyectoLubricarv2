@@ -723,6 +723,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PantallaAgregarProducto1 {
+            get {
+                object obj = ResourceManager.GetObject("PantallaAgregarProducto1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PantallaAgregarProductoLubriPu {
             get {
                 object obj = ResourceManager.GetObject("PantallaAgregarProductoLubriPu", resourceCulture);
