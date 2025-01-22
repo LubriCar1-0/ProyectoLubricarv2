@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-Car Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -240,6 +240,27 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "InsertarCliente";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NombreCL", NomCliente);
+            comando.Parameters.AddWithValue("@ApellidoCL", ApeCliente);
+            comando.Parameters.AddWithValue("@RazSocialCL", RazSocCliente);
+            comando.Parameters.AddWithValue("@ClaveIdenCL", ClaveCliente);
+            comando.Parameters.AddWithValue("@LocalidadCliente", LocalidadCL);
+            comando.Parameters.AddWithValue("@CalleCL", CalleCliente);
+            comando.Parameters.AddWithValue("@NumeracionCL", NumeracionCl);
+            comando.Parameters.AddWithValue("@TelefonoCL", Telefonocl);
+            comando.Parameters.AddWithValue("@IDCondicionIVACL", CondicionIVA);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
+
+        public static void ActualizarCliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "UpdateCliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Idcliente", idcliente);
             comando.Parameters.AddWithValue("@NombreCL", NomCliente);
             comando.Parameters.AddWithValue("@ApellidoCL", ApeCliente);
             comando.Parameters.AddWithValue("@RazSocialCL", RazSocCliente);

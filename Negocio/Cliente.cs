@@ -45,7 +45,7 @@ namespace Negocio
 
             return condiciones;
         }
-        public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl,  int Telefonocl, int CondicionIVA)
+        public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
             Conectar capaDatos = new Conectar();
             DataTable TablaClientes = capaDatos.BuscarClientes();
@@ -66,16 +66,17 @@ namespace Negocio
             }
             if (!clienteencontrado)
             {
-                    Conectar.AgregarCliente(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl,  Telefonocl, CondicionIVA);
-                    string detalle = "Carga de cliente al sistema";
-                    AgregarBitacora(Empleados.IdTrabajador, Empleados.NombreTrabajador, detalle);
+                Conectar.AgregarCliente(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA);
+                string detalle = "Carga de cliente al sistema";
+                AgregarBitacora(Empleados.IdTrabajador, Empleados.NombreTrabajador, detalle);
             }
-            } 
+
         }
-        public class cliente : Empleados
+        public static void Actulizacliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
-            
+            Conectar.ActualizarCliente(idcliente, NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA);
         }
-    }
+    } 
+}
     
 

@@ -145,7 +145,19 @@ namespace Vista
             DataTable TablaClientes = capaDatos.BuscarClientes();
             return TablaClientes;
         }
+        public static void Modificacioncliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
+        {
+            try
+            {
+                Clientes.Actulizacliente(idcliente, NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error en la validación de datos: {ex.Message}");
+            }
+        }
     }
+    
 
 
 

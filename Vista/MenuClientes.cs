@@ -106,7 +106,7 @@ namespace Vista
             TxtLocalidadCliente.Text = filaSeleccionada.Cells["localidadCL"].Value.ToString().Trim();
             TxtCalleCliente.Text = filaSeleccionada.Cells["calleCL"].Value.ToString().Trim();
             TxtTelefonoCliente.Text = filaSeleccionada.Cells["telefonoCL"].Value.ToString().Trim();
-            /*ACA IRIA EL COMBO BOX IVA */
+            int idcondicion = Convert.ToInt32(filaSeleccionada.Cells["IdCondicionIva"].Value);
             TxtNumCasaCliente.Text = filaSeleccionada.Cells["numeracionCL"].Value.ToString().Trim();
 
             if (DgvTablaClientes.Columns[e.ColumnIndex].Name == "Editar")
@@ -114,23 +114,23 @@ namespace Vista
                 if (e.RowIndex >= 0)
                 {
                     DataGridViewRow filaSeleccionadaUPD = DgvTablaClientes.Rows[e.RowIndex];
-                    int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+                    int idClienteUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCliente"].Value);
 
-                    string NombreClienteUPD = filaSeleccionada.Cells["NomCL"].Value.ToString().Trim();
-                    string ApellidoClienteUPD = filaSeleccionada.Cells["ApeCL"].Value.ToString().Trim();
-                    string RazonSocialClienteUpd = filaSeleccionada.Cells["RazSocialCL"].Value.ToString().Trim();
-                    string CuilClienteUPD = filaSeleccionada.Cells["claveIdenCL"].Value.ToString().Trim();
-                    string LocalidadClienteUPD = filaSeleccionada.Cells["localidadCL"].Value.ToString().Trim();
-                    string CalleClienteUPD = filaSeleccionada.Cells["calleCL"].Value.ToString().Trim();
-                    string TelefonoClienteUPD = filaSeleccionada.Cells["telefonoCL"].Value.ToString().Trim();
-                    /* ACA IRIA EL COMBO BOX DE IVA*/
-                    string NumeroCasaClienteUPD = filaSeleccionada.Cells["numeracionCL"].Value.ToString().Trim();
+                    string NombreClienteUPD = filaSeleccionadaUPD.Cells["NomCL"].Value.ToString().Trim();
+                    string ApellidoClienteUPD = filaSeleccionadaUPD.Cells["ApeCL"].Value.ToString().Trim();
+                    string RazonSocialClienteUpd = filaSeleccionadaUPD.Cells["RazSocialCL"].Value.ToString().Trim();
+                    string CuilClienteUPD = filaSeleccionadaUPD.Cells["claveIdenCL"].Value.ToString().Trim();
+                    string LocalidadClienteUPD = filaSeleccionadaUPD.Cells["localidadCL"].Value.ToString().Trim();
+                    string CalleClienteUPD = filaSeleccionadaUPD.Cells["calleCL"].Value.ToString().Trim();
+                    string TelefonoClienteUPD = filaSeleccionadaUPD.Cells["telefonoCL"].Value.ToString().Trim();
+                    int idcondicionUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["IdCondicionIva"].Value);
+                    string NumeroCasaClienteUPD = filaSeleccionadaUPD.Cells["numeracionCL"].Value.ToString().Trim();
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que querer continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultado == DialogResult.Yes)
                     {
 
-                        /*ValidarClientes.ModificacionVehiculo();*/
+                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.Trim(), ApellidoClienteUPD.Trim(), RazonSocialClienteUpd.Trim(), Convert.ToInt32(CuilClienteUPD.Trim()), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(TelefonoClienteUPD.Trim()), idcondicionUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()));
                         Console.WriteLine("Cambio realizado.");
                         LimpiarTextBox();
                         CargarClientes();
