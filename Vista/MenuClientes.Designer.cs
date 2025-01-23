@@ -45,6 +45,7 @@
             this.CMBIVA = new System.Windows.Forms.ComboBox();
             this.chbeditar = new System.Windows.Forms.CheckBox();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,7 +77,8 @@
             // 
             this.DgvTablaClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvTablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar});
+            this.Editar,
+            this.Eliminar});
             this.DgvTablaClientes.Location = new System.Drawing.Point(213, 481);
             this.DgvTablaClientes.Name = "DgvTablaClientes";
             this.DgvTablaClientes.Size = new System.Drawing.Size(732, 95);
@@ -207,6 +209,11 @@
             this.Editar.Name = "Editar";
             this.Editar.UseColumnTextForButtonValue = true;
             // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // MenuClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,5 +262,6 @@
         private System.Windows.Forms.ComboBox CMBIVA;
         private System.Windows.Forms.CheckBox chbeditar;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }
