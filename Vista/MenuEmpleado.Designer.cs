@@ -51,7 +51,7 @@
             this.TxtNombreEmpleado.Name = "TxtNombreEmpleado";
             this.TxtNombreEmpleado.Size = new System.Drawing.Size(243, 22);
             this.TxtNombreEmpleado.TabIndex = 0;
-            this.TxtNombreEmpleado.TextChanged += new System.EventHandler(this.TxtNombreEmpleado_TextChanged);
+            
             // 
             // TxtApellidoEmpleado
             // 
@@ -188,7 +188,7 @@
             this.Controls.Add(this.TxtNombreEmpleado);
             this.DoubleBuffered = true;
             this.Name = "MenuEmpleado";
-            this.Load += new System.EventHandler(this.MenuEmpleado_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.DgvMenuEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

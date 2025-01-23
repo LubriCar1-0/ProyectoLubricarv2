@@ -11,116 +11,109 @@ namespace Negocio
 {
     public class Empleados : Conectar
     {
-        
-            #region Variables
+
+        #region Variables
         public static int IdTrabajador { get; private set; }
         public static string NombreTrabajador { get; private set; }
-        //public class categorias
-        //{
-            public int idCategoria { get; set; }
-            public string NombreCat { get; set; }
-        //}
-        
+        public int idCategoria { get; set; }
+        public string NombreCat { get; set; }
         public int PermisoCat { get; set; }
-
-
-           
         #endregion
 
         public static void IngresoEmpleados(int documento, string contraseña)
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
+            bool usuarioEncontrado = false;
+
+            foreach (DataRow Fila in TablaEmpleados.Rows)
             {
-                Conectar capaDatos = new Conectar();
-                DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
-                bool usuarioEncontrado = false;
 
-                foreach (DataRow Fila in TablaEmpleados.Rows)
+                if (Fila["documentoTR"] != DBNull.Value)
                 {
-                    
-                    if (Fila["documentoTR"] != DBNull.Value)
-                    {
-                        int Documentoint = Convert.ToInt32(Fila["documentoTR"]);
+                    int Documentoint = Convert.ToInt32(Fila["documentoTR"]);
 
-                        
-                        if (Documentoint == documento)
+
+                    if (Documentoint == documento)
+                    {
+
+                        string ContraseñaEnBD = Fila["contraseñaTR"].ToString();
+                        if (ContraseñaEnBD == contraseña)
                         {
-                            
-                            string ContraseñaEnBD = Fila["contraseñaTR"].ToString();
-                            if (ContraseñaEnBD == contraseña)
-                            {
-                                usuarioEncontrado = true;
-                                int Idtrabajador = capaDatos.TraeId(documento);
-                                IdTrabajador = Idtrabajador;
-                                string Nomtrabajador = capaDatos.BuscarEmp(Idtrabajador);
-                                NombreTrabajador = Nomtrabajador;
-                                string detalle = "Acceso al sistema";
-                                AgregarBitacora(Idtrabajador, Nomtrabajador, detalle);
-                                return;
-                            }
-                            else
-                            {
-                                throw new Exception("Contraseña no válida");
-                            }
+                            usuarioEncontrado = true;
+                            int Idtrabajador = capaDatos.TraeId(documento);
+                            IdTrabajador = Idtrabajador;
+                            string Nomtrabajador = capaDatos.BuscarEmp(Idtrabajador);
+                            NombreTrabajador = Nomtrabajador;
+                            string detalle = "Acceso al sistema";
+                            AgregarBitacora(Idtrabajador, Nomtrabajador, detalle);
+                            return;
+                        }
+                        else
+                        {
+                            throw new Exception("Contraseña no válida");
                         }
                     }
-                    else
-                    {
-                        
-                        throw new Exception("El numero de documento es inválido.");
-                    }
                 }
-
-                
-                if (!usuarioEncontrado)
+                else
                 {
-                    throw new Exception("Empleado no encontrado");
+
+                    throw new Exception("El numero de documento es inválido.");
                 }
             }
 
 
-            public static void CargaDeEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int categoria)
+            if (!usuarioEncontrado)
             {
-                Conectar capaDatos = new Conectar();
-                DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
-                bool usuarioEncontrado = false;
+                throw new Exception("Empleado no encontrado");
+            }
+        }
 
 
-                foreach (DataRow Fila in TablaEmpleados.Rows)
+        public static void CargaDeEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int categoria)
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable TablaEmpleados = capaDatos.BuscarEmpleados();
+            bool usuarioEncontrado = false;
+
+
+            foreach (DataRow Fila in TablaEmpleados.Rows)
+            {
+                string DocumentoEnBD = Fila["documentoTR"].ToString();
+                int Documentoint = Convert.ToInt32(DocumentoEnBD);
+                if (Documentoint == Documento)
                 {
-                    string DocumentoEnBD = Fila["documentoTR"].ToString();
-                    int Documentoint = Convert.ToInt32(DocumentoEnBD);
-                    if (Documentoint == Documento) 
-                    { 
-                        usuarioEncontrado = true;
-                        throw new Exception("Ya existe un empleado con este documento");
+                    usuarioEncontrado = true;
+                    throw new Exception("Ya existe un empleado con este documento");
 
-                    
-                    }
 
                 }
-                if (!usuarioEncontrado) 
-                {
+
+            }
+            if (!usuarioEncontrado)
+            {
 
                 Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, categoria);
-                    string detalle = "Cargar un empleado";
-                    AgregarBitacora(IdTrabajador, NombreTrabajador, detalle);
-                    return;
-                    // agregar un registro a la bitacora de que se agrega un empleado 
+                string detalle = "Cargar un empleado";
+                AgregarBitacora(IdTrabajador, NombreTrabajador, detalle);
+                return;
+                // agregar un registro a la bitacora de que se agrega un empleado 
 
-                }
             }
-            public DataTable ObtenerCategorias()
-            {
-                Conectar capaDatos = new Conectar();
+        }
+        public DataTable ObtenerCategorias()
+        {
+            Conectar capaDatos = new Conectar();
 
-                return capaDatos.TraerTablaCategorias();
-            }
+            return capaDatos.TraerTablaCategorias();
+        }
 
 
         public static void ModificarEmpleado(int idTrabajadorUPD, int idCategoriaUPD, string NombreUPD, string ApellidoUPD, int DNIUPD, string ContraseñaUPD, int CelularUPD)
         {
             try
             {
-                Conectar.ActualizarVehiculo(idTrabajadorUPD, idCategoriaUPD, NombreUPD, ApellidoUPD, DNIUPD, ContraseñaUPD, CelularUPD);
+                Conectar.ActualizarEmpleado(idTrabajadorUPD, idCategoriaUPD, NombreUPD, ApellidoUPD, DNIUPD, ContraseñaUPD, CelularUPD);
                 // agregar a la bitacora 
             }
             catch (Exception ex)
@@ -129,12 +122,12 @@ namespace Negocio
             }
         }
 
-        public static void CambiarEstado(int idTrabajador)
+        public static void CambiarEstado(int idTrabajador, string Estado)
         {
             try
             {
-                string EstadoBaja = "DES";
-                Conectar.EstadoEmpleado(idTrabajador, EstadoBaja);
+
+                Conectar.EstadoEmpleado(idTrabajador, Estado);
             }
             catch (Exception ex)
             {
@@ -153,7 +146,7 @@ namespace Negocio
                 {
                     idCategoria = Convert.ToInt32(row["idCategoria"]),
                     NombreCat = row["NombreCat"].ToString(),
-                    PermisoCat = Convert.ToInt32(row["PermisoCat"]) 
+                    PermisoCat = Convert.ToInt32(row["PermisoCat"])
 
                 });
             }

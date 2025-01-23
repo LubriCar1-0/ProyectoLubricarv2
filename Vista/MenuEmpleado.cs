@@ -14,7 +14,6 @@ namespace Vista
 {
     public partial class MenuEmpleado : Form
     {
-
         public MenuEmpleado()
         {
             InitializeComponent();
@@ -32,7 +31,10 @@ namespace Vista
         {
             DgvMenuEmpleado.DataSource = null;
             DgvMenuEmpleado.DataSource = Validaciones.TraeEmpleados();
-            
+            DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+            DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+
+
         }
 
         private void BtnAgregarMeEmpleado_Click(object sender, EventArgs e)
@@ -69,10 +71,6 @@ namespace Vista
                 MessageBox.Show(ex.Message);
             }
         }
-
-
-
-
         private void CmbCategoriaEmple_SelectedIndexChanged(object sender, EventArgs e)
         {
             string categoriaSeleccionada = CmbCategoriaEmple.SelectedItem.ToString();
@@ -81,22 +79,10 @@ namespace Vista
             if (categorias.ContainsKey(categoriaSeleccionada))
             {
                 int permisoCat = categorias[categoriaSeleccionada];
-                
-                
+
+
             }
         }
-        
-
-        private void TxtNombreEmpleado_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuEmpleado_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void DgvMenuEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = DgvMenuEmpleado.Rows[e.RowIndex];
@@ -120,7 +106,7 @@ namespace Vista
                     string DNIUPD = filaSeleccionada.Cells["documentoTR"].Value.ToString();
                     string ContraseñaUPD = filaSeleccionada.Cells["contraseñaTR"].Value.ToString();
                     string CelularUPD = filaSeleccionada.Cells["telefonoTR"].Value.ToString();
-                    CmbCategoriaEmple.Text = Validaciones.ObtCat(idCategoria);
+                    CmbCategoriaEmple.Text = Validaciones.ObtCat(idCategoriaUPD);
 
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -134,11 +120,15 @@ namespace Vista
                         LimpiaTextBox();
                         CargarEmpleados();
                         ConfigurarDataGridView();
+                        DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+                        DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                     }
                     else if (resultado == DialogResult.No)
                     {
                         CargarEmpleados();
                         ConfigurarDataGridView();
+                        DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+                        DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                     }
                 }
             }
@@ -149,7 +139,7 @@ namespace Vista
                     int idTrabajadorUPD = Convert.ToInt32(filaSeleccionada.Cells["idTrabajador"].Value);
                     string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
 
-                    CmbCategoriaEmple.Text = Validaciones.ObtCat(idCategoria);
+
 
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -159,17 +149,21 @@ namespace Vista
 
                         if (Estado == "ACT")
                         {
-                            Validaciones.EstadoEmpleado(idTrabajadorUPD, "DES");
-                            MessageBox.Show("Estado Modificado.");
+                            Validaciones.BajaAltaEmpleado(idTrabajadorUPD, "DES");
+                            MessageBox.Show("Empleado DADO DE BAJA.");
                             CargarEmpleados();
                             ConfigurarDataGridView();
+                            DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+                            DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                         }
                         else if (Estado == "DES")
                         {
-                            ValidaCategoriasProducto.CambiarEstado(idTrabajadorUPD, "ACT");
-                            MessageBox.Show("Estado Modificado.");
+                            Validaciones.BajaAltaEmpleado(idTrabajadorUPD, "ACT");
+                            MessageBox.Show("Empleado DADO DE ALTA");
                             CargarEmpleados();
                             ConfigurarDataGridView();
+                            DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+                            DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                         }
                     }
                     else if (resultado == DialogResult.No)
@@ -180,7 +174,6 @@ namespace Vista
             }
 
         }
-
         private void chbEditar_CheckedChanged(object sender, EventArgs e)
         {
             if (chbEditar.Checked)
@@ -232,12 +225,6 @@ namespace Vista
                 MessageBox.Show($"Error al cargar categorías: {ex.Message}");
             }
         }
-
-        private void DgvMenuEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void ConfigurarDataGridView()
         {
             var comboBoxColumn = new DataGridViewComboBoxColumn
@@ -258,8 +245,10 @@ namespace Vista
 
             // Agrega la columna al DataGridView
             DgvMenuEmpleado.Columns.Add(comboBoxColumn);
+        }
 
-
+        private void DgvMenuEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

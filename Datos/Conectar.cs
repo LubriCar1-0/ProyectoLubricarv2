@@ -31,11 +31,13 @@ namespace Datos
         public DataTable BuscarEmpleados()
         {
             conectar();
+            comando.Parameters.Clear();
             comando.Connection = conexion;
             comando.CommandText = "TraerTablaEmpleados";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
+
             desconectar();
             return dt;
         }
@@ -104,16 +106,16 @@ namespace Datos
         }
         public string ObtenerCategoria(int idCat)
         {
-                conectar();
-                comando.Connection = conexion;
-                comando.CommandText = "ObtenerNomCat";
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@idCategoria", idCat);
-                string Categoria = Convert.ToString(comando.ExecuteScalar());
-                comando.Parameters.Clear();
-                desconectar();
-                return Categoria;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ObtenerNomCat";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idCategoria", idCat);
+            string Categoria = Convert.ToString(comando.ExecuteScalar());
+            comando.Parameters.Clear();
+            desconectar();
+            return Categoria;
         }
         public static void ActualizarEmpleado(int idTrabajadorUPD, int idCategoriaUPD, string NombreUPD, string ApellidoUPD, int DNIUPD, string ContraseñaUPD, int CelularUPD)
         {
@@ -135,14 +137,29 @@ namespace Datos
         public static void EstadoEmpleado(int idTrabajador, string Estado)
         {
             conectar();
+            comando.Parameters.Clear();
             comando.Connection = conexion;
-            comando.CommandText = "EstadoEmpleado";
+            comando.CommandText = "CambiarEstado";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idTrabajador", idTrabajador);
             comando.Parameters.AddWithValue("@Estado", Estado);
             comando.ExecuteNonQuery();
+
             desconectar();
+            // CREATE PROCEDURE CambiarEstado
+            //(
+            // @idTrabajador INT,
+            // @Estado char(3)
+            //)
+            //AS
+            //BEGIN
+            //    UPDATE Trabajador 
+            //    SET
+            //        Estado = @Estado
+            //    WHERE
+            //        idTrabajador = @idTrabajador; 
+            //END
 
         }
 
