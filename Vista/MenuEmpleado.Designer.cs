@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreEmpleado = new System.Windows.Forms.TextBox();
             this.TxtApellidoEmpleado = new System.Windows.Forms.TextBox();
             this.TxtDniEmpleado = new System.Windows.Forms.TextBox();
             this.TxtCelularEmpleado = new System.Windows.Forms.TextBox();
             this.CmbCategoriaEmple = new System.Windows.Forms.ComboBox();
             this.DgvMenuEmpleado = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnAgregarMeEmpleado = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.chbEditar = new System.Windows.Forms.CheckBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMenuEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +53,6 @@
             this.TxtNombreEmpleado.Name = "TxtNombreEmpleado";
             this.TxtNombreEmpleado.Size = new System.Drawing.Size(243, 22);
             this.TxtNombreEmpleado.TabIndex = 0;
-            
             // 
             // TxtApellidoEmpleado
             // 
@@ -98,16 +99,6 @@
             this.DgvMenuEmpleado.Size = new System.Drawing.Size(696, 150);
             this.DgvMenuEmpleado.TabIndex = 6;
             this.DgvMenuEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMenuEmpleado_CellContentClick);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
             // 
             // BtnAgregarMeEmpleado
             // 
@@ -168,6 +159,31 @@
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
             // 
+            // Editar
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Eliminar.HeaderText = "Baja/Alta";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Text = "ESTADO";
+            // 
             // MenuEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +204,6 @@
             this.Controls.Add(this.TxtNombreEmpleado);
             this.DoubleBuffered = true;
             this.Name = "MenuEmpleado";
-            
             ((System.ComponentModel.ISupportInitialize)(this.DgvMenuEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,9 +221,9 @@
         private System.Windows.Forms.Button BtnAgregarMeEmpleado;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.CheckBox chbEditar;
         private System.Windows.Forms.Button btnBorraCampos;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

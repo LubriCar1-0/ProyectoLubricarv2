@@ -17,8 +17,9 @@ namespace Vista
         public MenuEmpleado()
         {
             InitializeComponent();
-            ConfigurarDataGridView();
+            //ConfigurarDataGridView();
             CargarCategorias();
+            //Acomodartabla();
             CargarEmpleados();
             DgvMenuEmpleado.ReadOnly = true;
             DgvMenuEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -33,6 +34,7 @@ namespace Vista
             DgvMenuEmpleado.DataSource = Validaciones.TraeEmpleados();
             DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
             DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+            ConfigurarDataGridView();
 
 
         }
@@ -100,13 +102,13 @@ namespace Vista
                 {
 
                     int idTrabajadorUPD = Convert.ToInt32(filaSeleccionada.Cells["idTrabajador"].Value);
-                    int idCategoriaUPD = Convert.ToInt32(filaSeleccionada.Cells["idCategoria"].Value);
+                    int idCategoriaUPD = Convert.ToInt32(filaSeleccionada.Cells["CategoriaColumn"].Value);
                     string NombreUPD = filaSeleccionada.Cells["NomTR"].Value.ToString();
                     string ApellidoUPD = filaSeleccionada.Cells["ApeTR"].Value.ToString();
                     string DNIUPD = filaSeleccionada.Cells["documentoTR"].Value.ToString();
                     string ContraseñaUPD = filaSeleccionada.Cells["contraseñaTR"].Value.ToString();
                     string CelularUPD = filaSeleccionada.Cells["telefonoTR"].Value.ToString();
-                    CmbCategoriaEmple.Text = Validaciones.ObtCat(idCategoriaUPD);
+                    
 
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -120,6 +122,8 @@ namespace Vista
                         LimpiaTextBox();
                         CargarEmpleados();
                         ConfigurarDataGridView();
+                        //Acomodartabla();
+                        //DgvMenuEmpleado.Columns["NombreCat"].Visible = false;
                         DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
                         DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                     }
@@ -127,6 +131,8 @@ namespace Vista
                     {
                         CargarEmpleados();
                         ConfigurarDataGridView();
+                        //Acomodartabla();
+                        //DgvMenuEmpleado.Columns["NombreCat"].Visible=false;
                         DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
                         DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                     }
@@ -153,6 +159,8 @@ namespace Vista
                             MessageBox.Show("Empleado DADO DE BAJA.");
                             CargarEmpleados();
                             ConfigurarDataGridView();
+                            //Acomodartabla();
+                            //DgvMenuEmpleado.Columns["NombreCat"].Visible = false;
                             DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
                             DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                         }
@@ -162,6 +170,8 @@ namespace Vista
                             MessageBox.Show("Empleado DADO DE ALTA");
                             CargarEmpleados();
                             ConfigurarDataGridView();
+                            //Acomodartabla();
+                            //DgvMenuEmpleado.Columns["NombreCat"].Visible = false;
                             DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
                             DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                         }
@@ -179,12 +189,12 @@ namespace Vista
             if (chbEditar.Checked)
             {
                 DgvMenuEmpleado.ReadOnly = false;
-                MessageBox.Show("Edición habilitada. Puedes editar la grid.", "Información");
+                
             }
             else
             {
                 DgvMenuEmpleado.ReadOnly = true;
-                MessageBox.Show("Edición deshabilitada. La grid está bloqueada.", "Información");
+                
             }
         }
         private void LimpiaTextBox()
@@ -251,5 +261,23 @@ namespace Vista
         {
 
         }
+        //private void Acomodartabla()
+        //{
+        //    DgvMenuEmpleado.RowHeadersVisible = false;
+        //    DgvMenuEmpleado.Columns["Editar"].DisplayIndex = 0;
+        //    DgvMenuEmpleado.Columns["Editar"].Width = 75;
+        //    DgvMenuEmpleado.Columns["Eliminar"].DisplayIndex = 1;
+        //    DgvMenuEmpleado.Columns["Eliminar"].Width = 75;
+            
+        //    DgvMenuEmpleado.Columns["NomTR"].DisplayIndex = 3;
+        //    DgvMenuEmpleado.Columns["ApeTR"].DisplayIndex = 4;
+        //    DgvMenuEmpleado.Columns["CategoriaColumn"].DisplayIndex = 5;
+        //    DgvMenuEmpleado.Columns["documentoTR"].DisplayIndex = 6;
+        //    DgvMenuEmpleado.Columns["contraseñaTR"].DisplayIndex = 7;
+        //    DgvMenuEmpleado.Columns["telefonoTR"].DisplayIndex = 8;
+        //    DgvMenuEmpleado.Columns["ESTADO"].DisplayIndex = 9;
+           
+
+        //}
     }
 }

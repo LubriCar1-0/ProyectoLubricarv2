@@ -67,6 +67,7 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
+            comando.Parameters.Clear();
             desconectar();
             return dt;
         }
@@ -132,6 +133,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@telefonoTR", CelularUPD);
             comando.Parameters.AddWithValue("@idCategoria", idCategoriaUPD);
             comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
             desconectar();
         }
         public static void EstadoEmpleado(int idTrabajador, string Estado)
@@ -145,7 +147,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@idTrabajador", idTrabajador);
             comando.Parameters.AddWithValue("@Estado", Estado);
             comando.ExecuteNonQuery();
-
+            comando.Parameters.Clear();
             desconectar();
             // CREATE PROCEDURE CambiarEstado
             //(
@@ -171,6 +173,7 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
+            comando.Parameters.Clear();
             desconectar();
             return dt;
             /*  create procedure TraerCategoriasEmpleados
