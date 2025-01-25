@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnAgregarMeVehiculos = new System.Windows.Forms.Button();
             this.DgvTablaMeVehiculos = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CbxClienteMeVehiculos = new System.Windows.Forms.ComboBox();
             this.TxtMarcaVehiculos = new System.Windows.Forms.TextBox();
             this.TxtModeloVehiculos = new System.Windows.Forms.TextBox();
@@ -40,6 +41,8 @@
             this.BtnVolver = new System.Windows.Forms.Button();
             this.chbEditar = new System.Windows.Forms.CheckBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +51,7 @@
             this.BtnAgregarMeVehiculos.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeVehiculos.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarMeVehiculos.Location = new System.Drawing.Point(305, 677);
+            this.BtnAgregarMeVehiculos.Location = new System.Drawing.Point(434, 961);
             this.BtnAgregarMeVehiculos.Name = "BtnAgregarMeVehiculos";
             this.BtnAgregarMeVehiculos.Size = new System.Drawing.Size(127, 43);
             this.BtnAgregarMeVehiculos.TabIndex = 4;
@@ -59,23 +62,19 @@
             // 
             this.DgvTablaMeVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvTablaMeVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar});
-            this.DgvTablaMeVehiculos.Location = new System.Drawing.Point(282, 521);
+            this.Editar,
+            this.Eliminar});
+            this.DgvTablaMeVehiculos.Location = new System.Drawing.Point(434, 711);
             this.DgvTablaMeVehiculos.Name = "DgvTablaMeVehiculos";
-            this.DgvTablaMeVehiculos.Size = new System.Drawing.Size(777, 150);
+            this.DgvTablaMeVehiculos.Size = new System.Drawing.Size(1022, 233);
             this.DgvTablaMeVehiculos.TabIndex = 7;
             this.DgvTablaMeVehiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTablaMeVehiculos_CellContentClick);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
             // 
             // CbxClienteMeVehiculos
             // 
             this.CbxClienteMeVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxClienteMeVehiculos.FormattingEnabled = true;
-            this.CbxClienteMeVehiculos.Location = new System.Drawing.Point(305, 282);
+            this.CbxClienteMeVehiculos.Location = new System.Drawing.Point(434, 386);
             this.CbxClienteMeVehiculos.Name = "CbxClienteMeVehiculos";
             this.CbxClienteMeVehiculos.Size = new System.Drawing.Size(234, 28);
             this.CbxClienteMeVehiculos.TabIndex = 8;
@@ -84,7 +83,7 @@
             // TxtMarcaVehiculos
             // 
             this.TxtMarcaVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMarcaVehiculos.Location = new System.Drawing.Point(305, 367);
+            this.TxtMarcaVehiculos.Location = new System.Drawing.Point(434, 500);
             this.TxtMarcaVehiculos.Name = "TxtMarcaVehiculos";
             this.TxtMarcaVehiculos.Size = new System.Drawing.Size(234, 26);
             this.TxtMarcaVehiculos.TabIndex = 9;
@@ -93,7 +92,7 @@
             // TxtModeloVehiculos
             // 
             this.TxtModeloVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtModeloVehiculos.Location = new System.Drawing.Point(782, 282);
+            this.TxtModeloVehiculos.Location = new System.Drawing.Point(1107, 388);
             this.TxtModeloVehiculos.Name = "TxtModeloVehiculos";
             this.TxtModeloVehiculos.Size = new System.Drawing.Size(234, 26);
             this.TxtModeloVehiculos.TabIndex = 10;
@@ -101,7 +100,7 @@
             // TxtPatenteVehiculo
             // 
             this.TxtPatenteVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPatenteVehiculo.Location = new System.Drawing.Point(305, 453);
+            this.TxtPatenteVehiculo.Location = new System.Drawing.Point(434, 625);
             this.TxtPatenteVehiculo.Name = "TxtPatenteVehiculo";
             this.TxtPatenteVehiculo.Size = new System.Drawing.Size(234, 26);
             this.TxtPatenteVehiculo.TabIndex = 11;
@@ -109,7 +108,7 @@
             // TxtAñoVehiculos
             // 
             this.TxtAñoVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtAñoVehiculos.Location = new System.Drawing.Point(782, 367);
+            this.TxtAñoVehiculos.Location = new System.Drawing.Point(1107, 500);
             this.TxtAñoVehiculos.Name = "TxtAñoVehiculos";
             this.TxtAñoVehiculos.Size = new System.Drawing.Size(234, 26);
             this.TxtAñoVehiculos.TabIndex = 12;
@@ -117,7 +116,7 @@
             // TxtKilometrajeVehiculos
             // 
             this.TxtKilometrajeVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtKilometrajeVehiculos.Location = new System.Drawing.Point(782, 453);
+            this.TxtKilometrajeVehiculos.Location = new System.Drawing.Point(1107, 625);
             this.TxtKilometrajeVehiculos.Name = "TxtKilometrajeVehiculos";
             this.TxtKilometrajeVehiculos.Size = new System.Drawing.Size(234, 26);
             this.TxtKilometrajeVehiculos.TabIndex = 13;
@@ -128,7 +127,7 @@
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(186, 122);
+            this.BtnVolver.Location = new System.Drawing.Point(266, 165);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
             this.BtnVolver.TabIndex = 14;
@@ -139,7 +138,7 @@
             // 
             this.chbEditar.AutoSize = true;
             this.chbEditar.BackColor = System.Drawing.Color.Transparent;
-            this.chbEditar.Location = new System.Drawing.Point(1065, 540);
+            this.chbEditar.Location = new System.Drawing.Point(1478, 776);
             this.chbEditar.Name = "chbEditar";
             this.chbEditar.Size = new System.Drawing.Size(90, 17);
             this.chbEditar.TabIndex = 15;
@@ -152,7 +151,7 @@
             this.btnBorraCampos.FlatAppearance.BorderSize = 0;
             this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorraCampos.Location = new System.Drawing.Point(920, 677);
+            this.btnBorraCampos.Location = new System.Drawing.Point(1317, 950);
             this.btnBorraCampos.Name = "btnBorraCampos";
             this.btnBorraCampos.Size = new System.Drawing.Size(139, 30);
             this.btnBorraCampos.TabIndex = 22;
@@ -160,12 +159,45 @@
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
             // 
+            // Editar
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Editar.Frozen = true;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "EDITAR";
+            this.Editar.UseColumnTextForButtonValue = true;
+            // 
+            // Eliminar
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Eliminar.Frozen = true;
+            this.Eliminar.HeaderText = "Estado";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Text = "ACT/DES";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            // 
             // MenuVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVehiculos2;
-            this.ClientSize = new System.Drawing.Size(1347, 758);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.btnBorraCampos);
             this.Controls.Add(this.chbEditar);
             this.Controls.Add(this.BtnVolver);
@@ -177,6 +209,7 @@
             this.Controls.Add(this.CbxClienteMeVehiculos);
             this.Controls.Add(this.DgvTablaMeVehiculos);
             this.Controls.Add(this.BtnAgregarMeVehiculos);
+            this.DoubleBuffered = true;
             this.Name = "MenuVehiculos";
             this.Text = "MenuVehiculos";
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).EndInit();
@@ -199,5 +232,6 @@
         private System.Windows.Forms.CheckBox chbEditar;
         private System.Windows.Forms.Button btnBorraCampos;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

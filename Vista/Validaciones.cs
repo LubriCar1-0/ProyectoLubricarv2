@@ -27,17 +27,18 @@ namespace Vista
         {
             Empleados.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, categoria);
         }
-        public static Dictionary<string, int> ObtenerCategoriasProcesadas()
+        public static Dictionary<int, string> ObtenerCategoriasProcesadas()
         {
-            Dictionary<string, int> categorias = new Dictionary<string, int>();
+            Dictionary<int, string> categorias = new Dictionary<int, string>();
             Conectar capaDatos = new Conectar();
             DataTable TablaCategorias = capaDatos.TraerTablaCategorias();
 
             foreach (DataRow row in TablaCategorias.Rows)
             {
+                int idCategoria = Convert.ToInt32(row["idCategoria"]);
                 string nombreCat = row["NombreCat"].ToString().Trim();
-                int permisoCat = Convert.ToInt32(row["PermisoCat"]);
-                categorias.Add(nombreCat, permisoCat);
+                //int permisoCat = Convert.ToInt32(row["PermisoCat"]);
+                categorias.Add(idCategoria, nombreCat);
             }
             return categorias;
         }
@@ -48,17 +49,17 @@ namespace Vista
             return TablasEmpleados;
         }
 
-        public static List<Empleados> ObtenerCategorias()
+        public static List<CategoriaEmpleado> ObtenerCategorias()
         {
             Conectar capaDatos = new Conectar();
             DataTable tablaCategorias = capaDatos.TraerTablaCategorias();
-            var listaCategorias = new List<Empleados>();
+            var listaCategorias = new List<CategoriaEmpleado>();
 
             foreach (DataRow row in tablaCategorias.Rows)
             {
                 if (row["idCategoria"] != DBNull.Value && row["NombreCat"] != DBNull.Value)
                 {
-                    listaCategorias.Add(new Empleados
+                    listaCategorias.Add(new CategoriaEmpleado
                     {
                         idCategoria = Convert.ToInt32(row["idCategoria"]),
                         NombreCat = row["NombreCat"].ToString()
@@ -96,7 +97,7 @@ namespace Vista
         }
         public static Dictionary<int, string> ObtenerCategoriasEmpleados()
         {
-            List<Empleados> listaCategorias = Empleados.ObtenerCategoriasEmp();
+            List<CategoriaEmpleado> listaCategorias = CategoriaEmpleado.ObtenerCategoriasEmp();
             Dictionary<int, string> CategoriasEmpleados = new Dictionary<int, string>();
 
             foreach (var cat in listaCategorias)
@@ -198,7 +199,17 @@ namespace Vista
                 throw new Exception($"Error en la validación de datos: {ex.Message}");
             }
         }
-
+        public static void BajaAltaVehiculo(int idVehiculo, string Estado)
+        {
+            try
+            {
+                Empleados.CambiarEstado(idVehiculo, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cambiar el estado:{ex.Message}");
+            }
+        }
 
     }
 

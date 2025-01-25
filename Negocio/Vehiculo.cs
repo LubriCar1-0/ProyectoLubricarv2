@@ -57,7 +57,8 @@ namespace Negocio
             }
             if (!VehiculoEncontrado)
             {
-                Conectar.AgregarVehiculo(id, Modelo, Marca, año, Patente, Kilometraje);
+                string Estado = "ACT";
+                Conectar.AgregarVehiculo(id, Modelo, Marca, año, Patente, Kilometraje, Estado);
                 //agregar a la bitacora
             }
         }
@@ -72,6 +73,18 @@ namespace Negocio
             catch (Exception ex)
             {
                 throw new Exception($"Error al actualizar el vehículo en la base de datos: {ex.Message}");
+            }
+        }
+        public static void CambiarEstado(int idVehiculo, string Estado)
+        {
+            try
+            {
+
+                Conectar.EstadoVehiculo(idVehiculo, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cambiar el estado del empleado: {ex.Message}");
             }
         }
     }

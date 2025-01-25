@@ -41,7 +41,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public static void AgregarEmpleados(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int idCategoria)
+        public static void AgregarEmpleados(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int idCategoria, string Estado)
         {
             conectar();
             comando.Connection = conexion;
@@ -53,6 +53,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@Contraseña", Contraseña);
             comando.Parameters.AddWithValue("@Telefono", Telefono);
             comando.Parameters.AddWithValue("@categoria", idCategoria);
+            comando.Parameters.AddWithValue("@Estado", Estado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -63,7 +64,7 @@ namespace Datos
         {
             conectar();
             comando.Connection = conexion;
-            comando.CommandText = "TraerTablaCategorias";
+            comando.CommandText = "TraerelIDCAT";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
@@ -294,7 +295,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
-        public static void AgregarVehiculo(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        public static void AgregarVehiculo(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje, string Estado)
         {
             conectar();
             comando.Connection = conexion;
@@ -306,6 +307,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@añoVH", año);
             comando.Parameters.AddWithValue("@patenteVH", Patente);
             comando.Parameters.AddWithValue("@kilometrajeVH", Kilometraje);
+            comando.Parameters.AddWithValue("@ESTADO", Estado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -396,6 +398,35 @@ namespace Datos
         //SET idCliente = @idCliente, modeloVH = @modeloVH, marcaVH = @marcaVH, añoVH = @añoVH, patenteVH = @patenteVH, kilometrajeVH = @kilometrajeVH
         //WHERE idVehiculo = @idVehiculo;
         //END
+
+        public static void EstadoVehiculo(int idVehiculo, string Estado)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "CambiarEstadoVH";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo);
+            comando.Parameters.AddWithValue("@Estado", Estado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            //CREATE PROCEDURE CambiarEstadoVH
+            //(
+            // @idVehiculo INT,
+            // @Estado char(3)
+            //)
+            //AS
+            //BEGIN
+            //    UPDATE Vehiculo 
+            //    SET
+            //        Estado = @Estado
+            //    WHERE
+            //        idTrabajador = @idVehiculo; 
+            //END
+
+        }
 
         #endregion
 

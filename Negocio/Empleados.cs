@@ -15,9 +15,9 @@ namespace Negocio
         #region Variables
         public static int IdTrabajador { get; private set; }
         public static string NombreTrabajador { get; private set; }
+
+
         public int idCategoria { get; set; }
-        public string NombreCat { get; set; }
-        public int PermisoCat { get; set; }
         #endregion
 
         public static void IngresoEmpleados(int documento, string contraseña)
@@ -92,8 +92,8 @@ namespace Negocio
             }
             if (!usuarioEncontrado)
             {
-
-                Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, categoria);
+                string Estado = "ACT";
+                Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, categoria, Estado);
                 string detalle = "Cargar un empleado";
                 AgregarBitacora(IdTrabajador, NombreTrabajador, detalle);
                 return;
@@ -134,25 +134,25 @@ namespace Negocio
                 throw new Exception($"Error al cambiar el estado del empleado: {ex.Message}");
             }
         }
-        public static List<Empleados> ObtenerCategoriasEmp()
-        {
-            Conectar conexion = new Conectar();
-            DataTable categoriaTabla = conexion.TraerCategoriasEmpleados();
+        //public static List<Empleados> ObtenerCategoriasEmp()
+        //{
+        //    Conectar conexion = new Conectar();
+        //    DataTable categoriaTabla = conexion.TraerCategoriasEmpleados();
 
-            List<Empleados> categorias = new List<Empleados>();
-            foreach (DataRow row in categoriaTabla.Rows)
-            {
-                categorias.Add(new Empleados
-                {
-                    idCategoria = Convert.ToInt32(row["idCategoria"]),
-                    NombreCat = row["NombreCat"].ToString(),
-                    PermisoCat = Convert.ToInt32(row["PermisoCat"])
+        //    List<Empleados> categorias = new List<Empleados>();
+        //    foreach (DataRow row in categoriaTabla.Rows)
+        //    {
+        //        categorias.Add(new Empleados
+        //        {
+        //            idCategoria = Convert.ToInt32(row["idCategoria"]),
+        //            NombreCat = row["NombreCat"].ToString(),
+        //            PermisoCat = Convert.ToInt32(row["PermisoCat"])
 
-                });
-            }
+        //        });
+        //    }
 
-            return categorias;
-        }
+        //    return categorias;
+        //}
     }
 
 }

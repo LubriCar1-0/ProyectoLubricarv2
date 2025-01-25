@@ -171,6 +171,46 @@ namespace Vista
                     }
                 }
             }
+            else if (DgvTablaMeVehiculos.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                if (e.RowIndex >= 0)
+                {
+                    int idVehiculoUPD = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
+                    int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+                    string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
+
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.Yes)
+                    {
+
+                        if (Estado == "ACT")
+                        {
+                            ValidarClientes.BajaAltaVehiculo(idVehiculoUPD, "DES");
+                            MessageBox.Show("Vehiculo DADO DE BAJA.");
+                            CargarDatosEnGrid();
+                            //ConfigurarDataGridView();
+
+                            DgvTablaMeVehiculos.Columns["idVehiculo"].Visible = false;
+                            DgvTablaMeVehiculos.Columns["idCliente"].Visible = false;
+                        }
+                        else if (Estado == "DES")
+                        {
+                            ValidarClientes.BajaAltaVehiculo(idVehiculoUPD, "ACT");
+                            MessageBox.Show("Empleado DADO DE ALTA");
+                            CargarDatosEnGrid();
+                            //ConfigurarDataGridView();
+
+                            DgvTablaMeVehiculos.Columns["idVehiculo"].Visible = false;
+                            DgvTablaMeVehiculos.Columns["idCliente"].Visible = false;
+                        }
+                    }
+                    else if (resultado == DialogResult.No)
+                    {
+                        CargarDatosEnGrid(); ;
+                    }
+                    
+                }
+            }
 
 
 
