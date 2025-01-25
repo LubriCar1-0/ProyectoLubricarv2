@@ -32,6 +32,7 @@
             this.BtnEmpresa = new System.Windows.Forms.Button();
             this.BtnEmpleados = new System.Windows.Forms.Button();
             this.btnABMCategoriasProductos = new System.Windows.Forms.Button();
+            this.btnMenuCatEMP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnRegresar
@@ -86,6 +87,19 @@
             this.btnABMCategoriasProductos.UseVisualStyleBackColor = true;
             this.btnABMCategoriasProductos.Click += new System.EventHandler(this.btnABMCategoriasProductos_Click_1);
             // 
+            // btnMenuCatEMP
+            // 
+            this.btnMenuCatEMP.BackgroundImage = global::Vista.Properties.Resources.BtnCatEMP;
+            this.btnMenuCatEMP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenuCatEMP.FlatAppearance.BorderSize = 0;
+            this.btnMenuCatEMP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuCatEMP.Location = new System.Drawing.Point(1066, 801);
+            this.btnMenuCatEMP.Name = "btnMenuCatEMP";
+            this.btnMenuCatEMP.Size = new System.Drawing.Size(411, 168);
+            this.btnMenuCatEMP.TabIndex = 16;
+            this.btnMenuCatEMP.UseVisualStyleBackColor = true;
+            this.btnMenuCatEMP.Click += new System.EventHandler(this.btnMenuCatEMP_Click);
+            // 
             // MenuConfiguracion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,6 +107,7 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantMenuConfiguracion;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.btnMenuCatEMP);
             this.Controls.Add(this.btnABMCategoriasProductos);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.BtnEmpresa);
@@ -113,5 +128,6 @@
         private System.Windows.Forms.Button BtnEmpresa;
         private System.Windows.Forms.Button BtnRegresar;
         private System.Windows.Forms.Button btnABMCategoriasProductos;
+        private System.Windows.Forms.Button btnMenuCatEMP;
     }
 }

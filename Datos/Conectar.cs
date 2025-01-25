@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= LubriCarTest; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -181,6 +181,92 @@ namespace Datos
                 as begin 
                 select * from Categorias ;
                 end*/
+        }
+
+        public static void IngresaCategoriaEMP(string nombreCat, string catedescripcion, int CodPerm, string Estado)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "IngresaCategoria";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@NomCat", nombreCat);
+            comando.Parameters.AddWithValue("@PermisoCat", CodPerm);
+            comando.Parameters.AddWithValue("@Descripcion", catedescripcion);
+            comando.Parameters.AddWithValue("@ESTADO", Estado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            /*Create procedure [dbo].[IngresaCategoriaEMP](
+              @NombreCat char(30),
+              @PermisoCat int,
+              @Descripcion char(255),
+              @ESTADO char (3)
+              )
+              as begin 
+              Insert into Categorias (NombreCat, PermisoCat, Descripcion, ESTADO) values (@NombreCat,@PermisoCat, @Descripcion, @ESTADO)
+              end
+              */
+        }
+
+        public static void UpdateCategoriaEMP(int idCategoria, string NombreCat, int PermisoCat, string Descripcion)
+        {
+            
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "UpdateCategoriaEMP";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idCategoria", idCategoria);
+            comando.Parameters.AddWithValue("@NombreCat", NombreCat);
+            comando.Parameters.AddWithValue("@PermisoCat", PermisoCat);
+            comando.Parameters.AddWithValue("@Descripcion", Descripcion);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            /*CREATE PROCEDURE UpdateCategoriaEMP
+              @idCategoria INT,
+              @NombreCat CHAR(30),
+	          @PermisoCat int,
+              @Descripcion CHAR(144)
+              AS
+              BEGIN
+              UPDATE Categorias
+              SET 
+              NombreCat = @NombreCat,
+		      PermisoCat = @PermisoCat,
+              Descripcion = @Descripcion
+              WHERE 
+              idCategoria = @IdCategoria;
+              END*/
+        }
+        public static void CambiarEstadoEMP(int idCategoria, string Estado)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "CambiarEstadoEMP";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idCategoria", idCategoria);
+            comando.Parameters.AddWithValue("@Estado", Estado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            /*CREATE PROCEDURE CambiarEstadoEMP
+            (
+                @idCategoria INT,
+                @Estado char(3)
+            )
+            AS
+            BEGIN
+                UPDATE Categorias
+                SET
+                    ESTADO = @Estado
+                WHERE
+                    idCategoria = @idCategoria; 
+            END
+            */
+
+
+
         }
         #endregion
 

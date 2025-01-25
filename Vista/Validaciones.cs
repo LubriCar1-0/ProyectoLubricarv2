@@ -106,6 +106,27 @@ namespace Vista
             }
             return CategoriasEmpleados;
         }
+        public static void IngresaCategoriaEMP(string nombreCat, string catedescripcion, int CodPerm)
+        {
+            CategoriaEmpleado.IngresaCatergoriasEMP(nombreCat, catedescripcion, CodPerm);
+        }
+        public static DataTable TraeCategoriasEmpleados()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasCatEMP = CapaDatos.TraerCategoriasEmpleados();
+            return TablasCatEMP;
+
+        }
+        public static void UpdateCatergoriasEmpleados(int IdCategoriaUPD, string NombreCat, int CodPerm, string DescUPD)
+        {
+            CategoriaEmpleado.ActualizarCategoriaEMP(IdCategoriaUPD,  NombreCat, CodPerm, DescUPD);
+        }
+
+        public static void CambiarEstadoEMP(int idCategoria, string ESTADO)
+        {
+            CategoriaEmpleado.ActualizarEstadoEMP(idCategoria, ESTADO);
+        }
+
     }
     #endregion
 

@@ -70,6 +70,12 @@
     <Compile Include="MenuAgregarProducto.Designer.cs">
       <DependentUpon>MenuAgregarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuCategoriaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCategoriaEmpleado.Designer.cs">
+      <DependentUpon>MenuCategoriaEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuCategoriaProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuAgregarProducto.resx">
       <DependentUpon>MenuAgregarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCategoriaEmpleado.resx">
+      <DependentUpon>MenuCategoriaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuCategoriaProductos.resx">
       <DependentUpon>MenuCategoriaProductos.cs</DependentUpon>
@@ -621,6 +630,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BTNAgregarCategorias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaCategoriaEmpleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCatEMP.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

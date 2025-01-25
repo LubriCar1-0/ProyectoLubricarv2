@@ -32,5 +32,22 @@ namespace Negocio
 
             return categorias;
         }
+
+        public static void IngresaCatergoriasEMP(string nombreCat, string catedescripcion, int CodPerm)
+        {
+            string Estado = "ACT";
+            Conectar.IngresaCategoriaEMP(nombreCat, catedescripcion, CodPerm, Estado);
+
+        }
+
+        public static void ActualizarCategoriaEMP (int idCategoria, string nombreCat, int codPerm,string descripcion)
+        {
+            Conectar.UpdateCategoriaEMP(idCategoria, nombreCat, codPerm, descripcion);
+        }
+
+        public static void ActualizarEstadoEMP (int idCategoria, string Estado)
+        {
+            Conectar.CambiarEstadoEMP (idCategoria, Estado);
+        }
     }
 }

@@ -45,5 +45,12 @@ namespace Vista
             Hide();
             LlamarMenuPrincipal.ShowDialog();
         }
+
+        private void btnMenuCatEMP_Click(object sender, EventArgs e)
+        {
+            MenuCategoriaEmpleado LlamarMenuCategoriaEmpleados = new MenuCategoriaEmpleado();
+            Hide();
+            LlamarMenuCategoriaEmpleados.ShowDialog();
+        }
     }
 }
