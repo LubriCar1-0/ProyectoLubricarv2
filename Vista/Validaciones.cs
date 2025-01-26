@@ -168,6 +168,17 @@ namespace Vista
                 throw new Exception($"Error en la validación de datos: {ex.Message}");
             }
         }
+        public static void BajaAltaCliente(int idCliente, string Estado)
+        {
+            try
+            {
+                Clientes.CambiarEstadoCliente(idCliente, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cambiar el estado:{ex.Message}");
+            }
+        }
     }
     
 

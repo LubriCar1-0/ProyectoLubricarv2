@@ -32,10 +32,7 @@
             this.TxtLocalidadCliente = new System.Windows.Forms.TextBox();
             this.TxtCuilCliente = new System.Windows.Forms.TextBox();
             this.DgvTablaClientes = new System.Windows.Forms.DataGridView();
-            this.BtnEliminarMeClientes = new System.Windows.Forms.Button();
-            this.BtnEditarMeClientes = new System.Windows.Forms.Button();
             this.BtnAgregarMeClientes = new System.Windows.Forms.Button();
-            this.BtnVehiculoMeCliente = new System.Windows.Forms.Button();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.TxtRazonSocialCliente = new System.Windows.Forms.TextBox();
             this.TxtapellidoCliente = new System.Windows.Forms.TextBox();
@@ -46,6 +43,7 @@
             this.chbeditar = new System.Windows.Forms.CheckBox();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnVehiculoMeCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,53 +79,20 @@
             this.Eliminar});
             this.DgvTablaClientes.Location = new System.Drawing.Point(213, 481);
             this.DgvTablaClientes.Name = "DgvTablaClientes";
-            this.DgvTablaClientes.Size = new System.Drawing.Size(732, 95);
+            this.DgvTablaClientes.Size = new System.Drawing.Size(747, 144);
             this.DgvTablaClientes.TabIndex = 4;
-            // 
-            // BtnEliminarMeClientes
-            // 
-            this.BtnEliminarMeClientes.BackgroundImage = global::Vista.Properties.Resources.BtnEliminar;
-            this.BtnEliminarMeClientes.FlatAppearance.BorderSize = 0;
-            this.BtnEliminarMeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEliminarMeClientes.Location = new System.Drawing.Point(595, 582);
-            this.BtnEliminarMeClientes.Name = "BtnEliminarMeClientes";
-            this.BtnEliminarMeClientes.Size = new System.Drawing.Size(164, 43);
-            this.BtnEliminarMeClientes.TabIndex = 5;
-            this.BtnEliminarMeClientes.UseVisualStyleBackColor = true;
-            // 
-            // BtnEditarMeClientes
-            // 
-            this.BtnEditarMeClientes.BackgroundImage = global::Vista.Properties.Resources.BtnEditar;
-            this.BtnEditarMeClientes.FlatAppearance.BorderSize = 0;
-            this.BtnEditarMeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditarMeClientes.Location = new System.Drawing.Point(412, 582);
-            this.BtnEditarMeClientes.Name = "BtnEditarMeClientes";
-            this.BtnEditarMeClientes.Size = new System.Drawing.Size(93, 43);
-            this.BtnEditarMeClientes.TabIndex = 6;
-            this.BtnEditarMeClientes.UseVisualStyleBackColor = true;
             // 
             // BtnAgregarMeClientes
             // 
             this.BtnAgregarMeClientes.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeClientes.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarMeClientes.Location = new System.Drawing.Point(213, 582);
+            this.BtnAgregarMeClientes.Location = new System.Drawing.Point(580, 430);
             this.BtnAgregarMeClientes.Name = "BtnAgregarMeClientes";
             this.BtnAgregarMeClientes.Size = new System.Drawing.Size(123, 43);
             this.BtnAgregarMeClientes.TabIndex = 7;
             this.BtnAgregarMeClientes.UseVisualStyleBackColor = true;
             this.BtnAgregarMeClientes.Click += new System.EventHandler(this.BtnAgregarMeClientes_Click);
-            // 
-            // BtnVehiculoMeCliente
-            // 
-            this.BtnVehiculoMeCliente.BackgroundImage = global::Vista.Properties.Resources.BtnVehiculo;
-            this.BtnVehiculoMeCliente.FlatAppearance.BorderSize = 0;
-            this.BtnVehiculoMeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVehiculoMeCliente.Location = new System.Drawing.Point(817, 582);
-            this.BtnVehiculoMeCliente.Name = "BtnVehiculoMeCliente";
-            this.BtnVehiculoMeCliente.Size = new System.Drawing.Size(128, 43);
-            this.BtnVehiculoMeCliente.TabIndex = 8;
-            this.BtnVehiculoMeCliente.UseVisualStyleBackColor = true;
             // 
             // BtnVolver
             // 
@@ -214,6 +179,17 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             // 
+            // BtnVehiculoMeCliente
+            // 
+            this.BtnVehiculoMeCliente.BackgroundImage = global::Vista.Properties.Resources.BtnVehiculo;
+            this.BtnVehiculoMeCliente.FlatAppearance.BorderSize = 0;
+            this.BtnVehiculoMeCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVehiculoMeCliente.Location = new System.Drawing.Point(732, 430);
+            this.BtnVehiculoMeCliente.Name = "BtnVehiculoMeCliente";
+            this.BtnVehiculoMeCliente.Size = new System.Drawing.Size(128, 43);
+            this.BtnVehiculoMeCliente.TabIndex = 8;
+            this.BtnVehiculoMeCliente.UseVisualStyleBackColor = true;
+            // 
             // MenuClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,8 +206,6 @@
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnVehiculoMeCliente);
             this.Controls.Add(this.BtnAgregarMeClientes);
-            this.Controls.Add(this.BtnEditarMeClientes);
-            this.Controls.Add(this.BtnEliminarMeClientes);
             this.Controls.Add(this.DgvTablaClientes);
             this.Controls.Add(this.TxtCuilCliente);
             this.Controls.Add(this.TxtLocalidadCliente);
@@ -249,10 +223,7 @@
         private System.Windows.Forms.TextBox TxtLocalidadCliente;
         private System.Windows.Forms.TextBox TxtCuilCliente;
         private System.Windows.Forms.DataGridView DgvTablaClientes;
-        private System.Windows.Forms.Button BtnEliminarMeClientes;
-        private System.Windows.Forms.Button BtnEditarMeClientes;
         private System.Windows.Forms.Button BtnAgregarMeClientes;
-        private System.Windows.Forms.Button BtnVehiculoMeCliente;
         private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.TextBox TxtRazonSocialCliente;
         private System.Windows.Forms.TextBox TxtapellidoCliente;
@@ -263,5 +234,6 @@
         private System.Windows.Forms.CheckBox chbeditar;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.Button BtnVehiculoMeCliente;
     }
 }

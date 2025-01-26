@@ -54,7 +54,7 @@ namespace Negocio
 
             foreach (DataRow Fila in TablaClientes.Rows)
             {
-                string Clavecliente = Fila["ClaveIdenCL"].ToString();
+                string Clavecliente = Fila["Cuit/Cuil"].ToString();
                 int clave = Convert.ToInt32(Clavecliente);
                 if (clave == ClaveCliente)
                 {
@@ -66,7 +66,8 @@ namespace Negocio
             }
             if (!clienteencontrado)
             {
-                Conectar.AgregarCliente(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA);
+                string Estado = "ACT";
+                Conectar.AgregarCliente(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA, Estado);
                 string detalle = "Carga de cliente al sistema";
                 AgregarBitacora(Empleados.IdTrabajador, Empleados.NombreTrabajador, detalle);
             }
@@ -75,6 +76,17 @@ namespace Negocio
         public static void Actulizacliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
             Conectar.ActualizarCliente(idcliente, NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA);
+        }
+        public static void CambiarEstadoCliente(int idCliente, string Estado)
+        {
+            try
+            {
+                Conectar.EstadoCliente(idCliente, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cambiar el estado del cliente: {ex.Message}");
+            }
         }
     } 
 }

@@ -15,7 +15,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= LubriCarTest; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -341,7 +341,7 @@ namespace Datos
         //select * from Vehiculo
         //end
 
-        public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
+        public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA, string Estado)
         {
             conectar();
             comando.Connection = conexion;
@@ -356,6 +356,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@NumeracionCL", NumeracionCl);
             comando.Parameters.AddWithValue("@TelefonoCL", Telefonocl);
             comando.Parameters.AddWithValue("@IDCondicionIVACL", CondicionIVA);
+            comando.Parameters.AddWithValue("@Estado", Estado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -381,6 +382,21 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
+        public static void EstadoCliente(int idCliente, string Estado)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "CambiarEstadoCL";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+            comando.Parameters.AddWithValue("@Estado", Estado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
+
         public static void AgregarVehiculo(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje, string Estado)
         {
             conectar();
@@ -428,8 +444,8 @@ namespace Datos
 
                 if (leer.Read())
                 {
-                    string nombreCliente = leer["NomCL"].ToString();
-                    string apellidoCliente = leer["ApeCl"].ToString();
+                    string nombreCliente = leer["Nombre"].ToString();
+                    string apellidoCliente = leer["Apellido"].ToString();
 
 
                     nombreCompleto = $"{nombreCliente} {apellidoCliente}";

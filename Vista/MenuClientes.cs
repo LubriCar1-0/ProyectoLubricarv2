@@ -22,6 +22,8 @@ namespace Vista
             CargarClientes();
             ConfigurarDataGridView();
             CargarCategorias();
+            DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvTablaClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DgvTablaClientes.CellClick += DgvTablaClientes_CellClick;
 
         }
@@ -34,6 +36,10 @@ namespace Vista
             if (DgvTablaClientes.Columns.Contains("idCliente"))
             {
                 DgvTablaClientes.Columns["idCliente"].Visible = false;
+            }
+            if (DgvTablaClientes.Columns.Contains("IdCondicionIva"))
+            {
+                DgvTablaClientes.Columns["IdCondicionIva"].Visible = false;
             }
         }
         private void CargarCategorias()
@@ -50,7 +56,32 @@ namespace Vista
         private void ConfigurarDataGridView()
         {
             DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvTablaClientes.ReadOnly = true; 
+            DgvTablaClientes.ReadOnly = true;
+
+            if (!DgvTablaClientes.Columns.Contains("CondicionIva"))
+            {
+                var comboBoxColumn = new DataGridViewComboBoxColumn
+                {
+                    Name = "CondicionIva",
+                    HeaderText = "CondicionIva",
+
+                    DataPropertyName = "descripcion", 
+
+                    DisplayMember = "Value",
+                    ValueMember = "Key",
+                    
+                };
+
+               
+                Dictionary<int, string> condiciones = Validarcliente.ObtenerCondicionesiva();
+                foreach (var condicion in condiciones)
+                {
+                    comboBoxColumn.Items.Add(new KeyValuePair<int, string>(condicion.Key, condicion.Value));
+                }
+
+                
+                DgvTablaClientes.Columns.Add(comboBoxColumn);
+            }
         }
         private int idCondicion;
 
@@ -83,27 +114,25 @@ namespace Vista
             if (chbeditar.Checked)
             {
                 DgvTablaClientes.ReadOnly = false;
-                MessageBox.Show("Edición habilitada. Puedes editar la grid.", "Información");
             }
             else
             {
                 DgvTablaClientes.ReadOnly = true;
-                MessageBox.Show("Edición deshabilitada. La grid está bloqueada.", "Información");
             }
         }
         private void DgvTablaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = DgvTablaClientes.Rows[e.RowIndex];
             int idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
-            TxtNombreCliente.Text = filaSeleccionada.Cells["NomCL"].Value.ToString().Trim();
-            TxtapellidoCliente.Text = filaSeleccionada.Cells["ApeCL"].Value.ToString().Trim();
-            TxtRazonSocialCliente.Text = filaSeleccionada.Cells["RazSocialCL"].Value.ToString().Trim();
-            TxtCuilCliente.Text = filaSeleccionada.Cells["claveIdenCL"].Value.ToString().Trim();
-            TxtLocalidadCliente.Text = filaSeleccionada.Cells["localidadCL"].Value.ToString().Trim();
-            TxtCalleCliente.Text = filaSeleccionada.Cells["calleCL"].Value.ToString().Trim();
-            TxtTelefonoCliente.Text = filaSeleccionada.Cells["telefonoCL"].Value.ToString().Trim();
+            TxtNombreCliente.Text = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
+            TxtapellidoCliente.Text = filaSeleccionada.Cells["Apellido"].Value.ToString().Trim();
+            TxtRazonSocialCliente.Text = filaSeleccionada.Cells["Razon Social"].Value.ToString().Trim();
+            TxtCuilCliente.Text = filaSeleccionada.Cells["Cuit/Cuil"].Value.ToString().Trim();
+            TxtLocalidadCliente.Text = filaSeleccionada.Cells["Localidad"].Value.ToString().Trim();
+            TxtCalleCliente.Text = filaSeleccionada.Cells["Calle"].Value.ToString().Trim();
+            TxtTelefonoCliente.Text = filaSeleccionada.Cells["Telefono"].Value.ToString().Trim();
             int idcondicion = Convert.ToInt32(filaSeleccionada.Cells["IdCondicionIva"].Value);
-            TxtNumCasaCliente.Text = filaSeleccionada.Cells["numeracionCL"].Value.ToString().Trim();
+            TxtNumCasaCliente.Text = filaSeleccionada.Cells["Numero de vivienda"].Value.ToString().Trim();
 
             if (DgvTablaClientes.Columns[e.ColumnIndex].Name == "Editar")
             {
@@ -111,21 +140,24 @@ namespace Vista
                 {
                     DataGridViewRow filaSeleccionadaUPD = DgvTablaClientes.Rows[e.RowIndex];
                     int idClienteUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCliente"].Value);
-                    string NombreClienteUPD = filaSeleccionadaUPD.Cells["NomCL"].Value.ToString().Trim();
-                    string ApellidoClienteUPD = filaSeleccionadaUPD.Cells["ApeCL"].Value.ToString().Trim();
-                    string RazonSocialClienteUpd = filaSeleccionadaUPD.Cells["RazSocialCL"].Value.ToString().Trim();
-                    string CuilClienteUPD = filaSeleccionadaUPD.Cells["claveIdenCL"].Value.ToString().Trim();
-                    string LocalidadClienteUPD = filaSeleccionadaUPD.Cells["localidadCL"].Value.ToString().Trim();
-                    string CalleClienteUPD = filaSeleccionadaUPD.Cells["calleCL"].Value.ToString().Trim();
-                    string TelefonoClienteUPD = filaSeleccionadaUPD.Cells["telefonoCL"].Value.ToString().Trim();
-                    int idcondicionUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["IdCondicionIva"].Value);
-                    string NumeroCasaClienteUPD = filaSeleccionadaUPD.Cells["numeracionCL"].Value.ToString().Trim();
+                    string NombreClienteUPD = filaSeleccionadaUPD.Cells["Nombre"].Value.ToString().Trim();
+                    string ApellidoClienteUPD = filaSeleccionadaUPD.Cells["Apellido"].Value.ToString().Trim();
+                    string RazonSocialClienteUpd = filaSeleccionadaUPD.Cells["Razon Social"].Value.ToString().Trim();
+                    string CuilClienteUPD = filaSeleccionadaUPD.Cells["Cuit/Cuil"].Value.ToString().Trim();
+                    string LocalidadClienteUPD = filaSeleccionadaUPD.Cells["Localidad"].Value.ToString().Trim();
+                    string CalleClienteUPD = filaSeleccionadaUPD.Cells["Calle"].Value.ToString().Trim();
+                    string TelefonoClienteUPD = filaSeleccionadaUPD.Cells["Telefono"].Value.ToString().Trim();
+                    int idcondicionUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["CondicionIva"].Value);
+                    string NumeroCasaClienteUPD = filaSeleccionadaUPD.Cells["Numero de vivienda"].Value.ToString().Trim();
+
+                    int Condicionaenviar = idcondicionUPD == 0 ? idcondicion : idcondicionUPD;
+
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que querer continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultado == DialogResult.Yes)
                     {
 
-                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.Trim(), ApellidoClienteUPD.Trim(), RazonSocialClienteUpd.Trim(), Convert.ToInt32(CuilClienteUPD.Trim()), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()), Convert.ToInt32(TelefonoClienteUPD.Trim()), idcondicionUPD);
+                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.Trim(), ApellidoClienteUPD.Trim(), RazonSocialClienteUpd.Trim(), Convert.ToInt32(CuilClienteUPD.Trim()), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()), Convert.ToInt32(TelefonoClienteUPD.Trim()), Condicionaenviar);
                         Console.WriteLine("Cambio realizado.");
                         LimpiarTextBox();
                         CargarClientes();
@@ -136,7 +168,45 @@ namespace Vista
                     }
                 }
             }
-            
+            else if (DgvTablaClientes.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                if (e.RowIndex >= 0)
+                {
+                    int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+                    string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
+
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.Yes)
+                    {
+
+                        if (Estado == "ACT")
+                        {
+                            Validarcliente.BajaAltaCliente(idClienteUPD, "DES");
+                            MessageBox.Show("Cliente DADO DE BAJA.");
+                            CargarClientes();
+                            LimpiarTextBox();
+
+                            DgvTablaClientes.Columns["idCliente"].Visible = false;
+                        }
+                        else if (Estado == "DES")
+                        {
+                            Validarcliente.BajaAltaCliente(idClienteUPD, "ACT");
+                            MessageBox.Show("Cliente DADO DE ALTA");
+                            CargarClientes();
+                            LimpiarTextBox();
+
+
+                            DgvTablaClientes.Columns["idCliente"].Visible = false;
+                        }
+                    }
+                    else if (resultado == DialogResult.No)
+                    {
+                        CargarClientes(); ;
+                    }
+
+                }
+            }
+
         }
         private void LimpiarTextBox()
         {
@@ -150,6 +220,31 @@ namespace Vista
             CMBIVA.Text = string.Empty;
             TxtNumCasaCliente.Text = string.Empty;
         }
-        
+        private void TxtCuilCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Solo numeros
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquea el caracter
+            }
+        }
+
+        private void TxtNumCasaCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; 
+            }
+        }
+        private void TxtTelefonoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
