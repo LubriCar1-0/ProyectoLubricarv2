@@ -17,7 +17,7 @@ namespace Negocio
         public static string NombreTrabajador { get; private set; }
 
 
-        public int idCategoria { get; set; }
+        public static int idCategoria { get; set; }
         #endregion
 
         public static void IngresoEmpleados(int documento, string contraseña)
@@ -46,6 +46,8 @@ namespace Negocio
                             string Nomtrabajador = capaDatos.BuscarEmp(Idtrabajador);
                             NombreTrabajador = Nomtrabajador;
                             string detalle = "Acceso al sistema";
+                            int idCategoriaEmpleado = capaDatos.TraeIdCategoriaEmpleado(documento);
+                            idCategoria = idCategoriaEmpleado;
                             AgregarBitacora(Idtrabajador, Nomtrabajador, detalle);
                             return;
                         }
@@ -68,7 +70,6 @@ namespace Negocio
                 throw new Exception("Empleado no encontrado");
             }
         }
-
 
         public static void CargaDeEmpleado(string Nombre, string Apellido, int Documento, string Contraseña, int Telefono, int categoria)
         {

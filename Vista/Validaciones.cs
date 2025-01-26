@@ -11,6 +11,7 @@ using static Negocio.Empresa;
 using static Negocio.Vehiculo;
 using static Negocio.Producto;
 using static Negocio.Categorias;
+using static Negocio.Empleados;
 using System.Security.Policy;
 
 
@@ -126,6 +127,14 @@ namespace Vista
         {
             CategoriaEmpleado.ActualizarEstadoEMP(idCategoria, ESTADO);
         }
+
+        public DataTable VerificaPermiso()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable VerificaPermiso = CapaDatos.TraerCategoriasEmpleados();
+            return VerificaPermiso;
+        }
+
 
     }
     #endregion
@@ -263,10 +272,10 @@ namespace Vista
     #region Producto
     public class ValidarProducto : Producto
     {
-        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles, double litroMin , int cantidadmin)
+        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles, double litroMin , int cantidadmin, string estado)
         {
             
-            Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto.Trim(), DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles, litroMin, cantidadmin);
+            Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto.Trim(), DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles, litroMin, cantidadmin, estado);
         }
 
         public static DataTable TraeProductos()
@@ -284,9 +293,9 @@ namespace Vista
 
         }
 
-        public static void UpdateProductos(int IdProdUPD, string Nombreprd , string marca, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje)
+        public static void UpdateProductos(int IdProdUPD, string Nombreprd , string marca, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje, double litrajeMin, int cantidadmin)
         {
-            Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marca.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje);
+            Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marca.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje,litrajeMin, cantidadmin);
         }
 
         public static void EliminarProducto(int IdProd, string valor)

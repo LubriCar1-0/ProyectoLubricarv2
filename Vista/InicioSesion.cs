@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Vista
 {
@@ -25,8 +26,8 @@ namespace Vista
                 if (int.TryParse(TbxDocumento.Text, out int documento))
                 {
                     
-                    Validaciones.DatosEmpleado(documento, TbxContra.Text.Trim());
-
+                    Validaciones.DatosEmpleado(documento, TbxContra.Text.Trim());                
+                    
                     // Bitacora Acceder a la pantalla principal
                     Hide();
                     PantallaMenuPrin();
@@ -48,14 +49,17 @@ namespace Vista
 
         public static void PantallaMenuPrin()
         {
-          
             PantallaMenuPrincipal LlamarMenuPrincipal = new PantallaMenuPrincipal();
             LlamarMenuPrincipal.ShowDialog();
+           
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
+       
     }
 }

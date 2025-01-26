@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreProducto = new System.Windows.Forms.TextBox();
             this.TxtMarcaProducto = new System.Windows.Forms.TextBox();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
@@ -45,9 +45,9 @@
             this.cbxMostrarProductos = new System.Windows.Forms.CheckBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.txtLitrosMinimos = new System.Windows.Forms.TextBox();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DGVProductos = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.CambiarEstado = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,31 +215,29 @@
             this.txtLitrosMinimos.Text = "0.0";
             this.txtLitrosMinimos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // Eliminar
+            // DGVProductos
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminar.HeaderText = "";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Text = "Eliminar";
-            this.Eliminar.ToolTipText = "Se eliminara la fila seleccionada";
-            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.DGVProductos.AllowUserToAddRows = false;
+            this.DGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.CambiarEstado});
+            this.DGVProductos.Location = new System.Drawing.Point(312, 239);
+            this.DGVProductos.Name = "DGVProductos";
+            this.DGVProductos.RowHeadersWidth = 62;
+            this.DGVProductos.Size = new System.Drawing.Size(1313, 769);
+            this.DGVProductos.TabIndex = 14;
+            this.DGVProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductos_CellContentClick);
             // 
             // Editar
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Editar.HeaderText = "";
             this.Editar.Name = "Editar";
@@ -247,19 +245,21 @@
             this.Editar.ToolTipText = "Se editara la fila seleccionada";
             this.Editar.UseColumnTextForButtonValue = true;
             // 
-            // DGVProductos
+            // CambiarEstado
             // 
-            this.DGVProductos.AllowUserToAddRows = false;
-            this.DGVProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar,
-            this.Eliminar});
-            this.DGVProductos.Location = new System.Drawing.Point(312, 239);
-            this.DGVProductos.Name = "DGVProductos";
-            this.DGVProductos.RowHeadersWidth = 62;
-            this.DGVProductos.Size = new System.Drawing.Size(1313, 769);
-            this.DGVProductos.TabIndex = 14;
-            this.DGVProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductos_CellContentClick);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CambiarEstado.HeaderText = "";
+            this.CambiarEstado.Name = "CambiarEstado";
+            this.CambiarEstado.Text = "Cambiar Estado";
+            this.CambiarEstado.ToolTipText = "Se cambiara el estado  la fila seleccionada";
+            this.CambiarEstado.UseColumnTextForButtonValue = true;
             // 
             // MenuAgregarProducto
             // 
@@ -316,8 +316,8 @@
         private System.Windows.Forms.CheckBox cbxMostrarProductos;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.TextBox txtLitrosMinimos;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridView DGVProductos;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn CambiarEstado;
     }
 }

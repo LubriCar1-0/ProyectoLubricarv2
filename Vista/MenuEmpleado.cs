@@ -238,8 +238,8 @@ namespace Vista
         private void ConfigurarDataGridView()
         {
             // Verificar si la columna de categorías ya existe
-            if (!DgvMenuEmpleado.Columns.Contains("CategoriaColumn"))
-            {
+            //if (!DgvMenuEmpleado.Columns.Contains("CategoriaColumn"))
+            //{
                 var comboBoxColumn = new DataGridViewComboBoxColumn
                 {
                     Name = "CategoriaColumn",
@@ -259,7 +259,7 @@ namespace Vista
 
                 // Agrega la columna al DataGridView
                 DgvMenuEmpleado.Columns.Add(comboBoxColumn);
-            }
+            //}
         }
 
         private void DgvMenuEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)

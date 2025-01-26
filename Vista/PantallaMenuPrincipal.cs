@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +14,32 @@ namespace Vista
 {
     public partial class PantallaMenuPrincipal : Form
     {
+
         public PantallaMenuPrincipal()
         {
             InitializeComponent();
+
+            lblUsuario.Text = Empleados.NombreTrabajador;
         }
         #region Llamados 
+        
+         public bool LlamarMenuVentas()
+         {
+            int IdCategoria = Empleados.idCategoria;
 
-        public static void LlamarMenuVentas()
-        {
-            MenuVentas PantallaMenuVentas = new MenuVentas();
-            PantallaMenuVentas.ShowDialog();
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+                
+                bool permiso = false;
+                return permiso;
+            }
+
         }
 
         public static void LlamarMenuTurnos()
@@ -58,11 +76,21 @@ namespace Vista
         }
 
 
+
         #endregion 
         private void BtnVentas_Click(object sender, EventArgs e)
         {
-            Hide();
-            LlamarMenuVentas();
+            bool permiso = LlamarMenuVentas();
+
+            if(permiso ==true )
+            {
+                MenuVentas llamarMenuVentas = new MenuVentas(); 
+                llamarMenuVentas.ShowDialog();
+                Hide();
+            }
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
 
@@ -104,7 +132,7 @@ namespace Vista
 
         private void PantallaMenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
@@ -113,7 +141,10 @@ namespace Vista
 
             if (resultado == DialogResult.Yes)
             {
-                Application.Exit();
+                InicioSesion LlamarInicio = new InicioSesion();
+                Close();
+                LlamarInicio.Show();
+
             }
         }
     }

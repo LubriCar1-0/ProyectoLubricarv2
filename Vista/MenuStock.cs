@@ -26,5 +26,18 @@ namespace Vista
         {
             LlamarMenuAgregarProducto();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PantallaMenuPrincipal PantallaMenuPrincipal = new PantallaMenuPrincipal();
+            Hide();
+            PantallaMenuPrincipal.ShowDialog();
+        }
+
+        private void BtnControlDeStock_Click(object sender, EventArgs e)
+        {
+            MenuControlDeStock llamarcontroldestock = new MenuControlDeStock(); 
+            llamarcontroldestock.ShowDialog();
+        }
     }
 }

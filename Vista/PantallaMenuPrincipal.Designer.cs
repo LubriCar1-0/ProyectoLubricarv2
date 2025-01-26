@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaMenuPrincipal));
             this.BtnVentas = new System.Windows.Forms.Button();
             this.BtnTurnos = new System.Windows.Forms.Button();
             this.BtnHistorial = new System.Windows.Forms.Button();
@@ -36,12 +37,14 @@
             this.BtnConfiguracion = new System.Windows.Forms.Button();
             this.BtnLubriPuntos = new System.Windows.Forms.Button();
             this.BtnCerrarSesion = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnVentas
             // 
             this.BtnVentas.AutoSize = true;
-            this.BtnVentas.BackgroundImage = global::Vista.Properties.Resources.BtnVentas;
+            this.BtnVentas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnVentas.BackgroundImage")));
             this.BtnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVentas.FlatAppearance.BorderSize = 0;
             this.BtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -55,7 +58,7 @@
             // BtnTurnos
             // 
             this.BtnTurnos.AutoSize = true;
-            this.BtnTurnos.BackgroundImage = global::Vista.Properties.Resources.BtnTurnos;
+            this.BtnTurnos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnTurnos.BackgroundImage")));
             this.BtnTurnos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnTurnos.FlatAppearance.BorderSize = 0;
             this.BtnTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -69,7 +72,7 @@
             // BtnHistorial
             // 
             this.BtnHistorial.AutoSize = true;
-            this.BtnHistorial.BackgroundImage = global::Vista.Properties.Resources.BtnHistorial;
+            this.BtnHistorial.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnHistorial.BackgroundImage")));
             this.BtnHistorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnHistorial.FlatAppearance.BorderSize = 0;
             this.BtnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -83,7 +86,7 @@
             // BtnOrdenDeTrabajo
             // 
             this.BtnOrdenDeTrabajo.AutoSize = true;
-            this.BtnOrdenDeTrabajo.BackgroundImage = global::Vista.Properties.Resources.BtnOrdenDeTrabajo;
+            this.BtnOrdenDeTrabajo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnOrdenDeTrabajo.BackgroundImage")));
             this.BtnOrdenDeTrabajo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnOrdenDeTrabajo.FlatAppearance.BorderSize = 0;
             this.BtnOrdenDeTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -97,7 +100,7 @@
             // BtnStock
             // 
             this.BtnStock.AutoSize = true;
-            this.BtnStock.BackgroundImage = global::Vista.Properties.Resources.BtnStock;
+            this.BtnStock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnStock.BackgroundImage")));
             this.BtnStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnStock.FlatAppearance.BorderSize = 0;
             this.BtnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -111,7 +114,7 @@
             // BtnConfiguracion
             // 
             this.BtnConfiguracion.AutoSize = true;
-            this.BtnConfiguracion.BackgroundImage = global::Vista.Properties.Resources.BtnConfiguracion;
+            this.BtnConfiguracion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnConfiguracion.BackgroundImage")));
             this.BtnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnConfiguracion.FlatAppearance.BorderSize = 0;
             this.BtnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -125,7 +128,7 @@
             // BtnLubriPuntos
             // 
             this.BtnLubriPuntos.AutoSize = true;
-            this.BtnLubriPuntos.BackgroundImage = global::Vista.Properties.Resources.BtnLubriPuntos;
+            this.BtnLubriPuntos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnLubriPuntos.BackgroundImage")));
             this.BtnLubriPuntos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnLubriPuntos.FlatAppearance.BorderSize = 0;
             this.BtnLubriPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -140,7 +143,7 @@
             // BtnCerrarSesion
             // 
             this.BtnCerrarSesion.AutoSize = true;
-            this.BtnCerrarSesion.BackgroundImage = global::Vista.Properties.Resources.BtnCerrarSesion;
+            this.BtnCerrarSesion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnCerrarSesion.BackgroundImage")));
             this.BtnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.BtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -151,13 +154,36 @@
             this.BtnCerrarSesion.UseVisualStyleBackColor = true;
             this.BtnCerrarSesion.Click += new System.EventHandler(this.BtnCerrarSesion_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(290, 182);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 34);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Bienvenido: ";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuario.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lblUsuario.Location = new System.Drawing.Point(474, 182);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(0, 34);
+            this.lblUsuario.TabIndex = 9;
+            // 
             // PantallaMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuPrincipal;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnCerrarSesion);
             this.Controls.Add(this.BtnLubriPuntos);
             this.Controls.Add(this.BtnConfiguracion);
@@ -191,5 +217,7 @@
         private System.Windows.Forms.Button BtnConfiguracion;
         private System.Windows.Forms.Button BtnLubriPuntos;
         private System.Windows.Forms.Button BtnCerrarSesion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }

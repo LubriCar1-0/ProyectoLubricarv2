@@ -31,6 +31,7 @@
             this.BtnProductosFaltantes = new System.Windows.Forms.Button();
             this.BtnAgregarProducto = new System.Windows.Forms.Button();
             this.BtnControlDeStock = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnProductosFaltantes
@@ -72,6 +73,20 @@
             this.BtnControlDeStock.Size = new System.Drawing.Size(346, 164);
             this.BtnControlDeStock.TabIndex = 7;
             this.BtnControlDeStock.UseVisualStyleBackColor = true;
+            this.BtnControlDeStock.Click += new System.EventHandler(this.BtnControlDeStock_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(313, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 57);
+            this.button1.TabIndex = 14;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MenuStock
             // 
@@ -79,7 +94,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuStock;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnControlDeStock);
             this.Controls.Add(this.BtnAgregarProducto);
             this.Controls.Add(this.BtnProductosFaltantes);
@@ -103,5 +119,6 @@
         private System.Windows.Forms.Button BtnProductosFaltantes;
         private System.Windows.Forms.Button BtnAgregarProducto;
         private System.Windows.Forms.Button BtnControlDeStock;
+        private System.Windows.Forms.Button button1;
     }
 }

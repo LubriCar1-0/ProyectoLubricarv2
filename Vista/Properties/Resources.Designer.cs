@@ -393,6 +393,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnFiltrar {
+            get {
+                object obj = ResourceManager.GetObject("BtnFiltrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnHistorial {
             get {
                 object obj = ResourceManager.GetObject("BtnHistorial", resourceCulture);
@@ -786,6 +796,36 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap PantallaControlDeStock1 {
             get {
                 object obj = ResourceManager.GetObject("PantallaControlDeStock1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantallaControlDeStockNueva {
+            get {
+                object obj = ResourceManager.GetObject("PantallaControlDeStockNueva", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantallaControlDeStockNueva1 {
+            get {
+                object obj = ResourceManager.GetObject("PantallaControlDeStockNueva1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantallaControlDeStockNueva2 {
+            get {
+                object obj = ResourceManager.GetObject("PantallaControlDeStockNueva2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

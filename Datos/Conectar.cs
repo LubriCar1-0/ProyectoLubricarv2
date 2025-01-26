@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace Datos
 {
@@ -15,7 +16,7 @@ namespace Datos
         DataTable dt = new DataTable();
         SqlDataReader leer;
         public static SqlCommand comando = new SqlCommand();
-        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= Lubri-CarBD Test; integrated security = true");
+        public static SqlConnection conexion = new SqlConnection("server= localhost\\SQLEXPRESS; database= LubriCarTest; integrated security = true");
         private static void conectar()
         {
             conexion.Open();
@@ -89,6 +90,24 @@ namespace Datos
                select idTrabajador from Trabajador where documentoTR=@documento;
                end*/
         }
+        public int TraeIdCategoriaEmpleado(int documento)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeIdCategoriaEmpleado";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@documento", documento);
+            int id = Convert.ToInt32(comando.ExecuteScalar());
+            comando.Parameters.Clear();
+            desconectar();
+            return id;
+            /* create procedure TraeIdCategoriaEmpleado(
+               @documento int)
+               as begin 
+               select idCategoria from Trabajador where documentoTR=@documento;
+               end*/
+        }
+
         public string BuscarEmp(int Idtrabajador)
         {
             conectar();
@@ -264,6 +283,30 @@ namespace Datos
                     idCategoria = @idCategoria; 
             END
             */
+
+
+
+        }
+      
+
+
+        public static int VerificaPermiso(int verificaPermiso) 
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "VerificaPermiso";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdCategoria", verificaPermiso);
+            int id = Convert.ToInt32(comando.ExecuteScalar());
+            comando.Parameters.Clear();
+            desconectar();
+            return id;
+            /* create procedure VerificaPermiso(
+               @IdCategoria int)
+               as begin 
+               select PermisoCat from Categorias where IdCategoria = @IdCategoria;
+               end*/
+
 
 
 
@@ -626,7 +669,7 @@ namespace Datos
         #endregion
 
         #region Productos
-        public static void AgregarProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles,double litroMin, int cantidadmin )
+        public static void AgregarProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles,double litroMin, int cantidadmin, string estado)
         {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
@@ -644,6 +687,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@LitrosDisponibles", LitrosDisponibles);
             comando.Parameters.AddWithValue("@Minlitro", litroMin);
             comando.Parameters.AddWithValue("@Minimo", cantidadmin);
+            comando.Parameters.AddWithValue("@Estado", estado); 
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -662,9 +706,10 @@ namespace Datos
             @PrecioVenta Decimal,
             @LitrosDisponibles decimal,
 			@Minlitro Decimal,
-			@Minimo int)
+			@Minimo int,
+            @Estado char(3))
             as begin
-            Insert into Producto(Nombre, Marca, IdCategorias, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp,CantidadMinima,LitrosMinimo) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles,@Minimo,@Minlitro)
+            Insert into Producto(Nombre, Marca, IdCategorias, CodProd, Descripcion, Cantidad, Precio_lista, PrecioVenta, LitrosDisp,CantidadMinima,LitrosMinimo, estado) values(@Nomproducto, @MarcaProduc, @CategoriaProduc, @CodigoProduc, @DescripcionProduc, @CantidadProduc, @PrecioLista, @PrecioVenta, @LitrosDisponibles,@Minimo,@Minlitro, @Estado)
             end
 
             /*CREATE TABLE [dbo].[Producto](
@@ -678,7 +723,6 @@ namespace Datos
               [Precio_lista] [decimal](10, 2) NULL,
               [PrecioVenta] [decimal](10, 2) NULL,
               [LitrosDisp] [decimal](10, 2) NULL,
-             [FechaCreacionModificacion][datetime]
             
             alter table producto 
             add Estado char(3)
@@ -804,16 +848,16 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "ChequeaLiquido";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@IdCategoria", Id);
+            comando.Parameters.AddWithValue("@Id", Id);
             int id = Convert.ToInt32(comando.ExecuteScalar());
             comando.Parameters.Clear();
             desconectar();
             return id;
-            /* create procedure BuscaIdEmp(
-               @documento int)
-               as begin 
-               select COUNT(*) from CategoriasProductos where IdCategoria = @Id;
-               end*/
+            /* create procedure ChequeaLiquido(
+            @Id int)
+            as begin 
+            select COUNT(*) from CategoriasProductos where IdCategorias = @Id and Liquido = 'S';
+            end*/
         }
 
         public static int BuscaDuplicadoProducto(string nombre, string marca, int cat)
@@ -838,7 +882,7 @@ namespace Datos
               select count(*) from Producto where  Nombre= @nombre and Marca=@marca and IdCategoria = @categoria
               END;*/
         }
-        public static void UpdateProductos(int IdProdUPD, string Nombreprd, string MarcaProducto, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje)
+        public static void UpdateProductos(int IdProdUPD, string Nombreprd, string MarcaProducto, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje, double litrajeMin, int cantidadmin)
         {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
@@ -855,7 +899,8 @@ namespace Datos
             comando.Parameters.AddWithValue("@PrecioLista", preciolista);
             comando.Parameters.AddWithValue("@PrecioVenta", precioventa);
             comando.Parameters.AddWithValue("@LitrosDisponibles", litraje);
-            comando.Parameters.AddWithValue("@FechaCreacionModificacion", fechaHoraActual);
+            comando.Parameters.AddWithValue("@Minlitro", litrajeMin);
+            comando.Parameters.AddWithValue("@Minimo", cantidadmin);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -871,8 +916,9 @@ namespace Datos
                     @CantidadProduc INT,
                     @PrecioLista DECIMAL(18, 2),
                     @PrecioVenta DECIMAL(18, 2),
-                    @LitrosDisponibles DECIMAL(18, 2),
-                    @FechaCreacionModificacion DATETIME
+                    @LitrosDisponibles decimal,
+			        @Minlitro Decimal,
+			        @Minimo int)
                 )
                 AS
                 BEGIN
@@ -887,15 +933,16 @@ namespace Datos
                         Precio_lista = @PrecioLista,
                         PrecioVenta = @PrecioVenta,
                         LitrosDisp = @LitrosDisponibles,
-                        FechaCreacionModificacion = @FechaCreacionModificacion
+                        CantidadMinima =@Minimo,
+                        LitrosMinimo= @Minlitro
                     WHERE 
                         IdProd = @IdProducto; -- Condición para actualizar el producto con ese Id
                 END */
-                        }
+        }
 
         public static void EliminarProducto(int IdProd, string valor)
         {
-            DateTime fechaHoraActual = DateTime.Now;
+           
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "EliminarProductos";

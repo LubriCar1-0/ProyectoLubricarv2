@@ -637,5 +637,11 @@
   <ItemGroup>
     <None Include="Resources\BtnCatEMP.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaControlDeStockNueva.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnFiltrar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

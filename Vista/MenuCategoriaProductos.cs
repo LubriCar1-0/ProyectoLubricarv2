@@ -85,7 +85,7 @@ namespace Vista
 
                 }
             }
-            else if (DGVCategoriasProdc.Columns[e.ColumnIndex].Name == "EstadoNuevo")
+            else if (DGVCategoriasProdc.Columns[e.ColumnIndex].Name == "Eliminar")
             {
                 DataGridViewRow filaSeleccionadaUPD = DGVCategoriasProdc.Rows[e.RowIndex];
                 int IdCategoriaUPD = Convert.ToInt32(filaSeleccionada.Cells["IdCategorias"].Value);
