@@ -19,8 +19,8 @@ namespace Vista
             CargarClientes();
             CargarDatosEnGrid();
             DgvTablaMeVehiculos.ReadOnly = true;
-            DgvTablaMeVehiculos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvTablaMeVehiculos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //DgvTablaMeVehiculos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //DgvTablaMeVehiculos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             chbEditar.CheckedChanged += chbEditar_CheckedChanged;
             DgvTablaMeVehiculos.CellClick += DgvTablaMeVehiculos_CellClick;
         }
@@ -52,6 +52,9 @@ namespace Vista
                 {
                     DgvTablaMeVehiculos.Columns["idCliente"].Visible = false;
                 }
+                
+                //DgvTablaMeVehiculos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                //DgvTablaMeVehiculos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
             catch (Exception ex)
             {
@@ -234,6 +237,11 @@ namespace Vista
         }
 
         private void DgvTablaMeVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void MenuVehiculos_Load_1(object sender, EventArgs e)
         {
 
         }

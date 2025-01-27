@@ -224,7 +224,6 @@ namespace Vista
 
         }
         public static string ObtNomCliente(int idCliente)
-
         {
             Conectar capaDatos = new Conectar();
             return capaDatos.ObtenerCliente(idCliente);
@@ -365,6 +364,18 @@ namespace Vista
         public static void AgregarUnturno(DateTime dia, DateTime Hora, int idCliente, int idVehiculo, string Descripcion)
         {
             Turnos.CargaDeTurnos(dia, Hora, idCliente, idVehiculo, Descripcion);
+        }
+        public static string ObtNomVehiculo(int idVH)
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.ObtenerVehiculo(idVH);
+        }
+        public static DataTable BuscarTurnos()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasTurnos = CapaDatos.BuscarTurnos();
+            return TablasTurnos;
+
         }
     }
 

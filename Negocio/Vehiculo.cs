@@ -26,8 +26,8 @@ namespace Negocio
                 clientes.Add(new Vehiculo
                 {
                     IdCliente = Convert.ToInt32(row["idCliente"]),
-                    NombreCliente = row["NomCl"].ToString(),
-                    ApellidoCliente = row["ApeCl"].ToString()
+                    NombreCliente = row["Nombre"].ToString(),
+                    ApellidoCliente = row["Apellido"].ToString()
                 });
             }
 

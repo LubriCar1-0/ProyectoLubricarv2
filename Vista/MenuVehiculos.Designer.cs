@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnAgregarMeVehiculos = new System.Windows.Forms.Button();
             this.DgvTablaMeVehiculos = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CbxClienteMeVehiculos = new System.Windows.Forms.ComboBox();
             this.TxtMarcaVehiculos = new System.Windows.Forms.TextBox();
             this.TxtModeloVehiculos = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.BtnVolver = new System.Windows.Forms.Button();
             this.chbEditar = new System.Windows.Forms.CheckBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,38 @@
             this.DgvTablaMeVehiculos.Size = new System.Drawing.Size(1022, 233);
             this.DgvTablaMeVehiculos.TabIndex = 7;
             this.DgvTablaMeVehiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTablaMeVehiculos_CellContentClick);
+            // 
+            // Editar
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Editar.Frozen = true;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "EDITAR";
+            this.Editar.UseColumnTextForButtonValue = true;
+            // 
+            // Eliminar
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Eliminar.Frozen = true;
+            this.Eliminar.HeaderText = "Estado";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Text = "ACT/DES";
+            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // CbxClienteMeVehiculos
             // 
@@ -159,38 +191,6 @@
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
             // 
-            // Editar
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Editar.Frozen = true;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.Text = "EDITAR";
-            this.Editar.UseColumnTextForButtonValue = true;
-            // 
-            // Eliminar
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Eliminar.Frozen = true;
-            this.Eliminar.HeaderText = "Estado";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Text = "ACT/DES";
-            this.Eliminar.UseColumnTextForButtonValue = true;
-            // 
             // MenuVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,6 +212,7 @@
             this.DoubleBuffered = true;
             this.Name = "MenuVehiculos";
             this.Text = "MenuVehiculos";
+            this.Load += new System.EventHandler(this.MenuVehiculos_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

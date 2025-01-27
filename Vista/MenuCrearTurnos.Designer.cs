@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpSelecionarDia = new System.Windows.Forms.DateTimePicker();
             this.CbxSelectCL = new System.Windows.Forms.ComboBox();
             this.CbxSelectVH = new System.Windows.Forms.ComboBox();
@@ -37,6 +39,8 @@
             this.dtpHorario = new System.Windows.Forms.DateTimePicker();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
             this.BtnVolver = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Cancelar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +51,7 @@
             this.dtpSelecionarDia.Name = "dtpSelecionarDia";
             this.dtpSelecionarDia.Size = new System.Drawing.Size(298, 26);
             this.dtpSelecionarDia.TabIndex = 0;
+            this.dtpSelecionarDia.ValueChanged += new System.EventHandler(this.dtpSelecionarDia_ValueChanged);
             // 
             // CbxSelectCL
             // 
@@ -69,7 +74,7 @@
             // TxtDescripcionTurno
             // 
             this.TxtDescripcionTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescripcionTurno.Location = new System.Drawing.Point(445, 523);
+            this.TxtDescripcionTurno.Location = new System.Drawing.Point(445, 524);
             this.TxtDescripcionTurno.Multiline = true;
             this.TxtDescripcionTurno.Name = "TxtDescripcionTurno";
             this.TxtDescripcionTurno.Size = new System.Drawing.Size(330, 88);
@@ -104,14 +109,19 @@
             this.dtpHorario.Name = "dtpHorario";
             this.dtpHorario.Size = new System.Drawing.Size(298, 26);
             this.dtpHorario.TabIndex = 8;
+            this.dtpHorario.ValueChanged += new System.EventHandler(this.dtpHorario_ValueChanged_1);
             // 
             // dgvTurnos
             // 
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTurnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Editar,
+            this.Cancelar});
             this.dgvTurnos.Location = new System.Drawing.Point(445, 667);
             this.dgvTurnos.Name = "dgvTurnos";
             this.dgvTurnos.Size = new System.Drawing.Size(1031, 257);
             this.dgvTurnos.TabIndex = 9;
+            this.dgvTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellContentClick_1);
             // 
             // BtnVolver
             // 
@@ -125,6 +135,36 @@
             this.BtnVolver.TabIndex = 15;
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // Editar
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            // 
+            // Cancelar
+            // 
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Cancelar.HeaderText = "Cancelar";
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Text = "Cancelar";
+            this.Cancelar.UseColumnTextForButtonValue = true;
             // 
             // MenuCrearTurnos
             // 
@@ -163,5 +203,7 @@
         private System.Windows.Forms.DateTimePicker dtpHorario;
         private System.Windows.Forms.DataGridView dgvTurnos;
         private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Cancelar;
     }
 }

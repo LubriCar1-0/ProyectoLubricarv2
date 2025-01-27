@@ -1043,6 +1043,7 @@ namespace Datos
             //select* from Turno
             //end
         }
+
         public void InsertarTurno(DateTime dia, DateTime hora, int idCliente, int idVehiculo, string descripcion, string Estado)
         {
             conectar();
@@ -1059,6 +1060,40 @@ namespace Datos
             comando.ExecuteNonQuery();
             desconectar();
         }
+        public string ObtenerVehiculo(int idVH)
+        {
+            string Automovil = string.Empty;
+
+            try
+            {
+                conectar();
+                comando.Connection = conexion;
+                comando.CommandText = "ObtenerVehiculo";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@idVehiculo", idVH);
+
+                leer = comando.ExecuteReader();
+
+                if (leer.Read())
+                {
+                    string ModeloVH = leer["modeloVH"].ToString();
+                    string MarcaVH = leer["marcaVH"].ToString();
+
+
+                    Automovil = $"{ModeloVH} {MarcaVH}";
+                }
+
+                desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el Vehiculo: " + ex.Message);
+            }
+
+            return Automovil;
+        }
+       
     }
 
     #endregion
@@ -1067,4 +1102,4 @@ namespace Datos
 
 
 
-}
+
