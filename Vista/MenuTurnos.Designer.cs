@@ -37,11 +37,12 @@
             // BtnCrearTurno
             // 
             this.BtnCrearTurno.BackgroundImage = global::Vista.Properties.Resources.BtnCrearTurno;
+            this.BtnCrearTurno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnCrearTurno.FlatAppearance.BorderSize = 0;
             this.BtnCrearTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCrearTurno.Location = new System.Drawing.Point(644, 202);
+            this.BtnCrearTurno.Location = new System.Drawing.Point(1177, 348);
             this.BtnCrearTurno.Name = "BtnCrearTurno";
-            this.BtnCrearTurno.Size = new System.Drawing.Size(243, 98);
+            this.BtnCrearTurno.Size = new System.Drawing.Size(292, 126);
             this.BtnCrearTurno.TabIndex = 2;
             this.BtnCrearTurno.UseVisualStyleBackColor = true;
             this.BtnCrearTurno.Click += new System.EventHandler(this.BtnCrearTurno_Click);
@@ -49,11 +50,12 @@
             // BtnTurnosMeTurnos
             // 
             this.BtnTurnosMeTurnos.BackgroundImage = global::Vista.Properties.Resources.BtnTurnos;
+            this.BtnTurnosMeTurnos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnTurnosMeTurnos.FlatAppearance.BorderSize = 0;
             this.BtnTurnosMeTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnTurnosMeTurnos.Location = new System.Drawing.Point(644, 306);
+            this.BtnTurnosMeTurnos.Location = new System.Drawing.Point(1177, 502);
             this.BtnTurnosMeTurnos.Name = "BtnTurnosMeTurnos";
-            this.BtnTurnosMeTurnos.Size = new System.Drawing.Size(243, 98);
+            this.BtnTurnosMeTurnos.Size = new System.Drawing.Size(292, 123);
             this.BtnTurnosMeTurnos.TabIndex = 3;
             this.BtnTurnosMeTurnos.UseVisualStyleBackColor = true;
             this.BtnTurnosMeTurnos.Click += new System.EventHandler(this.BtnTurnosMeTurnos_Click);
@@ -61,11 +63,12 @@
             // BtnCancelacionTurno
             // 
             this.BtnCancelacionTurno.BackgroundImage = global::Vista.Properties.Resources.BtnCancelarTurno;
+            this.BtnCancelacionTurno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnCancelacionTurno.FlatAppearance.BorderSize = 0;
             this.BtnCancelacionTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelacionTurno.Location = new System.Drawing.Point(644, 421);
+            this.BtnCancelacionTurno.Location = new System.Drawing.Point(1177, 643);
             this.BtnCancelacionTurno.Name = "BtnCancelacionTurno";
-            this.BtnCancelacionTurno.Size = new System.Drawing.Size(243, 98);
+            this.BtnCancelacionTurno.Size = new System.Drawing.Size(292, 123);
             this.BtnCancelacionTurno.TabIndex = 4;
             this.BtnCancelacionTurno.UseVisualStyleBackColor = true;
             this.BtnCancelacionTurno.Click += new System.EventHandler(this.BtnCancelacionTurno_Click);
@@ -76,7 +79,7 @@
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(164, 105);
+            this.BtnVolver.Location = new System.Drawing.Point(277, 172);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
             this.BtnVolver.TabIndex = 5;
@@ -88,11 +91,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuTurnos;
-            this.ClientSize = new System.Drawing.Size(1149, 646);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnCancelacionTurno);
             this.Controls.Add(this.BtnTurnosMeTurnos);
             this.Controls.Add(this.BtnCrearTurno);
+            this.DoubleBuffered = true;
             this.Name = "MenuTurnos";
             this.Text = "MenuTurnos";
             this.ResumeLayout(false);

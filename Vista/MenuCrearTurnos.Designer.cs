@@ -28,57 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DtpSelecionarDia = new System.Windows.Forms.DateTimePicker();
-            this.CbxSelecionarCliente = new System.Windows.Forms.ComboBox();
-            this.CbxSelecioanrServicio = new System.Windows.Forms.ComboBox();
-            this.CbxSelecionarMateriales = new System.Windows.Forms.ComboBox();
+            this.dtpSelecionarDia = new System.Windows.Forms.DateTimePicker();
+            this.CbxSelectCL = new System.Windows.Forms.ComboBox();
+            this.CbxSelectVH = new System.Windows.Forms.ComboBox();
             this.TxtDescripcionTurno = new System.Windows.Forms.TextBox();
             this.BtnAgregarCliente = new System.Windows.Forms.Button();
-            this.BtnCrearTurnoMeCrearTurno = new System.Windows.Forms.Button();
-            this.BtnCancelarMeCrearTurno = new System.Windows.Forms.Button();
+            this.BtnCrearTurno = new System.Windows.Forms.Button();
+            this.dtpHorario = new System.Windows.Forms.DateTimePicker();
+            this.dgvTurnos = new System.Windows.Forms.DataGridView();
+            this.BtnVolver = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
             // 
-            // DtpSelecionarDia
+            // dtpSelecionarDia
             // 
-            this.DtpSelecionarDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpSelecionarDia.Location = new System.Drawing.Point(184, 156);
-            this.DtpSelecionarDia.Name = "DtpSelecionarDia";
-            this.DtpSelecionarDia.Size = new System.Drawing.Size(298, 26);
-            this.DtpSelecionarDia.TabIndex = 0;
+            this.dtpSelecionarDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpSelecionarDia.Location = new System.Drawing.Point(445, 293);
+            this.dtpSelecionarDia.Name = "dtpSelecionarDia";
+            this.dtpSelecionarDia.Size = new System.Drawing.Size(298, 26);
+            this.dtpSelecionarDia.TabIndex = 0;
             // 
-            // CbxSelecionarCliente
+            // CbxSelectCL
             // 
-            this.CbxSelecionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxSelecionarCliente.FormattingEnabled = true;
-            this.CbxSelecionarCliente.Location = new System.Drawing.Point(184, 297);
-            this.CbxSelecionarCliente.Name = "CbxSelecionarCliente";
-            this.CbxSelecionarCliente.Size = new System.Drawing.Size(298, 28);
-            this.CbxSelecionarCliente.TabIndex = 1;
+            this.CbxSelectCL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbxSelectCL.FormattingEnabled = true;
+            this.CbxSelectCL.Location = new System.Drawing.Point(445, 409);
+            this.CbxSelectCL.Name = "CbxSelectCL";
+            this.CbxSelectCL.Size = new System.Drawing.Size(298, 28);
+            this.CbxSelectCL.TabIndex = 1;
             // 
-            // CbxSelecioanrServicio
+            // CbxSelectVH
             // 
-            this.CbxSelecioanrServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxSelecioanrServicio.FormattingEnabled = true;
-            this.CbxSelecioanrServicio.Location = new System.Drawing.Point(184, 366);
-            this.CbxSelecioanrServicio.Name = "CbxSelecioanrServicio";
-            this.CbxSelecioanrServicio.Size = new System.Drawing.Size(298, 28);
-            this.CbxSelecioanrServicio.TabIndex = 2;
-            // 
-            // CbxSelecionarMateriales
-            // 
-            this.CbxSelecionarMateriales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxSelecionarMateriales.FormattingEnabled = true;
-            this.CbxSelecionarMateriales.Location = new System.Drawing.Point(184, 440);
-            this.CbxSelecionarMateriales.Name = "CbxSelecionarMateriales";
-            this.CbxSelecionarMateriales.Size = new System.Drawing.Size(298, 28);
-            this.CbxSelecionarMateriales.TabIndex = 3;
+            this.CbxSelectVH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbxSelectVH.FormattingEnabled = true;
+            this.CbxSelectVH.Location = new System.Drawing.Point(1144, 409);
+            this.CbxSelectVH.Name = "CbxSelectVH";
+            this.CbxSelectVH.Size = new System.Drawing.Size(298, 28);
+            this.CbxSelectVH.TabIndex = 2;
             // 
             // TxtDescripcionTurno
             // 
             this.TxtDescripcionTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescripcionTurno.Location = new System.Drawing.Point(184, 501);
+            this.TxtDescripcionTurno.Location = new System.Drawing.Point(445, 523);
+            this.TxtDescripcionTurno.Multiline = true;
             this.TxtDescripcionTurno.Name = "TxtDescripcionTurno";
-            this.TxtDescripcionTurno.Size = new System.Drawing.Size(298, 26);
+            this.TxtDescripcionTurno.Size = new System.Drawing.Size(330, 88);
             this.TxtDescripcionTurno.TabIndex = 4;
             // 
             // BtnAgregarCliente
@@ -86,50 +80,73 @@
             this.BtnAgregarCliente.BackgroundImage = global::Vista.Properties.Resources.BtnAgregarClientes;
             this.BtnAgregarCliente.FlatAppearance.BorderSize = 0;
             this.BtnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarCliente.Location = new System.Drawing.Point(184, 572);
+            this.BtnAgregarCliente.Location = new System.Drawing.Point(323, 955);
             this.BtnAgregarCliente.Name = "BtnAgregarCliente";
             this.BtnAgregarCliente.Size = new System.Drawing.Size(214, 43);
             this.BtnAgregarCliente.TabIndex = 5;
             this.BtnAgregarCliente.UseVisualStyleBackColor = true;
             // 
-            // BtnCrearTurnoMeCrearTurno
+            // BtnCrearTurno
             // 
-            this.BtnCrearTurnoMeCrearTurno.BackgroundImage = global::Vista.Properties.Resources.BtnCrearTurnoBlanco;
-            this.BtnCrearTurnoMeCrearTurno.FlatAppearance.BorderSize = 0;
-            this.BtnCrearTurnoMeCrearTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCrearTurnoMeCrearTurno.Location = new System.Drawing.Point(445, 572);
-            this.BtnCrearTurnoMeCrearTurno.Name = "BtnCrearTurnoMeCrearTurno";
-            this.BtnCrearTurnoMeCrearTurno.Size = new System.Drawing.Size(214, 43);
-            this.BtnCrearTurnoMeCrearTurno.TabIndex = 6;
-            this.BtnCrearTurnoMeCrearTurno.UseVisualStyleBackColor = true;
+            this.BtnCrearTurno.BackgroundImage = global::Vista.Properties.Resources.BtnCrearTurnoBlanco;
+            this.BtnCrearTurno.FlatAppearance.BorderSize = 0;
+            this.BtnCrearTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCrearTurno.Location = new System.Drawing.Point(1355, 955);
+            this.BtnCrearTurno.Name = "BtnCrearTurno";
+            this.BtnCrearTurno.Size = new System.Drawing.Size(214, 43);
+            this.BtnCrearTurno.TabIndex = 6;
+            this.BtnCrearTurno.UseVisualStyleBackColor = true;
             // 
-            // BtnCancelarMeCrearTurno
+            // dtpHorario
             // 
-            this.BtnCancelarMeCrearTurno.BackgroundImage = global::Vista.Properties.Resources.BtnCancelar;
-            this.BtnCancelarMeCrearTurno.FlatAppearance.BorderSize = 0;
-            this.BtnCancelarMeCrearTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelarMeCrearTurno.Location = new System.Drawing.Point(752, 572);
-            this.BtnCancelarMeCrearTurno.Name = "BtnCancelarMeCrearTurno";
-            this.BtnCancelarMeCrearTurno.Size = new System.Drawing.Size(129, 43);
-            this.BtnCancelarMeCrearTurno.TabIndex = 7;
-            this.BtnCancelarMeCrearTurno.UseVisualStyleBackColor = true;
+            this.dtpHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHorario.Location = new System.Drawing.Point(1144, 293);
+            this.dtpHorario.Name = "dtpHorario";
+            this.dtpHorario.Size = new System.Drawing.Size(298, 26);
+            this.dtpHorario.TabIndex = 8;
+            // 
+            // dgvTurnos
+            // 
+            this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTurnos.Location = new System.Drawing.Point(445, 667);
+            this.dgvTurnos.Name = "dgvTurnos";
+            this.dgvTurnos.Size = new System.Drawing.Size(1031, 257);
+            this.dgvTurnos.TabIndex = 9;
+            // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnVolver.FlatAppearance.BorderSize = 0;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Location = new System.Drawing.Point(259, 167);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(64, 40);
+            this.BtnVolver.TabIndex = 15;
+            this.BtnVolver.UseVisualStyleBackColor = false;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // MenuCrearTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuCrearTurno;
-            this.ClientSize = new System.Drawing.Size(1165, 659);
-            this.Controls.Add(this.BtnCancelarMeCrearTurno);
-            this.Controls.Add(this.BtnCrearTurnoMeCrearTurno);
+            this.BackgroundImage = global::Vista.Properties.Resources.MenuCreacionDeTurnos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.BtnVolver);
+            this.Controls.Add(this.dgvTurnos);
+            this.Controls.Add(this.dtpHorario);
+            this.Controls.Add(this.BtnCrearTurno);
             this.Controls.Add(this.BtnAgregarCliente);
             this.Controls.Add(this.TxtDescripcionTurno);
-            this.Controls.Add(this.CbxSelecionarMateriales);
-            this.Controls.Add(this.CbxSelecioanrServicio);
-            this.Controls.Add(this.CbxSelecionarCliente);
-            this.Controls.Add(this.DtpSelecionarDia);
+            this.Controls.Add(this.CbxSelectVH);
+            this.Controls.Add(this.CbxSelectCL);
+            this.Controls.Add(this.dtpSelecionarDia);
+            this.DoubleBuffered = true;
             this.Name = "MenuCrearTurnos";
             this.Text = "MenuCrearTurnos";
+            this.Load += new System.EventHandler(this.MenuCrearTurnos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,13 +154,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker DtpSelecionarDia;
-        private System.Windows.Forms.ComboBox CbxSelecionarCliente;
-        private System.Windows.Forms.ComboBox CbxSelecioanrServicio;
-        private System.Windows.Forms.ComboBox CbxSelecionarMateriales;
+        private System.Windows.Forms.DateTimePicker dtpSelecionarDia;
+        private System.Windows.Forms.ComboBox CbxSelectCL;
+        private System.Windows.Forms.ComboBox CbxSelectVH;
         private System.Windows.Forms.TextBox TxtDescripcionTurno;
         private System.Windows.Forms.Button BtnAgregarCliente;
-        private System.Windows.Forms.Button BtnCrearTurnoMeCrearTurno;
-        private System.Windows.Forms.Button BtnCancelarMeCrearTurno;
+        private System.Windows.Forms.Button BtnCrearTurno;
+        private System.Windows.Forms.DateTimePicker dtpHorario;
+        private System.Windows.Forms.DataGridView dgvTurnos;
+        private System.Windows.Forms.Button BtnVolver;
     }
 }

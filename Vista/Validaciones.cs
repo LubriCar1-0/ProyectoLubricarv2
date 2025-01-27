@@ -347,4 +347,27 @@ namespace Vista
     }
     #endregion
 
+    #region Turnos   
+    public class validarTurnos : Turnos
+    {
+        public static Dictionary<int, string> ObtenerVehiculosPorCliente(int idCliente)
+        {
+            List<Turnos> listaVehiculos = Turnos.ObtenerVehiculosPorCliente(idCliente);
+            Dictionary<int, string> vehiculosProcesados = new Dictionary<int, string>();
+
+            foreach (var vehiculo in listaVehiculos)
+            {
+                vehiculosProcesados.Add(vehiculo.idVehiculo, $"{vehiculo.Marca} {vehiculo.Modelo} ({vehiculo.Patente})");
+            }
+
+            return vehiculosProcesados;
+        }
+        public static void AgregarUnturno(DateTime dia, DateTime Hora, int idCliente, int idVehiculo, string Descripcion)
+        {
+            Turnos.CargaDeTurnos(dia, Hora, idCliente, idVehiculo, Descripcion);
+        }
+    }
+
+    #endregion
+
 }

@@ -1002,9 +1002,68 @@ namespace Datos
 
         #endregion
 
+        #region Turnos  
+        public DataTable BuscarVehiculosPorCliente(int idCliente)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerVehiculosPorCliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+            leer = comando.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+            //CREATE PROCEDURE TraerVehiculosPorCliente
+            //@idCliente INT
+            //AS
+            //BEGIN
+            //SELECT idVehiculo, modeloVH, marcaVH, patenteVH
+            //FROM Vehiculo
+            //WHERE idCliente = @idCliente;
+            //END
 
-
+        }
+        public DataTable BuscarTurnos()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaTurnos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+            //create procedure TraerTablaTurnos
+            //as begin
+            //select* from Turno
+            //end
+        }
+        public void InsertarTurno(DateTime dia, DateTime hora, int idCliente, int idVehiculo, string descripcion, string Estado)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "InsertarTurno";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@Fecha", dia);
+            comando.Parameters.AddWithValue("@Hora", hora);
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo);
+            comando.Parameters.AddWithValue("@descripcion", descripcion);
+            comando.Parameters.AddWithValue("@ESTADO", Estado);
+            comando.ExecuteNonQuery();
+            desconectar();
+        }
     }
+
+    #endregion
+
+}
 
 
 

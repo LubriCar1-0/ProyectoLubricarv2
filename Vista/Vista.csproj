@@ -643,5 +643,8 @@
   <ItemGroup>
     <None Include="Resources\BtnFiltrar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuCreacionDeTurnos.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
