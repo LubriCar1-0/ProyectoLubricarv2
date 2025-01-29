@@ -45,14 +45,16 @@ namespace Negocio
                 int idInt = Convert.ToInt32(idBD);
                 if (idInt == id)
                 {
-
-                    string PatenteExistente = fila["patenteVH"].ToString();
-                    if (Patente == PatenteExistente)
+                    foreach (DataRow filaVH in TablaVehiculos.Rows)
                     {
-                        VehiculoEncontrado = true;
-                        throw new Exception("Ya existe un vehiculo con esa patente");
-
+                        string PatenteExistente = filaVH["patenteVH"].ToString();
+                        if (Patente == PatenteExistente)
+                        {
+                            VehiculoEncontrado = true;
+                            throw new Exception("Ya existe un vehículo con esa patente.");
+                        }
                     }
+
                 }
             }
             if (!VehiculoEncontrado)

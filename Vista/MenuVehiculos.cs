@@ -102,10 +102,11 @@ namespace Vista
 
                 MessageBox.Show("El vehiculo ha sido cargado con exito");
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Ocurrió un error: " + ex.Message);
             }
+
         }
 
         private void CbxClienteMeVehiculos_SelectedIndexChanged(object sender, EventArgs e)
