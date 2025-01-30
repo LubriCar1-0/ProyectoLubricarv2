@@ -377,6 +377,17 @@ namespace Vista
             return TablasTurnos;
 
         }
+        public static void ModificacionTurno(int idTurno, int idVehiculoUPD, int idClienteUPD, DateTime fechaupd, TimeSpan horaupd,string DescUPD)
+        {
+            try
+            {
+                Turnos.ModificarTurnos(idTurno, idVehiculoUPD, idClienteUPD, fechaupd, horaupd, DescUPD);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error en la validación de datos: {ex.Message}");
+            }
+        }
     }
 
     #endregion

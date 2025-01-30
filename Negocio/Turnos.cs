@@ -70,6 +70,18 @@ namespace Negocio
             }
 
         }
+        public static void ModificarTurnos(int idTurno, int idVehiculoUPD, int idClienteUPD, DateTime fechaupd, TimeSpan horaupd, string DescUPD)
+        {
+            try
+            {
+                Conectar.ActualizarTurno(idTurno, idVehiculoUPD, idClienteUPD, fechaupd, horaupd, DescUPD);
+                // agregar a la bitacora 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al actualizar el vehículo en la base de datos: {ex.Message}");
+            }
+        }
 
     }
 }

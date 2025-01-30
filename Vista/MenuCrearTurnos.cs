@@ -146,57 +146,55 @@ namespace Vista
             TxtDescripcionTurno.Text = filaSeleccionada.Cells["descripcion"].Value.ToString();
             if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fecha))
             {
-                dtpSelecionarDia.Value = fecha; // Asignar al DateTimePicker de Fecha
+                dtpSelecionarDia.Value = fecha; 
             }
 
-            // Asignar la hora al DateTimePicker
             if (TimeSpan.TryParse(filaSeleccionada.Cells["Hora"].Value?.ToString(), out TimeSpan hora))
             {
-                DateTime fechaHora = DateTime.Today.Add(hora); // Combinar con la fecha de hoy
-                dtpHorario.Value = fechaHora; // Asignar al DateTimePicker de Hora
+                DateTime fechaHora = DateTime.Today.Add(hora); 
+                dtpHorario.Value = fechaHora; 
             }
 
-            //if (dgvTurnos.Columns[e.ColumnIndex].Name == "Editar")
-            //{
-            //    if (e.RowIndex >= 0)
-            //    {
-            //        //DataGridViewRow filaSeleccionadaUPD = dgvTurnos.Rows[e.RowIndex];
+            if (dgvTurnos.Columns[e.ColumnIndex].Name == "Editar")
+            {
+                if (e.RowIndex >= 0)
+                {
+                    
+                    string DescUPD = filaSeleccionada.Cells["descripcion"].Value?.ToString();
+                    int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+                    int idVehiculoUPD = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
+                    CbxSelectVH.SelectedValue = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
 
-            //        // Asignar los valores de las columnas a los campos correspondientes
-            //        TxtDescripcionTurno.Text = filaSeleccionada.Cells["descripcion"].Value?.ToString();
-            //        CbxSelectCL.SelectedValue = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
-            //        CbxSelectVH.SelectedValue = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
+                    
+                    if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fechaupd))
+                    {
+                        dtpSelecionarDia.Value = fechaupd; 
+                    }
 
-            //        // Asignar la fecha al DateTimePicker
-            //        if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fecha))
-            //        {
-            //            dtpSelecionarDia.Value = fecha; // Asignar al DateTimePicker de Fecha
-            //        }
-
-            //        // Asignar la hora al DateTimePicker
-            //        if (TimeSpan.TryParse(filaSeleccionada.Cells["Hora"].Value?.ToString(), out TimeSpan hora))
-            //        {
-            //            DateTime fechaHora = DateTime.Today.Add(hora); // Combinar con la fecha de hoy
-            //            dtpHorario.Value = fechaHora; // Asignar al DateTimePicker de Hora
-            //        }
-            //        DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                    
+                    if (TimeSpan.TryParse(filaSeleccionada.Cells["Hora"].Value?.ToString(), out TimeSpan horaupd))
+                    {
+                        DateTime fechaHoraupd = DateTime.Today.Add(horaupd); 
+                        dtpHorario.Value = fechaHoraupd; 
+                    }
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
 
-            //        if (resultado == DialogResult.Yes)
-            //        {
 
-            //            ValidarClientes.ModificacionVehiculo(idVehiculo, idCliente, ModeloUPD.Trim(), MarcaUPD.Trim(), Convert.ToInt32(AñoUPD.Trim()), PatenteUPD.Trim(), Convert.ToInt32(KilometrajeUPD.Trim()));
-            //            Console.WriteLine("Cambio realizado.");
-            //            //LimpiaTextBox();
-            //            //CargarDatosEnGrid();
-            //        }
-            //        else if (resultado == DialogResult.No)
-            //        {
-            //            //CargarDatosEnGrid();
-            //        }
-            //    }
-            //}
+                    if (resultado == DialogResult.Yes)
+                    {
+
+                        validarTurnos.ModificacionTurno(idTurno, idVehiculoUPD, idClienteUPD, fechaupd, horaupd, DescUPD);
+                        Console.WriteLine("Cambio realizado.");
+                        //LimpiaTextBox();
+                        //CargarDatosEnGrid();
+                    }
+                    else if (resultado == DialogResult.No)
+                    {
+                        //CargarDatosEnGrid();
+                    }
+                }
+            }
             //else if (dgvTurnos.Columns[e.ColumnIndex].Name == "Estado")
             //{
             //    if (e.RowIndex >= 0)

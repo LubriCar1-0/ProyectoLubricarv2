@@ -1093,7 +1093,24 @@ namespace Datos
 
             return Automovil;
         }
-       
+        public static void ActualizarTurno(int idTurno, int idVehiculoUPD, int idClienteUPD, DateTime fechaupd, TimeSpan horaupd, string DescUPD)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ActualizarTurno";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idTurno", idTurno);
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculoUPD);
+            comando.Parameters.AddWithValue("@idCliente", idClienteUPD);
+            comando.Parameters.AddWithValue("@Fecha", fechaupd);
+            comando.Parameters.AddWithValue("@Hora", horaupd);
+            comando.Parameters.AddWithValue("@descripcion", DescUPD);
+            comando.ExecuteNonQuery();
+            desconectar();
+        }
+        
+
     }
 
     #endregion
