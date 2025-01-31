@@ -646,5 +646,8 @@
   <ItemGroup>
     <None Include="Resources\MenuCreacionDeTurnos.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaVentaDeProductos.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

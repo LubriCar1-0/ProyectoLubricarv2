@@ -1133,6 +1133,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PantallaVentaDeProductos {
+            get {
+                object obj = ResourceManager.GetObject("PantallaVentaDeProductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PantMenuConfig {
             get {
                 object obj = ResourceManager.GetObject("PantMenuConfig", resourceCulture);
