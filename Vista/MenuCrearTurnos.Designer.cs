@@ -38,9 +38,11 @@
             this.BtnCrearTurno = new System.Windows.Forms.Button();
             this.dtpHorario = new System.Windows.Forms.DateTimePicker();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
-            this.BtnVolver = new System.Windows.Forms.Button();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Cancelar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnVolver = new System.Windows.Forms.Button();
+            this.btnBorraCampos = new System.Windows.Forms.Button();
+            this.chbEditar = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +72,7 @@
             this.CbxSelectVH.Name = "CbxSelectVH";
             this.CbxSelectVH.Size = new System.Drawing.Size(298, 28);
             this.CbxSelectVH.TabIndex = 2;
+            this.CbxSelectVH.SelectedIndexChanged += new System.EventHandler(this.CbxSelectVH_SelectedIndexChanged);
             // 
             // TxtDescripcionTurno
             // 
@@ -90,6 +93,7 @@
             this.BtnAgregarCliente.Size = new System.Drawing.Size(214, 43);
             this.BtnAgregarCliente.TabIndex = 5;
             this.BtnAgregarCliente.UseVisualStyleBackColor = true;
+            this.BtnAgregarCliente.Click += new System.EventHandler(this.BtnAgregarCliente_Click);
             // 
             // BtnCrearTurno
             // 
@@ -101,6 +105,7 @@
             this.BtnCrearTurno.Size = new System.Drawing.Size(214, 43);
             this.BtnCrearTurno.TabIndex = 6;
             this.BtnCrearTurno.UseVisualStyleBackColor = true;
+            this.BtnCrearTurno.Click += new System.EventHandler(this.BtnCrearTurno_Click);
             // 
             // dtpHorario
             // 
@@ -122,19 +127,6 @@
             this.dgvTurnos.Size = new System.Drawing.Size(1031, 257);
             this.dgvTurnos.TabIndex = 9;
             this.dgvTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellContentClick_1);
-            // 
-            // BtnVolver
-            // 
-            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.BtnVolver.FlatAppearance.BorderSize = 0;
-            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(259, 167);
-            this.BtnVolver.Name = "BtnVolver";
-            this.BtnVolver.Size = new System.Drawing.Size(64, 40);
-            this.BtnVolver.TabIndex = 15;
-            this.BtnVolver.UseVisualStyleBackColor = false;
-            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // Editar
             // 
@@ -166,6 +158,44 @@
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseColumnTextForButtonValue = true;
             // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnVolver.FlatAppearance.BorderSize = 0;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Location = new System.Drawing.Point(259, 167);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(64, 40);
+            this.BtnVolver.TabIndex = 15;
+            this.BtnVolver.UseVisualStyleBackColor = false;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // btnBorraCampos
+            // 
+            this.btnBorraCampos.BackgroundImage = global::Vista.Properties.Resources.blanco;
+            this.btnBorraCampos.FlatAppearance.BorderSize = 0;
+            this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorraCampos.Location = new System.Drawing.Point(1337, 631);
+            this.btnBorraCampos.Name = "btnBorraCampos";
+            this.btnBorraCampos.Size = new System.Drawing.Size(139, 30);
+            this.btnBorraCampos.TabIndex = 23;
+            this.btnBorraCampos.Text = "Borrar campos";
+            this.btnBorraCampos.UseVisualStyleBackColor = true;
+            this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
+            // 
+            // chbEditar
+            // 
+            this.chbEditar.AutoSize = true;
+            this.chbEditar.BackColor = System.Drawing.Color.Transparent;
+            this.chbEditar.Location = new System.Drawing.Point(1482, 768);
+            this.chbEditar.Name = "chbEditar";
+            this.chbEditar.Size = new System.Drawing.Size(90, 17);
+            this.chbEditar.TabIndex = 24;
+            this.chbEditar.Text = "Permitir Editar";
+            this.chbEditar.UseVisualStyleBackColor = false;
+            // 
             // MenuCrearTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +203,8 @@
             this.BackgroundImage = global::Vista.Properties.Resources.MenuCreacionDeTurnos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.chbEditar);
+            this.Controls.Add(this.btnBorraCampos);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.dgvTurnos);
             this.Controls.Add(this.dtpHorario);
@@ -205,5 +237,7 @@
         private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Cancelar;
+        private System.Windows.Forms.Button btnBorraCampos;
+        private System.Windows.Forms.CheckBox chbEditar;
     }
 }

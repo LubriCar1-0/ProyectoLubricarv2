@@ -440,7 +440,7 @@ namespace Datos
             desconectar();
         }
 
-        public static void AgregarVehiculo(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje, string Estado)
+        public static void AgregarVehiculo(int id, string Modelo, string Marca, int año, string Patente, int Kilometraje, string Estado)
         {
             conectar();
             comando.Connection = conexion;
@@ -1012,7 +1012,6 @@ namespace Datos
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idCliente", idCliente);
             leer = comando.ExecuteReader();
-            DataTable dt = new DataTable();
             dt.Load(leer);
             desconectar();
             return dt;
@@ -1044,19 +1043,19 @@ namespace Datos
             //end
         }
 
-        public void InsertarTurno(DateTime dia, DateTime hora, int idCliente, int idVehiculo, string descripcion, string Estado)
+        public void InsertarTurno(DateTime fecha, TimeSpan hora, int idCliente, int idVehiculo, string descripcion, string estado)
         {
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "InsertarTurno";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@Fecha", dia);
+            comando.Parameters.AddWithValue("@Fecha", fecha);
             comando.Parameters.AddWithValue("@Hora", hora);
             comando.Parameters.AddWithValue("@idCliente", idCliente);
             comando.Parameters.AddWithValue("@idVehiculo", idVehiculo);
             comando.Parameters.AddWithValue("@descripcion", descripcion);
-            comando.Parameters.AddWithValue("@ESTADO", Estado);
+            comando.Parameters.AddWithValue("@Estado", estado);
             comando.ExecuteNonQuery();
             desconectar();
         }
@@ -1109,7 +1108,51 @@ namespace Datos
             comando.ExecuteNonQuery();
             desconectar();
         }
-        
+        public bool ExisteTurno(DateTime fecha, TimeSpan hora)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ExisteTurno";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@Fecha", fecha.Date); // Solo la fecha (sin hora)
+            comando.Parameters.AddWithValue("@Hora", hora);        // Solo la hora
+            comando.Parameters.AddWithValue("@Estado", "ACT");     // Solo turnos activos
+
+            int count = Convert.ToInt32(comando.ExecuteScalar());
+            desconectar();
+
+            return count > 0; // Si count > 0, el turno ya existe
+        }
+        public static void CancelarTurno(int idTurno, string Estado)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "CancelarTurno";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idTurno", idTurno);
+            comando.Parameters.AddWithValue("@Estado", Estado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+            // CREATE PROCEDURE CancelarTurno
+            //(
+            // @idTurno INT,
+            // @Estado char(3)
+            //)
+            //AS
+            //BEGIN
+            //    UPDATE Turno 
+            //    SET
+            //        Estado = @Estado
+            //    WHERE
+            //        idTurno = @idTurno; 
+            //END
+
+        }
+
 
     }
 

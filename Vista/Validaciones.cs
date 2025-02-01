@@ -206,13 +206,13 @@ namespace Vista
 
             foreach (var cliente in listaClientes)
             {
-                clientesProcesados.Add(cliente.IdCliente, $"{cliente.NombreCliente} {cliente.ApellidoCliente}");
+                clientesProcesados.Add(cliente.IdCliente, $"{cliente.NombreCliente}{cliente.ApellidoCliente}");
             }
 
             return clientesProcesados;
         }
 
-        public static void AgregarUnVehiculo(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+        public static void AgregarUnVehiculo(int id, string Modelo, string Marca, int año, string Patente, int Kilometraje)
         {
             Vehiculo.CargaDeVehiculos(id, Modelo, Marca, año, Patente, Kilometraje);
         }
@@ -243,7 +243,7 @@ namespace Vista
         {
             try
             {
-                Empleados.CambiarEstado(idVehiculo, Estado);
+                Vehiculo.CambiarEstado(idVehiculo, Estado);
             }
             catch (Exception ex)
             {
@@ -386,6 +386,17 @@ namespace Vista
             catch (Exception ex)
             {
                 throw new Exception($"Error en la validación de datos: {ex.Message}");
+            }
+        }
+        public static void CancelarTurno(int idTurno, string Estado)
+        {
+            try
+            {
+                Turnos.CancelarElTurno(idTurno, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cancelar el Turno:{ex.Message}");
             }
         }
     }

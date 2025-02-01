@@ -53,8 +53,7 @@ namespace Vista
                     DgvTablaMeVehiculos.Columns["idCliente"].Visible = false;
                 }
                 
-                //DgvTablaMeVehiculos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                //DgvTablaMeVehiculos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                
             }
             catch (Exception ex)
             {
@@ -111,12 +110,12 @@ namespace Vista
 
         private void CbxClienteMeVehiculos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CbxClienteMeVehiculos.SelectedItem is KeyValuePair<int, string> clienteSeleccionado)
+            if (CbxClienteMeVehiculos.SelectedItem is KeyValuePair<int, string> cliente)
             {
-                idCliente = clienteSeleccionado.Key;
-
+                idCliente = cliente.Key;
             }
         }
+
 
 
 
@@ -139,9 +138,9 @@ namespace Vista
             CbxClienteMeVehiculos.Text = ValidarClientes.ObtNomCliente(idCliente);
             TxtModeloVehiculos.Text = filaSeleccionada.Cells["modeloVH"].Value.ToString();
             TxtMarcaVehiculos.Text = filaSeleccionada.Cells["marcaVH"].Value.ToString();
-            TxtAñoVehiculos.Text = filaSeleccionada.Cells["añoVh"].Value.ToString();
+            TxtAñoVehiculos.Text = filaSeleccionada.Cells["añoVH"].Value.ToString();
             TxtPatenteVehiculo.Text = filaSeleccionada.Cells["patenteVH"].Value.ToString();
-            TxtKilometrajeVehiculos.Text = filaSeleccionada.Cells["KilometrajeVH"].Value.ToString();
+            TxtKilometrajeVehiculos.Text = filaSeleccionada.Cells["kilometrajeVH"].Value.ToString();
 
             if (DgvTablaMeVehiculos.Columns[e.ColumnIndex].Name == "Editar")
             {
@@ -154,9 +153,9 @@ namespace Vista
 
                     string ModeloUPD = filaSeleccionada.Cells["modeloVH"].Value.ToString().Trim();
                     string MarcaUPD = filaSeleccionada.Cells["marcaVH"].Value.ToString().Trim();
-                    string AñoUPD = filaSeleccionada.Cells["añoVh"].Value.ToString().Trim();
+                    string AñoUPD = filaSeleccionada.Cells["añoVH"].Value.ToString().Trim();
                     string PatenteUPD = filaSeleccionada.Cells["patenteVH"].Value.ToString().Trim();
-                    string KilometrajeUPD = filaSeleccionada.Cells["KilometrajeVH"].Value.ToString().Trim();
+                    string KilometrajeUPD = filaSeleccionada.Cells["kilometrajeVH"].Value.ToString().Trim();
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
 
@@ -175,7 +174,7 @@ namespace Vista
                     }
                 }
             }
-            else if (DgvTablaMeVehiculos.Columns[e.ColumnIndex].Name == "Estado")
+            else if (DgvTablaMeVehiculos.Columns[e.ColumnIndex].Name == "Eliminar")
             {
                 if (e.RowIndex >= 0)
                 {
@@ -228,6 +227,8 @@ namespace Vista
             TxtModeloVehiculos.Text = string.Empty;
             TxtAñoVehiculos.Text = string.Empty;
             TxtPatenteVehiculo.Text = string.Empty;
+            CbxClienteMeVehiculos.SelectedIndex = -1;
+            idCliente = 0;
             TxtKilometrajeVehiculos.Text = string.Empty;
 
         }
@@ -243,6 +244,11 @@ namespace Vista
         }
 
         private void MenuVehiculos_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chbEditar_CheckedChanged_1(object sender, EventArgs e)
         {
 
         }

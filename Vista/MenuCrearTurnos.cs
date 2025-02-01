@@ -16,6 +16,8 @@ namespace Vista
         {
             InitializeComponent();
             CargarClientes();
+            CbxSelectCL.SelectedIndexChanged += CbxSelectCL_SelectedIndexChanged;
+            CbxSelectVH.SelectedIndexChanged += CbxSelectVH_SelectedIndexChanged; 
             CargarTurnos();
             ConfigurarDateTimePickerHora();
         }
@@ -35,7 +37,7 @@ namespace Vista
         private void dtpHorario_ValueChanged(object sender, EventArgs e)
         {
             dtpHorario.Format = DateTimePickerFormat.Time;
-            dtpHorario.ShowUpDown = true; // Esto cambia el control a un spinner para seleccionar hora y minutos.
+            dtpHorario.ShowUpDown = true; 
 
         }
 
@@ -48,6 +50,7 @@ namespace Vista
             }
             CbxSelectCL.DisplayMember = "Value";
             CbxSelectCL.ValueMember = "Key";
+            
         }
         private int idCliente;
         private int idVehiculo;
@@ -57,16 +60,23 @@ namespace Vista
             {
                 idCliente = clienteSeleccionado.Key;
 
-                // Llamar al método para cargar los vehículos filtrados
+               
                 CargarVehiculos(idCliente);
             }
         }
 
         private void CargarVehiculos(int idCliente)
         {
-            CbxSelectVH.Items.Clear(); // Limpiar el ComboBox antes de cargar nuevos datos
+            Console.WriteLine($"Cargando vehículos para el cliente con ID: {idCliente}"); // Depuración
+            CbxSelectVH.Items.Clear();
 
             Dictionary<int, string> vehiculos = validarTurnos.ObtenerVehiculosPorCliente(idCliente);
+
+            if (vehiculos.Count == 0)
+            {
+                Console.WriteLine("No se encontraron vehículos para este cliente."); // Depuración
+            }
+
             foreach (var vehiculo in vehiculos)
             {
                 CbxSelectVH.Items.Add(new KeyValuePair<int, string>(vehiculo.Key, vehiculo.Value));
@@ -74,58 +84,19 @@ namespace Vista
 
             CbxSelectVH.DisplayMember = "Value";
             CbxSelectVH.ValueMember = "Key";
+            
         }
-
-
-        private void BtnCrearTurnoMeCrearTurno_Click(object sender, EventArgs e)
+        private void CbxSelectVH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (CbxSelectVH.SelectedItem is KeyValuePair<int, string> vehiculoSeleccionado)
             {
-
-                // Validar que se haya seleccionado un cliente
-                if (idCliente == 0)
-                {
-                    MessageBox.Show("Seleccione un cliente válido.");
-                    return;
-                }
-
-                // Validar que se haya seleccionado un vehículo
-                if (idVehiculo == 0)
-                {
-                    MessageBox.Show("Seleccione un vehículo válido.");
-                    return;
-                }
-
-                // Extraer los valores de los controles
-                DateTime dia = dtpSelecionarDia.Value.Date; // Obtener solo la fecha
-                DateTime hora = dtpHorario.Value; // Obtener fecha y hora seleccionada
-                string descripcion = TxtDescripcionTurno.Text.Trim(); // Obtener el texto del TextBox
-
-                // Validar que la descripción no esté vacía
-                if (string.IsNullOrWhiteSpace(descripcion))
-                {
-                    MessageBox.Show("La descripción no puede estar vacía.");
-                    return;
-                }
-
-                // Llamar al método para agregar el turno
-                validarTurnos.AgregarUnturno(dia, hora, idCliente, idVehiculo, descripcion);
-
-                // Limpia los campos si es necesario
-                //LimpiaTextBox();
-                // CargarDatosEnGrid();
-
-                MessageBox.Show("El Turno ha sido registrado con éxito");
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ocurrió un error: {ex.Message}");
+                idVehiculo = vehiculoSeleccionado.Key;
+                // Aquí puedes hacer algo con el ID del vehículo seleccionado, si es necesario
             }
         }
+
+
+
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
@@ -187,56 +158,79 @@ namespace Vista
                         validarTurnos.ModificacionTurno(idTurno, idVehiculoUPD, idClienteUPD, fechaupd, horaupd, DescUPD);
                         Console.WriteLine("Cambio realizado.");
                         //LimpiaTextBox();
-                        //CargarDatosEnGrid();
+                        CargarClientes();
+                        LimpiaTextBox();
                     }
                     else if (resultado == DialogResult.No)
                     {
-                        //CargarDatosEnGrid();
+                        LimpiaTextBox();
+                        CargarClientes();
                     }
                 }
             }
-            //else if (dgvTurnos.Columns[e.ColumnIndex].Name == "Estado")
-            //{
-            //    if (e.RowIndex >= 0)
-            //    {
-            //        int idVehiculoUPD = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
-            //        int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
-            //        string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
+            else if (dgvTurnos.Columns[e.ColumnIndex].Name == "Cancelar")
+            {
+                if (e.RowIndex >= 0)
+                {
+                    int idTurnoUPD = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
+                    
+                    string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
 
-            //        DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //        if (resultado == DialogResult.Yes)
-            //        {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.Yes)
+                    {
 
-            //            if (Estado == "ACT")
-            //            {
-            //                ValidarClientes.BajaAltaVehiculo(idVehiculoUPD, "DES");
-            //                MessageBox.Show("Vehiculo DADO DE BAJA.");
-            //                //CargarDatosEnGrid();
-            //                //ConfigurarDataGridView();
-            //                dgvTurnos.Columns["idTurno"].Visible = false;
-            //                dgvTurnos.Columns["idVehiculo"].Visible = false;
-            //                dgvTurnos.Columns["idCliente"].Visible = false;
-            //            }
-            //            else if (Estado == "DES")
-            //            {
-            //                ValidarClientes.BajaAltaVehiculo(idVehiculoUPD, "ACT");
-            //                MessageBox.Show("Empleado DADO DE ALTA");
-            //                //CargarDatosEnGrid();
-            //                //ConfigurarDataGridView();
-            //                dgvTurnos.Columns["idTurno"].Visible = false;
-            //                dgvTurnos.Columns["idVehiculo"].Visible = false;
-            //                dgvTurnos.Columns["idCliente"].Visible = false;
-            //            }
-            //        }
-            //        else if (resultado == DialogResult.No)
-            //        {
-            //            //CargarDatosEnGrid(); 
-            //        }
+                        if (Estado == "ACT")
+                        {
+                            validarTurnos.CancelarTurno(idTurnoUPD, "DES");
+                            MessageBox.Show("Turno CANCELADO.");
+                            CargarTurnos();
+                            LimpiaTextBox();
+                            //ConfigurarDataGridView();
+                            dgvTurnos.Columns["idTurno"].Visible = false;
+                            dgvTurnos.Columns["idVehiculo"].Visible = false;
+                            dgvTurnos.Columns["idCliente"].Visible = false;
+                        }
+                        else if (Estado == "DES")
+                        {
+                            MessageBox.Show("Este turno ya ha sido cancelado");
+                            CargarClientes();
+                            LimpiaTextBox();
 
-            //    }
-            //}
+
+                        }
+                    }
+                    else if (resultado == DialogResult.No)
+                    {
+                        CargarClientes(); 
+                    }
+
+                }
+            }
         }
 
+        private void CargarTurnos()
+        {
+            try
+            {
+                dgvTurnos.DataSource = null;
+                dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
+                if (dgvTurnos.Columns.Contains("idVehiculo"))
+                {
+                    dgvTurnos.Columns["idVehiculo"].Visible = false;
+                }
+                if (dgvTurnos.Columns.Contains("idCliente"))
+                {
+                    dgvTurnos.Columns["idCliente"].Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los vehículos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #region Configuracion del tiempo
         private void dtpHorario_ValueChanged_1(object sender, EventArgs e)
         {
             DateTime horaSeleccionada = dtpHorario.Value;
@@ -321,25 +315,80 @@ namespace Vista
             dtpSelecionarDia.Format = DateTimePickerFormat.Short;
 
         }
-        private void CargarTurnos()
+        #endregion
+
+        private void BtnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            MenuClientes PantallaMenuClientes = new MenuClientes();
+            Hide();
+            PantallaMenuClientes.ShowDialog();
+        }
+
+        private void btnBorraCampos_Click(object sender, EventArgs e)
+        {
+            LimpiaTextBox();
+        }
+
+        public void LimpiaTextBox()
+        {
+            CbxSelectCL.Text = string.Empty;
+            CbxSelectVH.Text = string.Empty;
+            dtpSelecionarDia.Text = string.Empty;
+            dtpHorario.Text = string.Empty;
+            TxtDescripcionTurno.Text = string.Empty;
+            
+
+        }
+
+        private void BtnCrearTurno_Click(object sender, EventArgs e)
         {
             try
             {
-                dgvTurnos.DataSource = null;
-                dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
-                if (dgvTurnos.Columns.Contains("idVehiculo"))
+
+
+                if (idCliente == 0)
                 {
-                    dgvTurnos.Columns["idVehiculo"].Visible = false;
+                    MessageBox.Show("Seleccione un cliente válido.");
+                    return;
                 }
-                if (dgvTurnos.Columns.Contains("idCliente"))
+
+
+                if (idVehiculo == 0)
                 {
-                    dgvTurnos.Columns["idCliente"].Visible = false;
+                    MessageBox.Show("Seleccione un vehículo válido.");
+                    return;
                 }
+
+                DateTime dia = dtpSelecionarDia.Value.Date;
+                DateTime hora = dtpHorario.Value;
+                string descripcion = TxtDescripcionTurno.Text.Trim();
+
+
+                if (string.IsNullOrWhiteSpace(descripcion))
+                {
+                    MessageBox.Show("La descripción no puede estar vacía.");
+                    return;
+                }
+
+
+                validarTurnos.AgregarUnturno(dia, hora, idCliente, idVehiculo, descripcion);
+
+
+                LimpiaTextBox();
+                CargarTurnos();
+
+                MessageBox.Show("El Turno ha sido registrado con éxito");
+
+
+
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar los vehículos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ocurrió un error: {ex.Message}");
             }
         }
+
+        
     }
 }

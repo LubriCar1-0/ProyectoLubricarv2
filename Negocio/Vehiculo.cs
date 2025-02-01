@@ -22,18 +22,22 @@ namespace Negocio
 
             List<Vehiculo> clientes = new List<Vehiculo>();
             foreach (DataRow row in clientesTabla.Rows)
-            {
-                clientes.Add(new Vehiculo
+            { 
+                if (row["Estado"].ToString() == "ACT")
                 {
-                    IdCliente = Convert.ToInt32(row["idCliente"]),
-                    NombreCliente = row["Nombre"].ToString(),
-                    ApellidoCliente = row["Apellido"].ToString()
-                });
+                    clientes.Add(new Vehiculo
+                    {
+                        IdCliente = Convert.ToInt32(row["idCliente"]),
+                        NombreCliente = row["Nombre"].ToString(),
+                        ApellidoCliente = row["Apellido"].ToString()
+                    });
+                }
             }
 
             return clientes;
         }
-        public static void CargaDeVehiculos(int id, string Modelo, string Marca, int año, string Patente, float Kilometraje)
+
+        public static void CargaDeVehiculos(int id, string Modelo, string Marca, int año, string Patente, int Kilometraje)
         {
             Conectar capaDatos = new Conectar();
             DataTable TablaClientes = capaDatos.BuscarClientes();
@@ -86,7 +90,7 @@ namespace Negocio
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al cambiar el estado del empleado: {ex.Message}");
+                throw new Exception($"Error al cambiar el estado del Vehiculo: {ex.Message}");
             }
         }
     }

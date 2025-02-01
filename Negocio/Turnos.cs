@@ -10,7 +10,7 @@ namespace Negocio
 {
     public class Turnos
     {
-        #region
+        #region Variables 
         public int idVehiculo { get; set; }
         public string Modelo { get; set; }
         public string Marca { get; set; }
@@ -25,50 +25,41 @@ namespace Negocio
             List<Turnos> vehiculos = new List<Turnos>();
             foreach (DataRow row in vehiculosTabla.Rows)
             {
-                vehiculos.Add(new Turnos
+                if (row["ESTADO"].ToString() == "ACT")
                 {
-                    idVehiculo = Convert.ToInt32(row["idVehiculo"]),
-                    Modelo = row["modeloVH"].ToString(),
-                    Marca = row["marcaVH"].ToString(),
-                    Patente = row["patenteVH"].ToString()
-                });
+                    vehiculos.Add(new Turnos
+                    {
+                        idVehiculo = Convert.ToInt32(row["idVehiculo"]),
+                        Modelo = row["modeloVH"].ToString(),
+                        Marca = row["marcaVH"].ToString(),
+                        Patente = row["patenteVH"].ToString()
+                    });
+                }
             }
 
             return vehiculos;
         }
+
         public static void CargaDeTurnos(DateTime dia, DateTime hora, int idCliente, int idVehiculo, string descripcion)
         {
             Conectar capaDatos = new Conectar();
-            DataTable TablaTurnos = capaDatos.BuscarTurnos();
 
-            // Convertir los parámetros a cadenas para facilitar la comparación
-            string fechaInput = dia.ToString("yyyy-MM-dd"); // Formato de fecha estándar
-            string horaInput = hora.ToString("HH:mm:ss");  // Formato de hora estándar
+            // Convertir la hora a TimeSpan
+            TimeSpan horaTimeSpan = hora.TimeOfDay;
 
-            bool TurnoEncontrado = false;
+            // Verificar si ya existe un turno activo para la misma fecha y hora
+            bool turnoExistente = capaDatos.ExisteTurno(dia, horaTimeSpan);
 
-            // Verificar si la fecha y la hora ya existen en la base de datos
-            foreach (DataRow fila in TablaTurnos.Rows)
+            if (turnoExistente)
             {
-                string fechaTurno = fila["Fecha"].ToString();
-                string horaTurno = fila["Hora"].ToString();
-
-                if (fechaInput == fechaTurno && horaInput == horaTurno)
-                {
-                    TurnoEncontrado = true;
-                    throw new Exception("Ya existe un turno registrado para esa fecha y horario");
-
-                }
+                throw new Exception("Ya existe un turno registrado para esa fecha y horario.");
             }
-
-            if (!TurnoEncontrado)
+            else
             {
-                // Si no existe el turno, registrar el nuevo turno
-                string Estado = "ACT";
-                capaDatos.InsertarTurno(dia, hora, idCliente, idVehiculo, descripcion, Estado);
-                //AgregarBitacora
+                // Si no existe, insertar el nuevo turno
+                string estado = "ACT";
+                capaDatos.InsertarTurno(dia, horaTimeSpan, idCliente, idVehiculo, descripcion, estado);
             }
-
         }
         public static void ModificarTurnos(int idTurno, int idVehiculoUPD, int idClienteUPD, DateTime fechaupd, TimeSpan horaupd, string DescUPD)
         {
@@ -80,6 +71,18 @@ namespace Negocio
             catch (Exception ex)
             {
                 throw new Exception($"Error al actualizar el vehículo en la base de datos: {ex.Message}");
+            }
+        }
+        public static void CancelarElTurno(int idTurno, string Estado)
+        {
+            try
+            {
+
+                Conectar.CancelarTurno(idTurno, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cambiar el estado del empleado: {ex.Message}");
             }
         }
 

@@ -176,6 +176,7 @@
             this.chbEditar.TabIndex = 15;
             this.chbEditar.Text = "Permitir Editar";
             this.chbEditar.UseVisualStyleBackColor = false;
+            this.chbEditar.CheckedChanged += new System.EventHandler(this.chbEditar_CheckedChanged_1);
             // 
             // btnBorraCampos
             // 
