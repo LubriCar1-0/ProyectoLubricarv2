@@ -35,7 +35,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnAgregarclient = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCategoriaPrd = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCodigoProd = new System.Windows.Forms.TextBox();
@@ -47,14 +47,14 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.lblLitros = new System.Windows.Forms.Label();
             this.btnRecargarProd = new System.Windows.Forms.Button();
             this.btnBuscarProd = new System.Windows.Forms.Button();
             this.txtNombreProd = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnagregalista = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRecargar = new System.Windows.Forms.Button();
@@ -71,7 +71,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -79,10 +79,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnVolver
@@ -164,14 +163,16 @@
             this.btnAgregarclient.TabIndex = 12;
             this.btnAgregarclient.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbCategoriaPrd
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(187, 106);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(226, 49);
-            this.comboBox1.TabIndex = 13;
+            this.cmbCategoriaPrd.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategoriaPrd.FormattingEnabled = true;
+            this.cmbCategoriaPrd.Location = new System.Drawing.Point(186, 110);
+            this.cmbCategoriaPrd.Name = "cmbCategoriaPrd";
+            this.cmbCategoriaPrd.Size = new System.Drawing.Size(226, 44);
+            this.cmbCategoriaPrd.TabIndex = 13;
+            this.cmbCategoriaPrd.Text = "seleccionar categoria";
+            this.cmbCategoriaPrd.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriaPrd_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -291,19 +292,19 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.lblLitros);
             this.groupBox1.Controls.Add(this.btnRecargarProd);
             this.groupBox1.Controls.Add(this.btnBuscarProd);
             this.groupBox1.Controls.Add(this.txtNombreProd);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.btnagregalista);
             this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.txtCodigoProd);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbCategoriaPrd);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblDisponible);
             this.groupBox1.Controls.Add(this.label4);
@@ -320,6 +321,14 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Productos";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.Location = new System.Drawing.Point(247, 495);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(85, 48);
+            this.txtCantidad.TabIndex = 34;
             // 
             // lblLitros
             // 
@@ -344,6 +353,7 @@
             this.btnRecargarProd.Size = new System.Drawing.Size(54, 48);
             this.btnRecargarProd.TabIndex = 31;
             this.btnRecargarProd.UseVisualStyleBackColor = false;
+            this.btnRecargarProd.Click += new System.EventHandler(this.btnRecargarProd_Click);
             // 
             // btnBuscarProd
             // 
@@ -355,7 +365,7 @@
             this.btnBuscarProd.Size = new System.Drawing.Size(54, 48);
             this.btnBuscarProd.TabIndex = 14;
             this.btnBuscarProd.UseVisualStyleBackColor = false;
-
+            this.btnBuscarProd.Click += new System.EventHandler(this.btnBuscarProd_Click);
             // 
             // txtNombreProd
             // 
@@ -378,14 +388,6 @@
             this.label21.TabIndex = 29;
             this.label21.Text = "Nombre:";
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(247, 489);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(83, 48);
-            this.numericUpDown1.TabIndex = 28;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -399,16 +401,17 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Cantidad:";
             // 
-            // button5
+            // btnagregalista
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(629, 440);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 56);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Agregar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnagregalista.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregalista.ForeColor = System.Drawing.Color.Black;
+            this.btnagregalista.Location = new System.Drawing.Point(629, 440);
+            this.btnagregalista.Name = "btnagregalista";
+            this.btnagregalista.Size = new System.Drawing.Size(154, 56);
+            this.btnagregalista.TabIndex = 25;
+            this.btnagregalista.Text = "Agregar";
+            this.btnagregalista.UseVisualStyleBackColor = true;
+            this.btnagregalista.Click += new System.EventHandler(this.btnagregalista_Click);
             // 
             // label7
             // 
@@ -465,7 +468,7 @@
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.dataGridView3);
+            this.groupBox3.Controls.Add(this.dgvVentas);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.OrangeRed;
             this.groupBox3.Location = new System.Drawing.Point(966, 302);
@@ -625,14 +628,14 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Subtotal:";
             // 
-            // dataGridView3
+            // dgvVentas
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(15, 105);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 62;
-            this.dataGridView3.Size = new System.Drawing.Size(803, 240);
-            this.dataGridView3.TabIndex = 0;
+            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentas.Location = new System.Drawing.Point(15, 105);
+            this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.RowHeadersWidth = 62;
+            this.dgvVentas.Size = new System.Drawing.Size(803, 240);
+            this.dgvVentas.TabIndex = 0;
             // 
             // lblNombreCliente
             // 
@@ -712,12 +715,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -731,7 +733,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Button btnAgregarclient;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCategoriaPrd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCodigoProd;
@@ -744,12 +746,12 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnagregalista;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -762,7 +764,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.TextBox txtNombreProd;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -772,5 +773,6 @@
         private System.Windows.Forms.Button btnRecargarProd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblLitros;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

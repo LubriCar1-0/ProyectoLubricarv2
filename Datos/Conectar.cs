@@ -848,9 +848,10 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "ChequeaLiquido";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@Id", Id);
             int id = Convert.ToInt32(comando.ExecuteScalar());
-            comando.Parameters.Clear();
+            //comando.Parameters.Clear();
             desconectar();
             return id;
             /* create procedure ChequeaLiquido(
@@ -1155,6 +1156,7 @@ namespace Datos
         #endregion
 
         #region Ventas
+        #region tablas Clientes/Productos
         public DataTable VentaClientes()
         {
             conectar();
@@ -1168,8 +1170,6 @@ namespace Datos
             desconectar();
             return dt;
         }
-
-
         public DataTable VentaClientesFiltro(int dni)
         {
             conectar();
@@ -1196,8 +1196,6 @@ namespace Datos
             desconectar();
             return dt;
         }
-
-
         public DataTable VentaProductosFiltro(int IdCategoria, string codigo, string nombre)
         {
 
@@ -1206,16 +1204,17 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "TablaProductossConFiltro";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@IdCategoria", IdCategoria);
             comando.Parameters.AddWithValue("@codigo", codigo);
             comando.Parameters.AddWithValue("@nombre", nombre);
             leer = comando.ExecuteReader();
             dt.Load(leer);
-
+            
             desconectar();
             return dt;
         }
-
+        #endregion
 
 
 

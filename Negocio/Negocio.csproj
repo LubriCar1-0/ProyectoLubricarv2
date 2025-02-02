@@ -52,7 +52,7 @@
     <Compile Include="Stock.cs" />
     <Compile Include="Turnos.cs" />
     <Compile Include="Vehiculo.cs" />
-    <Compile Include="VentaPrd.cs" />
+    <Compile Include="VentaProducto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

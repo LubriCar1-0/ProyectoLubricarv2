@@ -13,6 +13,7 @@ using static Negocio.Producto;
 using static Negocio.Categorias;
 using static Negocio.Empleados;
 using System.Security.Policy;
+using System.Windows.Forms;
 
 
 namespace Vista
@@ -445,12 +446,25 @@ namespace Vista
 
         }
 
+        public static void CargaLista(int idcliente,string Producto, int Disponible, double Litros, int Cantidad, double PrecioVenta)
+        {
 
+            VentaProducto.cargaList(idcliente, Producto, Cantidad, PrecioVenta);
+           
 
+        }
+        public static List<VentaProducto> ObtenerVentas()
+        {
+            return VentaProducto.ObtenerListaVentas();
+        }
+        #endregion
     }
 
 
-
-
-    #endregion
 }
+
+
+
+
+   
+
