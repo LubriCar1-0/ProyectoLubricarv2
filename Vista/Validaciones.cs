@@ -403,4 +403,54 @@ namespace Vista
 
     #endregion
 
+    #region venta
+    public class ValidarVenta : Clientes
+    {
+        public static DataTable VentaClientes()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.VentaClientes();
+            return TablasDeLaBD;
+
+        }
+
+        public static DataTable VentaClientesFiltro(int dni)
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.VentaClientesFiltro(dni);
+            return TablasDeLaBD;
+
+        }
+        public static DataTable VentaProductos()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.VentaProductos();
+            return TablasDeLaBD;
+
+        }
+
+        public static DataTable VentaProductosFiltro(int categoria, string codigo, string nombre)
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.VentaProductosFiltro(categoria, codigo, nombre);
+            return TablasDeLaBD;
+
+        }
+
+        public static int TraeLiquido(int Id)
+        {
+
+            int Liquido = Conectar.TraeLiquido(Id);
+            return Liquido;
+
+        }
+
+
+
+    }
+
+
+
+
+    #endregion
 }

@@ -1152,13 +1152,84 @@ namespace Datos
             //END
 
         }
+        #endregion
 
+        #region Ventas
+        public DataTable VentaClientes()
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "TablaClientes";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+
+            desconectar();
+            return dt;
+        }
+
+
+        public DataTable VentaClientesFiltro(int dni)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TablaClientesConFiltro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@DNI",dni);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+
+            desconectar();
+            return dt;
+        }
+        public DataTable VentaProductos()
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+
+            desconectar();
+            return dt;
+        }
+
+
+        public DataTable VentaProductosFiltro(int IdCategoria, string codigo, string nombre)
+        {
+
+            
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TablaProductossConFiltro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdCategoria", IdCategoria);
+            comando.Parameters.AddWithValue("@codigo", codigo);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+
+            desconectar();
+            return dt;
+        }
+
+
+
+
+
+
+
+
+        #endregion
 
     }
 
-    #endregion
 
 }
+
 
 
 

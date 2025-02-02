@@ -133,6 +133,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnAgregarIcon {
+            get {
+                object obj = ResourceManager.GetObject("BtnAgregarIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnAgregarProducto {
             get {
                 object obj = ResourceManager.GetObject("BtnAgregarProducto", resourceCulture);
@@ -156,6 +166,26 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap BtnAgregarProductos {
             get {
                 object obj = ResourceManager.GetObject("BtnAgregarProductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BtnBuscarIcon {
+            get {
+                object obj = ResourceManager.GetObject("BtnBuscarIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BtnBuscarIcon1 {
+            get {
+                object obj = ResourceManager.GetObject("BtnBuscarIcon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,6 +556,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap BtnProductosFaltantes1 {
             get {
                 object obj = ResourceManager.GetObject("BtnProductosFaltantes1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BtnRecargarIcon {
+            get {
+                object obj = ResourceManager.GetObject("BtnRecargarIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

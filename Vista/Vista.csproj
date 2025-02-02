@@ -649,5 +649,14 @@
   <ItemGroup>
     <None Include="Resources\PantallaVentaDeProductos.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnBuscarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnRecargarIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAgregarIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
