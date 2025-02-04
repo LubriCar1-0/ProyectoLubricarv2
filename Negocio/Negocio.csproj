@@ -53,6 +53,7 @@
     <Compile Include="Turnos.cs" />
     <Compile Include="Vehiculo.cs" />
     <Compile Include="VentaProducto.cs" />
+    <Compile Include="VentaServicio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
