@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpSelecionarDia = new System.Windows.Forms.DateTimePicker();
             this.CbxSelectCL = new System.Windows.Forms.ComboBox();
             this.CbxSelectVH = new System.Windows.Forms.ComboBox();
@@ -38,11 +37,10 @@
             this.BtnCrearTurno = new System.Windows.Forms.Button();
             this.dtpHorario = new System.Windows.Forms.DateTimePicker();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Cancelar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.btnBorraCampos = new System.Windows.Forms.Button();
             this.chbEditar = new System.Windows.Forms.CheckBox();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,43 +118,12 @@
             // 
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar,
-            this.Cancelar});
+            this.Editar});
             this.dgvTurnos.Location = new System.Drawing.Point(445, 667);
             this.dgvTurnos.Name = "dgvTurnos";
             this.dgvTurnos.Size = new System.Drawing.Size(1031, 257);
             this.dgvTurnos.TabIndex = 9;
             this.dgvTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellContentClick_1);
-            // 
-            // Editar
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
-            // 
-            // Cancelar
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Cancelar.HeaderText = "Cancelar";
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.UseColumnTextForButtonValue = true;
             // 
             // BtnVolver
             // 
@@ -195,6 +162,21 @@
             this.chbEditar.TabIndex = 24;
             this.chbEditar.Text = "Permitir Editar";
             this.chbEditar.UseVisualStyleBackColor = false;
+            // 
+            // Editar
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
             // 
             // MenuCrearTurnos
             // 
@@ -235,9 +217,8 @@
         private System.Windows.Forms.DateTimePicker dtpHorario;
         private System.Windows.Forms.DataGridView dgvTurnos;
         private System.Windows.Forms.Button BtnVolver;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
-        private System.Windows.Forms.DataGridViewButtonColumn Cancelar;
         private System.Windows.Forms.Button btnBorraCampos;
         private System.Windows.Forms.CheckBox chbEditar;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }
