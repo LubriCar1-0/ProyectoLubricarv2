@@ -457,6 +457,14 @@ namespace Vista
         {
             return VentaProducto.ObtenerListaVentas();
         }
+
+        public static double CalculaTotal()
+        {
+            double valor = VentaProducto.CalculaTotal();
+            return valor;
+        }
+        
+
         #endregion
     }
 

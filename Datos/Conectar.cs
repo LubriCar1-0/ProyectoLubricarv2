@@ -1216,6 +1216,55 @@ namespace Datos
         }
         #endregion
 
+        #region CargaVenta
+        public static void AgregaVenta(int IdCliente, int fila, string producto,double preciounit, double cantidad, double total)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "AgregarVenta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@IdCliente", IdCliente);
+            comando.Parameters.AddWithValue("@FilaImpresion", fila);
+            comando.Parameters.AddWithValue("@Producto", producto);
+            comando.Parameters.AddWithValue("@PrecioUnitario", preciounit);
+            comando.Parameters.AddWithValue("@Cantidad", cantidad);
+            comando.Parameters.AddWithValue("@PrecioTotal", total);
+            comando.Parameters.AddWithValue("@FechaVenta", fechaHoraActual);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+
+
+            /*CREATE TABLE VentaProductos (
+            IdVenta NUMERIC(18,0) IDENTITY(1,1) PRIMARY KEY NOT NULL,
+            IdCliente NUMERIC(18,0) NOT NULL,           
+            FilaImpresion INT,       
+            Producto CHAR(100),      
+            PrecioUnitario FLOAT,    
+            Cantidad INT,            
+            PrecioTotal FLOAT,       
+            FechaVenta DATETIME,     
+            FOREIGN KEY (IdCliente) REFERENCES Cliente(IdCliente) 
+            );*/
+            /*
+            Create Procedure AgregarVenta(
+            @IdCliente numeric(18, 0),
+            @FilaImpresion int,
+            @Producto char(100),
+            @PrecioUnitario float,
+            @Cantidad int,
+            @PrecioTotal float,
+            @FechaVenta datetime
+            )
+            as begin
+            Insert into VentaProductos(IdCliente, FilaImpresion, Producto, PrecioUnitario, Cantidad, PrecioTotal, FechaVenta) values(@IdCliente, @FilaImpresion, @Producto, @PrecioUnitario, @Cantidad, @PrecioTotal, @FechaVenta)
+            end
+            */
+
+        }
+        #endregion
 
 
 
