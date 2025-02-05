@@ -15,6 +15,8 @@ namespace Vista
         public MenuCancelarTurno()
         {
             InitializeComponent();
+            CargarVehiculos();
+            CargarTurnos();
         }
 
         private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -36,7 +38,7 @@ namespace Vista
             }
 
             
-            else if (dgvTurnos.Columns[e.ColumnIndex].Name == "Cancelar")
+            if (dgvTurnos.Columns[e.ColumnIndex].Name == "Cancelar")
             {
                 if (e.RowIndex >= 0)
                 {
@@ -95,6 +97,26 @@ namespace Vista
             {
                 MessageBox.Show($"Error al cargar los vehículos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void MenuCancelarTurno_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargarVehiculos()
+        {
+            Dictionary<int, string> vehiculos = validarTurnos.ObtenerVehiculos();
+
+           
+            foreach (var vehiculo in vehiculos)
+            {
+                cmbSelecVH.Items.Add(new KeyValuePair<int, string>(vehiculo.Key, vehiculo.Value));
+            }
+
+            cmbSelecVH.DisplayMember = "Value";
+            cmbSelecVH.ValueMember = "Key";
+
         }
     }
 }

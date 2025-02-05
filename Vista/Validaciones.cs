@@ -362,6 +362,18 @@ namespace Vista
 
             return vehiculosProcesados;
         }
+        public static Dictionary<int, string> ObtenerVehiculos()
+        {
+            List<Turnos> listaVehiculos = Turnos.ObtenerVehiculos();
+            Dictionary<int, string> vehiculosProcesados = new Dictionary<int, string>();
+
+            foreach (var vehiculo in listaVehiculos)
+            {
+                vehiculosProcesados.Add(vehiculo.idVehiculo, $"{vehiculo.Marca} {vehiculo.Modelo} ({vehiculo.Patente})");
+            }
+
+            return vehiculosProcesados;
+        }
         public static void AgregarUnturno(DateTime dia, DateTime Hora, int idCliente, int idVehiculo, string Descripcion)
         {
             Turnos.CargaDeTurnos(dia, Hora, idCliente, idVehiculo, Descripcion);
@@ -465,14 +477,14 @@ namespace Vista
         }
         
 
-        #endregion
+        
     }
-
+    #endregion
 
 }
 
 
 
 
-   
+
 

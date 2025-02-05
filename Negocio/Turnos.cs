@@ -39,6 +39,28 @@ namespace Negocio
 
             return vehiculos;
         }
+        public static List<Turnos> ObtenerVehiculos()
+        {
+            Conectar conexion = new Conectar();
+            DataTable vehiculosTabla = conexion.BuscarVehiculos();
+
+            List<Turnos> vehiculos = new List<Turnos>();
+            foreach (DataRow row in vehiculosTabla.Rows)
+            {
+                if (row["ESTADO"].ToString() == "ACT")
+                {
+                    vehiculos.Add(new Turnos
+                    {
+                        idVehiculo = Convert.ToInt32(row["idVehiculo"]),
+                        Modelo = row["modeloVH"].ToString(),
+                        Marca = row["marcaVH"].ToString(),
+                        Patente = row["patenteVH"].ToString()
+                    });
+                }
+            }
+
+            return vehiculos;
+        }
 
         public static void CargaDeTurnos(DateTime dia, DateTime hora, int idCliente, int idVehiculo, string descripcion)
         {

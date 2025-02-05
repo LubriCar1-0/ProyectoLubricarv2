@@ -381,6 +381,16 @@ namespace Vista
             lblIVA.Text = "0.0";
             lblTotal.Text = "0.0";
         }
+
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarclient_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

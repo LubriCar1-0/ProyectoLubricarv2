@@ -47,12 +47,16 @@ namespace Vista
 
         private void BtnTurnosMeTurnos_Click(object sender, EventArgs e)
         {
-
+            MenuTurnos PantallaTurnos = new MenuTurnos();
+            Hide();
+            PantallaTurnos.ShowDialog();
         }
 
         private void BtnCancelacionTurno_Click(object sender, EventArgs e)
         {
-
+            MenuCancelarTurno PantallaCancelarTurnos = new MenuCancelarTurno(); 
+            Hide(); 
+            PantallaCancelarTurnos.ShowDialog();
         }
     }
 }

@@ -1026,6 +1026,7 @@ namespace Datos
             //END
 
         }
+
         public DataTable BuscarTurnos()
         {
             conectar();
