@@ -42,6 +42,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnFiltro = new System.Windows.Forms.Button();
             this.lblNombreProd = new System.Windows.Forms.Label();
+            this.Cbxeditar = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvControlDeStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             this.btnConfirmar.Size = new System.Drawing.Size(241, 75);
             this.btnConfirmar.TabIndex = 5;
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // DgvControlDeStock
             // 
@@ -182,6 +184,18 @@
             this.lblNombreProd.Text = "No se selecciono producto";
             this.lblNombreProd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Cbxeditar
+            // 
+            this.Cbxeditar.AutoSize = true;
+            this.Cbxeditar.BackColor = System.Drawing.Color.Transparent;
+            this.Cbxeditar.Location = new System.Drawing.Point(959, 359);
+            this.Cbxeditar.Name = "Cbxeditar";
+            this.Cbxeditar.Size = new System.Drawing.Size(90, 17);
+            this.Cbxeditar.TabIndex = 18;
+            this.Cbxeditar.Text = "Permitir Editar";
+            this.Cbxeditar.UseVisualStyleBackColor = false;
+            this.Cbxeditar.CheckedChanged += new System.EventHandler(this.Cbxeditar_CheckedChanged);
+            // 
             // MenuControlDeStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,6 +203,7 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaControlDeStockNueva2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.Cbxeditar);
             this.Controls.Add(this.lblNombreProd);
             this.Controls.Add(this.btnFiltro);
             this.Controls.Add(this.button1);
@@ -223,5 +238,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.Label lblNombreProd;
+        private System.Windows.Forms.CheckBox Cbxeditar;
     }
 }

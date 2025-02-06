@@ -16,6 +16,7 @@ namespace Vista
         {
             InitializeComponent();
             CargatablaProductosSinFiltro();
+            
 
         }
 
@@ -31,6 +32,9 @@ namespace Vista
                 txtLitrosDisp.Text = Convert.ToString(filaSeleccionadaUPD.Cells["LitrosDisp"].Value);
                 txtLitrosMin.Text = Convert.ToString(filaSeleccionadaUPD.Cells["LitrosMinimo"].Value);
                 lblNombreProd.Text = Convert.ToString(filaSeleccionadaUPD.Cells["Nombre"].Value);
+
+
+
             }
         }
 
@@ -71,6 +75,56 @@ namespace Vista
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (DgvControlDeStock.SelectedRows.Count > 0) 
+            {
+                DataGridViewRow filaSeleccionada = DgvControlDeStock.SelectedRows[0];
+
+                int IdProdUPD = Convert.ToInt32(filaSeleccionada.Cells["IdProd"].Value);
+                string Nombreprd = Convert.ToString(filaSeleccionada.Cells["Nombre"].Value);
+                string marca = Convert.ToString(filaSeleccionada.Cells["Marca"].Value);
+                int categoria = Convert.ToInt32(filaSeleccionada.Cells["IdCategorias"].Value);
+                string codigoproducto = Convert.ToString(filaSeleccionada.Cells["Codigo"].Value);
+                string descripcion = Convert.ToString(filaSeleccionada.Cells["Descripcion"].Value);
+                int cantidad = Convert.ToInt32(txbCant.Text);
+                int cantidadmin = Convert.ToInt32(txbCantMinima.Text);
+                int preciolista = Convert.ToInt32(txbPrecioList.Text);
+                int precioventa = Convert.ToInt32(txbPrecioVent.Text);
+                double litraje = Convert.ToDouble(txtLitrosDisp.Text);
+                double litrajeMin = Convert.ToDouble(txtLitrosMin.Text);
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que querer continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {  
+                    ValidarProducto.UpdateProductos(IdProdUPD, Nombreprd, marca, categoria, codigoproducto, descripcion, cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin);
+
+                    
+                    CargatablaProductosSinFiltro();
+
+                    MessageBox.Show("Producto actualizado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un producto para actualizar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void Cbxeditar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Cbxeditar.Checked)
+            {
+                DgvControlDeStock.ReadOnly = false;
+            }
+            else
+            {
+                DgvControlDeStock.ReadOnly = true;
             }
         }
     }
