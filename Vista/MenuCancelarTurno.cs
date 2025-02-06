@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace Vista
 {
@@ -16,7 +17,9 @@ namespace Vista
         {
             InitializeComponent();
             CargarVehiculos();
-            CargarTurnos();
+            //CargarTurnos();
+            dtpFecha.Format = DateTimePickerFormat.Custom;
+            dtpFecha.CustomFormat = " "; // Inicialmente vacío
         }
 
         private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -84,6 +87,7 @@ namespace Vista
             {
                 dgvTurnos.DataSource = null;
                 dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
+                dgvTurnos.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
                 if (dgvTurnos.Columns.Contains("idVehiculo"))
                 {
                     dgvTurnos.Columns["idVehiculo"].Visible = false;
@@ -91,6 +95,10 @@ namespace Vista
                 if (dgvTurnos.Columns.Contains("idCliente"))
                 {
                     dgvTurnos.Columns["idCliente"].Visible = false;
+                }
+                if (dgvTurnos.Columns.Contains("idTurno"))
+                {
+                    dgvTurnos.Columns["idTurno"].Visible = false;
                 }
             }
             catch (Exception ex)
@@ -104,11 +112,15 @@ namespace Vista
 
         }
 
+        // Variable para almacenar el ID del vehículo seleccionado
+        private int idVehiculoSeleccionado = 0;
+
         private void CargarVehiculos()
         {
             Dictionary<int, string> vehiculos = validarTurnos.ObtenerVehiculos();
 
-           
+            cmbSelecVH.Items.Clear(); // Limpiar el ComboBox antes de cargar nuevos valores
+
             foreach (var vehiculo in vehiculos)
             {
                 cmbSelecVH.Items.Add(new KeyValuePair<int, string>(vehiculo.Key, vehiculo.Value));
@@ -117,6 +129,62 @@ namespace Vista
             cmbSelecVH.DisplayMember = "Value";
             cmbSelecVH.ValueMember = "Key";
 
+            // Agregar el evento al ComboBox
+            cmbSelecVH.SelectedIndexChanged += CbxSelectVH_SelectedIndexChanged;
+        }
+
+        private void CbxSelectVH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSelecVH.SelectedItem is KeyValuePair<int, string> vehiculoSeleccionado)
+            {
+                idVehiculoSeleccionado = vehiculoSeleccionado.Key; // Guardar el ID correctamente
+            }
+        }
+
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string telefono = txtTelCliente.Text.Trim();
+            int idCliente = !string.IsNullOrEmpty(telefono) ? validarTurnos.ObtIDCliente(Convert.ToInt32(telefono)) : -1;
+            int? vehiculoID = cmbSelecVH.SelectedItem is KeyValuePair<int, string> vehiculoSeleccionado ? vehiculoSeleccionado.Key : (int?)null;
+            string fecha = dtpFecha.CustomFormat != " " ? dtpFecha.Value.ToString("yyyy-MM-dd") : null;
+
+            if (idCliente == -1 && vehiculoID == null && string.IsNullOrEmpty(fecha))
+            {
+                MessageBox.Show("Debe ingresar algún dato para filtrar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CargarTurnos();
+            }
+            else
+            {
+                CargaTurnosFiltro(idCliente, vehiculoID, fecha);
+            }
+        }
+
+        private void CargaTurnosFiltro(int idCliente, int? idVehiculo, string fecha)
+        {
+            try
+            {
+                dgvTurnos.DataSource = null;
+                var turnos = validarTurnos.TurnosFiltro(idCliente, idVehiculo, fecha);
+                dgvTurnos.DataSource = turnos;
+                //dgvTurnos.Columns["idTurno"].Visible = false;
+                dgvTurnos.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los turnos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            dtpFecha.CustomFormat = "yyyy-MM-dd";
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            dtpFecha.CustomFormat = " ";
         }
     }
 }

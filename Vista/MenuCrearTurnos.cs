@@ -107,7 +107,7 @@ namespace Vista
 
         private void dgvTurnos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
+            
             DataGridViewRow filaSeleccionada = dgvTurnos.Rows[e.RowIndex];
             int idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
             int idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
@@ -215,6 +215,8 @@ namespace Vista
             {
                 dgvTurnos.DataSource = null;
                 dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
+                dgvTurnos.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+            
                 if (dgvTurnos.Columns.Contains("idVehiculo"))
                 {
                     dgvTurnos.Columns["idVehiculo"].Visible = false;

@@ -28,21 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRecargar = new System.Windows.Forms.Button();
-            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtTelCliente = new System.Windows.Forms.TextBox();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
             this.Cancelar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblTelefonoCliente = new System.Windows.Forms.Label();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.grbFiltros = new System.Windows.Forms.GroupBox();
-            this.BtnVehiculo = new System.Windows.Forms.Button();
-            this.lblVehiculo = new System.Windows.Forms.Label();
-            this.Btn = new System.Windows.Forms.Button();
-            this.lblFecha = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.cmbSelecVH = new System.Windows.Forms.ComboBox();
-            this.dtpHorario = new System.Windows.Forms.DateTimePicker();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblVehiculo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.grbFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -57,14 +55,15 @@
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
             this.btnRecargar.TabIndex = 13;
             this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
-            // txtCliente
+            // txtTelCliente
             // 
-            this.txtCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(223, 19);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(539, 35);
-            this.txtCliente.TabIndex = 11;
+            this.txtTelCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelCliente.Location = new System.Drawing.Point(223, 19);
+            this.txtTelCliente.Name = "txtTelCliente";
+            this.txtTelCliente.Size = new System.Drawing.Size(539, 35);
+            this.txtTelCliente.TabIndex = 11;
             // 
             // dgvTurnos
             // 
@@ -81,13 +80,13 @@
             // 
             // Cancelar
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle3;
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Cancelar.HeaderText = "Cancelar";
             this.Cancelar.Name = "Cancelar";
@@ -99,11 +98,12 @@
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(768, 15);
+            this.btnBuscar.Location = new System.Drawing.Point(824, 15);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
             this.btnBuscar.TabIndex = 10;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // lblTelefonoCliente
             // 
@@ -133,14 +133,12 @@
             // grbFiltros
             // 
             this.grbFiltros.BackColor = System.Drawing.Color.Transparent;
-            this.grbFiltros.Controls.Add(this.dtpHorario);
+            this.grbFiltros.Controls.Add(this.dtpFecha);
             this.grbFiltros.Controls.Add(this.cmbSelecVH);
             this.grbFiltros.Controls.Add(this.dgvTurnos);
-            this.grbFiltros.Controls.Add(this.Btn);
             this.grbFiltros.Controls.Add(this.lblFecha);
-            this.grbFiltros.Controls.Add(this.BtnVehiculo);
             this.grbFiltros.Controls.Add(this.lblVehiculo);
-            this.grbFiltros.Controls.Add(this.txtCliente);
+            this.grbFiltros.Controls.Add(this.txtTelCliente);
             this.grbFiltros.Controls.Add(this.btnBuscar);
             this.grbFiltros.Controls.Add(this.btnRecargar);
             this.grbFiltros.Controls.Add(this.lblTelefonoCliente);
@@ -150,39 +148,24 @@
             this.grbFiltros.TabIndex = 27;
             this.grbFiltros.TabStop = false;
             // 
-            // BtnVehiculo
+            // dtpFecha
             // 
-            this.BtnVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.BtnVehiculo.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
-            this.BtnVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnVehiculo.Location = new System.Drawing.Point(768, 87);
-            this.BtnVehiculo.Name = "BtnVehiculo";
-            this.BtnVehiculo.Size = new System.Drawing.Size(54, 48);
-            this.BtnVehiculo.TabIndex = 15;
-            this.BtnVehiculo.UseVisualStyleBackColor = false;
+            this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha.Location = new System.Drawing.Point(223, 170);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(539, 26);
+            this.dtpFecha.TabIndex = 21;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
-            // lblVehiculo
+            // cmbSelecVH
             // 
-            this.lblVehiculo.AutoSize = true;
-            this.lblVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.lblVehiculo.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehiculo.Location = new System.Drawing.Point(110, 94);
-            this.lblVehiculo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblVehiculo.Name = "lblVehiculo";
-            this.lblVehiculo.Size = new System.Drawing.Size(105, 30);
-            this.lblVehiculo.TabIndex = 14;
-            this.lblVehiculo.Text = "Vehiculo";
-            // 
-            // Btn
-            // 
-            this.Btn.BackColor = System.Drawing.Color.Transparent;
-            this.Btn.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
-            this.Btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn.Location = new System.Drawing.Point(768, 159);
-            this.Btn.Name = "Btn";
-            this.Btn.Size = new System.Drawing.Size(54, 48);
-            this.Btn.TabIndex = 18;
-            this.Btn.UseVisualStyleBackColor = false;
+            this.cmbSelecVH.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelecVH.FormattingEnabled = true;
+            this.cmbSelecVH.Location = new System.Drawing.Point(223, 98);
+            this.cmbSelecVH.Name = "cmbSelecVH";
+            this.cmbSelecVH.Size = new System.Drawing.Size(539, 33);
+            this.cmbSelecVH.TabIndex = 20;
+            this.cmbSelecVH.Text = "seleccionar Vehiculo";
             // 
             // lblFecha
             // 
@@ -196,23 +179,17 @@
             this.lblFecha.TabIndex = 17;
             this.lblFecha.Text = "Fecha";
             // 
-            // cmbSelecVH
+            // lblVehiculo
             // 
-            this.cmbSelecVH.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSelecVH.FormattingEnabled = true;
-            this.cmbSelecVH.Location = new System.Drawing.Point(223, 98);
-            this.cmbSelecVH.Name = "cmbSelecVH";
-            this.cmbSelecVH.Size = new System.Drawing.Size(539, 33);
-            this.cmbSelecVH.TabIndex = 20;
-            this.cmbSelecVH.Text = "seleccionar Vehiculo";
-            // 
-            // dtpHorario
-            // 
-            this.dtpHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHorario.Location = new System.Drawing.Point(223, 170);
-            this.dtpHorario.Name = "dtpHorario";
-            this.dtpHorario.Size = new System.Drawing.Size(539, 26);
-            this.dtpHorario.TabIndex = 21;
+            this.lblVehiculo.AutoSize = true;
+            this.lblVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.lblVehiculo.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehiculo.Location = new System.Drawing.Point(110, 94);
+            this.lblVehiculo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblVehiculo.Name = "lblVehiculo";
+            this.lblVehiculo.Size = new System.Drawing.Size(105, 30);
+            this.lblVehiculo.TabIndex = 14;
+            this.lblVehiculo.Text = "Vehiculo";
             // 
             // MenuCancelarTurno
             // 
@@ -237,18 +214,16 @@
         #endregion
 
         private System.Windows.Forms.Button btnRecargar;
-        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.TextBox txtTelCliente;
         private System.Windows.Forms.DataGridView dgvTurnos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblTelefonoCliente;
         private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.DataGridViewButtonColumn Cancelar;
         private System.Windows.Forms.GroupBox grbFiltros;
-        private System.Windows.Forms.Button Btn;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Button BtnVehiculo;
         private System.Windows.Forms.Label lblVehiculo;
         private System.Windows.Forms.ComboBox cmbSelecVH;
-        private System.Windows.Forms.DateTimePicker dtpHorario;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

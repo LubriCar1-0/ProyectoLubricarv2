@@ -1154,6 +1154,42 @@ namespace Datos
             //END
 
         }
+        public DataTable TurnosFiltro(int idCliente, int? idVehiculo, string fecha)
+        {
+            DataTable dt = new DataTable();
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TurnosConFiltro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idCliente", idCliente > 0 ? (object)idCliente : DBNull.Value);
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo.HasValue ? (object)idVehiculo.Value : DBNull.Value);
+            comando.Parameters.AddWithValue("@Fecha", !string.IsNullOrEmpty(fecha) ? (object)fecha : DBNull.Value);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            leer.Close();
+            desconectar();
+            return dt;
+        }
+        public int ObtenerIDCliente(int Telefono)
+        {
+            int idCliente = -1; // Valor por defecto en caso de no encontrar resultados
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ObtenerIDCliente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@Telefono", Telefono);
+            leer = comando.ExecuteReader();
+            if (leer.Read()) // Verifica si hay resultados
+            {
+                 idCliente = leer.GetInt32(0); // Obtiene el primer valor del resultado (idCliente)
+            }
+            leer.Close();
+            desconectar();
+            return idCliente;
+        }
+
         #endregion
 
         #region Ventas

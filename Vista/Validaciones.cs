@@ -412,6 +412,17 @@ namespace Vista
                 throw new Exception($"Error al cancelar el Turno:{ex.Message}");
             }
         }
+        public static DataTable TurnosFiltro(int idCliente, int? idVehiculo, string fecha)
+        {
+            Conectar CapaDatos = new Conectar();
+            return CapaDatos.TurnosFiltro(idCliente, idVehiculo, fecha);
+        }
+
+        public static int ObtIDCliente(int Telefono)
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.ObtenerIDCliente(Telefono);
+        }
     }
 
     #endregion
