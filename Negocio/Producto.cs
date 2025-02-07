@@ -52,7 +52,17 @@ namespace Negocio
             Conectar.EliminarProducto(IdProd, valor);
 
         }
+        public static void ControlStock(int IdProd, int cantidad, double preciolista, double precioventa, double litraje, double litrajeMin, int cantidadmin)
+        {
+            Conectar.ControlStock(IdProd, cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin);
+        }
 
+        public DataTable FiltroStock(string codigo)
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.ControlStockFiltro(codigo);
+            return TablasDeLaBD;
+        }
 
     }
     

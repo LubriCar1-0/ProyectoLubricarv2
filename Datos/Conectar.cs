@@ -1000,6 +1000,41 @@ namespace Datos
 
 
         }
+        public static void ControlStock(int IdProd, int cantidad, double preciolista, double precioventa, double litraje, double litrajeMin, int cantidadmin)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "Controlstock";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdProducto", IdProd);
+            comando.Parameters.AddWithValue("@CantidadProduc", cantidad);
+            comando.Parameters.AddWithValue("@PrecioLista", preciolista);
+            comando.Parameters.AddWithValue("@PrecioVenta", precioventa);
+            comando.Parameters.AddWithValue("@LitrosDisponibles", litraje);
+            comando.Parameters.AddWithValue("@Minlitro", litrajeMin);
+            comando.Parameters.AddWithValue("@Minimo", cantidadmin);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
+        public DataTable ControlStockFiltro(string codigo)
+        {
+
+
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "FiltroStock";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@codigo", codigo);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+
+            desconectar();
+            return dt;
+        }
+
+
 
         #endregion
 

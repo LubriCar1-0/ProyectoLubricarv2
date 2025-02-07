@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.DgvControlDeStock = new System.Windows.Forms.DataGridView();
             this.txbPrecioVent = new System.Windows.Forms.TextBox();
@@ -40,9 +40,9 @@
             this.txtLitrosMin = new System.Windows.Forms.TextBox();
             this.TxtCodProducto = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnFiltro = new System.Windows.Forms.Button();
             this.lblNombreProd = new System.Windows.Forms.Label();
-            this.Cbxeditar = new System.Windows.Forms.CheckBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnRecargar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvControlDeStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,26 +65,26 @@
             this.DgvControlDeStock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.DgvControlDeStock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.DgvControlDeStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvControlDeStock.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvControlDeStock.DefaultCellStyle = dataGridViewCellStyle7;
             this.DgvControlDeStock.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.DgvControlDeStock.Location = new System.Drawing.Point(273, 359);
             this.DgvControlDeStock.Name = "DgvControlDeStock";
             this.DgvControlDeStock.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvControlDeStock.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvControlDeStock.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DgvControlDeStock.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.DgvControlDeStock.Size = new System.Drawing.Size(668, 645);
             this.DgvControlDeStock.TabIndex = 6;
@@ -159,18 +159,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnFiltro
-            // 
-            this.btnFiltro.BackgroundImage = global::Vista.Properties.Resources.BtnFiltrar;
-            this.btnFiltro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFiltro.FlatAppearance.BorderSize = 0;
-            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltro.Location = new System.Drawing.Point(855, 308);
-            this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(98, 45);
-            this.btnFiltro.TabIndex = 16;
-            this.btnFiltro.UseVisualStyleBackColor = true;
-            // 
             // lblNombreProd
             // 
             this.lblNombreProd.AutoSize = true;
@@ -184,17 +172,29 @@
             this.lblNombreProd.Text = "No se selecciono producto";
             this.lblNombreProd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Cbxeditar
+            // btnBuscar
             // 
-            this.Cbxeditar.AutoSize = true;
-            this.Cbxeditar.BackColor = System.Drawing.Color.Transparent;
-            this.Cbxeditar.Location = new System.Drawing.Point(959, 359);
-            this.Cbxeditar.Name = "Cbxeditar";
-            this.Cbxeditar.Size = new System.Drawing.Size(90, 17);
-            this.Cbxeditar.TabIndex = 18;
-            this.Cbxeditar.Text = "Permitir Editar";
-            this.Cbxeditar.UseVisualStyleBackColor = false;
-            this.Cbxeditar.CheckedChanged += new System.EventHandler(this.Cbxeditar_CheckedChanged);
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscar.Location = new System.Drawing.Point(857, 303);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(54, 48);
+            this.btnBuscar.TabIndex = 18;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRecargar.Location = new System.Drawing.Point(917, 303);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(54, 48);
+            this.btnRecargar.TabIndex = 20;
+            this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // MenuControlDeStock
             // 
@@ -203,9 +203,9 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaControlDeStockNueva2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.Cbxeditar);
+            this.Controls.Add(this.btnRecargar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblNombreProd);
-            this.Controls.Add(this.btnFiltro);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TxtCodProducto);
             this.Controls.Add(this.txtLitrosMin);
@@ -236,8 +236,8 @@
         private System.Windows.Forms.TextBox txtLitrosMin;
         private System.Windows.Forms.TextBox TxtCodProducto;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.Label lblNombreProd;
-        private System.Windows.Forms.CheckBox Cbxeditar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnRecargar;
     }
 }
