@@ -20,7 +20,7 @@ namespace Vista
 
         private void MenuOrdenDeTrabajo_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -182,9 +182,9 @@ namespace Vista
             {
                 DateTime dia = dtpFecha.Value.Date;
                 DateTime hora = dtpHora.Value;
-                
 
-                //validarTurnos.AgregarUnturno(txbNombre.Text, txbApellido.Text, txbPatente.Text, dia, hora, TxbDescripcion.Text);
+
+                ValidarOrdenDeTrabajo.CrearOrdenDeTrabajo(txbNombre.Text.Trim(), txbApellido.Text.Trim(), txbPatente.Text.Trim(), dia, hora, TxbDescripcion.Text.Trim());
 
 
                 LimpiaTextBox();

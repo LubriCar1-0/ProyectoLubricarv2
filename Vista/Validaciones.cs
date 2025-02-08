@@ -440,6 +440,13 @@ namespace Vista
 
     #endregion
 
+    #region OrdenDeTrabajo
+    public class ValidarOrdenDeTrabajo : OrdenDeTrabajo
+    {
+
+    }
+    #endregion
+
     #region venta
     public class ValidarVenta : Clientes
     {
