@@ -313,6 +313,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnCrearOrden {
+            get {
+                object obj = ResourceManager.GetObject("BtnCrearOrden", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnCrearTurno {
             get {
                 object obj = ResourceManager.GetObject("BtnCrearTurno", resourceCulture);
@@ -1076,6 +1086,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap PantallaMenuTurnos {
             get {
                 object obj = ResourceManager.GetObject("PantallaMenuTurnos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantallaMenuTurnos1 {
+            get {
+                object obj = ResourceManager.GetObject("PantallaMenuTurnos1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -670,5 +670,11 @@
   <ItemGroup>
     <None Include="Resources\PantCancelarTurno.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuTurnos1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnCrearOrden.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

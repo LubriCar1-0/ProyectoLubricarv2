@@ -1206,6 +1206,20 @@ namespace Datos
             desconectar();
             return dt;
         }
+        public DataTable TurnosActivos()
+        {
+            conectar();  
+            comando.Connection = conexion;
+            comando.CommandText = "TurnosSinFiltro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            leer.Close();
+            desconectar(); 
+            return dt;
+        }
+
         public int ObtenerIDCliente(int Telefono)
         {
             int idCliente = -1; // Valor por defecto en caso de no encontrar resultados

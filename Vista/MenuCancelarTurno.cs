@@ -17,7 +17,7 @@ namespace Vista
         {
             InitializeComponent();
             CargarVehiculos();
-            //CargarTurnos();
+            CargarTurnos();
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.CustomFormat = " "; // Inicialmente vacío
         }
@@ -26,8 +26,7 @@ namespace Vista
         {
             DataGridViewRow filaSeleccionada = dgvTurnos.Rows[e.RowIndex];
             int idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
-            int idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
-            int idVehiculo = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
+            
             
             if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fecha))
             {
@@ -87,15 +86,8 @@ namespace Vista
             {
                 dgvTurnos.DataSource = null;
                 dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
-                dgvTurnos.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
-                if (dgvTurnos.Columns.Contains("idVehiculo"))
-                {
-                    dgvTurnos.Columns["idVehiculo"].Visible = false;
-                }
-                if (dgvTurnos.Columns.Contains("idCliente"))
-                {
-                    dgvTurnos.Columns["idCliente"].Visible = false;
-                }
+                dgvTurnos.RowHeadersVisible = false;
+                
                 if (dgvTurnos.Columns.Contains("idTurno"))
                 {
                     dgvTurnos.Columns["idTurno"].Visible = false;
@@ -112,14 +104,14 @@ namespace Vista
 
         }
 
-        // Variable para almacenar el ID del vehículo seleccionado
+       
         private int idVehiculoSeleccionado = 0;
 
         private void CargarVehiculos()
         {
             Dictionary<int, string> vehiculos = validarTurnos.ObtenerVehiculos();
 
-            cmbSelecVH.Items.Clear(); // Limpiar el ComboBox antes de cargar nuevos valores
+            cmbSelecVH.Items.Clear(); 
 
             foreach (var vehiculo in vehiculos)
             {
@@ -129,7 +121,7 @@ namespace Vista
             cmbSelecVH.DisplayMember = "Value";
             cmbSelecVH.ValueMember = "Key";
 
-            // Agregar el evento al ComboBox
+            
             cmbSelecVH.SelectedIndexChanged += CbxSelectVH_SelectedIndexChanged;
         }
 
@@ -167,8 +159,8 @@ namespace Vista
                 dgvTurnos.DataSource = null;
                 var turnos = validarTurnos.TurnosFiltro(idCliente, idVehiculo, fecha);
                 dgvTurnos.DataSource = turnos;
-                //dgvTurnos.Columns["idTurno"].Visible = false;
-                dgvTurnos.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+                
+                dgvTurnos.RowHeadersVisible = false; 
             }
             catch (Exception ex)
             {

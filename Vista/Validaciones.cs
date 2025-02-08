@@ -399,7 +399,7 @@ namespace Vista
         public static DataTable BuscarTurnos()
         {
             Conectar CapaDatos = new Conectar();
-            DataTable TablasTurnos = CapaDatos.BuscarTurnos();
+            DataTable TablasTurnos = CapaDatos.TurnosActivos();
             return TablasTurnos;
 
         }
