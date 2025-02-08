@@ -55,7 +55,7 @@ namespace Vista
         }
         public static void LlamarMenuOrdenDeTrabajo()
         {
-            MenuOrdenDeTrabajo PantallaMenuOrdenDeTrabajo = new MenuOrdenDeTrabajo();
+            MenuTurnosTrabajos PantallaMenuOrdenDeTrabajo = new MenuTurnosTrabajos();
             PantallaMenuOrdenDeTrabajo.ShowDialog();
         }
 

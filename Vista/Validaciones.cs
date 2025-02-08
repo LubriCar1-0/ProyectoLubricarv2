@@ -443,6 +443,9 @@ namespace Vista
     #region OrdenDeTrabajo
     public class ValidarOrdenDeTrabajo : OrdenDeTrabajo
     {
+        
+
+
 
     }
     #endregion

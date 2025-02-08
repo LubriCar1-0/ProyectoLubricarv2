@@ -47,7 +47,7 @@ namespace Vista
 
         private void BtnTurnosMeTurnos_Click(object sender, EventArgs e)
         {
-            MenuTurnos PantallaTurnos = new MenuTurnos();
+            MenuTurnosTrabajos PantallaTurnos = new MenuTurnosTrabajos();
             Hide();
             PantallaTurnos.ShowDialog();
         }

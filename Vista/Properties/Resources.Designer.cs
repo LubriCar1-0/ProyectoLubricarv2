@@ -783,6 +783,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MenuOrdenDeTrabajo {
+            get {
+                object obj = ResourceManager.GetObject("MenuOrdenDeTrabajo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuVentaDeProductos {
             get {
                 object obj = ResourceManager.GetObject("MenuVentaDeProductos", resourceCulture);

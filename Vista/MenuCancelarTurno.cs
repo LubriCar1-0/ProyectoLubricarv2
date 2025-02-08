@@ -177,6 +177,9 @@ namespace Vista
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             dtpFecha.CustomFormat = " ";
+            cmbSelecVH.SelectedIndex = -1;
+            txtTelCliente.Clear();
+            CargarTurnos();
         }
     }
 }
