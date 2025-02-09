@@ -42,23 +42,25 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTEXTdisponible = new System.Windows.Forms.Label();
             this.lblDisponible = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.grpProductos = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblIdproducto = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.lblTEXTOlitros = new System.Windows.Forms.Label();
             this.lblLitros = new System.Windows.Forms.Label();
+            this.btnagregalista = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnRecargarProd = new System.Windows.Forms.Button();
             this.btnBuscarProd = new System.Windows.Forms.Button();
             this.txtNombreProd = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnagregalista = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRecargar = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grpPresupuesto = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -76,12 +78,15 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lblLubripts = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            this.grpProductos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grpPresupuesto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnVolver
@@ -115,7 +120,8 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 22);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(67, 45);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 30);
@@ -125,11 +131,11 @@
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(14, 72);
+            this.dgvClientes.Location = new System.Drawing.Point(25, 93);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 62;
             this.dgvClientes.RowTemplate.Height = 28;
-            this.dgvClientes.Size = new System.Drawing.Size(683, 101);
+            this.dgvClientes.Size = new System.Drawing.Size(751, 113);
             this.dgvClientes.TabIndex = 9;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -138,7 +144,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(683, 16);
+            this.btnBuscar.Location = new System.Drawing.Point(685, 39);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
             this.btnBuscar.TabIndex = 10;
@@ -148,28 +154,27 @@
             // txtCliente
             // 
             this.txtCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(257, 18);
+            this.txtCliente.Location = new System.Drawing.Point(259, 41);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(409, 35);
             this.txtCliente.TabIndex = 11;
-            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
+            this.txtCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCliente_KeyPress);
             // 
             // btnAgregarclient
             // 
             this.btnAgregarclient.BackgroundImage = global::Vista.Properties.Resources.BtnAgregarIcon;
             this.btnAgregarclient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregarclient.Location = new System.Drawing.Point(743, 16);
+            this.btnAgregarclient.Location = new System.Drawing.Point(745, 39);
             this.btnAgregarclient.Name = "btnAgregarclient";
-            this.btnAgregarclient.Size = new System.Drawing.Size(60, 50);
+            this.btnAgregarclient.Size = new System.Drawing.Size(53, 48);
             this.btnAgregarclient.TabIndex = 12;
             this.btnAgregarclient.UseVisualStyleBackColor = true;
-            this.btnAgregarclient.Click += new System.EventHandler(this.btnAgregarclient_Click);
             // 
             // cmbCategoriaPrd
             // 
             this.cmbCategoriaPrd.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoriaPrd.FormattingEnabled = true;
-            this.cmbCategoriaPrd.Location = new System.Drawing.Point(186, 110);
+            this.cmbCategoriaPrd.Location = new System.Drawing.Point(198, 122);
             this.cmbCategoriaPrd.Name = "cmbCategoriaPrd";
             this.cmbCategoriaPrd.Size = new System.Drawing.Size(226, 33);
             this.cmbCategoriaPrd.TabIndex = 13;
@@ -182,7 +187,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(16, 110);
+            this.label4.Location = new System.Drawing.Point(79, 125);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 30);
@@ -195,7 +200,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(419, 109);
+            this.label5.Location = new System.Drawing.Point(453, 122);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 30);
@@ -205,7 +210,7 @@
             // txtCodigoProd
             // 
             this.txtCodigoProd.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoProd.Location = new System.Drawing.Point(549, 109);
+            this.txtCodigoProd.Location = new System.Drawing.Point(555, 120);
             this.txtCodigoProd.Name = "txtCodigoProd";
             this.txtCodigoProd.Size = new System.Drawing.Size(142, 35);
             this.txtCodigoProd.TabIndex = 16;
@@ -216,20 +221,20 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(16, 410);
+            this.label6.Location = new System.Drawing.Point(13, 50);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 30);
+            this.label6.Size = new System.Drawing.Size(157, 30);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Seleccionado: ";
+            this.label6.Text = "Seleccionado:";
             // 
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
             this.lblProducto.BackColor = System.Drawing.Color.Transparent;
             this.lblProducto.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblProducto.Location = new System.Drawing.Point(240, 410);
+            this.lblProducto.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblProducto.Location = new System.Drawing.Point(204, 50);
             this.lblProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducto.Name = "lblProducto";
             this.lblProducto.Size = new System.Drawing.Size(252, 30);
@@ -248,26 +253,26 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Cantidad:";
             // 
-            // label9
+            // lblTEXTdisponible
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(52, 451);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(131, 30);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Disponible:";
+            this.lblTEXTdisponible.AutoSize = true;
+            this.lblTEXTdisponible.BackColor = System.Drawing.Color.Transparent;
+            this.lblTEXTdisponible.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTEXTdisponible.ForeColor = System.Drawing.Color.Black;
+            this.lblTEXTdisponible.Location = new System.Drawing.Point(39, 91);
+            this.lblTEXTdisponible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTEXTdisponible.Name = "lblTEXTdisponible";
+            this.lblTEXTdisponible.Size = new System.Drawing.Size(131, 30);
+            this.lblTEXTdisponible.TabIndex = 21;
+            this.lblTEXTdisponible.Text = "Disponible:";
             // 
             // lblDisponible
             // 
             this.lblDisponible.AutoSize = true;
             this.lblDisponible.BackColor = System.Drawing.Color.Transparent;
             this.lblDisponible.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisponible.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblDisponible.Location = new System.Drawing.Point(250, 451);
+            this.lblDisponible.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblDisponible.Location = new System.Drawing.Point(204, 91);
             this.lblDisponible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDisponible.Name = "lblDisponible";
             this.lblDisponible.Size = new System.Drawing.Size(26, 30);
@@ -291,66 +296,131 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // grpProductos
+            // 
+            this.grpProductos.BackColor = System.Drawing.Color.Transparent;
+            this.grpProductos.Controls.Add(this.groupBox1);
+            this.grpProductos.Controls.Add(this.btnRecargarProd);
+            this.grpProductos.Controls.Add(this.btnBuscarProd);
+            this.grpProductos.Controls.Add(this.txtNombreProd);
+            this.grpProductos.Controls.Add(this.label21);
+            this.grpProductos.Controls.Add(this.dgvProductos);
+            this.grpProductos.Controls.Add(this.button4);
+            this.grpProductos.Controls.Add(this.textBox3);
+            this.grpProductos.Controls.Add(this.txtCodigoProd);
+            this.grpProductos.Controls.Add(this.cmbCategoriaPrd);
+            this.grpProductos.Controls.Add(this.label5);
+            this.grpProductos.Controls.Add(this.label4);
+            this.grpProductos.Controls.Add(this.label8);
+            this.grpProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.grpProductos.ForeColor = System.Drawing.Color.OrangeRed;
+            this.grpProductos.Location = new System.Drawing.Point(125, 436);
+            this.grpProductos.Name = "grpProductos";
+            this.grpProductos.Size = new System.Drawing.Size(813, 593);
+            this.grpProductos.TabIndex = 25;
+            this.grpProductos.TabStop = false;
+            this.grpProductos.Text = "Productos";
+            // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txtCantidad);
-            this.groupBox1.Controls.Add(this.lblLitros);
-            this.groupBox1.Controls.Add(this.btnRecargarProd);
-            this.groupBox1.Controls.Add(this.btnBuscarProd);
-            this.groupBox1.Controls.Add(this.txtNombreProd);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnagregalista);
-            this.groupBox1.Controls.Add(this.dgvProductos);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.txtCodigoProd);
-            this.groupBox1.Controls.Add(this.cmbCategoriaPrd);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.lblDisponible);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.groupBox1.Controls.Add(this.lblIdproducto);
             this.groupBox1.Controls.Add(this.lblProducto);
+            this.groupBox1.Controls.Add(this.txtCantidad);
+            this.groupBox1.Controls.Add(this.lblTEXTOlitros);
+            this.groupBox1.Controls.Add(this.lblLitros);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.groupBox1.Controls.Add(this.btnagregalista);
+            this.groupBox1.Controls.Add(this.lblTEXTdisponible);
+            this.groupBox1.Controls.Add(this.lblDisponible);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox1.Location = new System.Drawing.Point(119, 409);
+            this.groupBox1.Location = new System.Drawing.Point(70, 412);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(813, 577);
-            this.groupBox1.TabIndex = 25;
+            this.groupBox1.Size = new System.Drawing.Size(692, 174);
+            this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Productos";
+            this.groupBox1.Text = "Seleccionado";
+            // 
+            // lblIdproducto
+            // 
+            this.lblIdproducto.AutoSize = true;
+            this.lblIdproducto.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdproducto.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdproducto.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblIdproducto.Location = new System.Drawing.Point(170, 50);
+            this.lblIdproducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIdproducto.Name = "lblIdproducto";
+            this.lblIdproducto.Size = new System.Drawing.Size(26, 30);
+            this.lblIdproducto.TabIndex = 35;
+            this.lblIdproducto.Text = "0";
             // 
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(247, 495);
+            this.txtCantidad.Location = new System.Drawing.Point(187, 135);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(85, 35);
             this.txtCantidad.TabIndex = 34;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            // 
+            // lblTEXTOlitros
+            // 
+            this.lblTEXTOlitros.AutoSize = true;
+            this.lblTEXTOlitros.BackColor = System.Drawing.Color.Transparent;
+            this.lblTEXTOlitros.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTEXTOlitros.ForeColor = System.Drawing.Color.Black;
+            this.lblTEXTOlitros.Location = new System.Drawing.Point(95, 91);
+            this.lblTEXTOlitros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTEXTOlitros.Name = "lblTEXTOlitros";
+            this.lblTEXTOlitros.Size = new System.Drawing.Size(75, 30);
+            this.lblTEXTOlitros.TabIndex = 32;
+            this.lblTEXTOlitros.Text = "Litros:";
             // 
             // lblLitros
             // 
             this.lblLitros.AutoSize = true;
             this.lblLitros.BackColor = System.Drawing.Color.Transparent;
             this.lblLitros.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLitros.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblLitros.Location = new System.Drawing.Point(444, 451);
+            this.lblLitros.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblLitros.Location = new System.Drawing.Point(204, 91);
             this.lblLitros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLitros.Name = "lblLitros";
             this.lblLitros.Size = new System.Drawing.Size(26, 30);
             this.lblLitros.TabIndex = 33;
             this.lblLitros.Text = "0";
             // 
+            // btnagregalista
+            // 
+            this.btnagregalista.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregalista.ForeColor = System.Drawing.Color.Black;
+            this.btnagregalista.Location = new System.Drawing.Point(524, 112);
+            this.btnagregalista.Name = "btnagregalista";
+            this.btnagregalista.Size = new System.Drawing.Size(154, 56);
+            this.btnagregalista.TabIndex = 25;
+            this.btnagregalista.Text = "Agregar";
+            this.btnagregalista.UseVisualStyleBackColor = true;
+            this.btnagregalista.Click += new System.EventHandler(this.btnagregalista_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(57, 135);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 30);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Cantidad:";
+            // 
             // btnRecargarProd
             // 
             this.btnRecargarProd.BackColor = System.Drawing.Color.Transparent;
             this.btnRecargarProd.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
             this.btnRecargarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRecargarProd.Location = new System.Drawing.Point(14, 55);
+            this.btnRecargarProd.Location = new System.Drawing.Point(14, 86);
             this.btnRecargarProd.Name = "btnRecargarProd";
             this.btnRecargarProd.Size = new System.Drawing.Size(54, 48);
             this.btnRecargarProd.TabIndex = 31;
@@ -362,7 +432,7 @@
             this.btnBuscarProd.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscarProd.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.btnBuscarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarProd.Location = new System.Drawing.Point(715, 110);
+            this.btnBuscarProd.Location = new System.Drawing.Point(729, 110);
             this.btnBuscarProd.Name = "btnBuscarProd";
             this.btnBuscarProd.Size = new System.Drawing.Size(54, 48);
             this.btnBuscarProd.TabIndex = 14;
@@ -372,9 +442,9 @@
             // txtNombreProd
             // 
             this.txtNombreProd.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProd.Location = new System.Drawing.Point(228, 48);
+            this.txtNombreProd.Location = new System.Drawing.Point(198, 68);
             this.txtNombreProd.Name = "txtNombreProd";
-            this.txtNombreProd.Size = new System.Drawing.Size(516, 35);
+            this.txtNombreProd.Size = new System.Drawing.Size(311, 35);
             this.txtNombreProd.TabIndex = 30;
             // 
             // label21
@@ -383,50 +453,12 @@
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(78, 55);
+            this.label21.Location = new System.Drawing.Point(79, 71);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(105, 30);
             this.label21.TabIndex = 29;
             this.label21.Text = "Nombre:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(78, 492);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 30);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Cantidad:";
-            // 
-            // btnagregalista
-            // 
-            this.btnagregalista.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregalista.ForeColor = System.Drawing.Color.Black;
-            this.btnagregalista.Location = new System.Drawing.Point(629, 440);
-            this.btnagregalista.Name = "btnagregalista";
-            this.btnagregalista.Size = new System.Drawing.Size(154, 56);
-            this.btnagregalista.TabIndex = 25;
-            this.btnagregalista.Text = "Agregar";
-            this.btnagregalista.UseVisualStyleBackColor = true;
-            this.btnagregalista.Click += new System.EventHandler(this.btnagregalista_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(337, 451);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 30);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Litros:";
             // 
             // groupBox2
             // 
@@ -437,56 +469,60 @@
             this.groupBox2.Controls.Add(this.btnAgregarclient);
             this.groupBox2.Controls.Add(this.btnBuscar);
             this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.groupBox2.ForeColor = System.Drawing.Color.OrangeRed;
             this.groupBox2.Location = new System.Drawing.Point(119, 230);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(813, 179);
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox2.Size = new System.Drawing.Size(813, 212);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Clientes";
             // 
             // btnRecargar
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
             this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRecargar.Location = new System.Drawing.Point(6, 17);
+            this.btnRecargar.Location = new System.Drawing.Point(8, 40);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
             this.btnRecargar.TabIndex = 13;
             this.btnRecargar.UseVisualStyleBackColor = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
-            // groupBox3
+            // grpPresupuesto
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Wheat;
-            this.groupBox3.Controls.Add(this.button8);
-            this.groupBox3.Controls.Add(this.btnCancelar);
-            this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Controls.Add(this.lblTotal);
-            this.groupBox3.Controls.Add(this.lblIVA);
-            this.groupBox3.Controls.Add(this.lblSubTotal);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.dgvVentas);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox3.Location = new System.Drawing.Point(966, 302);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(824, 579);
-            this.groupBox3.TabIndex = 27;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Presupuesto";
+            this.grpPresupuesto.BackColor = System.Drawing.Color.NavajoWhite;
+            this.grpPresupuesto.Controls.Add(this.button8);
+            this.grpPresupuesto.Controls.Add(this.btnCancelar);
+            this.grpPresupuesto.Controls.Add(this.button6);
+            this.grpPresupuesto.Controls.Add(this.lblTotal);
+            this.grpPresupuesto.Controls.Add(this.lblIVA);
+            this.grpPresupuesto.Controls.Add(this.lblSubTotal);
+            this.grpPresupuesto.Controls.Add(this.label17);
+            this.grpPresupuesto.Controls.Add(this.label16);
+            this.grpPresupuesto.Controls.Add(this.label15);
+            this.grpPresupuesto.Controls.Add(this.label14);
+            this.grpPresupuesto.Controls.Add(this.label13);
+            this.grpPresupuesto.Controls.Add(this.label1);
+            this.grpPresupuesto.Controls.Add(this.dgvVentas);
+            this.grpPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpPresupuesto.ForeColor = System.Drawing.Color.OrangeRed;
+            this.grpPresupuesto.Location = new System.Drawing.Point(970, 507);
+            this.grpPresupuesto.Name = "grpPresupuesto";
+            this.grpPresupuesto.Size = new System.Drawing.Size(824, 422);
+            this.grpPresupuesto.TabIndex = 27;
+            this.grpPresupuesto.TabStop = false;
+            this.grpPresupuesto.Text = "Presupuesto";
             // 
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(6, 519);
+            this.button8.Location = new System.Drawing.Point(4, 369);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(374, 46);
+            this.button8.Size = new System.Drawing.Size(259, 46);
             this.button8.TabIndex = 22;
             this.button8.Text = "Imprimir Presupuesto";
             this.button8.UseVisualStyleBackColor = true;
@@ -495,9 +531,9 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(641, 519);
+            this.btnCancelar.Location = new System.Drawing.Point(639, 369);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(177, 46);
+            this.btnCancelar.Size = new System.Drawing.Size(167, 46);
             this.btnCancelar.TabIndex = 21;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -507,9 +543,9 @@
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(386, 519);
+            this.button6.Location = new System.Drawing.Point(457, 369);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(186, 46);
+            this.button6.Size = new System.Drawing.Size(176, 46);
             this.button6.TabIndex = 20;
             this.button6.Text = "Confirmar";
             this.button6.UseVisualStyleBackColor = true;
@@ -521,7 +557,7 @@
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.lblTotal.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblTotal.Location = new System.Drawing.Point(637, 404);
+            this.lblTotal.Location = new System.Drawing.Point(668, 322);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(54, 35);
@@ -534,7 +570,7 @@
             this.lblIVA.BackColor = System.Drawing.Color.Transparent;
             this.lblIVA.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.lblIVA.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblIVA.Location = new System.Drawing.Point(379, 404);
+            this.lblIVA.Location = new System.Drawing.Point(410, 322);
             this.lblIVA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIVA.Name = "lblIVA";
             this.lblIVA.Size = new System.Drawing.Size(54, 35);
@@ -547,7 +583,7 @@
             this.lblSubTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblSubTotal.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.lblSubTotal.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblSubTotal.Location = new System.Drawing.Point(85, 404);
+            this.lblSubTotal.Location = new System.Drawing.Point(116, 322);
             this.lblSubTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(54, 35);
@@ -560,7 +596,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.label17.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label17.Location = new System.Drawing.Point(605, 404);
+            this.label17.Location = new System.Drawing.Point(636, 322);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(31, 35);
@@ -573,7 +609,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.label16.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label16.Location = new System.Drawing.Point(350, 404);
+            this.label16.Location = new System.Drawing.Point(381, 322);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(31, 35);
@@ -586,7 +622,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.label15.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label15.Location = new System.Drawing.Point(53, 404);
+            this.label15.Location = new System.Drawing.Point(84, 322);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(31, 35);
@@ -599,7 +635,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.label14.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label14.Location = new System.Drawing.Point(614, 360);
+            this.label14.Location = new System.Drawing.Point(645, 278);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 35);
@@ -612,7 +648,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.label13.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label13.Location = new System.Drawing.Point(330, 360);
+            this.label13.Location = new System.Drawing.Point(361, 278);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(131, 35);
@@ -625,7 +661,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(35, 360);
+            this.label1.Location = new System.Drawing.Point(66, 278);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 35);
@@ -635,10 +671,10 @@
             // dgvVentas
             // 
             this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Location = new System.Drawing.Point(15, 105);
+            this.dgvVentas.Location = new System.Drawing.Point(13, 32);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.RowHeadersWidth = 62;
-            this.dgvVentas.Size = new System.Drawing.Size(803, 240);
+            this.dgvVentas.Size = new System.Drawing.Size(793, 240);
             this.dgvVentas.TabIndex = 0;
             // 
             // lblNombreCliente
@@ -646,8 +682,8 @@
             this.lblNombreCliente.AutoSize = true;
             this.lblNombreCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblNombreCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCliente.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblNombreCliente.Location = new System.Drawing.Point(1224, 168);
+            this.lblNombreCliente.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblNombreCliente.Location = new System.Drawing.Point(404, 57);
             this.lblNombreCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(277, 36);
@@ -660,12 +696,12 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.label11.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label11.Location = new System.Drawing.Point(957, 168);
+            this.label11.Location = new System.Drawing.Point(116, 58);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(195, 35);
+            this.label11.Size = new System.Drawing.Size(287, 35);
             this.label11.TabIndex = 9;
-            this.label11.Text = "Se vendera a: ";
+            this.label11.Text = "Cliente seleccionado:";
             // 
             // label22
             // 
@@ -673,7 +709,7 @@
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label22.Location = new System.Drawing.Point(965, 222);
+            this.label22.Location = new System.Drawing.Point(119, 120);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(253, 30);
@@ -684,14 +720,30 @@
             // 
             this.lblLubripts.AutoSize = true;
             this.lblLubripts.BackColor = System.Drawing.Color.Transparent;
-            this.lblLubripts.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLubripts.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblLubripts.Location = new System.Drawing.Point(1318, 222);
+            this.lblLubripts.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLubripts.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblLubripts.Location = new System.Drawing.Point(518, 120);
             this.lblLubripts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLubripts.Name = "lblLubripts";
-            this.lblLubripts.Size = new System.Drawing.Size(26, 30);
+            this.lblLubripts.Size = new System.Drawing.Size(37, 41);
             this.lblLubripts.TabIndex = 31;
             this.lblLubripts.Text = "0";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.NavajoWhite;
+            this.groupBox4.Controls.Add(this.lblNombreCliente);
+            this.groupBox4.Controls.Add(this.lblLubripts);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.groupBox4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.groupBox4.Location = new System.Drawing.Point(970, 244);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(824, 189);
+            this.groupBox4.TabIndex = 32;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Cliente seleccionado";
             // 
             // MenuVentaProductos
             // 
@@ -700,14 +752,11 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaVentaDeProductos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.lblLubripts);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.grpPresupuesto);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpProductos);
             this.Controls.Add(this.BtnVolver);
-            this.Controls.Add(this.lblNombreCliente);
-            this.Controls.Add(this.label11);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -717,15 +766,18 @@
             this.Load += new System.EventHandler(this.MenuVentaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            this.grpProductos.ResumeLayout(false);
+            this.grpProductos.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grpPresupuesto.ResumeLayout(false);
+            this.grpPresupuesto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -744,15 +796,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTEXTdisponible;
         private System.Windows.Forms.Label lblDisponible;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpProductos;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnagregalista;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grpPresupuesto;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dgvVentas;
@@ -775,8 +827,11 @@
         private System.Windows.Forms.Button btnRecargar;
         private System.Windows.Forms.Button btnBuscarProd;
         private System.Windows.Forms.Button btnRecargarProd;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTEXTOlitros;
         private System.Windows.Forms.Label lblLitros;
         private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblIdproducto;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

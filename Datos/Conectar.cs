@@ -692,9 +692,6 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
 
-
-            //AGREGAR COLUMNA ESTADO ACORDATE ESTEBAN LA CONCHA TUYA 
-
             /*create procedure AgregarProduc(
             @Nomproducto char(60),
             @MarcaProduc char(60),
@@ -865,6 +862,7 @@ namespace Datos
         {
             conectar();
             comando.Connection = conexion;
+            comando.Parameters.Clear();
             comando.CommandText = "BuscaDuplicadoProductos";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombre", nombre.Trim());
@@ -1260,7 +1258,8 @@ namespace Datos
         {
             conectar();
             comando.Connection = conexion;
-            comando.CommandText = "TablaClientesConFiltro";
+            comando.Parameters.Clear();
+            comando.CommandText = "TraerTablaClientesConfiltro";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@DNI",dni);
             leer = comando.ExecuteReader();
@@ -1274,7 +1273,7 @@ namespace Datos
             conectar();
             comando.Parameters.Clear();
             comando.Connection = conexion;
-            comando.CommandText = "TraerTablaProductos";
+            comando.CommandText = "TraerTablaProductosACT";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
@@ -1283,21 +1282,19 @@ namespace Datos
             return dt;
         }
         public DataTable VentaProductosFiltro(int IdCategoria, string codigo, string nombre)
-        {
+        {            
+                conectar();
+                comando.Connection = conexion;
+                comando.CommandText = "TablaProductossConFiltro";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue("@IdCategoria", IdCategoria);
+                comando.Parameters.AddWithValue("@codigo", codigo);
+                comando.Parameters.AddWithValue("@nombre", nombre);
+                leer = comando.ExecuteReader();
+                dt.Load(leer);
 
-            
-            conectar();
-            comando.Connection = conexion;
-            comando.CommandText = "TablaProductossConFiltro";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@IdCategoria", IdCategoria);
-            comando.Parameters.AddWithValue("@codigo", codigo);
-            comando.Parameters.AddWithValue("@nombre", nombre);
-            leer = comando.ExecuteReader();
-            dt.Load(leer);
-            
-            desconectar();
+                desconectar();                          
             return dt;
         }
         #endregion
@@ -1350,6 +1347,26 @@ namespace Datos
             */
 
         }
+
+
+        public static void RestaCantidad(int idprod, double cantidad)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "DescuentaCantidad";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idprod", idprod);
+            comando.Parameters.AddWithValue("@cantidad", cantidad);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+
+
+
+
+
+        }
+        
         #endregion
 
 

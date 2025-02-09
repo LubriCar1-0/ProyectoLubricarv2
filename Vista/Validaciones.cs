@@ -478,10 +478,12 @@ namespace Vista
 
         public static DataTable VentaProductosFiltro(int categoria, string codigo, string nombre)
         {
+            DataTable TablasDeLaBD = new DataTable();
             Conectar CapaDatos = new Conectar();
-            DataTable TablasDeLaBD = CapaDatos.VentaProductosFiltro(categoria, codigo, nombre);
-            return TablasDeLaBD;
+            TablasDeLaBD = CapaDatos.VentaProductosFiltro(categoria, codigo, nombre);
 
+            return TablasDeLaBD;
+          
         }
 
         public static int TraeLiquido(int Id)
@@ -492,10 +494,10 @@ namespace Vista
 
         }
 
-        public static void CargaLista(int idcliente,string Producto, int Disponible, double Litros, int Cantidad, double PrecioVenta)
+        public static void CargaLista(int idcliente, int idprod, string Producto, int Disponible, double Litros, int Cantidad, double PrecioVenta)
         {
 
-            VentaProducto.cargaList(idcliente, Producto, Cantidad, PrecioVenta);
+            VentaProducto.cargaList(idcliente, idprod, Producto, Cantidad, PrecioVenta);
            
 
         }

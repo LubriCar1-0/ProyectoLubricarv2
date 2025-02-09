@@ -23,6 +23,7 @@ namespace Negocio
     {
         public int idCliente { get; set; }
         public int FilaProducto { get; set; }
+        public int IdProducto { get; set; }
         public string Producto { get; set; }
         public double PrecioVenta { get; set; }
         public double Cantidad { get; set; }
@@ -39,12 +40,13 @@ namespace Negocio
 
             }
         }
-        public static void cargaList(int Idcliente, string Producto, int Cantidad, double PrecioVenta)
+        public static void cargaList(int Idcliente, int IdProd, string Producto, int Cantidad, double PrecioVenta)
         {
             cuentafilas();
             ListVentaProducto.Add(new VentaProducto
             {
                 idCliente = Idcliente,
+                IdProducto = IdProd,
                 FilaProducto = contador + 1,
                 Producto = Producto,
                 PrecioVenta = PrecioVenta,
@@ -79,8 +81,10 @@ namespace Negocio
             foreach (var item in ListVentaProducto)
             {
                 Conectar.AgregaVenta(item.idCliente, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotal);
+                Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
             }
         }
+
         public static void LimpiaLista()
         {
             ListVentaProducto.Clear();

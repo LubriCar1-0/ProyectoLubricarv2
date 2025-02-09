@@ -17,16 +17,21 @@ namespace Vista
         public int cantidadDisp;
         public int idcliente;
         public double PrecioVenta;
-        public double PrecioSubtotal;
+
         public MenuVentaProductos()
         {
             InitializeComponent();
             CargatablaClientes();
+            dgvClientes.Columns["idCliente"].Visible = false;
             CargatablaProductos();
+            dgvProductos.Columns["idProd"].Visible = false;
             CargarCategorias();
             ConfiguraDataGrid(dgvClientes);
             ConfiguraDataGrid(dgvProductos);
-            
+            UsuarioPrimero();
+            lblIdproducto.Visible = false;
+            lblTEXTdisponible.Visible = false;
+            lblTEXTOlitros.Visible = false;
         }
         #region Volver pantalla anterior
         private void BtnVolver_Click(object sender, EventArgs e)
@@ -54,9 +59,7 @@ namespace Vista
                 dgvClientes.Columns["estado"].Visible = false;
                 dgvClientes.Columns["idCondicionIva"].Visible = false;
 
-                //DGVProductos.Columns["IdCategorias"].Visible = false;
                 ConfiguraDataGrid(dgvClientes);
-
             }
             catch (Exception ex)
             {
@@ -191,7 +194,7 @@ namespace Vista
         {
             dgvVentas.DataSource = null;  // Limpia el DataGridView
             dgvVentas.DataSource = ValidarVenta.ObtenerVentas();
-            dgvVentas.Columns["idCliente"].Visible = false;
+            //dgvVentas.Columns["idCliente"].Visible = false;
         }
         private void MenuVentaProductos_Load(object sender, EventArgs e)
         {
@@ -204,17 +207,19 @@ namespace Vista
         #region Selecciona Cliente
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow filaSeleccionadaUPD = dgvClientes.Rows[e.RowIndex];
                 int IdCliente = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCliente"].Value);
                 string NombreClien = filaSeleccionadaUPD.Cells["Nombre"].Value.ToString().Trim();
+                string apellidoClien = filaSeleccionadaUPD.Cells["Apellido"].Value.ToString().Trim();
                 string lubriPuntos = filaSeleccionadaUPD.Cells["LubriPuntos"].Value.ToString().Trim();
 
-                lblNombreCliente.Text = NombreClien;
+                lblNombreCliente.Text = apellidoClien+","+NombreClien;
                 lblLubripts.Text = lubriPuntos;
                 idcliente = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCliente"].Value.ToString().Trim());
-
+                grpProductos.Enabled = true;
 
             }
         }
@@ -256,20 +261,26 @@ namespace Vista
                 double precioVenta = Convert.ToDouble(filaSeleccionada.Cells["PrecioVenta"].Value.ToString().Trim());
                 lblProducto.Text = Producto;
                 PrecioVenta = precioVenta;
-               
+                lblIdproducto.Text = IdProducto.ToString();
 
                 int liquido = ValidarVenta.TraeLiquido(idCategorias);
                 if (liquido == 1)
                 {
                     lblLitros.Text = disponibleLtr;
-                    litrosDisp = Convert.ToDouble(disponibleLtr);
-                    lblDisponible.Text = Disponible;
+                    litrosDisp = Convert.ToDouble(disponibleLtr);                  
+                    lblDisponible.Visible = false;
+                    lblTEXTdisponible.Visible = false;
+                    lblLitros.Visible = true;
+                    lblTEXTOlitros.Visible = true;
                 }
                 else
                 {
                     lblDisponible.Text = Disponible;
                     cantidadDisp = Convert.ToInt32(Disponible);
-                    lblLitros.Text = disponibleLtr;
+                    lblDisponible.Visible = true;
+                    lblTEXTdisponible.Visible = true;
+                    lblLitros.Visible = false;
+                    lblTEXTOlitros.Visible = false;
                 }
             }
         }
@@ -310,35 +321,47 @@ namespace Vista
         private void btnBuscarProd_Click(object sender, EventArgs e)
         {
             int idcat = IdCategorias;
-            MessageBox.Show(idcat.ToString(), "Error");
-            CargatablaProductosConfiltro(idcat, txtCodigoProd.Text.ToUpper(), txtNombreProd.Text.ToUpper());
-            txtCodigoProd.Clear();
-            txtNombreProd.Clear();
-            idcat = 0;
+            string codprod = txtCodigoProd.Text.ToUpper();
+            string nombreprod = txtNombreProd.Text.ToUpper();
+            MessageBox.Show(idcat.ToString()+","+ codprod + "," + nombreprod, "Error");
+            if (idcat == 0 &&codprod == string.Empty && nombreprod == string.Empty)
+            {
+                MessageBox.Show("Debe llenar alguno de los campos para poder filtrar", "error");
+                //MessageBox.Show(idcat.ToString(), "Error");
+                
+            }
+            else
+            {
+                CargatablaProductosConfiltro(idcat, codprod, nombreprod);
+                txtCodigoProd.Clear();
+                txtNombreProd.Clear();
+                idcat = 0;
+
+            }
+
+                
+               
+            
         }
 
         #endregion
         #region carga lista Productos
         
         private void btnagregalista_Click(object sender, EventArgs e)
-        {
-            int cantidad = cantidadDisp;
-            double cantidadlitro = litrosDisp;
-            if (cantidadDisp != 0 || litrosDisp != 0.0)
-            {
-                ValidarVenta.CargaLista(idcliente, lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
-                CargaTablaLista();
-                PrecioSubtotal = ValidarVenta.CalculaTotal();
-                RecargaTotales(PrecioSubtotal);
-                ConfiguraDataGrid(dgvVentas);              
-                dgvVentas.Columns["idCliente"].Visible = false;
-                LimpiaLblProducto();
-                //MessageBox.Show(lblProducto.Text + "," + lblDisponible.Text + "," + lblLitros.Text + "," + txtCantidad.Text + "," + PrecioVenta);
-            }
-            else
-            {
-                MessageBox.Show("no carga producto");
-            }
+        {                 
+            int cantidad = Convert.ToInt32(lblDisponible.Text);
+            double cantidadlitro = Convert.ToDouble(lblLitros.Text);                
+            ValidarVenta.CargaLista(idcliente,Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
+            CargaTablaLista();
+            double subtotal = ValidarVenta.CalculaTotal();
+            RecargaTotales(subtotal);
+            ConfiguraDataGrid(dgvVentas);
+            dgvVentas.Columns["idCliente"].Visible = false;
+            dgvVentas.Columns["IdProducto"].Visible = false;
+            LimpiaLblProducto();
+            grpPresupuesto.Enabled = true;
+            //MessageBox.Show(lblProducto.Text + "," + lblDisponible.Text + "," + lblLitros.Text + "," + txtCantidad.Text + "," + PrecioVenta);                              
+
         }
 
         public void RecargaTotales(double subtotal)
@@ -357,6 +380,7 @@ namespace Vista
         #region carga venta
         private void button6_Click(object sender, EventArgs e)
         {
+
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
@@ -365,6 +389,8 @@ namespace Vista
                 VentaProducto.LimpiaLista();
                 CargaTablaLista();
                 dgvVentas.Columns["idCliente"].Visible = false;
+                dgvVentas.Columns["IdProducto"].Visible = false;
+                CargatablaProductos();
             }
 
         }
@@ -376,20 +402,40 @@ namespace Vista
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             VentaProducto.LimpiaLista();
+            CargaTablaLista();
+            dgvVentas.Columns["idCliente"].Visible = false;
+            dgvVentas.Columns["IdProducto"].Visible = false;
 
             lblSubTotal.Text = "0.0";
             lblIVA.Text = "0.0";
             lblTotal.Text = "0.0";
         }
-
-        private void txtCliente_TextChanged(object sender, EventArgs e)
+        private void UsuarioPrimero()
         {
-
+            grpProductos.Enabled = false;
+            grpPresupuesto.Enabled = false;
         }
 
-        private void btnAgregarclient_Click(object sender, EventArgs e)
+        #region Restriccion de botones
+        private void txtCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquea el caracter
+            }
+        }
 
+
+
+
+        #endregion
+
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true; // Bloquea el caracter
+            }
         }
     }
 
