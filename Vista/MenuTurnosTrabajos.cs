@@ -37,71 +37,50 @@ namespace Vista
             dtpHora.Enabled = false;
 
             CargarTurnos();
-            CargarVehiculos();
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string telefono = txtTelCliente.Text.Trim();
-            int idCliente = !string.IsNullOrEmpty(telefono) ? validarTurnos.ObtIDCliente(Convert.ToInt32(telefono)) : -1;
-            int? vehiculoID = cmbSelecVH.SelectedItem is KeyValuePair<int, string> vehiculoSeleccionado ? vehiculoSeleccionado.Key : (int?)null;
+            // Si el TextBox de teléfono está vacío se envía NULL; de lo contrario se hace Trim.
+            string telefono = string.IsNullOrEmpty(txtTelCliente.Text) ? null : txtTelCliente.Text.Trim();
+            // La patente se envía en mayúsculas luego de hacer Trim.
+            string patente = string.IsNullOrEmpty(txtPatente.Text) ? null : txtPatente.Text.Trim().ToUpper();
             string fecha = dtpFecha.CustomFormat != " " ? dtpFecha.Value.ToString("yyyy-MM-dd") : null;
 
-            if (idCliente == -1 && vehiculoID == null && string.IsNullOrEmpty(fecha))
+            if (telefono == null && patente == null && string.IsNullOrEmpty(fecha))
             {
                 MessageBox.Show("Debe ingresar algún dato para filtrar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 CargarTurnos();
             }
             else
             {
-                CargaTurnosFiltro(idCliente, vehiculoID, fecha);
+                CargaTurnosFiltro(telefono, patente, fecha);
             }
         }
-        private void CargaTurnosFiltro(int idCliente, int? idVehiculo, string fecha)
+        private void CargaTurnosFiltro(string telefono, string patente, string fecha)
         {
             try
             {
                 dgvTurnos.DataSource = null;
-                var turnos = validarTurnos.TurnosFiltro(idCliente, idVehiculo, fecha);
+                var turnos = validarTurnos.TurnosFiltro(telefono, patente, fecha);
                 dgvTurnos.DataSource = turnos;
-
                 dgvTurnos.RowHeadersVisible = false;
+                // Ocultar la columna idTurno
+                if (dgvTurnos.Columns.Contains("idTurno"))
+                    dgvTurnos.Columns["idTurno"].Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar los turnos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
 
-       
+
+
         private int idVehiculoSeleccionado = 0;
 
-        private void CargarVehiculos()
-        {
-            Dictionary<int, string> vehiculos = validarTurnos.ObtenerVehiculos();
-
-            cmbSelecVH.Items.Clear();
-
-            foreach (var vehiculo in vehiculos)
-            {
-                cmbSelecVH.Items.Add(new KeyValuePair<int, string>(vehiculo.Key, vehiculo.Value));
-            }
-
-            cmbSelecVH.DisplayMember = "Value";
-            cmbSelecVH.ValueMember = "Key";
-
-
-            cmbSelecVH.SelectedIndexChanged += CbxSelectVH_SelectedIndexChanged;
-        }
-
-        private void CbxSelectVH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbSelecVH.SelectedItem is KeyValuePair<int, string> vehiculoSeleccionado)
-            {
-                idVehiculoSeleccionado = vehiculoSeleccionado.Key; // Guardar el ID correctamente
-            }
-        }
+        
         private void CargarTurnos()
         {
             try
@@ -234,7 +213,7 @@ namespace Vista
             DtpFechaCargada.Value = DateTime.Today;      
             //dtpHora.CustomFormat = " "; 
             dtpHora.Value = DateTime.Now;
-            cmbSelecVH.SelectedIndex = -1;
+            txtPatente.Clear();
             txtTelCliente.Clear();
             txbApellido.Clear();
             txbNombre.Clear();

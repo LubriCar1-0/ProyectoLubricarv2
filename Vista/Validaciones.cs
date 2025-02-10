@@ -425,10 +425,10 @@ namespace Vista
                 throw new Exception($"Error al cancelar el Turno:{ex.Message}");
             }
         }
-        public static DataTable TurnosFiltro(int idCliente, int? idVehiculo, string fecha)
+        public static DataTable TurnosFiltro(string telefono, string patente, string fecha)
         {
-            Conectar CapaDatos = new Conectar();
-            return CapaDatos.TurnosFiltro(idCliente, idVehiculo, fecha);
+            Conectar capaDatos = new Conectar();
+            return capaDatos.TurnosFiltro(telefono, patente, fecha);
         }
 
         public static int ObtIDCliente(int Telefono)
@@ -436,6 +436,12 @@ namespace Vista
             Conectar capaDatos = new Conectar();
             return capaDatos.ObtenerIDCliente(Telefono);
         }
+        public static DataTable TurnosFiltroPorPatente(int idCliente, string patente, string fecha)
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.TurnosFiltroPorPatente(idCliente, patente, fecha);
+        }
+
     }
 
     #endregion

@@ -91,7 +91,7 @@ namespace Vista
             if (CbxSelectVH.SelectedItem is KeyValuePair<int, string> vehiculoSeleccionado)
             {
                 idVehiculo = vehiculoSeleccionado.Key;
-                // Aquí puedes hacer algo con el ID del vehículo seleccionado, si es necesario
+                
             }
         }
 

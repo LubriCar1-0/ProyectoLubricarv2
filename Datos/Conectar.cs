@@ -1049,34 +1049,10 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
-            //CREATE PROCEDURE TraerVehiculosPorCliente
-            //@idCliente INT
-            //AS
-            //BEGIN
-            //SELECT idVehiculo, modeloVH, marcaVH, patenteVH
-            //FROM Vehiculo
-            //WHERE idCliente = @idCliente;
-            //END
-
+            
         }
 
-        public DataTable BuscarTurnos()
-        {
-            conectar();
-            comando.Connection = conexion;
-            comando.CommandText = "TraerTablaTurnos";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Clear();
-            leer = comando.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(leer);
-            desconectar();
-            return dt;
-            //create procedure TraerTablaTurnos
-            //as begin
-            //select* from Turno
-            //end
-        }
+        
 
         public void InsertarTurno(DateTime fecha, TimeSpan hora, int idCliente, int idVehiculo, string descripcion, string estado)
         {
@@ -1150,9 +1126,9 @@ namespace Datos
             comando.CommandText = "ExisteTurno";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@Fecha", fecha.Date); // Solo la fecha (sin hora)
-            comando.Parameters.AddWithValue("@Hora", hora);        // Solo la hora
-            comando.Parameters.AddWithValue("@Estado", "ACT");     // Solo turnos activos
+            comando.Parameters.AddWithValue("@Fecha", fecha.Date); 
+            comando.Parameters.AddWithValue("@Hora", hora);       
+            comando.Parameters.AddWithValue("@Estado", "ACT");     
 
             int count = Convert.ToInt32(comando.ExecuteScalar());
             desconectar();
@@ -1172,38 +1148,27 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            // CREATE PROCEDURE CancelarTurno
-            //(
-            // @idTurno INT,
-            // @Estado char(3)
-            //)
-            //AS
-            //BEGIN
-            //    UPDATE Turno 
-            //    SET
-            //        Estado = @Estado
-            //    WHERE
-            //        idTurno = @idTurno; 
-            //END
+           
 
         }
-        public DataTable TurnosFiltro(int idCliente, int? idVehiculo, string fecha)
+
+        public DataTable TurnosFiltro(string telefono, string patente, string fecha)
         {
-            DataTable dt = new DataTable();
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "TurnosConFiltro";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@idCliente", idCliente > 0 ? (object)idCliente : DBNull.Value);
-            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo.HasValue ? (object)idVehiculo.Value : DBNull.Value);
-            comando.Parameters.AddWithValue("@Fecha", !string.IsNullOrEmpty(fecha) ? (object)fecha : DBNull.Value);
+            comando.Parameters.AddWithValue("@telefono", !string.IsNullOrEmpty(telefono) ? (object)telefono : DBNull.Value);
+            comando.Parameters.AddWithValue("@patente", !string.IsNullOrEmpty(patente) ? (object)patente : DBNull.Value);
+            comando.Parameters.AddWithValue("@fecha", !string.IsNullOrEmpty(fecha) ? (object)fecha : DBNull.Value);
             leer = comando.ExecuteReader();
             dt.Load(leer);
             leer.Close();
             desconectar();
             return dt;
         }
+
         public DataTable TurnosActivos()
         {
             conectar();  
@@ -1236,6 +1201,22 @@ namespace Datos
             desconectar();
             return idCliente;
         }
+        public DataTable TurnosFiltroPorPatente(int idCliente, string patente, string fecha)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "FiltrarTurnosPorPatente";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idCliente", idCliente != -1 ? (object)idCliente : DBNull.Value);
+            comando.Parameters.AddWithValue("@patente", !string.IsNullOrEmpty(patente) ? (object)patente : DBNull.Value);
+            comando.Parameters.AddWithValue("@fecha", !string.IsNullOrEmpty(fecha) ? (object)fecha : DBNull.Value);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+
 
         #endregion
 

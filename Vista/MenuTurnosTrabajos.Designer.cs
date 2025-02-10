@@ -36,7 +36,6 @@
             this.txbApellido = new System.Windows.Forms.TextBox();
             this.txbPatente = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.cmbSelecVH = new System.Windows.Forms.ComboBox();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblVehiculo = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.btnRecargar = new System.Windows.Forms.Button();
             this.lblTelefonoCliente = new System.Windows.Forms.Label();
             this.BtnVolver = new System.Windows.Forms.Button();
+            this.txtPatente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,16 +115,6 @@
             this.dtpFecha.Size = new System.Drawing.Size(539, 26);
             this.dtpFecha.TabIndex = 21;
             // 
-            // cmbSelecVH
-            // 
-            this.cmbSelecVH.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSelecVH.FormattingEnabled = true;
-            this.cmbSelecVH.Location = new System.Drawing.Point(739, 252);
-            this.cmbSelecVH.Name = "cmbSelecVH";
-            this.cmbSelecVH.Size = new System.Drawing.Size(539, 33);
-            this.cmbSelecVH.TabIndex = 20;
-            this.cmbSelecVH.Text = "seleccionar Vehiculo";
-            // 
             // dgvTurnos
             // 
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -165,7 +155,7 @@
             this.txtTelCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelCliente.Location = new System.Drawing.Point(739, 181);
             this.txtTelCliente.Name = "txtTelCliente";
-            this.txtTelCliente.Size = new System.Drawing.Size(539, 35);
+            this.txtTelCliente.Size = new System.Drawing.Size(540, 35);
             this.txtTelCliente.TabIndex = 11;
             // 
             // btnBuscar
@@ -218,6 +208,14 @@
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
+            // txtPatente
+            // 
+            this.txtPatente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatente.Location = new System.Drawing.Point(740, 249);
+            this.txtPatente.Name = "txtPatente";
+            this.txtPatente.Size = new System.Drawing.Size(539, 35);
+            this.txtPatente.TabIndex = 23;
+            // 
             // MenuTurnosTrabajos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,12 +223,12 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuTurnos1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.txtPatente);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.dgvTurnos);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblVehiculo);
-            this.Controls.Add(this.cmbSelecVH);
             this.Controls.Add(this.lblTelefonoCliente);
             this.Controls.Add(this.txbPatente);
             this.Controls.Add(this.txbApellido);
@@ -261,7 +259,6 @@
         private System.Windows.Forms.TextBox txbApellido;
         private System.Windows.Forms.TextBox txbPatente;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.ComboBox cmbSelecVH;
         private System.Windows.Forms.DataGridView dgvTurnos;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblVehiculo;
@@ -270,5 +267,6 @@
         private System.Windows.Forms.Button btnRecargar;
         private System.Windows.Forms.Label lblTelefonoCliente;
         private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.TextBox txtPatente;
     }
 }

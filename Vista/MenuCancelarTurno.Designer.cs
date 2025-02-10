@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.txtTelCliente = new System.Windows.Forms.TextBox();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
@@ -38,9 +38,9 @@
             this.BtnVolver = new System.Windows.Forms.Button();
             this.grbFiltros = new System.Windows.Forms.GroupBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.cmbSelecVH = new System.Windows.Forms.ComboBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblVehiculo = new System.Windows.Forms.Label();
+            this.txtPatente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.grbFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -80,13 +80,13 @@
             // 
             // Cancelar
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle1;
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Cancelar.HeaderText = "Cancelar";
             this.Cancelar.Name = "Cancelar";
@@ -133,8 +133,8 @@
             // grbFiltros
             // 
             this.grbFiltros.BackColor = System.Drawing.Color.Transparent;
+            this.grbFiltros.Controls.Add(this.txtPatente);
             this.grbFiltros.Controls.Add(this.dtpFecha);
-            this.grbFiltros.Controls.Add(this.cmbSelecVH);
             this.grbFiltros.Controls.Add(this.dgvTurnos);
             this.grbFiltros.Controls.Add(this.lblFecha);
             this.grbFiltros.Controls.Add(this.lblVehiculo);
@@ -156,16 +156,6 @@
             this.dtpFecha.Size = new System.Drawing.Size(539, 26);
             this.dtpFecha.TabIndex = 21;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
-            // 
-            // cmbSelecVH
-            // 
-            this.cmbSelecVH.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSelecVH.FormattingEnabled = true;
-            this.cmbSelecVH.Location = new System.Drawing.Point(223, 98);
-            this.cmbSelecVH.Name = "cmbSelecVH";
-            this.cmbSelecVH.Size = new System.Drawing.Size(539, 33);
-            this.cmbSelecVH.TabIndex = 20;
-            this.cmbSelecVH.Text = "seleccionar Vehiculo";
             // 
             // lblFecha
             // 
@@ -190,6 +180,14 @@
             this.lblVehiculo.Size = new System.Drawing.Size(105, 30);
             this.lblVehiculo.TabIndex = 14;
             this.lblVehiculo.Text = "Vehiculo";
+            // 
+            // txtPatente
+            // 
+            this.txtPatente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatente.Location = new System.Drawing.Point(223, 91);
+            this.txtPatente.Name = "txtPatente";
+            this.txtPatente.Size = new System.Drawing.Size(539, 35);
+            this.txtPatente.TabIndex = 22;
             // 
             // MenuCancelarTurno
             // 
@@ -223,7 +221,7 @@
         private System.Windows.Forms.GroupBox grbFiltros;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblVehiculo;
-        private System.Windows.Forms.ComboBox cmbSelecVH;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.TextBox txtPatente;
     }
 }
