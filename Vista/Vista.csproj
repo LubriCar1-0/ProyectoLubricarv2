@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBitacora.Designer.cs">
+      <DependentUpon>MenuBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
+    <EmbeddedResource Include="MenuBitacora.resx">
+      <DependentUpon>MenuBitacora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -687,6 +696,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MenuOrdenDeTrabajo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaBitacora.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,9 +15,14 @@ namespace Negocio
         #region Variables
         public static int IdTrabajador { get; private set; }
         public static string NombreTrabajador { get; private set; }
-
-
         public static int idCategoria { get; set; }
+
+
+        public string Nombre { get; private set; }
+        public string Apellido { get; private set; }
+        public int idtrabajador { get; private set; }
+
+        
         #endregion
 
         public static void IngresoEmpleados(int documento, string contraseña)
@@ -135,6 +140,29 @@ namespace Negocio
                 throw new Exception($"Error al cambiar el estado del empleado: {ex.Message}");
             }
         }
+        public static List<Empleados> ObtenerTrabajador()
+        {
+            Conectar conexion = new Conectar();
+            DataTable TrabajadorTabla = conexion.BuscarEmpleados();
+
+            List<Empleados> Trabajador = new List<Empleados>();
+            foreach (DataRow row in TrabajadorTabla.Rows)
+            {
+                if (row["ESTADO"].ToString() == "ACT")
+                {
+                    Trabajador.Add(new Empleados
+                    {
+                        idtrabajador = Convert.ToInt32(row["idTrabajador"]),
+                        Nombre = row["NomTR"].ToString(),
+                        Apellido = row["ApeTR"].ToString(),
+                        
+                    });
+                }
+            }
+
+            return Trabajador;
+        }
+
         //public static List<Empleados> ObtenerCategoriasEmp()
         //{
         //    Conectar conexion = new Conectar();

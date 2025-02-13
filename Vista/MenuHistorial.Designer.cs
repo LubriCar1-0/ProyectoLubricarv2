@@ -77,6 +77,7 @@
             this.BtnBitacora.Size = new System.Drawing.Size(243, 91);
             this.BtnBitacora.TabIndex = 6;
             this.BtnBitacora.UseVisualStyleBackColor = true;
+            this.BtnBitacora.Click += new System.EventHandler(this.BtnBitacora_Click);
             // 
             // MenuHistorial
             // 

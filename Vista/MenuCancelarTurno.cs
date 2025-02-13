@@ -112,21 +112,7 @@ namespace Vista
         }
 
 
-        //private void CargaTurnosFiltro(int idCliente, int? idVehiculo, string fecha)
-        //{
-        //    try
-        //    {
-        //        dgvTurnos.DataSource = null;
-        //        var turnos = validarTurnos.TurnosFiltro(idCliente, idVehiculo, fecha);
-        //        dgvTurnos.DataSource = turnos;
-
-        //        dgvTurnos.RowHeadersVisible = false; 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error al cargar los turnos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+        
 
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)

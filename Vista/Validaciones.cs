@@ -523,6 +523,37 @@ namespace Vista
     }
     #endregion
 
+    #region Bitacora 
+    public class ValidarBitacora : MenuBitacora
+    {
+        public static Dictionary<int, string> ObtenerTrabajador()
+        {
+            List<Empleados> ListaTrabajador = Empleados.ObtenerTrabajador();
+            Dictionary<int, string> Trabajadores = new Dictionary<int, string>();
+
+            foreach (var Trabajador in ListaTrabajador)
+            {
+                Trabajadores.Add(Trabajador.idtrabajador, $"{Trabajador.Nombre} {Trabajador.Apellido}");
+            }
+
+            return Trabajadores;
+        }
+        public static DataTable BuscarBitacora()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasTurnos = CapaDatos.Bitacora();
+            return TablasTurnos;
+
+        }
+        public static DataTable BitacoraFiltro(string accion, string fecha, int trabajadorId)
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.BitacoraFiltro(accion, fecha, trabajadorId);
+        }
+    }
+
+    #endregion
+
 }
 
 

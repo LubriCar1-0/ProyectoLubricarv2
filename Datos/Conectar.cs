@@ -84,11 +84,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
             return id;
-            /* create procedure BuscaIdEmp(
-               @documento int)
-               as begin 
-               select idTrabajador from Trabajador where documentoTR=@documento;
-               end*/
+            
         }
         public int TraeIdCategoriaEmpleado(int documento)
         {
@@ -101,11 +97,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
             return id;
-            /* create procedure TraeIdCategoriaEmpleado(
-               @documento int)
-               as begin 
-               select idCategoria from Trabajador where documentoTR=@documento;
-               end*/
+           
         }
 
         public string BuscarEmp(int Idtrabajador)
@@ -119,11 +111,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
             return Usuario;
-            /*  create procedure BuscarEmp(
-                @idtrabajador int)
-                as begin 
-                select NomTR from Trabajador where idTrabajador=@idtrabajador;
-                end*/
+           
         }
         public string ObtenerCategoria(int idCat)
         {
@@ -169,19 +157,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            // CREATE PROCEDURE CambiarEstado
-            //(
-            // @idTrabajador INT,
-            // @Estado char(3)
-            //)
-            //AS
-            //BEGIN
-            //    UPDATE Trabajador 
-            //    SET
-            //        Estado = @Estado
-            //    WHERE
-            //        idTrabajador = @idTrabajador; 
-            //END
+            
 
         }
 
@@ -196,10 +172,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
             return dt;
-            /*  create procedure TraerCategoriasEmpleados
-                as begin 
-                select * from Categorias ;
-                end*/
+            
         }
 
         public static void IngresaCategoriaEMP(string nombreCat, string catedescripcion, int CodPerm, string Estado)
@@ -216,16 +189,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            /*Create procedure [dbo].[IngresaCategoriaEMP](
-              @NombreCat char(30),
-              @PermisoCat int,
-              @Descripcion char(255),
-              @ESTADO char (3)
-              )
-              as begin 
-              Insert into Categorias (NombreCat, PermisoCat, Descripcion, ESTADO) values (@NombreCat,@PermisoCat, @Descripcion, @ESTADO)
-              end
-              */
+            
         }
 
         public static void UpdateCategoriaEMP(int idCategoria, string NombreCat, int PermisoCat, string Descripcion)
@@ -242,21 +206,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            /*CREATE PROCEDURE UpdateCategoriaEMP
-              @idCategoria INT,
-              @NombreCat CHAR(30),
-	          @PermisoCat int,
-              @Descripcion CHAR(144)
-              AS
-              BEGIN
-              UPDATE Categorias
-              SET 
-              NombreCat = @NombreCat,
-		      PermisoCat = @PermisoCat,
-              Descripcion = @Descripcion
-              WHERE 
-              idCategoria = @IdCategoria;
-              END*/
+            
         }
         public static void CambiarEstadoEMP(int idCategoria, string Estado)
         {
@@ -269,25 +219,9 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            /*CREATE PROCEDURE CambiarEstadoEMP
-            (
-                @idCategoria INT,
-                @Estado char(3)
-            )
-            AS
-            BEGIN
-                UPDATE Categorias
-                SET
-                    ESTADO = @Estado
-                WHERE
-                    idCategoria = @idCategoria; 
-            END
-            */
-
-
-
         }
-      
+
+        
 
 
         public static int VerificaPermiso(int verificaPermiso) 
@@ -457,18 +391,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
-        /* 
-        create procedure InsertarVehiculo (
-        @idCliente numeric(18,0),
-        @modeloVH nvarchar(255),
-        @marcaVH nvarchar(255),
-        @añoVH float,
-        @patenteVH nvarchar(255),
-        @KilometrajeVH nvarchar(255))
-        as begin
-        insert into Vehiculo (idCliente, modeloVH, marcaVH, añoVH, patenteVH, kilometrajeVH) values (@idCliente, @modeloVH, @marcaVH, @añoVH, @patenteVH, @KilometrajeVH)
-        end
-         */
+        
 
         public string ObtenerCliente(int idCliente)
         {
@@ -504,14 +427,7 @@ namespace Datos
             return nombreCompleto;
         }
 
-        //CREATE PROCEDURE ObtenerCliente
-        //    @idCliente INT
-        //AS
-        //BEGIN
-        //    SELECT Nombre
-        //    FROM Clientes
-        //    WHERE idCliente = @idCliente;
-        //END;
+        
         public static void ActualizarVehiculo(int idVehiculo, int idCliente, string modelo, string marca, int año, string patente, int kilometraje)
         {
             conectar();
@@ -530,19 +446,7 @@ namespace Datos
             desconectar();
         }
 
-        //Alter PROCEDURE ActualizarVehiculo
-        //@idVehiculo INT,
-        //@idCliente INT,
-        //@modeloVH NVARCHAR(255),
-        //@marcaVH NVARCHAR(255),
-        //@añoVH INT,
-        //@patenteVH NVARCHAR(255),
-        //@kilometrajeVH INT
-        //AS BEGIN
-        //UPDATE Vehiculo
-        //SET idCliente = @idCliente, modeloVH = @modeloVH, marcaVH = @marcaVH, añoVH = @añoVH, patenteVH = @patenteVH, kilometrajeVH = @kilometrajeVH
-        //WHERE idVehiculo = @idVehiculo;
-        //END
+        
 
         public static void EstadoVehiculo(int idVehiculo, string Estado)
         {
@@ -557,19 +461,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            //CREATE PROCEDURE CambiarEstadoVH
-            //(
-            // @idVehiculo INT,
-            // @Estado char(3)
-            //)
-            //AS
-            //BEGIN
-            //    UPDATE Vehiculo 
-            //    SET
-            //        Estado = @Estado
-            //    WHERE
-            //        idTrabajador = @idVehiculo; 
-            //END
+            
 
         }
 
@@ -1347,15 +1239,51 @@ namespace Datos
 
 
         }
-        
-        #endregion
-
-
-
-
-
 
         #endregion
+
+
+
+
+
+
+        #endregion
+
+        #region Bitacora  
+        public DataTable Bitacora()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "BuscarBitacora";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            leer.Close();
+            desconectar();
+            return dt;
+        }
+        public DataTable BitacoraFiltro(string accion, string Fecha, int IdTrabajador)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "BitacoraConFiltro"; 
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@accion", !string.IsNullOrEmpty(accion) ? (object)accion : DBNull.Value);
+            comando.Parameters.AddWithValue("@fecha", !string.IsNullOrEmpty(Fecha) ? (object)Fecha : DBNull.Value);
+            comando.Parameters.AddWithValue("@IdTrabajador", IdTrabajador > 0 ? (object)IdTrabajador : DBNull.Value);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            leer.Close();
+            desconectar();
+
+            return dt;
+        }
+
+
+        #endregion
+
 
     }
 

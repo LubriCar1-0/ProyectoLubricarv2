@@ -16,5 +16,11 @@ namespace Vista
         {
             InitializeComponent();
         }
+
+        private void BtnBitacora_Click(object sender, EventArgs e)
+        {
+            MenuBitacora pantallaBitacora = new MenuBitacora();
+            Hide();
+            pantallaBitacora.ShowDialog();       }
     }
 }
