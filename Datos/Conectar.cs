@@ -1239,13 +1239,24 @@ namespace Datos
 
 
         }
+        public static void CargaTotalesVenta(int IdCliente, double subtotal, double iva, double total)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "GuardaTotalVenta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@IdCliente", IdCliente);
+            comando.Parameters.AddWithValue("@IvaCalculado", iva);
+            comando.Parameters.AddWithValue("@SubTotal", subtotal);
+            comando.Parameters.AddWithValue("@Total", total);
+            comando.Parameters.AddWithValue("@FechaHora", fechaHoraActual);
+            comando.ExecuteNonQuery();
+            desconectar();
+        }
 
         #endregion
-
-
-
-
-
 
         #endregion
 

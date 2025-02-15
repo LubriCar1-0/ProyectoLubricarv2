@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Vista
 {
@@ -17,9 +20,13 @@ namespace Vista
         public int cantidadDisp;
         public int idcliente;
         public double PrecioVenta;
-
+        private PrintDocument printDocument;
+        private string ticketTexto;
         public MenuVentaProductos()
         {
+            this.FormBorderStyle = FormBorderStyle.None; // Sin bordes
+            this.WindowState = FormWindowState.Maximized; // Maximizado en pantalla completa
+            this.StartPosition = FormStartPosition.CenterScreen; // Centrado en la pantalla
             InitializeComponent();
             CargatablaClientes();
             dgvClientes.Columns["idCliente"].Visible = false;
@@ -32,6 +39,9 @@ namespace Vista
             lblIdproducto.Visible = false;
             lblTEXTdisponible.Visible = false;
             lblTEXTOlitros.Visible = false;
+            lblIdCliente.Visible = false;
+            printDocument = new PrintDocument();
+            printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
         }
         #region Volver pantalla anterior
         private void BtnVolver_Click(object sender, EventArgs e)
@@ -161,7 +171,7 @@ namespace Vista
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul más claro
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul mÃ¡s claro
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
@@ -207,7 +217,7 @@ namespace Vista
         #region Selecciona Cliente
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow filaSeleccionadaUPD = dgvClientes.Rows[e.RowIndex];
@@ -216,7 +226,8 @@ namespace Vista
                 string apellidoClien = filaSeleccionadaUPD.Cells["Apellido"].Value.ToString().Trim();
                 string lubriPuntos = filaSeleccionadaUPD.Cells["LubriPuntos"].Value.ToString().Trim();
 
-                lblNombreCliente.Text = apellidoClien+","+NombreClien;
+                lblIdCliente.Text = IdCliente.ToString();
+                lblNombreCliente.Text = apellidoClien + "," + NombreClien;
                 lblLubripts.Text = lubriPuntos;
                 idcliente = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCliente"].Value.ToString().Trim());
                 grpProductos.Enabled = true;
@@ -267,7 +278,7 @@ namespace Vista
                 if (liquido == 1)
                 {
                     lblLitros.Text = disponibleLtr;
-                    litrosDisp = Convert.ToDouble(disponibleLtr);                  
+                    litrosDisp = Convert.ToDouble(disponibleLtr);
                     lblDisponible.Visible = false;
                     lblTEXTdisponible.Visible = false;
                     lblLitros.Visible = true;
@@ -323,12 +334,12 @@ namespace Vista
             int idcat = IdCategorias;
             string codprod = txtCodigoProd.Text.ToUpper();
             string nombreprod = txtNombreProd.Text.ToUpper();
-            MessageBox.Show(idcat.ToString()+","+ codprod + "," + nombreprod, "Error");
-            if (idcat == 0 &&codprod == string.Empty && nombreprod == string.Empty)
+            MessageBox.Show(idcat.ToString() + "," + codprod + "," + nombreprod, "Error");
+            if (idcat == 0 && codprod == string.Empty && nombreprod == string.Empty)
             {
                 MessageBox.Show("Debe llenar alguno de los campos para poder filtrar", "error");
                 //MessageBox.Show(idcat.ToString(), "Error");
-                
+
             }
             else
             {
@@ -339,19 +350,23 @@ namespace Vista
 
             }
 
-                
-               
-            
+
+
+
         }
 
         #endregion
         #region carga lista Productos
-        
+
         private void btnagregalista_Click(object sender, EventArgs e)
-        {                 
+        {
             int cantidad = Convert.ToInt32(lblDisponible.Text);
-            double cantidadlitro = Convert.ToDouble(lblLitros.Text);                
-            ValidarVenta.CargaLista(idcliente,Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
+            double cantidadlitro = Convert.ToDouble(lblLitros.Text);
+            if (lblLitros.Text == "0" || lblDisponible.Text == "0")
+            {
+                MessageBox.Show("No hay producto en stock");
+            }
+            ValidarVenta.CargaLista(idcliente, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
             CargaTablaLista();
             double subtotal = ValidarVenta.CalculaTotal();
             RecargaTotales(subtotal);
@@ -360,7 +375,6 @@ namespace Vista
             dgvVentas.Columns["IdProducto"].Visible = false;
             LimpiaLblProducto();
             grpPresupuesto.Enabled = true;
-            //MessageBox.Show(lblProducto.Text + "," + lblDisponible.Text + "," + lblLitros.Text + "," + txtCantidad.Text + "," + PrecioVenta);                              
 
         }
 
@@ -376,29 +390,36 @@ namespace Vista
 
 
         #endregion
-
         #region carga venta
-        private void button6_Click(object sender, EventArgs e)
+        private void btnCargaVenta_Click(object sender, EventArgs e)
         {
 
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                VentaProducto.Cargaventa();
-                MessageBox.Show("Venta cargada con exito");
+                VentaProducto.Cargaventa(Convert.ToInt32(lblIdCliente.Text), Convert.ToDouble(lblSubTotal.Text), Convert.ToDouble(lblIVA.Text), Convert.ToDouble(lblTotal.Text));
+                #region ImprimeTicket
+                ticketTexto = GenerarTicket();
+
+                if (string.IsNullOrWhiteSpace(ticketTexto))
+                {
+                    MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+                previewDialog.Document = printDocument;
+                previewDialog.ShowDialog();
+                #endregion
+
+                //MessageBox.Show("Venta cargada con exito");
                 VentaProducto.LimpiaLista();
                 CargaTablaLista();
                 dgvVentas.Columns["idCliente"].Visible = false;
                 dgvVentas.Columns["IdProducto"].Visible = false;
                 CargatablaProductos();
             }
-
         }
-
-
-
-        #endregion
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             VentaProducto.LimpiaLista();
@@ -410,12 +431,112 @@ namespace Vista
             lblIVA.Text = "0.0";
             lblTotal.Text = "0.0";
         }
-        private void UsuarioPrimero()
-        {
-            grpProductos.Enabled = false;
-            grpPresupuesto.Enabled = false;
-        }
+        
 
+        #endregion
+        #region impresion del ticket
+        private string GenerarTicket()
+        {
+            StringBuilder ticket = new StringBuilder();
+            var listaProductos = Negocio.VentaProducto.ObtenerListaVentas();
+
+            if (listaProductos.Count == 0)
+            {
+                return string.Empty;
+            }
+
+            // Encabezado del ticket
+            ticket.AppendLine("==============================================");
+            ticket.AppendLine("               FACTURA C - LubriCar          ");
+            ticket.AppendLine("==============================================");
+            ticket.AppendLine($"Fecha: {DateTime.Now}");
+            ticket.AppendLine($"Cliente: {lblNombreCliente.Text}");
+            ticket.AppendLine("==============================================");
+            ticket.AppendLine("Cant.   Producto       Precio   Total");
+            ticket.AppendLine("----------------------------------------------");
+
+            // Datos de los productos
+            foreach (var item in listaProductos)
+            {
+                ticket.AppendLine($"{item.Cantidad,5}   {item.Producto,-12}  {item.PrecioVenta,6:C}  {item.PrecioTotalProd,6:C}");
+            }
+
+            ticket.AppendLine("----------------------------------------------");
+
+            // Totales
+            double subtotal = listaProductos.Sum(p => p.PrecioTotalProd);
+            double iva = subtotal * 0.21; // IVA 21%
+            double total = subtotal + iva;
+
+            ticket.AppendLine($"Subtotal: {subtotal,10:C}");
+            ticket.AppendLine($"IVA 21% : {iva,10:C}");
+            ticket.AppendLine($"Total   : {total,10:C}");
+            ticket.AppendLine("==============================================");
+            ticket.AppendLine("           Â¡Gracias por su compra!            ");
+            ticket.AppendLine("==============================================");
+
+            return ticket.ToString();
+        }
+        private string GenerarPresupuesto()
+        {
+            StringBuilder ticket = new StringBuilder();
+            var listaProductos = Negocio.VentaProducto.ObtenerListaVentas();
+
+            if (listaProductos.Count == 0)
+            {
+                return string.Empty;
+            }
+
+            // Encabezado del ticket
+            ticket.AppendLine("==============================================");
+            ticket.AppendLine("              PRESUPUESTO - LubriCar          ");
+            ticket.AppendLine("==============================================");
+            ticket.AppendLine($"Fecha: {DateTime.Now}");
+            ticket.AppendLine($"Cliente: {lblNombreCliente.Text}");
+            ticket.AppendLine("==============================================");
+            ticket.AppendLine("Cant.   Producto       Precio   Total");
+            ticket.AppendLine("----------------------------------------------");
+
+            // Datos de los productos
+            foreach (var item in listaProductos)
+            {
+                ticket.AppendLine($"{item.Cantidad,5}   {item.Producto,-12}  {item.PrecioVenta,6:C}  {item.PrecioTotalProd,6:C}");
+            }
+
+            ticket.AppendLine("----------------------------------------------");
+
+            // Totales
+            double subtotal = listaProductos.Sum(p => p.PrecioTotalProd);
+            double iva = subtotal * 0.21; // IVA 21%
+            double total = subtotal + iva;
+
+            ticket.AppendLine($"Subtotal: {subtotal,10:C}");
+            ticket.AppendLine($"IVA 21% : {iva,10:C}");
+            ticket.AppendLine($"Total   : {total,10:C}");
+            ticket.AppendLine("==============================================");
+            ticket.AppendLine("           Â¡Esperamos su compra!              ");
+            ticket.AppendLine("==============================================");
+
+            return ticket.ToString();
+        }
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Font font = new Font("Courier New", 10);
+            float yPos = 0;
+            int leftMargin = 10;
+            float lineHeight = font.GetHeight(e.Graphics);
+
+            using (StringReader reader = new StringReader(ticketTexto))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    yPos += lineHeight;
+                    e.Graphics.DrawString(line, font, Brushes.Black, leftMargin, yPos);
+                }
+            }
+        }
+        #endregion
         #region Restriccion de botones
         private void txtCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -424,12 +545,6 @@ namespace Vista
                 e.Handled = true; // Bloquea el caracter
             }
         }
-
-
-
-
-        #endregion
-
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
@@ -437,13 +552,31 @@ namespace Vista
                 e.Handled = true; // Bloquea el caracter
             }
         }
+
+
+
+
+
+        #endregion
+        private void UsuarioPrimero()
+        {
+            grpProductos.Enabled = false;
+            grpPresupuesto.Enabled = false;
+        }
+
+        private void btnPresupuesto_Click_1(object sender, EventArgs e)
+        {
+            ticketTexto = GenerarPresupuesto();
+
+            if (string.IsNullOrWhiteSpace(ticketTexto))
+            {
+                MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+            previewDialog.Document = printDocument;
+            previewDialog.ShowDialog();
+        }
     }
-
-
-
-
-
-
 }
-
-

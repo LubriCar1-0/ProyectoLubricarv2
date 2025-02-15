@@ -61,9 +61,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.grpPresupuesto = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnPresupuesto = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnCargaVenta = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblIVA = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.lblLubripts = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblIdCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.grpProductos.SuspendLayout();
@@ -494,9 +495,9 @@
             // grpPresupuesto
             // 
             this.grpPresupuesto.BackColor = System.Drawing.Color.NavajoWhite;
-            this.grpPresupuesto.Controls.Add(this.button8);
+            this.grpPresupuesto.Controls.Add(this.btnPresupuesto);
             this.grpPresupuesto.Controls.Add(this.btnCancelar);
-            this.grpPresupuesto.Controls.Add(this.button6);
+            this.grpPresupuesto.Controls.Add(this.btnCargaVenta);
             this.grpPresupuesto.Controls.Add(this.lblTotal);
             this.grpPresupuesto.Controls.Add(this.lblIVA);
             this.grpPresupuesto.Controls.Add(this.lblSubTotal);
@@ -516,16 +517,17 @@
             this.grpPresupuesto.TabStop = false;
             this.grpPresupuesto.Text = "Presupuesto";
             // 
-            // button8
+            // btnPresupuesto
             // 
-            this.button8.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(4, 369);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(259, 46);
-            this.button8.TabIndex = 22;
-            this.button8.Text = "Imprimir Presupuesto";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPresupuesto.ForeColor = System.Drawing.Color.Black;
+            this.btnPresupuesto.Location = new System.Drawing.Point(4, 369);
+            this.btnPresupuesto.Name = "btnPresupuesto";
+            this.btnPresupuesto.Size = new System.Drawing.Size(259, 46);
+            this.btnPresupuesto.TabIndex = 22;
+            this.btnPresupuesto.Text = "Imprimir Presupuesto";
+            this.btnPresupuesto.UseVisualStyleBackColor = true;
+            this.btnPresupuesto.Click += new System.EventHandler(this.btnPresupuesto_Click_1);
             // 
             // btnCancelar
             // 
@@ -539,17 +541,16 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // button6
+            // btnCargaVenta
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(457, 369);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(176, 46);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Confirmar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnCargaVenta.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargaVenta.ForeColor = System.Drawing.Color.Black;
+            this.btnCargaVenta.Location = new System.Drawing.Point(457, 369);
+            this.btnCargaVenta.Name = "btnCargaVenta";
+            this.btnCargaVenta.Size = new System.Drawing.Size(176, 46);
+            this.btnCargaVenta.TabIndex = 20;
+            this.btnCargaVenta.Text = "Confirmar";
+            this.btnCargaVenta.UseVisualStyleBackColor = true;
             // 
             // lblTotal
             // 
@@ -732,6 +733,7 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.NavajoWhite;
+            this.groupBox4.Controls.Add(this.lblIdCliente);
             this.groupBox4.Controls.Add(this.lblNombreCliente);
             this.groupBox4.Controls.Add(this.lblLubripts);
             this.groupBox4.Controls.Add(this.label11);
@@ -744,6 +746,14 @@
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Cliente seleccionado";
+            // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Location = new System.Drawing.Point(11, 58);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(0, 36);
+            this.lblIdCliente.TabIndex = 32;
             // 
             // MenuVentaProductos
             // 
@@ -817,9 +827,9 @@
         private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnPresupuesto;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnCargaVenta;
         private System.Windows.Forms.TextBox txtNombreProd;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -833,5 +843,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblIdproducto;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lblIdCliente;
     }
 }

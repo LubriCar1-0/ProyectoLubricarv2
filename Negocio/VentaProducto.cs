@@ -9,16 +9,7 @@ using static Negocio.Producto;
 
 namespace Negocio
 {
-    public class VentaProductoHistorial
-    {
-        public int IdVenta { get; set; }
-        public int idCliente { get; set; }
-        public int FilaProducto { get; set; }
-        public string Producto { get; set; }
-        public double PrecioVenta { get; set; }
-        public double Cantidad { get; set; }
-        public double PrecioTotal { get; set; }
-    }
+    
     public class VentaProducto
     {
         public int idCliente { get; set; }
@@ -27,7 +18,7 @@ namespace Negocio
         public string Producto { get; set; }
         public double PrecioVenta { get; set; }
         public double Cantidad { get; set; }
-        public double PrecioTotal { get; set; }
+        public double PrecioTotalProd { get; set; }
 
         private static List<VentaProducto> ListVentaProducto = new List<VentaProducto>();
 
@@ -51,7 +42,7 @@ namespace Negocio
                 Producto = Producto,
                 PrecioVenta = PrecioVenta,
                 Cantidad = Cantidad,
-                PrecioTotal = (PrecioVenta * Cantidad)
+                PrecioTotalProd = (PrecioVenta * Cantidad)
             });
 
         }
@@ -62,7 +53,7 @@ namespace Negocio
 
             for (int i = 0; i < ListVentaProducto.Count(); i++)
             {
-                valores = ListVentaProducto[i].PrecioTotal;
+                valores = ListVentaProducto[i].PrecioTotalProd;
 
                 total += valores;
 
@@ -80,7 +71,7 @@ namespace Negocio
         {
             foreach (var item in ListVentaProducto)
             {
-                Conectar.AgregaVenta(item.idCliente, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotal);
+                Conectar.AgregaVenta(item.idCliente, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd);
                 Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
             }
         }
@@ -89,15 +80,22 @@ namespace Negocio
         {
             ListVentaProducto.Clear();
         }
+        public static void CargaTotalesVenta(int IdCliente, double subtotal, double iva, double total)
+        {
+            Conectar.CargaTotalesVenta(IdCliente, subtotal, iva, total);
+
+        }
 
 
-
-
-
-
-
-
-
+        public static void Cargaventa(int Idcliente, double Subtotal, double iva, double total)
+        {
+            foreach (var item in ListVentaProducto)
+            {
+                Conectar.AgregaVenta(item.idCliente, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd);
+                Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
+            }
+            Conectar.CargaTotalesVenta(Idcliente, Subtotal, iva, total);
+        }
 
 
     }
