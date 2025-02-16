@@ -40,6 +40,7 @@ namespace Vista
             lblTEXTdisponible.Visible = false;
             lblTEXTOlitros.Visible = false;
             lblIdCliente.Visible = false;
+            lblIdCat.Visible = false;
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
         }
