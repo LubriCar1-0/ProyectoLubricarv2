@@ -273,7 +273,7 @@ namespace Vista
                 lblProducto.Text = Producto;
                 PrecioVenta = precioVenta;
                 lblIdproducto.Text = IdProducto.ToString();
-
+                lblIdCat.Text = idCategorias.ToString();
                 int liquido = ValidarVenta.TraeLiquido(idCategorias);
                 if (liquido == 1)
                 {
@@ -360,22 +360,36 @@ namespace Vista
 
         private void btnagregalista_Click(object sender, EventArgs e)
         {
+            int valorStock = 0;
             int cantidad = Convert.ToInt32(lblDisponible.Text);
             double cantidadlitro = Convert.ToDouble(lblLitros.Text);
-            if (lblLitros.Text == "0" || lblDisponible.Text == "0")
+            int Liquido = ValidarVenta.TraeLiquido(Convert.ToInt32(lblIdCat.Text));
+            if(Liquido == 1 && cantidad == 0.00)
             {
-                MessageBox.Show("No hay producto en stock");
+                valorStock = 1;
             }
-            ValidarVenta.CargaLista(idcliente, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
-            CargaTablaLista();
-            double subtotal = ValidarVenta.CalculaTotal();
-            RecargaTotales(subtotal);
-            ConfiguraDataGrid(dgvVentas);
-            dgvVentas.Columns["idCliente"].Visible = false;
-            dgvVentas.Columns["IdProducto"].Visible = false;
-            LimpiaLblProducto();
-            grpPresupuesto.Enabled = true;
 
+            if (Liquido == 0 && lblDisponible.Text == "0")
+            {
+                valorStock = 1;
+            }
+
+            if(valorStock == 1)
+            {
+                MessageBox.Show("No hay stock a la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                ValidarVenta.CargaLista(idcliente, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
+                CargaTablaLista();
+                double subtotal = ValidarVenta.CalculaTotal();
+                RecargaTotales(subtotal);
+                ConfiguraDataGrid(dgvVentas);
+                dgvVentas.Columns["idCliente"].Visible = false;
+                dgvVentas.Columns["IdProducto"].Visible = false;
+                LimpiaLblProducto();
+                grpPresupuesto.Enabled = true;
+            }       
         }
 
         public void RecargaTotales(double subtotal)

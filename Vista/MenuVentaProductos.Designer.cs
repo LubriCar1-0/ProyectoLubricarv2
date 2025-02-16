@@ -80,6 +80,7 @@
             this.lblLubripts = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblIdCliente = new System.Windows.Forms.Label();
+            this.lblIdCat = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.grpProductos.SuspendLayout();
@@ -325,6 +326,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.groupBox1.Controls.Add(this.lblIdCat);
             this.groupBox1.Controls.Add(this.lblIdproducto);
             this.groupBox1.Controls.Add(this.lblProducto);
             this.groupBox1.Controls.Add(this.txtCantidad);
@@ -755,6 +757,15 @@
             this.lblIdCliente.Size = new System.Drawing.Size(0, 36);
             this.lblIdCliente.TabIndex = 32;
             // 
+            // lblIdCat
+            // 
+            this.lblIdCat.AutoSize = true;
+            this.lblIdCat.Location = new System.Drawing.Point(420, 131);
+            this.lblIdCat.Name = "lblIdCat";
+            this.lblIdCat.Size = new System.Drawing.Size(60, 36);
+            this.lblIdCat.TabIndex = 36;
+            this.lblIdCat.Text = "Idp";
+            // 
             // MenuVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -844,5 +855,6 @@
         private System.Windows.Forms.Label lblIdproducto;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label lblIdCliente;
+        private System.Windows.Forms.Label lblIdCat;
     }
 }
