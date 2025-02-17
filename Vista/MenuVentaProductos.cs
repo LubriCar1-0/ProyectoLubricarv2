@@ -365,12 +365,12 @@ namespace Vista
             int cantidad = Convert.ToInt32(lblDisponible.Text);
             double cantidadlitro = Convert.ToDouble(lblLitros.Text);
             int Liquido = ValidarVenta.TraeLiquido(Convert.ToInt32(lblIdCat.Text));
-            if(Liquido == 1 && cantidad == 0.00)
+            if(Liquido == 1 && cantidadlitro == 0.00)
             {
                 valorStock = 1;
             }
 
-            if (Liquido == 0 && lblDisponible.Text == "0")
+            if (Liquido == 0 && cantidad == 0)
             {
                 valorStock = 1;
             }
@@ -406,35 +406,7 @@ namespace Vista
 
         #endregion
         #region carga venta
-        private void btnCargaVenta_Click(object sender, EventArgs e)
-        {
-
-            DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
-            {
-                VentaProducto.Cargaventa(Convert.ToInt32(lblIdCliente.Text), Convert.ToDouble(lblSubTotal.Text), Convert.ToDouble(lblIVA.Text), Convert.ToDouble(lblTotal.Text));
-                #region ImprimeTicket
-                ticketTexto = GenerarTicket();
-
-                if (string.IsNullOrWhiteSpace(ticketTexto))
-                {
-                    MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
-                previewDialog.Document = printDocument;
-                previewDialog.ShowDialog();
-                #endregion
-
-                //MessageBox.Show("Venta cargada con exito");
-                VentaProducto.LimpiaLista();
-                CargaTablaLista();
-                dgvVentas.Columns["idCliente"].Visible = false;
-                dgvVentas.Columns["IdProducto"].Visible = false;
-                CargatablaProductos();
-            }
-        }
+        
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             VentaProducto.LimpiaLista();
@@ -592,6 +564,39 @@ namespace Vista
             PrintPreviewDialog previewDialog = new PrintPreviewDialog();
             previewDialog.Document = printDocument;
             previewDialog.ShowDialog();
+        }
+
+        private void btnCargaVenta_Click(object sender, EventArgs e)
+        {
+
+            DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                VentaProducto.Cargaventa(Convert.ToInt32(lblIdCliente.Text), Convert.ToDouble(lblSubTotal.Text), Convert.ToDouble(lblIVA.Text), Convert.ToDouble(lblTotal.Text));
+                #region ImprimeTicket
+                ticketTexto = GenerarTicket();
+
+                if (string.IsNullOrWhiteSpace(ticketTexto))
+                {
+                    MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+                previewDialog.Document = printDocument;
+                previewDialog.ShowDialog();
+                #endregion
+
+                //MessageBox.Show("Venta cargada con exito");
+                VentaProducto.LimpiaLista();
+                CargaTablaLista();
+                dgvVentas.Columns["idCliente"].Visible = false;
+                dgvVentas.Columns["IdProducto"].Visible = false;
+                CargatablaProductos();
+                lblSubTotal.Text = "0.0";
+                lblIVA.Text = "0.0";
+                lblTotal.Text = "0.0";
+            }
         }
     }
 }
