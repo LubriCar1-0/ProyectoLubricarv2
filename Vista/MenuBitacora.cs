@@ -30,13 +30,14 @@ namespace Vista
         private void CargarTrabajador()
         {
 
-            Dictionary<int, string> Trabajador = ValidarBitacora.ObtenerTrabajador();
+            List<Empleados> Trabajadores = ValidarBitacora.ObtenerListaTrabajadores(); // Cambiamos a una lista
+            cmbTrabajador.Items.Clear();
 
-            
 
-            foreach (var Trabajadores in Trabajador)
+
+            foreach (var Trabajador in Trabajadores)
             {
-                cmbTrabajador.Items.Add(new KeyValuePair<int, string>(Trabajadores.Key, Trabajadores.Value));
+                cmbTrabajador.Items.Add(new KeyValuePair<int, string>(Trabajador.idtrabajador, $"{Trabajador.Nombre} {Trabajador.Apellido}"));
             }
 
             cmbTrabajador.DisplayMember = "Value";

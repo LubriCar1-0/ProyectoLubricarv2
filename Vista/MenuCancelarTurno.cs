@@ -60,6 +60,10 @@ namespace Vista
                 // Ocultar la columna idTurno siempre
                 if (dgvTurnos.Columns.Contains("idTurno"))
                     dgvTurnos.Columns["idTurno"].Visible = false;
+                if (dgvTurnos.Columns.Contains("idVehiculo"))
+                    dgvTurnos.Columns["idVehiculo"].Visible = false;
+                if (dgvTurnos.Columns.Contains("idCliente"))
+                    dgvTurnos.Columns["idCliente"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -104,6 +108,10 @@ namespace Vista
                 // Ocultar la columna idTurno
                 if (dgvTurnos.Columns.Contains("idTurno"))
                     dgvTurnos.Columns["idTurno"].Visible = false;
+                if (dgvTurnos.Columns.Contains("idVehiculo"))
+                    dgvTurnos.Columns["idVehiculo"].Visible = false;
+                if (dgvTurnos.Columns.Contains("idCliente"))
+                    dgvTurnos.Columns["idCliente"].Visible = false;
             }
             catch (Exception ex)
             {

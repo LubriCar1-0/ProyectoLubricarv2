@@ -700,5 +700,14 @@
   <ItemGroup>
     <None Include="Resources\PantallaBitacora.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuOrdenDeTrabajo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuTurnos2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuOrdenDeTrabajo2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

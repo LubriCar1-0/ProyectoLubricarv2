@@ -14,6 +14,7 @@ using static Negocio.Categorias;
 using static Negocio.Empleados;
 using System.Security.Policy;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 
 namespace Vista
@@ -29,21 +30,21 @@ namespace Vista
         {
             Empleados.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, categoria);
         }
-        public static Dictionary<int, string> ObtenerCategoriasProcesadas()
-        {
-            Dictionary<int, string> categorias = new Dictionary<int, string>();
-            Conectar capaDatos = new Conectar();
-            DataTable TablaCategorias = capaDatos.TraerTablaCategorias();
+        //public static Dictionary<int, string> ObtenerCategoriasProcesadas()
+        //{
+        //    Dictionary<int, string> categorias = new Dictionary<int, string>();
+        //    Conectar capaDatos = new Conectar();
+        //    DataTable TablaCategorias = capaDatos.TraerTablaCategorias();
 
-            foreach (DataRow row in TablaCategorias.Rows)
-            {
-                int idCategoria = Convert.ToInt32(row["idCategoria"]);
-                string nombreCat = row["NombreCat"].ToString().Trim();
-                //int permisoCat = Convert.ToInt32(row["PermisoCat"]);
-                categorias.Add(idCategoria, nombreCat);
-            }
-            return categorias;
-        }
+        //    foreach (DataRow row in TablaCategorias.Rows)
+        //    {
+        //        int idCategoria = Convert.ToInt32(row["idCategoria"]);
+        //        string nombreCat = row["NombreCat"].ToString().Trim();
+        //        //int permisoCat = Convert.ToInt32(row["PermisoCat"]);
+        //        categorias.Add(idCategoria, nombreCat);
+        //    }
+        //    return categorias;
+        //}
         public static DataTable TraeEmpleados()
         {
             Conectar CapaDatos = new Conectar();
@@ -108,10 +109,10 @@ namespace Vista
             }
             return CategoriasEmpleados;
         }
-        public static void IngresaCategoriaEMP(string nombreCat, string catedescripcion, int CodPerm)
-        {
-            CategoriaEmpleado.IngresaCatergoriasEMP(nombreCat, catedescripcion, CodPerm);
-        }
+        //public static void IngresaCategoriaEMP(string nombreCat, string catedescripcion, int CodPerm)
+        //{
+        //    CategoriaEmpleado.IngresaCatergoriasEMP(nombreCat, catedescripcion, CodPerm);
+        //}
         public static DataTable TraeCategoriasEmpleados()
         {
             Conectar CapaDatos = new Conectar();
@@ -134,6 +135,18 @@ namespace Vista
             Conectar CapaDatos = new Conectar();
             DataTable VerificaPermiso = CapaDatos.TraerCategoriasEmpleados();
             return VerificaPermiso;
+        }
+        public static Dictionary<int, string> ObtenerTrabajadoresProcesados()
+        {
+            List<Vehiculo> listaClientes = Vehiculo.ObtenerClientes();
+            Dictionary<int, string> clientesProcesados = new Dictionary<int, string>();
+
+            foreach (var cliente in listaClientes)
+            {
+                clientesProcesados.Add(cliente.IdCliente, $"{cliente.NombreCliente}{cliente.ApellidoCliente}");
+            }
+
+            return clientesProcesados;
         }
 
 
@@ -449,7 +462,10 @@ namespace Vista
     #region OrdenDeTrabajo
     public class ValidarOrdenDeTrabajo : OrdenDeTrabajo
     {
-        
+        public static void CrearOrden(string NombreCompleto, DateTime dia, string descripcion, int trabajadorId, int idCliente, int idVehiculo, int idTurno)
+        {
+            OrdenDeTrabajo.CrearOrdenDeTrabajo(NombreCompleto, dia, descripcion, trabajadorId, idCliente, idVehiculo, idTurno);
+        }
 
 
 
@@ -526,18 +542,11 @@ namespace Vista
     #region Bitacora 
     public class ValidarBitacora : MenuBitacora
     {
-        public static Dictionary<int, string> ObtenerTrabajador()
+        public static List<Empleados> ObtenerListaTrabajadores()
         {
-            List<Empleados> ListaTrabajador = Empleados.ObtenerTrabajador();
-            Dictionary<int, string> Trabajadores = new Dictionary<int, string>();
-
-            foreach (var Trabajador in ListaTrabajador)
-            {
-                Trabajadores.Add(Trabajador.idtrabajador, $"{Trabajador.Nombre} {Trabajador.Apellido}");
-            }
-
-            return Trabajadores;
+            return Empleados.ObtenerTrabajador(); // Devuelve la lista completa para filtrarla en la vista
         }
+
         public static DataTable BuscarBitacora()
         {
             Conectar CapaDatos = new Conectar();

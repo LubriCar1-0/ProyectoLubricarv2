@@ -21,6 +21,7 @@ namespace Negocio
         public string Nombre { get; private set; }
         public string Apellido { get; private set; }
         public int idtrabajador { get; private set; }
+        public int IdCat {  get; private set; }
 
         
         #endregion
@@ -155,7 +156,9 @@ namespace Negocio
                         idtrabajador = Convert.ToInt32(row["idTrabajador"]),
                         Nombre = row["NomTR"].ToString(),
                         Apellido = row["ApeTR"].ToString(),
-                        
+                        IdCat = Convert.ToInt32(row["idCategoria"]),
+
+
                     });
                 }
             }

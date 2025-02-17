@@ -1295,6 +1295,40 @@ namespace Datos
 
         #endregion
 
+        #region OrdenDeTrabajo  
+        public static void CrearOrdenTrabajo(string nombreCompleto, DateTime dia, string descripcion, int trabajadorId, int idCliente, int idVehiculo, string estado, int idTurno)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "InsertarOrdenDeTrabajo";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+            comando.Parameters.AddWithValue("@idVehiculo", idVehiculo);
+            comando.Parameters.AddWithValue("@idTrabajador", trabajadorId);
+            comando.Parameters.AddWithValue("@descripcion", descripcion);
+            comando.Parameters.AddWithValue("@empleadoACargo", nombreCompleto);
+            comando.Parameters.AddWithValue("@estado", estado);
+            comando.Parameters.AddWithValue("@FechaDeInicio", dia);
+            comando.Parameters.AddWithValue("@idTurno", idTurno);
+            comando.ExecuteNonQuery();
+            desconectar();
+        }
+        public DataTable BuscarOrdenes()
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerOrdenesDeTrabajo";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+
+            desconectar();
+            return dt;
+        }
+
+        #endregion
 
     }
 

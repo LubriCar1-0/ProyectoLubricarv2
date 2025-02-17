@@ -17,24 +17,52 @@ namespace Vista
         public MenuTurnosTrabajos()
         {
             InitializeComponent();
+            CargarTrabajador();
+            dgvTurnos.ReadOnly = true;
+        }
+        private void CargarTrabajador()
+        {
+            List<Empleados> Trabajadores = ValidarBitacora.ObtenerListaTrabajadores(); // Cambiamos a una lista
+            cmbTrabajador.Items.Clear();
+
+            foreach (var Trabajador in Trabajadores)
+            {
+                if (Trabajador.IdCat == 3) // Filtrar solo los trabajadores con IdCat = 3
+                {
+                    cmbTrabajador.Items.Add(new KeyValuePair<int, string>(Trabajador.idtrabajador, $"{Trabajador.Nombre} {Trabajador.Apellido}"));
+                }
+            }
+
+            cmbTrabajador.DisplayMember = "Value";
+            cmbTrabajador.ValueMember = "Key";
+        }
+
+        private string trabajadorSeleccionadoNombre = "";
+        private void cmbTrabajador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTrabajador.SelectedItem is KeyValuePair<int, string> TrabajadorSeleccionado)
+            {
+                int TrabajadorId = TrabajadorSeleccionado.Key;
+                trabajadorSeleccionadoNombre = TrabajadorSeleccionado.Value;
+
+            }
         }
 
         private void MenuOrdenDeTrabajo_Load(object sender, EventArgs e)
         {
-            // Configurar los DateTimePicker para mostrar el formato deseado
+            
             dtpFecha.Format = DateTimePickerFormat.Custom;
-            dtpFecha.CustomFormat = "yyyy-MM-dd"; // Solo fecha
+            dtpFecha.CustomFormat = "yyyy-MM-dd"; 
 
-            dtpHora.Format = DateTimePickerFormat.Custom;
-            dtpHora.CustomFormat = "HH:mm"; // Solo hora
+           
 
             txbNombre.ReadOnly = true;
             txbApellido.ReadOnly = true;
             txbPatente.ReadOnly = true;
-            TxbDescripcion.ReadOnly = true;
+            
 
-            DtpFechaCargada.Enabled = false;
-            dtpHora.Enabled = false;
+            //DtpFechaCargada.Enabled = false;
+            
 
             CargarTurnos();
             
@@ -42,9 +70,9 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Si el TextBox de teléfono está vacío se envía NULL; de lo contrario se hace Trim.
+            
             string telefono = string.IsNullOrEmpty(txtTelCliente.Text) ? null : txtTelCliente.Text.Trim();
-            // La patente se envía en mayúsculas luego de hacer Trim.
+            
             string patente = string.IsNullOrEmpty(txtPatente.Text) ? null : txtPatente.Text.Trim().ToUpper();
             string fecha = dtpFecha.CustomFormat != " " ? dtpFecha.Value.ToString("yyyy-MM-dd") : null;
 
@@ -69,6 +97,10 @@ namespace Vista
                 // Ocultar la columna idTurno
                 if (dgvTurnos.Columns.Contains("idTurno"))
                     dgvTurnos.Columns["idTurno"].Visible = false;
+                if (dgvTurnos.Columns.Contains("idVehiculo"))
+                    dgvTurnos.Columns["idVehiculo"].Visible = false;
+                if (dgvTurnos.Columns.Contains("idCliente"))
+                    dgvTurnos.Columns["idCliente"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -78,7 +110,7 @@ namespace Vista
 
 
 
-        private int idVehiculoSeleccionado = 0;
+       
 
         
         private void CargarTurnos()
@@ -88,104 +120,103 @@ namespace Vista
                 dgvTurnos.DataSource = null;
                 dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
                 dgvTurnos.RowHeadersVisible = false;
-               
+
                 if (dgvTurnos.Columns.Contains("idTurno"))
-                {
                     dgvTurnos.Columns["idTurno"].Visible = false;
-                }
+                if (dgvTurnos.Columns.Contains("idVehiculo"))
+                    dgvTurnos.Columns["idVehiculo"].Visible = false;
+                if (dgvTurnos.Columns.Contains("idCliente"))
+                    dgvTurnos.Columns["idCliente"].Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al cargar los vehículos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        // Declaración de variables para almacenar el idCliente e idVehiculo seleccionados
+        private int idTurno = 0;
+        private int idCliente = 0;
+        private int idVehiculo = 0;
+        private string NombreCompleto;
 
         private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
-                return; 
+                return;
 
             DataGridViewRow filaSeleccionada = dgvTurnos.Rows[e.RowIndex];
 
             if (filaSeleccionada != null)
             {
-                txbNombre.Text = filaSeleccionada.Cells["Nombre"].Value?.ToString().ToUpper() ?? "";
-                txbApellido.Text = filaSeleccionada.Cells["Apellido"].Value?.ToString().ToUpper() ?? "";
-                txbPatente.Text = filaSeleccionada.Cells["Patente"].Value?.ToString() ?? "";
-                TxbDescripcion.Text = filaSeleccionada.Cells["Descripción"].Value?.ToString().ToUpper() ?? "";
+                // Obtener el valor de la columna "Cliente" (Nombre y Apellido concatenados)
+                string clienteCompleto = filaSeleccionada.Cells["Cliente"].Value?.ToString() ?? "";
 
-                if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fecha))
+                // Separar el nombre y apellido
+                string[] partes = clienteCompleto.Split(' ');
+                string Apellido = partes.Length > 0 ? partes[0] : "";
+                string Nombre = partes.Length > 1 ? string.Join(" ", partes.Skip(1)) : "";
+
+                // Cargar en los TextBox
+                txbNombre.Text = Nombre.ToUpper();
+                txbApellido.Text = Apellido.ToUpper();
+                NombreCompleto = filaSeleccionada.Cells["Cliente"].Value?.ToString().ToUpper() ?? "";
+                txbPatente.Text = filaSeleccionada.Cells["patenteVH"].Value?.ToString() ?? "";
+                TxbDescripcion.Text = filaSeleccionada.Cells["descripcion"].Value?.ToString().ToUpper() ?? "";
+
+                // Obtener la fecha del turno
+                if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fechaTurno))
                 {
-                    DtpFechaCargada.Value = fecha; 
+                    DtpFechaCargada.Value = fechaTurno;
+                    DtpFechaCargada.MinDate = fechaTurno.AddDays(1); // Bloquea fechas anteriores
                 }
 
-                if (TimeSpan.TryParse(filaSeleccionada.Cells["Hora"].Value?.ToString(), out TimeSpan hora))
-                {
-                    dtpHora.Value = DateTime.Today.Add(hora); 
-                }
+                idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+                idVehiculo = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
+                idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
             }
         }
-        private void dtpHora_ValueChanged_1(object sender, EventArgs e)
-        {
-            DateTime horaSeleccionada = dtpHora.Value;
 
-            
-            int minutos = horaSeleccionada.Minute;
-            int minutosRedondeados = (minutos / 30) * 30;
 
-            
-            DateTime horaRedondeada = new DateTime(
-                horaSeleccionada.Year,
-                horaSeleccionada.Month,
-                horaSeleccionada.Day,
-                horaSeleccionada.Hour,
-                minutosRedondeados,
-                0 
-            );
 
-            
-            DateTime horaMinima = new DateTime(horaSeleccionada.Year, horaSeleccionada.Month, horaSeleccionada.Day, 8, 0, 0); 
-            DateTime horaMaxima = new DateTime(horaSeleccionada.Year, horaSeleccionada.Month, horaSeleccionada.Day, 20, 0, 0); 
-            if (horaRedondeada < horaMinima)
-            {
-                dtpHora.Value = horaMinima; 
-            }
-            else if (horaRedondeada > horaMaxima)
-            {
-                dtpHora.Value = horaMaxima; 
-            }
-            else
-            {
-                dtpHora.Value = horaRedondeada; 
-            }
-
-        }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
+                if (DtpFechaCargada.Value >= dtpFecha.Value)
+                {
+                    MessageBox.Show("La fecha de inicio de la orden de trabajo debe ser posterior a la fecha del turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 
-                string nombre = txbNombre.Text.Trim();
-                string apellido = txbApellido.Text.Trim();
                 string patente = txbPatente.Text.Trim();
                 DateTime dia = dtpFecha.Value.Date;
-                TimeSpan soloHora = dtpHora.Value.TimeOfDay;
+                int trabajadorId = cmbTrabajador.SelectedItem is KeyValuePair<int, string> seleccionado ? seleccionado.Key : 0;
                 string descripcion = TxbDescripcion.Text.Trim();
 
-               
-                MenuOrdenDeTrabajo PantOrdenDeTrabajo = new MenuOrdenDeTrabajo(nombre, apellido, patente, dia, soloHora, descripcion);
+                // Validar que se haya seleccionado un turno y se hayan asignado los IDs correctamente
+                if (idCliente <= 0)
+                {
+                    MessageBox.Show("El idCliente no es válido o no se ha seleccionado un turno.");
+                    return;
+                }
+
+                if (idVehiculo <= 0)
+                {
+                    MessageBox.Show("El idVehiculo no es válido o no se ha seleccionado un turno.");
+                    return;
+                }
+                if (trabajadorId <= 0)
+                {
+                    MessageBox.Show("Debe seleccionar un trabajador antes de continuar.");
+                    return;
+                }
+
+                ValidarOrdenDeTrabajo.CrearOrden(trabajadorSeleccionadoNombre, dia, descripcion, trabajadorId, idCliente, idVehiculo, idTurno);
 
                 MessageBox.Show("Se ha creado la Orden de Trabajo Correctamente");
                 LimpiaTextBox();
                 CargarTurnos();
-
-                
-                this.Hide();
-                PantOrdenDeTrabajo.ShowDialog(); 
-                this.Show();
-
-                
             }
             catch (Exception ex)
             {
@@ -193,13 +224,15 @@ namespace Vista
             }
         }
 
+
+
         private void LimpiaTextBox()
         {
             txbNombre.Text = string.Empty;
             txbApellido.Text = string.Empty;
             txbPatente.Text = string.Empty;
             DtpFechaCargada.Text = string.Empty;
-            dtpHora.Text = string.Empty;
+            
             TxbDescripcion.Text = string.Empty;
 
         }
@@ -211,8 +244,6 @@ namespace Vista
             dtpFecha.Value = DateTime.Today;
             DtpFechaCargada.CustomFormat = " ";
             DtpFechaCargada.Value = DateTime.Today;      
-            //dtpHora.CustomFormat = " "; 
-            dtpHora.Value = DateTime.Now;
             txtPatente.Clear();
             txtTelCliente.Clear();
             txbApellido.Clear();
@@ -233,5 +264,7 @@ namespace Vista
             Hide();
             PantMenuTurnos.ShowDialog();
         }
+
+        
     }
 }
