@@ -598,5 +598,10 @@ namespace Vista
                 lblTotal.Text = "0.0";
             }
         }
+
+        private void grpProductos_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

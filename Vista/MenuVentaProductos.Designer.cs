@@ -126,7 +126,7 @@
             this.label3.Location = new System.Drawing.Point(67, 45);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 41);
+            this.label3.Size = new System.Drawing.Size(135, 30);
             this.label3.TabIndex = 8;
             this.label3.Text = "Dni Cliente:";
             // 
@@ -158,7 +158,7 @@
             this.txtCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.Location = new System.Drawing.Point(259, 41);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(409, 48);
+            this.txtCliente.Size = new System.Drawing.Size(409, 35);
             this.txtCliente.TabIndex = 11;
             this.txtCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCliente_KeyPress);
             // 
@@ -178,7 +178,7 @@
             this.cmbCategoriaPrd.FormattingEnabled = true;
             this.cmbCategoriaPrd.Location = new System.Drawing.Point(198, 122);
             this.cmbCategoriaPrd.Name = "cmbCategoriaPrd";
-            this.cmbCategoriaPrd.Size = new System.Drawing.Size(226, 44);
+            this.cmbCategoriaPrd.Size = new System.Drawing.Size(226, 33);
             this.cmbCategoriaPrd.TabIndex = 13;
             this.cmbCategoriaPrd.Text = "seleccionar categoria";
             this.cmbCategoriaPrd.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriaPrd_SelectedIndexChanged);
@@ -192,7 +192,7 @@
             this.label4.Location = new System.Drawing.Point(79, 125);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 41);
+            this.label4.Size = new System.Drawing.Size(119, 30);
             this.label4.TabIndex = 14;
             this.label4.Text = "Categoria:";
             // 
@@ -205,7 +205,7 @@
             this.label5.Location = new System.Drawing.Point(453, 122);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 41);
+            this.label5.Size = new System.Drawing.Size(95, 30);
             this.label5.TabIndex = 15;
             this.label5.Text = "Codigo:";
             // 
@@ -214,7 +214,7 @@
             this.txtCodigoProd.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoProd.Location = new System.Drawing.Point(555, 120);
             this.txtCodigoProd.Name = "txtCodigoProd";
-            this.txtCodigoProd.Size = new System.Drawing.Size(142, 48);
+            this.txtCodigoProd.Size = new System.Drawing.Size(142, 35);
             this.txtCodigoProd.TabIndex = 16;
             // 
             // label6
@@ -226,7 +226,7 @@
             this.label6.Location = new System.Drawing.Point(13, 50);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(228, 41);
+            this.label6.Size = new System.Drawing.Size(157, 30);
             this.label6.TabIndex = 18;
             this.label6.Text = "Seleccionado:";
             // 
@@ -239,7 +239,7 @@
             this.lblProducto.Location = new System.Drawing.Point(204, 50);
             this.lblProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(366, 41);
+            this.lblProducto.Size = new System.Drawing.Size(252, 30);
             this.lblProducto.TabIndex = 19;
             this.lblProducto.Text = "Producto seleccionado";
             // 
@@ -251,7 +251,7 @@
             this.label8.Location = new System.Drawing.Point(12, 809);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(248, 62);
+            this.label8.Size = new System.Drawing.Size(164, 41);
             this.label8.TabIndex = 20;
             this.label8.Text = "Cantidad:";
             // 
@@ -264,7 +264,7 @@
             this.lblTEXTdisponible.Location = new System.Drawing.Point(39, 91);
             this.lblTEXTdisponible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTEXTdisponible.Name = "lblTEXTdisponible";
-            this.lblTEXTdisponible.Size = new System.Drawing.Size(190, 41);
+            this.lblTEXTdisponible.Size = new System.Drawing.Size(131, 30);
             this.lblTEXTdisponible.TabIndex = 21;
             this.lblTEXTdisponible.Text = "Disponible:";
             // 
@@ -277,7 +277,7 @@
             this.lblDisponible.Location = new System.Drawing.Point(204, 91);
             this.lblDisponible.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDisponible.Name = "lblDisponible";
-            this.lblDisponible.Size = new System.Drawing.Size(37, 41);
+            this.lblDisponible.Size = new System.Drawing.Size(26, 30);
             this.lblDisponible.TabIndex = 22;
             this.lblDisponible.Text = "0";
             // 
@@ -286,7 +286,7 @@
             this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F);
             this.textBox3.Location = new System.Drawing.Point(426, 804);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 68);
+            this.textBox3.Size = new System.Drawing.Size(132, 48);
             this.textBox3.TabIndex = 23;
             // 
             // button4
@@ -322,6 +322,7 @@
             this.grpProductos.TabIndex = 25;
             this.grpProductos.TabStop = false;
             this.grpProductos.Text = "Productos";
+            this.grpProductos.Enter += new System.EventHandler(this.grpProductos_Enter);
             // 
             // groupBox1
             // 
@@ -350,7 +351,7 @@
             this.lblIdCat.AutoSize = true;
             this.lblIdCat.Location = new System.Drawing.Point(420, 131);
             this.lblIdCat.Name = "lblIdCat";
-            this.lblIdCat.Size = new System.Drawing.Size(91, 54);
+            this.lblIdCat.Size = new System.Drawing.Size(60, 36);
             this.lblIdCat.TabIndex = 36;
             this.lblIdCat.Text = "Idp";
             // 
@@ -363,7 +364,7 @@
             this.lblIdproducto.Location = new System.Drawing.Point(170, 50);
             this.lblIdproducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIdproducto.Name = "lblIdproducto";
-            this.lblIdproducto.Size = new System.Drawing.Size(37, 41);
+            this.lblIdproducto.Size = new System.Drawing.Size(26, 30);
             this.lblIdproducto.TabIndex = 35;
             this.lblIdproducto.Text = "0";
             // 
@@ -372,7 +373,7 @@
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCantidad.Location = new System.Drawing.Point(187, 135);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(85, 48);
+            this.txtCantidad.Size = new System.Drawing.Size(85, 35);
             this.txtCantidad.TabIndex = 34;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
@@ -385,7 +386,7 @@
             this.lblTEXTOlitros.Location = new System.Drawing.Point(95, 91);
             this.lblTEXTOlitros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTEXTOlitros.Name = "lblTEXTOlitros";
-            this.lblTEXTOlitros.Size = new System.Drawing.Size(110, 41);
+            this.lblTEXTOlitros.Size = new System.Drawing.Size(75, 30);
             this.lblTEXTOlitros.TabIndex = 32;
             this.lblTEXTOlitros.Text = "Litros:";
             // 
@@ -398,7 +399,7 @@
             this.lblLitros.Location = new System.Drawing.Point(204, 91);
             this.lblLitros.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLitros.Name = "lblLitros";
-            this.lblLitros.Size = new System.Drawing.Size(37, 41);
+            this.lblLitros.Size = new System.Drawing.Size(26, 30);
             this.lblLitros.TabIndex = 33;
             this.lblLitros.Text = "0";
             // 
@@ -423,7 +424,7 @@
             this.label2.Location = new System.Drawing.Point(57, 135);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 41);
+            this.label2.Size = new System.Drawing.Size(113, 30);
             this.label2.TabIndex = 27;
             this.label2.Text = "Cantidad:";
             // 
@@ -456,7 +457,7 @@
             this.txtNombreProd.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProd.Location = new System.Drawing.Point(198, 68);
             this.txtNombreProd.Name = "txtNombreProd";
-            this.txtNombreProd.Size = new System.Drawing.Size(311, 48);
+            this.txtNombreProd.Size = new System.Drawing.Size(311, 35);
             this.txtNombreProd.TabIndex = 30;
             // 
             // label21
@@ -468,7 +469,7 @@
             this.label21.Location = new System.Drawing.Point(79, 71);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(152, 41);
+            this.label21.Size = new System.Drawing.Size(105, 30);
             this.label21.TabIndex = 29;
             this.label21.Text = "Nombre:";
             // 
@@ -573,7 +574,7 @@
             this.lblTotal.Location = new System.Drawing.Point(668, 322);
             this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(80, 52);
+            this.lblTotal.Size = new System.Drawing.Size(54, 35);
             this.lblTotal.TabIndex = 19;
             this.lblTotal.Text = "0,0";
             // 
@@ -586,7 +587,7 @@
             this.lblIVA.Location = new System.Drawing.Point(410, 322);
             this.lblIVA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIVA.Name = "lblIVA";
-            this.lblIVA.Size = new System.Drawing.Size(80, 52);
+            this.lblIVA.Size = new System.Drawing.Size(54, 35);
             this.lblIVA.TabIndex = 18;
             this.lblIVA.Text = "0,0";
             // 
@@ -599,7 +600,7 @@
             this.lblSubTotal.Location = new System.Drawing.Point(116, 322);
             this.lblSubTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(80, 52);
+            this.lblSubTotal.Size = new System.Drawing.Size(54, 35);
             this.lblSubTotal.TabIndex = 17;
             this.lblSubTotal.Text = "0,0";
             // 
@@ -612,7 +613,7 @@
             this.label17.Location = new System.Drawing.Point(636, 322);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(46, 52);
+            this.label17.Size = new System.Drawing.Size(31, 35);
             this.label17.TabIndex = 16;
             this.label17.Text = "$";
             // 
@@ -625,7 +626,7 @@
             this.label16.Location = new System.Drawing.Point(381, 322);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(46, 52);
+            this.label16.Size = new System.Drawing.Size(31, 35);
             this.label16.TabIndex = 15;
             this.label16.Text = "$";
             // 
@@ -638,7 +639,7 @@
             this.label15.Location = new System.Drawing.Point(84, 322);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(46, 52);
+            this.label15.Size = new System.Drawing.Size(31, 35);
             this.label15.TabIndex = 14;
             this.label15.Text = "$";
             // 
@@ -651,7 +652,7 @@
             this.label14.Location = new System.Drawing.Point(645, 278);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(131, 52);
+            this.label14.Size = new System.Drawing.Size(86, 35);
             this.label14.TabIndex = 13;
             this.label14.Text = "Total:";
             // 
@@ -664,7 +665,7 @@
             this.label13.Location = new System.Drawing.Point(361, 278);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(197, 52);
+            this.label13.Size = new System.Drawing.Size(131, 35);
             this.label13.TabIndex = 12;
             this.label13.Text = "IVA 21%:";
             // 
@@ -677,7 +678,7 @@
             this.label1.Location = new System.Drawing.Point(66, 278);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 52);
+            this.label1.Size = new System.Drawing.Size(131, 35);
             this.label1.TabIndex = 11;
             this.label1.Text = "Subtotal:";
             // 
@@ -699,7 +700,7 @@
             this.lblNombreCliente.Location = new System.Drawing.Point(404, 57);
             this.lblNombreCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(417, 54);
+            this.lblNombreCliente.Size = new System.Drawing.Size(277, 36);
             this.lblNombreCliente.TabIndex = 10;
             this.lblNombreCliente.Text = "Nombre del cliente";
             // 
@@ -712,7 +713,7 @@
             this.label11.Location = new System.Drawing.Point(116, 58);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(434, 52);
+            this.label11.Size = new System.Drawing.Size(287, 35);
             this.label11.TabIndex = 9;
             this.label11.Text = "Cliente seleccionado:";
             // 
@@ -725,7 +726,7 @@
             this.label22.Location = new System.Drawing.Point(119, 120);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(366, 41);
+            this.label22.Size = new System.Drawing.Size(253, 30);
             this.label22.TabIndex = 28;
             this.label22.Text = "Cantidad LubriPuntos: ";
             // 
@@ -738,7 +739,7 @@
             this.lblLubripts.Location = new System.Drawing.Point(518, 120);
             this.lblLubripts.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLubripts.Name = "lblLubripts";
-            this.lblLubripts.Size = new System.Drawing.Size(55, 62);
+            this.lblLubripts.Size = new System.Drawing.Size(37, 41);
             this.lblLubripts.TabIndex = 31;
             this.lblLubripts.Text = "0";
             // 
@@ -764,12 +765,12 @@
             this.lblIdCliente.AutoSize = true;
             this.lblIdCliente.Location = new System.Drawing.Point(11, 58);
             this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(0, 54);
+            this.lblIdCliente.Size = new System.Drawing.Size(0, 36);
             this.lblIdCliente.TabIndex = 32;
             // 
             // MenuVentaProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaVentaDeProductos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

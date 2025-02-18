@@ -104,17 +104,22 @@ namespace Vista
             Hide();
             llamarMenuTurnos.ShowDialog();
         }
-
+        int idTurno = 0;
+        int idClienteBD = 0;
+        int idVehiculoBD = 0;
+        DateTime fecha;
+        TimeSpan hora;
         private void dgvTurnos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             
             DataGridViewRow filaSeleccionada = dgvTurnos.Rows[e.RowIndex];
-            int idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
-            int idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
-            int idVehiculo = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
-            CbxSelectCL.Text = ValidarClientes.ObtNomCliente(idCliente);
-            CbxSelectVH.Text = validarTurnos.ObtNomVehiculo(idVehiculo);
+            idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
+            idClienteBD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+            idVehiculoBD = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
+            CbxSelectCL.Text = ValidarClientes.ObtNomCliente(idClienteBD);
+            CbxSelectVH.Text = validarTurnos.ObtNomVehiculo(idVehiculoBD);
             TxtDescripcionTurno.Text = filaSeleccionada.Cells["descripcion"].Value.ToString();
+
             if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fecha))
             {
                 dtpSelecionarDia.Value = fecha; 
@@ -125,88 +130,11 @@ namespace Vista
                 DateTime fechaHora = DateTime.Today.Add(hora); 
                 dtpHorario.Value = fechaHora; 
             }
-
-            if (dgvTurnos.Columns[e.ColumnIndex].Name == "Editar")
-            {
-                if (e.RowIndex >= 0)
-                {
-                    
-                    string DescUPD = filaSeleccionada.Cells["descripcion"].Value?.ToString();
-                    int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
-                    int idVehiculoUPD = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
-                    CbxSelectVH.SelectedValue = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
-
-                    
-                    if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fechaupd))
-                    {
-                        dtpSelecionarDia.Value = fechaupd; 
-                    }
-
-                    
-                    if (TimeSpan.TryParse(filaSeleccionada.Cells["Hora"].Value?.ToString(), out TimeSpan horaupd))
-                    {
-                        DateTime fechaHoraupd = DateTime.Today.Add(horaupd); 
-                        dtpHorario.Value = fechaHoraupd; 
-                    }
-                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            CbxSelectCL.Enabled = false;
+            CbxSelectVH.Enabled = false;
 
 
 
-                    if (resultado == DialogResult.Yes)
-                    {
-
-                        validarTurnos.ModificacionTurno(idTurno, idVehiculoUPD, idClienteUPD, fechaupd, horaupd, DescUPD);
-                        Console.WriteLine("Cambio realizado.");
-                        //LimpiaTextBox();
-                        CargarClientes();
-                        LimpiaTextBox();
-                    }
-                    else if (resultado == DialogResult.No)
-                    {
-                        LimpiaTextBox();
-                        CargarClientes();
-                    }
-                }
-            }
-            else if (dgvTurnos.Columns[e.ColumnIndex].Name == "Cancelar")
-            {
-                if (e.RowIndex >= 0)
-                {
-                    int idTurnoUPD = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
-                    
-                    string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
-
-                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (resultado == DialogResult.Yes)
-                    {
-
-                        if (Estado == "ACT")
-                        {
-                            validarTurnos.CancelarTurno(idTurnoUPD, "DES");
-                            MessageBox.Show("Turno CANCELADO.");
-                            CargarTurnos();
-                            LimpiaTextBox();
-                            //ConfigurarDataGridView();
-                            dgvTurnos.Columns["idTurno"].Visible = false;
-                            dgvTurnos.Columns["idVehiculo"].Visible = false;
-                            dgvTurnos.Columns["idCliente"].Visible = false;
-                        }
-                        else if (Estado == "DES")
-                        {
-                            MessageBox.Show("Este turno ya ha sido cancelado");
-                            CargarClientes();
-                            LimpiaTextBox();
-
-
-                        }
-                    }
-                    else if (resultado == DialogResult.No)
-                    {
-                        CargarClientes(); 
-                    }
-
-                }
-            }
         }
 
         private void CargarTurnos()
@@ -215,7 +143,7 @@ namespace Vista
             {
                 dgvTurnos.DataSource = null;
                 dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
-                dgvTurnos.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+                dgvTurnos.RowHeadersVisible = false; 
             
                 if (dgvTurnos.Columns.Contains("idVehiculo"))
                 {
@@ -319,12 +247,8 @@ namespace Vista
         }
         #endregion
 
-        private void BtnAgregarCliente_Click(object sender, EventArgs e)
-        {
-            MenuClientes PantallaMenuClientes = new MenuClientes();
-            Hide();
-            PantallaMenuClientes.ShowDialog();
-        }
+        
+
 
         private void btnBorraCampos_Click(object sender, EventArgs e)
         {
@@ -335,12 +259,17 @@ namespace Vista
         {
             CbxSelectCL.Text = string.Empty;
             CbxSelectVH.Text = string.Empty;
-            dtpSelecionarDia.Text = string.Empty;
-            dtpHorario.Text = string.Empty;
-            TxtDescripcionTurno.Text = string.Empty;
-            
 
+
+            dtpSelecionarDia.Format = DateTimePickerFormat.Custom;
+            dtpSelecionarDia.CustomFormat = " "; 
+
+            dtpHorario.Format = DateTimePickerFormat.Custom;
+            dtpHorario.CustomFormat = " "; 
+
+            TxtDescripcionTurno.Text = string.Empty;
         }
+
 
         private void BtnCrearTurno_Click(object sender, EventArgs e)
         {
@@ -391,6 +320,27 @@ namespace Vista
             }
         }
 
-        
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            DialogResult respuesta = MessageBox.Show("¿Está seguro que desea editar este registro?", "Confirmar Edición", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                DateTime nuevaFecha = dtpSelecionarDia.Value;
+                TimeSpan nuevaHora = dtpHorario.Value.TimeOfDay;
+                string nuevaDescripcion = TxtDescripcionTurno.Text;
+
+                validarTurnos.ModificacionTurno(idTurno, idClienteBD, idVehiculoBD, nuevaFecha, nuevaHora, nuevaDescripcion);
+
+                MessageBox.Show("El registro se ha actualizado con éxito.", "Actualización Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                MessageBox.Show("La edición ha sido cancelada.", "Operación Cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+        }
     }
 }

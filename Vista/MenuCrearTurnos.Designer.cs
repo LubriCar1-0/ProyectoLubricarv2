@@ -28,19 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpSelecionarDia = new System.Windows.Forms.DateTimePicker();
             this.CbxSelectCL = new System.Windows.Forms.ComboBox();
             this.CbxSelectVH = new System.Windows.Forms.ComboBox();
             this.TxtDescripcionTurno = new System.Windows.Forms.TextBox();
-            this.BtnAgregarCliente = new System.Windows.Forms.Button();
+            this.BtnEditar = new System.Windows.Forms.Button();
             this.BtnCrearTurno = new System.Windows.Forms.Button();
             this.dtpHorario = new System.Windows.Forms.DateTimePicker();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.btnBorraCampos = new System.Windows.Forms.Button();
-            this.chbEditar = new System.Windows.Forms.CheckBox();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,24 +78,24 @@
             this.TxtDescripcionTurno.Size = new System.Drawing.Size(330, 88);
             this.TxtDescripcionTurno.TabIndex = 4;
             // 
-            // BtnAgregarCliente
+            // BtnEditar
             // 
-            this.BtnAgregarCliente.BackgroundImage = global::Vista.Properties.Resources.BtnAgregarClientes;
-            this.BtnAgregarCliente.FlatAppearance.BorderSize = 0;
-            this.BtnAgregarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarCliente.Location = new System.Drawing.Point(323, 955);
-            this.BtnAgregarCliente.Name = "BtnAgregarCliente";
-            this.BtnAgregarCliente.Size = new System.Drawing.Size(214, 43);
-            this.BtnAgregarCliente.TabIndex = 5;
-            this.BtnAgregarCliente.UseVisualStyleBackColor = true;
-            this.BtnAgregarCliente.Click += new System.EventHandler(this.BtnAgregarCliente_Click);
+            this.BtnEditar.BackgroundImage = global::Vista.Properties.Resources.BtnEditar;
+            this.BtnEditar.FlatAppearance.BorderSize = 0;
+            this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnEditar.Location = new System.Drawing.Point(1466, 955);
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.Size = new System.Drawing.Size(96, 43);
+            this.BtnEditar.TabIndex = 5;
+            this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnCrearTurno
             // 
             this.BtnCrearTurno.BackgroundImage = global::Vista.Properties.Resources.BtnCrearTurnoBlanco;
             this.BtnCrearTurno.FlatAppearance.BorderSize = 0;
             this.BtnCrearTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCrearTurno.Location = new System.Drawing.Point(1355, 955);
+            this.BtnCrearTurno.Location = new System.Drawing.Point(445, 955);
             this.BtnCrearTurno.Name = "BtnCrearTurno";
             this.BtnCrearTurno.Size = new System.Drawing.Size(214, 43);
             this.BtnCrearTurno.TabIndex = 6;
@@ -117,9 +114,7 @@
             // dgvTurnos
             // 
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Editar});
-            this.dgvTurnos.Location = new System.Drawing.Point(445, 667);
+            this.dgvTurnos.Location = new System.Drawing.Point(464, 680);
             this.dgvTurnos.Name = "dgvTurnos";
             this.dgvTurnos.Size = new System.Drawing.Size(1031, 257);
             this.dgvTurnos.TabIndex = 9;
@@ -152,32 +147,6 @@
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
             // 
-            // chbEditar
-            // 
-            this.chbEditar.AutoSize = true;
-            this.chbEditar.BackColor = System.Drawing.Color.Transparent;
-            this.chbEditar.Location = new System.Drawing.Point(1482, 768);
-            this.chbEditar.Name = "chbEditar";
-            this.chbEditar.Size = new System.Drawing.Size(90, 17);
-            this.chbEditar.TabIndex = 24;
-            this.chbEditar.Text = "Permitir Editar";
-            this.chbEditar.UseVisualStyleBackColor = false;
-            // 
-            // Editar
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
-            // 
             // MenuCrearTurnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,13 +154,12 @@
             this.BackgroundImage = global::Vista.Properties.Resources.MenuCreacionDeTurnos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.chbEditar);
             this.Controls.Add(this.btnBorraCampos);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.dgvTurnos);
             this.Controls.Add(this.dtpHorario);
             this.Controls.Add(this.BtnCrearTurno);
-            this.Controls.Add(this.BtnAgregarCliente);
+            this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.TxtDescripcionTurno);
             this.Controls.Add(this.CbxSelectVH);
             this.Controls.Add(this.CbxSelectCL);
@@ -212,13 +180,11 @@
         private System.Windows.Forms.ComboBox CbxSelectCL;
         private System.Windows.Forms.ComboBox CbxSelectVH;
         private System.Windows.Forms.TextBox TxtDescripcionTurno;
-        private System.Windows.Forms.Button BtnAgregarCliente;
+        private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnCrearTurno;
         private System.Windows.Forms.DateTimePicker dtpHorario;
         private System.Windows.Forms.DataGridView dgvTurnos;
         private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.Button btnBorraCampos;
-        private System.Windows.Forms.CheckBox chbEditar;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

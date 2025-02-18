@@ -709,5 +709,11 @@
   <ItemGroup>
     <None Include="Resources\MenuOrdenDeTrabajo2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuOrdenDeTrabajo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuOrdenDeTrabajo4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

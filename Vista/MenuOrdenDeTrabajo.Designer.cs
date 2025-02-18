@@ -32,7 +32,7 @@
             this.txbApellido = new System.Windows.Forms.TextBox();
             this.txbPatente = new System.Windows.Forms.TextBox();
             this.TxbDescripcion = new System.Windows.Forms.TextBox();
-            this.cmbTrabajador = new System.Windows.Forms.ComboBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.DtpFechaDeInicio = new System.Windows.Forms.DateTimePicker();
             this.grpProductos = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -72,7 +72,7 @@
             // 
             // txbNombre
             // 
-            this.txbNombre.Location = new System.Drawing.Point(1292, 267);
+            this.txbNombre.Location = new System.Drawing.Point(791, 247);
             this.txbNombre.Multiline = true;
             this.txbNombre.Name = "txbNombre";
             this.txbNombre.Size = new System.Drawing.Size(208, 34);
@@ -80,7 +80,7 @@
             // 
             // txbApellido
             // 
-            this.txbApellido.Location = new System.Drawing.Point(959, 376);
+            this.txbApellido.Location = new System.Drawing.Point(1187, 247);
             this.txbApellido.Multiline = true;
             this.txbApellido.Name = "txbApellido";
             this.txbApellido.Size = new System.Drawing.Size(208, 34);
@@ -88,7 +88,7 @@
             // 
             // txbPatente
             // 
-            this.txbPatente.Location = new System.Drawing.Point(959, 267);
+            this.txbPatente.Location = new System.Drawing.Point(420, 247);
             this.txbPatente.Multiline = true;
             this.txbPatente.Name = "txbPatente";
             this.txbPatente.Size = new System.Drawing.Size(208, 34);
@@ -96,25 +96,25 @@
             // 
             // TxbDescripcion
             // 
-            this.TxbDescripcion.Location = new System.Drawing.Point(1292, 484);
+            this.TxbDescripcion.Location = new System.Drawing.Point(791, 344);
             this.TxbDescripcion.Multiline = true;
             this.TxbDescripcion.Name = "TxbDescripcion";
             this.TxbDescripcion.Size = new System.Drawing.Size(319, 107);
             this.TxbDescripcion.TabIndex = 23;
             // 
-            // cmbTrabajador
+            // cmbEstado
             // 
-            this.cmbTrabajador.FormattingEnabled = true;
-            this.cmbTrabajador.Location = new System.Drawing.Point(959, 484);
-            this.cmbTrabajador.Name = "cmbTrabajador";
-            this.cmbTrabajador.Size = new System.Drawing.Size(208, 21);
-            this.cmbTrabajador.TabIndex = 24;
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Location = new System.Drawing.Point(1187, 347);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(208, 21);
+            this.cmbEstado.TabIndex = 24;
             // 
             // DtpFechaDeInicio
             // 
-            this.DtpFechaDeInicio.Location = new System.Drawing.Point(1292, 373);
+            this.DtpFechaDeInicio.Location = new System.Drawing.Point(420, 344);
             this.DtpFechaDeInicio.Name = "DtpFechaDeInicio";
-            this.DtpFechaDeInicio.Size = new System.Drawing.Size(220, 20);
+            this.DtpFechaDeInicio.Size = new System.Drawing.Size(221, 20);
             this.DtpFechaDeInicio.TabIndex = 25;
             // 
             // grpProductos
@@ -135,9 +135,9 @@
             this.grpProductos.Controls.Add(this.label8);
             this.grpProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.grpProductos.ForeColor = System.Drawing.Color.Black;
-            this.grpProductos.Location = new System.Drawing.Point(261, 511);
+            this.grpProductos.Location = new System.Drawing.Point(261, 457);
             this.grpProductos.Name = "grpProductos";
-            this.grpProductos.Size = new System.Drawing.Size(706, 501);
+            this.grpProductos.Size = new System.Drawing.Size(706, 514);
             this.grpProductos.TabIndex = 26;
             this.grpProductos.TabStop = false;
             this.grpProductos.Text = "Productos";
@@ -430,9 +430,9 @@
             this.grpPresupuesto.Controls.Add(this.dgvVentas);
             this.grpPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpPresupuesto.ForeColor = System.Drawing.Color.Black;
-            this.grpPresupuesto.Location = new System.Drawing.Point(973, 597);
+            this.grpPresupuesto.Location = new System.Drawing.Point(973, 528);
             this.grpPresupuesto.Name = "grpPresupuesto";
-            this.grpPresupuesto.Size = new System.Drawing.Size(628, 415);
+            this.grpPresupuesto.Size = new System.Drawing.Size(628, 388);
             this.grpPresupuesto.TabIndex = 28;
             this.grpPresupuesto.TabStop = false;
             this.grpPresupuesto.Text = "Lista De Productos";
@@ -472,13 +472,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenDeTrabajo2;
+            this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenDeTrabajo4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.grpPresupuesto);
             this.Controls.Add(this.grpProductos);
             this.Controls.Add(this.DtpFechaDeInicio);
-            this.Controls.Add(this.cmbTrabajador);
+            this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.TxbDescripcion);
             this.Controls.Add(this.txbPatente);
             this.Controls.Add(this.txbApellido);
@@ -505,7 +505,7 @@
         private System.Windows.Forms.TextBox txbApellido;
         private System.Windows.Forms.TextBox txbPatente;
         private System.Windows.Forms.TextBox TxbDescripcion;
-        private System.Windows.Forms.ComboBox cmbTrabajador;
+        private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.DateTimePicker DtpFechaDeInicio;
         private System.Windows.Forms.GroupBox grpProductos;
         private System.Windows.Forms.GroupBox groupBox1;
