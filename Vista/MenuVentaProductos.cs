@@ -55,6 +55,7 @@ namespace Vista
             LlamarMenuVentas.ShowDialog();
         }
         #endregion
+
         #region carga tablas
         private void CargatablaClientes()
         {
@@ -215,6 +216,7 @@ namespace Vista
 
 
         #endregion
+
         #region Selecciona Cliente
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -259,6 +261,7 @@ namespace Vista
 
         }
         #endregion
+
         #region Selecciona Producto
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -305,6 +308,7 @@ namespace Vista
         }
 
         #endregion
+
         #region filtraProducto
         public int IdCategorias;
         private void cmbCategoriaPrd_SelectedIndexChanged(object sender, EventArgs e)
@@ -357,6 +361,7 @@ namespace Vista
         }
 
         #endregion
+
         #region carga lista Productos
 
         private void btnagregalista_Click(object sender, EventArgs e)
@@ -405,6 +410,7 @@ namespace Vista
 
 
         #endregion
+
         #region carga venta
         
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -421,6 +427,7 @@ namespace Vista
         
 
         #endregion
+
         #region impresion del ticket
         private string GenerarTicket()
         {
@@ -524,6 +531,7 @@ namespace Vista
             }
         }
         #endregion
+
         #region Restriccion de botones
         private void txtCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -545,6 +553,7 @@ namespace Vista
 
 
         #endregion
+
         private void UsuarioPrimero()
         {
             grpProductos.Enabled = false;

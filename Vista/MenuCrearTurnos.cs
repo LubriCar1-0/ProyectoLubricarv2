@@ -17,7 +17,9 @@ namespace Vista
             InitializeComponent();
             CargarClientes();
             CbxSelectCL.SelectedIndexChanged += CbxSelectCL_SelectedIndexChanged;
-            CbxSelectVH.SelectedIndexChanged += CbxSelectVH_SelectedIndexChanged; 
+            CbxSelectVH.SelectedIndexChanged += CbxSelectVH_SelectedIndexChanged;
+            dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTurnos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             CargarTurnos();
             ConfigurarDateTimePickerHora();
         }
@@ -143,8 +145,9 @@ namespace Vista
             {
                 dgvTurnos.DataSource = null;
                 dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
-                dgvTurnos.RowHeadersVisible = false; 
-            
+                dgvTurnos.RowHeadersVisible = false;
+                dgvTurnos.AllowUserToAddRows = false;
+
                 if (dgvTurnos.Columns.Contains("idVehiculo"))
                 {
                     dgvTurnos.Columns["idVehiculo"].Visible = false;
@@ -152,6 +155,11 @@ namespace Vista
                 if (dgvTurnos.Columns.Contains("idCliente"))
                 {
                     dgvTurnos.Columns["idCliente"].Visible = false;
+
+                }
+                if (dgvTurnos.Columns.Contains("idTurno"))
+                {
+                    dgvTurnos.Columns["idTurno"].Visible = false;
                 }
             }
             catch (Exception ex)

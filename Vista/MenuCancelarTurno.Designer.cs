@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.txtTelCliente = new System.Windows.Forms.TextBox();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
@@ -37,10 +37,10 @@
             this.lblTelefonoCliente = new System.Windows.Forms.Label();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.grbFiltros = new System.Windows.Forms.GroupBox();
+            this.txtPatente = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblVehiculo = new System.Windows.Forms.Label();
-            this.txtPatente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.grbFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -80,13 +80,13 @@
             // 
             // Cancelar
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle3;
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Cancelar.HeaderText = "Cancelar";
             this.Cancelar.Name = "Cancelar";
@@ -129,6 +129,7 @@
             this.BtnVolver.TabIndex = 14;
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // grbFiltros
             // 
@@ -147,6 +148,14 @@
             this.grbFiltros.Size = new System.Drawing.Size(942, 595);
             this.grbFiltros.TabIndex = 27;
             this.grbFiltros.TabStop = false;
+            // 
+            // txtPatente
+            // 
+            this.txtPatente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPatente.Location = new System.Drawing.Point(223, 91);
+            this.txtPatente.Name = "txtPatente";
+            this.txtPatente.Size = new System.Drawing.Size(539, 35);
+            this.txtPatente.TabIndex = 22;
             // 
             // dtpFecha
             // 
@@ -180,14 +189,6 @@
             this.lblVehiculo.Size = new System.Drawing.Size(105, 30);
             this.lblVehiculo.TabIndex = 14;
             this.lblVehiculo.Text = "Vehiculo";
-            // 
-            // txtPatente
-            // 
-            this.txtPatente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPatente.Location = new System.Drawing.Point(223, 91);
-            this.txtPatente.Name = "txtPatente";
-            this.txtPatente.Size = new System.Drawing.Size(539, 35);
-            this.txtPatente.TabIndex = 22;
             // 
             // MenuCancelarTurno
             // 

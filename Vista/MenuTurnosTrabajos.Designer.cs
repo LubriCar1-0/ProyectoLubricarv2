@@ -40,15 +40,18 @@
             this.BtnVolver = new System.Windows.Forms.Button();
             this.txtPatente = new System.Windows.Forms.TextBox();
             this.grpProductos = new System.Windows.Forms.GroupBox();
+            this.btnVisualizarOrden = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.cmbTrabajador = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.DtpFechaCargada = new System.Windows.Forms.DateTimePicker();
             this.TxbDescripcion = new System.Windows.Forms.TextBox();
+            this.DtpFechaCargada = new System.Windows.Forms.DateTimePicker();
+            this.txbPatente = new System.Windows.Forms.TextBox();
             this.txbNombre = new System.Windows.Forms.TextBox();
             this.txbApellido = new System.Windows.Forms.TextBox();
-            this.txbPatente = new System.Windows.Forms.TextBox();
-            this.cmbTrabajador = new System.Windows.Forms.ComboBox();
+            this.chbIniciados = new System.Windows.Forms.CheckBox();
+            this.chbActivos = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
             this.grpProductos.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +75,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(539, 26);
             this.dtpFecha.TabIndex = 21;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // dgvTurnos
             // 
@@ -177,6 +181,7 @@
             // grpProductos
             // 
             this.grpProductos.BackColor = System.Drawing.Color.Transparent;
+            this.grpProductos.Controls.Add(this.btnVisualizarOrden);
             this.grpProductos.Controls.Add(this.button4);
             this.grpProductos.Controls.Add(this.cmbTrabajador);
             this.grpProductos.Controls.Add(this.textBox3);
@@ -196,6 +201,18 @@
             this.grpProductos.TabStop = false;
             this.grpProductos.Text = "Orden De Trabajo";
             // 
+            // btnVisualizarOrden
+            // 
+            this.btnVisualizarOrden.FlatAppearance.BorderSize = 0;
+            this.btnVisualizarOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizarOrden.Image = global::Vista.Properties.Resources.BtnVisualizarOrden;
+            this.btnVisualizarOrden.Location = new System.Drawing.Point(521, 395);
+            this.btnVisualizarOrden.Name = "btnVisualizarOrden";
+            this.btnVisualizarOrden.Size = new System.Drawing.Size(252, 44);
+            this.btnVisualizarOrden.TabIndex = 26;
+            this.btnVisualizarOrden.UseVisualStyleBackColor = true;
+            this.btnVisualizarOrden.Click += new System.EventHandler(this.btnVisualizarOrden_Click);
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(1419, 866);
@@ -204,6 +221,15 @@
             this.button4.TabIndex = 24;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
+            // 
+            // cmbTrabajador
+            // 
+            this.cmbTrabajador.FormattingEnabled = true;
+            this.cmbTrabajador.Location = new System.Drawing.Point(494, 259);
+            this.cmbTrabajador.Name = "cmbTrabajador";
+            this.cmbTrabajador.Size = new System.Drawing.Size(208, 44);
+            this.cmbTrabajador.TabIndex = 25;
+            this.cmbTrabajador.SelectedIndexChanged += new System.EventHandler(this.cmbTrabajador_SelectedIndexChanged);
             // 
             // textBox3
             // 
@@ -225,6 +251,14 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "Cantidad:";
             // 
+            // TxbDescripcion
+            // 
+            this.TxbDescripcion.Location = new System.Drawing.Point(912, 259);
+            this.TxbDescripcion.Multiline = true;
+            this.TxbDescripcion.Name = "TxbDescripcion";
+            this.TxbDescripcion.Size = new System.Drawing.Size(388, 108);
+            this.TxbDescripcion.TabIndex = 14;
+            // 
             // DtpFechaCargada
             // 
             this.DtpFechaCargada.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -234,13 +268,13 @@
             this.DtpFechaCargada.TabIndex = 5;
             this.DtpFechaCargada.ValueChanged += new System.EventHandler(this.DtpFechaCargada_ValueChanged);
             // 
-            // TxbDescripcion
+            // txbPatente
             // 
-            this.TxbDescripcion.Location = new System.Drawing.Point(912, 259);
-            this.TxbDescripcion.Multiline = true;
-            this.TxbDescripcion.Name = "TxbDescripcion";
-            this.TxbDescripcion.Size = new System.Drawing.Size(388, 108);
-            this.TxbDescripcion.TabIndex = 14;
+            this.txbPatente.Location = new System.Drawing.Point(494, 145);
+            this.txbPatente.Multiline = true;
+            this.txbPatente.Name = "txbPatente";
+            this.txbPatente.Size = new System.Drawing.Size(208, 34);
+            this.txbPatente.TabIndex = 21;
             // 
             // txbNombre
             // 
@@ -258,22 +292,27 @@
             this.txbApellido.Size = new System.Drawing.Size(208, 34);
             this.txbApellido.TabIndex = 20;
             // 
-            // txbPatente
+            // chbIniciados
             // 
-            this.txbPatente.Location = new System.Drawing.Point(494, 145);
-            this.txbPatente.Multiline = true;
-            this.txbPatente.Name = "txbPatente";
-            this.txbPatente.Size = new System.Drawing.Size(208, 34);
-            this.txbPatente.TabIndex = 21;
+            this.chbIniciados.AutoSize = true;
+            this.chbIniciados.BackColor = System.Drawing.Color.Transparent;
+            this.chbIniciados.Location = new System.Drawing.Point(1306, 249);
+            this.chbIniciados.Name = "chbIniciados";
+            this.chbIniciados.Size = new System.Drawing.Size(80, 17);
+            this.chbIniciados.TabIndex = 27;
+            this.chbIniciados.Text = "INICIADOS";
+            this.chbIniciados.UseVisualStyleBackColor = false;
             // 
-            // cmbTrabajador
+            // chbActivos
             // 
-            this.cmbTrabajador.FormattingEnabled = true;
-            this.cmbTrabajador.Location = new System.Drawing.Point(494, 259);
-            this.cmbTrabajador.Name = "cmbTrabajador";
-            this.cmbTrabajador.Size = new System.Drawing.Size(208, 44);
-            this.cmbTrabajador.TabIndex = 25;
-            this.cmbTrabajador.SelectedIndexChanged += new System.EventHandler(this.cmbTrabajador_SelectedIndexChanged);
+            this.chbActivos.AutoSize = true;
+            this.chbActivos.BackColor = System.Drawing.Color.Transparent;
+            this.chbActivos.Location = new System.Drawing.Point(1306, 272);
+            this.chbActivos.Name = "chbActivos";
+            this.chbActivos.Size = new System.Drawing.Size(72, 17);
+            this.chbActivos.TabIndex = 28;
+            this.chbActivos.Text = "ACTIVOS";
+            this.chbActivos.UseVisualStyleBackColor = false;
             // 
             // MenuTurnosTrabajos
             // 
@@ -282,6 +321,8 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuTurnos2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.chbActivos);
+            this.Controls.Add(this.chbIniciados);
             this.Controls.Add(this.grpProductos);
             this.Controls.Add(this.txtPatente);
             this.Controls.Add(this.BtnVolver);
@@ -327,5 +368,8 @@
         private System.Windows.Forms.TextBox txbApellido;
         private System.Windows.Forms.TextBox txbPatente;
         private System.Windows.Forms.ComboBox cmbTrabajador;
+        private System.Windows.Forms.CheckBox chbIniciados;
+        private System.Windows.Forms.CheckBox chbActivos;
+        private System.Windows.Forms.Button btnVisualizarOrden;
     }
 }

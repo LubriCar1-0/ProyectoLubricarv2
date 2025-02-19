@@ -79,7 +79,7 @@ namespace Negocio
             else
             {
                 // Si no existe, insertar el nuevo turno
-                string estado = "ACT";
+                string estado = "ACTIVO";
                 capaDatos.InsertarTurno(dia, horaTimeSpan, idCliente, idVehiculo, descripcion, estado);
             }
         }

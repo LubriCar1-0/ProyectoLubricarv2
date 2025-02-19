@@ -643,6 +643,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnVisualizarOrden {
+            get {
+                object obj = ResourceManager.GetObject("BtnVisualizarOrden", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnVolver {
             get {
                 object obj = ResourceManager.GetObject("BtnVolver", resourceCulture);

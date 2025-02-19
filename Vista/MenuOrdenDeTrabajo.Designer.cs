@@ -256,6 +256,7 @@
             this.btnagregalista.TabIndex = 25;
             this.btnagregalista.Text = "Agregar";
             this.btnagregalista.UseVisualStyleBackColor = true;
+            this.btnagregalista.Click += new System.EventHandler(this.btnagregalista_Click_1);
             // 
             // lblTEXTdisponible
             // 
@@ -306,6 +307,7 @@
             this.btnRecargarProd.Size = new System.Drawing.Size(54, 48);
             this.btnRecargarProd.TabIndex = 31;
             this.btnRecargarProd.UseVisualStyleBackColor = false;
+            this.btnRecargarProd.Click += new System.EventHandler(this.btnRecargarProd_Click_1);
             // 
             // btnBuscarProd
             // 
@@ -317,6 +319,7 @@
             this.btnBuscarProd.Size = new System.Drawing.Size(54, 48);
             this.btnBuscarProd.TabIndex = 14;
             this.btnBuscarProd.UseVisualStyleBackColor = false;
+            this.btnBuscarProd.Click += new System.EventHandler(this.btnBuscarProd_Click_1);
             // 
             // txtNombreProd
             // 
@@ -383,6 +386,7 @@
             this.cmbCategoriaPrd.Size = new System.Drawing.Size(226, 33);
             this.cmbCategoriaPrd.TabIndex = 13;
             this.cmbCategoriaPrd.Text = "seleccionar categoria";
+            this.cmbCategoriaPrd.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriaPrd_SelectedIndexChanged_1);
             // 
             // label5
             // 
@@ -458,6 +462,7 @@
             this.btnCargaVenta.TabIndex = 20;
             this.btnCargaVenta.Text = "Confirmar";
             this.btnCargaVenta.UseVisualStyleBackColor = true;
+            this.btnCargaVenta.Click += new System.EventHandler(this.btnCargaVenta_Click);
             // 
             // dgvVentas
             // 

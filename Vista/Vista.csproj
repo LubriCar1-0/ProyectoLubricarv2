@@ -715,5 +715,8 @@
   <ItemGroup>
     <None Include="Resources\MenuOrdenDeTrabajo4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnVisualizarOrden.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

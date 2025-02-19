@@ -1044,7 +1044,7 @@ namespace Datos
 
         }
 
-        public DataTable TurnosFiltro(string telefono, string patente, string fecha)
+        public DataTable TurnosFiltro(string telefono, string patente, string fecha, string estado)
         {
             conectar();
             comando.Connection = conexion;
@@ -1054,12 +1054,15 @@ namespace Datos
             comando.Parameters.AddWithValue("@telefono", !string.IsNullOrEmpty(telefono) ? (object)telefono : DBNull.Value);
             comando.Parameters.AddWithValue("@patente", !string.IsNullOrEmpty(patente) ? (object)patente : DBNull.Value);
             comando.Parameters.AddWithValue("@fecha", !string.IsNullOrEmpty(fecha) ? (object)fecha : DBNull.Value);
+            comando.Parameters.AddWithValue("@estado", !string.IsNullOrEmpty(estado) ? (object)estado : DBNull.Value);
             leer = comando.ExecuteReader();
             dt.Load(leer);
             leer.Close();
             desconectar();
+
             return dt;
         }
+
 
         public DataTable TurnosActivos()
         {
@@ -1314,7 +1317,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             desconectar();
         }
-        public DataTable BuscarOrdenes()
+        public DataTable BuscarOrdenesFinalizadas()
         {
             conectar();
             comando.Parameters.Clear();
@@ -1327,7 +1330,20 @@ namespace Datos
             desconectar();
             return dt;
         }
-
+        public DataTable BuscarOrden(int idTurno)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerOrdenDeTrabajo";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idTurno", idTurno);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+        
         #endregion
 
     }

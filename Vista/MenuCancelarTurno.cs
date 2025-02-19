@@ -17,35 +17,45 @@ namespace Vista
         {
             InitializeComponent();
             CargarTurnos();
+            dgvTurnos.ReadOnly = true;
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.CustomFormat = " ";
+            dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTurnos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
+            dgvTurnos.RowHeadersVisible = false;
+
         }
 
         private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Evitar procesar clics en el encabezado
+            
             if (e.RowIndex < 0)
                 return;
 
             DataGridViewRow filaSeleccionada = dgvTurnos.Rows[e.RowIndex];
             int idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
 
-            // Si se presionó el botón "Cancelar"
+            
             if (dgvTurnos.Columns[e.ColumnIndex].Name == "Cancelar")
             {
                 string estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
                 DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
                 {
-                    if (estado == "ACT")
+                    if (estado == "ACTIVO")
                     {
-                        validarTurnos.CancelarTurno(idTurno, "DES");
+                        validarTurnos.CancelarTurno(idTurno, "CANCELADO");
                         MessageBox.Show("Turno CANCELADO.");
                         CargarTurnos();
                     }
-                    else if (estado == "DES")
+                    else if (estado == "CANCELADO")
                     {
                         MessageBox.Show("Este turno ya ha sido cancelado");
+                    }
+                    else if (estado == "INICIADO")
+                    {
+                        MessageBox.Show("No se puede cancelar un turno que tiene una Orden de Trabajo INICIADA");
                     }
                 }
             }
@@ -57,7 +67,8 @@ namespace Vista
                 dgvTurnos.DataSource = null;
                 dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
                 dgvTurnos.RowHeadersVisible = false;
-                // Ocultar la columna idTurno siempre
+                dgvTurnos.AllowUserToAddRows = false;
+
                 if (dgvTurnos.Columns.Contains("idTurno"))
                     dgvTurnos.Columns["idTurno"].Visible = false;
                 if (dgvTurnos.Columns.Contains("idVehiculo"))
@@ -85,27 +96,24 @@ namespace Vista
             // La patente se envía en mayúsculas luego de hacer Trim.
             string patente = string.IsNullOrEmpty(txtPatente.Text) ? null : txtPatente.Text.Trim().ToUpper();
             string fecha = dtpFecha.CustomFormat != " " ? dtpFecha.Value.ToString("yyyy-MM-dd") : null;
-
-            if (telefono == null && patente == null && string.IsNullOrEmpty(fecha))
-            {
-                MessageBox.Show("Debe ingresar algún dato para filtrar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                CargarTurnos();
-            }
-            else
-            {
-                CargaTurnosFiltro(telefono, patente, fecha);
-            }
+            string estado = "ACTIVO";
+            
+            
+                CargaTurnosFiltro(telefono, patente, fecha, estado);
+            
         }
 
-        private void CargaTurnosFiltro(string telefono, string patente, string fecha)
+
+        private void CargaTurnosFiltro(string telefono, string patente, string fecha, string estado)
         {
             try
             {
                 dgvTurnos.DataSource = null;
-                var turnos = validarTurnos.TurnosFiltro(telefono, patente, fecha);
+                var turnos = validarTurnos.TurnosFiltro(telefono, patente, fecha, estado);
                 dgvTurnos.DataSource = turnos;
                 dgvTurnos.RowHeadersVisible = false;
-                // Ocultar la columna idTurno
+
+                // Ocultar columnas no deseadas
                 if (dgvTurnos.Columns.Contains("idTurno"))
                     dgvTurnos.Columns["idTurno"].Visible = false;
                 if (dgvTurnos.Columns.Contains("idVehiculo"))
@@ -120,7 +128,8 @@ namespace Vista
         }
 
 
-        
+
+
 
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)
@@ -134,6 +143,13 @@ namespace Vista
             txtPatente.Clear();
             txtTelCliente.Clear();
             CargarTurnos();
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            MenuTurnos PantallaMenuTurnos = new MenuTurnos();
+            Hide();
+            PantallaMenuTurnos.ShowDialog();
         }
     }
 }
