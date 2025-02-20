@@ -16,5 +16,21 @@ namespace Vista
         {
             InitializeComponent();
         }
+
+        private void PtbLubriPuntos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnValorLP_Click(object sender, EventArgs e)
+        {
+            PantallaValorLubriPuntos();
+        }
+
+        public static void PantallaValorLubriPuntos()
+        {
+            MenuValoresLubriPuntos LlamarMenuValoresLubriPuntos = new MenuValoresLubriPuntos();
+            LlamarMenuValoresLubriPuntos.ShowDialog();
+        }
     }
 }

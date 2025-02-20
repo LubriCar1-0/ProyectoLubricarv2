@@ -196,6 +196,12 @@
     <Compile Include="MenuTurnos.Designer.cs">
       <DependentUpon>MenuTurnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuValoresLubriPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuValoresLubriPuntos.Designer.cs">
+      <DependentUpon>MenuValoresLubriPuntos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuTurnos.resx">
       <DependentUpon>MenuTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuValoresLubriPuntos.resx">
+      <DependentUpon>MenuValoresLubriPuntos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuVehiculos.resx">
       <DependentUpon>MenuVehiculos.cs</DependentUpon>
@@ -717,6 +726,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BtnVisualizarOrden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuLubri-Puntos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAsignarLubriPuntos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnValoresLubri-Puntos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuValoresLubri-Puntos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

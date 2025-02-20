@@ -173,6 +173,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnAsignarLubriPuntos {
+            get {
+                object obj = ResourceManager.GetObject("BtnAsignarLubriPuntos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnBuscarIcon {
             get {
                 object obj = ResourceManager.GetObject("BtnBuscarIcon", resourceCulture);
@@ -603,6 +613,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtnValoresLubri_Puntos {
+            get {
+                object obj = ResourceManager.GetObject("BtnValoresLubri-Puntos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnVehiculo {
             get {
                 object obj = ResourceManager.GetObject("BtnVehiculo", resourceCulture);
@@ -783,6 +803,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MenuLubri_Puntos {
+            get {
+                object obj = ResourceManager.GetObject("MenuLubri-Puntos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuLubri_Punts {
             get {
                 object obj = ResourceManager.GetObject("MenuLubri-Punts", resourceCulture);
@@ -836,6 +866,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap MenuOrdenDeTrabajo4 {
             get {
                 object obj = ResourceManager.GetObject("MenuOrdenDeTrabajo4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuValoresLubri_Puntos {
+            get {
+                object obj = ResourceManager.GetObject("MenuValoresLubri-Puntos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
