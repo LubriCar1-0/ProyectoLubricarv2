@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbNombre = new System.Windows.Forms.TextBox();
-            this.txbApellido = new System.Windows.Forms.TextBox();
             this.txbPatente = new System.Windows.Forms.TextBox();
+            this.txbEmpleado = new System.Windows.Forms.TextBox();
+            this.txbVehiculo = new System.Windows.Forms.TextBox();
             this.TxbDescripcion = new System.Windows.Forms.TextBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.DtpFechaDeInicio = new System.Windows.Forms.DateTimePicker();
@@ -61,7 +61,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.grpPresupuesto = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnCargaVenta = new System.Windows.Forms.Button();
+            this.btnGuardarLista = new System.Windows.Forms.Button();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.grpProductos.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -70,49 +70,55 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
             // 
-            // txbNombre
-            // 
-            this.txbNombre.Location = new System.Drawing.Point(791, 247);
-            this.txbNombre.Multiline = true;
-            this.txbNombre.Name = "txbNombre";
-            this.txbNombre.Size = new System.Drawing.Size(208, 34);
-            this.txbNombre.TabIndex = 20;
-            // 
-            // txbApellido
-            // 
-            this.txbApellido.Location = new System.Drawing.Point(1187, 247);
-            this.txbApellido.Multiline = true;
-            this.txbApellido.Name = "txbApellido";
-            this.txbApellido.Size = new System.Drawing.Size(208, 34);
-            this.txbApellido.TabIndex = 21;
-            // 
             // txbPatente
             // 
-            this.txbPatente.Location = new System.Drawing.Point(420, 247);
+            this.txbPatente.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.txbPatente.Location = new System.Drawing.Point(804, 257);
             this.txbPatente.Multiline = true;
             this.txbPatente.Name = "txbPatente";
             this.txbPatente.Size = new System.Drawing.Size(208, 34);
-            this.txbPatente.TabIndex = 22;
+            this.txbPatente.TabIndex = 20;
+            // 
+            // txbEmpleado
+            // 
+            this.txbEmpleado.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbEmpleado.Location = new System.Drawing.Point(1198, 257);
+            this.txbEmpleado.Multiline = true;
+            this.txbEmpleado.Name = "txbEmpleado";
+            this.txbEmpleado.Size = new System.Drawing.Size(208, 34);
+            this.txbEmpleado.TabIndex = 21;
+            // 
+            // txbVehiculo
+            // 
+            this.txbVehiculo.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbVehiculo.Location = new System.Drawing.Point(420, 257);
+            this.txbVehiculo.Multiline = true;
+            this.txbVehiculo.Name = "txbVehiculo";
+            this.txbVehiculo.Size = new System.Drawing.Size(208, 34);
+            this.txbVehiculo.TabIndex = 22;
             // 
             // TxbDescripcion
             // 
-            this.TxbDescripcion.Location = new System.Drawing.Point(791, 344);
+            this.TxbDescripcion.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxbDescripcion.Location = new System.Drawing.Point(804, 356);
             this.TxbDescripcion.Multiline = true;
             this.TxbDescripcion.Name = "TxbDescripcion";
-            this.TxbDescripcion.Size = new System.Drawing.Size(319, 107);
+            this.TxbDescripcion.Size = new System.Drawing.Size(319, 85);
             this.TxbDescripcion.TabIndex = 23;
             // 
             // cmbEstado
             // 
+            this.cmbEstado.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(1187, 347);
+            this.cmbEstado.Location = new System.Drawing.Point(1198, 356);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(208, 21);
+            this.cmbEstado.Size = new System.Drawing.Size(208, 36);
             this.cmbEstado.TabIndex = 24;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // DtpFechaDeInicio
             // 
-            this.DtpFechaDeInicio.Location = new System.Drawing.Point(420, 344);
+            this.DtpFechaDeInicio.Location = new System.Drawing.Point(420, 353);
             this.DtpFechaDeInicio.Name = "DtpFechaDeInicio";
             this.DtpFechaDeInicio.Size = new System.Drawing.Size(221, 20);
             this.DtpFechaDeInicio.TabIndex = 25;
@@ -206,6 +212,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(85, 35);
             this.txtCantidad.TabIndex = 34;
+            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // lblTEXTOlitros
             // 
@@ -351,6 +358,7 @@
             this.dgvProductos.RowTemplate.Height = 28;
             this.dgvProductos.Size = new System.Drawing.Size(681, 156);
             this.dgvProductos.TabIndex = 6;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // button4
             // 
@@ -430,7 +438,7 @@
             // 
             this.grpPresupuesto.BackColor = System.Drawing.Color.NavajoWhite;
             this.grpPresupuesto.Controls.Add(this.btnCancelar);
-            this.grpPresupuesto.Controls.Add(this.btnCargaVenta);
+            this.grpPresupuesto.Controls.Add(this.btnGuardarLista);
             this.grpPresupuesto.Controls.Add(this.dgvVentas);
             this.grpPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpPresupuesto.ForeColor = System.Drawing.Color.Black;
@@ -452,17 +460,17 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // btnCargaVenta
+            // btnGuardarLista
             // 
-            this.btnCargaVenta.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargaVenta.ForeColor = System.Drawing.Color.Black;
-            this.btnCargaVenta.Location = new System.Drawing.Point(65, 284);
-            this.btnCargaVenta.Name = "btnCargaVenta";
-            this.btnCargaVenta.Size = new System.Drawing.Size(176, 46);
-            this.btnCargaVenta.TabIndex = 20;
-            this.btnCargaVenta.Text = "Confirmar";
-            this.btnCargaVenta.UseVisualStyleBackColor = true;
-            this.btnCargaVenta.Click += new System.EventHandler(this.btnCargaVenta_Click);
+            this.btnGuardarLista.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarLista.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardarLista.Location = new System.Drawing.Point(65, 284);
+            this.btnGuardarLista.Name = "btnGuardarLista";
+            this.btnGuardarLista.Size = new System.Drawing.Size(176, 46);
+            this.btnGuardarLista.TabIndex = 20;
+            this.btnGuardarLista.Text = "Confirmar";
+            this.btnGuardarLista.UseVisualStyleBackColor = true;
+            this.btnGuardarLista.Click += new System.EventHandler(this.btnGuardarLista_Click);
             // 
             // dgvVentas
             // 
@@ -485,9 +493,9 @@
             this.Controls.Add(this.DtpFechaDeInicio);
             this.Controls.Add(this.cmbEstado);
             this.Controls.Add(this.TxbDescripcion);
+            this.Controls.Add(this.txbVehiculo);
+            this.Controls.Add(this.txbEmpleado);
             this.Controls.Add(this.txbPatente);
-            this.Controls.Add(this.txbApellido);
-            this.Controls.Add(this.txbNombre);
             this.DoubleBuffered = true;
             this.Name = "MenuOrdenDeTrabajo";
             this.Text = "MenuOrdenDeTrabajo";
@@ -506,9 +514,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txbNombre;
-        private System.Windows.Forms.TextBox txbApellido;
         private System.Windows.Forms.TextBox txbPatente;
+        private System.Windows.Forms.TextBox txbEmpleado;
+        private System.Windows.Forms.TextBox txbVehiculo;
         private System.Windows.Forms.TextBox TxbDescripcion;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.DateTimePicker DtpFechaDeInicio;
@@ -539,7 +547,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox grpPresupuesto;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnCargaVenta;
+        private System.Windows.Forms.Button btnGuardarLista;
         private System.Windows.Forms.DataGridView dgvVentas;
     }
 }

@@ -455,13 +455,28 @@ namespace Vista
         {
             OrdenDeTrabajo.CrearOrdenDeTrabajo(NombreCompleto, dia, descripcion, trabajadorId, idCliente, idVehiculo, idTurno);
         }
-       /* public static int ObtDatosOrden(int Idturno)
+        public static DataTable ObtDatosOrden(int Idturno)
         {
             Conectar capaDatos = new Conectar();
-            return capaDatos.ObtenerDatosOrden(Idturno);
-        }*/
+            return capaDatos.BuscarOrden(Idturno);
+        }
+        public static void CargaListaDeProd(int idOrden, int idprod, string Producto, int Disponible, double Litros, int Cantidad, double PrecioVenta)
+        {
+
+            OrdenDeTrabajo.cargaListaProd(idOrden, idprod, Producto, Cantidad, PrecioVenta);
 
 
+        }
+        public static List<OrdenDeTrabajo> ObtenerLista()
+        {
+            return OrdenDeTrabajo.ObtenerListaOrden();
+        }
+
+        public static double CalculaTotalList()
+        {
+            double valor = OrdenDeTrabajo.CalculaTotal();
+            return valor;
+        }
     }
     #endregion
 

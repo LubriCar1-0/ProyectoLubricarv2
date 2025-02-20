@@ -84,7 +84,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
             return id;
-            
+
         }
         public int TraeIdCategoriaEmpleado(int documento)
         {
@@ -97,7 +97,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
             return id;
-           
+
         }
 
         public string BuscarEmp(int Idtrabajador)
@@ -111,7 +111,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
             return Usuario;
-           
+
         }
         public string ObtenerCategoria(int idCat)
         {
@@ -157,7 +157,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            
+
 
         }
 
@@ -172,7 +172,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
             return dt;
-            
+
         }
 
         public static void IngresaCategoriaEMP(string nombreCat, string catedescripcion, int CodPerm, string Estado)
@@ -189,12 +189,12 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            
+
         }
 
         public static void UpdateCategoriaEMP(int idCategoria, string NombreCat, int PermisoCat, string Descripcion)
         {
-            
+
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "UpdateCategoriaEMP";
@@ -206,7 +206,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            
+
         }
         public static void CambiarEstadoEMP(int idCategoria, string Estado)
         {
@@ -221,10 +221,10 @@ namespace Datos
             desconectar();
         }
 
-        
 
 
-        public static int VerificaPermiso(int verificaPermiso) 
+
+        public static int VerificaPermiso(int verificaPermiso)
         {
             conectar();
             comando.Connection = conexion;
@@ -254,7 +254,7 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "TraerTablaClientes";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Clear(); 
+            comando.Parameters.Clear();
             leer = comando.ExecuteReader();
             dt.Load(leer);
             desconectar();
@@ -306,7 +306,7 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "TraerTablaVehiculos";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Clear(); 
+            comando.Parameters.Clear();
             leer = comando.ExecuteReader();
             dt.Load(leer);
             desconectar();
@@ -391,7 +391,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
-        
+
 
         public string ObtenerCliente(int idCliente)
         {
@@ -427,7 +427,7 @@ namespace Datos
             return nombreCompleto;
         }
 
-        
+
         public static void ActualizarVehiculo(int idVehiculo, int idCliente, string modelo, string marca, int año, string patente, int kilometraje)
         {
             conectar();
@@ -446,7 +446,7 @@ namespace Datos
             desconectar();
         }
 
-        
+
 
         public static void EstadoVehiculo(int idVehiculo, string Estado)
         {
@@ -461,7 +461,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            
+
 
         }
 
@@ -561,7 +561,7 @@ namespace Datos
         #endregion
 
         #region Productos
-        public static void AgregarProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles,double litroMin, int cantidadmin, string estado)
+        public static void AgregarProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles, double litroMin, int cantidadmin, string estado)
         {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
@@ -579,7 +579,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@LitrosDisponibles", LitrosDisponibles);
             comando.Parameters.AddWithValue("@Minlitro", litroMin);
             comando.Parameters.AddWithValue("@Minimo", cantidadmin);
-            comando.Parameters.AddWithValue("@Estado", estado); 
+            comando.Parameters.AddWithValue("@Estado", estado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
@@ -695,8 +695,8 @@ namespace Datos
                 select * from CategoriasProductos where Estado= 'ACT';
                 end*/
         }
-        public static void UpdateCategorias(int IdCategoriaUPD,string NombreCategoria, string Descripcion, string Estado, string liquido)
-         {
+        public static void UpdateCategorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
+        {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
             comando.Connection = conexion;
@@ -780,7 +780,7 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "UpdateProductos";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@IdProducto" , IdProdUPD);
+            comando.Parameters.AddWithValue("@IdProducto", IdProdUPD);
             comando.Parameters.AddWithValue("@Nomproducto", Nombreprd);
             comando.Parameters.AddWithValue("@MarcaProduc", MarcaProducto);
             comando.Parameters.AddWithValue("@CategoriaProduc", categoria);
@@ -833,7 +833,7 @@ namespace Datos
 
         public static void EliminarProducto(int IdProd, string valor)
         {
-           
+
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "EliminarProductos";
@@ -941,10 +941,10 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
-            
+
         }
 
-        
+
 
         public void InsertarTurno(DateTime fecha, TimeSpan hora, int idCliente, int idVehiculo, string descripcion, string estado)
         {
@@ -1018,9 +1018,9 @@ namespace Datos
             comando.CommandText = "ExisteTurno";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@Fecha", fecha.Date); 
-            comando.Parameters.AddWithValue("@Hora", hora);       
-            comando.Parameters.AddWithValue("@Estado", "ACT");     
+            comando.Parameters.AddWithValue("@Fecha", fecha.Date);
+            comando.Parameters.AddWithValue("@Hora", hora);
+            comando.Parameters.AddWithValue("@Estado", "ACT");
 
             int count = Convert.ToInt32(comando.ExecuteScalar());
             desconectar();
@@ -1040,7 +1040,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-           
+
 
         }
 
@@ -1066,7 +1066,7 @@ namespace Datos
 
         public DataTable TurnosActivos()
         {
-            conectar();  
+            conectar();
             comando.Connection = conexion;
             comando.CommandText = "TurnosSinFiltro";
             comando.CommandType = CommandType.StoredProcedure;
@@ -1074,7 +1074,7 @@ namespace Datos
             leer = comando.ExecuteReader();
             dt.Load(leer);
             leer.Close();
-            desconectar(); 
+            desconectar();
             return dt;
         }
 
@@ -1090,7 +1090,7 @@ namespace Datos
             leer = comando.ExecuteReader();
             if (leer.Read()) // Verifica si hay resultados
             {
-                 idCliente = leer.GetInt32(0); // Obtiene el primer valor del resultado (idCliente)
+                idCliente = leer.GetInt32(0); // Obtiene el primer valor del resultado (idCliente)
             }
             leer.Close();
             desconectar();
@@ -1137,7 +1137,7 @@ namespace Datos
             comando.Parameters.Clear();
             comando.CommandText = "TraerTablaClientesConfiltro";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@DNI",dni);
+            comando.Parameters.AddWithValue("@DNI", dni);
             leer = comando.ExecuteReader();
             dt.Load(leer);
 
@@ -1158,25 +1158,25 @@ namespace Datos
             return dt;
         }
         public DataTable VentaProductosFiltro(int IdCategoria, string codigo, string nombre)
-        {            
-                conectar();
-                comando.Connection = conexion;
-                comando.CommandText = "TablaProductossConFiltro";
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@IdCategoria", IdCategoria);
-                comando.Parameters.AddWithValue("@codigo", codigo);
-                comando.Parameters.AddWithValue("@nombre", nombre);
-                leer = comando.ExecuteReader();
-                dt.Load(leer);
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TablaProductossConFiltro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@IdCategoria", IdCategoria);
+            comando.Parameters.AddWithValue("@codigo", codigo);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
 
-                desconectar();                          
+            desconectar();
             return dt;
         }
         #endregion
 
         #region CargaVenta
-        public static void AgregaVenta(int IdCliente, int fila, string producto,double preciounit, double cantidad, double total)
+        public static void AgregaVenta(int IdCliente, int fila, string producto, double preciounit, double cantidad, double total)
         {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
@@ -1281,7 +1281,7 @@ namespace Datos
         {
             conectar();
             comando.Connection = conexion;
-            comando.CommandText = "BitacoraConFiltro"; 
+            comando.CommandText = "BitacoraConFiltro";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@accion", !string.IsNullOrEmpty(accion) ? (object)accion : DBNull.Value);
@@ -1317,7 +1317,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             desconectar();
         }
-        public DataTable BuscarOrdenesFinalizadas()
+        public DataTable BuscarOrdenes()
         {
             conectar();
             comando.Parameters.Clear();
@@ -1326,7 +1326,6 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
-
             desconectar();
             return dt;
         }
@@ -1343,12 +1342,45 @@ namespace Datos
             desconectar();
             return dt;
         }
-        
+        public static void AgregaListProds(int idOrdenTrab, int fila, string producto, double preciounit, double cantidad, double total)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "AgregarListProd";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
+            comando.Parameters.AddWithValue("@FilaProducto", fila);
+            comando.Parameters.AddWithValue("@idProducto", producto);
+            comando.Parameters.AddWithValue("@PrecioUnitario", preciounit);
+            comando.Parameters.AddWithValue("@Cantidad", cantidad);
+            comando.Parameters.AddWithValue("@PrecioTotal", total);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+
+        }
+
+        //public static void CargaTotalVentServ(int IdCliente, double subtotal, double iva, double total)
+        //{
+        //    DateTime fechaHoraActual = DateTime.Now;
+        //    conectar();
+        //    comando.Connection = conexion;
+        //    comando.CommandText = "GuardaTotalVenta";
+        //    comando.CommandType = CommandType.StoredProcedure;
+        //    comando.Parameters.Clear();
+        //    comando.Parameters.AddWithValue("@IdCliente", IdCliente);
+        //    comando.Parameters.AddWithValue("@IvaCalculado", iva);
+        //    comando.Parameters.AddWithValue("@SubTotal", subtotal);
+        //    comando.Parameters.AddWithValue("@Total", total);
+        //    comando.Parameters.AddWithValue("@FechaHora", fechaHoraActual);
+        //    comando.ExecuteNonQuery();
+        //    desconectar();
+        //}
         #endregion
 
     }
-
-
 }
 
 

@@ -67,14 +67,14 @@ namespace Negocio
             return ListVentaProducto;
         }
 
-        public static void Cargaventa()
-        {
-            foreach (var item in ListVentaProducto)
-            {
-                Conectar.AgregaVenta(item.idCliente, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd);
-                Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
-            }
-        }
+        //public static void Cargaventa()
+        //{
+        //    foreach (var item in ListVentaProducto)
+        //    {
+        //        Conectar.AgregaVenta(item.idCliente, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd);
+        //        Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
+        //    }
+        //}
 
         public static void LimpiaLista()
         {

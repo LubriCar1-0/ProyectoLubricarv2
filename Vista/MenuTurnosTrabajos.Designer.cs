@@ -192,7 +192,7 @@
             this.grpProductos.Controls.Add(this.txbNombre);
             this.grpProductos.Controls.Add(this.txbApellido);
             this.grpProductos.Controls.Add(this.BtnAgregar);
-            this.grpProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.grpProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpProductos.ForeColor = System.Drawing.Color.Black;
             this.grpProductos.Location = new System.Drawing.Point(310, 584);
             this.grpProductos.Name = "grpProductos";
@@ -227,7 +227,7 @@
             this.cmbTrabajador.FormattingEnabled = true;
             this.cmbTrabajador.Location = new System.Drawing.Point(494, 259);
             this.cmbTrabajador.Name = "cmbTrabajador";
-            this.cmbTrabajador.Size = new System.Drawing.Size(208, 44);
+            this.cmbTrabajador.Size = new System.Drawing.Size(208, 36);
             this.cmbTrabajador.TabIndex = 25;
             this.cmbTrabajador.SelectedIndexChanged += new System.EventHandler(this.cmbTrabajador_SelectedIndexChanged);
             // 
@@ -253,6 +253,7 @@
             // 
             // TxbDescripcion
             // 
+            this.TxbDescripcion.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxbDescripcion.Location = new System.Drawing.Point(912, 259);
             this.TxbDescripcion.Multiline = true;
             this.TxbDescripcion.Name = "TxbDescripcion";

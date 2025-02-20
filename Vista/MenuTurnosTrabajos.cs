@@ -29,10 +29,18 @@ namespace Vista
 
 
         }
+        #region Variables 
         string telefono;
         string patente;
         string fecha;
         string estado = null;
+        private int idTurno = 0;
+        private int idCliente = 0;
+        private int idVehiculo = 0;
+        private string NombreCompleto;
+        private string VehiculoCompleto;
+        #endregion
+
         private void CargarTrabajador()
         {
             List<Empleados> Trabajadores = ValidarBitacora.ObtenerListaTrabajadores(); // Cambiamos a una lista
@@ -63,19 +71,9 @@ namespace Vista
 
         private void MenuOrdenDeTrabajo_Load(object sender, EventArgs e)
         {
-            
-            //dtpFecha.Format = DateTimePickerFormat.Custom;
-            //dtpFecha.CustomFormat = "yyyy-MM-dd"; 
-
-           
-
             txbNombre.ReadOnly = true;
             txbApellido.ReadOnly = true;
             txbPatente.ReadOnly = true;
-            
-
-            //DtpFechaCargada.Enabled = false;
-            
 
             CargarTurnos();
             
@@ -87,7 +85,7 @@ namespace Vista
             string patente = string.IsNullOrEmpty(txtPatente.Text) ? null : txtPatente.Text.Trim().ToUpper();
             string fecha = dtpFecha.CustomFormat != " " ? dtpFecha.Value.ToString("yyyy-MM-dd") : null;
 
-            // Determinar el estado según los checkboxes
+            
             string estado = null;
             if (chbIniciados.Checked && !chbActivos.Checked)
             {
@@ -155,10 +153,7 @@ namespace Vista
             }
         }
         
-        private int idTurno = 0;
-        private int idCliente = 0;
-        private int idVehiculo = 0;
-        private string NombreCompleto;
+        
 
         private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -169,7 +164,7 @@ namespace Vista
 
             if (filaSeleccionada != null)
             {
-                // Obtener datos del cliente
+
                 string clienteCompleto = filaSeleccionada.Cells["Cliente"].Value?.ToString() ?? "";
                 string[] partes = clienteCompleto.Split(' ');
                 string Apellido = partes.Length > 0 ? partes[0] : "";
@@ -181,41 +176,64 @@ namespace Vista
                 txbPatente.Text = filaSeleccionada.Cells["patenteVH"].Value?.ToString() ?? "";
                 TxbDescripcion.Text = filaSeleccionada.Cells["descripcion"].Value?.ToString().ToUpper() ?? "";
                 cmbTrabajador.SelectedIndex = -1;
-                // Fecha
+
                 if (DateTime.TryParse(filaSeleccionada.Cells["Fecha"].Value?.ToString(), out DateTime fechaTurno))
                 {
-                    // Resetear MinDate a su valor por defecto antes de asignar uno nuevo
-                    DtpFechaCargada.MinDate = DateTimePicker.MinimumDateTime;  // Restablece a su valor más bajo permitido
 
-                    // Asignar el nuevo valor y establecer MinDate solo si es necesario
+                    DtpFechaCargada.MinDate = DateTimePicker.MinimumDateTime;
+
+
                     DtpFechaCargada.Value = fechaTurno;
                     DtpFechaCargada.MinDate = fechaTurno.AddDays(1);
                 }
 
-                // IDs
+
                 idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
                 idVehiculo = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
                 idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
 
-                // Nuevo: Obtener el estado y mostrar/ocultar botones
                 string estadoTurnoSeleccionado = filaSeleccionada.Cells["Estado"].Value?.ToString().ToUpper().Trim() ?? "";
 
                 if (estadoTurnoSeleccionado == "ACTIVO")
                 {
-                    BtnAgregar.Visible = true;       // Crear Orden
+                    BtnAgregar.Visible = true;
                     btnVisualizarOrden.Visible = false;
                 }
                 else if (estadoTurnoSeleccionado == "INICIADO")
                 {
                     BtnAgregar.Visible = false;
-                    btnVisualizarOrden.Visible = true;  // Visualizar Orden
-                    //ValidarOrdenDeTrabajo.ObtenerOrden(idTurno);
-                    TxbDescripcion.Enabled = false;
+                    btnVisualizarOrden.Visible = true;
+                    TxbDescripcion.ReadOnly = true;
+                    cmbTrabajador.Enabled = false;
+                    DtpFechaCargada.ShowUpDown = true; // Oculta el calendario emergente
+                    DtpFechaCargada.Enabled = false; // Bloquea la modificación
+
+                    // Llamada al método que obtiene los datos de la orden de trabajo según el idTurno
+                    DataTable dtOrden = ValidarOrdenDeTrabajo.ObtDatosOrden(idTurno);
+                    if (dtOrden != null && dtOrden.Rows.Count > 0)
+                    {
+                        DataRow rowOrden = dtOrden.Rows[0];
+                        // Se utilizan los campos concatenados del store procedure
+                        string trabajadorCompleto = rowOrden["TrabajadorCompleto"].ToString().Trim();
+                        VehiculoCompleto = rowOrden["VehiculoCompleto"].ToString().Trim();
+
+                        // Cargar los datos obtenidos en los controles correspondientes
+                        TxbDescripcion.Text = rowOrden["descripcion"].ToString().ToUpper();
+                        idOrdenDeTrabajo = Convert.ToInt32(rowOrden["idOrdenTrab"]);
+                        cmbTrabajador.Text = trabajadorCompleto; // Muestra nombre y apellido juntos
+                        if (DateTime.TryParse(rowOrden["FechaDeInicio"].ToString(), out DateTime fechaInicioOrden))
+                        {
+                            DtpFechaCargada.Value = fechaInicioOrden;
+                            
+                        }
+                        
+                        
+                    }
+
                 }
-                
             }
         }
-
+        int idOrdenDeTrabajo;
 
 
 
@@ -282,16 +300,15 @@ namespace Vista
         {
             DtpFechaCargada.ValueChanged -= DtpFechaCargada_ValueChanged;
 
-            // Resetear MinDate al valor más bajo permitido
             DtpFechaCargada.MinDate = DateTimePicker.MinimumDateTime;
 
-            // Opcional: Restablecer el formato para que se vea vacío
+            
             DtpFechaCargada.CustomFormat = " ";
 
             // Opcional: Restablecer el valor a la fecha actual
             // DtpFechaCargada.Value = DateTime.Today;
 
-            // Limpiar otros controles
+            
             txtPatente.Clear();
             txtTelCliente.Clear();
             txbApellido.Clear();
@@ -299,10 +316,10 @@ namespace Vista
             txbPatente.Clear();
             TxbDescripcion.Clear();
 
-            // Recargar la grilla
+         
             CargarTurnos();
 
-            // (Opcional) Si deseas que el evento se vuelva a conectar inmediatamente
+            
             DtpFechaCargada.ValueChanged += DtpFechaCargada_ValueChanged;
 
             cmbTrabajador.SelectedIndex = -1;
@@ -330,7 +347,23 @@ namespace Vista
 
         private void btnVisualizarOrden_Click(object sender, EventArgs e)
         {
+            // Se crea una instancia del formulario MenuOrdenDeTrabajo
+            MenuOrdenDeTrabajo formOrden = new MenuOrdenDeTrabajo();
 
+            // Se asignan los valores cargados a las propiedades públicas del formulario destino.
+            formOrden.idOrdenTrabajo = idOrdenDeTrabajo;
+            formOrden.Patente = txbPatente.Text;
+            formOrden.Cliente = NombreCompleto;
+            formOrden.Trabajador = cmbTrabajador.Text;
+            formOrden.DescripcionOrden = TxbDescripcion.Text;
+            formOrden.FechaInicioOrden = DtpFechaCargada.Value;
+            formOrden.Vehiculo = VehiculoCompleto;
+            formOrden.EstadoOrden = "INICIADO";
+
+            
+            formOrden.ShowDialog();
         }
+
+
     }
 }

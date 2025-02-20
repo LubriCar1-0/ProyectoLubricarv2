@@ -15,38 +15,72 @@ namespace Vista
 {
     public partial class MenuOrdenDeTrabajo : Form
     {
+        #region Variables
         public double litrosDisp;
         public int cantidadDisp;
         public int idcliente;
         public double PrecioVenta;
         private PrintDocument printDocument;
         private string ticketTexto;
+        // Propiedades públicas para recibir datos de la orden
+        public string Patente { get; set; }
+        public string Cliente { get; set; }
+        public string Trabajador { get; set; }
+        public string DescripcionOrden { get; set; }
+        public DateTime FechaInicioOrden { get; set; }
+        public string Vehiculo { get; set; }
+        public string EstadoOrden { get; set; }
+        public int idOrdenTrabajo {  get; set; }
+        #endregion
+
+        #region Iniciador
         public MenuOrdenDeTrabajo()
         {
 
-            this.FormBorderStyle = FormBorderStyle.None; 
-            this.WindowState = FormWindowState.Maximized; 
-            this.StartPosition = FormStartPosition.CenterScreen; 
-            InitializeComponent(); 
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            InitializeComponent();
             CargatablaProductos();
             dgvProductos.Columns["idProd"].Visible = false;
             CargarCategorias();
-            //ConfiguraDataGrid(dgvClientes);
             ConfiguraDataGrid(dgvProductos);
-            //UsuarioPrimero();
             lblIdproducto.Visible = false;
             lblTEXTdisponible.Visible = false;
             lblTEXTOlitros.Visible = false;
-            //lblIdCliente.Visible = false;
             lblIdCat.Visible = false;
             printDocument = new PrintDocument();
-            //printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+            TxbDescripcion.ReadOnly = true;
+            txbEmpleado.ReadOnly = true;
+            txbPatente.ReadOnly = true;
+            txbVehiculo.ReadOnly = true;
+            DtpFechaDeInicio.ShowUpDown = true; 
+            DtpFechaDeInicio.Enabled = false; 
+
         }
 
         private void MenuOrdenDeTrabajo_Load(object sender, EventArgs e)
         {
+            // Asigna los valores recibidos a los controles correspondientes.
+            // Se asume que en el formulario existen controles como txbPatenteOrden, txbClienteOrden, etc.
+            txbPatente.Text = this.Patente;
+            txbVehiculo.Text = this.Vehiculo;
+            txbEmpleado.Text = this.Trabajador;
+            TxbDescripcion.Text = this.DescripcionOrden;
+            DtpFechaDeInicio.Value = this.FechaInicioOrden;
+            cmbEstado.Text = this.EstadoOrden;
+            // Limpiar cualquier item previo (opcional)
+            cmbEstado.Items.Clear();
 
+            // Agregar los valores permitidos al ComboBox
+            cmbEstado.Items.Add("INICIADO");
+            cmbEstado.Items.Add("CANCELADO");
+            cmbEstado.Items.Add("FINALIZADO");
+
+            // Seleccionar por defecto "INICIADO"
+            cmbEstado.SelectedItem = "INICIADO";
         }
+        #endregion
 
 
         #region Cargar Tablas 
@@ -64,6 +98,7 @@ namespace Vista
                 dgvProductos.Columns["CantidadMinima"].Visible = false;
                 dgvProductos.Columns["LitrosDisp"].Visible = false;
                 dgvProductos.Columns["LitrosMinimo"].Visible = false;
+                
 
                 //DGVProductos.Columns["IdCategorias"].Visible = false;
                 ConfiguraDataGrid(dgvProductos);
@@ -152,7 +187,7 @@ namespace Vista
         private void CargaTablaLista()
         {
             dgvVentas.DataSource = null;  // Limpia el DataGridView
-            dgvVentas.DataSource = ValidarVenta.ObtenerVentas();
+            dgvVentas.DataSource = ValidarOrdenDeTrabajo.ObtenerLista();
             //dgvVentas.Columns["idCliente"].Visible = false;
         }
 
@@ -234,9 +269,9 @@ namespace Vista
             }
             else
             {
-                ValidarVenta.CargaLista(idcliente, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
+                ValidarOrdenDeTrabajo.CargaListaDeProd(idOrdenTrabajo, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
                 CargaTablaLista();
-                double subtotal = ValidarVenta.CalculaTotal();
+                //double subtotal = ValidarOrdenDeTrabajo.CalculaTotalList();
                 //RecargaTotales(subtotal);
                 ConfiguraDataGrid(dgvVentas);
                 dgvVentas.Columns["idCliente"].Visible = false;
@@ -245,14 +280,14 @@ namespace Vista
                 grpPresupuesto.Enabled = true;
             }
         }
-
+        //private double IVA;
+        //private double TOTAL;
+        //private double SUBTOTAL;
         //public void RecargaTotales(double subtotal)
         //{
-        //    lblSubTotal.Text = subtotal.ToString();
-        //    double IVA = (subtotal * 0.21);
-        //    lblIVA.Text = IVA.ToString();
-        //    double Total = subtotal + IVA;
-        //    lblTotal.Text = Total.ToString();
+        //    SUBTOTAL = subtotal;
+            
+            
         //}
         public void LimpiaLblProducto()
         {
@@ -265,13 +300,7 @@ namespace Vista
         #endregion
 
         #region Restricciones 
-        private void txtCliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
-            {
-                e.Handled = true; // Bloquea el caracter
-            }
-        }
+        
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
@@ -285,33 +314,69 @@ namespace Vista
         #endregion
 
         #region Confirmar Productos 
-        private void btnCargaVenta_Click(object sender, EventArgs e)
+        private void btnGuardarLista_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                //VentaProducto.Cargaventa(Convert.ToInt32(lblIdCliente.Text), Convert.ToDouble(lblSubTotal.Text), Convert.ToDouble(lblIVA.Text), Convert.ToDouble(lblTotal.Text));
-
-                if (string.IsNullOrWhiteSpace(ticketTexto))
-                {
-                    MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
-                previewDialog.Document = printDocument;
-                previewDialog.ShowDialog();
-                #endregion
-
+                OrdenDeTrabajo.CargaList(idOrdenTrabajo);
                 VentaProducto.LimpiaLista();
                 CargaTablaLista();
                 dgvVentas.Columns["idCliente"].Visible = false;
                 dgvVentas.Columns["IdProducto"].Visible = false;
                 CargatablaProductos();
-                
+
             }
         }
-        
+        #endregion
 
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvProductos.Rows[e.RowIndex];
+                int IdProducto = Convert.ToInt32(filaSeleccionada.Cells["idProd"].Value);
+                int idCategorias = Convert.ToInt32(filaSeleccionada.Cells["idCategorias"].Value);
+                string Producto = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
+                string Disponible = filaSeleccionada.Cells["Cantidad"].Value.ToString().Trim();
+                string disponibleLtr = filaSeleccionada.Cells["LitrosDisp"].Value.ToString().Trim();
+                double precioVenta = Convert.ToDouble(filaSeleccionada.Cells["PrecioVenta"].Value.ToString().Trim());
+                lblProducto.Text = Producto;
+                PrecioVenta = precioVenta;
+                lblIdproducto.Text = IdProducto.ToString();
+                lblIdCat.Text = idCategorias.ToString();
+                int liquido = ValidarVenta.TraeLiquido(idCategorias);
+                if (liquido == 1)
+                {
+                    lblLitros.Text = disponibleLtr;
+                    litrosDisp = Convert.ToDouble(disponibleLtr);
+                    lblDisponible.Visible = false;
+                    lblTEXTdisponible.Visible = false;
+                    lblLitros.Visible = true;
+                    lblTEXTOlitros.Visible = true;
+                }
+                else
+                {
+                    lblDisponible.Text = Disponible;
+                    cantidadDisp = Convert.ToInt32(Disponible);
+                    lblDisponible.Visible = true;
+                    lblTEXTdisponible.Visible = true;
+                    lblLitros.Visible = false;
+                    lblTEXTOlitros.Visible = false;
+                }
+            }
+        }
+
+        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
