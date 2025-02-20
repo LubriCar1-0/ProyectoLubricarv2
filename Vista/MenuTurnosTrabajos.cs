@@ -209,7 +209,7 @@ namespace Vista
                 {
                     BtnAgregar.Visible = false;
                     btnVisualizarOrden.Visible = true;  // Visualizar Orden
-                    ValidarOrdenDeTrabajo.ObtenerOrden(idTurno);
+                    //ValidarOrdenDeTrabajo.ObtenerOrden(idTurno);
                     TxbDescripcion.Enabled = false;
                 }
                 

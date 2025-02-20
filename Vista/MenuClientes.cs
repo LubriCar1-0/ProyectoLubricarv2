@@ -21,6 +21,7 @@ namespace Vista
             InitializeComponent();
             CargarClientes();
             ConfigurarDataGridView();
+            
             CargarCategorias();
             DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvTablaClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -81,7 +82,11 @@ namespace Vista
 
                 
                 DgvTablaClientes.Columns.Add(comboBoxColumn);
+
+                comboBoxColumn.DisplayIndex = 3; 
+
             }
+
         }
         private int idCondicion;
 
@@ -95,7 +100,7 @@ namespace Vista
 
 
 
-            Validarcliente.AgregarUnCliente(TxtNombreCliente.Text.Trim(), TxtapellidoCliente.Text.Trim(), TxtRazonSocialCliente.Text.Trim(), Convert.ToInt32(TxtCuilCliente.Text.Trim()), TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), Convert.ToInt32(TxtNumCasaCliente.Text.Trim()), Convert.ToInt32(TxtTelefonoCliente.Text.Trim()),   idCondicion);
+            Validarcliente.AgregarUnCliente(TxtNombreCliente.Text.ToUpper().Trim(), TxtapellidoCliente.Text.ToUpper().Trim(), TxtRazonSocialCliente.Text.Trim(), Convert.ToInt32(TxtCuilCliente.Text.Trim()), TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), Convert.ToInt32(TxtNumCasaCliente.Text.Trim()), Convert.ToInt32(TxtTelefonoCliente.Text.Trim()),   idCondicion);
             MessageBox.Show("Se registro correctamente");
             LimpiarTextBox();
             CargarClientes();
@@ -157,9 +162,10 @@ namespace Vista
                     if (resultado == DialogResult.Yes)
                     {
 
-                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.Trim(), ApellidoClienteUPD.Trim(), RazonSocialClienteUpd.Trim(), Convert.ToInt32(CuilClienteUPD.Trim()), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()), Convert.ToInt32(TelefonoClienteUPD.Trim()), Condicionaenviar);
+                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.ToUpper().Trim(), ApellidoClienteUPD.ToUpper().Trim(), RazonSocialClienteUpd.Trim(), Convert.ToInt32(CuilClienteUPD.Trim()), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()), Convert.ToInt32(TelefonoClienteUPD.Trim()), Condicionaenviar);
                         Console.WriteLine("Cambio realizado.");
                         LimpiarTextBox();
+                        
                         CargarClientes();
                     }
                     else if (resultado == DialogResult.No)
@@ -184,6 +190,7 @@ namespace Vista
                             Validarcliente.BajaAltaCliente(idClienteUPD, "DES");
                             MessageBox.Show("Cliente DADO DE BAJA.");
                             CargarClientes();
+                            
                             LimpiarTextBox();
 
                             DgvTablaClientes.Columns["idCliente"].Visible = false;
@@ -193,6 +200,7 @@ namespace Vista
                             Validarcliente.BajaAltaCliente(idClienteUPD, "ACT");
                             MessageBox.Show("Cliente DADO DE ALTA");
                             CargarClientes();
+                            
                             LimpiarTextBox();
 
 
@@ -220,6 +228,27 @@ namespace Vista
             CMBIVA.Text = string.Empty;
             TxtNumCasaCliente.Text = string.Empty;
         }
+       /* private void Acomodartabla()
+        {
+            DgvTablaClientes.RowHeadersVisible = false;
+            DgvTablaClientes.Columns["Editar"].DisplayIndex = 0;
+            DgvTablaClientes.Columns["Estado"].DisplayIndex = 1;
+            DgvTablaClientes.Columns["Nombre"].DisplayIndex = 2;
+            DgvTablaClientes.Columns["Apellido"].DisplayIndex = 3;
+            DgvTablaClientes.Columns["Razon Social"].DisplayIndex = 4;
+            DgvTablaClientes.Columns["Cuit/Cuil"].DisplayIndex = 5;
+            DgvTablaClientes.Columns["Localidad"].DisplayIndex = 6;
+            DgvTablaClientes.Columns["Calle"].DisplayIndex = 7;
+            DgvTablaClientes.Columns["Numero de vivienda"].DisplayIndex = 8;
+            DgvTablaClientes.Columns["Telefono"].DisplayIndex = 9;
+            DgvTablaClientes.Columns["Estado"].DisplayIndex = 10;
+            DgvTablaClientes.Columns["LubriPuntos"].DisplayIndex = 11;
+            DgvTablaClientes.Columns["CondicionIva"].DisplayIndex = 12;
+           
+
+
+        }
+       */
         private void TxtCuilCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Solo numeros

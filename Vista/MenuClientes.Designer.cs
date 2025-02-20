@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreCliente = new System.Windows.Forms.TextBox();
             this.TxtLocalidadCliente = new System.Windows.Forms.TextBox();
             this.TxtCuilCliente = new System.Windows.Forms.TextBox();
@@ -41,9 +43,9 @@
             this.TxtTelefonoCliente = new System.Windows.Forms.TextBox();
             this.CMBIVA = new System.Windows.Forms.ComboBox();
             this.chbeditar = new System.Windows.Forms.CheckBox();
+            this.BtnVehiculoMeCliente = new System.Windows.Forms.Button();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.BtnVehiculoMeCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,17 +170,6 @@
             this.chbeditar.UseVisualStyleBackColor = false;
             this.chbeditar.CheckedChanged += new System.EventHandler(this.chbeditar_CheckedChanged);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            // 
             // BtnVehiculoMeCliente
             // 
             this.BtnVehiculoMeCliente.BackgroundImage = global::Vista.Properties.Resources.BtnVehiculo;
@@ -189,6 +180,36 @@
             this.BtnVehiculoMeCliente.Size = new System.Drawing.Size(128, 43);
             this.BtnVehiculoMeCliente.TabIndex = 8;
             this.BtnVehiculoMeCliente.UseVisualStyleBackColor = true;
+            // 
+            // Editar
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "EDITAR";
+            this.Editar.UseColumnTextForButtonValue = true;
+            // 
+            // Eliminar
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Eliminar.HeaderText = "Estado";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Text = "ACT/DES";
+            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // MenuClientes
             // 
@@ -232,8 +253,8 @@
         private System.Windows.Forms.TextBox TxtTelefonoCliente;
         private System.Windows.Forms.ComboBox CMBIVA;
         private System.Windows.Forms.CheckBox chbeditar;
+        private System.Windows.Forms.Button BtnVehiculoMeCliente;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.Button BtnVehiculoMeCliente;
     }
 }

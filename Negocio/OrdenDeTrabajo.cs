@@ -23,7 +23,7 @@ namespace Negocio
         public static void CrearOrdenDeTrabajo(string NombreCompleto, DateTime dia, string descripcion, int trabajadorId, int idCliente, int idVehiculo, int idTurno)
         {
             Conectar capaDatos = new Conectar();
-            DataTable TablaOrdenes = capaDatos.BuscarOrdenes();
+            /*DataTable TablaOrdenes = capaDatos.BuscarOrdenes();
             bool usuarioEncontrado = false;
             foreach (DataRow Fila in TablaOrdenes.Rows)
             {
@@ -38,7 +38,7 @@ namespace Negocio
 
             }
             string estado = "En Proceso";
-            Conectar.CrearOrdenTrabajo(NombreCompleto, dia, descripcion, trabajadorId, idCliente, idVehiculo, estado, idTurno);
+            Conectar.CrearOrdenTrabajo(NombreCompleto, dia, descripcion, trabajadorId, idCliente, idVehiculo, estado, idTurno);*/
         }
 
 

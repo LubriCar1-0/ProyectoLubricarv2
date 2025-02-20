@@ -455,11 +455,11 @@ namespace Vista
         {
             OrdenDeTrabajo.CrearOrdenDeTrabajo(NombreCompleto, dia, descripcion, trabajadorId, idCliente, idVehiculo, idTurno);
         }
-        public static int ObtDatosOrden(int Idturno)
+       /* public static int ObtDatosOrden(int Idturno)
         {
             Conectar capaDatos = new Conectar();
             return capaDatos.ObtenerDatosOrden(Idturno);
-        }
+        }*/
 
 
     }
