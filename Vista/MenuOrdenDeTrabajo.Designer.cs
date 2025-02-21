@@ -63,6 +63,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardarLista = new System.Windows.Forms.Button();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.BtnVolver = new System.Windows.Forms.Button();
+            this.lblidOrdenTrab = new System.Windows.Forms.Label();
             this.grpProductos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -481,6 +483,29 @@
             this.dgvVentas.Size = new System.Drawing.Size(597, 240);
             this.dgvVentas.TabIndex = 0;
             // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnVolver.FlatAppearance.BorderSize = 0;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Location = new System.Drawing.Point(265, 177);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(64, 40);
+            this.BtnVolver.TabIndex = 29;
+            this.BtnVolver.Text = "Volver";
+            this.BtnVolver.UseVisualStyleBackColor = false;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
+            // lblidOrdenTrab
+            // 
+            this.lblidOrdenTrab.AutoSize = true;
+            this.lblidOrdenTrab.Location = new System.Drawing.Point(311, 307);
+            this.lblidOrdenTrab.Name = "lblidOrdenTrab";
+            this.lblidOrdenTrab.Size = new System.Drawing.Size(35, 13);
+            this.lblidOrdenTrab.TabIndex = 30;
+            this.lblidOrdenTrab.Text = "label1";
+            // 
             // MenuOrdenDeTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,6 +513,8 @@
             this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenDeTrabajo4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.lblidOrdenTrab);
+            this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.grpPresupuesto);
             this.Controls.Add(this.grpProductos);
             this.Controls.Add(this.DtpFechaDeInicio);
@@ -549,5 +576,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardarLista;
         private System.Windows.Forms.DataGridView dgvVentas;
+        private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.Label lblidOrdenTrab;
     }
 }

@@ -61,7 +61,7 @@
             this.BtnAgregar.FlatAppearance.BorderSize = 0;
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Image = global::Vista.Properties.Resources.BtnCrearOrden;
-            this.BtnAgregar.Location = new System.Drawing.Point(521, 395);
+            this.BtnAgregar.Location = new System.Drawing.Point(158, 377);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(252, 44);
             this.BtnAgregar.TabIndex = 16;
@@ -206,7 +206,7 @@
             this.btnVisualizarOrden.FlatAppearance.BorderSize = 0;
             this.btnVisualizarOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVisualizarOrden.Image = global::Vista.Properties.Resources.BtnVisualizarOrden;
-            this.btnVisualizarOrden.Location = new System.Drawing.Point(521, 395);
+            this.btnVisualizarOrden.Location = new System.Drawing.Point(1013, 395);
             this.btnVisualizarOrden.Name = "btnVisualizarOrden";
             this.btnVisualizarOrden.Size = new System.Drawing.Size(252, 44);
             this.btnVisualizarOrden.TabIndex = 26;

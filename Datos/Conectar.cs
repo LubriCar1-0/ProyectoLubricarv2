@@ -1342,25 +1342,53 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public static void AgregaListProds(int idOrdenTrab, int fila, string producto, double preciounit, double cantidad, double total)
+        public static void AgregaListProds(int idOrdenTrab, int fila, string producto, double preciounit, double cantidad, double total, int idProd)
         {
-            DateTime fechaHoraActual = DateTime.Now;
+            
             conectar();
             comando.Connection = conexion;
-            comando.CommandText = "AgregarListProd";
+            comando.CommandText = "AgregarListProd";    
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
             comando.Parameters.AddWithValue("@FilaProducto", fila);
-            comando.Parameters.AddWithValue("@idProducto", producto);
+            comando.Parameters.AddWithValue("@Producto", producto);
             comando.Parameters.AddWithValue("@PrecioUnitario", preciounit);
             comando.Parameters.AddWithValue("@Cantidad", cantidad);
             comando.Parameters.AddWithValue("@PrecioTotal", total);
+            comando.Parameters.AddWithValue("@idProd", idProd);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
 
         }
+        public DataTable ObtenerProductosPorOrden(int idOrdenTrab)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerListProdPorOrden";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();  
+            return dt;
+        }
+        public static void EliminarProductosOrden(int idOrdenTrab)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "ElimiProdOrd";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
+            comando.ExecuteNonQuery();
+            desconectar();
+        }
+
+
+
 
         //public static void CargaTotalVentServ(int IdCliente, double subtotal, double iva, double total)
         //{

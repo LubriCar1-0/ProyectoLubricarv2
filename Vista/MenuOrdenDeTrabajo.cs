@@ -30,16 +30,16 @@ namespace Vista
         public DateTime FechaInicioOrden { get; set; }
         public string Vehiculo { get; set; }
         public string EstadoOrden { get; set; }
-        public int idOrdenTrabajo {  get; set; }
+        public int idOrdenTrab {  get; set; }
         #endregion
 
         #region Iniciador
         public MenuOrdenDeTrabajo()
         {
 
-            this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
-            this.StartPosition = FormStartPosition.CenterScreen;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //this.WindowState = FormWindowState.Maximized;
+            //this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             CargatablaProductos();
             dgvProductos.Columns["idProd"].Visible = false;
@@ -55,8 +55,9 @@ namespace Vista
             txbPatente.ReadOnly = true;
             txbVehiculo.ReadOnly = true;
             DtpFechaDeInicio.ShowUpDown = true; 
-            DtpFechaDeInicio.Enabled = false; 
-
+            DtpFechaDeInicio.Enabled = false;
+            
+            
         }
 
         private void MenuOrdenDeTrabajo_Load(object sender, EventArgs e)
@@ -69,19 +70,21 @@ namespace Vista
             TxbDescripcion.Text = this.DescripcionOrden;
             DtpFechaDeInicio.Value = this.FechaInicioOrden;
             cmbEstado.Text = this.EstadoOrden;
+            //idOrdenTrabajo = this.idOrdenTrab;
+            lblidOrdenTrab.Text = idOrdenTrab.ToString();
             // Limpiar cualquier item previo (opcional)
             cmbEstado.Items.Clear();
-
+            CargarListaGuardada(idOrdenTrab);
             // Agregar los valores permitidos al ComboBox
             cmbEstado.Items.Add("INICIADO");
             cmbEstado.Items.Add("CANCELADO");
             cmbEstado.Items.Add("FINALIZADO");
-
+            
+            
             // Seleccionar por defecto "INICIADO"
             cmbEstado.SelectedItem = "INICIADO";
         }
         #endregion
-
 
         #region Cargar Tablas 
         private void CargatablaProductos()
@@ -188,7 +191,33 @@ namespace Vista
         {
             dgvVentas.DataSource = null;  // Limpia el DataGridView
             dgvVentas.DataSource = ValidarOrdenDeTrabajo.ObtenerLista();
-            //dgvVentas.Columns["idCliente"].Visible = false;
+            
+        }
+        
+
+
+
+        private void CargarListaGuardada(int idOrden)
+        {
+            OrdenDeTrabajo.LimpiaLista();
+            var listaGuardada = ValidarOrdenDeTrabajo.ObtenerListaGuardada(idOrden);
+            foreach (var item in listaGuardada)
+            {
+
+                OrdenDeTrabajo.cargaListaProd(
+                    item.idOrdenTrabajo,
+                    item.IdProducto,          
+                    item.Producto,
+                    (int)item.Cantidad,
+                    item.PrecioVenta
+                );
+            }
+
+            dgvVentas.DataSource = null;
+            dgvVentas.DataSource = OrdenDeTrabajo.ObtenerListaOrden();
+            ConfiguraDataGrid(dgvVentas);
+
+
         }
 
 
@@ -269,26 +298,14 @@ namespace Vista
             }
             else
             {
-                ValidarOrdenDeTrabajo.CargaListaDeProd(idOrdenTrabajo, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
+                ValidarOrdenDeTrabajo.CargaListaDeProd(idOrdenTrab, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
                 CargaTablaLista();
-                //double subtotal = ValidarOrdenDeTrabajo.CalculaTotalList();
-                //RecargaTotales(subtotal);
                 ConfiguraDataGrid(dgvVentas);
-                dgvVentas.Columns["idCliente"].Visible = false;
-                dgvVentas.Columns["IdProducto"].Visible = false;
                 LimpiaLblProducto();
                 grpPresupuesto.Enabled = true;
             }
         }
-        //private double IVA;
-        //private double TOTAL;
-        //private double SUBTOTAL;
-        //public void RecargaTotales(double subtotal)
-        //{
-        //    SUBTOTAL = subtotal;
-            
-            
-        //}
+        
         public void LimpiaLblProducto()
         {
             lblProducto.Text = "Seleccione Producto";
@@ -319,22 +336,18 @@ namespace Vista
             DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                OrdenDeTrabajo.CargaList(idOrdenTrabajo);
+                OrdenDeTrabajo.CargaList(idOrdenTrab);
                 VentaProducto.LimpiaLista();
                 CargaTablaLista();
-                dgvVentas.Columns["idCliente"].Visible = false;
-                dgvVentas.Columns["IdProducto"].Visible = false;
+                //dgvVentas.Columns["idCliente"].Visible = false;
+                //dgvVentas.Columns["IdProducto"].Visible = false;
                 CargatablaProductos();
 
             }
         }
         #endregion
 
-        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Grid
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -371,12 +384,15 @@ namespace Vista
                 }
             }
         }
+        #endregion
 
-        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        #region volver  
+        private void BtnVolver_Click(object sender, EventArgs e)
         {
-
+            MenuTurnosTrabajos PantallaTurnoTrabajo = new MenuTurnosTrabajos();
+            Hide();
+            PantallaTurnoTrabajo.ShowDialog();
         }
-
-        
+        #endregion
     }
 }

@@ -197,11 +197,19 @@ namespace Vista
                 if (estadoTurnoSeleccionado == "ACTIVO")
                 {
                     BtnAgregar.Visible = true;
+                    BtnAgregar.Enabled = true;
+                    TxbDescripcion.ReadOnly = false;
+                    cmbTrabajador.Enabled = true;
+                    DtpFechaCargada.ShowUpDown = false; // Oculta el calendario emergente
+                    DtpFechaCargada.Enabled = true; // Bloquea la modificación
                     btnVisualizarOrden.Visible = false;
+                    btnVisualizarOrden.Enabled = false;
                 }
                 else if (estadoTurnoSeleccionado == "INICIADO")
                 {
                     BtnAgregar.Visible = false;
+                    BtnAgregar.Enabled = false;
+                    btnVisualizarOrden.Enabled = true;
                     btnVisualizarOrden.Visible = true;
                     TxbDescripcion.ReadOnly = true;
                     cmbTrabajador.Enabled = false;
@@ -219,7 +227,7 @@ namespace Vista
 
                         // Cargar los datos obtenidos en los controles correspondientes
                         TxbDescripcion.Text = rowOrden["descripcion"].ToString().ToUpper();
-                        idOrdenDeTrabajo = Convert.ToInt32(rowOrden["idOrdenTrab"]);
+                        idOrdenDeTrabajo = Convert.ToInt32(rowOrden["idOrdenTrabajo"]);
                         cmbTrabajador.Text = trabajadorCompleto; // Muestra nombre y apellido juntos
                         if (DateTime.TryParse(rowOrden["FechaDeInicio"].ToString(), out DateTime fechaInicioOrden))
                         {
@@ -347,21 +355,28 @@ namespace Vista
 
         private void btnVisualizarOrden_Click(object sender, EventArgs e)
         {
-            // Se crea una instancia del formulario MenuOrdenDeTrabajo
-            MenuOrdenDeTrabajo formOrden = new MenuOrdenDeTrabajo();
+            if (idOrdenDeTrabajo == 0)
+            {
+                MessageBox.Show("No se selecciono ninguna orden de trabajo");
+            }
+            else
+            {
+                MenuOrdenDeTrabajo formOrden = new MenuOrdenDeTrabajo();
 
-            // Se asignan los valores cargados a las propiedades públicas del formulario destino.
-            formOrden.idOrdenTrabajo = idOrdenDeTrabajo;
-            formOrden.Patente = txbPatente.Text;
-            formOrden.Cliente = NombreCompleto;
-            formOrden.Trabajador = cmbTrabajador.Text;
-            formOrden.DescripcionOrden = TxbDescripcion.Text;
-            formOrden.FechaInicioOrden = DtpFechaCargada.Value;
-            formOrden.Vehiculo = VehiculoCompleto;
-            formOrden.EstadoOrden = "INICIADO";
+                
+                formOrden.idOrdenTrab = idOrdenDeTrabajo;
+                formOrden.Patente = txbPatente.Text;
+                formOrden.Cliente = NombreCompleto;
+                formOrden.Trabajador = cmbTrabajador.Text;
+                formOrden.DescripcionOrden = TxbDescripcion.Text;
+                formOrden.FechaInicioOrden = DtpFechaCargada.Value;
+                formOrden.Vehiculo = VehiculoCompleto;
+                formOrden.EstadoOrden = "INICIADO";
 
+
+                formOrden.ShowDialog();
+            }
             
-            formOrden.ShowDialog();
         }
 
 

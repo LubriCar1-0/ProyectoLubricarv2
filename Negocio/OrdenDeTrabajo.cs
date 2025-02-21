@@ -12,12 +12,6 @@ namespace Negocio
     public class OrdenDeTrabajo
     {
         #region Variables
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Patente { get; set; }
-        public DateTime Dia { get; set; }
-        public TimeSpan Hora { get; set; }
-        public string Descripcion { get; set; }
 
         public int idOrdenTrabajo { get; set; }
         public int FilaProducto { get; set; }
@@ -53,32 +47,40 @@ namespace Negocio
         }
 
 
-
+        #region Lista 
         private static List<OrdenDeTrabajo> ListDeProductos = new List<OrdenDeTrabajo>();
-
         public static int contador;
+
         public static void cuentafilas()
         {
-            for (int i = 0; i <= ListDeProductos.Count(); i++)
-            {
-                contador = i;
-
-            }
+            contador = ListDeProductos.Count;
         }
+
+
         public static void cargaListaProd(int IdOrden, int IdProd, string Producto, int Cantidad, double PrecioVenta)
         {
-            cuentafilas();
-            ListDeProductos.Add(new OrdenDeTrabajo
-            {
-                idOrdenTrabajo = IdOrden, 
-                IdProducto = IdProd,
-                FilaProducto = contador + 1,
-                Producto = Producto,
-                PrecioVenta = PrecioVenta,
-                Cantidad = Cantidad,
-                PrecioTotalProd = (PrecioVenta * Cantidad)
-            });
 
+            var itemExistente = ListDeProductos.FirstOrDefault(p => p.idOrdenTrabajo == IdOrden && p.IdProducto == IdProd);
+            if (itemExistente != null)
+            {
+                // Incrementar la cantidad y recalcular el total
+                itemExistente.Cantidad += Cantidad;
+                itemExistente.PrecioTotalProd = itemExistente.PrecioVenta * itemExistente.Cantidad;
+            }
+            else
+            {
+                cuentafilas();
+                ListDeProductos.Add(new OrdenDeTrabajo
+                {
+                    idOrdenTrabajo = IdOrden,
+                    IdProducto = IdProd,
+                    FilaProducto = contador + 1,
+                    Producto = Producto,
+                    PrecioVenta = PrecioVenta,
+                    Cantidad = Cantidad,
+                    PrecioTotalProd = PrecioVenta * Cantidad
+                });
+            }
         }
         public static double CalculaTotal()
         {
@@ -102,9 +104,10 @@ namespace Negocio
         }
         public static void CargaList(int idOrdenTrabajo)
         {
+            Conectar.EliminarProductosOrden(idOrdenTrabajo);
             foreach (var item in ListDeProductos)
             {
-                Conectar.AgregaListProds(item.idOrdenTrabajo, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd);
+                Conectar.AgregaListProds(item.idOrdenTrabajo, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd,item.IdProducto);
                 Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
             }
             //Conectar.CargaTotalesVenta(Idcliente, Subtotal, iva, total);
@@ -113,7 +116,33 @@ namespace Negocio
         {
             ListDeProductos.Clear();
         }
+        #endregion
 
+        #region TraerLista
+        public static List<OrdenDeTrabajo> ObtenerListaGuardada(int idOrdenTrab)
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable dt = capaDatos.ObtenerProductosPorOrden(idOrdenTrab);
+            List<OrdenDeTrabajo> lista = new List<OrdenDeTrabajo>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                lista.Add(new OrdenDeTrabajo
+                {
+                    idOrdenTrabajo = Convert.ToInt32(row["idOrdenTrab"]),
+                    FilaProducto = Convert.ToInt32(row["FilaProducto"]),
+                    Producto = row["Producto"].ToString().Trim(),
+                    PrecioVenta = Convert.ToDouble(row["PrecioUnitario"]),
+                    Cantidad = Convert.ToDouble(row["Cantidad"]),
+                    PrecioTotalProd = Convert.ToDouble(row["PrecioTotal"]),
+
+                    
+                    IdProducto = Convert.ToInt32(row["idProd"])
+                });
+            }
+            return lista;
+        }
+        #endregion
     }
 
 }

@@ -471,12 +471,6 @@ namespace Vista
         {
             return OrdenDeTrabajo.ObtenerListaOrden();
         }
-
-        public static double CalculaTotalList()
-        {
-            double valor = OrdenDeTrabajo.CalculaTotal();
-            return valor;
-        }
     }
     #endregion
 
