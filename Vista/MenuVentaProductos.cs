@@ -23,10 +23,7 @@ namespace Vista
         private PrintDocument printDocument;
         private string ticketTexto;
         public MenuVentaProductos()
-        {
-            this.FormBorderStyle = FormBorderStyle.None; // Sin bordes
-            this.WindowState = FormWindowState.Maximized; // Maximizado en pantalla completa
-            this.StartPosition = FormStartPosition.CenterScreen; // Centrado en la pantalla
+        {        
             InitializeComponent();
             CargatablaClientes();
             dgvClientes.Columns["idCliente"].Visible = false;
@@ -43,11 +40,13 @@ namespace Vista
             lblIdCat.Visible = false;
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+            grpProductos.Visible = false;
+            GRPClientes.Visible = true;
         }
         #region Volver pantalla anterior
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            PantallaMenuVentas();
+            Close();
         }
         public static void PantallaMenuVentas()
         {
@@ -611,6 +610,24 @@ namespace Vista
         private void grpProductos_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblLubripts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RDProductos_CheckedChanged(object sender, EventArgs e)
+        {          
+                grpProductos.Visible = true;
+                GRPClientes.Visible = false;            
+           
+        }
+
+        private void RDCliente_CheckedChanged(object sender, EventArgs e)
+        {          
+                GRPClientes.Visible = true;
+                grpProductos.Visible = false;           
         }
     }
 }

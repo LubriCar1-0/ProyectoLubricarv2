@@ -42,37 +42,111 @@ namespace Vista
 
         }
 
-        public static void LlamarMenuTurnos()
+        public bool LlamarMenuTurnos()
         {
-            MenuTurnos PantallaMenuTurnos = new MenuTurnos();
-            PantallaMenuTurnos.ShowDialog();
+            int IdCategoria = Empleados.idCategoria;
+
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+
+                bool permiso = false;
+                return permiso;
+            }
+            
         }
 
-        public static void LlamarMenuHistorial()
+        public bool LlamarMenuHistorial()
         {
-            MenuHistorial PantallaMenuHistorial = new MenuHistorial();
-            PantallaMenuHistorial.ShowDialog();
+            int IdCategoria = Empleados.idCategoria;
+
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+
+                bool permiso = false;
+                return permiso;
+            }
+
         }
-        public static void LlamarMenuOrdenDeTrabajo()
+        public bool LlamarMenuOrdenDeTrabajo()
         {
-            MenuTurnosTrabajos PantallaMenuOrdenDeTrabajo = new MenuTurnosTrabajos();
-            PantallaMenuOrdenDeTrabajo.ShowDialog();
+            int IdCategoria = Empleados.idCategoria;
+
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5 || ChequeaPermiso == 3)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+
+                bool permiso = false;
+                return permiso;
+            }
         }
 
-        public static void LlamarMenuStock()
+        public bool LlamarMenuStock()
         {
-            MenuStock PantallaMenuStock = new MenuStock();
-            PantallaMenuStock.ShowDialog();
+            int IdCategoria = Empleados.idCategoria;
+
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5 || ChequeaPermiso == 4)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+
+                bool permiso = false;
+                return permiso;
+            }
         }
-        public static void LlamarMenuConfiguracion()
+        public bool LlamarMenuConfiguracion()
         {
-            MenuConfiguracion PantallaMenuConfiguracion = new MenuConfiguracion();
-            PantallaMenuConfiguracion.ShowDialog();
+            int IdCategoria = Empleados.idCategoria;
+
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+
+                bool permiso = false;
+                return permiso;
+            }
         }
-        public static void LlamarMenuLubriPuntos()
+        public bool LlamarMenuLubriPuntos()
         {
-            MenuLubriPuntos PantallaMenuLubriPuntos = new MenuLubriPuntos();
-            PantallaMenuLubriPuntos.ShowDialog();
+            int IdCategoria = Empleados.idCategoria;
+
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+
+                bool permiso = false;
+                return permiso;
+            }
         }
 
 
@@ -86,8 +160,8 @@ namespace Vista
             {
                 MenuVentas llamarMenuVentas = new MenuVentas(); 
                 llamarMenuVentas.ShowDialog();
-                Hide();
             }
+            else
             {
                 MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -96,38 +170,95 @@ namespace Vista
 
         private void BtnTurnos_Click(object sender, EventArgs e)
         {
-            Hide();
-            LlamarMenuTurnos();
+            bool permiso = LlamarMenuTurnos();
+
+            if (permiso == true)
+            {
+                MenuTurnos PantallaMenuTurnos = new MenuTurnos();
+                PantallaMenuTurnos.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
         }
 
         private void BtnHistorial_Click(object sender, EventArgs e)
         {
-            Hide();
-            LlamarMenuHistorial();
+
+            bool permiso = LlamarMenuHistorial();
+            if (permiso == true)
+            {
+                MenuHistorial PantallaMenuHistorial = new MenuHistorial();
+                PantallaMenuHistorial.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void BtnOrdenDeTrabajo_Click(object sender, EventArgs e)
         {
-            Hide();
-            LlamarMenuOrdenDeTrabajo();
+
+            bool permiso = LlamarMenuOrdenDeTrabajo();
+            if (permiso == true)
+            {
+                MenuTurnosTrabajos PantallaMenuOrdenDeTrabajo = new MenuTurnosTrabajos();
+                PantallaMenuOrdenDeTrabajo.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void BtnStock_Click(object sender, EventArgs e)
         {
-            Hide();
-            LlamarMenuStock();
+            
+            bool permiso = LlamarMenuStock();
+            if (permiso == true)
+            {
+                MenuStock PantallaMenuStock = new MenuStock();
+                PantallaMenuStock.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void BtnConfiguracion_Click(object sender, EventArgs e)
         {
-            Hide();
-            LlamarMenuConfiguracion();
+
+            bool permiso = LlamarMenuConfiguracion();
+            if (permiso == true)
+            {
+                MenuConfiguracion PantallaMenuConfiguracion = new MenuConfiguracion();
+                PantallaMenuConfiguracion.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void BtnLubriPuntos_Click(object sender, EventArgs e)
         {
-            Hide();
-            LlamarMenuLubriPuntos();
+
+            bool permiso = LlamarMenuLubriPuntos();
+
+            if (permiso == true)
+            {
+                MenuLubriPuntos PantallaMenuLubriPuntos = new MenuLubriPuntos();
+                PantallaMenuLubriPuntos.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void PantallaMenuPrincipal_Load(object sender, EventArgs e)

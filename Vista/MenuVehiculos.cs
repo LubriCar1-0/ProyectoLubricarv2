@@ -252,5 +252,10 @@ namespace Vista
         {
 
         }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -42,7 +42,7 @@
             this.BtnClientesMeVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnClientesMeVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnClientesMeVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnClientesMeVentas.Location = new System.Drawing.Point(682, 200);
+            this.BtnClientesMeVentas.Location = new System.Drawing.Point(744, 297);
             this.BtnClientesMeVentas.Name = "BtnClientesMeVentas";
             this.BtnClientesMeVentas.Size = new System.Drawing.Size(246, 98);
             this.BtnClientesMeVentas.TabIndex = 0;
@@ -54,7 +54,7 @@
             this.BtnVentasMeVentas.BackgroundImage = global::Vista.Properties.Resources.BtnVentas;
             this.BtnVentasMeVentas.FlatAppearance.BorderSize = 0;
             this.BtnVentasMeVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVentasMeVentas.Location = new System.Drawing.Point(682, 317);
+            this.BtnVentasMeVentas.Location = new System.Drawing.Point(744, 178);
             this.BtnVentasMeVentas.Name = "BtnVentasMeVentas";
             this.BtnVentasMeVentas.Size = new System.Drawing.Size(242, 98);
             this.BtnVentasMeVentas.TabIndex = 1;
@@ -66,7 +66,7 @@
             this.BtnVehiculosMeVentas.BackgroundImage = global::Vista.Properties.Resources.BtnVehiculos;
             this.BtnVehiculosMeVentas.FlatAppearance.BorderSize = 0;
             this.BtnVehiculosMeVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVehiculosMeVentas.Location = new System.Drawing.Point(678, 435);
+            this.BtnVehiculosMeVentas.Location = new System.Drawing.Point(740, 420);
             this.BtnVehiculosMeVentas.Name = "BtnVehiculosMeVentas";
             this.BtnVehiculosMeVentas.Size = new System.Drawing.Size(246, 98);
             this.BtnVehiculosMeVentas.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(204, 114);
+            this.BtnVolver.Location = new System.Drawing.Point(212, 115);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 47);
             this.BtnVolver.TabIndex = 3;
@@ -92,12 +92,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVentas;
-            this.ClientSize = new System.Drawing.Size(1151, 653);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnVehiculosMeVentas);
             this.Controls.Add(this.BtnVentasMeVentas);
             this.Controls.Add(this.BtnClientesMeVentas);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuVentas";
             this.ResumeLayout(false);
 
