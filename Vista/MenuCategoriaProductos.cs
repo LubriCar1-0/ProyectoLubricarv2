@@ -151,9 +151,8 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MenuConfiguracion LlamarMenuConfiguracion = new MenuConfiguracion();
-            Hide();
-            LlamarMenuConfiguracion.ShowDialog();
+            Close();
+
         }
     }
 }

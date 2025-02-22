@@ -163,9 +163,6 @@
   <data name="BtnHistorialLubriPuntos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnHistorialLubriPuntos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantallaMenuTurnos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantallaMenuTurnos2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BtnConfirmar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnConfirmar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,8 +175,8 @@
   <data name="undo-arrow_icon-icons.com_53849" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undo-arrow_icon-icons.com_53849.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MenuOrdenDeTrabajo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuOrdenDeTrabajo4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PantallaMenuVehiculos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuVehiculos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantallaMenuEmpledos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaMenuEmpledos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -192,9 +189,6 @@
   </data>
   <data name="MenuOrdenDeTrabajo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuOrdenDeTrabajo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnValoresLubri-Puntos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnValoresLubri-Puntos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -210,6 +204,9 @@
   </data>
   <data name="BtnVolver1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnVolver1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PantallaControlDeStockNueva" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaControlDeStockNueva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MenuVentaDeProductos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuVentaDeProductos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +250,11 @@
   <data name="PantallaMenuTurnos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaMenuTurnos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantallaMenuVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantallaMenuVentas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ABMcategoriasProductos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ABMcategoriasProductos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnCanjear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnCanjear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantallaProductoFaltantes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaProductoFaltantes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,11 +280,17 @@
   <data name="BTNCambiarEstado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BTNCambiarEstado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PantallaConfiguracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaConfiguracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BtnEditarTurno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnEditarTurno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantMenuStock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantMenuStock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PantallaMenuEmpleado2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuEmpleado2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantallaControlDeStockNueva1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaControlDeStockNueva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,32 +313,32 @@
   <data name="PantallaModificarTurno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaModificarTurno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnHistorialBitacora1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnHistorialBitacora1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BtnControlStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnControlStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnEditar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnEditar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MenuAgregarProductos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuAgregarProductos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Flechita volver 64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Flechita volver 64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MenuAgregarProductos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuAgregarProductos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnHistorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnHistorial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnAgregarProducto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnAgregarProducto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantallaMenuEmpleado1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantallaMenuEmpleado1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MenuOrdenDeTrabajo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuOrdenDeTrabajo4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantallaMenuEmpleado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaMenuEmpleado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantallaMenuEmpleado2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantallaMenuEmpleado2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnHistorialTurnos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnHistorialTurnos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantallaMenuClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaMenuClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,8 +358,8 @@
   <data name="BTNAgregarCategorias" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BTNAgregarCategorias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnAgregarIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnAgregarIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnHistorialBitacora1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnHistorialBitacora1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnCatEMP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnCatEMP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -391,8 +397,8 @@
   <data name="BtnClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantallaControlDeStockNueva" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantallaControlDeStockNueva.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PantallaMenuVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuVentas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantMenuOrdenDeTrabajo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantMenuOrdenDeTrabajo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -418,8 +424,8 @@
   <data name="MenuConfiguracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuConfiguracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantallaMenuVehiculos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantallaMenuVehiculos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PantallaMenuTurnos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuTurnos2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -427,8 +433,8 @@
   <data name="PantMenuStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantMenuStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnBuscarIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnBuscarIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnValoresLubri-Puntos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnValoresLubri-Puntos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MenuAgregarProductos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuAgregarProductos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -445,23 +451,23 @@
   <data name="MenuLubri-Punts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuLubri-Punts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnEmpleados1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnEmpleados1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PantallaMenuStock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuStock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnBuscarIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnBuscarIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantCancelarTurno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantCancelarTurno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnHistorialTurnos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnHistorialTurnos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnAgregarIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnAgregarIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnBuscarIcon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnBuscarIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantallaMenuStock3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaMenuStock3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MenuOrdenDeTrabajo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuOrdenDeTrabajo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantMenuConfiguracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantMenuConfiguracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -475,8 +481,8 @@
   <data name="BtnVentas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnVentas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnHistorial" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnHistorial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PantallaMenuEmpleado1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuEmpleado1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantallaHistorialDeTurnos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaHistorialDeTurnos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -496,14 +502,14 @@
   <data name="BtnVehiculos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnVehiculos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantallaConfiguracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantallaConfiguracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MenuValoresLubri-Puntos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuValoresLubri-Puntos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PantallaMenuStock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PantallaMenuStock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MenuOrdenDeTrabajo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MenuOrdenDeTrabajo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnEmpleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnEmpleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnEmpleados1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnEmpleados1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PantallaMenuEmpleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PantallaMenuEmpleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -517,13 +523,13 @@
   <data name="MenuControlDeStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MenuControlDeStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnCanjear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnCanjear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnEmpleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnEmpleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnVerTurno" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnVerTurno.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MenuValoresLubri-Puntos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MenuValoresLubri-Puntos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PantallaMenuTurnos3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PantallaMenuTurnos3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

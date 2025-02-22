@@ -102,10 +102,9 @@ namespace Vista
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            MenuTurnos llamarMenuTurnos = new MenuTurnos();
-            Hide();
-            llamarMenuTurnos.ShowDialog();
+            Close();
         }
+
         int idTurno = 0;
         int idClienteBD = 0;
         int idVehiculoBD = 0;

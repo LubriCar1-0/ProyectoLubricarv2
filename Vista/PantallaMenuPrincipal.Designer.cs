@@ -48,7 +48,7 @@
             this.BtnVentas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVentas.FlatAppearance.BorderSize = 0;
             this.BtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVentas.Location = new System.Drawing.Point(599, 168);
+            this.BtnVentas.Location = new System.Drawing.Point(686, 212);
             this.BtnVentas.Name = "BtnVentas";
             this.BtnVentas.Size = new System.Drawing.Size(190, 89);
             this.BtnVentas.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.BtnTurnos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnTurnos.FlatAppearance.BorderSize = 0;
             this.BtnTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnTurnos.Location = new System.Drawing.Point(840, 172);
+            this.BtnTurnos.Location = new System.Drawing.Point(927, 216);
             this.BtnTurnos.Name = "BtnTurnos";
             this.BtnTurnos.Size = new System.Drawing.Size(187, 81);
             this.BtnTurnos.TabIndex = 1;
@@ -76,7 +76,7 @@
             this.BtnHistorial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnHistorial.FlatAppearance.BorderSize = 0;
             this.BtnHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHistorial.Location = new System.Drawing.Point(599, 292);
+            this.BtnHistorial.Location = new System.Drawing.Point(686, 336);
             this.BtnHistorial.Name = "BtnHistorial";
             this.BtnHistorial.Size = new System.Drawing.Size(187, 89);
             this.BtnHistorial.TabIndex = 2;
@@ -90,7 +90,7 @@
             this.BtnOrdenDeTrabajo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnOrdenDeTrabajo.FlatAppearance.BorderSize = 0;
             this.BtnOrdenDeTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOrdenDeTrabajo.Location = new System.Drawing.Point(840, 292);
+            this.BtnOrdenDeTrabajo.Location = new System.Drawing.Point(927, 336);
             this.BtnOrdenDeTrabajo.Name = "BtnOrdenDeTrabajo";
             this.BtnOrdenDeTrabajo.Size = new System.Drawing.Size(187, 89);
             this.BtnOrdenDeTrabajo.TabIndex = 3;
@@ -104,7 +104,7 @@
             this.BtnStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnStock.FlatAppearance.BorderSize = 0;
             this.BtnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnStock.Location = new System.Drawing.Point(599, 417);
+            this.BtnStock.Location = new System.Drawing.Point(686, 461);
             this.BtnStock.Name = "BtnStock";
             this.BtnStock.Size = new System.Drawing.Size(187, 81);
             this.BtnStock.TabIndex = 4;
@@ -118,7 +118,7 @@
             this.BtnConfiguracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnConfiguracion.FlatAppearance.BorderSize = 0;
             this.BtnConfiguracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfiguracion.Location = new System.Drawing.Point(840, 417);
+            this.BtnConfiguracion.Location = new System.Drawing.Point(927, 461);
             this.BtnConfiguracion.Name = "BtnConfiguracion";
             this.BtnConfiguracion.Size = new System.Drawing.Size(187, 81);
             this.BtnConfiguracion.TabIndex = 5;
@@ -132,7 +132,7 @@
             this.BtnLubriPuntos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnLubriPuntos.FlatAppearance.BorderSize = 0;
             this.BtnLubriPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLubriPuntos.Location = new System.Drawing.Point(599, 543);
+            this.BtnLubriPuntos.Location = new System.Drawing.Point(686, 587);
             this.BtnLubriPuntos.Name = "BtnLubriPuntos";
             this.BtnLubriPuntos.Size = new System.Drawing.Size(187, 85);
             this.BtnLubriPuntos.TabIndex = 6;
@@ -147,7 +147,7 @@
             this.BtnCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnCerrarSesion.FlatAppearance.BorderSize = 0;
             this.BtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCerrarSesion.Location = new System.Drawing.Point(840, 543);
+            this.BtnCerrarSesion.Location = new System.Drawing.Point(927, 587);
             this.BtnCerrarSesion.Name = "BtnCerrarSesion";
             this.BtnCerrarSesion.Size = new System.Drawing.Size(187, 85);
             this.BtnCerrarSesion.TabIndex = 7;
@@ -159,7 +159,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(199, 125);
+            this.label1.Location = new System.Drawing.Point(211, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 34);
             this.label1.TabIndex = 8;
@@ -170,7 +170,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Font = new System.Drawing.Font("MV Boli", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lblUsuario.Location = new System.Drawing.Point(383, 125);
+            this.lblUsuario.Location = new System.Drawing.Point(395, 133);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(0, 34);
             this.lblUsuario.TabIndex = 9;
@@ -181,7 +181,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnCerrarSesion);

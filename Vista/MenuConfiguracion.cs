@@ -27,12 +27,12 @@ namespace Vista
             LlamarMenuEmpleado.ShowDialog();
         }
 
-        private void BtnEmpresa_Click(object sender, EventArgs e)
-        {
-            MenuDatosEmpresa LlamarMenuEmpresa = new MenuDatosEmpresa();
-            LlamarMenuEmpresa.ShowDialog();
+        //private void BtnEmpresa_Click(object sender, EventArgs e)
+        //{
+        //    MenuDatosEmpresa LlamarMenuEmpresa = new MenuDatosEmpresa();
+        //    LlamarMenuEmpresa.ShowDialog();
 
-        }
+        //}
         private void btnABMCategoriasProductos_Click_1(object sender, EventArgs e)
         {
             MenuCategoriaProductos LlamarMenuCategoriasProductos = new MenuCategoriaProductos();
@@ -41,9 +41,7 @@ namespace Vista
 
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
-            PantallaMenuPrincipal LlamarMenuPrincipal = new PantallaMenuPrincipal();
-            Hide();
-            LlamarMenuPrincipal.ShowDialog();
+            Close();
         }
 
         private void btnMenuCatEMP_Click(object sender, EventArgs e)

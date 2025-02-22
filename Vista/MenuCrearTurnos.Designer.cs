@@ -44,7 +44,7 @@
             // dtpSelecionarDia
             // 
             this.dtpSelecionarDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpSelecionarDia.Location = new System.Drawing.Point(445, 293);
+            this.dtpSelecionarDia.Location = new System.Drawing.Point(316, 223);
             this.dtpSelecionarDia.Name = "dtpSelecionarDia";
             this.dtpSelecionarDia.Size = new System.Drawing.Size(298, 26);
             this.dtpSelecionarDia.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             this.CbxSelectCL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxSelectCL.FormattingEnabled = true;
-            this.CbxSelectCL.Location = new System.Drawing.Point(445, 409);
+            this.CbxSelectCL.Location = new System.Drawing.Point(316, 309);
             this.CbxSelectCL.Name = "CbxSelectCL";
             this.CbxSelectCL.Size = new System.Drawing.Size(298, 28);
             this.CbxSelectCL.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.CbxSelectVH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxSelectVH.FormattingEnabled = true;
-            this.CbxSelectVH.Location = new System.Drawing.Point(1144, 409);
+            this.CbxSelectVH.Location = new System.Drawing.Point(813, 309);
             this.CbxSelectVH.Name = "CbxSelectVH";
             this.CbxSelectVH.Size = new System.Drawing.Size(298, 28);
             this.CbxSelectVH.TabIndex = 2;
@@ -72,10 +72,10 @@
             // TxtDescripcionTurno
             // 
             this.TxtDescripcionTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescripcionTurno.Location = new System.Drawing.Point(445, 524);
+            this.TxtDescripcionTurno.Location = new System.Drawing.Point(564, 362);
             this.TxtDescripcionTurno.Multiline = true;
             this.TxtDescripcionTurno.Name = "TxtDescripcionTurno";
-            this.TxtDescripcionTurno.Size = new System.Drawing.Size(330, 88);
+            this.TxtDescripcionTurno.Size = new System.Drawing.Size(458, 57);
             this.TxtDescripcionTurno.TabIndex = 4;
             // 
             // BtnEditar
@@ -83,7 +83,7 @@
             this.BtnEditar.BackgroundImage = global::Vista.Properties.Resources.BtnEditar;
             this.BtnEditar.FlatAppearance.BorderSize = 0;
             this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnEditar.Location = new System.Drawing.Point(1466, 955);
+            this.BtnEditar.Location = new System.Drawing.Point(665, 707);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(96, 43);
             this.BtnEditar.TabIndex = 5;
@@ -95,7 +95,7 @@
             this.BtnCrearTurno.BackgroundImage = global::Vista.Properties.Resources.BtnCrearTurnoBlanco;
             this.BtnCrearTurno.FlatAppearance.BorderSize = 0;
             this.BtnCrearTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCrearTurno.Location = new System.Drawing.Point(445, 955);
+            this.BtnCrearTurno.Location = new System.Drawing.Point(433, 707);
             this.BtnCrearTurno.Name = "BtnCrearTurno";
             this.BtnCrearTurno.Size = new System.Drawing.Size(214, 43);
             this.BtnCrearTurno.TabIndex = 6;
@@ -105,7 +105,7 @@
             // dtpHorario
             // 
             this.dtpHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHorario.Location = new System.Drawing.Point(1144, 293);
+            this.dtpHorario.Location = new System.Drawing.Point(813, 223);
             this.dtpHorario.Name = "dtpHorario";
             this.dtpHorario.Size = new System.Drawing.Size(298, 26);
             this.dtpHorario.TabIndex = 8;
@@ -114,9 +114,9 @@
             // dgvTurnos
             // 
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Location = new System.Drawing.Point(464, 680);
+            this.dgvTurnos.Location = new System.Drawing.Point(204, 444);
             this.dgvTurnos.Name = "dgvTurnos";
-            this.dgvTurnos.Size = new System.Drawing.Size(1031, 257);
+            this.dgvTurnos.Size = new System.Drawing.Size(951, 257);
             this.dgvTurnos.TabIndex = 9;
             this.dgvTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellContentClick_1);
             // 
@@ -126,7 +126,7 @@
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(259, 167);
+            this.BtnVolver.Location = new System.Drawing.Point(191, 127);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
             this.BtnVolver.TabIndex = 15;
@@ -139,9 +139,9 @@
             this.btnBorraCampos.FlatAppearance.BorderSize = 0;
             this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorraCampos.Location = new System.Drawing.Point(1337, 631);
+            this.btnBorraCampos.Location = new System.Drawing.Point(783, 707);
             this.btnBorraCampos.Name = "btnBorraCampos";
-            this.btnBorraCampos.Size = new System.Drawing.Size(139, 30);
+            this.btnBorraCampos.Size = new System.Drawing.Size(162, 43);
             this.btnBorraCampos.TabIndex = 23;
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.MenuCreacionDeTurnos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.btnBorraCampos);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.dgvTurnos);
@@ -165,7 +165,9 @@
             this.Controls.Add(this.CbxSelectCL);
             this.Controls.Add(this.dtpSelecionarDia);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuCrearTurnos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuCrearTurnos";
             this.Load += new System.EventHandler(this.MenuCrearTurnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();

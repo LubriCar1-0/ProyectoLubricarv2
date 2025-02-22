@@ -32,6 +32,7 @@
             this.BtnAgregarProducto = new System.Windows.Forms.Button();
             this.BtnControlDeStock = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnABMCategoriasProductos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnProductosFaltantes
@@ -41,9 +42,9 @@
             this.BtnProductosFaltantes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnProductosFaltantes.FlatAppearance.BorderSize = 0;
             this.BtnProductosFaltantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnProductosFaltantes.Location = new System.Drawing.Point(1107, 722);
+            this.BtnProductosFaltantes.Location = new System.Drawing.Point(931, 429);
             this.BtnProductosFaltantes.Name = "BtnProductosFaltantes";
-            this.BtnProductosFaltantes.Size = new System.Drawing.Size(346, 164);
+            this.BtnProductosFaltantes.Size = new System.Drawing.Size(243, 110);
             this.BtnProductosFaltantes.TabIndex = 5;
             this.BtnProductosFaltantes.UseVisualStyleBackColor = true;
             // 
@@ -54,9 +55,9 @@
             this.BtnAgregarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAgregarProducto.FlatAppearance.BorderSize = 0;
             this.BtnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarProducto.Location = new System.Drawing.Point(1107, 244);
+            this.BtnAgregarProducto.Location = new System.Drawing.Point(650, 277);
             this.BtnAgregarProducto.Name = "BtnAgregarProducto";
-            this.BtnAgregarProducto.Size = new System.Drawing.Size(346, 164);
+            this.BtnAgregarProducto.Size = new System.Drawing.Size(243, 110);
             this.BtnAgregarProducto.TabIndex = 6;
             this.BtnAgregarProducto.UseVisualStyleBackColor = true;
             this.BtnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
@@ -68,9 +69,9 @@
             this.BtnControlDeStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnControlDeStock.FlatAppearance.BorderSize = 0;
             this.BtnControlDeStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnControlDeStock.Location = new System.Drawing.Point(1107, 477);
+            this.BtnControlDeStock.Location = new System.Drawing.Point(650, 429);
             this.BtnControlDeStock.Name = "BtnControlDeStock";
-            this.BtnControlDeStock.Size = new System.Drawing.Size(346, 164);
+            this.BtnControlDeStock.Size = new System.Drawing.Size(243, 110);
             this.BtnControlDeStock.TabIndex = 7;
             this.BtnControlDeStock.UseVisualStyleBackColor = true;
             this.BtnControlDeStock.Click += new System.EventHandler(this.BtnControlDeStock_Click);
@@ -81,12 +82,25 @@
             this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(313, 176);
+            this.button1.Location = new System.Drawing.Point(218, 125);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 57);
             this.button1.TabIndex = 14;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnABMCategoriasProductos
+            // 
+            this.btnABMCategoriasProductos.BackgroundImage = global::Vista.Properties.Resources.BTNAgregarCategorias;
+            this.btnABMCategoriasProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnABMCategoriasProductos.FlatAppearance.BorderSize = 0;
+            this.btnABMCategoriasProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnABMCategoriasProductos.Location = new System.Drawing.Point(931, 276);
+            this.btnABMCategoriasProductos.Name = "btnABMCategoriasProductos";
+            this.btnABMCategoriasProductos.Size = new System.Drawing.Size(242, 111);
+            this.btnABMCategoriasProductos.TabIndex = 16;
+            this.btnABMCategoriasProductos.UseVisualStyleBackColor = true;
+            this.btnABMCategoriasProductos.Click += new System.EventHandler(this.btnABMCategoriasProductos_Click);
             // 
             // MenuStock
             // 
@@ -94,7 +108,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuStock;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnABMCategoriasProductos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnControlDeStock);
             this.Controls.Add(this.BtnAgregarProducto);
@@ -108,7 +123,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuStock";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,5 +134,6 @@
         private System.Windows.Forms.Button BtnAgregarProducto;
         private System.Windows.Forms.Button BtnControlDeStock;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnABMCategoriasProductos;
     }
 }

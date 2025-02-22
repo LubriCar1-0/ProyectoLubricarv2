@@ -147,9 +147,7 @@ namespace Vista
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            MenuTurnos PantallaMenuTurnos = new MenuTurnos();
-            Hide();
-            PantallaMenuTurnos.ShowDialog();
+            Close();
         }
     }
 }

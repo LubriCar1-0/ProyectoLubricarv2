@@ -43,9 +43,7 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MenuStock PantallaMenuStock = new MenuStock();
-            Hide();
-            PantallaMenuStock.ShowDialog();
+            Close();
         }
 
         private void CargatablaProductosSinFiltro()

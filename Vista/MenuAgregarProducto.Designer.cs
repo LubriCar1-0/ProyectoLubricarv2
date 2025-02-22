@@ -53,29 +53,26 @@
             // 
             // TxtNombreProducto
             // 
-            this.TxtNombreProducto.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombreProducto.Location = new System.Drawing.Point(1198, 455);
-            this.TxtNombreProducto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtNombreProducto.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNombreProducto.Location = new System.Drawing.Point(573, 217);
             this.TxtNombreProducto.Name = "TxtNombreProducto";
-            this.TxtNombreProducto.Size = new System.Drawing.Size(570, 63);
+            this.TxtNombreProducto.Size = new System.Drawing.Size(217, 35);
             this.TxtNombreProducto.TabIndex = 2;
             // 
             // TxtMarcaProducto
             // 
-            this.TxtMarcaProducto.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMarcaProducto.Location = new System.Drawing.Point(1888, 455);
-            this.TxtMarcaProducto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtMarcaProducto.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMarcaProducto.Location = new System.Drawing.Point(904, 217);
             this.TxtMarcaProducto.Name = "TxtMarcaProducto";
-            this.TxtMarcaProducto.Size = new System.Drawing.Size(547, 63);
+            this.TxtMarcaProducto.Size = new System.Drawing.Size(217, 35);
             this.TxtMarcaProducto.TabIndex = 3;
             // 
             // TxtCantidad
             // 
-            this.TxtCantidad.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantidad.Location = new System.Drawing.Point(518, 645);
-            this.TxtCantidad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCantidad.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCantidad.Location = new System.Drawing.Point(241, 301);
             this.TxtCantidad.Name = "TxtCantidad";
-            this.TxtCantidad.Size = new System.Drawing.Size(438, 63);
+            this.TxtCantidad.Size = new System.Drawing.Size(217, 35);
             this.TxtCantidad.TabIndex = 4;
             this.TxtCantidad.Text = "0";
             this.TxtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -83,11 +80,10 @@
             // 
             // TxtCantMin
             // 
-            this.TxtCantMin.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCantMin.Location = new System.Drawing.Point(1214, 645);
-            this.TxtCantMin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtCantMin.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCantMin.Location = new System.Drawing.Point(573, 301);
             this.TxtCantMin.Name = "TxtCantMin";
-            this.TxtCantMin.Size = new System.Drawing.Size(438, 63);
+            this.TxtCantMin.Size = new System.Drawing.Size(217, 35);
             this.TxtCantMin.TabIndex = 5;
             this.TxtCantMin.Text = "0";
             this.TxtCantMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -96,12 +92,11 @@
             // 
             // TxtDescripcion
             // 
-            this.TxtDescripcion.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDescripcion.Location = new System.Drawing.Point(518, 1168);
-            this.TxtDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtDescripcion.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDescripcion.Location = new System.Drawing.Point(240, 548);
             this.TxtDescripcion.Multiline = true;
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(1836, 381);
+            this.TxtDescripcion.Size = new System.Drawing.Size(574, 190);
             this.TxtDescripcion.TabIndex = 10;
             // 
             // btnAgregar
@@ -110,43 +105,39 @@
             this.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(2120, 1000);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAgregar.Location = new System.Drawing.Point(944, 625);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(236, 97);
+            this.btnAgregar.Size = new System.Drawing.Size(157, 63);
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // TxtPrecioList
             // 
-            this.TxtPrecioList.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPrecioList.Location = new System.Drawing.Point(518, 1000);
-            this.TxtPrecioList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtPrecioList.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPrecioList.Location = new System.Drawing.Point(241, 471);
             this.TxtPrecioList.Name = "TxtPrecioList";
-            this.TxtPrecioList.Size = new System.Drawing.Size(438, 63);
+            this.TxtPrecioList.Size = new System.Drawing.Size(217, 35);
             this.TxtPrecioList.TabIndex = 7;
             this.TxtPrecioList.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtPrecioList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioList_KeyPress);
             // 
             // txtPrecioVent
             // 
-            this.txtPrecioVent.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioVent.Location = new System.Drawing.Point(1214, 1000);
-            this.txtPrecioVent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPrecioVent.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioVent.Location = new System.Drawing.Point(573, 471);
             this.txtPrecioVent.Name = "txtPrecioVent";
-            this.txtPrecioVent.Size = new System.Drawing.Size(438, 63);
+            this.txtPrecioVent.Size = new System.Drawing.Size(217, 35);
             this.txtPrecioVent.TabIndex = 8;
             this.txtPrecioVent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrecioVent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVent_KeyPress);
             // 
             // txtLitros
             // 
-            this.txtLitros.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLitros.Location = new System.Drawing.Point(518, 814);
-            this.txtLitros.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLitros.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLitros.Location = new System.Drawing.Point(241, 392);
             this.txtLitros.Name = "txtLitros";
-            this.txtLitros.Size = new System.Drawing.Size(438, 63);
+            this.txtLitros.Size = new System.Drawing.Size(217, 35);
             this.txtLitros.TabIndex = 6;
             this.txtLitros.Text = "0.0";
             this.txtLitros.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -159,21 +150,19 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(393, 257);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(187, 123);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 129);
+            this.button1.Size = new System.Drawing.Size(58, 52);
             this.button1.TabIndex = 12;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtcodigoProducto
             // 
-            this.txtcodigoProducto.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodigoProducto.Location = new System.Drawing.Point(1888, 645);
-            this.txtcodigoProducto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtcodigoProducto.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcodigoProducto.Location = new System.Drawing.Point(904, 301);
             this.txtcodigoProducto.Name = "txtcodigoProducto";
-            this.txtcodigoProducto.Size = new System.Drawing.Size(438, 63);
+            this.txtcodigoProducto.Size = new System.Drawing.Size(217, 35);
             this.txtcodigoProducto.TabIndex = 9;
             this.txtcodigoProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -182,10 +171,9 @@
             this.chPermiteEditar.AutoSize = true;
             this.chPermiteEditar.BackColor = System.Drawing.Color.Transparent;
             this.chPermiteEditar.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chPermiteEditar.Location = new System.Drawing.Point(1070, 257);
-            this.chPermiteEditar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chPermiteEditar.Location = new System.Drawing.Point(585, 123);
             this.chPermiteEditar.Name = "chPermiteEditar";
-            this.chPermiteEditar.Size = new System.Drawing.Size(358, 59);
+            this.chPermiteEditar.Size = new System.Drawing.Size(241, 40);
             this.chPermiteEditar.TabIndex = 21;
             this.chPermiteEditar.Text = "Permitir editar";
             this.chPermiteEditar.UseVisualStyleBackColor = false;
@@ -196,10 +184,9 @@
             this.cbxMostrarProductos.AutoSize = true;
             this.cbxMostrarProductos.BackColor = System.Drawing.Color.Transparent;
             this.cbxMostrarProductos.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxMostrarProductos.Location = new System.Drawing.Point(603, 257);
-            this.cbxMostrarProductos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbxMostrarProductos.Location = new System.Drawing.Point(269, 124);
             this.cbxMostrarProductos.Name = "cbxMostrarProductos";
-            this.cbxMostrarProductos.Size = new System.Drawing.Size(435, 59);
+            this.cbxMostrarProductos.Size = new System.Drawing.Size(291, 40);
             this.cbxMostrarProductos.TabIndex = 22;
             this.cbxMostrarProductos.Text = "Mostrar productos";
             this.cbxMostrarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -209,23 +196,21 @@
             // cmbCategoria
             // 
             this.cmbCategoria.Enabled = false;
-            this.cmbCategoria.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategoria.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(518, 463);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbCategoria.Location = new System.Drawing.Point(241, 217);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(520, 63);
+            this.cmbCategoria.Size = new System.Drawing.Size(217, 35);
             this.cmbCategoria.TabIndex = 1;
             this.cmbCategoria.Text = "Selecione categoría";
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // txtLitrosMinimos
             // 
-            this.txtLitrosMinimos.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLitrosMinimos.Location = new System.Drawing.Point(1214, 834);
-            this.txtLitrosMinimos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLitrosMinimos.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLitrosMinimos.Location = new System.Drawing.Point(573, 392);
             this.txtLitrosMinimos.Name = "txtLitrosMinimos";
-            this.txtLitrosMinimos.Size = new System.Drawing.Size(438, 63);
+            this.txtLitrosMinimos.Size = new System.Drawing.Size(217, 35);
             this.txtLitrosMinimos.TabIndex = 23;
             this.txtLitrosMinimos.Text = "0.0";
             this.txtLitrosMinimos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -237,11 +222,10 @@
             this.DGVProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.CambiarEstado});
-            this.DGVProductos.Location = new System.Drawing.Point(468, 362);
-            this.DGVProductos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DGVProductos.Location = new System.Drawing.Point(187, 169);
             this.DGVProductos.Name = "DGVProductos";
             this.DGVProductos.RowHeadersWidth = 62;
-            this.DGVProductos.Size = new System.Drawing.Size(1970, 1187);
+            this.DGVProductos.Size = new System.Drawing.Size(977, 569);
             this.DGVProductos.TabIndex = 14;
             this.DGVProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVProductos_CellContentClick);
             // 
@@ -283,11 +267,11 @@
             // 
             // MenuAgregarProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaAgregarProducto1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2856, 1602);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.cbxMostrarProductos);
             this.Controls.Add(this.chPermiteEditar);
             this.Controls.Add(this.DGVProductos);
@@ -306,13 +290,11 @@
             this.Controls.Add(this.txtLitrosMinimos);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MenuAgregarProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuAgregarProducto";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuAgregarProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVProductos)).EndInit();
             this.ResumeLayout(false);

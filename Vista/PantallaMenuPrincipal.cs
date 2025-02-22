@@ -206,8 +206,7 @@ namespace Vista
             bool permiso = LlamarMenuOrdenDeTrabajo();
             if (permiso == true)
             {
-                MenuTurnosTrabajos PantallaMenuOrdenDeTrabajo = new MenuTurnosTrabajos();
-                PantallaMenuOrdenDeTrabajo.ShowDialog();
+                MessageBox.Show("HAY QUE MOSTRAR LAS ORDENES DE TRABAJO");
             }
             else
             {

@@ -80,10 +80,10 @@
             this.label22 = new System.Windows.Forms.Label();
             this.lblLubripts = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.RDCliente = new System.Windows.Forms.RadioButton();
             this.RDProductos = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.grpProductos.SuspendLayout();
@@ -101,7 +101,7 @@
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(74, 109);
+            this.BtnVolver.Location = new System.Drawing.Point(87, 132);
             this.BtnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(78, 45);
@@ -319,7 +319,7 @@
             this.grpProductos.Controls.Add(this.label8);
             this.grpProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.grpProductos.ForeColor = System.Drawing.Color.OrangeRed;
-            this.grpProductos.Location = new System.Drawing.Point(80, 153);
+            this.grpProductos.Location = new System.Drawing.Point(88, 185);
             this.grpProductos.Name = "grpProductos";
             this.grpProductos.Size = new System.Drawing.Size(593, 509);
             this.grpProductos.TabIndex = 25;
@@ -487,7 +487,7 @@
             this.GRPClientes.Controls.Add(this.label3);
             this.GRPClientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.GRPClientes.ForeColor = System.Drawing.Color.OrangeRed;
-            this.GRPClientes.Location = new System.Drawing.Point(79, 174);
+            this.GRPClientes.Location = new System.Drawing.Point(87, 206);
             this.GRPClientes.Name = "GRPClientes";
             this.GRPClientes.Size = new System.Drawing.Size(593, 450);
             this.GRPClientes.TabIndex = 26;
@@ -524,7 +524,7 @@
             this.grpPresupuesto.Controls.Add(this.dgvVentas);
             this.grpPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpPresupuesto.ForeColor = System.Drawing.Color.OrangeRed;
-            this.grpPresupuesto.Location = new System.Drawing.Point(678, 290);
+            this.grpPresupuesto.Location = new System.Drawing.Point(773, 357);
             this.grpPresupuesto.Name = "grpPresupuesto";
             this.grpPresupuesto.Size = new System.Drawing.Size(529, 379);
             this.grpPresupuesto.TabIndex = 27;
@@ -757,48 +757,12 @@
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.groupBox4.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox4.Location = new System.Drawing.Point(678, 133);
+            this.groupBox4.Location = new System.Drawing.Point(761, 191);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(541, 151);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Cliente Seleccionado";
-            // 
-            // lblIdCliente
-            // 
-            this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Location = new System.Drawing.Point(11, 58);
-            this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(0, 36);
-            this.lblIdCliente.TabIndex = 32;
-            // 
-            // RDCliente
-            // 
-            this.RDCliente.AutoSize = true;
-            this.RDCliente.BackColor = System.Drawing.Color.White;
-            this.RDCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.RDCliente.Location = new System.Drawing.Point(428, 22);
-            this.RDCliente.Name = "RDCliente";
-            this.RDCliente.Size = new System.Drawing.Size(304, 32);
-            this.RDCliente.TabIndex = 33;
-            this.RDCliente.TabStop = true;
-            this.RDCliente.Text = "Mostrar Listado de clientes";
-            this.RDCliente.UseVisualStyleBackColor = false;
-            this.RDCliente.CheckedChanged += new System.EventHandler(this.RDCliente_CheckedChanged);
-            // 
-            // RDProductos
-            // 
-            this.RDProductos.AutoSize = true;
-            this.RDProductos.BackColor = System.Drawing.Color.White;
-            this.RDProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.RDProductos.Location = new System.Drawing.Point(428, 61);
-            this.RDProductos.Name = "RDProductos";
-            this.RDProductos.Size = new System.Drawing.Size(328, 32);
-            this.RDProductos.TabIndex = 34;
-            this.RDProductos.TabStop = true;
-            this.RDProductos.Text = "Mostrar Listado de Productos";
-            this.RDProductos.UseVisualStyleBackColor = false;
-            this.RDProductos.CheckedChanged += new System.EventHandler(this.RDProductos_CheckedChanged);
             // 
             // label7
             // 
@@ -813,13 +777,49 @@
             this.label7.TabIndex = 33;
             this.label7.Text = "Gana LubriPuntos: ";
             // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Location = new System.Drawing.Point(11, 58);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(0, 36);
+            this.lblIdCliente.TabIndex = 32;
+            // 
+            // RDCliente
+            // 
+            this.RDCliente.AutoSize = true;
+            this.RDCliente.BackColor = System.Drawing.Color.White;
+            this.RDCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.RDCliente.Location = new System.Drawing.Point(603, 39);
+            this.RDCliente.Name = "RDCliente";
+            this.RDCliente.Size = new System.Drawing.Size(304, 32);
+            this.RDCliente.TabIndex = 33;
+            this.RDCliente.TabStop = true;
+            this.RDCliente.Text = "Mostrar Listado de clientes";
+            this.RDCliente.UseVisualStyleBackColor = false;
+            this.RDCliente.CheckedChanged += new System.EventHandler(this.RDCliente_CheckedChanged);
+            // 
+            // RDProductos
+            // 
+            this.RDProductos.AutoSize = true;
+            this.RDProductos.BackColor = System.Drawing.Color.White;
+            this.RDProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.RDProductos.Location = new System.Drawing.Point(603, 77);
+            this.RDProductos.Name = "RDProductos";
+            this.RDProductos.Size = new System.Drawing.Size(328, 32);
+            this.RDProductos.TabIndex = 34;
+            this.RDProductos.TabStop = true;
+            this.RDProductos.Text = "Mostrar Listado de Productos";
+            this.RDProductos.UseVisualStyleBackColor = false;
+            this.RDProductos.CheckedChanged += new System.EventHandler(this.RDProductos_CheckedChanged);
+            // 
             // MenuVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaVentaDeProductos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.RDProductos);
             this.Controls.Add(this.RDCliente);

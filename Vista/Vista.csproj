@@ -739,5 +739,8 @@
   <ItemGroup>
     <None Include="Resources\MenuValoresLubri-Puntos.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaMenuTurnos3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -376,9 +376,7 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MenuStock LlamarMenuStock = new MenuStock();
-            Hide();
-            LlamarMenuStock.ShowDialog();
+            Close();
         }
 
 

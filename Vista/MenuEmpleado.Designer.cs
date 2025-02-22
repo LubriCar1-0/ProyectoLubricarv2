@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreEmpleado = new System.Windows.Forms.TextBox();
             this.TxtApellidoEmpleado = new System.Windows.Forms.TextBox();
             this.TxtDniEmpleado = new System.Windows.Forms.TextBox();
@@ -48,43 +48,43 @@
             // 
             // TxtNombreEmpleado
             // 
-            this.TxtNombreEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombreEmpleado.Location = new System.Drawing.Point(472, 266);
+            this.TxtNombreEmpleado.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.TxtNombreEmpleado.Location = new System.Drawing.Point(339, 198);
             this.TxtNombreEmpleado.Name = "TxtNombreEmpleado";
-            this.TxtNombreEmpleado.Size = new System.Drawing.Size(243, 22);
+            this.TxtNombreEmpleado.Size = new System.Drawing.Size(243, 34);
             this.TxtNombreEmpleado.TabIndex = 0;
             // 
             // TxtApellidoEmpleado
             // 
-            this.TxtApellidoEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtApellidoEmpleado.Location = new System.Drawing.Point(1132, 266);
+            this.TxtApellidoEmpleado.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.TxtApellidoEmpleado.Location = new System.Drawing.Point(813, 198);
             this.TxtApellidoEmpleado.Name = "TxtApellidoEmpleado";
-            this.TxtApellidoEmpleado.Size = new System.Drawing.Size(243, 22);
+            this.TxtApellidoEmpleado.Size = new System.Drawing.Size(243, 34);
             this.TxtApellidoEmpleado.TabIndex = 1;
             // 
             // TxtDniEmpleado
             // 
-            this.TxtDniEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDniEmpleado.Location = new System.Drawing.Point(472, 362);
+            this.TxtDniEmpleado.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.TxtDniEmpleado.Location = new System.Drawing.Point(339, 274);
             this.TxtDniEmpleado.Name = "TxtDniEmpleado";
-            this.TxtDniEmpleado.Size = new System.Drawing.Size(243, 22);
+            this.TxtDniEmpleado.Size = new System.Drawing.Size(243, 34);
             this.TxtDniEmpleado.TabIndex = 2;
             // 
             // TxtCelularEmpleado
             // 
-            this.TxtCelularEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCelularEmpleado.Location = new System.Drawing.Point(472, 496);
+            this.TxtCelularEmpleado.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.TxtCelularEmpleado.Location = new System.Drawing.Point(339, 362);
             this.TxtCelularEmpleado.Name = "TxtCelularEmpleado";
-            this.TxtCelularEmpleado.Size = new System.Drawing.Size(243, 22);
+            this.TxtCelularEmpleado.Size = new System.Drawing.Size(243, 34);
             this.TxtCelularEmpleado.TabIndex = 3;
             // 
             // CmbCategoriaEmple
             // 
-            this.CmbCategoriaEmple.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CmbCategoriaEmple.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbCategoriaEmple.FormattingEnabled = true;
-            this.CmbCategoriaEmple.Location = new System.Drawing.Point(1132, 496);
+            this.CmbCategoriaEmple.Location = new System.Drawing.Point(813, 362);
             this.CmbCategoriaEmple.Name = "CmbCategoriaEmple";
-            this.CmbCategoriaEmple.Size = new System.Drawing.Size(243, 24);
+            this.CmbCategoriaEmple.Size = new System.Drawing.Size(243, 36);
             this.CmbCategoriaEmple.TabIndex = 4;
             this.CmbCategoriaEmple.SelectedIndexChanged += new System.EventHandler(this.CmbCategoriaEmple_SelectedIndexChanged);
             // 
@@ -93,7 +93,7 @@
             this.BtnAgregarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(472, 934);
+            this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(636, 380);
             this.BtnAgregarMeEmpleado.Name = "BtnAgregarMeEmpleado";
             this.BtnAgregarMeEmpleado.Size = new System.Drawing.Size(129, 43);
             this.BtnAgregarMeEmpleado.TabIndex = 8;
@@ -102,11 +102,11 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(1132, 362);
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.txtContraseña.Location = new System.Drawing.Point(813, 274);
             this.txtContraseña.MaxLength = 8;
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(243, 22);
+            this.txtContraseña.Size = new System.Drawing.Size(243, 34);
             this.txtContraseña.TabIndex = 11;
             // 
             // button1
@@ -115,19 +115,21 @@
             this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(270, 174);
+            this.button1.Location = new System.Drawing.Point(190, 123);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 57);
             this.button1.TabIndex = 13;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // chbEditar
             // 
             this.chbEditar.AutoSize = true;
             this.chbEditar.BackColor = System.Drawing.Color.Transparent;
-            this.chbEditar.Location = new System.Drawing.Point(1534, 692);
+            this.chbEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbEditar.Location = new System.Drawing.Point(1032, 439);
             this.chbEditar.Name = "chbEditar";
-            this.chbEditar.Size = new System.Drawing.Size(90, 17);
+            this.chbEditar.Size = new System.Drawing.Size(124, 20);
             this.chbEditar.TabIndex = 14;
             this.chbEditar.Text = "Permitir Editar";
             this.chbEditar.UseVisualStyleBackColor = false;
@@ -139,9 +141,9 @@
             this.btnBorraCampos.FlatAppearance.BorderSize = 0;
             this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorraCampos.Location = new System.Drawing.Point(1351, 910);
+            this.btnBorraCampos.Location = new System.Drawing.Point(610, 429);
             this.btnBorraCampos.Name = "btnBorraCampos";
-            this.btnBorraCampos.Size = new System.Drawing.Size(139, 30);
+            this.btnBorraCampos.Size = new System.Drawing.Size(176, 30);
             this.btnBorraCampos.TabIndex = 23;
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
@@ -153,21 +155,21 @@
             this.DgvMenuEmpleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.Eliminar});
-            this.DgvMenuEmpleado.Location = new System.Drawing.Point(436, 628);
+            this.DgvMenuEmpleado.Location = new System.Drawing.Point(211, 465);
             this.DgvMenuEmpleado.Name = "DgvMenuEmpleado";
-            this.DgvMenuEmpleado.Size = new System.Drawing.Size(1054, 259);
+            this.DgvMenuEmpleado.Size = new System.Drawing.Size(945, 259);
             this.DgvMenuEmpleado.TabIndex = 24;
             this.DgvMenuEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMenuEmpleado_CellContentClick);
             // 
             // Editar
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle5;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Editar.HeaderText = "Editar";
             this.Editar.Name = "Editar";
@@ -176,13 +178,13 @@
             // 
             // Eliminar
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle6;
             this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Eliminar.HeaderText = "Estado";
             this.Eliminar.Name = "Eliminar";
@@ -195,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuEmpleados1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.DgvMenuEmpleado);
             this.Controls.Add(this.btnBorraCampos);
             this.Controls.Add(this.chbEditar);
@@ -208,7 +210,9 @@
             this.Controls.Add(this.TxtApellidoEmpleado);
             this.Controls.Add(this.TxtNombreEmpleado);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.DgvMenuEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,15 +29,19 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PantallaMenuPrincipal PantallaMenuPrincipal = new PantallaMenuPrincipal();
-            Hide();
-            PantallaMenuPrincipal.ShowDialog();
+            Close();    
         }
 
         private void BtnControlDeStock_Click(object sender, EventArgs e)
         {
             MenuControlDeStock llamarcontroldestock = new MenuControlDeStock(); 
             llamarcontroldestock.ShowDialog();
+        }
+
+        private void btnABMCategoriasProductos_Click(object sender, EventArgs e)
+        {
+            MenuCategoriaProductos LlamarMenuCategoriasProductos = new MenuCategoriaProductos();
+            LlamarMenuCategoriasProductos.ShowDialog();
         }
     }
 }

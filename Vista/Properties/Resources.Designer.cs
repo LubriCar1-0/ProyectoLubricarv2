@@ -73,6 +73,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ABMcategoriasProductos1 {
+            get {
+                object obj = ResourceManager.GetObject("ABMcategoriasProductos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blanco {
             get {
                 object obj = ResourceManager.GetObject("blanco", resourceCulture);
@@ -1216,6 +1226,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap PantallaMenuTurnos2 {
             get {
                 object obj = ResourceManager.GetObject("PantallaMenuTurnos2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantallaMenuTurnos3 {
+            get {
+                object obj = ResourceManager.GetObject("PantallaMenuTurnos3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
