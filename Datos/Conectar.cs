@@ -1408,7 +1408,7 @@ namespace Datos
         //}
         #endregion
 
-
+        #region Lubripuntos 
         public static void AsignarLubriPuntos(int Id, double Precio, int Lubri)
         {
             conectar();
@@ -1437,6 +1437,7 @@ namespace Datos
             desconectar();
             return dt;
         }
+        #endregion
     }
 }
 

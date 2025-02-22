@@ -172,6 +172,12 @@
     <Compile Include="MenuOrdenDeTrabajo.Designer.cs">
       <DependentUpon>MenuOrdenDeTrabajo.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuOrdenesFinalizadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuOrdenesFinalizadas.Designer.cs">
+      <DependentUpon>MenuOrdenesFinalizadas.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuTurnosTrabajos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,12 @@
     </Compile>
     <Compile Include="MenuVentas.Designer.cs">
       <DependentUpon>MenuVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuVentaServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuVentaServicio.Designer.cs">
+      <DependentUpon>MenuVentaServicio.cs</DependentUpon>
     </Compile>
     <Compile Include="PantallaMenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -292,6 +304,9 @@
     <EmbeddedResource Include="MenuOrdenDeTrabajo.resx">
       <DependentUpon>MenuOrdenDeTrabajo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuOrdenesFinalizadas.resx">
+      <DependentUpon>MenuOrdenesFinalizadas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuTurnosTrabajos.resx">
       <DependentUpon>MenuTurnosTrabajos.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuVentas.resx">
       <DependentUpon>MenuVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuVentaServicio.resx">
+      <DependentUpon>MenuVentaServicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaMenuPrincipal.resx">
       <DependentUpon>PantallaMenuPrincipal.cs</DependentUpon>
@@ -741,6 +759,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PantallaMenuTurnos3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuVentaServicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuOrdenesFinalizadas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

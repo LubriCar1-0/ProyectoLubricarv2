@@ -883,6 +883,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MenuOrdenesFinalizadas {
+            get {
+                object obj = ResourceManager.GetObject("MenuOrdenesFinalizadas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MenuValoresLubri_Puntos {
             get {
                 object obj = ResourceManager.GetObject("MenuValoresLubri-Puntos", resourceCulture);
@@ -896,6 +906,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap MenuVentaDeProductos {
             get {
                 object obj = ResourceManager.GetObject("MenuVentaDeProductos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuVentaServicio {
+            get {
+                object obj = ResourceManager.GetObject("MenuVentaServicio", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

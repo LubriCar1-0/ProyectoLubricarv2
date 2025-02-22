@@ -104,14 +104,15 @@ namespace Negocio
         }
         public static void CargaList(int idOrdenTrabajo)
         {
-            Conectar.EliminarProductosOrden(idOrdenTrabajo);
+            // Eliminamos la eliminación previa para no borrar los registros existentes
+            // Conectar.EliminarProductosOrden(idOrdenTrabajo);
             foreach (var item in ListDeProductos)
             {
-                Conectar.AgregaListProds(item.idOrdenTrabajo, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd,item.IdProducto);
+                Conectar.AgregaListProds(item.idOrdenTrabajo, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd, item.IdProducto);
                 Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
             }
-            //Conectar.CargaTotalesVenta(Idcliente, Subtotal, iva, total);
         }
+
         public static void LimpiaLista()
         {
             ListDeProductos.Clear();
