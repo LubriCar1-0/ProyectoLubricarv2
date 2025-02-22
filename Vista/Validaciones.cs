@@ -564,7 +564,19 @@ namespace Vista
     }
 
     #endregion
+    public class ValidarLubriPuntos : LubriPuntos
+    {
+        public static void AsignarLubri(int Id, double Precio, int Lubri)
+        {
+           LubriPuntos.AsignarLubriPuntos(Id, Precio, Lubri);
+        }
 
+        public static DataTable ObtenerValoresLubriPuntos(int ID)
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.ObtenerValoresLubri(ID);
+        }
+    }
 }
 
 

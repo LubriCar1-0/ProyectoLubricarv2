@@ -64,7 +64,6 @@
             this.btnGuardarLista = new System.Windows.Forms.Button();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.BtnVolver = new System.Windows.Forms.Button();
-            this.lblidOrdenTrab = new System.Windows.Forms.Label();
             this.grpProductos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -116,7 +115,6 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(208, 36);
             this.cmbEstado.TabIndex = 24;
-            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // DtpFechaDeInicio
             // 
@@ -214,7 +212,6 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(85, 35);
             this.txtCantidad.TabIndex = 34;
-            this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
             // 
             // lblTEXTOlitros
             // 
@@ -497,15 +494,6 @@
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
-            // lblidOrdenTrab
-            // 
-            this.lblidOrdenTrab.AutoSize = true;
-            this.lblidOrdenTrab.Location = new System.Drawing.Point(311, 307);
-            this.lblidOrdenTrab.Name = "lblidOrdenTrab";
-            this.lblidOrdenTrab.Size = new System.Drawing.Size(35, 13);
-            this.lblidOrdenTrab.TabIndex = 30;
-            this.lblidOrdenTrab.Text = "label1";
-            // 
             // MenuOrdenDeTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,7 +501,6 @@
             this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenDeTrabajo4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.lblidOrdenTrab);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.grpPresupuesto);
             this.Controls.Add(this.grpProductos);
@@ -577,6 +564,5 @@
         private System.Windows.Forms.Button btnGuardarLista;
         private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.Button BtnVolver;
-        private System.Windows.Forms.Label lblidOrdenTrab;
     }
 }

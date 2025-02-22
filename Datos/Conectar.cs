@@ -1408,6 +1408,35 @@ namespace Datos
         //}
         #endregion
 
+
+        public static void AsignarLubriPuntos(int Id, double Precio, int Lubri)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "AsignaValoresLubriPunt";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idValorLubripuntos", Id);
+            comando.Parameters.AddWithValue("@Total", Precio);
+            comando.Parameters.AddWithValue("@Lubri", Lubri);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
+
+        public DataTable ObtenerValoresLubri(int ID)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ObtenerValoresLubriPunt";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idValorLubripuntos", ID);
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader); 
+            desconectar();
+            return dt;
+        }
     }
 }
 

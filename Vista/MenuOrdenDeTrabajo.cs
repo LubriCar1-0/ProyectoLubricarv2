@@ -71,7 +71,7 @@ namespace Vista
             DtpFechaDeInicio.Value = this.FechaInicioOrden;
             cmbEstado.Text = this.EstadoOrden;
             //idOrdenTrabajo = this.idOrdenTrab;
-            lblidOrdenTrab.Text = idOrdenTrab.ToString();
+            
             // Limpiar cualquier item previo (opcional)
             cmbEstado.Items.Clear();
             CargarListaGuardada(idOrdenTrab);
