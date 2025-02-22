@@ -536,7 +536,6 @@ namespace Vista
             return valor;
         }
         
-
         
     }
     #endregion

@@ -229,10 +229,11 @@ namespace Datos
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "VerificaPermiso";
+            comando.Parameters.Clear();
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@IdCategoria", verificaPermiso);
             int id = Convert.ToInt32(comando.ExecuteScalar());
-            comando.Parameters.Clear();
+            
             desconectar();
             return id;
             /* create procedure VerificaPermiso(
@@ -1259,6 +1260,19 @@ namespace Datos
             desconectar();
         }
 
+        public static void CargaLubriPuntos(int id, int lubripuntos)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "CargaLubripuntos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@IdCliente", id);
+            comando.Parameters.AddWithValue("@LubriPuntos", lubripuntos);
+            comando.ExecuteNonQuery();
+            desconectar();
+        }
+
         #endregion
 
         #endregion
@@ -1409,6 +1423,7 @@ namespace Datos
         #endregion
 
         #region Lubripuntos 
+       
         public static void AsignarLubriPuntos(int Id, double Precio, int Lubri)
         {
             conectar();
@@ -1436,6 +1451,21 @@ namespace Datos
             dt.Load(reader); 
             desconectar();
             return dt;
+        }
+
+
+        public DataTable TraerLubripuntos()
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeLubripuntos";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+
+            desconectar();
+            return dt;          
         }
         #endregion
     }

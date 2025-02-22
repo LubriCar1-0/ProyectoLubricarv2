@@ -365,36 +365,43 @@ namespace Vista
 
         private void btnagregalista_Click(object sender, EventArgs e)
         {
-            int valorStock = 0;
-            int cantidad = Convert.ToInt32(lblDisponible.Text);
-            double cantidadlitro = Convert.ToDouble(lblLitros.Text);
-            int Liquido = ValidarVenta.TraeLiquido(Convert.ToInt32(lblIdCat.Text));
-            if(Liquido == 1 && cantidadlitro == 0.00)
+            if (txtCantidad.Text != "")
             {
-                valorStock = 1;
-            }
+                int valorStock = 0;
+                int cantidad = Convert.ToInt32(lblDisponible.Text);
+                double cantidadlitro = Convert.ToDouble(lblLitros.Text);
+                int Liquido = ValidarVenta.TraeLiquido(Convert.ToInt32(lblIdCat.Text));
+                if ((Liquido == 1 && cantidadlitro == 0.00) || (cantidadlitro < Convert.ToDouble(txtCantidad.Text)))
+                {
+                    valorStock = 1;
+                }
 
-            if (Liquido == 0 && cantidad == 0)
-            {
-                valorStock = 1;
-            }
+                if ((Liquido == 0 && cantidad == 0) || (cantidad < Convert.ToInt32(txtCantidad.Text)) )
+                {
+                    valorStock = 1;
+                }
 
-            if(valorStock == 1)
-            {
-                MessageBox.Show("No hay stock a la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (valorStock == 1)
+                {
+                    MessageBox.Show("No hay stock a la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    ValidarVenta.CargaLista(idcliente, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
+                    CargaTablaLista();
+                    double subtotal = ValidarVenta.CalculaTotal();
+                    RecargaTotales(subtotal);
+                    ConfiguraDataGrid(dgvVentas);
+                    dgvVentas.Columns["idCliente"].Visible = false;
+                    dgvVentas.Columns["IdProducto"].Visible = false;
+                    LimpiaLblProducto();
+                    grpPresupuesto.Enabled = true;
+                }
             }
             else
             {
-                ValidarVenta.CargaLista(idcliente, Convert.ToInt32(lblIdproducto.Text), lblProducto.Text, Convert.ToInt32(lblDisponible.Text), Convert.ToDouble(lblLitros.Text), Convert.ToInt32(txtCantidad.Text), PrecioVenta);
-                CargaTablaLista();
-                double subtotal = ValidarVenta.CalculaTotal();
-                RecargaTotales(subtotal);
-                ConfiguraDataGrid(dgvVentas);
-                dgvVentas.Columns["idCliente"].Visible = false;
-                dgvVentas.Columns["IdProducto"].Visible = false;
-                LimpiaLblProducto();
-                grpPresupuesto.Enabled = true;
-            }       
+                MessageBox.Show("Debe ingresar una cantidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         public void RecargaTotales(double subtotal)
@@ -404,6 +411,9 @@ namespace Vista
             lblIVA.Text = IVA.ToString();
             double Total = subtotal + IVA;
             lblTotal.Text = Total.ToString();
+
+            LubriPuntos llamalubripuntos = new LubriPuntos();
+            lblLubriGana.Text = Convert.ToString(llamalubripuntos.CalculaLubriPuntos(Total));
         }
 
 
@@ -422,8 +432,58 @@ namespace Vista
             lblSubTotal.Text = "0.0";
             lblIVA.Text = "0.0";
             lblTotal.Text = "0.0";
+            lblLubriGana.Text = "No hay valor asignado";
         }
-        
+
+        private void btnCargaVenta_Click(object sender, EventArgs e)
+        {
+
+            DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                VentaProducto.Cargaventa(Convert.ToInt32(lblIdCliente.Text), Convert.ToDouble(lblSubTotal.Text), Convert.ToDouble(lblIVA.Text), Convert.ToDouble(lblTotal.Text), Convert.ToInt32(lblLubriGana.Text));
+               
+                #region ImprimeTicket
+               ticketTexto = GenerarTicket();
+
+                if (string.IsNullOrWhiteSpace(ticketTexto))
+                {
+                    MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+                previewDialog.Document = printDocument;
+                previewDialog.ShowDialog();
+                #endregion
+
+                //MessageBox.Show("Venta cargada con exito");
+                VentaProducto.LimpiaLista();
+                CargaTablaLista();
+                dgvVentas.Columns["idCliente"].Visible = false;
+                dgvVentas.Columns["IdProducto"].Visible = false;
+                CargatablaProductos();
+                lblSubTotal.Text = "0.0";
+                lblIVA.Text = "0.0";
+                lblTotal.Text = "0.0";
+                lblLubriGana.Text = "No hay valor asignado";
+            }
+        }
+        private void btnPresupuesto_Click(object sender, EventArgs e)
+        {
+
+            ticketTexto = GenerarPresupuesto();
+
+            if (string.IsNullOrWhiteSpace(ticketTexto))
+            {
+                MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
+            previewDialog.Document = printDocument;
+            previewDialog.ShowDialog();
+        }
 
         #endregion
 
@@ -546,7 +606,18 @@ namespace Vista
                 e.Handled = true; // Bloquea el caracter
             }
         }
+        private void RDProductos_CheckedChanged(object sender, EventArgs e)
+        {
+            grpProductos.Visible = true;
+            GRPClientes.Visible = false;
 
+        }
+
+        private void RDCliente_CheckedChanged(object sender, EventArgs e)
+        {
+            GRPClientes.Visible = true;
+            grpProductos.Visible = false;
+        }
 
 
 
@@ -559,75 +630,11 @@ namespace Vista
             grpPresupuesto.Enabled = false;
         }
 
-        private void btnPresupuesto_Click_1(object sender, EventArgs e)
-        {
-            ticketTexto = GenerarPresupuesto();
+        
+  
 
-            if (string.IsNullOrWhiteSpace(ticketTexto))
-            {
-                MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+        
 
-            PrintPreviewDialog previewDialog = new PrintPreviewDialog();
-            previewDialog.Document = printDocument;
-            previewDialog.ShowDialog();
-        }
-
-        private void btnCargaVenta_Click(object sender, EventArgs e)
-        {
-
-            DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
-            {
-                VentaProducto.Cargaventa(Convert.ToInt32(lblIdCliente.Text), Convert.ToDouble(lblSubTotal.Text), Convert.ToDouble(lblIVA.Text), Convert.ToDouble(lblTotal.Text));
-                #region ImprimeTicket
-                ticketTexto = GenerarTicket();
-
-                if (string.IsNullOrWhiteSpace(ticketTexto))
-                {
-                    MessageBox.Show("No hay productos en la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                PrintPreviewDialog previewDialog = new PrintPreviewDialog();
-                previewDialog.Document = printDocument;
-                previewDialog.ShowDialog();
-                #endregion
-
-                //MessageBox.Show("Venta cargada con exito");
-                VentaProducto.LimpiaLista();
-                CargaTablaLista();
-                dgvVentas.Columns["idCliente"].Visible = false;
-                dgvVentas.Columns["IdProducto"].Visible = false;
-                CargatablaProductos();
-                lblSubTotal.Text = "0.0";
-                lblIVA.Text = "0.0";
-                lblTotal.Text = "0.0";
-            }
-        }
-
-        private void grpProductos_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblLubripts_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RDProductos_CheckedChanged(object sender, EventArgs e)
-        {          
-                grpProductos.Visible = true;
-                GRPClientes.Visible = false;            
-           
-        }
-
-        private void RDCliente_CheckedChanged(object sender, EventArgs e)
-        {          
-                GRPClientes.Visible = true;
-                grpProductos.Visible = false;           
-        }
+       
     }
 }

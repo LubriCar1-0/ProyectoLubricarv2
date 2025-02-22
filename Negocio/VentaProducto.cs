@@ -86,8 +86,9 @@ namespace Negocio
 
         }
 
+        
 
-        public static void Cargaventa(int Idcliente, double Subtotal, double iva, double total)
+        public static void Cargaventa(int Idcliente, double Subtotal, double iva, double total, int lubripuntos)
         {
             foreach (var item in ListVentaProducto)
             {
@@ -95,6 +96,15 @@ namespace Negocio
                 Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
             }
             Conectar.CargaTotalesVenta(Idcliente, Subtotal, iva, total);
+            Conectar.CargaLubriPuntos(Idcliente, lubripuntos);
+        }
+        
+        public static void CargaLubripuntos(int ValorLubri)
+        {
+
+
+
+
         }
 
 
