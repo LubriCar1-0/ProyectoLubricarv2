@@ -206,7 +206,9 @@ namespace Vista
             bool permiso = LlamarMenuOrdenDeTrabajo();
             if (permiso == true)
             {
-                MessageBox.Show("HAY QUE MOSTRAR LAS ORDENES DE TRABAJO");
+                MenuOrdenesFinalizadas PantallaOrdenes = new MenuOrdenesFinalizadas();
+                Hide();
+                PantallaOrdenes.ShowDialog();
             }
             else
             {

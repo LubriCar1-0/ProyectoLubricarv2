@@ -45,7 +45,11 @@ namespace Negocio
             string estado = "En Proceso";
             Conectar.CrearOrdenTrabajo(NombreCompleto, dia, descripcion, trabajadorId, idCliente, idVehiculo, estado, idTurno);
         }
-
+        public static void CambioDeEstado (int idOrden, string estado)
+        {
+            Conectar capadatos = new Conectar();
+            Conectar.UpdateEstado(idOrden, estado);
+        }
 
         #region Lista 
         private static List<OrdenDeTrabajo> ListDeProductos = new List<OrdenDeTrabajo>();

@@ -1389,20 +1389,51 @@ namespace Datos
             desconectar();  
             return dt;
         }
-        public static void EliminarProductosOrden(int idOrdenTrab)
+       
+        public DataTable OrdenesFiltro(string patente, string Fecha, int IdTrabajador, string estado)
         {
             conectar();
-            comando.Parameters.Clear();
             comando.Connection = conexion;
-            comando.CommandText = "ElimiProdOrd";
+            comando.CommandText = "OrdenesConFiltro";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@patente", !string.IsNullOrEmpty(patente) ? (object)patente : DBNull.Value);
+            comando.Parameters.AddWithValue("@fecha", !string.IsNullOrEmpty(Fecha) ? (object)Fecha : DBNull.Value);
+            comando.Parameters.AddWithValue("@IdTrabajador", IdTrabajador > 0 ? (object)IdTrabajador : DBNull.Value);
+            comando.Parameters.AddWithValue("@estado", !string.IsNullOrEmpty(estado) ? (object)estado : DBNull.Value);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            leer.Close();
+            desconectar();
+
+            return dt;
+        }
+        public DataTable OrdenesFinalizadas()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "BuscarOrdenesFinalizadas";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            leer.Close();
+            desconectar();
+            return dt;
+        }
+        public static void UpdateEstado (int idOrden, string estado)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "UpdateEstadoOrden";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idOrdenTrab", idOrden);
+            comando.Parameters.AddWithValue("@estado", estado);
             comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
             desconectar();
         }
-
-
-
 
         //public static void CargaTotalVentServ(int IdCliente, double subtotal, double iva, double total)
         //{
@@ -1423,7 +1454,7 @@ namespace Datos
         #endregion
 
         #region Lubripuntos 
-       
+
         public static void AsignarLubriPuntos(int Id, double Precio, int Lubri)
         {
             conectar();

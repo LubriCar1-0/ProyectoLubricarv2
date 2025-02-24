@@ -471,6 +471,23 @@ namespace Vista
         {
             return OrdenDeTrabajo.ObtenerListaOrden();
         }
+        public static DataTable OrdenesDeFiltro(string Patente, string fecha, int trabajadorId, string estado)
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.OrdenesFiltro(Patente, fecha, trabajadorId, estado);
+        }
+        public static DataTable BuscarOrdenes()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasOrdenes = CapaDatos.OrdenesFinalizadas();
+            return TablasOrdenes;
+
+        }
+        public static void CambiarEstado (int idOrden, string estado)
+        {
+            OrdenDeTrabajo.CambioDeEstado(idOrden, estado);
+        }
+
     }
     #endregion
 
@@ -551,8 +568,8 @@ namespace Vista
         public static DataTable BuscarBitacora()
         {
             Conectar CapaDatos = new Conectar();
-            DataTable TablasTurnos = CapaDatos.Bitacora();
-            return TablasTurnos;
+            DataTable TablasBitacora = CapaDatos.Bitacora();
+            return TablasBitacora;
 
         }
         public static DataTable BitacoraFiltro(string accion, string fecha, int trabajadorId)
@@ -563,6 +580,7 @@ namespace Vista
     }
 
     #endregion
+
     public class ValidarLubriPuntos : LubriPuntos
     {
         public static void AsignarLubri(int Id, double Precio, int Lubri)

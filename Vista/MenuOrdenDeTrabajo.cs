@@ -404,5 +404,35 @@ namespace Vista
         {
 
         }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            string selectedEstado = cmbEstado.SelectedItem?.ToString();
+            if (selectedEstado == "INICIADO")
+            {
+                MessageBox.Show("Debe seleccionar otro estado para finalizar la orden.", "Estado inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string estado = string.Empty;
+            if (selectedEstado == "CANCELADO")
+            {
+                estado = "CANCELADO";
+                MessageBox.Show("La orden se ha cancelado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (selectedEstado == "FINALIZADO")
+            {
+                estado = "FINALIZADO";
+                MessageBox.Show("La orden se ha finalizado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ValidarOrdenDeTrabajo.CambiarEstado(idOrdenTrab,estado);
+
+            }
+
+        }
+
     }
 }

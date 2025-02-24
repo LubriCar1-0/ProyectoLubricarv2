@@ -64,6 +64,7 @@
             this.btnGuardarLista = new System.Windows.Forms.Button();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.BtnVolver = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.grpProductos.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -115,6 +116,7 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(217, 36);
             this.cmbEstado.TabIndex = 24;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // DtpFechaDeInicio
             // 
@@ -473,7 +475,7 @@
             this.btnGuardarLista.Name = "btnGuardarLista";
             this.btnGuardarLista.Size = new System.Drawing.Size(176, 46);
             this.btnGuardarLista.TabIndex = 20;
-            this.btnGuardarLista.Text = "Confirmar";
+            this.btnGuardarLista.Text = "Guardar";
             this.btnGuardarLista.UseVisualStyleBackColor = true;
             this.btnGuardarLista.Click += new System.EventHandler(this.btnGuardarLista_Click);
             // 
@@ -500,6 +502,18 @@
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.Color.Black;
+            this.btnFinalizar.Location = new System.Drawing.Point(809, 670);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(183, 43);
+            this.btnFinalizar.TabIndex = 22;
+            this.btnFinalizar.Text = "Finalizar Orden ";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
             // MenuOrdenDeTrabajo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -507,6 +521,7 @@
             this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenDeTrabajo4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.grpPresupuesto);
             this.Controls.Add(this.grpProductos);
@@ -571,5 +586,6 @@
         private System.Windows.Forms.Button btnGuardarLista;
         private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }

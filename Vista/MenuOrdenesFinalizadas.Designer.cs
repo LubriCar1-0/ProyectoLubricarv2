@@ -44,7 +44,7 @@
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.txtTrabajador = new System.Windows.Forms.TextBox();
             this.btnVisualizarOrden = new System.Windows.Forms.Button();
-            this.cmbTelefono = new System.Windows.Forms.ComboBox();
+            this.cmbTrabajador = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesFinalizadas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,7 @@
             this.dgvOrdenesFinalizadas.RowTemplate.Height = 28;
             this.dgvOrdenesFinalizadas.Size = new System.Drawing.Size(819, 183);
             this.dgvOrdenesFinalizadas.TabIndex = 30;
+            this.dgvOrdenesFinalizadas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrdenesFinalizadas_CellContentClick);
             // 
             // dtpFecha
             // 
@@ -74,6 +75,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(282, 26);
             this.dtpFecha.TabIndex = 36;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // lblFecha
             // 
@@ -104,34 +106,36 @@
             this.lblTrabajador.AutoSize = true;
             this.lblTrabajador.BackColor = System.Drawing.Color.Transparent;
             this.lblTrabajador.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrabajador.Location = new System.Drawing.Point(445, 249);
+            this.lblTrabajador.Location = new System.Drawing.Point(421, 249);
             this.lblTrabajador.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTrabajador.Name = "lblTrabajador";
-            this.lblTrabajador.Size = new System.Drawing.Size(122, 31);
+            this.lblTrabajador.Size = new System.Drawing.Size(146, 31);
             this.lblTrabajador.TabIndex = 29;
-            this.lblTrabajador.Text = "Telefono";
+            this.lblTrabajador.Text = "Trabajador";
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(892, 166);
+            this.btnBuscar.Location = new System.Drawing.Point(895, 162);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
             this.btnBuscar.TabIndex = 31;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnRecargar
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
             this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRecargar.Location = new System.Drawing.Point(398, 162);
+            this.btnRecargar.Location = new System.Drawing.Point(386, 162);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
             this.btnRecargar.TabIndex = 33;
             this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // BtnVolver
             // 
@@ -148,11 +152,11 @@
             // 
             // txbCliente
             // 
-            this.txbCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCliente.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCliente.Location = new System.Drawing.Point(258, 542);
             this.txbCliente.Multiline = true;
             this.txbCliente.Name = "txbCliente";
-            this.txbCliente.Size = new System.Drawing.Size(235, 29);
+            this.txbCliente.Size = new System.Drawing.Size(262, 34);
             this.txbCliente.TabIndex = 41;
             // 
             // lblCliente
@@ -181,11 +185,11 @@
             // 
             // txtVehiculo
             // 
-            this.txtVehiculo.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVehiculo.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVehiculo.Location = new System.Drawing.Point(553, 542);
             this.txtVehiculo.Multiline = true;
             this.txtVehiculo.Name = "txtVehiculo";
-            this.txtVehiculo.Size = new System.Drawing.Size(235, 29);
+            this.txtVehiculo.Size = new System.Drawing.Size(257, 34);
             this.txtVehiculo.TabIndex = 43;
             // 
             // lblEmpleado
@@ -202,31 +206,33 @@
             // 
             // txtTrabajador
             // 
-            this.txtTrabajador.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTrabajador.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTrabajador.Location = new System.Drawing.Point(838, 542);
             this.txtTrabajador.Multiline = true;
             this.txtTrabajador.Name = "txtTrabajador";
-            this.txtTrabajador.Size = new System.Drawing.Size(235, 29);
+            this.txtTrabajador.Size = new System.Drawing.Size(256, 34);
             this.txtTrabajador.TabIndex = 45;
             // 
             // btnVisualizarOrden
             // 
             this.btnVisualizarOrden.FlatAppearance.BorderSize = 0;
             this.btnVisualizarOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarOrden.Image = global::Vista.Properties.Resources.BtnVisualizarOrden;
-            this.btnVisualizarOrden.Location = new System.Drawing.Point(543, 672);
+            this.btnVisualizarOrden.Image = global::Vista.Properties.Resources.BtnVentaDelServicio;
+            this.btnVisualizarOrden.Location = new System.Drawing.Point(535, 665);
             this.btnVisualizarOrden.Name = "btnVisualizarOrden";
-            this.btnVisualizarOrden.Size = new System.Drawing.Size(245, 44);
+            this.btnVisualizarOrden.Size = new System.Drawing.Size(266, 44);
             this.btnVisualizarOrden.TabIndex = 47;
             this.btnVisualizarOrden.UseVisualStyleBackColor = true;
+            this.btnVisualizarOrden.Click += new System.EventHandler(this.btnVisualizarOrden_Click);
             // 
-            // cmbTelefono
+            // cmbTrabajador
             // 
-            this.cmbTelefono.FormattingEnabled = true;
-            this.cmbTelefono.Location = new System.Drawing.Point(574, 259);
-            this.cmbTelefono.Name = "cmbTelefono";
-            this.cmbTelefono.Size = new System.Drawing.Size(282, 21);
-            this.cmbTelefono.TabIndex = 48;
+            this.cmbTrabajador.FormattingEnabled = true;
+            this.cmbTrabajador.Location = new System.Drawing.Point(574, 259);
+            this.cmbTrabajador.Name = "cmbTrabajador";
+            this.cmbTrabajador.Size = new System.Drawing.Size(282, 21);
+            this.cmbTrabajador.TabIndex = 48;
+            this.cmbTrabajador.SelectedIndexChanged += new System.EventHandler(this.cmbTrabajador_SelectedIndexChanged);
             // 
             // MenuOrdenesFinalizadas
             // 
@@ -235,7 +241,7 @@
             this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenesFinalizadas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.cmbTelefono);
+            this.Controls.Add(this.cmbTrabajador);
             this.Controls.Add(this.btnVisualizarOrden);
             this.Controls.Add(this.lblEmpleado);
             this.Controls.Add(this.txtTrabajador);
@@ -256,6 +262,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuOrdenesFinalizadas";
             this.Text = "MenuOrdenesFinalizadas";
+            this.Load += new System.EventHandler(this.MenuOrdenesFinalizadas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesFinalizadas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -279,6 +286,6 @@
         private System.Windows.Forms.Label lblEmpleado;
         private System.Windows.Forms.TextBox txtTrabajador;
         private System.Windows.Forms.Button btnVisualizarOrden;
-        private System.Windows.Forms.ComboBox cmbTelefono;
+        private System.Windows.Forms.ComboBox cmbTrabajador;
     }
 }
