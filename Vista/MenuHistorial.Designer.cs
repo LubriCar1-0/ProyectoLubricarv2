@@ -32,6 +32,7 @@
             this.BtnHistorialTurnos = new System.Windows.Forms.Button();
             this.BtnHistorialLubriPuntos = new System.Windows.Forms.Button();
             this.BtnBitacora = new System.Windows.Forms.Button();
+            this.BtnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnHistorialVentas
@@ -79,6 +80,20 @@
             this.BtnBitacora.UseVisualStyleBackColor = true;
             this.BtnBitacora.Click += new System.EventHandler(this.BtnBitacora_Click);
             // 
+            // BtnVolver
+            // 
+            this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnVolver.FlatAppearance.BorderSize = 0;
+            this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Location = new System.Drawing.Point(195, 125);
+            this.BtnVolver.Name = "BtnVolver";
+            this.BtnVolver.Size = new System.Drawing.Size(64, 40);
+            this.BtnVolver.TabIndex = 41;
+            this.BtnVolver.Text = "Volver";
+            this.BtnVolver.UseVisualStyleBackColor = false;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
+            // 
             // MenuHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,6 +101,7 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuHistorial;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnBitacora);
             this.Controls.Add(this.BtnHistorialLubriPuntos);
             this.Controls.Add(this.BtnHistorialTurnos);
@@ -104,5 +120,6 @@
         private System.Windows.Forms.Button BtnHistorialTurnos;
         private System.Windows.Forms.Button BtnHistorialLubriPuntos;
         private System.Windows.Forms.Button BtnBitacora;
+        private System.Windows.Forms.Button BtnVolver;
     }
 }

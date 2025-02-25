@@ -33,7 +33,7 @@ namespace Vista
             DataTable dt = ValidarProducto.ObtenerProductosFaltantes();
             DgvProductoFaltantes.DataSource = dt;
 
-            // Configuración de la GridView para mejorar la apariencia
+            
             DgvProductoFaltantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvProductoFaltantes.EnableHeadersVisualStyles = false;
             DgvProductoFaltantes.ColumnHeadersDefaultCellStyle.BackColor = Color.Teal;
@@ -44,16 +44,16 @@ namespace Vista
             DgvProductoFaltantes.BorderStyle = BorderStyle.None;
             DgvProductoFaltantes.RowTemplate.Height = 30;
 
-            // Renombrar encabezados según lo que se muestra
+            
             DgvProductoFaltantes.Columns["Nombre"].HeaderText = "Producto";
             DgvProductoFaltantes.Columns["Marca"].HeaderText = "Marca";
             DgvProductoFaltantes.Columns["CodProd"].HeaderText = "Código";
             DgvProductoFaltantes.Columns["CantidadActual"].HeaderText = "Cantidad Actual";
             DgvProductoFaltantes.Columns["CantidadMinima"].HeaderText = "Cantidad Minima";
-            // Eliminar la última fila vacía
+          
             DgvProductoFaltantes.AllowUserToAddRows = false;
 
-            // Eliminar la columna vacía a la derecha
+          
             DgvProductoFaltantes.RowHeadersVisible = false;
 
         }

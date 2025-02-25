@@ -52,5 +52,10 @@ namespace Vista
             pantallaproductosFalt.ShowDialog();
 
         }
+
+        private void MenuStock_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

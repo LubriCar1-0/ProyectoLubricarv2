@@ -64,6 +64,7 @@ namespace Datos
         public DataTable TraerTablaCategorias()
         {
             conectar();
+            comando.Parameters.Clear();
             comando.Connection = conexion;
             comando.CommandText = "TraerelIDCAT";
             comando.CommandType = CommandType.StoredProcedure;

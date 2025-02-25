@@ -55,7 +55,7 @@
             this.grbFiltros.Controls.Add(this.btnBuscar);
             this.grbFiltros.Controls.Add(this.btnRecargar);
             this.grbFiltros.Controls.Add(this.lblAccion);
-            this.grbFiltros.Location = new System.Drawing.Point(226, 165);
+            this.grbFiltros.Location = new System.Drawing.Point(224, 185);
             this.grbFiltros.Name = "grbFiltros";
             this.grbFiltros.Size = new System.Drawing.Size(899, 552);
             this.grbFiltros.TabIndex = 29;
@@ -88,6 +88,7 @@
             this.dgvTurnos.RowTemplate.Height = 28;
             this.dgvTurnos.Size = new System.Drawing.Size(823, 272);
             this.dgvTurnos.TabIndex = 9;
+            this.dgvTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellContentClick);
             // 
             // lblFecha
             // 
@@ -163,7 +164,7 @@
             this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(183, 114);
+            this.button1.Location = new System.Drawing.Point(185, 123);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 56);
             this.button1.TabIndex = 30;
@@ -176,7 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaBitacora;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grbFiltros);
             this.DoubleBuffered = true;

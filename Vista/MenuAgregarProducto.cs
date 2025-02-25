@@ -234,19 +234,19 @@ namespace Vista
             {
                 Name = "CategoriaColumn",
                 HeaderText = "Categoría",
-                DataPropertyName = "IdCategorias", // Vincula la propiedad
+                DataPropertyName = "IdCategorias", 
                 DisplayMember = "Value",
                 ValueMember = "Key"
             };
 
-            // Llenar el combo con las categorías
+           
             Dictionary<int, string> categorias = ValidaCategoriasProducto.ObtenerCategoriasProductos();
             foreach (var categoria in categorias)
             {
                 comboBoxColumn.Items.Add(new KeyValuePair<int, string>(categoria.Key, categoria.Value));
             }
 
-            // Agrega la columna al DataGridView
+            
             DGVProductos.Columns.Add(comboBoxColumn);
 
 
@@ -321,10 +321,10 @@ namespace Vista
 
         private void TxtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //Solo numeros
+            
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
             {
-                e.Handled = true; // Bloquea el caracter
+                e.Handled = true; 
             }
         }
 
@@ -332,7 +332,7 @@ namespace Vista
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
             {
-                e.Handled = true; // Bloquea el caracter
+                e.Handled = true; 
             }
         }
 
@@ -340,7 +340,7 @@ namespace Vista
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
             {
-                e.Handled = true; // Bloquea el caracter
+                e.Handled = true; 
             }
         }
 
@@ -348,7 +348,7 @@ namespace Vista
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
             {
-                e.Handled = true; // Bloquea el caracter
+                e.Handled = true; 
             }
         }
 
@@ -356,7 +356,7 @@ namespace Vista
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
             {
-                e.Handled = true; // Bloquea el caracter
+                e.Handled = true; 
             }
         }
 

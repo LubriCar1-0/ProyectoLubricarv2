@@ -86,102 +86,7 @@ namespace Vista
 
             }
         }
-        //private void DgvMenuEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    DataGridViewRow filaSeleccionada = DgvMenuEmpleado.Rows[e.RowIndex];
-        //    int idTrabajador = Convert.ToInt32(filaSeleccionada.Cells["idTrabajador"].Value);
-        //    int idCategoria = Convert.ToInt32(filaSeleccionada.Cells["idCategoria"].Value);
-        //    TxtNombreEmpleado.Text = filaSeleccionada.Cells["NomTR"].Value.ToString();
-        //    TxtApellidoEmpleado.Text = filaSeleccionada.Cells["ApeTR"].Value.ToString();
-        //    TxtDniEmpleado.Text = filaSeleccionada.Cells["documentoTR"].Value.ToString();
-        //    txtContraseña.Text = filaSeleccionada.Cells["contraseñaTR"].Value.ToString();
-        //    TxtCelularEmpleado.Text = filaSeleccionada.Cells["telefonoTR"].Value.ToString();
-        //    CmbCategoriaEmple.Text = Validaciones.ObtCat(idCategoria);
-        //    if (DgvMenuEmpleado.Columns[e.ColumnIndex].Name == "Editar")
-        //    {
-        //        if (e.RowIndex >= 0)
-        //        {
-
-        //            int idTrabajadorUPD = Convert.ToInt32(filaSeleccionada.Cells["idTrabajador"].Value);
-        //            int idCategoriaUPD = Convert.ToInt32(filaSeleccionada.Cells["CategoriaColumn"].Value);
-        //            string NombreUPD = filaSeleccionada.Cells["NomTR"].Value.ToString();
-        //            string ApellidoUPD = filaSeleccionada.Cells["ApeTR"].Value.ToString();
-        //            string DNIUPD = filaSeleccionada.Cells["documentoTR"].Value.ToString();
-        //            string ContraseñaUPD = filaSeleccionada.Cells["contraseñaTR"].Value.ToString();
-        //            string CelularUPD = filaSeleccionada.Cells["telefonoTR"].Value.ToString();
-
-        //            int categoriaAEnviar = idCategoriaUPD == 0 ? idCategoria : idCategoriaUPD;
-
-        //            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
-
-        //            if (resultado == DialogResult.Yes)
-        //            {
-
-        //                Validaciones.ModificacionEmpleado(idTrabajadorUPD, categoriaAEnviar, NombreUPD.Trim(), ApellidoUPD.Trim(), Convert.ToInt32(DNIUPD.Trim()), ContraseñaUPD.Trim(), Convert.ToInt32(CelularUPD.Trim()));
-        //                Console.WriteLine("Cambio realizado.");
-        //                LimpiaTextBox();
-        //                CargarEmpleados();
-        //                ConfigurarDataGridView();
-
-        //                DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-        //                DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
-        //            }
-        //            else if (resultado == DialogResult.No)
-        //            {
-        //                CargarEmpleados();
-        //                ConfigurarDataGridView();
-
-        //                DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-        //                DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
-        //            }
-        //        }
-        //    }
-        //    else if (DgvMenuEmpleado.Columns[e.ColumnIndex].Name == "Estado")
-        //    {
-        //        if (e.RowIndex >= 0)
-        //        {
-        //            int idTrabajadorUPD = Convert.ToInt32(filaSeleccionada.Cells["idTrabajador"].Value);
-        //            string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
-
-
-
-        //            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
-        //            if (resultado == DialogResult.Yes)
-        //            {
-
-        //                if (Estado == "ACT")
-        //                {
-        //                    Validaciones.BajaAltaEmpleado(idTrabajadorUPD, "DES");
-        //                    MessageBox.Show("Empleado DADO DE BAJA.");
-        //                    CargarEmpleados();
-        //                    ConfigurarDataGridView();
-
-        //                    DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-        //                    DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
-        //                }
-        //                else if (Estado == "DES")
-        //                {
-        //                    Validaciones.BajaAltaEmpleado(idTrabajadorUPD, "ACT");
-        //                    MessageBox.Show("Empleado DADO DE ALTA");
-        //                    CargarEmpleados();
-        //                    ConfigurarDataGridView();
-
-        //                    DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-        //                    DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
-        //                }
-        //            }
-        //            else if (resultado == DialogResult.No)
-        //            {
-        //                CargarEmpleados();
-        //            }
-        //        }
-        //    }
-
-        //}
+        
         private void chbEditar_CheckedChanged(object sender, EventArgs e)
         {
             if (chbEditar.Checked)
@@ -203,6 +108,12 @@ namespace Vista
             txtContraseña.Text = string.Empty;
             TxtCelularEmpleado.Text = string.Empty;
             CmbCategoriaEmple.Text = string.Empty;
+            TxtNombreEmpleado.Enabled = true;
+            TxtApellidoEmpleado.Enabled = true;
+            TxtDniEmpleado.Enabled = true;
+            txtContraseña.Enabled = true;
+            TxtCelularEmpleado.Enabled = true;
+            CmbCategoriaEmple.Enabled = true;
         }
 
         private void btnBorraCampos_Click(object sender, EventArgs e)
@@ -213,15 +124,14 @@ namespace Vista
         {
             try
             {
-                // Obtener la lista de categorías desde la capa validaciones
                 List<CategoriaEmpleado> listaCategorias = Validaciones.ObtenerCategorias();
 
                 if (listaCategorias.Count > 0)
                 {
-                    // Configurar el ComboBox para usar la lista
+                    
                     CmbCategoriaEmple.DataSource = listaCategorias;
-                    CmbCategoriaEmple.DisplayMember = "NombreCat"; // Muestra el nombre al usuario
-                    CmbCategoriaEmple.ValueMember = "idCategoria"; // Internamente guarda el ID
+                    CmbCategoriaEmple.DisplayMember = "NombreCat"; 
+                    CmbCategoriaEmple.ValueMember = "idCategoria"; 
                 }
                 else
                 {
@@ -250,14 +160,14 @@ namespace Vista
                     //DataSource = new BindingSource(Validaciones.ObtenerCategoriasEmpleados(), null)
                 };
 
-                // Llenar el combo con las categorías
+                
                 Dictionary<int, string> categorias = Validaciones.ObtenerCategoriasEmpleados();
                 foreach (var categoria in categorias)
                 {
                     comboBoxColumn.Items.Add(new KeyValuePair<int, string>(categoria.Key, categoria.Value));
                 }
 
-                // Agrega la columna al DataGridView
+                
                 DgvMenuEmpleado.Columns.Add(comboBoxColumn);
             //}
         }
@@ -273,6 +183,12 @@ namespace Vista
             txtContraseña.Text = filaSeleccionada.Cells["contraseñaTR"].Value.ToString();
             TxtCelularEmpleado.Text = filaSeleccionada.Cells["telefonoTR"].Value.ToString();
             CmbCategoriaEmple.Text = Validaciones.ObtCat(idCategoria);
+            TxtNombreEmpleado.Enabled = false;
+            TxtApellidoEmpleado.Enabled = false;
+            TxtDniEmpleado.Enabled = false;
+            txtContraseña.Enabled = false;
+            TxtCelularEmpleado.Enabled = false;
+            CmbCategoriaEmple.Enabled = false;
             if (DgvMenuEmpleado.Columns[e.ColumnIndex].Name == "Editar")
             {
                 if (e.RowIndex >= 0)

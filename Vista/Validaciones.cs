@@ -567,7 +567,7 @@ namespace Vista
     {
         public static List<Empleados> ObtenerListaTrabajadores()
         {
-            return Empleados.ObtenerTrabajador(); // Devuelve la lista completa para filtrarla en la vista
+            return Empleados.ObtenerTrabajador(); 
         }
 
         public static DataTable BuscarBitacora()
@@ -586,6 +586,7 @@ namespace Vista
 
     #endregion
 
+    #region Lubripuntos
     public class ValidarLubriPuntos : LubriPuntos
     {
         public static void AsignarLubri(int Id, double Precio, int Lubri)
@@ -606,6 +607,7 @@ namespace Vista
 
         }
     }
+    #endregion
 }
 
 

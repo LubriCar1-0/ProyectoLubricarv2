@@ -124,6 +124,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuStock";
+            this.Load += new System.EventHandler(this.MenuStock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

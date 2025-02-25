@@ -20,7 +20,13 @@ namespace Vista
         private void BtnBitacora_Click(object sender, EventArgs e)
         {
             MenuBitacora pantallaBitacora = new MenuBitacora();
-            Hide();
+            
             pantallaBitacora.ShowDialog();       }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            PantallaMenuPrincipal llamarMenuPrincipal = new PantallaMenuPrincipal();
+            llamarMenuPrincipal.ShowDialog();
+        }
     }
 }

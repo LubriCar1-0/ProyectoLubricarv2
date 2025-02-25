@@ -30,7 +30,7 @@ namespace Vista
         private void CargarTrabajador()
         {
 
-            List<Empleados> Trabajadores = ValidarBitacora.ObtenerListaTrabajadores(); // Cambiamos a una lista
+            List<Empleados> Trabajadores = ValidarBitacora.ObtenerListaTrabajadores(); 
             cmbTrabajador.Items.Clear();
 
 
@@ -59,7 +59,7 @@ namespace Vista
         {
             string accion = string.IsNullOrEmpty(txtAccion.Text) ? null : txtAccion.Text.Trim();
 
-            // Si el formato sigue siendo " ", significa que el usuario nunca seleccionó una fecha
+            
             string fecha = dtpFecha.CustomFormat == " " ? null : dtpFecha.Value.ToString("yyyy-MM-dd");
 
             int trabajadorId = cmbTrabajador.SelectedItem is KeyValuePair<int, string> seleccionado ? seleccionado.Key : 0;
@@ -83,7 +83,14 @@ namespace Vista
                 var turnos = ValidarBitacora.BitacoraFiltro(accion, fecha, trabajadorId);
                 dgvTurnos.DataSource = turnos;
                 dgvTurnos.RowHeadersVisible = false;
-                
+                foreach (DataGridViewRow row in dgvTurnos.Rows)
+                {
+                    if (row.Cells["Hora"].Value is TimeSpan tiempo)
+                    {
+                        row.Cells["Hora"].Value = tiempo.ToString(@"hh\:mm\:ss");
+                    }
+                }
+
                 if (dgvTurnos.Columns.Contains("idBitacora"))
                 {
                     dgvTurnos.Columns["idBitacora"].Visible = false;
@@ -92,7 +99,7 @@ namespace Vista
                 {
                     dgvTurnos.Columns["idTrabajador"].Visible = false;
                 }
-                // Ajustar columnas al tamaño del DataGridView
+                
                 foreach (DataGridViewColumn column in dgvTurnos.Columns)
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -110,6 +117,14 @@ namespace Vista
                 dgvTurnos.DataSource = null;
                 dgvTurnos.DataSource = ValidarBitacora.BuscarBitacora();
                 dgvTurnos.RowHeadersVisible = false;
+                foreach (DataGridViewRow row in dgvTurnos.Rows)
+                {
+                    if (row.Cells["Hora"].Value is TimeSpan tiempo)
+                    {
+                        row.Cells["Hora"].Value = tiempo.ToString(@"hh\:mm\:ss");
+                    }
+                }
+
 
                 if (dgvTurnos.Columns.Contains("idBitacora"))
                 {
@@ -120,7 +135,7 @@ namespace Vista
                     dgvTurnos.Columns["idTrabajador"].Visible = false;
                 }
 
-                // Ajustar columnas al tamaño del DataGridView
+                
                 foreach (DataGridViewColumn column in dgvTurnos.Columns)
                 {
                     column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -136,7 +151,7 @@ namespace Vista
         private void MenuBitacora_Load(object sender, EventArgs e)
         {
             dtpFecha.Format = DateTimePickerFormat.Custom;
-            dtpFecha.CustomFormat = " "; // Hace que parezca vacío al iniciar
+            dtpFecha.CustomFormat = " "; 
         }
 
         private void btnRecargar_Click(object sender, EventArgs e)
@@ -152,6 +167,11 @@ namespace Vista
             MenuHistorial pantallaHistoriales = new MenuHistorial();
             Hide();
             pantallaHistoriales.ShowDialog();
+        }
+
+        private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
