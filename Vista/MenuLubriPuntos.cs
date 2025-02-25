@@ -26,11 +26,23 @@ namespace Vista
         {
             PantallaValorLubriPuntos();
         }
+        private void btnAsignacionLP_Click_1(object sender, EventArgs e)
+        {
+            PantallaAsignacionLubriPuntos();
+        }
 
         public static void PantallaValorLubriPuntos()
         {
             MenuValoresLubriPuntos LlamarMenuValoresLubriPuntos = new MenuValoresLubriPuntos();
             LlamarMenuValoresLubriPuntos.ShowDialog();
         }
+
+        public static void PantallaAsignacionLubriPuntos()
+        {
+            MenuAsignacionLubriPuntos LlamarMenuAsignacionLubriPuntos = new MenuAsignacionLubriPuntos();
+            LlamarMenuAsignacionLubriPuntos.ShowDialog();
+        }
+
+       
     }
 }

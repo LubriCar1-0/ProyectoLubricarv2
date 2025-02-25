@@ -31,7 +31,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnValorLP = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAsignacionLP = new System.Windows.Forms.Button();
             this.PtbLubriPuntos = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PtbLubriPuntos)).BeginInit();
             this.SuspendLayout();
@@ -71,17 +71,18 @@
             this.btnValorLP.UseVisualStyleBackColor = false;
             this.btnValorLP.Click += new System.EventHandler(this.btnValorLP_Click);
             // 
-            // button1
+            // btnAsignacionLP
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.BtnAsignarLubriPuntos;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(605, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 92);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAsignacionLP.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAsignacionLP.BackgroundImage = global::Vista.Properties.Resources.BtnAsignarLubriPuntos;
+            this.btnAsignacionLP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAsignacionLP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignacionLP.Location = new System.Drawing.Point(605, 301);
+            this.btnAsignacionLP.Name = "btnAsignacionLP";
+            this.btnAsignacionLP.Size = new System.Drawing.Size(213, 92);
+            this.btnAsignacionLP.TabIndex = 1;
+            this.btnAsignacionLP.UseVisualStyleBackColor = false;
+            this.btnAsignacionLP.Click += new System.EventHandler(this.btnAsignacionLP_Click_1);
             // 
             // PtbLubriPuntos
             // 
@@ -102,7 +103,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnValorLP);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAsignacionLP);
             this.Controls.Add(this.PtbLubriPuntos);
             this.Name = "MenuLubriPuntos";
             this.Text = "MenuLubriPuntos";
@@ -117,6 +118,6 @@
         private System.Windows.Forms.Button btnValorLP;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAsignacionLP;
     }
 }

@@ -1498,6 +1498,20 @@ namespace Datos
             desconectar();
             return dt;          
         }
+
+        public DataTable TraerProductos()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+
+        }
         #endregion
     }
 }

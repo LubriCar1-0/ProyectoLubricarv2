@@ -17,6 +17,9 @@ namespace Vista
             InitializeComponent();
         }
 
-       
+        private void lblNombreCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

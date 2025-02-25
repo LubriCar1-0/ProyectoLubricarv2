@@ -49,16 +49,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblManoDeObra = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblModelo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblManoDeObra = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.gpbCliente.SuspendLayout();
             this.grpPresupuesto.SuspendLayout();
@@ -117,6 +117,7 @@
             this.lblNombreCliente.Size = new System.Drawing.Size(296, 28);
             this.lblNombreCliente.TabIndex = 10;
             this.lblNombreCliente.Text = "No hay cliente seleccionado";
+            this.lblNombreCliente.Click += new System.EventHandler(this.lblNombreCliente_Click);
             // 
             // lblLubripts
             // 
@@ -351,6 +352,48 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehiculo";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(167, 357);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(244, 28);
+            this.textBox2.TabIndex = 37;
+            // 
+            // lblManoDeObra
+            // 
+            this.lblManoDeObra.AutoSize = true;
+            this.lblManoDeObra.BackColor = System.Drawing.Color.Transparent;
+            this.lblManoDeObra.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblManoDeObra.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.lblManoDeObra.Location = new System.Drawing.Point(7, 357);
+            this.lblManoDeObra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblManoDeObra.Name = "lblManoDeObra";
+            this.lblManoDeObra.Size = new System.Drawing.Size(163, 28);
+            this.lblManoDeObra.TabIndex = 36;
+            this.lblManoDeObra.Text = "Mano de Obra:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 172);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(394, 139);
+            this.textBox1.TabIndex = 35;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.label9.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label9.Location = new System.Drawing.Point(7, 129);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(165, 28);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Observaciones:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -423,48 +466,6 @@
             this.label8.Size = new System.Drawing.Size(95, 28);
             this.label8.TabIndex = 28;
             this.label8.Text = "Modelo:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.label9.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label9.Location = new System.Drawing.Point(7, 129);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(165, 28);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "Observaciones:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 172);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(394, 139);
-            this.textBox1.TabIndex = 35;
-            // 
-            // lblManoDeObra
-            // 
-            this.lblManoDeObra.AutoSize = true;
-            this.lblManoDeObra.BackColor = System.Drawing.Color.Transparent;
-            this.lblManoDeObra.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.lblManoDeObra.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.lblManoDeObra.Location = new System.Drawing.Point(7, 357);
-            this.lblManoDeObra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblManoDeObra.Name = "lblManoDeObra";
-            this.lblManoDeObra.Size = new System.Drawing.Size(163, 28);
-            this.lblManoDeObra.TabIndex = 36;
-            this.lblManoDeObra.Text = "Mano de Obra:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(167, 357);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 28);
-            this.textBox2.TabIndex = 37;
             // 
             // btnVolver
             // 

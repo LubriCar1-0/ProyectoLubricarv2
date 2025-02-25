@@ -593,6 +593,13 @@ namespace Vista
             Conectar capaDatos = new Conectar();
             return capaDatos.ObtenerValoresLubri(ID);
         }
+        public static DataTable TraerProductos()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.TraerProductos();
+            return TablasDeLaBD;
+
+        }
     }
 }
 
