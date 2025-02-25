@@ -14,7 +14,8 @@ namespace Vista
 {
     public partial class MenuCategoriaProductos : Form
     {
-        public MenuCategoriaProductos()
+        private int _idTrabajador;
+        public MenuCategoriaProductos(int idTrabajador)
         {
             InitializeComponent();
             CargarTablaCategoria();
@@ -22,6 +23,7 @@ namespace Vista
             chPermiteEditar.CheckedChanged += chPermiteEditar_CheckedChanged;
             DGVCategoriasProdc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGVCategoriasProdc.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            _idTrabajador = idTrabajador;
         }
 
         private void btnagregarcat_Click(object sender, EventArgs e)
@@ -31,11 +33,11 @@ namespace Vista
             string Desc = TXTDescripcion.Text;
             if (cbxLiquido.Checked)
             {
-                ValidarProducto.IngresaCategoria(NombreProd.Trim(), Desc.Trim(), "ACT", "S");
+                ValidaCategoriasProducto.IngresaCat(NombreProd.Trim(), Desc.Trim(), "ACT", "S", _idTrabajador);
             }
             else
             {
-                ValidarProducto.IngresaCategoria(NombreProd.Trim(), Desc.Trim(), "ACT","N");
+                ValidaCategoriasProducto.IngresaCat(NombreProd.Trim(), Desc.Trim(), "ACT","N", _idTrabajador);
             }
                
             LimpiaTextBox();
@@ -73,7 +75,7 @@ namespace Vista
 
                     if (resultado == DialogResult.Yes)
                     {
-                        ValidaCategoriasProducto.UpdateCatergorias(IdCategoriaUPD, NombreCategoria.Trim(), Descripcion.Trim(), Estado.Trim(), liquido);
+                        ValidaCategoriasProducto.UpdateCategoria(IdCategoriaUPD, NombreCategoria.Trim(), Descripcion.Trim(), Estado.Trim(), liquido, _idTrabajador);
                         MessageBox.Show("Cambio realizado.");
                         CargarTablaCategoria();
                     }
@@ -94,13 +96,13 @@ namespace Vista
 
                 if(Estado == "ACT")
                 {
-                    ValidaCategoriasProducto.CambiarEstado(IdCategoriaUPD, "DES");
+                    ValidaCategoriasProducto.CambiarEstado(IdCategoriaUPD, "DES", _idTrabajador);
                     MessageBox.Show("Estado Modificado.");
                     CargarTablaCategoria();
                 }
                 else if(Estado == "DES")
                 {
-                    ValidaCategoriasProducto.CambiarEstado(IdCategoriaUPD, "ACT");
+                    ValidaCategoriasProducto.CambiarEstado(IdCategoriaUPD, "ACT", _idTrabajador);
                     MessageBox.Show("Estado Modificado.");
                     CargarTablaCategoria();
                 }
@@ -152,6 +154,11 @@ namespace Vista
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+
+        }
+
+        private void MenuCategoriaProductos_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -22,10 +22,11 @@ namespace Negocio
         public string Apellido { get; private set; }
         public int idtrabajador { get; private set; }
         public int IdCat {  get; private set; }
-
+        
+        
         
         #endregion
-
+        
         public static void IngresoEmpleados(int documento, string contraseña)
         {
             Conectar capaDatos = new Conectar();
@@ -52,9 +53,10 @@ namespace Negocio
                             string Nomtrabajador = capaDatos.BuscarEmp(Idtrabajador);
                             NombreTrabajador = Nomtrabajador;
                             string detalle = "Acceso al sistema";
+                            string tabla = "Trabajador";
                             int idCategoriaEmpleado = capaDatos.TraeIdCategoriaEmpleado(documento);
                             idCategoria = idCategoriaEmpleado;
-                            AgregarBitacora(Idtrabajador, Nomtrabajador, detalle);
+                            AgregarBitacora(Idtrabajador, detalle, tabla);
                             return;
                         }
                         else
@@ -102,7 +104,8 @@ namespace Negocio
                 string Estado = "ACT";
                 Conectar.AgregarEmpleados(Nombre, Apellido, Documento, Contraseña, Telefono, categoria, Estado);
                 string detalle = "Cargar un empleado";
-                AgregarBitacora(IdTrabajador, NombreTrabajador, detalle);
+                string tabla = "Trabajador";
+                AgregarBitacora(IdTrabajador, detalle, tabla);
                 return;
                 // agregar un registro a la bitacora de que se agrega un empleado 
 
@@ -121,7 +124,9 @@ namespace Negocio
             try
             {
                 Conectar.ActualizarEmpleado(idTrabajadorUPD, idCategoriaUPD, NombreUPD, ApellidoUPD, DNIUPD, ContraseñaUPD, CelularUPD);
-                // agregar a la bitacora 
+                string detalle = "Modificacion de un empleado";
+                string tabla = "Trabajador";
+                AgregarBitacora(IdTrabajador, detalle, tabla);
             }
             catch (Exception ex)
             {
@@ -135,6 +140,9 @@ namespace Negocio
             {
 
                 Conectar.EstadoEmpleado(idTrabajador, Estado);
+                string detalle = "Cambio de estado de un empleado";
+                string tabla = "Trabajador";
+                AgregarBitacora(IdTrabajador, detalle, tabla);
             }
             catch (Exception ex)
             {
@@ -166,25 +174,7 @@ namespace Negocio
             return Trabajador;
         }
 
-        //public static List<Empleados> ObtenerCategoriasEmp()
-        //{
-        //    Conectar conexion = new Conectar();
-        //    DataTable categoriaTabla = conexion.TraerCategoriasEmpleados();
-
-        //    List<Empleados> categorias = new List<Empleados>();
-        //    foreach (DataRow row in categoriaTabla.Rows)
-        //    {
-        //        categorias.Add(new Empleados
-        //        {
-        //            idCategoria = Convert.ToInt32(row["idCategoria"]),
-        //            NombreCat = row["NombreCat"].ToString(),
-        //            PermisoCat = Convert.ToInt32(row["PermisoCat"])
-
-        //        });
-        //    }
-
-        //    return categorias;
-        //}
+        
     }
 
 }

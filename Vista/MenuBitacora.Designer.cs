@@ -55,9 +55,9 @@
             this.grbFiltros.Controls.Add(this.btnBuscar);
             this.grbFiltros.Controls.Add(this.btnRecargar);
             this.grbFiltros.Controls.Add(this.lblAccion);
-            this.grbFiltros.Location = new System.Drawing.Point(537, 198);
+            this.grbFiltros.Location = new System.Drawing.Point(226, 165);
             this.grbFiltros.Name = "grbFiltros";
-            this.grbFiltros.Size = new System.Drawing.Size(942, 595);
+            this.grbFiltros.Size = new System.Drawing.Size(899, 552);
             this.grbFiltros.TabIndex = 29;
             this.grbFiltros.TabStop = false;
             // 
@@ -82,11 +82,11 @@
             // dgvTurnos
             // 
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Location = new System.Drawing.Point(33, 305);
+            this.dgvTurnos.Location = new System.Drawing.Point(42, 240);
             this.dgvTurnos.Name = "dgvTurnos";
             this.dgvTurnos.RowHeadersWidth = 62;
             this.dgvTurnos.RowTemplate.Height = 28;
-            this.dgvTurnos.Size = new System.Drawing.Size(878, 213);
+            this.dgvTurnos.Size = new System.Drawing.Size(823, 272);
             this.dgvTurnos.TabIndex = 9;
             // 
             // lblFecha
@@ -163,9 +163,9 @@
             this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(262, 167);
+            this.button1.Location = new System.Drawing.Point(183, 114);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 57);
+            this.button1.Size = new System.Drawing.Size(63, 56);
             this.button1.TabIndex = 30;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -176,10 +176,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaBitacora;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grbFiltros);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuBitacora";
             this.Text = "Bitacora";
             this.Load += new System.EventHandler(this.MenuBitacora_Load);

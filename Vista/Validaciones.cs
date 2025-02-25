@@ -285,10 +285,10 @@ namespace Vista
     #region Producto
     public class ValidarProducto : Producto
     {
-        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles, double litroMin , int cantidadmin, string estado)
+        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles, double litroMin , int cantidadmin, string estado, int idTrab)
         {
             
-            Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto.Trim(), DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles, litroMin, cantidadmin, estado);
+            Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto.Trim(), DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles, litroMin, cantidadmin, estado, idTrab);
         }
 
         public static DataTable TraeProductos()
@@ -306,20 +306,20 @@ namespace Vista
 
         }
 
-        public static void UpdateProductos(int IdProdUPD, string Nombreprd , string marca, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje, double litrajeMin, int cantidadmin)
+        public static void UpdateProductos(int IdProdUPD, string Nombreprd , string marca, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje, double litrajeMin, int cantidadmin, int _idTrabajador)
         {
-            Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marca.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje,litrajeMin, cantidadmin);
+            Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marca.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje,litrajeMin, cantidadmin, _idTrabajador);
         }
 
-        public static void EliminarProducto(int IdProd, string valor)
+        public static void DeleteProducto(int IdProd, string valor, int _idTrabajador)
         {
-            Producto.EliminarProducto(IdProd, valor);
+            Producto.EliminarProductos(IdProd, valor, _idTrabajador);
 
         }
 
-        public static void ControlStock(int IdProd, int cantidad, double preciolista, double precioventa, double litraje, double litrajeMin, int cantidadmin)
+        public static void ControlStock(int IdProd, int cantidad, double preciolista, double precioventa, double litraje, double litrajeMin, int cantidadmin, int _idTrabajador)
         {
-            Producto.ControlStock( IdProd,  cantidad,  preciolista,  precioventa,  litraje,  litrajeMin,  cantidadmin);
+            Producto.ControlStock( IdProd,  cantidad,  preciolista,  precioventa,  litraje,  litrajeMin,  cantidadmin, _idTrabajador);
         }
         public static DataTable ControlStockFiltro( string codigo)
         {
@@ -327,6 +327,11 @@ namespace Vista
             DataTable TablasDeLaBD = CapaDatos.ControlStockFiltro( codigo);
             return TablasDeLaBD;
 
+        }
+        public static DataTable ObtenerProductosFaltantes()
+        {
+            Conectar capaDatos = new Conectar();
+            return capaDatos.ProductosFaltantes();
         }
 
 
@@ -353,20 +358,20 @@ namespace Vista
            return valor; 
         }
 
-        public static void IngresaCategoria(string nombreCat, string catedescripcion, string estado, string liquido)
+        public static void IngresaCat(string nombreCat, string catedescripcion, string estado, string liquido, int _idTrabajador)
         {
-            ValidaCategoriasProducto.IngresaCatergorias(nombreCat, catedescripcion, estado, liquido);
+            Categorias.IngresaCatergorias(nombreCat, catedescripcion, estado, liquido, _idTrabajador);
         }
 
-        public static void UpdateCategoria(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
+        public static void UpdateCategoria(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido, int _idTrabajador)
         {
-            Categorias.UpdateCatergorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido);
+            Categorias.UpdateCatergorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido, _idTrabajador);
         }
 
 
-        public static void CambiarEstado(int IdCategoriaUPD, string estado)
+        public static void CambiarEstado(int IdCategoriaUPD, string estado, int _idTrabajador)
         {
-            Categorias.CambiarEstado(IdCategoriaUPD, estado);
+            Categorias.CambiarEstado(IdCategoriaUPD, estado, _idTrabajador);
 
         }
         

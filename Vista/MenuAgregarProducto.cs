@@ -20,8 +20,8 @@ namespace Vista
 {
     public partial class MenuAgregarProducto : Form
     {
-
-        public MenuAgregarProducto()
+        private int _idTrabajador;
+        public MenuAgregarProducto(int idTrabajador)
         {
             InitializeComponent();
             ConfigurarDataGridView();
@@ -33,7 +33,8 @@ namespace Vista
             DGVProductos.ReadOnly = true;
             txtLitros.Enabled = false;
             cmbCategoria.Enabled = true;
-           
+            _idTrabajador = idTrabajador;
+
 
         }
         private void MenuAgregarProducto_Load(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace Vista
             int Chequea = Conectar.BuscaDuplicadoProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria);
             if (Chequea == 0)
             {       
-                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, litro, litroMin,cantidadmin, "ACT");
+                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, litro, litroMin,cantidadmin, "ACT", _idTrabajador);
                     MessageBox.Show("Producto agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     LimpiaCampos();
                     Cargatabla();
@@ -97,7 +98,7 @@ namespace Vista
 
                     if (resultado == DialogResult.Yes)
                     {
-                        ValidarProducto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marcaeprd.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin);
+                        ValidarProducto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marcaeprd.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin, _idTrabajador);
                         Console.WriteLine("Cambio realizado.");
                         Cargatabla();
                         CargarCategorias();
@@ -133,7 +134,7 @@ namespace Vista
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres ELIMINAR EL PRODUCTO: " + Nombreprd + "?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
-                        ValidarProducto.EliminarProducto(IdProd, "DES");
+                        ValidarProducto.DeleteProducto(IdProd, "DES", _idTrabajador);
                         Console.WriteLine("Cambio realizado.");
                         Cargatabla();
                         ConfigurarDataGridView();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace Vista
 {
@@ -35,7 +36,7 @@ namespace Vista
         //}
         private void btnABMCategoriasProductos_Click_1(object sender, EventArgs e)
         {
-            MenuCategoriaProductos LlamarMenuCategoriasProductos = new MenuCategoriaProductos();
+            MenuCategoriaProductos LlamarMenuCategoriasProductos = new MenuCategoriaProductos(Empleados.IdTrabajador);
             LlamarMenuCategoriasProductos.ShowDialog();
         }
 

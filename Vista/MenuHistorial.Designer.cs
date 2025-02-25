@@ -39,7 +39,7 @@
             this.BtnHistorialVentas.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialVentas;
             this.BtnHistorialVentas.FlatAppearance.BorderSize = 0;
             this.BtnHistorialVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHistorialVentas.Location = new System.Drawing.Point(689, 138);
+            this.BtnHistorialVentas.Location = new System.Drawing.Point(819, 202);
             this.BtnHistorialVentas.Name = "BtnHistorialVentas";
             this.BtnHistorialVentas.Size = new System.Drawing.Size(243, 98);
             this.BtnHistorialVentas.TabIndex = 3;
@@ -50,7 +50,7 @@
             this.BtnHistorialTurnos.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialTurnos;
             this.BtnHistorialTurnos.FlatAppearance.BorderSize = 0;
             this.BtnHistorialTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHistorialTurnos.Location = new System.Drawing.Point(689, 251);
+            this.BtnHistorialTurnos.Location = new System.Drawing.Point(819, 315);
             this.BtnHistorialTurnos.Name = "BtnHistorialTurnos";
             this.BtnHistorialTurnos.Size = new System.Drawing.Size(243, 98);
             this.BtnHistorialTurnos.TabIndex = 4;
@@ -61,7 +61,7 @@
             this.BtnHistorialLubriPuntos.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialLubriPuntos;
             this.BtnHistorialLubriPuntos.FlatAppearance.BorderSize = 0;
             this.BtnHistorialLubriPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHistorialLubriPuntos.Location = new System.Drawing.Point(689, 369);
+            this.BtnHistorialLubriPuntos.Location = new System.Drawing.Point(819, 433);
             this.BtnHistorialLubriPuntos.Name = "BtnHistorialLubriPuntos";
             this.BtnHistorialLubriPuntos.Size = new System.Drawing.Size(243, 98);
             this.BtnHistorialLubriPuntos.TabIndex = 5;
@@ -72,7 +72,7 @@
             this.BtnBitacora.FlatAppearance.BorderSize = 0;
             this.BtnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBitacora.Image = global::Vista.Properties.Resources.BtnHistorialBitacora2;
-            this.BtnBitacora.Location = new System.Drawing.Point(689, 497);
+            this.BtnBitacora.Location = new System.Drawing.Point(819, 561);
             this.BtnBitacora.Name = "BtnBitacora";
             this.BtnBitacora.Size = new System.Drawing.Size(243, 91);
             this.BtnBitacora.TabIndex = 6;
@@ -84,11 +84,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuHistorial;
-            this.ClientSize = new System.Drawing.Size(1151, 642);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.BtnBitacora);
             this.Controls.Add(this.BtnHistorialLubriPuntos);
             this.Controls.Add(this.BtnHistorialTurnos);
             this.Controls.Add(this.BtnHistorialVentas);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuHistorial";
             this.Text = "MenuHistorialcs";
             this.ResumeLayout(false);

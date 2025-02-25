@@ -39,6 +39,7 @@
             this.BtnCerrarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.BtnNotificacion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnVentas
@@ -175,6 +176,20 @@
             this.lblUsuario.Size = new System.Drawing.Size(0, 34);
             this.lblUsuario.TabIndex = 9;
             // 
+            // BtnNotificacion
+            // 
+            this.BtnNotificacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnNotificacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnNotificacion.BackgroundImage")));
+            this.BtnNotificacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnNotificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnNotificacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.BtnNotificacion.Location = new System.Drawing.Point(267, 653);
+            this.BtnNotificacion.Name = "BtnNotificacion";
+            this.BtnNotificacion.Size = new System.Drawing.Size(182, 77);
+            this.BtnNotificacion.TabIndex = 11;
+            this.BtnNotificacion.UseVisualStyleBackColor = false;
+            this.BtnNotificacion.Click += new System.EventHandler(this.BtnNotificacion_Click);
+            // 
             // PantallaMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +197,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.BtnNotificacion);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnCerrarSesion);
@@ -218,5 +234,6 @@
         private System.Windows.Forms.Button BtnCerrarSesion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Button BtnNotificacion;
     }
 }

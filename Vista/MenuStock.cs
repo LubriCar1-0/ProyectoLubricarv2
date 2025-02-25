@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace Vista
 {
@@ -18,7 +19,7 @@ namespace Vista
         }
         public static void LlamarMenuAgregarProducto()
         {
-            MenuAgregarProducto PantallaAgregarProducto = new MenuAgregarProducto();
+            MenuAgregarProducto PantallaAgregarProducto = new MenuAgregarProducto(Empleados.IdTrabajador);
             PantallaAgregarProducto.ShowDialog();
         }
 
@@ -34,14 +35,22 @@ namespace Vista
 
         private void BtnControlDeStock_Click(object sender, EventArgs e)
         {
-            MenuControlDeStock llamarcontroldestock = new MenuControlDeStock(); 
+            MenuControlDeStock llamarcontroldestock = new MenuControlDeStock(Empleados.IdTrabajador); 
             llamarcontroldestock.ShowDialog();
         }
 
         private void btnABMCategoriasProductos_Click(object sender, EventArgs e)
         {
-            MenuCategoriaProductos LlamarMenuCategoriasProductos = new MenuCategoriaProductos();
+            MenuCategoriaProductos LlamarMenuCategoriasProductos = new MenuCategoriaProductos(Empleados.IdTrabajador);
             LlamarMenuCategoriasProductos.ShowDialog();
+        }
+
+        private void BtnProductosFaltantes_Click(object sender, EventArgs e)
+        {
+            MenuProductosFaltantes pantallaproductosFalt = new MenuProductosFaltantes();
+            Hide();
+            pantallaproductosFalt.ShowDialog();
+
         }
     }
 }

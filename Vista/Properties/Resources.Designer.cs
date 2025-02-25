@@ -313,16 +313,6 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BtnControlDeStock {
-            get {
-                object obj = ResourceManager.GetObject("BtnControlDeStock", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BtnControlStock {
             get {
                 object obj = ResourceManager.GetObject("BtnControlStock", resourceCulture);

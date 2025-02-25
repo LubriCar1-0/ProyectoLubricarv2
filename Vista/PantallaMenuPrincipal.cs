@@ -18,12 +18,19 @@ namespace Vista
         public PantallaMenuPrincipal()
         {
             InitializeComponent();
-
-            lblUsuario.Text = Empleados.NombreTrabajador;
+            this.Load += PantallaMenuPrincipal_Load; 
         }
+
+        private void PantallaMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            VerificarNotificacionStock();
+            lblUsuario.Text = Empleados.NombreTrabajador;
+            BtnNotificacion.Visible = false;
+        }
+
         #region Llamados 
-        
-         public bool LlamarMenuVentas()
+
+        public bool LlamarMenuVentas()
          {
             int IdCategoria = Empleados.idCategoria;
 
@@ -262,10 +269,7 @@ namespace Vista
             }
         }
 
-        private void PantallaMenuPrincipal_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void BtnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -273,11 +277,53 @@ namespace Vista
 
             if (resultado == DialogResult.Yes)
             {
+                string detalle = "Cierre de sesion";
+                string tabla = "Trabajador";
+                int idTrab = Empleados.IdTrabajador;
+                Conectar.AgregarBitacora(idTrab, detalle, tabla);
                 InicioSesion LlamarInicio = new InicioSesion();
                 Close();
                 LlamarInicio.Show();
 
             }
+        }
+        private void VerificarNotificacionStock()
+        {
+            try
+            {
+                DataTable dt = ValidarProducto.ObtenerProductosFaltantes();
+
+                // Verificar si la tabla tiene datos
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    BtnNotificacion.Visible = true;
+                    Console.WriteLine("Hay productos faltantes. Se muestra la notificación.");
+                }
+                else
+                {
+                    BtnNotificacion.Visible = false;
+                    Console.WriteLine("No hay productos faltantes. Se oculta la notificación.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error en VerificarNotificacionStock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //private void VerificarNotificacionStock()
+        //{
+        //    DataTable dt = ValidarProducto.ObtenerProductosFaltantes();
+        //    // Si existe al menos un producto en falta, se muestra la notificación
+        //    if ( dt.Rows.Count > 0)
+        //    {
+        //        BtnNotificacion.Visible = true;
+        //    }
+        //}
+
+        private void BtnNotificacion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

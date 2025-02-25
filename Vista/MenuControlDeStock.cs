@@ -13,12 +13,19 @@ namespace Vista
 {
     public partial class MenuControlDeStock : Form
     {
-        public MenuControlDeStock()
+        private int _idTrabajador;
+        public MenuControlDeStock(int idTrabajador)
         {
             InitializeComponent();
             CargatablaProductosSinFiltro();
             DgvControlDeStock.ReadOnly = true;
-
+            txbCant.KeyPress += SoloNumeros_KeyPress;
+            txbCantMinima.KeyPress += SoloNumeros_KeyPress;
+            txtLitrosDisp.KeyPress += SoloNumerosDecimal_KeyPress;
+            txtLitrosMin.KeyPress += SoloNumerosDecimal_KeyPress;
+            txbPrecioList.KeyPress += SoloNumerosDecimal_KeyPress;
+            txbPrecioVent.KeyPress += SoloNumerosDecimal_KeyPress;
+            _idTrabajador = idTrabajador;
         }
         public int idProducto;
 
@@ -35,7 +42,25 @@ namespace Vista
                 txtLitrosMin.Text = Convert.ToString(filaSeleccionadaUPD.Cells["LitrosMinimo"].Value);
                 lblNombreProd.Text = Convert.ToString(filaSeleccionadaUPD.Cells["Nombre"].Value);
                 idProducto = Convert.ToInt32(filaSeleccionadaUPD.Cells["idProd"].Value);
+                int categoria = Convert.ToInt32(filaSeleccionadaUPD.Cells["IdCategorias"].Value);
 
+                if (categoria == 2)
+                {
+                    
+                    txbCant.Enabled = false;
+                    txbCantMinima.Enabled = false;
+                    
+                    txtLitrosDisp.Enabled = true;
+                    txtLitrosMin.Enabled = true;
+                }
+                else if (categoria == 3)
+                {
+                    txtLitrosDisp.Enabled = false;
+                    txtLitrosMin.Enabled = false;
+                    
+                    txbCant.Enabled = true;
+                    txbCantMinima.Enabled = true;
+                }
 
             }
         }
@@ -93,7 +118,7 @@ namespace Vista
 
                 if (resultado == DialogResult.Yes)
                 {
-                    ValidarProducto.ControlStock(idProducto, cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin);
+                    ValidarProducto.ControlStock(idProducto, cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin, _idTrabajador );
 
 
                     CargatablaProductosSinFiltro();
@@ -108,7 +133,7 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            CargatablaProductosConfiltro(TxtCodProducto.Text);
+            CargatablaProductosConfiltro(TxtCodProducto.Text.Trim());
 
         }
         private void CargatablaProductosConfiltro(string codigo)
@@ -142,10 +167,38 @@ namespace Vista
                 MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void SoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
+        }
+        private void SoloNumerosDecimal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+
+            
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            
+            if (e.KeyChar == '.' && txt.Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             CargatablaProductosSinFiltro();
+        }
+
+        private void MenuControlDeStock_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

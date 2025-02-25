@@ -47,6 +47,7 @@
             this.BtnProductosFaltantes.Size = new System.Drawing.Size(243, 110);
             this.BtnProductosFaltantes.TabIndex = 5;
             this.BtnProductosFaltantes.UseVisualStyleBackColor = true;
+            this.BtnProductosFaltantes.Click += new System.EventHandler(this.BtnProductosFaltantes_Click);
             // 
             // BtnAgregarProducto
             // 
@@ -65,7 +66,7 @@
             // BtnControlDeStock
             // 
             this.BtnControlDeStock.AutoSize = true;
-            this.BtnControlDeStock.BackgroundImage = global::Vista.Properties.Resources.BtnControlDeStock;
+            this.BtnControlDeStock.BackgroundImage = global::Vista.Properties.Resources.BtnControlStock;
             this.BtnControlDeStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnControlDeStock.FlatAppearance.BorderSize = 0;
             this.BtnControlDeStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

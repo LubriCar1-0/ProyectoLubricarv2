@@ -265,6 +265,7 @@
             this.Name = "MenuCategoriaProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuCategoriaProductos";
+            this.Load += new System.EventHandler(this.MenuCategoriaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVCategoriasProdc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

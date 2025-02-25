@@ -531,29 +531,21 @@ namespace Datos
 
 
 
-        public static void AgregarBitacora(int IdTrabajador, string Trabajador, string detalle)
+        public static void AgregarBitacora(int IdTrabajador, string detalle, string TablaAfectada)
         {
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "AgregarBitacora";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idTrabajador", IdTrabajador);
-            comando.Parameters.AddWithValue("@Trabajador", Trabajador);
             comando.Parameters.AddWithValue("@Detalle", detalle);
             comando.Parameters.AddWithValue("@Fecha", DateTime.Now.Date);
             comando.Parameters.AddWithValue("@Time", DateTime.Now.TimeOfDay);
+            comando.Parameters.AddWithValue("@TablaAfectada", TablaAfectada);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            /*create procedure AgregarBitacora(
-            @idTrabajador int,
-            @Trabajador nvarchar(255),
-            @Detalle nvarchar(255),
-            @Fecha Date,
-            @Time time)
-            as begin
-            insert into Bitacora(idTrabajador, Trabajador, Detalle, Fecha, Hora) values(@idTrabajador, @Trabajador, @Detalle, @Fecha, @Time)
-            end*/
+            
         }
 
 
@@ -627,6 +619,7 @@ namespace Datos
         public DataTable BuscarProductos()
         {
             conectar();
+            comando.Parameters.Clear();
             comando.Connection = conexion;
             comando.CommandText = "TraerTablaProductos";
             comando.CommandType = CommandType.StoredProcedure;
@@ -669,6 +662,8 @@ namespace Datos
         public DataTable TraerCategorias()
         {
             conectar();
+            comando.Parameters.Clear();
+
             comando.Connection = conexion;
             comando.CommandText = "TraerTablaCategoriasProducto";
             comando.CommandType = CommandType.StoredProcedure;
@@ -684,6 +679,8 @@ namespace Datos
         public DataTable TraerCategoriasActivas()
         {
             conectar();
+            comando.Parameters.Clear();
+
             comando.Connection = conexion;
             comando.CommandText = "TraerCategoriasActivas";
             comando.CommandType = CommandType.StoredProcedure;
@@ -691,10 +688,7 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
-            /*  create procedure TraerCategoriasActivas
-                as begin 
-                select * from CategoriasProductos where Estado= 'ACT';
-                end*/
+           
         }
         public static void UpdateCategorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
         {
@@ -797,39 +791,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
 
-            /* CREATE PROCEDURE UpdateProductos
-                (
-                    @IdProducto INT,
-                    @Nomproducto CHAR(60),
-                    @MarcaProduc CHAR(60),
-                    @CategoriaProduc INT,
-                    @CodigoProduc CHAR(5),
-                    @DescripcionProduc CHAR(255),
-                    @CantidadProduc INT,
-                    @PrecioLista DECIMAL(18, 2),
-                    @PrecioVenta DECIMAL(18, 2),
-                    @LitrosDisponibles decimal,
-			        @Minlitro Decimal,
-			        @Minimo int)
-                )
-                AS
-                BEGIN
-                    UPDATE Producto -- Cambié de CategoriasProductos a Productos
-                    SET 
-                        Nombre = @Nomproducto,
-                        Marca = @MarcaProduc,
-                        IdCategorias = @CategoriaProduc,
-                        CodProd = @CodigoProduc,
-                        Descripcion = @DescripcionProduc,
-                        Cantidad = @CantidadProduc,
-                        Precio_lista = @PrecioLista,
-                        PrecioVenta = @PrecioVenta,
-                        LitrosDisp = @LitrosDisponibles,
-                        CantidadMinima =@Minimo,
-                        LitrosMinimo= @Minlitro
-                    WHERE 
-                        IdProd = @IdProducto; -- Condición para actualizar el producto con ese Id
-                END */
+            
         }
 
         public static void EliminarProducto(int IdProd, string valor)
@@ -922,6 +884,20 @@ namespace Datos
             dt.Load(leer);
 
             desconectar();
+            return dt;
+        }
+        public DataTable ProductosFaltantes()
+        {
+            
+            conectar(); 
+            comando.Connection = conexion;
+            comando.CommandText = "BuscarProductosFaltantes";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            leer.Close();
+            desconectar(); 
             return dt;
         }
 

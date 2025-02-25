@@ -221,6 +221,7 @@
             this.Name = "MenuControlDeStock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuControlDeStock";
+            this.Load += new System.EventHandler(this.MenuControlDeStock_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvControlDeStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

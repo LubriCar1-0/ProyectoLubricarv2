@@ -39,14 +39,20 @@ namespace Negocio
 
             return categorias;
         }
-        public static void IngresaCatergorias(string nombreCat, string catedescripcion, string estado, string liquido)
+        public static void IngresaCatergorias(string nombreCat, string catedescripcion, string estado, string liquido, int _idTrabajador)
         {
             Conectar.IngresaCategoria(nombreCat, catedescripcion, estado, liquido);
+            string detalle = "Carga de una nueva Categoria";
+            string tabla = "CategoriasProductos";
+            Conectar.AgregarBitacora(_idTrabajador, detalle, tabla);
 
         }
-        public static void UpdateCatergorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
+        public static void UpdateCatergorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido, int _idTrabajador)
         {
             Conectar.UpdateCategorias(IdCategoriaUPD, NombreCategoria, Descripcion, Estado, liquido);
+            string detalle = "Modificacion de una Categoria";
+            string tabla = "CategoriasProductos";
+            Conectar.AgregarBitacora(_idTrabajador, detalle, tabla);
         }
 
         public static int ChequeaLiquido(int Id)
@@ -55,10 +61,12 @@ namespace Negocio
            return valor;
         }
 
-        public static void CambiarEstado(int IdCategoriaUPD, string estadoNuevo)
+        public static void CambiarEstado(int IdCategoriaUPD, string estadoNuevo, int _idTrabajador)
         {
-
             Conectar.CambiarEstado(IdCategoriaUPD, estadoNuevo);
+            string detalle = "Baja de una Categoria";
+            string tabla = "CategoriasProductos";
+            Conectar.AgregarBitacora(_idTrabajador, detalle, tabla);
 
 
         }
