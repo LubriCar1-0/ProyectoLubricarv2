@@ -25,8 +25,13 @@ namespace Vista
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            PantallaMenuPrincipal llamarMenuPrincipal = new PantallaMenuPrincipal();
-            llamarMenuPrincipal.ShowDialog();
+            this.Close();
+        }
+
+        private void BtnHistorialVentas_Click(object sender, EventArgs e)
+        {
+            MenuHistorialVentas llamarMenuHistorialVentas = new MenuHistorialVentas();
+            llamarMenuHistorialVentas.ShowDialog();
         }
     }
 }

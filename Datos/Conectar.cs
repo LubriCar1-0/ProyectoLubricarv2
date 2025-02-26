@@ -166,11 +166,12 @@ namespace Datos
         {
             conectar();
             comando.Connection = conexion;
+            comando.Parameters.Clear();
             comando.CommandText = "TraerCategoriasEmpleados";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
-            comando.Parameters.Clear();
+            
             desconectar();
             return dt;
 
@@ -234,7 +235,7 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@IdCategoria", verificaPermiso);
             int id = Convert.ToInt32(comando.ExecuteScalar());
-            
+
             desconectar();
             return id;
             /* create procedure VerificaPermiso(
@@ -546,7 +547,7 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            
+
         }
 
 
@@ -689,7 +690,7 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
-           
+
         }
         public static void UpdateCategorias(int IdCategoriaUPD, string NombreCategoria, string Descripcion, string Estado, string liquido)
         {
@@ -792,7 +793,7 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
 
-            
+
         }
 
         public static void EliminarProducto(int IdProd, string valor)
@@ -889,8 +890,8 @@ namespace Datos
         }
         public DataTable ProductosFaltantes()
         {
-            
-            conectar(); 
+
+            conectar();
             comando.Connection = conexion;
             comando.CommandText = "BuscarProductosFaltantes";
             comando.CommandType = CommandType.StoredProcedure;
@@ -898,7 +899,7 @@ namespace Datos
             leer = comando.ExecuteReader();
             dt.Load(leer);
             leer.Close();
-            desconectar(); 
+            desconectar();
             return dt;
         }
 
@@ -1154,7 +1155,7 @@ namespace Datos
         #endregion
 
         #region CargaVenta
-        public static void AgregaVenta(int IdCliente, int fila, string producto, double preciounit, double cantidad, double total)
+        public static void AgregaVenta(int idventa, int IdCliente, int fila, string producto, double preciounit, double cantidad, double total)
         {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
@@ -1162,6 +1163,7 @@ namespace Datos
             comando.CommandText = "AgregarVenta";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@IdVenta", idventa);
             comando.Parameters.AddWithValue("@IdCliente", IdCliente);
             comando.Parameters.AddWithValue("@FilaImpresion", fila);
             comando.Parameters.AddWithValue("@Producto", producto);
@@ -1172,34 +1174,49 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
+        }
 
 
-            /*CREATE TABLE VentaProductos (
-            IdVenta NUMERIC(18,0) IDENTITY(1,1) PRIMARY KEY NOT NULL,
-            IdCliente NUMERIC(18,0) NOT NULL,           
-            FilaImpresion INT,       
-            Producto CHAR(100),      
-            PrecioUnitario FLOAT,    
-            Cantidad INT,            
-            PrecioTotal FLOAT,       
-            FechaVenta DATETIME,     
-            FOREIGN KEY (IdCliente) REFERENCES Cliente(IdCliente) 
-            );*/
-            /*
-            Create Procedure AgregarVenta(
-            @IdCliente numeric(18, 0),
-            @FilaImpresion int,
-            @Producto char(100),
-            @PrecioUnitario float,
-            @Cantidad int,
-            @PrecioTotal float,
-            @FechaVenta datetime
-            )
-            as begin
-            Insert into VentaProductos(IdCliente, FilaImpresion, Producto, PrecioUnitario, Cantidad, PrecioTotal, FechaVenta) values(@IdCliente, @FilaImpresion, @Producto, @PrecioUnitario, @Cantidad, @PrecioTotal, @FechaVenta)
-            end
-            */
+        /*CREATE TABLE VentaProductos (
+        IdVenta NUMERIC(18,0) IDENTITY(1,1) PRIMARY KEY NOT NULL,
+        IdCliente NUMERIC(18,0) NOT NULL,           
+        FilaImpresion INT,       
+        Producto CHAR(100),      
+        PrecioUnitario FLOAT,    
+        Cantidad INT,            
+        PrecioTotal FLOAT,       
+        FechaVenta DATETIME,     
+        FOREIGN KEY (IdCliente) REFERENCES Cliente(IdCliente) 
+        );*/
+        /*
+        Create Procedure AgregarVenta(
+        @IdCliente numeric(18, 0),
+        @FilaImpresion int,
+        @Producto char(100),
+        @PrecioUnitario float,
+        @Cantidad int,
+        @PrecioTotal float,
+        @FechaVenta datetime
+        )
+        as begin
+        Insert into VentaProductos(IdCliente, FilaImpresion, Producto, PrecioUnitario, Cantidad, PrecioTotal, FechaVenta) values(@IdCliente, @FilaImpresion, @Producto, @PrecioUnitario, @Cantidad, @PrecioTotal, @FechaVenta)
+        end
+        */
 
+
+        public static int TraeIdUltimaVenta()
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeIdUltimaVenta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@Fecha", fechaHoraActual);
+            int id = Convert.ToInt32(comando.ExecuteScalar());
+            //comando.Parameters.Clear();
+            desconectar();
+            return id;
         }
 
 
@@ -1288,6 +1305,39 @@ namespace Datos
 
 
         #endregion
+
+        #region  Historial ventas
+
+        public DataTable SeleccionaVentaProductos(int ID)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeProductosSegunVenta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@Id", ID);
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader);
+            desconectar();
+            return dt;
+        }
+        public DataTable TraeTodasVentasProductos()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeTodasVentas";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader);
+            desconectar();
+            return dt;
+        }
+
+
+
+        #endregion
+
 
         #region OrdenDeTrabajo  
         public static void CrearOrdenTrabajo(string nombreCompleto, DateTime dia, string descripcion, int trabajadorId, int idCliente, int idVehiculo, string estado, int idTurno)

@@ -371,19 +371,19 @@ namespace Vista
                 int cantidad = Convert.ToInt32(lblDisponible.Text);
                 double cantidadlitro = Convert.ToDouble(lblLitros.Text);
                 int Liquido = ValidarVenta.TraeLiquido(Convert.ToInt32(lblIdCat.Text));
-                if ((Liquido == 1 && cantidadlitro == 0.00) || (cantidadlitro < Convert.ToDouble(txtCantidad.Text)))
+                if ((Liquido == 1 && cantidadlitro == 0.00) || (Liquido == 1 && cantidadlitro < Convert.ToDouble(txtCantidad.Text)))
                 {
                     valorStock = 1;
                 }
 
-                if ((Liquido == 0 && cantidad == 0) || (cantidad < Convert.ToInt32(txtCantidad.Text)) )
+                if ((Liquido == 0 && cantidad == 0) || (Liquido == 0 && cantidad < Convert.ToInt32(txtCantidad.Text)))
                 {
                     valorStock = 1;
                 }
 
                 if (valorStock == 1)
                 {
-                    MessageBox.Show("No hay stock a la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No hay stock a la venta o supera la cantidad en stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {

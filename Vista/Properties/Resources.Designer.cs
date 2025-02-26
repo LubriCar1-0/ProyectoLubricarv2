@@ -1083,6 +1083,26 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PantallaHistorialVenta {
+            get {
+                object obj = ResourceManager.GetObject("PantallaHistorialVenta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PantallaHistorialVenta1 {
+            get {
+                object obj = ResourceManager.GetObject("PantallaHistorialVenta1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PantallaInicioSesion {
             get {
                 object obj = ResourceManager.GetObject("PantallaInicioSesion", resourceCulture);

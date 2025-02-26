@@ -86,19 +86,22 @@ namespace Negocio
 
         }
 
-        
+
 
         public static void Cargaventa(int Idcliente, double Subtotal, double iva, double total, int lubripuntos)
         {
+            Conectar.CargaTotalesVenta(Idcliente, Subtotal, iva, total);
+            int id = Conectar.TraeIdUltimaVenta();
+
             foreach (var item in ListVentaProducto)
             {
-                Conectar.AgregaVenta(item.idCliente, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd);
+                Conectar.AgregaVenta(id, item.idCliente, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd);
                 Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
             }
-            Conectar.CargaTotalesVenta(Idcliente, Subtotal, iva, total);
+
             Conectar.CargaLubriPuntos(Idcliente, lubripuntos);
         }
-        
+
         public static void CargaLubripuntos(int ValorLubri)
         {
 

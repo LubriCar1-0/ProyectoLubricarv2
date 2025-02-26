@@ -45,6 +45,7 @@
             this.BtnHistorialVentas.Size = new System.Drawing.Size(243, 98);
             this.BtnHistorialVentas.TabIndex = 3;
             this.BtnHistorialVentas.UseVisualStyleBackColor = true;
+            this.BtnHistorialVentas.Click += new System.EventHandler(this.BtnHistorialVentas_Click);
             // 
             // BtnHistorialTurnos
             // 
@@ -109,6 +110,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuHistorial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuHistorialcs";
             this.ResumeLayout(false);
 

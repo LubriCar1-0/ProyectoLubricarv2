@@ -557,8 +557,27 @@ namespace Vista
             double valor = VentaProducto.CalculaTotal();
             return valor;
         }
-        
-        
+
+        public static DataTable VentasProductos()
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.TraeTodasVentasProductos();
+
+            return TablasDeLaBD;
+
+        }
+        public static DataTable VentasProductosLista(int Id)
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.SeleccionaVentaProductos(Id);
+
+            return TablasDeLaBD;
+
+        }
+
+
     }
     #endregion
 

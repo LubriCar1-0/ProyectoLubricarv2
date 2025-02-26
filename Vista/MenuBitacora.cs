@@ -164,9 +164,7 @@ namespace Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MenuHistorial pantallaHistoriales = new MenuHistorial();
-            Hide();
-            pantallaHistoriales.ShowDialog();
+            Close();
         }
 
         private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
