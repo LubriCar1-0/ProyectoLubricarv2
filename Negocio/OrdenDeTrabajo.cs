@@ -108,8 +108,8 @@ namespace Negocio
         }
         public static void CargaList(int idOrdenTrabajo)
         {
-            // Eliminamos la eliminación previa para no borrar los registros existentes
-            // Conectar.EliminarProductosOrden(idOrdenTrabajo);
+            
+            
             foreach (var item in ListDeProductos)
             {
                 Conectar.AgregaListProds(item.idOrdenTrabajo, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd, item.IdProducto);
@@ -148,6 +148,35 @@ namespace Negocio
             return lista;
         }
         #endregion
+
+        #region Cargar Mano De Obra 
+        //public static void AgregarManoDeObra(int idOrden, double costoManoDeObra)
+        //{
+        //    int lastFila = (ListDeProductos != null && ListDeProductos.Any())
+        //                   ? ListDeProductos.Max(item => item.FilaProducto)
+        //                   : 0;
+        //    int nuevaFila = lastFila + 1;
+
+        //    // Crear el registro para mano de obra
+        //    OrdenDeTrabajo manoObra = new OrdenDeTrabajo
+        //    {
+        //        idOrdenTrabajo = idOrden,
+        //        IdProducto = Convert.ToInt32(null),            
+        //        FilaProducto = nuevaFila,   
+        //        Producto = "Mano de Obra",
+        //        PrecioVenta = 0,            
+        //        Cantidad = 1,               
+        //        PrecioTotalProd = costoManoDeObra  
+        //    };
+
+           
+        //    ListDeProductos.Add(manoObra);
+
+     
+        //    Conectar.AgregaListProds( manoObra.idOrdenTrabajo,  manoObra.FilaProducto,  manoObra.Producto,  manoObra.PrecioVenta, manoObra.Cantidad, manoObra.PrecioTotalProd,  manoObra.IdProducto);
+        //}
+        #endregion
+
     }
 
 }

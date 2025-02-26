@@ -343,9 +343,7 @@ namespace Vista
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            MenuTurnos PantMenuTurnos = new MenuTurnos();
-            Hide();
-            PantMenuTurnos.ShowDialog();
+            this.Close();
         }
 
         private void dtpFecha_ValueChanged(object sender, EventArgs e)

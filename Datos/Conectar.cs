@@ -1271,6 +1271,38 @@ namespace Datos
 
         #endregion
 
+        #region Venta Servicio
+        public DataTable TraerDatosParaVenta(int idOrdenTrab)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "DatosParaVenta";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+        public DataTable ListaDeProdUtilizados(int idOrdenTrab)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "ListaProdUtilizados";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+
+
+
+        #endregion
+
         #region Bitacora  
         public DataTable Bitacora()
         {
@@ -1337,7 +1369,6 @@ namespace Datos
 
 
         #endregion
-
 
         #region OrdenDeTrabajo  
         public static void CrearOrdenTrabajo(string nombreCompleto, DateTime dia, string descripcion, int trabajadorId, int idCliente, int idVehiculo, string estado, int idTurno)

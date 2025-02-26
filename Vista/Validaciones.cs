@@ -30,28 +30,12 @@ namespace Vista
         {
             Empleados.CargaDeEmpleado(Nombre, Apellido, Documento, Contraseña, Telefono, categoria);
         }
-        //public static Dictionary<int, string> ObtenerCategoriasProcesadas()
-        //{
-        //    Dictionary<int, string> categorias = new Dictionary<int, string>();
-        //    Conectar capaDatos = new Conectar();
-        //    DataTable TablaCategorias = capaDatos.TraerTablaCategorias();
-
-        //    foreach (DataRow row in TablaCategorias.Rows)
-        //    {
-        //        int idCategoria = Convert.ToInt32(row["idCategoria"]);
-        //        string nombreCat = row["NombreCat"].ToString().Trim();
-        //        //int permisoCat = Convert.ToInt32(row["PermisoCat"]);
-        //        categorias.Add(idCategoria, nombreCat);
-        //    }
-        //    return categorias;
-        //}
         public static DataTable TraeEmpleados()
         {
             Conectar CapaDatos = new Conectar();
             DataTable TablasEmpleados = CapaDatos.BuscarEmpleados();
             return TablasEmpleados;
         }
-
         public static List<CategoriaEmpleado> ObtenerCategorias()
         {
             Conectar capaDatos = new Conectar();
@@ -109,10 +93,6 @@ namespace Vista
             }
             return CategoriasEmpleados;
         }
-        //public static void IngresaCategoriaEMP(string nombreCat, string catedescripcion, int CodPerm)
-        //{
-        //    CategoriaEmpleado.IngresaCatergoriasEMP(nombreCat, catedescripcion, CodPerm);
-        //}
         public static DataTable TraeCategoriasEmpleados()
         {
             Conectar CapaDatos = new Conectar();
@@ -122,14 +102,13 @@ namespace Vista
         }
         public static void UpdateCatergoriasEmpleados(int IdCategoriaUPD, string NombreCat, int CodPerm, string DescUPD)
         {
-            CategoriaEmpleado.ActualizarCategoriaEMP(IdCategoriaUPD,  NombreCat, CodPerm, DescUPD);
+            CategoriaEmpleado.ActualizarCategoriaEMP(IdCategoriaUPD, NombreCat, CodPerm, DescUPD);
         }
 
         public static void CambiarEstadoEMP(int idCategoria, string ESTADO)
         {
             CategoriaEmpleado.ActualizarEstadoEMP(idCategoria, ESTADO);
         }
-
         public DataTable VerificaPermiso()
         {
             Conectar CapaDatos = new Conectar();
@@ -203,7 +182,7 @@ namespace Vista
             }
         }
     }
-    
+
 
 
 
@@ -285,9 +264,9 @@ namespace Vista
     #region Producto
     public class ValidarProducto : Producto
     {
-        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles, double litroMin , int cantidadmin, string estado, int idTrab)
+        public static void AgregarUnProducto(string NombreProducto, string MarcaProducto, int CategoriaProducto, string CodigoProducto, string DescripcionProducto, int CantidadProducto, double PrecioLista, double PrecioVenta, double LitrosDisponibles, double litroMin, int cantidadmin, string estado, int idTrab)
         {
-            
+
             Productos.CargaProductos(NombreProducto, MarcaProducto, CategoriaProducto, CodigoProducto.Trim(), DescripcionProducto, CantidadProducto, PrecioLista, PrecioVenta, LitrosDisponibles, litroMin, cantidadmin, estado, idTrab);
         }
 
@@ -306,9 +285,9 @@ namespace Vista
 
         }
 
-        public static void UpdateProductos(int IdProdUPD, string Nombreprd , string marca, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje, double litrajeMin, int cantidadmin, int _idTrabajador)
+        public static void UpdateProductos(int IdProdUPD, string Nombreprd, string marca, int categoria, string codigoproducto, string descripcion, int cantidad, int preciolista, int precioventa, double litraje, double litrajeMin, int cantidadmin, int _idTrabajador)
         {
-            Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marca.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje,litrajeMin, cantidadmin, _idTrabajador);
+            Producto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marca.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin, _idTrabajador);
         }
 
         public static void DeleteProducto(int IdProd, string valor, int _idTrabajador)
@@ -319,12 +298,12 @@ namespace Vista
 
         public static void ControlStock(int IdProd, int cantidad, double preciolista, double precioventa, double litraje, double litrajeMin, int cantidadmin, int _idTrabajador)
         {
-            Producto.ControlStock( IdProd,  cantidad,  preciolista,  precioventa,  litraje,  litrajeMin,  cantidadmin, _idTrabajador);
+            Producto.ControlStock(IdProd, cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin, _idTrabajador);
         }
-        public static DataTable ControlStockFiltro( string codigo)
+        public static DataTable ControlStockFiltro(string codigo)
         {
             Conectar CapaDatos = new Conectar();
-            DataTable TablasDeLaBD = CapaDatos.ControlStockFiltro( codigo);
+            DataTable TablasDeLaBD = CapaDatos.ControlStockFiltro(codigo);
             return TablasDeLaBD;
 
         }
@@ -355,7 +334,7 @@ namespace Vista
         public static int ChequeaLiquido(int Id)
         {
             int valor = Categorias.ChequeaLiquido(Id);
-           return valor; 
+            return valor;
         }
 
         public static void IngresaCat(string nombreCat, string catedescripcion, string estado, string liquido, int _idTrabajador)
@@ -374,7 +353,7 @@ namespace Vista
             Categorias.CambiarEstado(IdCategoriaUPD, estado, _idTrabajador);
 
         }
-        
+
     }
     #endregion
 
@@ -421,7 +400,7 @@ namespace Vista
             return TablasTurnos;
 
         }
-        public static void ModificacionTurno(int idTurno, int idVehiculoUPD, int idClienteUPD, DateTime fechaupd, TimeSpan horaupd,string DescUPD)
+        public static void ModificacionTurno(int idTurno, int idVehiculoUPD, int idClienteUPD, DateTime fechaupd, TimeSpan horaupd, string DescUPD)
         {
             try
             {
@@ -488,7 +467,7 @@ namespace Vista
             return TablasOrdenes;
 
         }
-        public static void CambiarEstado (int idOrden, string estado)
+        public static void CambiarEstado(int idOrden, string estado)
         {
             OrdenDeTrabajo.CambioDeEstado(idOrden, estado);
         }
@@ -529,7 +508,7 @@ namespace Vista
             TablasDeLaBD = CapaDatos.VentaProductosFiltro(categoria, codigo, nombre);
 
             return TablasDeLaBD;
-          
+
         }
 
         public static int TraeLiquido(int Id)
@@ -544,7 +523,7 @@ namespace Vista
         {
 
             VentaProducto.cargaList(idcliente, idprod, Producto, Cantidad, PrecioVenta);
-           
+
 
         }
         public static List<VentaProducto> ObtenerVentas()
@@ -625,6 +604,22 @@ namespace Vista
             return TablasDeLaBD;
 
         }
+    }
+    #endregion
+
+    #region Venta Servicio
+    public class ValidarVentaServicio : VentaServicio
+    {
+        public static DataTable ListaDeProductos(int idOrdenTrab)
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasDeLaBD = CapaDatos.ListaDeProdUtilizados(idOrdenTrab);
+            return TablasDeLaBD;
+        }
+        //public static void CargarManoDeObra(int idOrdenTrab, double ManoDeObra)
+        //{
+        //        OrdenDeTrabajo.AgregarManoDeObra(idOrdenTrab, ManoDeObra);
+        //}
     }
     #endregion
 }

@@ -20,7 +20,7 @@ namespace Vista
             CargarOrdenes();
             
         }
-
+        int idOrdenTrab;
         private void MenuOrdenesFinalizadas_Load(object sender, EventArgs e)
         {
             dtpFecha.Format = DateTimePickerFormat.Custom;
@@ -148,7 +148,7 @@ namespace Vista
         private void dgvOrdenesFinalizadas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = dgvOrdenesFinalizadas.Rows[e.RowIndex];
-            
+            idOrdenTrab = Convert.ToInt32(filaSeleccionada.Cells["idOrdenTrab"].Value);
             txbCliente.Text = filaSeleccionada.Cells["Cliente"].Value.ToString().Trim();
             txtVehiculo.Text = filaSeleccionada.Cells["Vehiculo"].Value.ToString().Trim();
             txtTrabajador.Text = filaSeleccionada.Cells["empleadoACargo"].Value.ToString().Trim();
@@ -156,7 +156,14 @@ namespace Vista
 
         private void btnVisualizarOrden_Click(object sender, EventArgs e)
         {
+            MenuVentaServicio llamarVentaServ = new MenuVentaServicio(idOrdenTrab);
+            llamarVentaServ.ShowDialog();
+                
+        }
 
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

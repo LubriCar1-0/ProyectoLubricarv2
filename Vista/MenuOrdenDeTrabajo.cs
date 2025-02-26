@@ -389,9 +389,7 @@ namespace Vista
         #region volver  
         private void BtnVolver_Click(object sender, EventArgs e)
         {
-            MenuTurnosTrabajos PantallaTurnoTrabajo = new MenuTurnosTrabajos();
-            Hide();
-            PantallaTurnoTrabajo.ShowDialog();
+           this.Close();
         }
         #endregion
 

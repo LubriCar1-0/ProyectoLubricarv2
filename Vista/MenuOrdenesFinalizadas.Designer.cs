@@ -149,6 +149,7 @@
             this.BtnVolver.TabIndex = 40;
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // txbCliente
             // 

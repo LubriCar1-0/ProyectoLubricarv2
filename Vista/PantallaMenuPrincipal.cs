@@ -214,7 +214,7 @@ namespace Vista
             if (permiso == true)
             {
                 MenuOrdenesFinalizadas PantallaOrdenes = new MenuOrdenesFinalizadas();
-                Hide();
+             
                 PantallaOrdenes.ShowDialog();
             }
             else

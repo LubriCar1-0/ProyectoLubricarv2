@@ -20,8 +20,10 @@ namespace Vista
         private void BtnBitacora_Click(object sender, EventArgs e)
         {
             MenuBitacora pantallaBitacora = new MenuBitacora();
-            
-            pantallaBitacora.ShowDialog();       }
+            pantallaBitacora.ShowDialog();
+            this.Close();
+        }
+
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
@@ -32,6 +34,7 @@ namespace Vista
         {
             MenuHistorialVentas llamarMenuHistorialVentas = new MenuHistorialVentas();
             llamarMenuHistorialVentas.ShowDialog();
+             this.Close();
         }
     }
 }
