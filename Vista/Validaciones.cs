@@ -604,6 +604,16 @@ namespace Vista
             return TablasDeLaBD;
 
         }
+
+        public static DataTable LPproductosconfiltro(string codigo)
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.LPproductosconfiltro(codigo);
+
+            return TablasDeLaBD;
+
+        }
     }
     #endregion
 

@@ -874,8 +874,6 @@ namespace Datos
         }
         public DataTable ControlStockFiltro(string codigo)
         {
-
-
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "FiltroStock";
@@ -1569,6 +1567,22 @@ namespace Datos
             desconectar();
             return dt;
 
+        }
+
+        public DataTable LPproductosconfiltro(string codigo)
+        {
+            
+           conectar();
+           comando.Connection = conexion;
+           comando.CommandText = "FiltroStock";
+           comando.CommandType = CommandType.StoredProcedure;
+           comando.Parameters.Clear();
+           comando.Parameters.AddWithValue("@codigo", codigo);
+           leer = comando.ExecuteReader();
+           dt.Load(leer);
+           desconectar();
+           return dt;
+            
         }
         #endregion
     }
