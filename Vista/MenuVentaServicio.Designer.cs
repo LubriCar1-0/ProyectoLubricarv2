@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.gpbCliente = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblLubripts = new System.Windows.Forms.Label();
@@ -49,6 +48,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListVentas = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPatente = new System.Windows.Forms.Label();
+            this.btnGuardarMano = new System.Windows.Forms.Button();
             this.txbManoDeObra = new System.Windows.Forms.TextBox();
             this.lblManoDeObra = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -60,8 +61,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnGuardarMano = new System.Windows.Forms.Button();
-            this.lblPatente = new System.Windows.Forms.Label();
+            this.lblLubriGana = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.gpbCliente.SuspendLayout();
             this.grpPresupuesto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListVentas)).BeginInit();
@@ -71,7 +72,6 @@
             // gpbCliente
             // 
             this.gpbCliente.BackColor = System.Drawing.Color.NavajoWhite;
-            this.gpbCliente.Controls.Add(this.label7);
             this.gpbCliente.Controls.Add(this.lblIdCliente);
             this.gpbCliente.Controls.Add(this.lblNombreCliente);
             this.gpbCliente.Controls.Add(this.lblLubripts);
@@ -81,23 +81,10 @@
             this.gpbCliente.ForeColor = System.Drawing.Color.OrangeRed;
             this.gpbCliente.Location = new System.Drawing.Point(609, 131);
             this.gpbCliente.Name = "gpbCliente";
-            this.gpbCliente.Size = new System.Drawing.Size(529, 151);
+            this.gpbCliente.Size = new System.Drawing.Size(529, 122);
             this.gpbCliente.TabIndex = 34;
             this.gpbCliente.TabStop = false;
             this.gpbCliente.Text = "Cliente";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label7.Location = new System.Drawing.Point(36, 110);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(197, 28);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Gana LubriPuntos:";
             // 
             // lblIdCliente
             // 
@@ -163,6 +150,8 @@
             // grpPresupuesto
             // 
             this.grpPresupuesto.BackColor = System.Drawing.Color.NavajoWhite;
+            this.grpPresupuesto.Controls.Add(this.lblLubriGana);
+            this.grpPresupuesto.Controls.Add(this.label4);
             this.grpPresupuesto.Controls.Add(this.btnPresupuesto);
             this.grpPresupuesto.Controls.Add(this.btnCargaVenta);
             this.grpPresupuesto.Controls.Add(this.lblTotal);
@@ -177,9 +166,9 @@
             this.grpPresupuesto.Controls.Add(this.dgvListVentas);
             this.grpPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpPresupuesto.ForeColor = System.Drawing.Color.OrangeRed;
-            this.grpPresupuesto.Location = new System.Drawing.Point(609, 288);
+            this.grpPresupuesto.Location = new System.Drawing.Point(609, 259);
             this.grpPresupuesto.Name = "grpPresupuesto";
-            this.grpPresupuesto.Size = new System.Drawing.Size(529, 379);
+            this.grpPresupuesto.Size = new System.Drawing.Size(529, 468);
             this.grpPresupuesto.TabIndex = 33;
             this.grpPresupuesto.TabStop = false;
             this.grpPresupuesto.Text = "Presupuesto";
@@ -188,23 +177,25 @@
             // 
             this.btnPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPresupuesto.ForeColor = System.Drawing.Color.Black;
-            this.btnPresupuesto.Location = new System.Drawing.Point(41, 338);
+            this.btnPresupuesto.Location = new System.Drawing.Point(41, 398);
             this.btnPresupuesto.Name = "btnPresupuesto";
             this.btnPresupuesto.Size = new System.Drawing.Size(259, 35);
             this.btnPresupuesto.TabIndex = 22;
             this.btnPresupuesto.Text = "Imprimir Presupuesto";
             this.btnPresupuesto.UseVisualStyleBackColor = true;
+            this.btnPresupuesto.Click += new System.EventHandler(this.btnPresupuesto_Click);
             // 
             // btnCargaVenta
             // 
             this.btnCargaVenta.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargaVenta.ForeColor = System.Drawing.Color.Black;
-            this.btnCargaVenta.Location = new System.Drawing.Point(370, 338);
+            this.btnCargaVenta.Location = new System.Drawing.Point(369, 398);
             this.btnCargaVenta.Name = "btnCargaVenta";
             this.btnCargaVenta.Size = new System.Drawing.Size(131, 35);
             this.btnCargaVenta.TabIndex = 20;
             this.btnCargaVenta.Text = "Confirmar";
             this.btnCargaVenta.UseVisualStyleBackColor = true;
+            this.btnCargaVenta.Click += new System.EventHandler(this.btnCargaVenta_Click);
             // 
             // lblTotal
             // 
@@ -350,12 +341,37 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox1.Location = new System.Drawing.Point(186, 204);
+            this.groupBox1.Location = new System.Drawing.Point(186, 220);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(417, 405);
+            this.groupBox1.Size = new System.Drawing.Size(417, 419);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehiculo";
+            // 
+            // lblPatente
+            // 
+            this.lblPatente.AutoSize = true;
+            this.lblPatente.BackColor = System.Drawing.Color.Transparent;
+            this.lblPatente.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblPatente.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblPatente.Location = new System.Drawing.Point(110, 101);
+            this.lblPatente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPatente.Name = "lblPatente";
+            this.lblPatente.Size = new System.Drawing.Size(221, 28);
+            this.lblPatente.TabIndex = 39;
+            this.lblPatente.Text = "Patente del Vehiculo";
+            // 
+            // btnGuardarMano
+            // 
+            this.btnGuardarMano.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarMano.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardarMano.Location = new System.Drawing.Point(214, 353);
+            this.btnGuardarMano.Name = "btnGuardarMano";
+            this.btnGuardarMano.Size = new System.Drawing.Size(117, 35);
+            this.btnGuardarMano.TabIndex = 38;
+            this.btnGuardarMano.Text = "Guardar";
+            this.btnGuardarMano.UseVisualStyleBackColor = true;
+            this.btnGuardarMano.Click += new System.EventHandler(this.btnGuardarMano_Click);
             // 
             // txbManoDeObra
             // 
@@ -392,12 +408,12 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
             this.label9.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label9.Location = new System.Drawing.Point(7, 129);
+            this.label9.Location = new System.Drawing.Point(7, 141);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(165, 28);
+            this.label9.Size = new System.Drawing.Size(197, 28);
             this.label9.TabIndex = 34;
-            this.label9.Text = "Observaciones:";
+            this.label9.Text = "Trabajo Realizado:";
             // 
             // label2
             // 
@@ -486,30 +502,31 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // btnGuardarMano
+            // lblLubriGana
             // 
-            this.btnGuardarMano.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarMano.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardarMano.Location = new System.Drawing.Point(214, 353);
-            this.btnGuardarMano.Name = "btnGuardarMano";
-            this.btnGuardarMano.Size = new System.Drawing.Size(117, 35);
-            this.btnGuardarMano.TabIndex = 38;
-            this.btnGuardarMano.Text = "Guardar";
-            this.btnGuardarMano.UseVisualStyleBackColor = true;
-            this.btnGuardarMano.Click += new System.EventHandler(this.btnGuardarMano_Click);
+            this.lblLubriGana.AutoSize = true;
+            this.lblLubriGana.BackColor = System.Drawing.Color.Transparent;
+            this.lblLubriGana.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblLubriGana.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblLubriGana.Location = new System.Drawing.Point(240, 355);
+            this.lblLubriGana.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLubriGana.Name = "lblLubriGana";
+            this.lblLubriGana.Size = new System.Drawing.Size(238, 28);
+            this.lblLubriGana.TabIndex = 36;
+            this.lblLubriGana.Text = "No hay valor asignado";
             // 
-            // lblPatente
+            // label4
             // 
-            this.lblPatente.AutoSize = true;
-            this.lblPatente.BackColor = System.Drawing.Color.Transparent;
-            this.lblPatente.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.lblPatente.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblPatente.Location = new System.Drawing.Point(110, 101);
-            this.lblPatente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPatente.Name = "lblPatente";
-            this.lblPatente.Size = new System.Drawing.Size(221, 28);
-            this.lblPatente.TabIndex = 39;
-            this.lblPatente.Text = "Patente del Vehiculo";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label4.Location = new System.Drawing.Point(36, 355);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(207, 28);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Suma LubriPuntos: ";
             // 
             // MenuVentaServicio
             // 
@@ -526,6 +543,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuVentaServicio";
             this.Text = "MenuVentaServicio";
+            this.Load += new System.EventHandler(this.MenuVentaServicio_Load);
             this.gpbCliente.ResumeLayout(false);
             this.gpbCliente.PerformLayout();
             this.grpPresupuesto.ResumeLayout(false);
@@ -540,7 +558,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpbCliente;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label lblLubripts;
@@ -573,5 +590,7 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnGuardarMano;
         private System.Windows.Forms.Label lblPatente;
+        private System.Windows.Forms.Label lblLubriGana;
+        private System.Windows.Forms.Label label4;
     }
 }

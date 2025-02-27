@@ -64,12 +64,18 @@ namespace Negocio
 
         public static void CargaDeTurnos(DateTime dia, DateTime hora, int idCliente, int idVehiculo, string descripcion)
         {
+            
+            DateTime fechaTurno = dia.Date.Add(hora.TimeOfDay);
+            DateTime fechaActual = DateTime.Now;
+            if (fechaTurno < fechaActual)
+            {
+                throw new Exception("La fecha y hora del turno no pueden ser anteriores a la fecha y hora actual.");
+            }
+
             Conectar capaDatos = new Conectar();
 
-            // Convertir la hora a TimeSpan
             TimeSpan horaTimeSpan = hora.TimeOfDay;
 
-            // Verificar si ya existe un turno activo para la misma fecha y hora
             bool turnoExistente = capaDatos.ExisteTurno(dia, horaTimeSpan);
 
             if (turnoExistente)
@@ -78,11 +84,11 @@ namespace Negocio
             }
             else
             {
-                // Si no existe, insertar el nuevo turno
                 string estado = "ACTIVO";
                 capaDatos.InsertarTurno(dia, horaTimeSpan, idCliente, idVehiculo, descripcion, estado);
             }
         }
+
         public static void ModificarTurnos(int idTurno, int idVehiculoUPD, int idClienteUPD, DateTime fechaupd, TimeSpan horaupd, string DescUPD)
         {
             try

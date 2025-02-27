@@ -116,11 +116,8 @@ namespace Vista
                 dgvProductos.Columns["LitrosDisp"].Visible = false;
                 dgvProductos.Columns["LitrosMinimo"].Visible = false;
 
-                //DGVProductos.Columns["IdCategorias"].Visible = false;
                 ConfiguraDataGrid(dgvProductos);
-                //Categoria = 0;
-                //codigo = string.Empty;
-                //nombre = string.Empty;
+                
             }
             catch (Exception ex)
             {

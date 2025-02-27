@@ -42,8 +42,9 @@ namespace Negocio
                 }
 
             }
-            string estado = "En Proceso";
+            string estado = "INICIADO";
             Conectar.CrearOrdenTrabajo(NombreCompleto, dia, descripcion, trabajadorId, idCliente, idVehiculo, estado, idTurno);
+            Conectar.UpdateEstadoTurno(idTurno, estado);
         }
         public static void CambioDeEstado (int idOrden, string estado)
         {

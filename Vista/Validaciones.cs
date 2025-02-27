@@ -626,10 +626,17 @@ namespace Vista
             DataTable TablasDeLaBD = CapaDatos.ListaDeProdUtilizados(idOrdenTrab);
             return TablasDeLaBD;
         }
-        //public static void CargarManoDeObra(int idOrdenTrab, double ManoDeObra)
-        //{
-        //        OrdenDeTrabajo.AgregarManoDeObra(idOrdenTrab, ManoDeObra);
-        //}
+        public static void CargarVentaServicio(int idOrdenTrab, int idCliente, double ManoDeObra, double SubTotal, double IVA, double Total, int lubripuntos)
+        {
+            VentaServicio.CargaVenta(idOrdenTrab, idCliente, ManoDeObra, SubTotal, IVA, Total, lubripuntos);
+        }
+        public static DataTable TraerLaTablaVentServ ()
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable TablasDeLaBD = capaDatos.TraerTablaVentaServ();
+            return TablasDeLaBD;
+        }
+        
     }
     #endregion
 }

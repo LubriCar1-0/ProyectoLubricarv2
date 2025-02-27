@@ -44,6 +44,14 @@ namespace Negocio
             }
             return null;
         }
+        public static void CargaVenta(int idOrdenTrab, int idCliente, double ManoDeObra, double SubTotal, double IVA, double Total, int lubripuntos)
+        {
+            
+            Conectar.CargaDeVentaServ(idOrdenTrab, idCliente, ManoDeObra, SubTotal, IVA, Total);
+
+
+            Conectar.CargaLubriPuntos(idCliente, lubripuntos);
+        }
 
 
     }

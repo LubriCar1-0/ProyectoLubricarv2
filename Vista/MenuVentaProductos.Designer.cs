@@ -772,7 +772,6 @@
             this.lblLubripts.Size = new System.Drawing.Size(296, 28);
             this.lblLubripts.TabIndex = 31;
             this.lblLubripts.Text = "No hay cliente seleccionado";
-
             // 
             // groupBox4
             // 

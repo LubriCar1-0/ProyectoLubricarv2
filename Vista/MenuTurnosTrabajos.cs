@@ -14,6 +14,7 @@ namespace Vista
 {
     public partial class MenuTurnosTrabajos : Form
     {
+        private DateTime FechaInicioComp;
         public MenuTurnosTrabajos()
         {
             InitializeComponent();
@@ -196,6 +197,8 @@ namespace Vista
 
                 if (estadoTurnoSeleccionado == "ACTIVO")
                 {
+                    //DtpFechaCargada.MinDate = fechaTurno.AddDays(1);
+                    //DtpFechaCargada.MaxDate = fechaTurno.AddDays(30);
                     BtnAgregar.Visible = true;
                     BtnAgregar.Enabled = true;
                     TxbDescripcion.ReadOnly = false;
@@ -207,16 +210,18 @@ namespace Vista
                 }
                 else if (estadoTurnoSeleccionado == "INICIADO")
                 {
+                    DtpFechaCargada.MinDate = DateTimePicker.MinimumDateTime;
+                    DtpFechaCargada.MaxDate = DateTimePicker.MaximumDateTime;
                     BtnAgregar.Visible = false;
                     BtnAgregar.Enabled = false;
                     btnVisualizarOrden.Enabled = true;
                     btnVisualizarOrden.Visible = true;
                     TxbDescripcion.ReadOnly = true;
                     cmbTrabajador.Enabled = false;
-                    DtpFechaCargada.ShowUpDown = true; // Oculta el calendario emergente
-                    DtpFechaCargada.Enabled = false; // Bloquea la modificación
+                    DtpFechaCargada.ShowUpDown = true; 
+                    DtpFechaCargada.Enabled = false; 
 
-                    // Llamada al método que obtiene los datos de la orden de trabajo según el idTurno
+                    
                     DataTable dtOrden = ValidarOrdenDeTrabajo.ObtDatosOrden(idTurno);
                     if (dtOrden != null && dtOrden.Rows.Count > 0)
                     {
@@ -232,6 +237,7 @@ namespace Vista
                         if (DateTime.TryParse(rowOrden["FechaDeInicio"].ToString(), out DateTime fechaInicioOrden))
                         {
                             DtpFechaCargada.Value = fechaInicioOrden;
+                            
                             
                         }
                         
@@ -250,14 +256,10 @@ namespace Vista
         {
             try
             {
-                if (DtpFechaCargada.Value >= dtpFecha.Value)
-                {
-                    MessageBox.Show("La fecha de inicio de la orden de trabajo debe ser posterior a la fecha del turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+               
                 
                 string patente = txbPatente.Text.Trim();
-                DateTime dia = dtpFecha.Value.Date;
+                DateTime dia = DtpFechaCargada.Value.Date;
                 int trabajadorId = cmbTrabajador.SelectedItem is KeyValuePair<int, string> seleccionado ? seleccionado.Key : 0;
                 string descripcion = TxbDescripcion.Text.Trim();
 
@@ -313,9 +315,7 @@ namespace Vista
             
             DtpFechaCargada.CustomFormat = " ";
 
-            // Opcional: Restablecer el valor a la fecha actual
-            // DtpFechaCargada.Value = DateTime.Today;
-
+          
             
             txtPatente.Clear();
             txtTelCliente.Clear();

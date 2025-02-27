@@ -37,9 +37,6 @@ namespace Vista
         public MenuOrdenDeTrabajo()
         {
 
-            //this.FormBorderStyle = FormBorderStyle.None;
-            //this.WindowState = FormWindowState.Maximized;
-            //this.StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             CargatablaProductos();
             dgvProductos.Columns["idProd"].Visible = false;
@@ -62,20 +59,18 @@ namespace Vista
 
         private void MenuOrdenDeTrabajo_Load(object sender, EventArgs e)
         {
-            // Asigna los valores recibidos a los controles correspondientes.
-            // Se asume que en el formulario existen controles como txbPatenteOrden, txbClienteOrden, etc.
+            
             txbPatente.Text = this.Patente;
             txbVehiculo.Text = this.Vehiculo;
             txbEmpleado.Text = this.Trabajador;
             TxbDescripcion.Text = this.DescripcionOrden;
             DtpFechaDeInicio.Value = this.FechaInicioOrden;
             cmbEstado.Text = this.EstadoOrden;
-            //idOrdenTrabajo = this.idOrdenTrab;
             
-            // Limpiar cualquier item previo (opcional)
+            
+            
             cmbEstado.Items.Clear();
             CargarListaGuardada(idOrdenTrab);
-            // Agregar los valores permitidos al ComboBox
             cmbEstado.Items.Add("INICIADO");
             cmbEstado.Items.Add("CANCELADO");
             cmbEstado.Items.Add("FINALIZADO");
@@ -191,6 +186,7 @@ namespace Vista
         {
             dgvVentas.DataSource = null;  // Limpia el DataGridView
             dgvVentas.DataSource = ValidarOrdenDeTrabajo.ObtenerLista();
+
             
         }
         

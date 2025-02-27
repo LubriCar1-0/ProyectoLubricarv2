@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
+using System.Security.Cryptography;
 
 namespace Datos
 {
@@ -1073,22 +1074,34 @@ namespace Datos
             desconectar();
             return idCliente;
         }
-        public DataTable TurnosFiltroPorPatente(int idCliente, string patente, string fecha)
+        //public DataTable TurnosFiltroPorPatente(int idCliente, string patente, string fecha)
+        //{
+        //    conectar();
+        //    comando.Connection = conexion;
+        //    comando.CommandText = "FiltrarTurnosPorPatente";
+        //    comando.CommandType = CommandType.StoredProcedure;
+        //    comando.Parameters.Clear();
+        //    comando.Parameters.AddWithValue("@idCliente", idCliente != -1 ? (object)idCliente : DBNull.Value);
+        //    comando.Parameters.AddWithValue("@patente", !string.IsNullOrEmpty(patente) ? (object)patente : DBNull.Value);
+        //    comando.Parameters.AddWithValue("@fecha", !string.IsNullOrEmpty(fecha) ? (object)fecha : DBNull.Value);
+        //    leer = comando.ExecuteReader();
+        //    dt.Load(leer);
+        //    desconectar();
+        //    return dt;
+        //}
+        public static void UpdateEstadoTurno (int idturno, string estado)
         {
             conectar();
             comando.Connection = conexion;
-            comando.CommandText = "FiltrarTurnosPorPatente";
+            comando.CommandText = "UpdateEstadoTurno";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@idCliente", idCliente != -1 ? (object)idCliente : DBNull.Value);
-            comando.Parameters.AddWithValue("@patente", !string.IsNullOrEmpty(patente) ? (object)patente : DBNull.Value);
-            comando.Parameters.AddWithValue("@fecha", !string.IsNullOrEmpty(fecha) ? (object)fecha : DBNull.Value);
-            leer = comando.ExecuteReader();
-            dt.Load(leer);
+            comando.Parameters.AddWithValue("@idTurno", idturno);
+            comando.Parameters.AddWithValue("@estado", estado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
             desconectar();
-            return dt;
         }
-
 
         #endregion
 
@@ -1296,8 +1309,39 @@ namespace Datos
             desconectar();
             return dt;
         }
+        public static void CargaDeVentaServ (int idOrdenTrab, int idCliente, double ManoDeObra, double SubTotal, double IVA, double Total)
+        {
+            DateTime fechaHoraActual = DateTime.Now;
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "GuardaTotalVentaServ";
+            comando.CommandType= CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+            comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
+            comando.Parameters.AddWithValue("@ManoDeObra", ManoDeObra);
+            comando.Parameters.AddWithValue("@SubTotal", SubTotal);
+            comando.Parameters.AddWithValue("@IvaCalculado", IVA);
+            comando.Parameters.AddWithValue("@Total", Total);
+            comando.Parameters.AddWithValue("@FechaHora", fechaHoraActual);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
 
-
+        public DataTable TraerTablaVentaServ()
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaVentaServ";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            comando.Parameters.Clear();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
 
         #endregion
 
