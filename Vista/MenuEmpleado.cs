@@ -64,11 +64,10 @@ namespace Vista
                 }
 
                 // Llamar al método para agregar el empleado
-                Validaciones.AgregarUnEmpleado(
-                    TxtNombreEmpleado.Text.Trim(), TxtApellidoEmpleado.Text.Trim(), dniEmpleado, txtContraseña.Text.Trim(), celularEmpleado, categoria: idCategoriaSeleccionada
-                );
+                Validaciones.AgregarUnEmpleado(TxtNombreEmpleado.Text.Trim(), TxtApellidoEmpleado.Text.Trim(), dniEmpleado, txtContraseña.Text.Trim(), celularEmpleado, categoria: idCategoriaSeleccionada );
 
                 MessageBox.Show("El empleado ha sido cargado con éxito");
+                CargarEmpleados();
             }
             catch (Exception ex)
             {

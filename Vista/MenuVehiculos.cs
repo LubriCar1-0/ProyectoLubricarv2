@@ -23,6 +23,8 @@ namespace Vista
             //DgvTablaMeVehiculos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             chbEditar.CheckedChanged += chbEditar_CheckedChanged;
             DgvTablaMeVehiculos.CellClick += DgvTablaMeVehiculos_CellClick;
+            CbxClienteMeVehiculos.SelectedIndexChanged += CbxClienteMeVehiculos_SelectedIndexChanged;
+
         }
         private void chbEditar_CheckedChanged(object sender, EventArgs e)
         {
@@ -113,6 +115,7 @@ namespace Vista
             if (CbxClienteMeVehiculos.SelectedItem is KeyValuePair<int, string> cliente)
             {
                 idCliente = cliente.Key;
+                label1.Text = idCliente.ToString();
             }
         }
 
@@ -245,7 +248,7 @@ namespace Vista
 
         private void MenuVehiculos_Load_1(object sender, EventArgs e)
         {
-
+            label1.Text = Convert.ToString(idCliente);
         }
 
         private void chbEditar_CheckedChanged_1(object sender, EventArgs e)
