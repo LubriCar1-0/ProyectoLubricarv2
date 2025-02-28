@@ -1628,6 +1628,49 @@ namespace Datos
            return dt;
             
         }
+
+        public static void InsertarPuntosAProducto(int idProd, int cantidadLubriPuntos)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "InsertarPuntosAProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idProd", idProd);
+            comando.Parameters.AddWithValue("@CantidadLubriPuntos", cantidadLubriPuntos);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
+
+        public DataTable ObtenerLubrixProductos()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ObtenerLubrixProductos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader);
+            desconectar();
+            return dt;
+        }
+        public static void EstadoProducxlubri (int idLubrixProducto, string Estado)
+        {
+            conectar();
+            comando.Parameters.Clear();
+            comando.Connection = conexion;
+            comando.CommandText = "CambiarEstadoProductxLP";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@idLubrixProducto", idLubrixProducto);
+            comando.Parameters.AddWithValue("@Estado", Estado);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
+
+
         #endregion
     }
 }

@@ -44,6 +44,28 @@ namespace Negocio
 
             return listaLubripuntos;
         }
+        public static void Cambiarestadoproducxlubri(int idLubrixProducto, string Estado)
+        {
+            try
+            {
+                Conectar.EstadoProducxlubri(idLubrixProducto, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cambiar el estado del producto: {ex.Message}");
+            }
+        }
+
+        public static void InsertarPuntosAProducto(int idProd, int cantidadLubriPuntos)
+        {
+            Conectar.InsertarPuntosAProducto(idProd, cantidadLubriPuntos);
+        }
+        public static DataTable ObtenerListaLubrixProductos()
+        {
+            Conectar CapaDatos = new Conectar();
+            return CapaDatos.ObtenerLubrixProductos();
+        }
+
         public int CalculaLubriPuntos(double total)
         {
             #region variables

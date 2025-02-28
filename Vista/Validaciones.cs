@@ -614,6 +614,28 @@ namespace Vista
             return TablasDeLaBD;
 
         }
+
+        public static void InsertarPuntosAProducto(int idProd, int cantidadLubriPuntos)
+        {
+            LubriPuntos.InsertarPuntosAProducto(idProd, cantidadLubriPuntos);
+        }
+
+        public static DataTable ObtenerListaLubrixProductos()
+        {
+            return LubriPuntos.ObtenerListaLubrixProductos();
+        }
+        public static void BajaAltaProducxlubri(int idLubrixProducto, string Estado)
+        {
+            try
+            {
+                LubriPuntos.Cambiarestadoproducxlubri(idLubrixProducto, Estado);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al cambiar el estado:{ex.Message}");
+            }
+        }
+
     }
     #endregion
 
