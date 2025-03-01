@@ -1670,6 +1670,22 @@ namespace Datos
             desconectar();
         }
 
+        public DataTable Clientesconfiltro(int dni)
+        {
+
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTablaClientesConfiltro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@Dni", dni);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+
+        }
+
 
         #endregion
     }

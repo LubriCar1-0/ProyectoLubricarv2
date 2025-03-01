@@ -635,6 +635,21 @@ namespace Vista
                 throw new Exception($"Error al cambiar el estado:{ex.Message}");
             }
         }
+        public static DataTable TraerClientes()
+        {
+            Conectar capaDatos = new Conectar();
+            DataTable TablaClientes = capaDatos.BuscarClientes();
+            return TablaClientes;
+        }
+        public static DataTable Clientesconfiltro(int dni)
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.Clientesconfiltro(dni);
+
+            return TablasDeLaBD;
+
+        }
 
     }
     #endregion

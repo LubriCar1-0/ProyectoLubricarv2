@@ -30,6 +30,10 @@ namespace Vista
         {
             PantallaAsignacionLubriPuntos();
         }
+        private void BtnCanjeoLP_Click(object sender, EventArgs e)
+        {
+            PantallaCanjeoLubriPuntos();
+        }
 
         public static void PantallaValorLubriPuntos()
         {
@@ -43,6 +47,10 @@ namespace Vista
             LlamarMenuAsignacionLubriPuntos.ShowDialog();
         }
 
-       
+        public static void PantallaCanjeoLubriPuntos()
+        {
+            MenuCanjeoLubriPuntos LlamarMenuCanjeoLubriPuntos = new MenuCanjeoLubriPuntos();
+            LlamarMenuCanjeoLubriPuntos.ShowDialog();
+        }
     }
 }

@@ -22,8 +22,10 @@ namespace Vista
             DGVproductos.CellClick += DGVproductos_CellContentClick;
             ConfiguraDataGrid(DGVproductos);
             ConfiguraDataGrid(DGVproducxlubri);
+            DGVproducxlubri.CellClick += DGVproducxlubri_CellClick;
         }
 
+        #region CargarTablas
         private void CargartablaProductos()
         {
             try
@@ -51,16 +53,6 @@ namespace Vista
                 MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void DGVproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow filaSeleccionada = DGVproductos.Rows[e.RowIndex];
-                string Producto = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
-                lblNombreProd.Text = Producto;
-            }
-        }
-
         private void CargarProductosconfiltro(string codigo)
         {
             try
@@ -85,6 +77,26 @@ namespace Vista
             }
         }
 
+        private void CargarTablaLubrixProductos()
+        {
+            try
+            {
+                DGVproducxlubri.DataSource = null;
+                DGVproducxlubri.DataSource = ValidarLubriPuntos.ObtenerListaLubrixProductos();
+                DGVproducxlubri.Columns["idLubrixProducto"].Visible = false;
+                DGVproducxlubri.Columns["idProd"].Visible = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los productos con Lubripuntos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+
+        #region Botones
+
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             CargartablaProductos();
@@ -94,23 +106,6 @@ namespace Vista
         {
             CargarProductosconfiltro(TxtCodProducto.Text.Trim());
         }
-        private void CargarTablaLubrixProductos()
-        {
-            try
-            {
-                DGVproducxlubri.DataSource = null;
-                DGVproducxlubri.DataSource = ValidarLubriPuntos.ObtenerListaLubrixProductos();
-                DGVproducxlubri.Columns["idLubrixProducto"].Visible = false;
-                DGVproducxlubri.Columns["idProd"].Visible = false;
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar los productos con Lubripuntos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
             if (DGVproductos.CurrentRow != null && int.TryParse(txtCantLubri.Text, out int cantidadLubriPuntos))
@@ -128,6 +123,9 @@ namespace Vista
             }
         }
 
+        #endregion
+
+        #region ConfiguracionDataGrid
         private void ConfiguraDataGrid(DataGridView dgv)
         {
             dgv.ReadOnly = true;
@@ -177,6 +175,7 @@ namespace Vista
                 }
             }
         }
+
         private void DGVproducxlubri_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = DGVproducxlubri.Rows[e.RowIndex];
@@ -196,12 +195,25 @@ namespace Vista
                         {
                             ValidarLubriPuntos.BajaAltaProducxlubri(idLubrixproducUPD, "DES");
                             MessageBox.Show("Prodcto DADO DE BAJA.");
+                            CargarTablaLubrixProductos();
                         }
                     }
                 }
             }
 
         }
+
+        private void DGVproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = DGVproductos.Rows[e.RowIndex];
+                string Producto = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
+                lblNombreProd.Text = Producto;
+            }
+        }
+        #endregion
+
 
         private void DGVproducxlubri_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

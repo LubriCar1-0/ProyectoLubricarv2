@@ -263,6 +263,16 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BtncanjeoLubriPuntos {
+            get {
+                object obj = ResourceManager.GetObject("BtncanjeoLubriPuntos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BtnCatEMP {
             get {
                 object obj = ResourceManager.GetObject("BtnCatEMP", resourceCulture);
@@ -756,6 +766,16 @@ namespace Vista.Properties {
         internal static System.Drawing.Bitmap MenuAsignacionLubriPuntos {
             get {
                 object obj = ResourceManager.GetObject("MenuAsignacionLubriPuntos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MenuCanjeoLubriPuntos {
+            get {
+                object obj = ResourceManager.GetObject("MenuCanjeoLubriPuntos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

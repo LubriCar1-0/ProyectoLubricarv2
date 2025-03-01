@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.BtnCanjeoLP = new System.Windows.Forms.Button();
             this.btnValorLP = new System.Windows.Forms.Button();
             this.btnAsignacionLP = new System.Windows.Forms.Button();
             this.PtbLubriPuntos = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PtbLubriPuntos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(646, 444);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
@@ -58,15 +49,27 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // BtnCanjeoLP
+            // 
+            this.BtnCanjeoLP.BackColor = System.Drawing.Color.Black;
+            this.BtnCanjeoLP.BackgroundImage = global::Vista.Properties.Resources.BtncanjeoLubriPuntos;
+            this.BtnCanjeoLP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCanjeoLP.Location = new System.Drawing.Point(605, 423);
+            this.BtnCanjeoLP.Name = "BtnCanjeoLP";
+            this.BtnCanjeoLP.Size = new System.Drawing.Size(213, 92);
+            this.BtnCanjeoLP.TabIndex = 3;
+            this.BtnCanjeoLP.UseVisualStyleBackColor = false;
+            this.BtnCanjeoLP.Click += new System.EventHandler(this.BtnCanjeoLP_Click);
+            // 
             // btnValorLP
             // 
             this.btnValorLP.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnValorLP.BackgroundImage = global::Vista.Properties.Resources.BtnValoresLubri_Puntos;
             this.btnValorLP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnValorLP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnValorLP.Location = new System.Drawing.Point(605, 179);
+            this.btnValorLP.Location = new System.Drawing.Point(605, 169);
             this.btnValorLP.Name = "btnValorLP";
-            this.btnValorLP.Size = new System.Drawing.Size(213, 82);
+            this.btnValorLP.Size = new System.Drawing.Size(213, 92);
             this.btnValorLP.TabIndex = 2;
             this.btnValorLP.UseVisualStyleBackColor = false;
             this.btnValorLP.Click += new System.EventHandler(this.btnValorLP_Click);
@@ -87,6 +90,7 @@
             // PtbLubriPuntos
             // 
             this.PtbLubriPuntos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.PtbLubriPuntos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PtbLubriPuntos.Image = global::Vista.Properties.Resources.MenuLubri_Puntos;
             this.PtbLubriPuntos.Location = new System.Drawing.Point(1, 0);
             this.PtbLubriPuntos.Name = "PtbLubriPuntos";
@@ -101,7 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 567);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BtnCanjeoLP);
             this.Controls.Add(this.btnValorLP);
             this.Controls.Add(this.btnAsignacionLP);
             this.Controls.Add(this.PtbLubriPuntos);
@@ -116,7 +120,7 @@
 
         private System.Windows.Forms.PictureBox PtbLubriPuntos;
         private System.Windows.Forms.Button btnValorLP;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnCanjeoLP;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnAsignacionLP;
     }
