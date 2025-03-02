@@ -74,7 +74,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvControlDeStock.DefaultCellStyle = dataGridViewCellStyle1;
             this.DgvControlDeStock.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.DgvControlDeStock.Location = new System.Drawing.Point(193, 322);
+            this.DgvControlDeStock.Location = new System.Drawing.Point(279, 271);
             this.DgvControlDeStock.Name = "DgvControlDeStock";
             this.DgvControlDeStock.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -86,12 +86,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvControlDeStock.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvControlDeStock.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DgvControlDeStock.Size = new System.Drawing.Size(476, 399);
+            this.DgvControlDeStock.Size = new System.Drawing.Size(311, 452);
             this.DgvControlDeStock.TabIndex = 6;
             this.DgvControlDeStock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvControlDeStock_CellContentClick);
             // 
             // txbPrecioVent
             // 
+            this.txbPrecioVent.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPrecioVent.Location = new System.Drawing.Point(686, 353);
             this.txbPrecioVent.Multiline = true;
             this.txbPrecioVent.Name = "txbPrecioVent";
@@ -100,6 +101,7 @@
             // 
             // txbPrecioList
             // 
+            this.txbPrecioList.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPrecioList.Location = new System.Drawing.Point(940, 353);
             this.txbPrecioList.Multiline = true;
             this.txbPrecioList.Name = "txbPrecioList";
@@ -108,6 +110,7 @@
             // 
             // txbCant
             // 
+            this.txbCant.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCant.Location = new System.Drawing.Point(686, 422);
             this.txbCant.Multiline = true;
             this.txbCant.Name = "txbCant";
@@ -116,6 +119,7 @@
             // 
             // txbCantMinima
             // 
+            this.txbCantMinima.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCantMinima.Location = new System.Drawing.Point(940, 422);
             this.txbCantMinima.Multiline = true;
             this.txbCantMinima.Name = "txbCantMinima";
@@ -124,6 +128,7 @@
             // 
             // txtLitrosDisp
             // 
+            this.txtLitrosDisp.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLitrosDisp.Location = new System.Drawing.Point(686, 501);
             this.txtLitrosDisp.Multiline = true;
             this.txtLitrosDisp.Name = "txtLitrosDisp";
@@ -132,6 +137,7 @@
             // 
             // txtLitrosMin
             // 
+            this.txtLitrosMin.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLitrosMin.Location = new System.Drawing.Point(940, 501);
             this.txtLitrosMin.Multiline = true;
             this.txtLitrosMin.Name = "txtLitrosMin";
@@ -140,10 +146,11 @@
             // 
             // TxtCodProducto
             // 
-            this.TxtCodProducto.Location = new System.Drawing.Point(262, 283);
+            this.TxtCodProducto.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCodProducto.Location = new System.Drawing.Point(457, 232);
             this.TxtCodProducto.Multiline = true;
             this.TxtCodProducto.Name = "TxtCodProducto";
-            this.TxtCodProducto.Size = new System.Drawing.Size(245, 33);
+            this.TxtCodProducto.Size = new System.Drawing.Size(166, 33);
             this.TxtCodProducto.TabIndex = 13;
             // 
             // button1
@@ -177,7 +184,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(522, 270);
+            this.btnBuscar.Location = new System.Drawing.Point(629, 217);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
             this.btnBuscar.TabIndex = 18;
@@ -189,7 +196,7 @@
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
             this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRecargar.Location = new System.Drawing.Point(193, 270);
+            this.btnRecargar.Location = new System.Drawing.Point(219, 271);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
             this.btnRecargar.TabIndex = 20;

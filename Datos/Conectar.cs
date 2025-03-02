@@ -1408,6 +1408,22 @@ namespace Datos
             return dt;
         }
 
+        public DataTable FiltroHistorialVentas(DateTime fecha, DateTime fechahasta)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeVentasFiltradas";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@fecha", fecha);
+            comando.Parameters.AddWithValue("@hasta", fechahasta);
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader);
+            desconectar();
+            return dt;
+        }
+       
+
 
 
         #endregion

@@ -22,18 +22,6 @@ namespace Vista
 
         }
 
-        private void btnValorLP_Click(object sender, EventArgs e)
-        {
-            PantallaValorLubriPuntos();
-        }
-        private void btnAsignacionLP_Click_1(object sender, EventArgs e)
-        {
-            PantallaAsignacionLubriPuntos();
-        }
-        private void BtnCanjeoLP_Click(object sender, EventArgs e)
-        {
-            PantallaCanjeoLubriPuntos();
-        }
 
         public static void PantallaValorLubriPuntos()
         {
@@ -51,6 +39,26 @@ namespace Vista
         {
             MenuCanjeoLubriPuntos LlamarMenuCanjeoLubriPuntos = new MenuCanjeoLubriPuntos();
             LlamarMenuCanjeoLubriPuntos.ShowDialog();
+        }
+
+        private void BtnCanjeoLP_Click_1(object sender, EventArgs e)
+        {
+            PantallaCanjeoLubriPuntos();
+        }
+
+        private void btnValorLP_Click(object sender, EventArgs e)
+        {
+            PantallaValorLubriPuntos();
+        }
+
+        private void btnAsignacionLP_Click(object sender, EventArgs e)
+        {
+            PantallaAsignacionLubriPuntos();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

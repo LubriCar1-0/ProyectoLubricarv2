@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRecargarProduc = new System.Windows.Forms.Button();
             this.btnBuscarProduc = new System.Windows.Forms.Button();
@@ -43,17 +43,18 @@
             this.txtFiltroClientes = new System.Windows.Forms.TextBox();
             this.DGVclientes = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblLubriClientes = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtnConfirmar = new System.Windows.Forms.Button();
             this.lblNombreProd = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblLubriClientes = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVproductos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -71,9 +72,9 @@
             this.groupBox1.Controls.Add(this.DGVproductos);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox1.Location = new System.Drawing.Point(751, 195);
+            this.groupBox1.Location = new System.Drawing.Point(668, 176);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 343);
+            this.groupBox1.Size = new System.Drawing.Size(469, 343);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccionar Producto a canjear";
@@ -111,13 +112,13 @@
             // 
             // DGVproductos
             // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVproductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVproductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.DGVproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVproductos.Location = new System.Drawing.Point(16, 115);
             this.DGVproductos.Name = "DGVproductos";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVproductos.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVproductos.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.DGVproductos.Size = new System.Drawing.Size(436, 199);
             this.DGVproductos.TabIndex = 0;
             // 
@@ -130,9 +131,9 @@
             this.groupBox2.Controls.Add(this.DGVclientes);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox2.Location = new System.Drawing.Point(206, 195);
+            this.groupBox2.Location = new System.Drawing.Point(186, 176);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(539, 343);
+            this.groupBox2.Size = new System.Drawing.Size(476, 343);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccionar cliente";
@@ -142,7 +143,7 @@
             this.BtnRecargarCliente.BackColor = System.Drawing.Color.Transparent;
             this.BtnRecargarCliente.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
             this.BtnRecargarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnRecargarCliente.Location = new System.Drawing.Point(421, 46);
+            this.BtnRecargarCliente.Location = new System.Drawing.Point(391, 57);
             this.BtnRecargarCliente.Name = "BtnRecargarCliente";
             this.BtnRecargarCliente.Size = new System.Drawing.Size(54, 48);
             this.BtnRecargarCliente.TabIndex = 21;
@@ -153,7 +154,7 @@
             this.BtnBuscarCliente.BackColor = System.Drawing.Color.Transparent;
             this.BtnBuscarCliente.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.BtnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnBuscarCliente.Location = new System.Drawing.Point(334, 46);
+            this.BtnBuscarCliente.Location = new System.Drawing.Point(331, 57);
             this.BtnBuscarCliente.Name = "BtnBuscarCliente";
             this.BtnBuscarCliente.Size = new System.Drawing.Size(54, 48);
             this.BtnBuscarCliente.TabIndex = 19;
@@ -163,7 +164,7 @@
             // txtFiltroClientes
             // 
             this.txtFiltroClientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltroClientes.Location = new System.Drawing.Point(16, 61);
+            this.txtFiltroClientes.Location = new System.Drawing.Point(80, 72);
             this.txtFiltroClientes.Multiline = true;
             this.txtFiltroClientes.Name = "txtFiltroClientes";
             this.txtFiltroClientes.Size = new System.Drawing.Size(245, 33);
@@ -171,14 +172,14 @@
             // 
             // DGVclientes
             // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.DGVclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVclientes.Location = new System.Drawing.Point(16, 115);
             this.DGVclientes.Name = "DGVclientes";
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVclientes.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.DGVclientes.Size = new System.Drawing.Size(511, 199);
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVclientes.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.DGVclientes.Size = new System.Drawing.Size(429, 199);
             this.DGVclientes.TabIndex = 0;
             // 
             // groupBox3
@@ -197,19 +198,118 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.OrangeRed;
-            this.groupBox3.Location = new System.Drawing.Point(206, 544);
+            this.groupBox3.Location = new System.Drawing.Point(203, 534);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1035, 280);
+            this.groupBox3.Size = new System.Drawing.Size(934, 211);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Canjeo";
+            this.groupBox3.Text = "Canjear LubriPuntos";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(472, 139);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(53, 32);
+            this.numericUpDown1.TabIndex = 47;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label7.Location = new System.Drawing.Point(252, 139);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(213, 28);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "Cantidad a canjear:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label6.Location = new System.Drawing.Point(631, 80);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(241, 26);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "No se selecciono producto";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.label5.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label5.Location = new System.Drawing.Point(554, 80);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 28);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Valor:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label4.Location = new System.Drawing.Point(670, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(241, 26);
+            this.label4.TabIndex = 43;
+            this.label4.Text = "No se selecciono producto";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.label3.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label3.Location = new System.Drawing.Point(554, 38);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 28);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Producto:";
+            // 
+            // lblLubriClientes
+            // 
+            this.lblLubriClientes.AutoSize = true;
+            this.lblLubriClientes.BackColor = System.Drawing.Color.Transparent;
+            this.lblLubriClientes.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLubriClientes.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblLubriClientes.Location = new System.Drawing.Point(284, 81);
+            this.lblLubriClientes.Name = "lblLubriClientes";
+            this.lblLubriClientes.Size = new System.Drawing.Size(221, 26);
+            this.lblLubriClientes.TabIndex = 41;
+            this.lblLubriClientes.Text = "No se selecciono cliente";
+            this.lblLubriClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label1.Location = new System.Drawing.Point(2, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(275, 28);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Cantidad de Lubri-Puntos:";
             // 
             // BtnConfirmar
             // 
             this.BtnConfirmar.BackgroundImage = global::Vista.Properties.Resources.BtnConfirmar;
             this.BtnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConfirmar.Location = new System.Drawing.Point(865, 232);
+            this.BtnConfirmar.Location = new System.Drawing.Point(549, 129);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(161, 42);
             this.BtnConfirmar.TabIndex = 39;
@@ -221,7 +321,7 @@
             this.lblNombreProd.AutoSize = true;
             this.lblNombreProd.BackColor = System.Drawing.Color.Transparent;
             this.lblNombreProd.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProd.ForeColor = System.Drawing.Color.Black;
+            this.lblNombreProd.ForeColor = System.Drawing.Color.OrangeRed;
             this.lblNombreProd.Location = new System.Drawing.Point(235, 43);
             this.lblNombreProd.Name = "lblNombreProd";
             this.lblNombreProd.Size = new System.Drawing.Size(221, 26);
@@ -242,104 +342,19 @@
             this.label9.TabIndex = 35;
             this.label9.Text = "Cliente seleccionado:";
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(2, 110);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 28);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Cantidad de Lubri-Puntos:";
-            // 
-            // lblLubriClientes
-            // 
-            this.lblLubriClientes.AutoSize = true;
-            this.lblLubriClientes.BackColor = System.Drawing.Color.Transparent;
-            this.lblLubriClientes.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLubriClientes.ForeColor = System.Drawing.Color.Black;
-            this.lblLubriClientes.Location = new System.Drawing.Point(284, 110);
-            this.lblLubriClientes.Name = "lblLubriClientes";
-            this.lblLubriClientes.Size = new System.Drawing.Size(221, 26);
-            this.lblLubriClientes.TabIndex = 41;
-            this.lblLubriClientes.Text = "No se selecciono cliente";
-            this.lblLubriClientes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.label3.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label3.Location = new System.Drawing.Point(540, 41);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(247, 28);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Producto seleccionado:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(785, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(241, 26);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "No se selecciono producto";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.label5.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label5.Location = new System.Drawing.Point(540, 83);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 28);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Valor:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(617, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(241, 26);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "No se selecciono producto";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label7.Location = new System.Drawing.Point(540, 131);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(206, 28);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Cantidad a canjear:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(753, 127);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(53, 32);
-            this.numericUpDown1.TabIndex = 47;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(186, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 52);
+            this.button1.TabIndex = 22;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MenuCanjeoLubriPuntos
             // 
@@ -347,12 +362,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.MenuCanjeoLubriPuntos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1465, 860);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuCanjeoLubriPuntos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuCanjeoLubriPuntos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -391,5 +409,6 @@
         private System.Windows.Forms.Label lblLubriClientes;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

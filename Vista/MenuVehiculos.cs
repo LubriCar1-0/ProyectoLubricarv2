@@ -46,6 +46,9 @@ namespace Vista
             {
                 DgvTablaMeVehiculos.DataSource = null;
                 DgvTablaMeVehiculos.DataSource = ValidarClientes.BuscarVehiculos();
+                DgvTablaMeVehiculos.AllowUserToAddRows = false;
+                DgvTablaMeVehiculos.RowHeadersVisible = false;
+                ConfiguraDataGrid(DgvTablaMeVehiculos);
                 if (DgvTablaMeVehiculos.Columns.Contains("idVehiculo"))
                 {
                     DgvTablaMeVehiculos.Columns["idVehiculo"].Visible = false;
@@ -62,7 +65,42 @@ namespace Vista
                 MessageBox.Show($"Error al cargar los vehículos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void ConfiguraDataGrid(DataGridView dgv)
+        {
+            dgv.ReadOnly = true;
 
+            // General
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.BackgroundColor = Color.White;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            // Cabecera
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); // Azul elegante
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Filas
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul mÃ¡s claro
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            // Alternancia de color en filas
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+
+            // Otros ajustes
+            dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
+
+            
+        }
 
         private void CargarClientes()
         {
@@ -73,6 +111,7 @@ namespace Vista
             }
             CbxClienteMeVehiculos.DisplayMember = "Value";
             CbxClienteMeVehiculos.ValueMember = "Key";
+
         }
 
         private int idCliente;

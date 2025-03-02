@@ -33,7 +33,7 @@ namespace Vista
             DataTable dt = ValidarProducto.ObtenerProductosFaltantes();
             DgvProductoFaltantes.DataSource = dt;
 
-            
+
             DgvProductoFaltantes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvProductoFaltantes.EnableHeadersVisualStyles = false;
             DgvProductoFaltantes.ColumnHeadersDefaultCellStyle.BackColor = Color.Teal;
@@ -44,19 +44,21 @@ namespace Vista
             DgvProductoFaltantes.BorderStyle = BorderStyle.None;
             DgvProductoFaltantes.RowTemplate.Height = 30;
 
-            
+
             DgvProductoFaltantes.Columns["Nombre"].HeaderText = "Producto";
             DgvProductoFaltantes.Columns["Marca"].HeaderText = "Marca";
             DgvProductoFaltantes.Columns["CodProd"].HeaderText = "Código";
             DgvProductoFaltantes.Columns["CantidadActual"].HeaderText = "Cantidad Actual";
             DgvProductoFaltantes.Columns["CantidadMinima"].HeaderText = "Cantidad Minima";
-          
+
             DgvProductoFaltantes.AllowUserToAddRows = false;
 
-          
+
             DgvProductoFaltantes.RowHeadersVisible = false;
 
         }
+
+      
 
         private void button1_Click(object sender, EventArgs e)
         {

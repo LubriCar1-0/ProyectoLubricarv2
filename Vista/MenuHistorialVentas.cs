@@ -16,8 +16,9 @@ namespace Vista
         {
             InitializeComponent();
             CargatablaVentas();
-
+            dtpFechaHasta.Value.AddDays(1);
             dgvVentas.Columns["IdVentaRes"].Visible = false;
+            dgvVentas.ReadOnly = true;
             grpLista.Visible = false;
         }
 
@@ -149,6 +150,41 @@ namespace Vista
         private void button1_Click(object sender, EventArgs e)
         {
             grpLista.Visible = false;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            DateTime Hoy = DateTime.Now;
+
+            DateTime fechaDesde = Convert.ToDateTime(dtpFechaDesde.Value.ToString("yyyy-MM-dd"));
+            DateTime fechaHasta = Convert.ToDateTime(dtpFechaHasta.Value.ToString("yyyy-MM-dd"));
+            fechaHasta = fechaHasta.AddDays(1);        
+            if (Hoy <= fechaDesde) 
+           {
+                MessageBox.Show("No puede ingresar una fecha mayor a hoy");
+           }
+           else
+           {
+                dgvVentas.DataSource = null;
+                var productos = ValidarVenta.FiltroHistorialVentas(fechaDesde, fechaHasta);
+                dgvVentas.DataSource = productos;
+                dgvVentas.ReadOnly = true;
+                dgvVentas.Columns["IdVentaRes"].Visible = false;
+
+                ConfiguraDataGrid(dgvVentas);
+                AjustarEstiloGridVenta(dgvVentas);
+           }
+              
+
+
+
+
+
+        }
+
+        private void MenuHistorialVentas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

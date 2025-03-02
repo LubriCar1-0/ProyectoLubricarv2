@@ -75,7 +75,7 @@
             // txbPatente
             // 
             this.txbPatente.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.txbPatente.Location = new System.Drawing.Point(567, 172);
+            this.txbPatente.Location = new System.Drawing.Point(570, 182);
             this.txbPatente.Multiline = true;
             this.txbPatente.Name = "txbPatente";
             this.txbPatente.Size = new System.Drawing.Size(167, 28);
@@ -84,7 +84,7 @@
             // txbEmpleado
             // 
             this.txbEmpleado.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbEmpleado.Location = new System.Drawing.Point(843, 172);
+            this.txbEmpleado.Location = new System.Drawing.Point(846, 182);
             this.txbEmpleado.Multiline = true;
             this.txbEmpleado.Name = "txbEmpleado";
             this.txbEmpleado.Size = new System.Drawing.Size(217, 28);
@@ -93,7 +93,7 @@
             // txbVehiculo
             // 
             this.txbVehiculo.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbVehiculo.Location = new System.Drawing.Point(297, 172);
+            this.txbVehiculo.Location = new System.Drawing.Point(300, 182);
             this.txbVehiculo.Multiline = true;
             this.txbVehiculo.Name = "txbVehiculo";
             this.txbVehiculo.Size = new System.Drawing.Size(166, 28);
@@ -102,7 +102,7 @@
             // TxbDescripcion
             // 
             this.TxbDescripcion.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxbDescripcion.Location = new System.Drawing.Point(567, 243);
+            this.TxbDescripcion.Location = new System.Drawing.Point(570, 253);
             this.TxbDescripcion.Multiline = true;
             this.TxbDescripcion.Name = "TxbDescripcion";
             this.TxbDescripcion.Size = new System.Drawing.Size(220, 59);
@@ -112,7 +112,7 @@
             // 
             this.cmbEstado.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(843, 243);
+            this.cmbEstado.Location = new System.Drawing.Point(846, 253);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(217, 36);
             this.cmbEstado.TabIndex = 24;
@@ -120,7 +120,7 @@
             // 
             // DtpFechaDeInicio
             // 
-            this.DtpFechaDeInicio.Location = new System.Drawing.Point(297, 243);
+            this.DtpFechaDeInicio.Location = new System.Drawing.Point(300, 253);
             this.DtpFechaDeInicio.Name = "DtpFechaDeInicio";
             this.DtpFechaDeInicio.Size = new System.Drawing.Size(221, 20);
             this.DtpFechaDeInicio.TabIndex = 25;
@@ -143,9 +143,9 @@
             this.grpProductos.Controls.Add(this.label8);
             this.grpProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.grpProductos.ForeColor = System.Drawing.Color.Black;
-            this.grpProductos.Location = new System.Drawing.Point(189, 308);
+            this.grpProductos.Location = new System.Drawing.Point(189, 318);
             this.grpProductos.Name = "grpProductos";
-            this.grpProductos.Size = new System.Drawing.Size(493, 492);
+            this.grpProductos.Size = new System.Drawing.Size(493, 414);
             this.grpProductos.TabIndex = 26;
             this.grpProductos.TabStop = false;
             this.grpProductos.Text = "Productos";
@@ -449,7 +449,7 @@
             this.grpPresupuesto.Controls.Add(this.dgvVentas);
             this.grpPresupuesto.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpPresupuesto.ForeColor = System.Drawing.Color.Black;
-            this.grpPresupuesto.Location = new System.Drawing.Point(688, 322);
+            this.grpPresupuesto.Location = new System.Drawing.Point(688, 332);
             this.grpPresupuesto.Name = "grpPresupuesto";
             this.grpPresupuesto.Size = new System.Drawing.Size(456, 343);
             this.grpPresupuesto.TabIndex = 28;
@@ -494,7 +494,7 @@
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(189, 121);
+            this.BtnVolver.Location = new System.Drawing.Point(189, 129);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(69, 41);
             this.BtnVolver.TabIndex = 29;
@@ -506,7 +506,7 @@
             // 
             this.btnFinalizar.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.Black;
-            this.btnFinalizar.Location = new System.Drawing.Point(809, 670);
+            this.btnFinalizar.Location = new System.Drawing.Point(829, 681);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(183, 43);
             this.btnFinalizar.TabIndex = 22;
@@ -520,7 +520,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenDeTrabajo4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.grpPresupuesto);
@@ -534,6 +534,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuOrdenDeTrabajo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuOrdenDeTrabajo";
             this.Load += new System.EventHandler(this.MenuOrdenDeTrabajo_Load);
             this.grpProductos.ResumeLayout(false);

@@ -45,6 +45,7 @@
             // 
             // txbNomCat
             // 
+            this.txbNomCat.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbNomCat.Location = new System.Drawing.Point(253, 237);
             this.txbNomCat.Multiline = true;
             this.txbNomCat.Name = "txbNomCat";
@@ -53,6 +54,7 @@
             // 
             // txbDescripcion
             // 
+            this.txbDescripcion.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbDescripcion.Location = new System.Drawing.Point(253, 344);
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
@@ -61,6 +63,7 @@
             // 
             // txbCodPerm
             // 
+            this.txbCodPerm.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCodPerm.Location = new System.Drawing.Point(659, 237);
             this.txbCodPerm.Multiline = true;
             this.txbCodPerm.Name = "txbCodPerm";

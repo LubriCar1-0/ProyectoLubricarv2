@@ -19,9 +19,8 @@ namespace Vista
             InitializeComponent();
             CargartablaProductos();
             CargarTablaLubrixProductos();
-            DGVproductos.CellClick += DGVproductos_CellContentClick;
-            ConfiguraDataGrid(DGVproductos);
-            ConfiguraDataGrid(DGVproducxlubri);
+            DGVproductos.Columns["IdProd"].Visible = false;
+            DGVproductos.CellClick += DGVproductos_CellContentClick;          
             DGVproducxlubri.CellClick += DGVproducxlubri_CellClick;
         }
 
@@ -45,7 +44,7 @@ namespace Vista
                 DGVproductos.Columns["CantidadMinima"].Visible = false;
                 DGVproductos.Columns["LitrosMinimo"].Visible = false;
                 DGVproductos.RowHeadersVisible = false;
-
+                ConfiguraDataGrid(DGVproductos);
 
             }
             catch (Exception ex)
@@ -70,6 +69,8 @@ namespace Vista
                 DGVproductos.Columns["LitrosDisp"].Visible = false;
                 DGVproductos.Columns["CantidadMinima"].Visible = false;
                 DGVproductos.Columns["LitrosMinimo"].Visible = false;
+                DGVproductos.RowHeadersVisible = false;
+                ConfiguraDataGrid(DGVproductos);
             }
             catch (Exception ex)
             {
@@ -85,6 +86,8 @@ namespace Vista
                 DGVproducxlubri.DataSource = ValidarLubriPuntos.ObtenerListaLubrixProductos();
                 DGVproducxlubri.Columns["idLubrixProducto"].Visible = false;
                 DGVproducxlubri.Columns["idProd"].Visible = false;
+                DGVproducxlubri.RowHeadersVisible = false;
+                ConfiguraDataGrid(DGVproducxlubri);
 
             }
             catch (Exception ex)
@@ -152,7 +155,7 @@ namespace Vista
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             // Alternancia de color en filas
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
 
             // Otros ajustes
             dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
@@ -218,6 +221,11 @@ namespace Vista
         private void DGVproducxlubri_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void BtnVolver_Click(object sender, EventArgs e)
+        {
+            Close();    
         }
     }
 }

@@ -42,10 +42,59 @@ namespace Vista
 
 
         }
-        
 
-        
 
+        #region ConfiguracionDataGrid
+        private void ConfiguraDataGrid(DataGridView dgv)
+        {
+            dgv.ReadOnly = true;
+
+            // General
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.BackgroundColor = Color.White;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            // Cabecera
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); // Azul elegante
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Filas
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul mÃ¡s claro
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            // Alternancia de color en filas
+            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+
+            // Otros ajustes
+            dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
+
+            AplicarTrimDataGridView(dgv);
+        }
+        private void AplicarTrimDataGridView(DataGridView dgv)
+        {
+            foreach (DataGridViewRow fila in dgv.Rows)
+            {
+                foreach (DataGridViewCell celda in fila.Cells)
+                {
+                    if (celda.Value is string texto)
+                    {
+                        celda.Value = texto.Trim();
+                    }
+                }
+            }
+        }
+        #endregion
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
@@ -261,6 +310,8 @@ namespace Vista
                 var productos = ValidarProducto.TraeProductos();
                 DGVProductos.DataSource = productos;
                 DGVProductos.Columns["IdProd"].Visible = false;
+                ConfiguraDataGrid(DGVProductos);
+                ConfiguraDataGridStyle(DGVProductos);
                 //DGVProductos.Columns["IdCategorias"].Visible = false;
 
             }
@@ -269,7 +320,55 @@ namespace Vista
                 MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void ConfiguraDataGridStyle(DataGridView dgv)
+        {
+            dgv.ReadOnly = true;
 
+            // General
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.BackgroundColor = Color.White;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            // Cabecera
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); // Azul elegante
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Filas
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul mÃ¡s claro
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            // Alternancia de color en filas
+            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+
+            // Otros ajustes
+            dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
+
+            //AplicarTrimDataGridViews(dgv);
+        }
+        public void AplicarTrimDataGridViews(DataGridView dgv)
+        {
+            foreach (DataGridViewRow fila in dgv.Rows)
+            {
+                foreach (DataGridViewCell celda in fila.Cells)
+                {
+                    if (celda.Value is string texto)
+                    {
+                        celda.Value = texto.Trim();
+                    }
+                }
+            }
+        }
         private void chPermiteEditar_CheckedChanged(object sender, EventArgs e)
         {
             if (chPermiteEditar.Checked)

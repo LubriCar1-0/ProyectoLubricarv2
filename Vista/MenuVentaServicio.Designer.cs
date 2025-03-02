@@ -35,6 +35,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.grpPresupuesto = new System.Windows.Forms.GroupBox();
+            this.lblLubriGana = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnPresupuesto = new System.Windows.Forms.Button();
             this.btnCargaVenta = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.lblLubriGana = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.gpbCliente.SuspendLayout();
             this.grpPresupuesto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListVentas)).BeginInit();
@@ -172,6 +172,32 @@
             this.grpPresupuesto.TabIndex = 33;
             this.grpPresupuesto.TabStop = false;
             this.grpPresupuesto.Text = "Presupuesto";
+            // 
+            // lblLubriGana
+            // 
+            this.lblLubriGana.AutoSize = true;
+            this.lblLubriGana.BackColor = System.Drawing.Color.Transparent;
+            this.lblLubriGana.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblLubriGana.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblLubriGana.Location = new System.Drawing.Point(240, 355);
+            this.lblLubriGana.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLubriGana.Name = "lblLubriGana";
+            this.lblLubriGana.Size = new System.Drawing.Size(238, 28);
+            this.lblLubriGana.TabIndex = 36;
+            this.lblLubriGana.Text = "No hay valor asignado";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label4.Location = new System.Drawing.Point(36, 355);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(207, 28);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Suma LubriPuntos: ";
             // 
             // btnPresupuesto
             // 
@@ -502,32 +528,6 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // lblLubriGana
-            // 
-            this.lblLubriGana.AutoSize = true;
-            this.lblLubriGana.BackColor = System.Drawing.Color.Transparent;
-            this.lblLubriGana.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.lblLubriGana.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblLubriGana.Location = new System.Drawing.Point(240, 355);
-            this.lblLubriGana.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLubriGana.Name = "lblLubriGana";
-            this.lblLubriGana.Size = new System.Drawing.Size(238, 28);
-            this.lblLubriGana.TabIndex = 36;
-            this.lblLubriGana.Text = "No hay valor asignado";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label4.Location = new System.Drawing.Point(36, 355);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(207, 28);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Suma LubriPuntos: ";
-            // 
             // MenuVentaServicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,6 +542,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuVentaServicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuVentaServicio";
             this.Load += new System.EventHandler(this.MenuVentaServicio_Load);
             this.gpbCliente.ResumeLayout(false);

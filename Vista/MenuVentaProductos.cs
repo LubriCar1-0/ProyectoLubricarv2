@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Negocio.Producto;
 
 
 namespace Vista
@@ -25,13 +26,14 @@ namespace Vista
         public MenuVentaProductos()
         {        
             InitializeComponent();
-            CargatablaClientes();
-            dgvClientes.Columns["idCliente"].Visible = false;
-            CargatablaProductos();
-            dgvProductos.Columns["idProd"].Visible = false;
+            RDCliente.Checked = true;
+            CargatablaClientes();             
+            CargatablaProductos();        
             CargarCategorias();
             ConfiguraDataGrid(dgvClientes);
             ConfiguraDataGrid(dgvProductos);
+            dgvProductos.Columns["idProd"].Visible = false;
+            dgvClientes.Columns["idCliente"].Visible = false;
             UsuarioPrimero();
             lblIdproducto.Visible = false;
             lblTEXTdisponible.Visible = false;
@@ -63,6 +65,8 @@ namespace Vista
                 dgvClientes.DataSource = null;
                 var productos = ValidarVenta.VentaClientes();
                 dgvClientes.DataSource = productos;
+                dgvClientes.AllowUserToAddRows = false;
+                dgvClientes.RowHeadersVisible = false;
                 dgvClientes.Columns["idCliente"].Visible = false;
                 dgvClientes.Columns["Localidad"].Visible = false;
                 dgvClientes.Columns["Calle"].Visible = false;
@@ -84,6 +88,8 @@ namespace Vista
                 dgvProductos.DataSource = null;
                 var productos = ValidarVenta.VentaProductos();
                 dgvProductos.DataSource = productos;
+                dgvProductos.AllowUserToAddRows = false;
+                dgvProductos.RowHeadersVisible = false;
                 dgvProductos.Columns["idProd"].Visible = false;
                 dgvProductos.Columns["idCategorias"].Visible = false;
                 dgvProductos.Columns["Estado"].Visible = false;
@@ -108,6 +114,8 @@ namespace Vista
                 dgvProductos.DataSource = null;
                 var productos = ValidarVenta.VentaProductosFiltro(Categoria, codigo, nombre);
                 dgvProductos.DataSource = productos;
+                dgvProductos.AllowUserToAddRows = false;
+                dgvProductos.RowHeadersVisible = false;
                 dgvProductos.Columns["idProd"].Visible = false;
                 dgvProductos.Columns["idCategorias"].Visible = false;
                 dgvProductos.Columns["Estado"].Visible = false;
@@ -131,6 +139,8 @@ namespace Vista
                 dgvClientes.DataSource = null;
                 var productos = ValidarVenta.VentaClientesFiltro(dni);
                 dgvClientes.DataSource = productos;
+                dgvClientes.AllowUserToAddRows = false;
+                dgvClientes.RowHeadersVisible = false;
                 dgvClientes.Columns["idCliente"].Visible = false;
                 dgvClientes.Columns["Localidad"].Visible = false;
                 dgvClientes.Columns["Calle"].Visible = false;
@@ -224,12 +234,13 @@ namespace Vista
                 string NombreClien = filaSeleccionadaUPD.Cells["Nombre"].Value.ToString().Trim();
                 string apellidoClien = filaSeleccionadaUPD.Cells["Apellido"].Value.ToString().Trim();
                 string lubriPuntos = filaSeleccionadaUPD.Cells["LubriPuntos"].Value.ToString().Trim();
-
+                RDProductos.Checked = true;
                 lblIdCliente.Text = IdCliente.ToString();
                 lblNombreCliente.Text = apellidoClien + "," + NombreClien;
                 lblLubripts.Text = lubriPuntos;
                 idcliente = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCliente"].Value.ToString().Trim());
                 grpProductos.Enabled = true;
+
 
             }
         }
@@ -335,7 +346,6 @@ namespace Vista
             int idcat = IdCategorias;
             string codprod = txtCodigoProd.Text.ToUpper();
             string nombreprod = txtNombreProd.Text.ToUpper();
-            MessageBox.Show(idcat.ToString() + "," + codprod + "," + nombreprod, "Error");
             if (idcat == 0 && codprod == string.Empty && nombreprod == string.Empty)
             {
                 MessageBox.Show("Debe llenar alguno de los campos para poder filtrar", "error");

@@ -126,5 +126,10 @@ namespace Vista
         {
             CargarClientesconfiltro(Convert.ToInt32(txtFiltroClientes));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

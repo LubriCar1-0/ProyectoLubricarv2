@@ -262,6 +262,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuOrdenesFinalizadas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuOrdenesFinalizadas";
             this.Load += new System.EventHandler(this.MenuOrdenesFinalizadas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesFinalizadas)).EndInit();

@@ -28,100 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.BtnCanjeoLP = new System.Windows.Forms.Button();
             this.btnValorLP = new System.Windows.Forms.Button();
             this.btnAsignacionLP = new System.Windows.Forms.Button();
-            this.PtbLubriPuntos = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PtbLubriPuntos)).BeginInit();
+            this.BtnCanjeoLP = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.button4.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(192, 111);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(66, 67);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // BtnCanjeoLP
-            // 
-            this.BtnCanjeoLP.BackColor = System.Drawing.Color.Black;
-            this.BtnCanjeoLP.BackgroundImage = global::Vista.Properties.Resources.BtncanjeoLubriPuntos;
-            this.BtnCanjeoLP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCanjeoLP.Location = new System.Drawing.Point(605, 423);
-            this.BtnCanjeoLP.Name = "BtnCanjeoLP";
-            this.BtnCanjeoLP.Size = new System.Drawing.Size(213, 92);
-            this.BtnCanjeoLP.TabIndex = 3;
-            this.BtnCanjeoLP.UseVisualStyleBackColor = false;
-            this.BtnCanjeoLP.Click += new System.EventHandler(this.BtnCanjeoLP_Click);
             // 
             // btnValorLP
             // 
-            this.btnValorLP.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnValorLP.AutoSize = true;
             this.btnValorLP.BackgroundImage = global::Vista.Properties.Resources.BtnValoresLubri_Puntos;
             this.btnValorLP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnValorLP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnValorLP.Location = new System.Drawing.Point(605, 169);
+            this.btnValorLP.FlatAppearance.BorderSize = 0;
+            this.btnValorLP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnValorLP.Location = new System.Drawing.Point(794, 225);
             this.btnValorLP.Name = "btnValorLP";
-            this.btnValorLP.Size = new System.Drawing.Size(213, 92);
-            this.btnValorLP.TabIndex = 2;
-            this.btnValorLP.UseVisualStyleBackColor = false;
+            this.btnValorLP.Size = new System.Drawing.Size(268, 112);
+            this.btnValorLP.TabIndex = 5;
+            this.btnValorLP.UseVisualStyleBackColor = true;
             this.btnValorLP.Click += new System.EventHandler(this.btnValorLP_Click);
             // 
             // btnAsignacionLP
             // 
-            this.btnAsignacionLP.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAsignacionLP.AutoSize = true;
             this.btnAsignacionLP.BackgroundImage = global::Vista.Properties.Resources.BtnAsignarLubriPuntos;
             this.btnAsignacionLP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAsignacionLP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAsignacionLP.Location = new System.Drawing.Point(605, 301);
+            this.btnAsignacionLP.FlatAppearance.BorderSize = 0;
+            this.btnAsignacionLP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsignacionLP.Location = new System.Drawing.Point(794, 354);
             this.btnAsignacionLP.Name = "btnAsignacionLP";
-            this.btnAsignacionLP.Size = new System.Drawing.Size(213, 92);
-            this.btnAsignacionLP.TabIndex = 1;
-            this.btnAsignacionLP.UseVisualStyleBackColor = false;
-            this.btnAsignacionLP.Click += new System.EventHandler(this.btnAsignacionLP_Click_1);
+            this.btnAsignacionLP.Size = new System.Drawing.Size(268, 112);
+            this.btnAsignacionLP.TabIndex = 6;
+            this.btnAsignacionLP.UseVisualStyleBackColor = true;
+            this.btnAsignacionLP.Click += new System.EventHandler(this.btnAsignacionLP_Click);
             // 
-            // PtbLubriPuntos
+            // BtnCanjeoLP
             // 
-            this.PtbLubriPuntos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.PtbLubriPuntos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PtbLubriPuntos.Image = global::Vista.Properties.Resources.MenuLubri_Puntos;
-            this.PtbLubriPuntos.Location = new System.Drawing.Point(1, 0);
-            this.PtbLubriPuntos.Name = "PtbLubriPuntos";
-            this.PtbLubriPuntos.Size = new System.Drawing.Size(1005, 566);
-            this.PtbLubriPuntos.TabIndex = 0;
-            this.PtbLubriPuntos.TabStop = false;
-            this.PtbLubriPuntos.Click += new System.EventHandler(this.PtbLubriPuntos_Click);
+            this.BtnCanjeoLP.AutoSize = true;
+            this.BtnCanjeoLP.BackgroundImage = global::Vista.Properties.Resources.BtncanjeoLubriPuntos;
+            this.BtnCanjeoLP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCanjeoLP.FlatAppearance.BorderSize = 0;
+            this.BtnCanjeoLP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCanjeoLP.Location = new System.Drawing.Point(794, 490);
+            this.BtnCanjeoLP.Name = "BtnCanjeoLP";
+            this.BtnCanjeoLP.Size = new System.Drawing.Size(268, 112);
+            this.BtnCanjeoLP.TabIndex = 7;
+            this.BtnCanjeoLP.UseVisualStyleBackColor = true;
+            this.BtnCanjeoLP.Click += new System.EventHandler(this.BtnCanjeoLP_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
+            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(241, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 57);
+            this.button1.TabIndex = 15;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MenuLubriPuntos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 567);
-            this.Controls.Add(this.button4);
+            this.BackgroundImage = global::Vista.Properties.Resources.MenuLubri_Puntos;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnCanjeoLP);
-            this.Controls.Add(this.btnValorLP);
             this.Controls.Add(this.btnAsignacionLP);
-            this.Controls.Add(this.PtbLubriPuntos);
+            this.Controls.Add(this.btnValorLP);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuLubriPuntos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuLubriPuntos";
-            ((System.ComponentModel.ISupportInitialize)(this.PtbLubriPuntos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox PtbLubriPuntos;
         private System.Windows.Forms.Button btnValorLP;
-        private System.Windows.Forms.Button BtnCanjeoLP;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnAsignacionLP;
+        private System.Windows.Forms.Button BtnCanjeoLP;
+        private System.Windows.Forms.Button button1;
     }
 }

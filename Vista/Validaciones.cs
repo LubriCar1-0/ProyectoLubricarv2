@@ -555,7 +555,15 @@ namespace Vista
             return TablasDeLaBD;
 
         }
+        public static DataTable FiltroHistorialVentas(DateTime fecha, DateTime fechahasta)
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.FiltroHistorialVentas(fecha, fechahasta);
 
+            return TablasDeLaBD;
+
+        }
 
     }
     #endregion
