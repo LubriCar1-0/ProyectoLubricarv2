@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +17,15 @@ namespace Vista
         {
             InitializeComponent();
             CargartablaClientes();
+            CargarProductosParaCanje();
             ConfiguraDataGrid(DGVclientes);
+            ConfiguraDataGrid(DGVproductos);
             DGVclientes.CellClick += DGVclientes_CellContentClick;
         }
+
+        int Idproducto;
+        int IdCliente;
+        int CantidadLubriPuntos;
 
         private void CargartablaClientes()
         {
@@ -59,6 +66,50 @@ namespace Vista
                 MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void CargarProductosParaCanje()
+        {
+            try
+            {
+                DGVproductos.DataSource = null;
+                DGVproductos.DataSource = ValidarLubriPuntos.ObtenerProductosParaCanje();
+                DGVproductos.Columns["idProd"].Visible = false;
+                DGVproductos.Columns["CodProd"].HeaderText = "Código";
+                DGVproductos.Columns["Nombre"].HeaderText = "Producto";
+                DGVproductos.Columns["Marca"].HeaderText = "Marca";
+                DGVproductos.Columns["Cantidad"].HeaderText = "Stock";
+                DGVproductos.Columns["LitrosDisp"].HeaderText = "Litros";
+                DGVproductos.Columns["CantidadLubriPuntos"].HeaderText = "LubriPuntos";
+                DGVproductos.Columns["StockDisponible"].Visible=false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+         private void CargarProductosconfiltro(string codigo)
+         {
+            try
+            {
+                DGVproductos.DataSource = null;
+                var productos = ValidarLubriPuntos.Productosparacanjeconfiltro(codigo);
+                DGVproductos.DataSource = productos;
+                DGVproductos.Columns["idProd"].Visible = false;
+                DGVproductos.Columns["CodProd"].HeaderText = "Código";
+                DGVproductos.Columns["Nombre"].HeaderText = "Producto";
+                DGVproductos.Columns["Marca"].HeaderText = "Marca";
+                DGVproductos.Columns["Cantidad"].HeaderText = "Stock";
+                DGVproductos.Columns["LitrosDisp"].HeaderText = "Litros";
+                DGVproductos.Columns["CantidadLubriPuntos"].HeaderText = "LubriPuntos";
+                DGVproductos.Columns["StockDisponible"].Visible = false;
+                DGVproductos.RowHeadersVisible = false;
+                ConfiguraDataGrid(DGVproductos);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+         }
 
         private void DGVclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -67,6 +118,7 @@ namespace Vista
                 DataGridViewRow filaSeleccionada = DGVclientes.Rows[e.RowIndex];
                 string Cliente = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
                 int LubriPuntos = Convert.ToInt32(filaSeleccionada.Cells["LubriPuntos"].Value);
+                IdCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
                 lblNombreProd.Text = Cliente;
                 lblLubriClientes.Text = LubriPuntos.ToString();
             }
@@ -130,6 +182,42 @@ namespace Vista
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void DGVproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = DGVproductos.Rows[e.RowIndex];
+                string Producto = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
+                int LubriPuntos = Convert.ToInt32(filaSeleccionada.Cells["CantidadLubriPuntos"].Value);
+                CantidadLubriPuntos = Convert.ToInt32(filaSeleccionada.Cells["CantidadLubriPuntos"].Value);
+                Idproducto = Convert.ToInt32(filaSeleccionada.Cells["idProd"].Value);
+                lblProducto.Text = Producto;
+                lblPuntosProdu.Text = LubriPuntos.ToString();
+            }
+        }
+
+        private void btnBuscarProduc_Click(object sender, EventArgs e)
+        {
+            CargarProductosconfiltro(TxtFiltroProduc.Text);
+;       }
+
+        private void btnRecargarProduc_Click(object sender, EventArgs e)
+        {
+            CargarProductosParaCanje();
+        }
+
+        private void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                int cantidad = Convert.ToInt32(Cantidadacanjear.Value);
+                int Valorfinal = CantidadLubriPuntos * cantidad;
+                LubriPuntos.RestarProducto(Idproducto, cantidad);
+                LubriPuntos.RestarLubriPuntos(IdCliente, Valorfinal);
+            }
         }
     }
 }

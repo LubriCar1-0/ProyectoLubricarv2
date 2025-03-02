@@ -1701,7 +1701,45 @@ namespace Datos
             return dt;
 
         }
+        public DataTable ObtenerProductosParaCanje()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "ProductosParaCanjear";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
 
+        public DataTable FiltroProductosParaCanje(string codigo)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "FiltroProductosParaCanjear";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@codigo", codigo);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+
+        public static void RestaLubriPuntos(int idCliente, int LubriPuntos)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "DescuentaLubriPuntos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idCliente", idCliente);
+            comando.Parameters.AddWithValue("@LubriPuntos", LubriPuntos);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+        }
 
         #endregion
     }

@@ -18,10 +18,10 @@ namespace Negocio
         public double TotalMayor { get; set; }
         public int CantidadLubri { get; set; }
 
-        public static void AsignarLubriPuntos (int Id, double Precio, int Lubri)
+        public static void AsignarLubriPuntos(int Id, double Precio, int Lubri)
         {
             Conectar.AsignarLubriPuntos(Id, Precio, Lubri);
-            
+
         }
         public List<LubriPuntos> ObtenerListaLubripuntos()
         {
@@ -66,6 +66,15 @@ namespace Negocio
             return CapaDatos.ObtenerLubrixProductos();
         }
 
+        public static void RestarProducto(int IdProducto, int Cantidad)
+        {
+            Conectar.RestaCantidad(IdProducto, Cantidad);
+        }
+
+        public static void RestarLubriPuntos(int idCliente, int LubriPuntos)
+        {
+            Conectar.RestaLubriPuntos(idCliente, LubriPuntos);
+        }
         public int CalculaLubriPuntos(double total)
         {
             #region variables

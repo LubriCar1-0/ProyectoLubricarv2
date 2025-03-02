@@ -658,6 +658,20 @@ namespace Vista
             return TablasDeLaBD;
 
         }
+        public static DataTable ObtenerProductosParaCanje()
+        {
+            Conectar CapaDatos = new Conectar();
+            return CapaDatos.ObtenerProductosParaCanje();
+        }
+        public static DataTable Productosparacanjeconfiltro(string codigo)
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.FiltroProductosParaCanje(codigo);
+
+            return TablasDeLaBD;
+
+        }
 
     }
     #endregion

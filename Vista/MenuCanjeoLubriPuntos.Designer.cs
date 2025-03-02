@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRecargarProduc = new System.Windows.Forms.Button();
             this.btnBuscarProduc = new System.Windows.Forms.Button();
@@ -43,11 +43,11 @@
             this.txtFiltroClientes = new System.Windows.Forms.TextBox();
             this.DGVclientes = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.Cantidadacanjear = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPuntosProdu = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblProducto = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblLubriClientes = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVclientes)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cantidadacanjear)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -89,6 +89,7 @@
             this.btnRecargarProduc.Size = new System.Drawing.Size(54, 48);
             this.btnRecargarProduc.TabIndex = 21;
             this.btnRecargarProduc.UseVisualStyleBackColor = false;
+            this.btnRecargarProduc.Click += new System.EventHandler(this.btnRecargarProduc_Click);
             // 
             // btnBuscarProduc
             // 
@@ -100,6 +101,7 @@
             this.btnBuscarProduc.Size = new System.Drawing.Size(54, 48);
             this.btnBuscarProduc.TabIndex = 19;
             this.btnBuscarProduc.UseVisualStyleBackColor = false;
+            this.btnBuscarProduc.Click += new System.EventHandler(this.btnBuscarProduc_Click);
             // 
             // TxtFiltroProduc
             // 
@@ -112,15 +114,16 @@
             // 
             // DGVproductos
             // 
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVproductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVproductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVproductos.Location = new System.Drawing.Point(16, 115);
             this.DGVproductos.Name = "DGVproductos";
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVproductos.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVproductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVproductos.Size = new System.Drawing.Size(436, 199);
             this.DGVproductos.TabIndex = 0;
+            this.DGVproductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVproductos_CellContentClick);
             // 
             // groupBox2
             // 
@@ -172,24 +175,24 @@
             // 
             // DGVclientes
             // 
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVclientes.Location = new System.Drawing.Point(16, 115);
             this.DGVclientes.Name = "DGVclientes";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVclientes.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVclientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVclientes.Size = new System.Drawing.Size(429, 199);
             this.DGVclientes.TabIndex = 0;
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.NavajoWhite;
-            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.Cantidadacanjear);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.lblPuntosProdu);
             this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.lblProducto);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.lblLubriClientes);
             this.groupBox3.Controls.Add(this.label1);
@@ -205,13 +208,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Canjear LubriPuntos";
             // 
-            // numericUpDown1
+            // Cantidadacanjear
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(472, 139);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(53, 32);
-            this.numericUpDown1.TabIndex = 47;
+            this.Cantidadacanjear.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cantidadacanjear.Location = new System.Drawing.Point(472, 139);
+            this.Cantidadacanjear.Name = "Cantidadacanjear";
+            this.Cantidadacanjear.Size = new System.Drawing.Size(53, 32);
+            this.Cantidadacanjear.TabIndex = 47;
             // 
             // label7
             // 
@@ -226,18 +229,18 @@
             this.label7.TabIndex = 46;
             this.label7.Text = "Cantidad a canjear:";
             // 
-            // label6
+            // lblPuntosProdu
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label6.Location = new System.Drawing.Point(631, 80);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(241, 26);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "No se selecciono producto";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPuntosProdu.AutoSize = true;
+            this.lblPuntosProdu.BackColor = System.Drawing.Color.Transparent;
+            this.lblPuntosProdu.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuntosProdu.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblPuntosProdu.Location = new System.Drawing.Point(631, 80);
+            this.lblPuntosProdu.Name = "lblPuntosProdu";
+            this.lblPuntosProdu.Size = new System.Drawing.Size(241, 26);
+            this.lblPuntosProdu.TabIndex = 45;
+            this.lblPuntosProdu.Text = "No se selecciono producto";
+            this.lblPuntosProdu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -252,18 +255,18 @@
             this.label5.TabIndex = 44;
             this.label5.Text = "Valor:";
             // 
-            // label4
+            // lblProducto
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label4.Location = new System.Drawing.Point(670, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(241, 26);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "No se selecciono producto";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.BackColor = System.Drawing.Color.Transparent;
+            this.lblProducto.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lblProducto.Location = new System.Drawing.Point(670, 38);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(241, 26);
+            this.lblProducto.TabIndex = 43;
+            this.lblProducto.Text = "No se selecciono producto";
+            this.lblProducto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -315,6 +318,7 @@
             this.BtnConfirmar.TabIndex = 39;
             this.BtnConfirmar.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnConfirmar.UseVisualStyleBackColor = true;
+            this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
             // lblNombreProd
             // 
@@ -380,7 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVclientes)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cantidadacanjear)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,12 +406,12 @@
         private System.Windows.Forms.Button BtnConfirmar;
         private System.Windows.Forms.Label lblNombreProd;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPuntosProdu;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblLubriClientes;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown Cantidadacanjear;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
     }
