@@ -26,7 +26,9 @@ namespace Vista
         int Idproducto;
         int IdCliente;
         int CantidadLubriPuntos;
+        int CategoriaProducto;
 
+        #region CargarTablas
         private void CargartablaClientes()
         {
             try
@@ -73,6 +75,7 @@ namespace Vista
                 DGVproductos.DataSource = null;
                 DGVproductos.DataSource = ValidarLubriPuntos.ObtenerProductosParaCanje();
                 DGVproductos.Columns["idProd"].Visible = false;
+                DGVproductos.Columns["IdCategorias"].Visible = false;
                 DGVproductos.Columns["CodProd"].HeaderText = "Código";
                 DGVproductos.Columns["Nombre"].HeaderText = "Producto";
                 DGVproductos.Columns["Marca"].HeaderText = "Marca";
@@ -95,6 +98,7 @@ namespace Vista
                 var productos = ValidarLubriPuntos.Productosparacanjeconfiltro(codigo);
                 DGVproductos.DataSource = productos;
                 DGVproductos.Columns["idProd"].Visible = false;
+                DGVproductos.Columns["IdCategorias"].Visible = false;
                 DGVproductos.Columns["CodProd"].HeaderText = "Código";
                 DGVproductos.Columns["Nombre"].HeaderText = "Producto";
                 DGVproductos.Columns["Marca"].HeaderText = "Marca";
@@ -110,20 +114,10 @@ namespace Vista
                 MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
          }
+        #endregion
 
-        private void DGVclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow filaSeleccionada = DGVclientes.Rows[e.RowIndex];
-                string Cliente = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
-                int LubriPuntos = Convert.ToInt32(filaSeleccionada.Cells["LubriPuntos"].Value);
-                IdCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
-                lblNombreProd.Text = Cliente;
-                lblLubriClientes.Text = LubriPuntos.ToString();
-            }
-        }
-
+        #region ConfiguracionTablas
+        
         private void ConfiguraDataGrid(DataGridView dgv)
         {
             dgv.ReadOnly = true;
@@ -173,17 +167,6 @@ namespace Vista
                 }
             }
         }
-
-        private void BtnBuscarCliente_Click(object sender, EventArgs e)
-        {
-            CargarClientesconfiltro(Convert.ToInt32(txtFiltroClientes));
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void DGVproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -191,13 +174,42 @@ namespace Vista
                 DataGridViewRow filaSeleccionada = DGVproductos.Rows[e.RowIndex];
                 string Producto = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
                 int LubriPuntos = Convert.ToInt32(filaSeleccionada.Cells["CantidadLubriPuntos"].Value);
+                CategoriaProducto = Convert.ToInt32(filaSeleccionada.Cells["IdCategorias"].Value);
                 CantidadLubriPuntos = Convert.ToInt32(filaSeleccionada.Cells["CantidadLubriPuntos"].Value);
                 Idproducto = Convert.ToInt32(filaSeleccionada.Cells["idProd"].Value);
                 lblProducto.Text = Producto;
                 lblPuntosProdu.Text = LubriPuntos.ToString();
+                if (CategoriaProducto == 2)
+                {
+                    label7.Text = "Litros a canjear";
+                }
+                else if (CategoriaProducto == 3)
+                {
+                    label7.Text = "Cantidad a canjear";
+                }
             }
         }
 
+        private void DGVclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow filaSeleccionada = DGVclientes.Rows[e.RowIndex];
+                string Cliente = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
+                int LubriPuntos = Convert.ToInt32(filaSeleccionada.Cells["LubriPuntos"].Value);
+                IdCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
+                lblNombreProd.Text = Cliente;
+                lblLubriClientes.Text = LubriPuntos.ToString();
+            }
+        }
+        #endregion
+
+        #region Botones
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         private void btnBuscarProduc_Click(object sender, EventArgs e)
         {
             CargarProductosconfiltro(TxtFiltroProduc.Text);
@@ -207,17 +219,51 @@ namespace Vista
         {
             CargarProductosParaCanje();
         }
+        private void BtnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            CargarClientesconfiltro(Convert.ToInt32(txtFiltroClientes));
+        }
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            DialogResult resultado = MessageBox.Show("Â¿EstÃ¡s seguro de que quieres continuar?", "ConfirmaciÃ³n", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (IdCliente == 0)
+            {
+                MessageBox.Show("Debes seleccionar un cliente antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (Idproducto == 0)
+            {
+                MessageBox.Show("Debes seleccionar un producto antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (Cantidadacanjear.Value == 0)
+            {
+                MessageBox.Show("Por favor, ingrese una cantidad válida a canjear.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
                 int cantidad = Convert.ToInt32(Cantidadacanjear.Value);
                 int Valorfinal = CantidadLubriPuntos * cantidad;
                 LubriPuntos.RestarProducto(Idproducto, cantidad);
                 LubriPuntos.RestarLubriPuntos(IdCliente, Valorfinal);
+                CargarProductosParaCanje();
+                CargartablaClientes();
+                MessageBox.Show("Canje exitoso");
+                Cantidadacanjear.Value = 0;
+                Idproducto = 0;
+                IdCliente = 0;
             }
         }
+
+        private void BtnRecargarCliente_Click(object sender, EventArgs e)
+        {
+            CargartablaClientes();
+        }
+        #endregion
+
+
     }
 }

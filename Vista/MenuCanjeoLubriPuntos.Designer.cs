@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRecargarProduc = new System.Windows.Forms.Button();
             this.btnBuscarProduc = new System.Windows.Forms.Button();
@@ -114,13 +114,13 @@
             // 
             // DGVproductos
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVproductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVproductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.DGVproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVproductos.Location = new System.Drawing.Point(16, 115);
             this.DGVproductos.Name = "DGVproductos";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVproductos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVproductos.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.DGVproductos.Size = new System.Drawing.Size(436, 199);
             this.DGVproductos.TabIndex = 0;
             this.DGVproductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVproductos_CellContentClick);
@@ -151,6 +151,7 @@
             this.BtnRecargarCliente.Size = new System.Drawing.Size(54, 48);
             this.BtnRecargarCliente.TabIndex = 21;
             this.BtnRecargarCliente.UseVisualStyleBackColor = false;
+            this.BtnRecargarCliente.Click += new System.EventHandler(this.BtnRecargarCliente_Click);
             // 
             // BtnBuscarCliente
             // 
@@ -175,13 +176,13 @@
             // 
             // DGVclientes
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.DGVclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVclientes.Location = new System.Drawing.Point(16, 115);
             this.DGVclientes.Name = "DGVclientes";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVclientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVclientes.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.DGVclientes.Size = new System.Drawing.Size(429, 199);
             this.DGVclientes.TabIndex = 0;
             // 
@@ -211,9 +212,9 @@
             // Cantidadacanjear
             // 
             this.Cantidadacanjear.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cantidadacanjear.Location = new System.Drawing.Point(472, 139);
+            this.Cantidadacanjear.Location = new System.Drawing.Point(462, 142);
             this.Cantidadacanjear.Name = "Cantidadacanjear";
-            this.Cantidadacanjear.Size = new System.Drawing.Size(53, 32);
+            this.Cantidadacanjear.Size = new System.Drawing.Size(43, 32);
             this.Cantidadacanjear.TabIndex = 47;
             // 
             // label7
@@ -222,12 +223,12 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label7.Location = new System.Drawing.Point(252, 139);
+            this.label7.Location = new System.Drawing.Point(203, 143);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(213, 28);
+            this.label7.Size = new System.Drawing.Size(262, 28);
             this.label7.TabIndex = 46;
-            this.label7.Text = "Cantidad a canjear:";
+            this.label7.Text = "Seleccione un producto";
             // 
             // lblPuntosProdu
             // 
@@ -312,7 +313,7 @@
             this.BtnConfirmar.BackgroundImage = global::Vista.Properties.Resources.BtnConfirmar;
             this.BtnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConfirmar.Location = new System.Drawing.Point(549, 129);
+            this.BtnConfirmar.Location = new System.Drawing.Point(537, 132);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(161, 42);
             this.BtnConfirmar.TabIndex = 39;
