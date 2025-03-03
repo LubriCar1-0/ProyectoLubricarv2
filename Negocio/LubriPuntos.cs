@@ -75,6 +75,11 @@ namespace Negocio
         {
             Conectar.RestaLubriPuntos(idCliente, LubriPuntos);
         }
+
+        public static void Registrarcanje(int idCliente, int puntosCanjeados)
+        {
+            Conectar.RegistrarCanjeEnHistorial(idCliente, puntosCanjeados);
+        }
         public int CalculaLubriPuntos(double total)
         {
             #region variables

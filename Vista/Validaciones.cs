@@ -672,6 +672,10 @@ namespace Vista
             return TablasDeLaBD;
 
         }
+        public static void Registrarcanje(int idCliente, int puntosCanjeados)
+        {
+            LubriPuntos.Registrarcanje(idCliente, puntosCanjeados);
+        }
 
     }
     #endregion

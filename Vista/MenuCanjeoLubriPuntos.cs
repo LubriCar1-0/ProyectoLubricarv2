@@ -242,13 +242,31 @@ namespace Vista
                 return;
             }
 
+            int stockDisponible = 0;
+            if (CategoriaProducto == 2)
+            {
+                stockDisponible = Convert.ToInt32(DGVproductos.SelectedRows[0].Cells["LitrosDisp"].Value);
+            }
+            else if (CategoriaProducto == 3)
+            {
+                stockDisponible = Convert.ToInt32(DGVproductos.SelectedRows[0].Cells["Cantidad"].Value);
+            }
+
+            int cantidad = Convert.ToInt32(Cantidadacanjear.Value);
+            if (cantidad > stockDisponible)
+            {
+                MessageBox.Show("No hay suficiente stock disponible para realizar el canje.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int Valorfinal = CantidadLubriPuntos * cantidad;
+
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                int cantidad = Convert.ToInt32(Cantidadacanjear.Value);
-                int Valorfinal = CantidadLubriPuntos * cantidad;
                 LubriPuntos.RestarProducto(Idproducto, cantidad);
                 LubriPuntos.RestarLubriPuntos(IdCliente, Valorfinal);
+                ValidarLubriPuntos.Registrarcanje(IdCliente, Valorfinal);
                 CargarProductosParaCanje();
                 CargartablaClientes();
                 MessageBox.Show("Canje exitoso");
@@ -257,6 +275,7 @@ namespace Vista
                 IdCliente = 0;
             }
         }
+
 
         private void BtnRecargarCliente_Click(object sender, EventArgs e)
         {

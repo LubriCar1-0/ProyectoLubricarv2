@@ -48,6 +48,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.DGVproducxlubri = new System.Windows.Forms.DataGridView();
             this.CambiarEstado = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVproductos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,6 +71,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.TxtCodProducto);
             this.groupBox1.Controls.Add(this.btnRecargar);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -86,9 +88,9 @@
             // TxtCodProducto
             // 
             this.TxtCodProducto.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
-            this.TxtCodProducto.Location = new System.Drawing.Point(164, 74);
+            this.TxtCodProducto.Location = new System.Drawing.Point(16, 75);
             this.TxtCodProducto.Name = "TxtCodProducto";
-            this.TxtCodProducto.Size = new System.Drawing.Size(207, 35);
+            this.TxtCodProducto.Size = new System.Drawing.Size(265, 35);
             this.TxtCodProducto.TabIndex = 1;
             // 
             // btnRecargar
@@ -96,7 +98,7 @@
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
             this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRecargar.Location = new System.Drawing.Point(437, 62);
+            this.btnRecargar.Location = new System.Drawing.Point(371, 65);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
             this.btnRecargar.TabIndex = 21;
@@ -108,7 +110,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscar.Location = new System.Drawing.Point(377, 61);
+            this.btnBuscar.Location = new System.Drawing.Point(287, 65);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
             this.btnBuscar.TabIndex = 19;
@@ -254,6 +256,19 @@
             this.CambiarEstado.Text = "Cambiar Estado";
             this.CambiarEstado.UseColumnTextForButtonValue = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label4.Location = new System.Drawing.Point(12, 51);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(240, 20);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "Ingrese el codigo del producto:";
+            // 
             // MenuAsignacionLubriPuntos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,5 +313,6 @@
         private System.Windows.Forms.TextBox txtCantLubri;
         private System.Windows.Forms.TextBox TxtCodProducto;
         private System.Windows.Forms.DataGridViewButtonColumn CambiarEstado;
+        private System.Windows.Forms.Label label4;
     }
 }

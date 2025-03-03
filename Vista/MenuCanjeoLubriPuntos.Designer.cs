@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRecargarProduc = new System.Windows.Forms.Button();
             this.btnBuscarProduc = new System.Windows.Forms.Button();
@@ -55,6 +55,8 @@
             this.lblNombreProd = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVproductos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,6 +68,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.NavajoWhite;
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnRecargarProduc);
             this.groupBox1.Controls.Add(this.btnBuscarProduc);
             this.groupBox1.Controls.Add(this.TxtFiltroProduc);
@@ -84,7 +87,7 @@
             this.btnRecargarProduc.BackColor = System.Drawing.Color.Transparent;
             this.btnRecargarProduc.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
             this.btnRecargarProduc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRecargarProduc.Location = new System.Drawing.Point(387, 46);
+            this.btnRecargarProduc.Location = new System.Drawing.Point(370, 57);
             this.btnRecargarProduc.Name = "btnRecargarProduc";
             this.btnRecargarProduc.Size = new System.Drawing.Size(54, 48);
             this.btnRecargarProduc.TabIndex = 21;
@@ -96,7 +99,7 @@
             this.btnBuscarProduc.BackColor = System.Drawing.Color.Transparent;
             this.btnBuscarProduc.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.btnBuscarProduc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarProduc.Location = new System.Drawing.Point(294, 46);
+            this.btnBuscarProduc.Location = new System.Drawing.Point(289, 57);
             this.btnBuscarProduc.Name = "btnBuscarProduc";
             this.btnBuscarProduc.Size = new System.Drawing.Size(54, 48);
             this.btnBuscarProduc.TabIndex = 19;
@@ -106,7 +109,7 @@
             // TxtFiltroProduc
             // 
             this.TxtFiltroProduc.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFiltroProduc.Location = new System.Drawing.Point(16, 61);
+            this.TxtFiltroProduc.Location = new System.Drawing.Point(16, 72);
             this.TxtFiltroProduc.Multiline = true;
             this.TxtFiltroProduc.Name = "TxtFiltroProduc";
             this.TxtFiltroProduc.Size = new System.Drawing.Size(245, 33);
@@ -114,13 +117,13 @@
             // 
             // DGVproductos
             // 
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVproductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVproductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DGVproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVproductos.Location = new System.Drawing.Point(16, 115);
             this.DGVproductos.Name = "DGVproductos";
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVproductos.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVproductos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DGVproductos.Size = new System.Drawing.Size(436, 199);
             this.DGVproductos.TabIndex = 0;
             this.DGVproductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVproductos_CellContentClick);
@@ -128,6 +131,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.NavajoWhite;
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.BtnRecargarCliente);
             this.groupBox2.Controls.Add(this.BtnBuscarCliente);
             this.groupBox2.Controls.Add(this.txtFiltroClientes);
@@ -146,7 +150,7 @@
             this.BtnRecargarCliente.BackColor = System.Drawing.Color.Transparent;
             this.BtnRecargarCliente.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
             this.BtnRecargarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnRecargarCliente.Location = new System.Drawing.Point(391, 57);
+            this.BtnRecargarCliente.Location = new System.Drawing.Point(367, 61);
             this.BtnRecargarCliente.Name = "BtnRecargarCliente";
             this.BtnRecargarCliente.Size = new System.Drawing.Size(54, 48);
             this.BtnRecargarCliente.TabIndex = 21;
@@ -158,7 +162,7 @@
             this.BtnBuscarCliente.BackColor = System.Drawing.Color.Transparent;
             this.BtnBuscarCliente.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
             this.BtnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnBuscarCliente.Location = new System.Drawing.Point(331, 57);
+            this.BtnBuscarCliente.Location = new System.Drawing.Point(283, 61);
             this.BtnBuscarCliente.Name = "BtnBuscarCliente";
             this.BtnBuscarCliente.Size = new System.Drawing.Size(54, 48);
             this.BtnBuscarCliente.TabIndex = 19;
@@ -168,7 +172,7 @@
             // txtFiltroClientes
             // 
             this.txtFiltroClientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFiltroClientes.Location = new System.Drawing.Point(80, 72);
+            this.txtFiltroClientes.Location = new System.Drawing.Point(16, 72);
             this.txtFiltroClientes.Multiline = true;
             this.txtFiltroClientes.Name = "txtFiltroClientes";
             this.txtFiltroClientes.Size = new System.Drawing.Size(245, 33);
@@ -176,13 +180,13 @@
             // 
             // DGVclientes
             // 
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVclientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.DGVclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVclientes.Location = new System.Drawing.Point(16, 115);
             this.DGVclientes.Name = "DGVclientes";
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DGVclientes.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DGVclientes.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVclientes.Size = new System.Drawing.Size(429, 199);
             this.DGVclientes.TabIndex = 0;
             // 
@@ -361,6 +365,32 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label2.Location = new System.Drawing.Point(12, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 20);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Ingrese el dni del cliente:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label4.Location = new System.Drawing.Point(12, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(240, 20);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Ingrese el codigo del producto:";
+            // 
             // MenuCanjeoLubriPuntos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,5 +445,7 @@
         private System.Windows.Forms.NumericUpDown Cantidadacanjear;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
     }
 }

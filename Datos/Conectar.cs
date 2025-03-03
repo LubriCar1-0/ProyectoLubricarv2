@@ -172,7 +172,7 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
-            
+
             desconectar();
             return dt;
 
@@ -1089,7 +1089,7 @@ namespace Datos
         //    desconectar();
         //    return dt;
         //}
-        public static void UpdateEstadoTurno (int idturno, string estado)
+        public static void UpdateEstadoTurno(int idturno, string estado)
         {
             conectar();
             comando.Connection = conexion;
@@ -1309,13 +1309,13 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public static void CargaDeVentaServ (int idOrdenTrab, int idCliente, double ManoDeObra, double SubTotal, double IVA, double Total)
+        public static void CargaDeVentaServ(int idOrdenTrab, int idCliente, double ManoDeObra, double SubTotal, double IVA, double Total)
         {
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "GuardaTotalVentaServ";
-            comando.CommandType= CommandType.StoredProcedure;
+            comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idCliente", idCliente);
             comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
@@ -1465,7 +1465,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-       
+
 
 
 
@@ -1517,10 +1517,10 @@ namespace Datos
         }
         public static void AgregaListProds(int idOrdenTrab, int fila, string producto, double preciounit, double cantidad, double total, int idProd)
         {
-            
+
             conectar();
             comando.Connection = conexion;
-            comando.CommandText = "AgregarListProd";    
+            comando.CommandText = "AgregarListProd";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
@@ -1545,10 +1545,10 @@ namespace Datos
             comando.Parameters.AddWithValue("@idOrdenTrab", idOrdenTrab);
             leer = comando.ExecuteReader();
             dt.Load(leer);
-            desconectar();  
+            desconectar();
             return dt;
         }
-       
+
         public DataTable OrdenesFiltro(string patente, string Fecha, int IdTrabajador, string estado)
         {
             conectar();
@@ -1580,7 +1580,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public static void UpdateEstado (int idOrden, string estado)
+        public static void UpdateEstado(int idOrden, string estado)
         {
             conectar();
             comando.Connection = conexion;
@@ -1638,7 +1638,7 @@ namespace Datos
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idValorLubripuntos", ID);
             SqlDataReader reader = comando.ExecuteReader();
-            dt.Load(reader); 
+            dt.Load(reader);
             desconectar();
             return dt;
         }
@@ -1655,7 +1655,7 @@ namespace Datos
             dt.Load(leer);
 
             desconectar();
-            return dt;          
+            return dt;
         }
 
         public DataTable TraerProductos()
@@ -1674,18 +1674,18 @@ namespace Datos
 
         public DataTable LPproductosconfiltro(string codigo)
         {
-            
-           conectar();
-           comando.Connection = conexion;
-           comando.CommandText = "FiltroStock";
-           comando.CommandType = CommandType.StoredProcedure;
-           comando.Parameters.Clear();
-           comando.Parameters.AddWithValue("@codigo", codigo);
-           leer = comando.ExecuteReader();
-           dt.Load(leer);
-           desconectar();
-           return dt;
-            
+
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "FiltroStock";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@codigo", codigo);
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+
         }
 
         public static void InsertarPuntosAProducto(int idProd, int cantidadLubriPuntos)
@@ -1714,7 +1714,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public static void EstadoProducxlubri (int idLubrixProducto, string Estado)
+        public static void EstadoProducxlubri(int idLubrixProducto, string Estado)
         {
             conectar();
             comando.Parameters.Clear();
@@ -1783,10 +1783,30 @@ namespace Datos
             comando.Parameters.Clear();
             desconectar();
         }
-
+        public static void RegistrarCanjeEnHistorial(int idCliente, int puntosCanjeados)
+        {
+            try 
+            {
+                conectar();
+                comando.Connection = conexion;
+                comando.CommandText = "RegistrarCanjePuntos";
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@idCliente", idCliente);
+                comando.Parameters.AddWithValue("@detalle", $"Canjeó {puntosCanjeados} puntos");
+                comando.Parameters.AddWithValue("@fecha", DateTime.Now.Date);
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+                desconectar();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al registrar el canje en el historial: {ex.Message}");
+            }
+        
+        }
         #endregion
     }
-}
+} 
 
 
 
