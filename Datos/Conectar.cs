@@ -1784,9 +1784,7 @@ namespace Datos
             desconectar();
         }
         public static void RegistrarCanjeEnHistorial(int idCliente, int puntosCanjeados)
-        {
-            try 
-            {
+        {          
                 conectar();
                 comando.Connection = conexion;
                 comando.CommandText = "RegistrarCanjePuntos";
@@ -1796,12 +1794,7 @@ namespace Datos
                 comando.Parameters.AddWithValue("@fecha", DateTime.Now.Date);
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
-                desconectar();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error al registrar el canje en el historial: {ex.Message}");
-            }
+                desconectar();                     
         
         }
         #endregion
