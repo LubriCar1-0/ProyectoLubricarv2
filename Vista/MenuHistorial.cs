@@ -36,5 +36,12 @@ namespace Vista
             llamarMenuHistorialVentas.ShowDialog();
              this.Close();
         }
+
+        private void BtnHistVentServ_Click(object sender, EventArgs e)
+        {
+            MenuHistorialVentServ llamarPantHistVentServ = new MenuHistorialVentServ();
+            llamarPantHistVentServ.ShowDialog();
+            this.Close();
+        }
     }
 }

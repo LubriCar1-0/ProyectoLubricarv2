@@ -695,9 +695,37 @@ namespace Vista
             DataTable TablasDeLaBD = capaDatos.TraerTablaVentaServ();
             return TablasDeLaBD;
         }
-        
+        public static DataTable VentaServicios()
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.TraeTodasVentasServicios();
+
+            return TablasDeLaBD;
+
+        }
+        public static DataTable VentaServProductos(int Id)
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.VentaServiciosProductos(Id);
+
+            return TablasDeLaBD;
+
+        }
+        public static DataTable FiltroHistorialDeVentServ(DateTime fecha, DateTime fechahasta)
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.FiltroHistorialVentaServ(fecha, fechahasta);
+
+            return TablasDeLaBD;
+
+        }
     }
+
     #endregion
+
 }
 
 

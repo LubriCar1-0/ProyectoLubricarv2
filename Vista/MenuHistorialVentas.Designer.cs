@@ -150,6 +150,7 @@
             this.btnRecargar.Size = new System.Drawing.Size(59, 48);
             this.btnRecargar.TabIndex = 16;
             this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // btnBuscar
             // 

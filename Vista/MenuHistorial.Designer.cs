@@ -33,6 +33,7 @@
             this.BtnHistorialLubriPuntos = new System.Windows.Forms.Button();
             this.BtnBitacora = new System.Windows.Forms.Button();
             this.BtnVolver = new System.Windows.Forms.Button();
+            this.BtnHistVentServ = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnHistorialVentas
@@ -40,7 +41,7 @@
             this.BtnHistorialVentas.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialVentas;
             this.BtnHistorialVentas.FlatAppearance.BorderSize = 0;
             this.BtnHistorialVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHistorialVentas.Location = new System.Drawing.Point(819, 202);
+            this.BtnHistorialVentas.Location = new System.Drawing.Point(833, 171);
             this.BtnHistorialVentas.Name = "BtnHistorialVentas";
             this.BtnHistorialVentas.Size = new System.Drawing.Size(243, 98);
             this.BtnHistorialVentas.TabIndex = 3;
@@ -52,7 +53,7 @@
             this.BtnHistorialTurnos.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialTurnos;
             this.BtnHistorialTurnos.FlatAppearance.BorderSize = 0;
             this.BtnHistorialTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHistorialTurnos.Location = new System.Drawing.Point(819, 315);
+            this.BtnHistorialTurnos.Location = new System.Drawing.Point(833, 388);
             this.BtnHistorialTurnos.Name = "BtnHistorialTurnos";
             this.BtnHistorialTurnos.Size = new System.Drawing.Size(243, 98);
             this.BtnHistorialTurnos.TabIndex = 4;
@@ -63,7 +64,7 @@
             this.BtnHistorialLubriPuntos.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialLubriPuntos;
             this.BtnHistorialLubriPuntos.FlatAppearance.BorderSize = 0;
             this.BtnHistorialLubriPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnHistorialLubriPuntos.Location = new System.Drawing.Point(819, 433);
+            this.BtnHistorialLubriPuntos.Location = new System.Drawing.Point(833, 492);
             this.BtnHistorialLubriPuntos.Name = "BtnHistorialLubriPuntos";
             this.BtnHistorialLubriPuntos.Size = new System.Drawing.Size(243, 98);
             this.BtnHistorialLubriPuntos.TabIndex = 5;
@@ -74,7 +75,7 @@
             this.BtnBitacora.FlatAppearance.BorderSize = 0;
             this.BtnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBitacora.Image = global::Vista.Properties.Resources.BtnHistorialBitacora2;
-            this.BtnBitacora.Location = new System.Drawing.Point(819, 561);
+            this.BtnBitacora.Location = new System.Drawing.Point(833, 596);
             this.BtnBitacora.Name = "BtnBitacora";
             this.BtnBitacora.Size = new System.Drawing.Size(243, 91);
             this.BtnBitacora.TabIndex = 6;
@@ -95,6 +96,19 @@
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
+            // BtnHistVentServ
+            // 
+            this.BtnHistVentServ.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialVentServ;
+            this.BtnHistVentServ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnHistVentServ.FlatAppearance.BorderSize = 0;
+            this.BtnHistVentServ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnHistVentServ.Location = new System.Drawing.Point(833, 275);
+            this.BtnHistVentServ.Name = "BtnHistVentServ";
+            this.BtnHistVentServ.Size = new System.Drawing.Size(243, 98);
+            this.BtnHistVentServ.TabIndex = 42;
+            this.BtnHistVentServ.UseVisualStyleBackColor = true;
+            this.BtnHistVentServ.Click += new System.EventHandler(this.BtnHistVentServ_Click);
+            // 
             // MenuHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,6 +116,7 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuHistorial;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.BtnHistVentServ);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnBitacora);
             this.Controls.Add(this.BtnHistorialLubriPuntos);
@@ -123,5 +138,6 @@
         private System.Windows.Forms.Button BtnHistorialLubriPuntos;
         private System.Windows.Forms.Button BtnBitacora;
         private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.Button BtnHistVentServ;
     }
 }

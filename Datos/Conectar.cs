@@ -1345,6 +1345,49 @@ namespace Datos
 
         #endregion
 
+        #region Historial Venta Servicio
+        public DataTable TraeTodasVentasServicios()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerVentaServicios";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader);
+            desconectar();
+            return dt;
+        }
+        public DataTable VentaServiciosProductos(int ID)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeProductosSegunVentaServ";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@Id", ID);
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader);
+            desconectar();
+            return dt;
+        }
+        public DataTable FiltroHistorialVentaServ(DateTime fecha, DateTime fechahasta)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeVentaServFiltradas";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@fecha", fecha);
+            comando.Parameters.AddWithValue("@hasta", fechahasta);
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader);
+            desconectar();
+            return dt;
+        }
+        #endregion
+
+
         #region Bitacora  
         public DataTable Bitacora()
         {

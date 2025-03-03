@@ -43,7 +43,6 @@
             this.BtnVolver = new System.Windows.Forms.Button();
             this.chbEditar = new System.Windows.Forms.CheckBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaMeVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -195,15 +194,6 @@
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1118, 323);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "label1";
-            // 
             // MenuVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,7 +201,6 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVehiculos2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBorraCampos);
             this.Controls.Add(this.chbEditar);
             this.Controls.Add(this.BtnVolver);
@@ -250,6 +239,5 @@
         private System.Windows.Forms.Button btnBorraCampos;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.Label label1;
     }
 }

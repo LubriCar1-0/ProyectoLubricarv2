@@ -69,35 +69,35 @@ namespace Vista
         {
             dgv.ReadOnly = true;
 
-            // General
+            
             dgv.EnableHeadersVisualStyles = false;
             dgv.BackgroundColor = Color.White;
             dgv.BorderStyle = BorderStyle.None;
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
 
-            // Cabecera
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); // Azul elegante
+            
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); 
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            // Filas
+           
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul mÃ¡s claro
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            // Alternancia de color en filas
+           
             dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
 
-            // Otros ajustes
-            dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+           
+            dgv.RowHeadersVisible = false; 
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
+            dgv.ScrollBars = ScrollBars.Both; 
 
             
         }
@@ -154,7 +154,7 @@ namespace Vista
             if (CbxClienteMeVehiculos.SelectedItem is KeyValuePair<int, string> cliente)
             {
                 idCliente = cliente.Key;
-                label1.Text = idCliente.ToString();
+                
             }
         }
 
@@ -287,7 +287,7 @@ namespace Vista
 
         private void MenuVehiculos_Load_1(object sender, EventArgs e)
         {
-            label1.Text = Convert.ToString(idCliente);
+            
         }
 
         private void chbEditar_CheckedChanged_1(object sender, EventArgs e)

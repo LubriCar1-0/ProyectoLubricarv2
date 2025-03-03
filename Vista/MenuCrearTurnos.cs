@@ -22,8 +22,10 @@ namespace Vista
             dgvTurnos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             CargarTurnos();
             ConfigurarDateTimePickerHora();
-        }
+            dgvTurnos.ReadOnly = true;
 
+        }
+        private bool cargandoTurno = false;
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             MenuTurnos llamarMenuTurnos = new MenuTurnos();
@@ -33,7 +35,7 @@ namespace Vista
 
         private void MenuCrearTurnos_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dtpHorario_ValueChanged(object sender, EventArgs e)
@@ -112,7 +114,7 @@ namespace Vista
         TimeSpan hora;
         private void dgvTurnos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
+            cargandoTurno = true;
             DataGridViewRow filaSeleccionada = dgvTurnos.Rows[e.RowIndex];
             idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);
             idClienteBD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
@@ -128,14 +130,45 @@ namespace Vista
 
             if (TimeSpan.TryParse(filaSeleccionada.Cells["Hora"].Value?.ToString(), out TimeSpan hora))
             {
-                DateTime fechaHora = DateTime.Today.Add(hora); 
-                dtpHorario.Value = fechaHora; 
+                DateTime fechaHora = DateTime.Today.Add(hora);
+                dtpHorario.Value = fechaHora;
             }
+            cargandoTurno = false;
             CbxSelectCL.Enabled = false;
             CbxSelectVH.Enabled = false;
+        }
+        private void dtpHorario_ValueChanged_1(object sender, EventArgs e)
+        {
+            if (cargandoTurno) return;
 
+            DateTime horaSeleccionada = dtpHorario.Value;
+            int minutos = horaSeleccionada.Minute;
+            int minutosRedondeados = (minutos / 30) * 30;
 
+            DateTime horaRedondeada = new DateTime(
+                horaSeleccionada.Year,
+                horaSeleccionada.Month,
+                horaSeleccionada.Day,
+                horaSeleccionada.Hour,
+                minutosRedondeados,
+                0
+            );
 
+            DateTime horaMinima = new DateTime(horaSeleccionada.Year, horaSeleccionada.Month, horaSeleccionada.Day, 8, 0, 0);
+            DateTime horaMaxima = new DateTime(horaSeleccionada.Year, horaSeleccionada.Month, horaSeleccionada.Day, 20, 0, 0);
+
+            if (horaRedondeada < horaMinima)
+            {
+                dtpHorario.Value = horaMinima;
+            }
+            else if (horaRedondeada > horaMaxima)
+            {
+                dtpHorario.Value = horaMaxima;
+            }
+            else
+            {
+                dtpHorario.Value = horaRedondeada;
+            }
         }
 
         private void CargarTurnos()
@@ -168,80 +201,42 @@ namespace Vista
         }
 
         #region Configuracion del tiempo
-        private void dtpHorario_ValueChanged_1(object sender, EventArgs e)
-        {
-            DateTime horaSeleccionada = dtpHorario.Value;
-
-            // Redondear la hora al múltiplo más cercano de 30 minutos
-            int minutos = horaSeleccionada.Minute;
-            int minutosRedondeados = (minutos / 30) * 30;
-
-            // Ajustar la hora al intervalo más cercano de 30 minutos
-            DateTime horaRedondeada = new DateTime(
-                horaSeleccionada.Year,
-                horaSeleccionada.Month,
-                horaSeleccionada.Day,
-                horaSeleccionada.Hour,
-                minutosRedondeados,
-                0 // Segundos en 0
-            );
-
-            // Verificar si la hora está fuera del rango permitido (8:00 AM a 8:00 PM)
-            DateTime horaMinima = new DateTime(horaSeleccionada.Year, horaSeleccionada.Month, horaSeleccionada.Day, 8, 0, 0); // 8:00 AM
-            DateTime horaMaxima = new DateTime(horaSeleccionada.Year, horaSeleccionada.Month, horaSeleccionada.Day, 20, 0, 0); // 8:00 PM
-
-            if (horaRedondeada < horaMinima)
-            {
-                dtpHorario.Value = horaMinima; // Ajustar a la hora mínima si está por debajo
-            }
-            else if (horaRedondeada > horaMaxima)
-            {
-                dtpHorario.Value = horaMaxima; // Ajustar a la hora máxima si está por encima
-            }
-            else
-            {
-                dtpHorario.Value = horaRedondeada; // Establecer la hora redondeada
-            }
-
-        }
+        
         private void ConfigurarDateTimePickerHora()
         {
-            dtpHorario.Format = DateTimePickerFormat.Time; // Mostrar solo la hora
-            dtpHorario.ShowUpDown = true;                 // Usar spinner en lugar de calendario
-            dtpHorario.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0); // Valor inicial (8:00 AM)
+            dtpHorario.Format = DateTimePickerFormat.Time; 
+            dtpHorario.ShowUpDown = true;               
+            dtpHorario.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0); 
 
-            dtpHorario.ValueChanged += DtpHorario_ValueChanged; // Interceptar cambios en el valor
+            dtpHorario.ValueChanged += DtpHorario_ValueChanged; 
         }
 
-        // Variable para rastrear el último valor del DateTimePicker
-        private DateTime ultimoValor = DateTime.Now.Date.AddHours(8); // Inicial en 8:00 AM
+        
+        private DateTime ultimoValor = DateTime.Now.Date.AddHours(8); 
 
         private void DtpHorario_ValueChanged(object sender, EventArgs e)
         {
             DateTimePicker picker = sender as DateTimePicker;
 
-            // Obtener la hora actual del control
             DateTime horaActual = picker.Value;
 
-            // Determinar si el cambio fue un incremento o decremento
+            
             int intervalo = (horaActual > ultimoValor) ? 30 : -30;
 
-            // Aplicar el incremento o decremento de 30 minutos
             DateTime nuevaHora = ultimoValor.AddMinutes(intervalo);
 
-            // Rango permitido: 8:00 AM a 8:00 PM
+           
             DateTime horaMinima = new DateTime(horaActual.Year, horaActual.Month, horaActual.Day, 8, 0, 0);
             DateTime horaMaxima = new DateTime(horaActual.Year, horaActual.Month, horaActual.Day, 20, 0, 0);
 
-            // Validar que la nueva hora esté dentro del rango permitido
             if (nuevaHora >= horaMinima && nuevaHora <= horaMaxima)
             {
-                picker.Value = nuevaHora; // Actualizar el valor del DateTimePicker
-                ultimoValor = nuevaHora;  // Guardar el nuevo valor como referencia
+                picker.Value = nuevaHora; 
+                ultimoValor = nuevaHora;  
             }
             else
             {
-                picker.Value = ultimoValor; // Revertir al último valor válido si está fuera de rango
+                picker.Value = ultimoValor; 
             }
         }
 
@@ -267,15 +262,16 @@ namespace Vista
             CbxSelectCL.Text = string.Empty;
             CbxSelectVH.Text = string.Empty;
 
+            dtpSelecionarDia.Format = DateTimePickerFormat.Short;
+            dtpSelecionarDia.Value = DateTime.Now; 
 
-            dtpSelecionarDia.Format = DateTimePickerFormat.Custom;
-            dtpSelecionarDia.CustomFormat = " "; 
-
-            dtpHorario.Format = DateTimePickerFormat.Custom;
-            dtpHorario.CustomFormat = " "; 
+            
+            dtpHorario.Format = DateTimePickerFormat.Time;
+            dtpHorario.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0); 
 
             TxtDescripcionTurno.Text = string.Empty;
         }
+
 
 
         private void BtnCrearTurno_Click(object sender, EventArgs e)

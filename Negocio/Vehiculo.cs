@@ -40,27 +40,18 @@ namespace Negocio
         public static void CargaDeVehiculos(int id, string Modelo, string Marca, int año, string Patente, int Kilometraje)
         {
             Conectar capaDatos = new Conectar();
-            DataTable TablaClientes = capaDatos.BuscarClientes();
+            
             DataTable TablaVehiculos = capaDatos.BuscarVehiculos();
             bool VehiculoEncontrado = false;
-            foreach (DataRow fila in TablaClientes.Rows)
+            foreach (DataRow filaVH in TablaVehiculos.Rows)
             {
-                string idBD = fila["idCliente"].ToString();
-                int idInt = Convert.ToInt32(idBD);
-                if (idInt == id)
+                string PatenteExistente = filaVH["patenteVH"].ToString();
+                if (Patente == PatenteExistente)
                 {
-                    foreach (DataRow filaVH in TablaVehiculos.Rows)
-                    {
-                        string PatenteExistente = filaVH["patenteVH"].ToString();
-                        if (Patente == PatenteExistente)
-                        {
-                            VehiculoEncontrado = true;
-                            throw new Exception("Ya existe un vehículo con esa patente.");
-                        }
-                    }
-
+                   VehiculoEncontrado = true;
+                   throw new Exception("Ya existe un vehículo con esa patente.");
                 }
-            }
+            }          
             if (!VehiculoEncontrado)
             {
                 string Estado = "ACT";
