@@ -175,6 +175,7 @@
             this.btnAgregarclient.Size = new System.Drawing.Size(53, 48);
             this.btnAgregarclient.TabIndex = 12;
             this.btnAgregarclient.UseVisualStyleBackColor = true;
+            this.btnAgregarclient.Click += new System.EventHandler(this.btnAgregarclient_Click);
             // 
             // cmbCategoriaPrd
             // 

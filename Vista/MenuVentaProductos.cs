@@ -637,11 +637,10 @@ namespace Vista
             grpPresupuesto.Enabled = false;
         }
 
-        
-  
-
-        
-
-       
+        private void btnAgregarclient_Click(object sender, EventArgs e)
+        {
+            MenuClientes LlamarMenuClientes = new MenuClientes();
+            LlamarMenuClientes.ShowDialog();
+        }
     }
 }
