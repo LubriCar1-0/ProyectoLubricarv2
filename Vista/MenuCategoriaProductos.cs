@@ -50,6 +50,8 @@ namespace Vista
             DGVCategoriasProdc.DataSource = ValidarProducto.TraeCategoriasProductos();
             DGVCategoriasProdc.Columns["IdCategorias"].Visible = false;
             ConfiguraDataGridStyle(DGVCategoriasProdc);
+            DGVCategoriasProdc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVCategoriasProdc.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
         private void ConfiguraDataGridStyle(DataGridView dgv)
         {
@@ -136,7 +138,7 @@ namespace Vista
 
                 }
             }
-            else if (DGVCategoriasProdc.Columns[e.ColumnIndex].Name == "Eliminar")
+            else if (DGVCategoriasProdc.Columns[e.ColumnIndex].Name == "EstadoNuevo")
             {
                 DataGridViewRow filaSeleccionadaUPD = DGVCategoriasProdc.Rows[e.RowIndex];
                 int IdCategoriaUPD = Convert.ToInt32(filaSeleccionada.Cells["IdCategorias"].Value);

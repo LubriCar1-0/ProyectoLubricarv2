@@ -36,6 +36,8 @@ namespace Vista
             DgvTablaClientes.DataSource = Validarcliente.ObtenerClientes();
             DgvTablaClientes.AllowUserToAddRows = false;
             DgvTablaClientes.RowHeadersVisible = false;
+            DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvTablaClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             ConfiguraDataGrid(DgvTablaClientes);
             if (DgvTablaClientes.Columns.Contains("idCliente"))
             {
@@ -72,7 +74,7 @@ namespace Vista
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             // Alternancia de color en filas
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
 
             // Otros ajustes
             dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado

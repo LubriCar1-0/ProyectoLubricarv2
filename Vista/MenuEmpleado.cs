@@ -112,8 +112,9 @@ namespace Vista
                     throw new Exception("El número de celular debe ser un número válido.");
                 }
 
+                MessageBox.Show(TxtNombreEmpleado.Text.Trim() + " " + TxtApellidoEmpleado.Text.Trim() + " " + dniEmpleado.ToString() + " " + txtContraseña.Text.Trim() + " " + celularEmpleado.ToString()+" " +idCategoriaSeleccionada.ToString());
                 // Llamar al método para agregar el empleado
-                Validaciones.AgregarUnEmpleado(TxtNombreEmpleado.Text.Trim(), TxtApellidoEmpleado.Text.Trim(), dniEmpleado, txtContraseña.Text.Trim(), celularEmpleado, categoria: idCategoriaSeleccionada );
+                Validaciones.AgregarUnEmpleado(TxtNombreEmpleado.Text.Trim(), TxtApellidoEmpleado.Text.Trim(), dniEmpleado, txtContraseña.Text.Trim(), celularEmpleado, idCategoriaSeleccionada );
 
                 MessageBox.Show("El empleado ha sido cargado con éxito");
                 CargarEmpleados();

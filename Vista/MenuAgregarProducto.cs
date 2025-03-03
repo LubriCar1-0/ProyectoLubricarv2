@@ -312,6 +312,8 @@ namespace Vista
                 DGVProductos.Columns["IdProd"].Visible = false;
                 ConfiguraDataGrid(DGVProductos);
                 ConfiguraDataGridStyle(DGVProductos);
+                ConfigurarDataGridView();
+                Acomodartabla();
                 //DGVProductos.Columns["IdCategorias"].Visible = false;
 
             }

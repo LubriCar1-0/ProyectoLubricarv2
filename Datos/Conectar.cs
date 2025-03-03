@@ -48,6 +48,7 @@ namespace Datos
             conectar();
             comando.Connection = conexion;
             comando.CommandText = "InsertarEmpleado";
+            comando.Parameters.Clear();
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@Apellido", Apellido);
@@ -57,7 +58,7 @@ namespace Datos
             comando.Parameters.AddWithValue("@categoria", idCategoria);
             comando.Parameters.AddWithValue("@Estado", Estado);
             comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
+           
             desconectar();
 
         }
