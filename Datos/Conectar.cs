@@ -186,7 +186,7 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "IngresaCategoria";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NomCat", nombreCat);
+            comando.Parameters.AddWithValue("@NombreCat", nombreCat);
             comando.Parameters.AddWithValue("@PermisoCat", CodPerm);
             comando.Parameters.AddWithValue("@Descripcion", catedescripcion);
             comando.Parameters.AddWithValue("@ESTADO", Estado);
@@ -240,14 +240,7 @@ namespace Datos
 
             desconectar();
             return id;
-            /* create procedure VerificaPermiso(
-               @IdCategoria int)
-               as begin 
-               select PermisoCat from Categorias where IdCategoria = @IdCategoria;
-               end*/
-
-
-
+           
 
         }
         #endregion
@@ -281,14 +274,7 @@ namespace Datos
 
         }
 
-        /*CREATE PROCEDURE TraerCondicionIVA
-              @idCondicionIva INT
-              AS
-             BEGIN
-                SELECT descripcion
-                FROM CondicionIva
-                WHERE idCondicionIva = @idCondicionIva;
-             END;*/
+        
         public DataTable TraerCondicionesIva()
         {
             conectar();
@@ -299,11 +285,7 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
-            /*  Create procedure TraerCondiciones
-                as
-                begin
-                select * from CondicionIva
-                end*/
+            
         }
         public DataTable BuscarVehiculos()
         {
@@ -318,10 +300,7 @@ namespace Datos
             return dt;
         }
 
-        //create procedure TraerTablaVehiculos
-        //as begin
-        //select * from Vehiculo
-        //end
+        
 
         public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA, string Estado)
         {
@@ -483,11 +462,7 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
-            /*CREATE PROCEDURE TraerTablaEmpresa
-              AS BEGIN
-              SELECT * FROM Empresa;
-              END
-            */
+            
         }
         public static DataTable TraerEmpresa()
         {
@@ -500,11 +475,7 @@ namespace Datos
             dt.Load(leer);
             desconectar();
             return dt;
-            /*CREATE PROCEDURE TraerTablaEmpresa
-              AS BEGIN
-              SELECT * FROM Empresa;
-              END
-            */
+            
         }
         public static void AgregarEmpresa(string RazonSocial, string ClaveIdent, string Domicilio, string CondicionIVA, string PuntodVenta)
         {
@@ -520,40 +491,8 @@ namespace Datos
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             desconectar();
-            /*create procedure AgregarEmpresa(
-            @RazSocial char(255),
-            @ClaveIdentif nvarchar(50),
-            @Domicilio nvarchar(255),
-            @CondicionIVA nvarchar(50),
-            @PuntoVenta nvarchar(50))
-            as begin 
-            insert into Empresa(razonSocialEMP,claveIdenEMP,domicilioEMP,condicionIvaEMP,ptoVentaEMP) 
-            values (@RazSocial,@ClaveIdentif,@Domicilio,@CondicionIVA,@PuntoVenta)
-            end*/
+            
         }
-
-
-
-
-        public static void AgregarBitacora(int IdTrabajador, string detalle, string TablaAfectada)
-        {
-            conectar();
-            comando.Connection = conexion;
-            comando.CommandText = "AgregarBitacora";
-            comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@idTrabajador", IdTrabajador);
-            comando.Parameters.AddWithValue("@Detalle", detalle);
-            comando.Parameters.AddWithValue("@Fecha", DateTime.Now.Date);
-            comando.Parameters.AddWithValue("@Time", DateTime.Now.TimeOfDay);
-            comando.Parameters.AddWithValue("@TablaAfectada", TablaAfectada);
-            comando.ExecuteNonQuery();
-            comando.Parameters.Clear();
-            desconectar();
-
-        }
-
-
-
 
         #endregion
 
@@ -1388,8 +1327,24 @@ namespace Datos
         }
         #endregion
 
-
         #region Bitacora  
+        public static void AgregarBitacora(int IdTrabajador, string detalle, string TablaAfectada)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.Parameters.Clear();
+            comando.CommandText = "AgregarBitacora";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idTrabajador", IdTrabajador);
+            comando.Parameters.AddWithValue("@Detalle", detalle);
+            comando.Parameters.AddWithValue("@Fecha", DateTime.Now.Date);
+            comando.Parameters.AddWithValue("@Time", DateTime.Now.TimeOfDay);
+            comando.Parameters.AddWithValue("@TablaAfectada", TablaAfectada);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            desconectar();
+
+        }
         public DataTable Bitacora()
         {
             conectar();

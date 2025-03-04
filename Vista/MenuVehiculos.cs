@@ -133,7 +133,7 @@ namespace Vista
                     return;
                 }
 
-                ValidarClientes.AgregarUnVehiculo(idCliente, TxtModeloVehiculos.Text.Trim(), TxtMarcaVehiculos.Text.Trim(), Convert.ToInt32(TxtAñoVehiculos.Text.Trim()), TxtPatenteVehiculo.Text.Trim(), Convert.ToInt32(TxtKilometrajeVehiculos.Text.Trim()));
+                ValidarClientes.AgregarUnVehiculo(idCliente, TxtModeloVehiculos.Text.Trim(), TxtMarcaVehiculos.Text.Trim(), Convert.ToInt32(TxtAñoVehiculos.Text.Trim()), TxtPatenteVehiculo.Text.Trim().ToUpper(), Convert.ToInt32(TxtKilometrajeVehiculos.Text.Trim()));
                 LimpiaTextBox();
                 CargarDatosEnGrid();
                 

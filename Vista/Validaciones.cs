@@ -472,6 +472,7 @@ namespace Vista
             OrdenDeTrabajo.CambioDeEstado(idOrden, estado);
         }
 
+
     }
     #endregion
 

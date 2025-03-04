@@ -39,7 +39,7 @@ namespace Vista
 
             InitializeComponent();
             CargatablaProductos();
-            dgvProductos.Columns["idProd"].Visible = false;
+            
             CargarCategorias();
             ConfiguraDataGrid(dgvProductos);
             lblIdproducto.Visible = false;
@@ -53,7 +53,7 @@ namespace Vista
             txbVehiculo.ReadOnly = true;
             DtpFechaDeInicio.ShowUpDown = true; 
             DtpFechaDeInicio.Enabled = false;
-            
+           
             
         }
 
@@ -76,8 +76,14 @@ namespace Vista
             cmbEstado.Items.Add("FINALIZADO");
             
             
-            // Seleccionar por defecto "INICIADO"
+            
             cmbEstado.SelectedItem = "INICIADO";
+
+            dgvProductos.Columns["idCategorias"].Visible = false;
+            dgvProductos.Columns["idProd"].Visible = false;
+            dgvVentas.Columns["idOrdenTrabajo"].Visible = false;
+            dgvVentas.Columns["IdProducto"].Visible = false;
+            dgvVentas.Columns["FilaProducto"].Visible = false;
         }
         #endregion
 

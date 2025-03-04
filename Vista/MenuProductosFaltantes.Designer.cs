@@ -37,7 +37,7 @@
             // DgvProductoFaltantes
             // 
             this.DgvProductoFaltantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvProductoFaltantes.Location = new System.Drawing.Point(306, 143);
+            this.DgvProductoFaltantes.Location = new System.Drawing.Point(309, 164);
             this.DgvProductoFaltantes.Name = "DgvProductoFaltantes";
             this.DgvProductoFaltantes.Size = new System.Drawing.Size(676, 486);
             this.DgvProductoFaltantes.TabIndex = 0;
@@ -49,7 +49,7 @@
             this.BtnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Location = new System.Drawing.Point(957, 645);
+            this.BtnVolver.Location = new System.Drawing.Point(960, 674);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(177, 63);
             this.BtnVolver.TabIndex = 3;
@@ -62,7 +62,7 @@
             this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(187, 121);
+            this.button1.Location = new System.Drawing.Point(190, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 57);
             this.button1.TabIndex = 15;
@@ -75,7 +75,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaProductoFaltantes2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.DgvProductoFaltantes);

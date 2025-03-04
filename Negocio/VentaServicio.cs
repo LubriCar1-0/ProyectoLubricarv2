@@ -19,6 +19,7 @@ namespace Negocio
         public string Modelo    { get; set; }
         public string Patente { get; set; }
         public int idTrabajador { get; set; }
+        public string descripcion { get; set; }
         public string NombreCompletoTrabajador { get; set; }
 
 
@@ -39,6 +40,7 @@ namespace Negocio
                     Modelo = row["modeloVH"].ToString(),
                     Patente = row["patenteVH"].ToString(),
                     idTrabajador = Convert.ToInt32(row["idTrabajador"]),
+                    descripcion = row["descripcion"].ToString(),
                     NombreCompletoTrabajador = row["NombreCompletoTrabajador"].ToString()
                 };
             }

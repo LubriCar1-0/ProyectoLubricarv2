@@ -213,6 +213,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.MenuEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvMenuEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

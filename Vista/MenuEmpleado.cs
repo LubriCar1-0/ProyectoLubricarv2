@@ -52,7 +52,7 @@ namespace Vista
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
 
             // Cabecera
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); // Azul elegante
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); 
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -61,20 +61,19 @@ namespace Vista
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul mÃ¡s claro
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            //// Alternancia de color en filas
-            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+          
 
             // Otros ajustes
-            dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+            dgv.RowHeadersVisible = false; 
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
+            dgv.ScrollBars = ScrollBars.Both; 
 
-            //AplicarTrimDataGridView(dgv);
+            
         }
         private void AplicarTrimDataGridView(DataGridView dgv)
         {
@@ -326,6 +325,11 @@ namespace Vista
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void MenuEmpleado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

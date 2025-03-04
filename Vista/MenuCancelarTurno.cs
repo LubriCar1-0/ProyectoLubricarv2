@@ -20,8 +20,8 @@ namespace Vista
             dgvTurnos.ReadOnly = true;
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.CustomFormat = " ";
-            dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvTurnos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            //dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dgvTurnos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
             dgvTurnos.RowHeadersVisible = false;
 
@@ -48,6 +48,7 @@ namespace Vista
                         validarTurnos.CancelarTurno(idTurno, "CANCELADO");
                         MessageBox.Show("Turno CANCELADO.");
                         CargarTurnos();
+                        ConfiguraDataGrid(dgvTurnos);
                     }
                     else if (estado == "CANCELADO")
                     {
@@ -75,6 +76,8 @@ namespace Vista
                     dgvTurnos.Columns["idVehiculo"].Visible = false;
                 if (dgvTurnos.Columns.Contains("idCliente"))
                     dgvTurnos.Columns["idCliente"].Visible = false;
+                ConfiguraDataGrid(dgvTurnos);
+                AjustarEstiloGrid(dgvTurnos);
             }
             catch (Exception ex)
             {
@@ -91,9 +94,9 @@ namespace Vista
         private int idVehiculoSeleccionado = 0;
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            // Si el TextBox de teléfono está vacío se envía NULL; de lo contrario se hace Trim.
+            
             string telefono = string.IsNullOrEmpty(txtTelCliente.Text) ? null : txtTelCliente.Text.Trim();
-            // La patente se envía en mayúsculas luego de hacer Trim.
+            
             string patente = string.IsNullOrEmpty(txtPatente.Text) ? null : txtPatente.Text.Trim().ToUpper();
             string fecha = dtpFecha.CustomFormat != " " ? dtpFecha.Value.ToString("yyyy-MM-dd") : null;
             string estado = "ACTIVO";
@@ -101,6 +104,8 @@ namespace Vista
             
                 CargaTurnosFiltro(telefono, patente, fecha, estado);
             
+
+
         }
 
 
@@ -120,6 +125,8 @@ namespace Vista
                     dgvTurnos.Columns["idVehiculo"].Visible = false;
                 if (dgvTurnos.Columns.Contains("idCliente"))
                     dgvTurnos.Columns["idCliente"].Visible = false;
+                ConfiguraDataGrid(dgvTurnos);
+                AjustarEstiloGrid(dgvTurnos);
             }
             catch (Exception ex)
             {
@@ -127,7 +134,68 @@ namespace Vista
             }
         }
 
+        #region Configuracion de la grid
+        private void ConfiguraDataGrid(DataGridView dgv)
+        {
+            dgv.ReadOnly = true;
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.BackgroundColor = Color.White;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
 
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185);
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219);
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+
+            dgv.RowHeadersVisible = false;
+
+
+
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.ScrollBars = ScrollBars.Both;
+
+            AplicarTrimDataGridView(dgv);
+        }
+
+
+        private void AplicarTrimDataGridView(DataGridView dgv)
+        {
+            foreach (DataGridViewRow fila in dgv.Rows)
+            {
+                foreach (DataGridViewCell celda in fila.Cells)
+                {
+                    // Verifica si la columna es de sólo lectura antes de asignar
+                    if (!celda.OwningColumn.ReadOnly && celda.Value is string texto)
+                    {
+                        celda.Value = texto.Trim();
+                    }
+                }
+            }
+        }
+
+        private void AjustarEstiloGrid(DataGridView dgv)
+        {
+
+            dgv.DefaultCellStyle.Font = new Font("Microsoft YaHei UI", 13.05f, FontStyle.Regular);
+
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft YaHei UI", 14.05f, FontStyle.Bold);
+
+            dgv.RowTemplate.Height = 40;
+
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+        #endregion
 
 
 

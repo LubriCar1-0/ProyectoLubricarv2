@@ -31,7 +31,7 @@
             this.grbFiltros = new System.Windows.Forms.GroupBox();
             this.cmbTrabajador = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.dgvTurnos = new System.Windows.Forms.DataGridView();
+            this.dgvBitacora = new System.Windows.Forms.DataGridView();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblVehiculo = new System.Windows.Forms.Label();
             this.txtAccion = new System.Windows.Forms.TextBox();
@@ -40,7 +40,7 @@
             this.lblAccion = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.grbFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
             this.SuspendLayout();
             // 
             // grbFiltros
@@ -48,7 +48,7 @@
             this.grbFiltros.BackColor = System.Drawing.Color.Transparent;
             this.grbFiltros.Controls.Add(this.cmbTrabajador);
             this.grbFiltros.Controls.Add(this.dtpFecha);
-            this.grbFiltros.Controls.Add(this.dgvTurnos);
+            this.grbFiltros.Controls.Add(this.dgvBitacora);
             this.grbFiltros.Controls.Add(this.lblFecha);
             this.grbFiltros.Controls.Add(this.lblVehiculo);
             this.grbFiltros.Controls.Add(this.txtAccion);
@@ -79,16 +79,16 @@
             this.dtpFecha.TabIndex = 21;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
-            // dgvTurnos
+            // dgvBitacora
             // 
-            this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Location = new System.Drawing.Point(42, 240);
-            this.dgvTurnos.Name = "dgvTurnos";
-            this.dgvTurnos.RowHeadersWidth = 62;
-            this.dgvTurnos.RowTemplate.Height = 28;
-            this.dgvTurnos.Size = new System.Drawing.Size(823, 272);
-            this.dgvTurnos.TabIndex = 9;
-            this.dgvTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellContentClick);
+            this.dgvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBitacora.Location = new System.Drawing.Point(42, 240);
+            this.dgvBitacora.Name = "dgvBitacora";
+            this.dgvBitacora.RowHeadersWidth = 62;
+            this.dgvBitacora.RowTemplate.Height = 28;
+            this.dgvBitacora.Size = new System.Drawing.Size(823, 272);
+            this.dgvBitacora.TabIndex = 9;
+            this.dgvBitacora.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellContentClick);
             // 
             // lblFecha
             // 
@@ -187,7 +187,7 @@
             this.Load += new System.EventHandler(this.MenuBitacora_Load);
             this.grbFiltros.ResumeLayout(false);
             this.grbFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,7 +197,7 @@
         private System.Windows.Forms.GroupBox grbFiltros;
         private System.Windows.Forms.ComboBox cmbTrabajador;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.DataGridView dgvTurnos;
+        private System.Windows.Forms.DataGridView dgvBitacora;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblVehiculo;
         private System.Windows.Forms.TextBox txtAccion;

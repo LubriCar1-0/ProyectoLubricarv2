@@ -35,6 +35,7 @@ namespace Vista
             _idOrdenTrab = idOrdenTrab;
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+            txbManoDeObra.KeyPress += txbManoDeObra_KeyPress;
 
         }
 
@@ -62,8 +63,9 @@ namespace Vista
                     lblModelo.Text = venta.Modelo;
                     lblPatente.Text = venta.Patente;
                     //lblNombreTrabajador.Text = venta.NombreCompletoTrabajador;
+                    txtDescripcion.Text = venta.descripcion.ToString();
 
-                    
+
                     _idCliente = venta.idCliente;
                     _idVehiculo = venta.idVehiculo;
                     _idTrabajador = venta.idTrabajador;
@@ -347,5 +349,30 @@ namespace Vista
                 lblLubriGana.Text = "No hay valor asignado";
             }
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbManoDeObra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txbManoDeObra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir dígitos, teclas de control y el punto decimal
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // Permitir solo una ocurrencia del punto decimal
+            if (e.KeyChar == '.' && (sender as TextBox).Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
