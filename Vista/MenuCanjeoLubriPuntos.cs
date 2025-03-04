@@ -20,6 +20,7 @@ namespace Vista
             CargarProductosParaCanje();
             ConfiguraDataGrid(DGVclientes);
             ConfiguraDataGrid(DGVproductos);
+            txtCantidadCanje.Text = "0";
             DGVclientes.CellClick += DGVclientes_CellContentClick;
         }
 
@@ -236,11 +237,7 @@ namespace Vista
                 MessageBox.Show("Debes seleccionar un producto antes de continuar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (Cantidadacanjear.Value == 0)
-            {
-                MessageBox.Show("Por favor, ingrese una cantidad válida a canjear.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+           
 
             int stockDisponible = 0;
             if (CategoriaProducto == 2)
@@ -252,7 +249,7 @@ namespace Vista
                 stockDisponible = Convert.ToInt32(DGVproductos.SelectedRows[0].Cells["Cantidad"].Value);
             }
 
-            int cantidad = Convert.ToInt32(Cantidadacanjear.Value);
+            int cantidad = Convert.ToInt32(txtCantidadCanje.Text);
             if (cantidad > stockDisponible)
             {
                 MessageBox.Show("No hay suficiente stock disponible para realizar el canje.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -264,15 +261,23 @@ namespace Vista
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                LubriPuntos.RestarProducto(Idproducto, cantidad);
-                LubriPuntos.RestarLubriPuntos(IdCliente, Valorfinal);
-                ValidarLubriPuntos.Registrarcanje(IdCliente, Valorfinal);
-                CargarProductosParaCanje();
-                CargartablaClientes();
-                MessageBox.Show("Canje exitoso");
-                Cantidadacanjear.Value = 0;
-                Idproducto = 0;
-                IdCliente = 0;
+                if (txtCantidadCanje.Text == "0")
+                {
+                    MessageBox.Show("Por favor, ingrese una cantidad válida a canjear.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    LubriPuntos.RestarProducto(Idproducto, cantidad);
+                    LubriPuntos.RestarLubriPuntos(IdCliente, Valorfinal);
+                    ValidarLubriPuntos.Registrarcanje(IdCliente, Valorfinal);
+                    CargarProductosParaCanje();
+                    CargartablaClientes();
+                    MessageBox.Show("Canje exitoso");
+                    txtCantidadCanje.Text = "0";
+                    Idproducto = 0;
+                    IdCliente = 0;
+                }
+
             }
         }
 

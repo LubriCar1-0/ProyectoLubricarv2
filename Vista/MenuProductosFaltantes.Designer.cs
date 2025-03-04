@@ -82,6 +82,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuProductosFaltantes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuProductosFaltantes";
             this.Load += new System.EventHandler(this.MenuProductosFaltantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvProductoFaltantes)).EndInit();

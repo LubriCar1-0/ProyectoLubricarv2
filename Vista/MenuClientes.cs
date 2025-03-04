@@ -21,7 +21,7 @@ namespace Vista
             InitializeComponent();
             CargarClientes();
             ConfigurarDataGridView();
-            
+            grpListado.Visible = false;
             CargarCategorias();
             DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvTablaClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -36,8 +36,7 @@ namespace Vista
             DgvTablaClientes.DataSource = Validarcliente.ObtenerClientes();
             DgvTablaClientes.AllowUserToAddRows = false;
             DgvTablaClientes.RowHeadersVisible = false;
-            DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvTablaClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+           
             ConfiguraDataGrid(DgvTablaClientes);
             if (DgvTablaClientes.Columns.Contains("idCliente"))
             {
@@ -58,13 +57,15 @@ namespace Vista
             dgv.BorderStyle = BorderStyle.None;
             dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             // Cabecera
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); // Azul elegante
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            
             // Filas
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
@@ -106,8 +107,8 @@ namespace Vista
                 {
                     Name = "CondicionIva",
                     HeaderText = "CondicionIva",
-
-                    DataPropertyName = "descripcion", 
+                    DataPropertyName = "IdCondicionIva",
+                    //DataPropertyName = "descripcion", 
 
                     DisplayMember = "Value",
                     ValueMember = "Key",
@@ -166,6 +167,8 @@ namespace Vista
                 DgvTablaClientes.ReadOnly = true;
             }
         }
+        
+        
         private void DgvTablaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow filaSeleccionada = DgvTablaClientes.Rows[e.RowIndex];
@@ -179,10 +182,10 @@ namespace Vista
             TxtTelefonoCliente.Text = filaSeleccionada.Cells["Telefono"].Value.ToString().Trim();
             int idcondicion = Convert.ToInt32(filaSeleccionada.Cells["IdCondicionIva"].Value);
             TxtNumCasaCliente.Text = filaSeleccionada.Cells["Numero de vivienda"].Value.ToString().Trim();
-
+            CMBIVA.SelectedIndex = idcondicion;
             if (DgvTablaClientes.Columns[e.ColumnIndex].Name == "Editar")
             {
-                if (e.RowIndex >= 0)
+                if (e.RowIndex >= 0 && e.RowIndex < DgvTablaClientes.Rows.Count)
                 {
                     DataGridViewRow filaSeleccionadaUPD = DgvTablaClientes.Rows[e.RowIndex];
                     int idClienteUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCliente"].Value);
@@ -217,7 +220,7 @@ namespace Vista
             }
             else if (DgvTablaClientes.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (e.RowIndex >= 0)
+                if (e.RowIndex >= 0 && e.RowIndex < DgvTablaClientes.Rows.Count)
                 {
                     int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
                     string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
@@ -324,6 +327,16 @@ namespace Vista
         private void DgvTablaClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnListado_Click(object sender, EventArgs e)
+        {
+            grpListado.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            grpListado.Visible=false;
         }
     }
 }

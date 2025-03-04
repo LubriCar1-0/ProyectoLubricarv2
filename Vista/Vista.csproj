@@ -160,6 +160,12 @@
     <Compile Include="MenuHistorialDeTurnos.Designer.cs">
       <DependentUpon>MenuHistorialDeTurnos.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuHistorialLubriPuntos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuHistorialLubriPuntos.Designer.cs">
+      <DependentUpon>MenuHistorialLubriPuntos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuHistorialVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuHistorialDeTurnos.resx">
       <DependentUpon>MenuHistorialDeTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuHistorialLubriPuntos.resx">
+      <DependentUpon>MenuHistorialLubriPuntos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuHistorialVentas.resx">
       <DependentUpon>MenuHistorialVentas.cs</DependentUpon>
@@ -813,6 +822,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BtnHistorialVentServ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MenuHistorialLubriPuntos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

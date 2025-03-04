@@ -196,8 +196,8 @@ namespace Vista
         private void ConfigurarDataGridView()
         {
             // Verificar si la columna de categorías ya existe
-            //if (!DgvMenuEmpleado.Columns.Contains("CategoriaColumn"))
-            //{
+            if (!DgvMenuEmpleado.Columns.Contains("CategoriaColumn"))
+            {
                 var comboBoxColumn = new DataGridViewComboBoxColumn
                 {
                     Name = "CategoriaColumn",
@@ -208,16 +208,16 @@ namespace Vista
                     //DataSource = new BindingSource(Validaciones.ObtenerCategoriasEmpleados(), null)
                 };
 
-                
+
                 Dictionary<int, string> categorias = Validaciones.ObtenerCategoriasEmpleados();
                 foreach (var categoria in categorias)
                 {
                     comboBoxColumn.Items.Add(new KeyValuePair<int, string>(categoria.Key, categoria.Value));
                 }
 
-                
+
                 DgvMenuEmpleado.Columns.Add(comboBoxColumn);
-            //}
+            }
         }
 
         private void DgvMenuEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -265,16 +265,16 @@ namespace Vista
                         CargarEmpleados();
                         ConfigurarDataGridView();
 
-                        DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-                        DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+                        //DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+                        //DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                     }
                     else if (resultado == DialogResult.No)
                     {
                         CargarEmpleados();
                         ConfigurarDataGridView();
 
-                        DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-                        DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+                        //DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+                        //DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                     }
                 }
             }
@@ -300,8 +300,8 @@ namespace Vista
                             CargarEmpleados();
                             ConfigurarDataGridView();
 
-                            DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-                            DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+                            //DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+                            //DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                         }
                         else if (Estado == "DES")
                         {
@@ -310,8 +310,8 @@ namespace Vista
                             CargarEmpleados();
                             ConfigurarDataGridView();
 
-                            DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-                            DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+                            //DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
+                            //DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
                         }
                     }
                     else if (resultado == DialogResult.No)

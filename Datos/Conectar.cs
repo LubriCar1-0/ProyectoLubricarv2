@@ -1421,7 +1421,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-
+       
 
 
 
@@ -1747,12 +1747,41 @@ namespace Datos
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@idCliente", idCliente);
                 comando.Parameters.AddWithValue("@detalle", $"Canjeó {puntosCanjeados} puntos");
-                comando.Parameters.AddWithValue("@fecha", DateTime.Now.Date);
+                comando.Parameters.AddWithValue("@fecha", DateTime.Now);
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
                 desconectar();                     
         
         }
+        
+        public DataTable hCanjeosLubriPuntos()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "HistorialCanjeos";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
+
+        public DataTable hFiltroCanjeosLubriPuntos(DateTime fecha, DateTime fechahasta)
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraeCanjeoFiltrados";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            comando.Parameters.AddWithValue("@fecha", fecha);
+            comando.Parameters.AddWithValue("@hasta", fechahasta);
+            SqlDataReader reader = comando.ExecuteReader();
+            dt.Load(reader);
+            desconectar();
+            return dt;
+        }
+        
         #endregion
     }
 } 

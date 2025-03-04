@@ -623,6 +623,15 @@ namespace Vista
             return TablasDeLaBD;
 
         }
+        public static DataTable CanjeosLubriPuntos()
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.hCanjeosLubriPuntos();
+
+            return TablasDeLaBD;
+
+        }
 
         public static void InsertarPuntosAProducto(int idProd, int cantidadLubriPuntos)
         {
@@ -678,6 +687,15 @@ namespace Vista
             LubriPuntos.Registrarcanje(idCliente, puntosCanjeados);
         }
 
+        public static DataTable FiltroCanjeosLubriPuntos(DateTime fecha, DateTime fechahasta)
+        {
+            DataTable TablasDeLaBD = new DataTable();
+            Conectar CapaDatos = new Conectar();
+            TablasDeLaBD = CapaDatos.hFiltroCanjeosLubriPuntos(fecha, fechahasta);
+
+            return TablasDeLaBD;
+
+        }
     }
     #endregion
 

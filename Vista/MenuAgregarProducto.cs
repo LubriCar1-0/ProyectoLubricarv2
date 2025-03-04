@@ -175,7 +175,7 @@ namespace Vista
                 DataGridViewRow filaSeleccionadaUPD = DGVProductos.Rows[e.RowIndex];
                 int IdProd = Convert.ToInt32(filaSeleccionadaUPD.Cells["IdProd"].Value);
                 string Nombreprd = filaSeleccionadaUPD.Cells["Nombre"].Value.ToString().Trim();
-                String Estado = filaSeleccionadaUPD.Cells["Estado"].Value.ToString().Trim();
+                string Estado = filaSeleccionadaUPD.Cells["Estado"].Value.ToString().Trim();
 
 
                 if (Estado == "ACT")

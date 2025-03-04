@@ -21,7 +21,7 @@ namespace Vista
         {
             MenuBitacora pantallaBitacora = new MenuBitacora();
             pantallaBitacora.ShowDialog();
-            this.Close();
+            
         }
 
 
@@ -34,14 +34,20 @@ namespace Vista
         {
             MenuHistorialVentas llamarMenuHistorialVentas = new MenuHistorialVentas();
             llamarMenuHistorialVentas.ShowDialog();
-             this.Close();
+             
         }
 
         private void BtnHistVentServ_Click(object sender, EventArgs e)
         {
             MenuHistorialVentServ llamarPantHistVentServ = new MenuHistorialVentServ();
             llamarPantHistVentServ.ShowDialog();
-            this.Close();
+            
+        }
+
+        private void BtnHistorialLubriPuntos_Click(object sender, EventArgs e)
+        {
+            MenuHistorialLubriPuntos llamarMenuHistorialLubriPuntos = new MenuHistorialLubriPuntos();
+            llamarMenuHistorialLubriPuntos.ShowDialog();
         }
     }
 }

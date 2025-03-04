@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreCliente = new System.Windows.Forms.TextBox();
             this.TxtLocalidadCliente = new System.Windows.Forms.TextBox();
             this.TxtCuilCliente = new System.Windows.Forms.TextBox();
@@ -45,7 +45,11 @@
             this.TxtTelefonoCliente = new System.Windows.Forms.TextBox();
             this.CMBIVA = new System.Windows.Forms.ComboBox();
             this.chbeditar = new System.Windows.Forms.CheckBox();
+            this.grpListado = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnListado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).BeginInit();
+            this.grpListado.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtNombreCliente
@@ -78,21 +82,21 @@
             this.DgvTablaClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.Eliminar});
-            this.DgvTablaClientes.Location = new System.Drawing.Point(188, 547);
+            this.DgvTablaClientes.Location = new System.Drawing.Point(6, 78);
             this.DgvTablaClientes.Name = "DgvTablaClientes";
-            this.DgvTablaClientes.Size = new System.Drawing.Size(988, 181);
+            this.DgvTablaClientes.Size = new System.Drawing.Size(1281, 406);
             this.DgvTablaClientes.TabIndex = 4;
             this.DgvTablaClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvTablaClientes_CellContentClick);
             // 
             // Editar
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle7;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Editar.HeaderText = "Editar";
             this.Editar.Name = "Editar";
@@ -101,13 +105,13 @@
             // 
             // Eliminar
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle8;
             this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Eliminar.HeaderText = "Estado";
             this.Eliminar.Name = "Eliminar";
@@ -193,14 +197,52 @@
             // 
             this.chbeditar.AutoSize = true;
             this.chbeditar.BackColor = System.Drawing.Color.Transparent;
-            this.chbeditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbeditar.Location = new System.Drawing.Point(996, 519);
+            this.chbeditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbeditar.Location = new System.Drawing.Point(1194, 46);
             this.chbeditar.Name = "chbeditar";
-            this.chbeditar.Size = new System.Drawing.Size(65, 22);
+            this.chbeditar.Size = new System.Drawing.Size(93, 29);
             this.chbeditar.TabIndex = 17;
             this.chbeditar.Text = "Editar";
             this.chbeditar.UseVisualStyleBackColor = false;
             this.chbeditar.CheckedChanged += new System.EventHandler(this.chbeditar_CheckedChanged);
+            // 
+            // grpListado
+            // 
+            this.grpListado.BackColor = System.Drawing.Color.PeachPuff;
+            this.grpListado.Controls.Add(this.button1);
+            this.grpListado.Controls.Add(this.chbeditar);
+            this.grpListado.Controls.Add(this.DgvTablaClientes);
+            this.grpListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpListado.Location = new System.Drawing.Point(61, 180);
+            this.grpListado.Name = "grpListado";
+            this.grpListado.Size = new System.Drawing.Size(1293, 490);
+            this.grpListado.TabIndex = 18;
+            this.grpListado.TabStop = false;
+            this.grpListado.Text = "Clientes ingresados";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.Location = new System.Drawing.Point(6, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 49);
+            this.button1.TabIndex = 19;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnListado
+            // 
+            this.btnListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListado.Location = new System.Drawing.Point(509, 622);
+            this.btnListado.Name = "btnListado";
+            this.btnListado.Size = new System.Drawing.Size(385, 54);
+            this.btnListado.TabIndex = 19;
+            this.btnListado.Text = "Mostrar clientes cargados";
+            this.btnListado.UseVisualStyleBackColor = true;
+            this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
             // 
             // MenuClientes
             // 
@@ -209,7 +251,7 @@
             this.BackgroundImage = global::Vista.Properties.Resources.MenuClientes1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
-            this.Controls.Add(this.chbeditar);
+            this.Controls.Add(this.grpListado);
             this.Controls.Add(this.CMBIVA);
             this.Controls.Add(this.TxtTelefonoCliente);
             this.Controls.Add(this.TxtCalleCliente);
@@ -218,16 +260,18 @@
             this.Controls.Add(this.TxtRazonSocialCliente);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnAgregarMeClientes);
-            this.Controls.Add(this.DgvTablaClientes);
             this.Controls.Add(this.TxtCuilCliente);
             this.Controls.Add(this.TxtLocalidadCliente);
             this.Controls.Add(this.TxtNombreCliente);
+            this.Controls.Add(this.btnListado);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuClientes";
             ((System.ComponentModel.ISupportInitialize)(this.DgvTablaClientes)).EndInit();
+            this.grpListado.ResumeLayout(false);
+            this.grpListado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +293,8 @@
         private System.Windows.Forms.CheckBox chbeditar;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.GroupBox grpListado;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnListado;
     }
 }
