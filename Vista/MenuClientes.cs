@@ -36,7 +36,7 @@ namespace Vista
             DgvTablaClientes.DataSource = Validarcliente.ObtenerClientes();
             DgvTablaClientes.AllowUserToAddRows = false;
             DgvTablaClientes.RowHeadersVisible = false;
-           
+            ConfigurarDataGridView();
             ConfiguraDataGrid(DgvTablaClientes);
             if (DgvTablaClientes.Columns.Contains("idCliente"))
             {
@@ -199,14 +199,14 @@ namespace Vista
                     int idcondicionUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["CondicionIva"].Value);
                     string NumeroCasaClienteUPD = filaSeleccionadaUPD.Cells["Numero de vivienda"].Value.ToString().Trim();
 
-                    int Condicionaenviar = idcondicionUPD == 0 ? idcondicion : idcondicionUPD;
+                    //int Condicionaenviar = idcondicionUPD == 0 ? idcondicion : idcondicionUPD;
 
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que querer continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultado == DialogResult.Yes)
                     {
 
-                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.ToUpper().Trim(), ApellidoClienteUPD.ToUpper().Trim(), RazonSocialClienteUpd.Trim(), Convert.ToInt32(CuilClienteUPD.Trim()), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()), Convert.ToInt32(TelefonoClienteUPD.Trim()), Condicionaenviar);
+                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.ToUpper().Trim(), ApellidoClienteUPD.ToUpper().Trim(), RazonSocialClienteUpd.Trim(), Convert.ToInt32(CuilClienteUPD.Trim()), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()), Convert.ToInt32(TelefonoClienteUPD.Trim()), idcondicionUPD);
                         Console.WriteLine("Cambio realizado.");
                         LimpiarTextBox();
                         

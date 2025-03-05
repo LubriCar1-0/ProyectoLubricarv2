@@ -111,18 +111,25 @@ namespace Vista
         }
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
-            if (DGVproductos.CurrentRow != null && int.TryParse(txtCantLubri.Text, out int cantidadLubriPuntos))
+            if(txtCantLubri.Text == "0")
             {
-                int idProducto = Convert.ToInt32(DGVproductos.CurrentRow.Cells["idProd"].Value);
-                ValidarLubriPuntos.InsertarPuntosAProducto(idProducto, cantidadLubriPuntos);
-
-                MessageBox.Show("Lubripuntos asignados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                CargarTablaLubrixProductos();
+                MessageBox.Show("Debe asignar una cantidad.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Seleccione un producto y cargue una cantidad válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (DGVproductos.CurrentRow != null && int.TryParse(txtCantLubri.Text, out int cantidadLubriPuntos))
+                {
+                    int idProducto = Convert.ToInt32(DGVproductos.CurrentRow.Cells["idProd"].Value);
+                    ValidarLubriPuntos.InsertarPuntosAProducto(idProducto, cantidadLubriPuntos);
+
+                    MessageBox.Show("Lubripuntos asignados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    CargarTablaLubrixProductos();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un producto y cargue una cantidad válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 

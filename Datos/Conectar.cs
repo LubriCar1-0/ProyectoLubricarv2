@@ -184,9 +184,9 @@ namespace Datos
             DateTime fechaHoraActual = DateTime.Now;
             conectar();
             comando.Connection = conexion;
-            comando.CommandText = "IngresaCategoria";
+            comando.CommandText = "IngresaCategoriaEMP";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NombreCat", nombreCat);
+            comando.Parameters.AddWithValue("@NombreCat", nombreCat); 
             comando.Parameters.AddWithValue("@PermisoCat", CodPerm);
             comando.Parameters.AddWithValue("@Descripcion", catedescripcion);
             comando.Parameters.AddWithValue("@ESTADO", Estado);
@@ -583,7 +583,7 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "IngresaCategoria";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@Nombre", nombreCat);
+            comando.Parameters.AddWithValue("@NombreProdCat", nombreCat);
             comando.Parameters.AddWithValue("@Descripcion", catedescripcion);
             comando.Parameters.AddWithValue("@Estado", estado);
             comando.Parameters.AddWithValue("@FechaCreacion", fechaHoraActual);

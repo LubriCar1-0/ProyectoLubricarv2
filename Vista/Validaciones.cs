@@ -199,7 +199,7 @@ namespace Vista
 
             foreach (var cliente in listaClientes)
             {
-                clientesProcesados.Add(cliente.IdCliente, $"{cliente.NombreCliente}{cliente.ApellidoCliente}");
+                clientesProcesados.Add(cliente.IdCliente, $"{cliente.NombreCliente}{","}{cliente.ApellidoCliente}");
             }
 
             return clientesProcesados;
