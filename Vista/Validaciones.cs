@@ -105,7 +105,7 @@ namespace Vista
             CategoriaEmpleado.ActualizarCategoriaEMP(IdCategoriaUPD, NombreCat, CodPerm, DescUPD);
         }
 
-        public static void CambiarEstadoEMP(int idCategoria, string ESTADO)
+        public static void CambiarEstadoEmpleados(int idCategoria, string ESTADO)
         {
             CategoriaEmpleado.ActualizarEstadoEMP(idCategoria, ESTADO);
         }

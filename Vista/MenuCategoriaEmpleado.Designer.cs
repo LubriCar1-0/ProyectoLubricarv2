@@ -58,7 +58,7 @@
             this.txbDescripcion.Location = new System.Drawing.Point(253, 344);
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
-            this.txbDescripcion.Size = new System.Drawing.Size(372, 83);
+            this.txbDescripcion.Size = new System.Drawing.Size(487, 92);
             this.txbDescripcion.TabIndex = 1;
             // 
             // txbCodPerm
@@ -77,9 +77,9 @@
             this.btnBorraCampos.FlatAppearance.BorderSize = 0;
             this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorraCampos.Location = new System.Drawing.Point(859, 665);
+            this.btnBorraCampos.Location = new System.Drawing.Point(921, 634);
             this.btnBorraCampos.Name = "btnBorraCampos";
-            this.btnBorraCampos.Size = new System.Drawing.Size(285, 39);
+            this.btnBorraCampos.Size = new System.Drawing.Size(215, 39);
             this.btnBorraCampos.TabIndex = 22;
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
@@ -91,7 +91,7 @@
             this.dgvCategoriasEmpleados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.CambiarEstado});
-            this.dgvCategoriasEmpleados.Location = new System.Drawing.Point(205, 433);
+            this.dgvCategoriasEmpleados.Location = new System.Drawing.Point(208, 454);
             this.dgvCategoriasEmpleados.Name = "dgvCategoriasEmpleados";
             this.dgvCategoriasEmpleados.Size = new System.Drawing.Size(939, 174);
             this.dgvCategoriasEmpleados.TabIndex = 23;
@@ -145,7 +145,7 @@
             this.chPermiteEditar.AutoSize = true;
             this.chPermiteEditar.BackColor = System.Drawing.Color.Transparent;
             this.chPermiteEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chPermiteEditar.Location = new System.Drawing.Point(909, 386);
+            this.chPermiteEditar.Location = new System.Drawing.Point(912, 407);
             this.chPermiteEditar.Name = "chPermiteEditar";
             this.chPermiteEditar.Size = new System.Drawing.Size(235, 41);
             this.chPermiteEditar.TabIndex = 25;

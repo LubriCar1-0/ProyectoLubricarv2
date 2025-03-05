@@ -271,12 +271,7 @@ namespace Vista
             }
 
         }
-        //private void CargarTablaCategoria()
-        //{
-        //    DGVProductos.DataSource = null;
-        //    DGVProductos.DataSource = ValidarProducto.TraeProductos();
-        //    DGVProductos.Columns["IdCategorias"].Visible = false;
-        //}
+        
         private void ConfigurarDataGridView()
         {
             var comboBoxColumn = new DataGridViewComboBoxColumn
@@ -314,7 +309,7 @@ namespace Vista
                 ConfiguraDataGridStyle(DGVProductos);
                 ConfigurarDataGridView();
                 Acomodartabla();
-                //DGVProductos.Columns["IdCategorias"].Visible = false;
+                
 
             }
             catch (Exception ex)

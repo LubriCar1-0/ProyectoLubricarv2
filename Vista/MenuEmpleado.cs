@@ -19,13 +19,12 @@ namespace Vista
             InitializeComponent();
             
             CargarCategorias();
-           
+            
             CargarEmpleados();
             DgvMenuEmpleado.ReadOnly = true;
-            DgvMenuEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DgvMenuEmpleado.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            
             chbEditar.CheckedChanged += chbEditar_CheckedChanged;
-            //DgvMenuEmpleado.CellClick += DgvMenuEmpleado_CellContentClick;
+            
 
         }
         private void CargarEmpleados()
@@ -38,6 +37,7 @@ namespace Vista
             DgvMenuEmpleado.AllowUserToAddRows = false;
             DgvMenuEmpleado.RowHeadersVisible = false;
             ConfiguraDataGrid(DgvMenuEmpleado);
+            Acomodartabla();
 
         }
         private void ConfiguraDataGrid(DataGridView dgv)
@@ -71,9 +71,10 @@ namespace Vista
             dgv.RowHeadersVisible = false; 
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.ScrollBars = ScrollBars.Both; 
+            dgv.ScrollBars = ScrollBars.Both;
+            DgvMenuEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DgvMenuEmpleado.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            
         }
         private void AplicarTrimDataGridView(DataGridView dgv)
         {
@@ -222,6 +223,9 @@ namespace Vista
 
         private void DgvMenuEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
             DataGridViewRow filaSeleccionada = DgvMenuEmpleado.Rows[e.RowIndex];
             int idTrabajador = Convert.ToInt32(filaSeleccionada.Cells["idTrabajador"].Value);
             int idCategoria = Convert.ToInt32(filaSeleccionada.Cells["idCategoria"].Value);
@@ -265,16 +269,14 @@ namespace Vista
                         CargarEmpleados();
                         ConfigurarDataGridView();
 
-                        //DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-                        //DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+                        
                     }
                     else if (resultado == DialogResult.No)
                     {
                         CargarEmpleados();
                         ConfigurarDataGridView();
 
-                        //DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-                        //DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+                        
                     }
                 }
             }
@@ -300,8 +302,7 @@ namespace Vista
                             CargarEmpleados();
                             ConfigurarDataGridView();
 
-                            //DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-                            //DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+                            
                         }
                         else if (Estado == "DES")
                         {
@@ -310,8 +311,7 @@ namespace Vista
                             CargarEmpleados();
                             ConfigurarDataGridView();
 
-                            //DgvMenuEmpleado.Columns["idCategoria"].Visible = false;
-                            //DgvMenuEmpleado.Columns["idTrabajador"].Visible = false;
+                            
                         }
                     }
                     else if (resultado == DialogResult.No)
@@ -321,7 +321,26 @@ namespace Vista
                 }
             }
         }
+        private void Acomodartabla()
+        {
+            DgvMenuEmpleado.RowHeadersVisible = false;
+            DgvMenuEmpleado.Columns["Editar"].DisplayIndex = 0;
+            DgvMenuEmpleado.Columns["Editar"].Width = 75;
+            DgvMenuEmpleado.Columns["Eliminar"].DisplayIndex = 1;
+            DgvMenuEmpleado.Columns["Eliminar"].Width = 120;
+            DgvMenuEmpleado.Columns["idTrabajador"].DisplayIndex = 2;
+            DgvMenuEmpleado.Columns["idCategoria"].DisplayIndex = 3;
+            DgvMenuEmpleado.Columns["NomTR"].DisplayIndex = 4;
+            DgvMenuEmpleado.Columns["ApeTR"].DisplayIndex = 5;
+            DgvMenuEmpleado.Columns["documentoTR"].DisplayIndex = 6;
+            DgvMenuEmpleado.Columns["contraseñaTR"].DisplayIndex = 7;
+            DgvMenuEmpleado.Columns["telefonoTR"].DisplayIndex = 8;
+            DgvMenuEmpleado.Columns["CategoriaColumn"].DisplayIndex = 9;
+            DgvMenuEmpleado.Columns["Estado"].DisplayIndex = 10;
+            
 
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
@@ -329,7 +348,9 @@ namespace Vista
 
         private void MenuEmpleado_Load(object sender, EventArgs e)
         {
-
+            Acomodartabla();
+            //DgvMenuEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //DgvMenuEmpleado.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
     }
 }

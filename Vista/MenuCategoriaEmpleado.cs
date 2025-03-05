@@ -100,6 +100,8 @@ namespace Vista
         }
         private void dgvCategoriasEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
             DataGridViewRow filaSeleccionada = dgvCategoriasEmpleados.Rows[e.RowIndex];
             int IdCategoria = Convert.ToInt32(filaSeleccionada.Cells["idCategoria"].Value);
             txbNomCat.Text = filaSeleccionada.Cells["NombreCat"].Value.ToString().Trim();
@@ -144,13 +146,13 @@ namespace Vista
 
                 if (Estado == "ACT")
                 {
-                    Validaciones.CambiarEstadoEMP(IdCategoriaUPD, "DES");
+                    Validaciones.CambiarEstadoEmpleados(IdCategoriaUPD, "DES");
                     MessageBox.Show("Estado Modificado.");
                     CargarTablaCategoriasEMP();
                 }
                 else if (Estado == "DES")
                 {
-                    Validaciones.CambiarEstadoEMP(IdCategoriaUPD, "ACT");
+                    Validaciones.CambiarEstadoEmpleados(IdCategoriaUPD, "ACT");
                     MessageBox.Show("Estado Modificado.");
                     CargarTablaCategoriasEMP();
                 }

@@ -152,7 +152,7 @@ namespace Datos
             conectar();
             comando.Parameters.Clear();
             comando.Connection = conexion;
-            comando.CommandText = "CambiarEstado";
+            comando.CommandText = "CambiarEstadoTR";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idTrabajador", idTrabajador);
