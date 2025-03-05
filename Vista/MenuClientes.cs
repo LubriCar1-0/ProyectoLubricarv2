@@ -171,6 +171,10 @@ namespace Vista
         
         private void DgvTablaClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
+            }
             DataGridViewRow filaSeleccionada = DgvTablaClientes.Rows[e.RowIndex];
             int idCliente = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
             TxtNombreCliente.Text = filaSeleccionada.Cells["Nombre"].Value.ToString().Trim();
@@ -199,7 +203,7 @@ namespace Vista
                     int idcondicionUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["CondicionIva"].Value);
                     string NumeroCasaClienteUPD = filaSeleccionadaUPD.Cells["Numero de vivienda"].Value.ToString().Trim();
 
-                    //int Condicionaenviar = idcondicionUPD == 0 ? idcondicion : idcondicionUPD;
+                    
 
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que querer continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -320,6 +324,11 @@ namespace Vista
         }
 
         private void MenuClientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpListado_Enter(object sender, EventArgs e)
         {
 
         }

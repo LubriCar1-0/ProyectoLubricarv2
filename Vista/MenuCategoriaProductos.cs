@@ -104,6 +104,10 @@ namespace Vista
         }
         private void DGVCategoriasProdc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
+            }
             DataGridViewRow filaSeleccionada = DGVCategoriasProdc.Rows[e.RowIndex];
             int IdCategoria = Convert.ToInt32(filaSeleccionada.Cells["IdCategorias"].Value);
             TxtNombreProducto.Text = filaSeleccionada.Cells["NombreCategoria"].Value.ToString().Trim();

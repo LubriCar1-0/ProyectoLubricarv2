@@ -219,6 +219,7 @@
             this.grpListado.TabIndex = 18;
             this.grpListado.TabStop = false;
             this.grpListado.Text = "Clientes ingresados";
+            this.grpListado.Enter += new System.EventHandler(this.grpListado_Enter);
             // 
             // button1
             // 
