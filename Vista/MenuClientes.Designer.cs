@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreCliente = new System.Windows.Forms.TextBox();
             this.TxtLocalidadCliente = new System.Windows.Forms.TextBox();
             this.TxtCuilCliente = new System.Windows.Forms.TextBox();
@@ -75,6 +75,7 @@
             this.TxtCuilCliente.Name = "TxtCuilCliente";
             this.TxtCuilCliente.Size = new System.Drawing.Size(234, 26);
             this.TxtCuilCliente.TabIndex = 3;
+            this.TxtCuilCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCuilCliente_KeyPress_1);
             // 
             // DgvTablaClientes
             // 
@@ -90,13 +91,13 @@
             // 
             // Editar
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle7;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Editar.HeaderText = "Editar";
             this.Editar.Name = "Editar";
@@ -105,13 +106,13 @@
             // 
             // Eliminar
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle8;
             this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Eliminar.HeaderText = "Estado";
             this.Eliminar.Name = "Eliminar";
@@ -167,6 +168,7 @@
             this.TxtNumCasaCliente.Name = "TxtNumCasaCliente";
             this.TxtNumCasaCliente.Size = new System.Drawing.Size(234, 26);
             this.TxtNumCasaCliente.TabIndex = 12;
+            this.TxtNumCasaCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumCasaCliente_KeyPress);
             // 
             // TxtCalleCliente
             // 
@@ -183,6 +185,7 @@
             this.TxtTelefonoCliente.Name = "TxtTelefonoCliente";
             this.TxtTelefonoCliente.Size = new System.Drawing.Size(234, 26);
             this.TxtTelefonoCliente.TabIndex = 14;
+            this.TxtTelefonoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefonoCliente_KeyPress);
             // 
             // CMBIVA
             // 
@@ -213,9 +216,9 @@
             this.grpListado.Controls.Add(this.chbeditar);
             this.grpListado.Controls.Add(this.DgvTablaClientes);
             this.grpListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpListado.Location = new System.Drawing.Point(61, 180);
+            this.grpListado.Location = new System.Drawing.Point(61, 308);
             this.grpListado.Name = "grpListado";
-            this.grpListado.Size = new System.Drawing.Size(1293, 490);
+            this.grpListado.Size = new System.Drawing.Size(1293, 362);
             this.grpListado.TabIndex = 18;
             this.grpListado.TabStop = false;
             this.grpListado.Text = "Clientes ingresados";

@@ -118,5 +118,55 @@ namespace Vista
         {
             Close();
         }
+
+        #region SoloNumeros
+        private void TxtMenor1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCantidad1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtMenor2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCantidad2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtMayor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCantidad3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

@@ -45,6 +45,7 @@
             this.txtFiltroClientes = new System.Windows.Forms.TextBox();
             this.DGVclientes = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtCantidadCanje = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblPuntosProdu = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.lblNombreProd = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtCantidadCanje = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVproductos)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -120,7 +120,7 @@
             // 
             // TxtFiltroProduc
             // 
-            this.TxtFiltroProduc.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtFiltroProduc.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtFiltroProduc.Location = new System.Drawing.Point(16, 72);
             this.TxtFiltroProduc.Multiline = true;
             this.TxtFiltroProduc.Name = "TxtFiltroProduc";
@@ -196,12 +196,13 @@
             // 
             // txtFiltroClientes
             // 
-            this.txtFiltroClientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFiltroClientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFiltroClientes.Location = new System.Drawing.Point(16, 72);
             this.txtFiltroClientes.Multiline = true;
             this.txtFiltroClientes.Name = "txtFiltroClientes";
             this.txtFiltroClientes.Size = new System.Drawing.Size(245, 33);
             this.txtFiltroClientes.TabIndex = 14;
+            this.txtFiltroClientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltroClientes_KeyPress);
             // 
             // DGVclientes
             // 
@@ -237,6 +238,16 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Canjear LubriPuntos";
+            // 
+            // txtCantidadCanje
+            // 
+            this.txtCantidadCanje.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidadCanje.Location = new System.Drawing.Point(465, 134);
+            this.txtCantidadCanje.Multiline = true;
+            this.txtCantidadCanje.Name = "txtCantidadCanje";
+            this.txtCantidadCanje.Size = new System.Drawing.Size(54, 45);
+            this.txtCantidadCanje.TabIndex = 50;
+            this.txtCantidadCanje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadCanje_KeyPress);
             // 
             // label7
             // 
@@ -381,15 +392,6 @@
             this.button1.TabIndex = 22;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtCantidadCanje
-            // 
-            this.txtCantidadCanje.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadCanje.Location = new System.Drawing.Point(465, 134);
-            this.txtCantidadCanje.Multiline = true;
-            this.txtCantidadCanje.Name = "txtCantidadCanje";
-            this.txtCantidadCanje.Size = new System.Drawing.Size(54, 45);
-            this.txtCantidadCanje.TabIndex = 50;
             // 
             // MenuCanjeoLubriPuntos
             // 

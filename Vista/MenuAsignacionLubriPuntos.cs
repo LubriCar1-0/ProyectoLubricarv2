@@ -234,5 +234,13 @@ namespace Vista
         {
             Close();    
         }
+
+        private void txtCantLubri_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

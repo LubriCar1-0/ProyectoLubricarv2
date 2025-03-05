@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVproductos = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TxtCodProducto = new System.Windows.Forms.TextBox();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.DGVproducxlubri = new System.Windows.Forms.DataGridView();
             this.CambiarEstado = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVproductos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,6 +84,19 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccionar Producto";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label4.Location = new System.Drawing.Point(12, 51);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(240, 20);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "Ingrese el codigo del producto:";
             // 
             // TxtCodProducto
             // 
@@ -141,6 +154,7 @@
             this.txtCantLubri.Name = "txtCantLubri";
             this.txtCantLubri.Size = new System.Drawing.Size(146, 35);
             this.txtCantLubri.TabIndex = 2;
+            this.txtCantLubri.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantLubri_KeyPress);
             // 
             // BtnConfirmar
             // 
@@ -255,19 +269,6 @@
             this.CambiarEstado.ReadOnly = true;
             this.CambiarEstado.Text = "Cambiar Estado";
             this.CambiarEstado.UseColumnTextForButtonValue = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label4.Location = new System.Drawing.Point(12, 51);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(240, 20);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "Ingrese el codigo del producto:";
             // 
             // MenuAsignacionLubriPuntos
             // 

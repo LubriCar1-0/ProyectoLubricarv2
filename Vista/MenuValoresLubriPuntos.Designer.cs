@@ -80,6 +80,7 @@
             this.TxtMenor1.Name = "TxtMenor1";
             this.TxtMenor1.Size = new System.Drawing.Size(100, 35);
             this.TxtMenor1.TabIndex = 1;
+            this.TxtMenor1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMenor1_KeyPress);
             // 
             // TxtMenor2
             // 
@@ -88,6 +89,7 @@
             this.TxtMenor2.Name = "TxtMenor2";
             this.TxtMenor2.Size = new System.Drawing.Size(100, 35);
             this.TxtMenor2.TabIndex = 4;
+            this.TxtMenor2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMenor2_KeyPress);
             // 
             // TxtMayor
             // 
@@ -96,6 +98,7 @@
             this.TxtMayor.Name = "TxtMayor";
             this.TxtMayor.Size = new System.Drawing.Size(100, 35);
             this.TxtMayor.TabIndex = 7;
+            this.TxtMayor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMayor_KeyPress);
             // 
             // label3
             // 
@@ -128,6 +131,7 @@
             this.TxtCantidad1.Name = "TxtCantidad1";
             this.TxtCantidad1.Size = new System.Drawing.Size(100, 35);
             this.TxtCantidad1.TabIndex = 2;
+            this.TxtCantidad1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad1_KeyPress);
             // 
             // TxtCantidad2
             // 
@@ -136,6 +140,7 @@
             this.TxtCantidad2.Name = "TxtCantidad2";
             this.TxtCantidad2.Size = new System.Drawing.Size(100, 35);
             this.TxtCantidad2.TabIndex = 5;
+            this.TxtCantidad2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad2_KeyPress);
             // 
             // TxtCantidad3
             // 
@@ -144,6 +149,7 @@
             this.TxtCantidad3.Name = "TxtCantidad3";
             this.TxtCantidad3.Size = new System.Drawing.Size(100, 35);
             this.TxtCantidad3.TabIndex = 8;
+            this.TxtCantidad3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantidad3_KeyPress);
             // 
             // BtnAsignacion1
             // 

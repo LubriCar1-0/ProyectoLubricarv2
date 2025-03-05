@@ -87,6 +87,7 @@
             this.TxtCuilEmpresa.Name = "TxtCuilEmpresa";
             this.TxtCuilEmpresa.Size = new System.Drawing.Size(201, 26);
             this.TxtCuilEmpresa.TabIndex = 12;
+            this.TxtCuilEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCuilEmpresa_KeyPress);
             // 
             // TxtDomicilio
             // 

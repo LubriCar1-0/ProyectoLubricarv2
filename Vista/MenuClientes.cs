@@ -277,31 +277,6 @@ namespace Vista
             TxtNumCasaCliente.Text = string.Empty;
         }
       
-        private void TxtCuilCliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
-            {
-                e.Handled = true; 
-            }
-        }
-
-        private void TxtNumCasaCliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
-            {
-                e.Handled = true; 
-            }
-        }
-        private void TxtTelefonoCliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-        }
 
         private void BtnVolver_Click(object sender, EventArgs e)
         {
@@ -331,6 +306,30 @@ namespace Vista
         private void grpListado_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtCuilCliente_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtNumCasaCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtTelefonoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
         }
     }
 }

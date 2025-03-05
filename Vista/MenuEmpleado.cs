@@ -399,5 +399,7 @@ namespace Vista
 
             CmbCategoriaEmple.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+       
     }
 }

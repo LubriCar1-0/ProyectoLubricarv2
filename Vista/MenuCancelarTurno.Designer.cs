@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRecargar = new System.Windows.Forms.Button();
             this.txtTelCliente = new System.Windows.Forms.TextBox();
             this.dgvTurnos = new System.Windows.Forms.DataGridView();
@@ -64,6 +64,7 @@
             this.txtTelCliente.Name = "txtTelCliente";
             this.txtTelCliente.Size = new System.Drawing.Size(468, 35);
             this.txtTelCliente.TabIndex = 11;
+            this.txtTelCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelCliente_KeyPress);
             // 
             // dgvTurnos
             // 
@@ -80,13 +81,13 @@
             // 
             // Cancelar
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Cancelar.DefaultCellStyle = dataGridViewCellStyle1;
             this.Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Cancelar.HeaderText = "Cancelar";
             this.Cancelar.Name = "Cancelar";

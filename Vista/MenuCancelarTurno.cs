@@ -222,5 +222,13 @@ namespace Vista
         {
 
         }
+
+        private void txtTelCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -57,5 +57,13 @@ namespace Vista
         {
 
         }
+
+        private void TxtCuilEmpresa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -125,6 +125,7 @@
             this.txtTelCliente.Name = "txtTelCliente";
             this.txtTelCliente.Size = new System.Drawing.Size(266, 35);
             this.txtTelCliente.TabIndex = 11;
+            this.txtTelCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelCliente_KeyPress);
             // 
             // btnBuscar
             // 

@@ -28,6 +28,7 @@ namespace Vista
         int IdCliente;
         int CantidadLubriPuntos;
         int CategoriaProducto;
+        int PuntosCliente;
 
         #region CargarTablas
         private void CargartablaClientes()
@@ -257,6 +258,13 @@ namespace Vista
             }
 
             int Valorfinal = CantidadLubriPuntos * cantidad;
+            int PuntosCliente = Convert.ToInt32(DGVclientes.SelectedRows[0].Cells["LubriPuntos"].Value);
+
+            if (Valorfinal > PuntosCliente)
+            {
+                MessageBox.Show("El cliente no tiene suficientes puntos para realizar el canje", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
@@ -286,8 +294,23 @@ namespace Vista
         {
             CargartablaClientes();
         }
+
         #endregion
 
+        private void txtFiltroClientes_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtCantidadCanje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
