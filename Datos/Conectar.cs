@@ -302,7 +302,7 @@ namespace Datos
 
         
 
-        public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA, string Estado)
+        public static void AgregarCliente(string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA, string Estado)
         {
             conectar();
             comando.Connection = conexion;
@@ -323,7 +323,7 @@ namespace Datos
             desconectar();
         }
 
-        public static void ActualizarCliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
+        public static void ActualizarCliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
             conectar();
             comando.Connection = conexion;
@@ -996,39 +996,20 @@ namespace Datos
             return dt;
         }
 
-        public int ObtenerIDCliente(int Telefono)
+        public DataTable TurnosFiltroActivos()
         {
-            int idCliente = -1; // Valor por defecto en caso de no encontrar resultados
             conectar();
             comando.Connection = conexion;
-            comando.CommandText = "ObtenerIDCliente";
+            comando.CommandText = "TurnosFiltroActivos";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
-            comando.Parameters.AddWithValue("@Telefono", Telefono);
             leer = comando.ExecuteReader();
-            if (leer.Read()) // Verifica si hay resultados
-            {
-                idCliente = leer.GetInt32(0); // Obtiene el primer valor del resultado (idCliente)
-            }
+            dt.Load(leer);
             leer.Close();
             desconectar();
-            return idCliente;
+            return dt;
         }
-        //public DataTable TurnosFiltroPorPatente(int idCliente, string patente, string fecha)
-        //{
-        //    conectar();
-        //    comando.Connection = conexion;
-        //    comando.CommandText = "FiltrarTurnosPorPatente";
-        //    comando.CommandType = CommandType.StoredProcedure;
-        //    comando.Parameters.Clear();
-        //    comando.Parameters.AddWithValue("@idCliente", idCliente != -1 ? (object)idCliente : DBNull.Value);
-        //    comando.Parameters.AddWithValue("@patente", !string.IsNullOrEmpty(patente) ? (object)patente : DBNull.Value);
-        //    comando.Parameters.AddWithValue("@fecha", !string.IsNullOrEmpty(fecha) ? (object)fecha : DBNull.Value);
-        //    leer = comando.ExecuteReader();
-        //    dt.Load(leer);
-        //    desconectar();
-        //    return dt;
-        //}
+
         public static void UpdateEstadoTurno(int idturno, string estado)
         {
             conectar();
@@ -1060,7 +1041,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public DataTable VentaClientesFiltro(int dni)
+        public DataTable VentaClientesFiltro(string dni)
         {
             conectar();
             comando.Connection = conexion;
@@ -1685,7 +1666,7 @@ namespace Datos
             desconectar();
         }
 
-        public DataTable Clientesconfiltro(int dni)
+        public DataTable Clientesconfiltro(string dni)
         {
 
             conectar();

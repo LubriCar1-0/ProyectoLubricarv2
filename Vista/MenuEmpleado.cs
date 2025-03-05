@@ -349,8 +349,55 @@ namespace Vista
         private void MenuEmpleado_Load(object sender, EventArgs e)
         {
             Acomodartabla();
-            //DgvMenuEmpleado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //DgvMenuEmpleado.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            AplicarRestricciones();
+
+
+        }
+        private void SoloLetras(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true; 
+            }
+        }
+
+
+        private void SoloNumeros(object sender, KeyPressEventArgs e)
+        {
+            
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+                return;
+            }
+
+            
+            TextBox txt = sender as TextBox;
+            if (txt != null && txt.Tag != null)
+            {
+                int maxLength;
+                if (int.TryParse(txt.Tag.ToString(), out maxLength))
+                {
+                    if (txt.Text.Length >= maxLength && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void AplicarRestricciones()
+        {
+            TxtNombreEmpleado.KeyPress += SoloLetras;
+            TxtApellidoEmpleado.KeyPress += SoloLetras;
+            TxtDniEmpleado.KeyPress += SoloNumeros;
+            TxtCelularEmpleado.KeyPress += SoloNumeros;
+
+            
+            TxtDniEmpleado.Tag = 8;      
+            TxtCelularEmpleado.Tag = 10;  
+
+            CmbCategoriaEmple.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

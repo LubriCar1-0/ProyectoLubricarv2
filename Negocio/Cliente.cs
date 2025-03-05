@@ -45,7 +45,7 @@ namespace Negocio
 
             return condiciones;
         }
-        public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
+        public static void CargadeClientes(string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
             Conectar capaDatos = new Conectar();
             DataTable TablaClientes = capaDatos.BuscarClientes();
@@ -54,9 +54,9 @@ namespace Negocio
 
             foreach (DataRow Fila in TablaClientes.Rows)
             {
-                string Clavecliente = Fila["Cuit/Cuil"].ToString();
-                int clave = Convert.ToInt32(Clavecliente);
-                if (clave == ClaveCliente)
+                string Claveclientes = Fila["Cuit/Cuil"].ToString();
+                string clave = Convert.ToString(Claveclientes);
+                if (Claveclientes == ClaveCliente)
                 {
                     clienteencontrado = true;
                     throw new Exception("Ya existe un cliente con ese documento");
@@ -73,7 +73,7 @@ namespace Negocio
             }
 
         }
-        public static void Actulizacliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
+        public static void Actulizacliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
             Conectar.ActualizarCliente(idcliente, NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA);
         }

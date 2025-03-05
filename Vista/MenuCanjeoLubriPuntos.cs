@@ -50,7 +50,7 @@ namespace Vista
             }
         }
 
-        private void CargarClientesconfiltro(int dni)
+        private void CargarClientesconfiltro(string dni)
         {
             try
             {
@@ -222,7 +222,7 @@ namespace Vista
         }
         private void BtnBuscarCliente_Click(object sender, EventArgs e)
         {
-            CargarClientesconfiltro(Convert.ToInt32(txtFiltroClientes));
+            CargarClientesconfiltro(txtFiltroClientes.Text);
         }
 
         private void BtnConfirmar_Click(object sender, EventArgs e)

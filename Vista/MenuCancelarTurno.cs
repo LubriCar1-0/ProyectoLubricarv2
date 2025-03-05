@@ -22,7 +22,7 @@ namespace Vista
             dtpFecha.CustomFormat = " ";
             //dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             //dgvTurnos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
+            dgvTurnos.DataSource = validarTurnos.BuscarTurnosActivos();
             dgvTurnos.RowHeadersVisible = false;
 
         }
@@ -66,7 +66,7 @@ namespace Vista
             try
             {
                 dgvTurnos.DataSource = null;
-                dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
+                dgvTurnos.DataSource = validarTurnos.BuscarTurnosActivos();
                 dgvTurnos.RowHeadersVisible = false;
                 dgvTurnos.AllowUserToAddRows = false;
 
@@ -216,6 +216,11 @@ namespace Vista
         private void BtnVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void grbFiltros_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

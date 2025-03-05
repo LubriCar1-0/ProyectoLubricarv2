@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Datos;
+using Negocio;
 
 namespace Vista
 {
@@ -17,7 +19,40 @@ namespace Vista
             InitializeComponent();
         }
         #region Llamados
-        
+        public bool LlamarCancelCrearTurnos()
+        {
+            int IdCategoria = Empleados.idCategoria;
+
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+
+                bool permiso = false;
+                return permiso;
+            }
+
+        }
+        public bool LlamarTurnosOrden()
+        {
+            int IdCategoria = Empleados.idCategoria;
+            int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5 || ChequeaPermiso == 3)
+            {
+                bool permiso = true;
+                return permiso;
+            }
+            else
+            {
+
+                bool permiso = false;
+                return permiso;
+            }
+        }
 
 
 
@@ -26,20 +61,49 @@ namespace Vista
         #endregion
         private void BtnCrearTurno_Click(object sender, EventArgs e)
         {
-            MenuCrearTurnos LlamarMenuCrearTurnos = new MenuCrearTurnos();
-            LlamarMenuCrearTurnos.ShowDialog();
+            bool permiso = LlamarCancelCrearTurnos();
+
+            if (permiso == true)
+            {
+                MenuCrearTurnos LlamarMenuCrearTurnos = new MenuCrearTurnos();
+                LlamarMenuCrearTurnos.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void BtnTurnosMeTurnos_Click(object sender, EventArgs e)
         {
-            MenuTurnosTrabajos PantallaTurnos = new MenuTurnosTrabajos();
-            PantallaTurnos.ShowDialog();
+            bool permiso = LlamarTurnosOrden();
+
+            if (permiso == true)
+            {
+                MenuTurnosTrabajos PantallaTurnos = new MenuTurnosTrabajos();
+                PantallaTurnos.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void BtnCancelacionTurno_Click(object sender, EventArgs e)
         {
-            MenuCancelarTurno PantallaCancelarTurnos = new MenuCancelarTurno();  
-            PantallaCancelarTurnos.ShowDialog();
+            bool permiso = LlamarCancelCrearTurnos();
+            if (permiso == true)
+            {
+                MenuCancelarTurno PantallaCancelarTurnos = new MenuCancelarTurno();
+                PantallaCancelarTurnos.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No tiene permiso para acceder a esta pantalla", "Permiso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)

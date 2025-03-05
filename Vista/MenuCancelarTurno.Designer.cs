@@ -143,11 +143,12 @@
             this.grbFiltros.Controls.Add(this.btnBuscar);
             this.grbFiltros.Controls.Add(this.btnRecargar);
             this.grbFiltros.Controls.Add(this.lblTelefonoCliente);
-            this.grbFiltros.Location = new System.Drawing.Point(233, 171);
+            this.grbFiltros.Location = new System.Drawing.Point(215, 171);
             this.grbFiltros.Name = "grbFiltros";
-            this.grbFiltros.Size = new System.Drawing.Size(942, 595);
+            this.grbFiltros.Size = new System.Drawing.Size(942, 568);
             this.grbFiltros.TabIndex = 27;
             this.grbFiltros.TabStop = false;
+            this.grbFiltros.Enter += new System.EventHandler(this.grbFiltros_Enter);
             // 
             // txtPatente
             // 

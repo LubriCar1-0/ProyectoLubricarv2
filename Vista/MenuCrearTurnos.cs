@@ -330,7 +330,8 @@ namespace Vista
         {
             CbxSelectCL.Text = string.Empty;
             CbxSelectVH.Text = string.Empty;
-
+            CbxSelectCL.Enabled = true;
+            CbxSelectVH.Enabled = true;
             dtpSelecionarDia.Format = DateTimePickerFormat.Short;
             dtpSelecionarDia.Value = DateTime.Now; 
 

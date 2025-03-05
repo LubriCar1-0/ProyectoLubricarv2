@@ -132,7 +132,7 @@ namespace Vista
                 MessageBox.Show($"Error al cargar los productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void CargaClientesFiltro(int dni)
+        private void CargaClientesFiltro(string dni)
         {
             try
             {
@@ -261,8 +261,8 @@ namespace Vista
             }
             else
             {
-                int dni = Convert.ToInt32(txtCliente.Text);
-                CargaClientesFiltro(dni);
+                //int dni = Convert.ToInt32(txtCliente.Text);
+                CargaClientesFiltro(txtCliente.Text.Trim());
             }
 
 

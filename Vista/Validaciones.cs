@@ -135,7 +135,7 @@ namespace Vista
     #region cliente
     public class Validarcliente : Clientes
     {
-        public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
+        public static void AgregarUnCliente(string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
             Clientes.CargadeClientes(NomCliente, ApeCliente, RazSocCliente, ClaveCliente, LocalidadCL, CalleCliente, NumeracionCl, Telefonocl, CondicionIVA);
         }
@@ -159,7 +159,7 @@ namespace Vista
             DataTable TablaClientes = capaDatos.BuscarClientes();
             return TablaClientes;
         }
-        public static void Modificacioncliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, int ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
+        public static void Modificacioncliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)
         {
             try
             {
@@ -396,7 +396,14 @@ namespace Vista
         public static DataTable BuscarTurnos()
         {
             Conectar CapaDatos = new Conectar();
-            DataTable TablasTurnos = CapaDatos.TurnosActivos();
+            DataTable TablasTurnos = CapaDatos.TurnosActivos(); 
+            return TablasTurnos;
+
+        }
+        public static DataTable BuscarTurnosActivos()
+        {
+            Conectar CapaDatos = new Conectar();
+            DataTable TablasTurnos = CapaDatos.TurnosFiltroActivos(); 
             return TablasTurnos;
 
         }
@@ -487,7 +494,7 @@ namespace Vista
 
         }
 
-        public static DataTable VentaClientesFiltro(int dni)
+        public static DataTable VentaClientesFiltro(string dni)
         {
             Conectar CapaDatos = new Conectar();
             DataTable TablasDeLaBD = CapaDatos.VentaClientesFiltro(dni);
@@ -659,7 +666,7 @@ namespace Vista
             DataTable TablaClientes = capaDatos.BuscarClientes();
             return TablaClientes;
         }
-        public static DataTable Clientesconfiltro(int dni)
+        public static DataTable Clientesconfiltro(string dni)
         {
             DataTable TablasDeLaBD = new DataTable();
             Conectar CapaDatos = new Conectar();

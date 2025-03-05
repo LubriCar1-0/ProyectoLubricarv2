@@ -54,7 +54,7 @@ namespace Vista
             int IdCategoria = Empleados.idCategoria;
 
             int ChequeaPermiso = Conectar.VerificaPermiso(IdCategoria);
-            if (ChequeaPermiso == 9 || ChequeaPermiso == 5)
+            if (ChequeaPermiso == 9 || ChequeaPermiso == 5 || ChequeaPermiso == 3)
             {
                 bool permiso = true;
                 return permiso;
