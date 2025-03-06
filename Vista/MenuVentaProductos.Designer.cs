@@ -834,13 +834,13 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaVentaDeProductos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.grpProductos);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.RDProductos);
             this.Controls.Add(this.RDCliente);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.grpPresupuesto);
             this.Controls.Add(this.GRPClientes);
-            this.Controls.Add(this.grpProductos);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

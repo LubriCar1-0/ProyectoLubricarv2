@@ -34,7 +34,7 @@ namespace Vista
             txtLitros.Enabled = false;
             cmbCategoria.Enabled = true;
             _idTrabajador = idTrabajador;
-
+            
 
         }
         private void MenuAgregarProducto_Load(object sender, EventArgs e)
@@ -107,21 +107,28 @@ namespace Vista
             string CodigoProducto = txtcodigoProducto.Text.Trim();
             double litro = Convert.ToDouble(txtLitros.Text.Trim());
             double litroMin = Convert.ToDouble(txtLitrosMinimos.Text.Trim());
-            ValorCategoria = IdCategorias;
-
-            int Chequea = Conectar.BuscaDuplicadoProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria);
-            if (Chequea == 0)
-            {       
-                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, litro, litroMin,cantidadmin, "ACT", _idTrabajador);
-                    MessageBox.Show("Producto agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    LimpiaCampos();
-                    Cargatabla();
-                    DGVProductos.Columns["IdProd"].Visible = false;
-
+            ValorCategoria = IdCategoria;
+            if (TxtNombreProducto.Text == string.Empty && TxtMarcaProducto.Text == string.Empty && ValorCategoria == 0 && cantidad == 0 && cantidadmin == 0 && cantidadmin == 0 && precioVenta == 0.0 && CodigoProducto == string.Empty && litro == 0.0 && litroMin==0.0)
+            {
+                MessageBox.Show("Debe llenar los campos para poder ingresar un producto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Hay un duplicado del producto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int Chequea = Conectar.BuscaDuplicadoProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria);
+                if (Chequea == 0)
+                {
+                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, litro, litroMin, cantidadmin, "ACT", _idTrabajador);
+                    MessageBox.Show("Producto agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    LimpiaCampos();
+                    Cargatabla();
+
+                    DGVProductos.Columns["IdProd"].Visible = false;
+                    DGVProductos.Columns["IdCategorias"].Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Hay un duplicado del producto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
         private void DGVProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -151,7 +158,7 @@ namespace Vista
                         ValidarProducto.UpdateProductos(IdProdUPD, Nombreprd.ToUpper().Trim(), marcaeprd.ToUpper().Trim(), categoria, codigoproducto.ToUpper().Trim(), descripcion.ToUpper().Trim(), cantidad, preciolista, precioventa, litraje, litrajeMin, cantidadmin, _idTrabajador);
                         Console.WriteLine("Cambio realizado.");
                         Cargatabla();
-                        CargarCategorias();
+                        
                         ConfigurarDataGridView();
                         Acomodartabla();
                         DGVProductos.Columns["IdCategorias"].Visible = false;
@@ -161,7 +168,7 @@ namespace Vista
                     else if (resultado == DialogResult.No)
                     {
                         Cargatabla();
-                        CargarCategorias();
+                        
                         ConfigurarDataGridView();
                         Acomodartabla();
                         DGVProductos.Columns["IdCategorias"].Visible = false;
@@ -221,7 +228,7 @@ namespace Vista
                         Cargatabla();
                         ConfigurarDataGridView();
                         Acomodartabla();
-
+                        DGVProductos.Columns["IdCategorias"].Visible = false;
                         DGVProductos.Columns["IdProd"].Visible = false;
                     }
                 }
@@ -241,13 +248,14 @@ namespace Vista
         }
 
 
-        private int IdCategorias;
+        private int IdCategoria;
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbCategoria.SelectedItem is KeyValuePair<int, string> categoriaSelect)
             {
-                IdCategorias = categoriaSelect.Key;
-                VerificaLiquido(IdCategorias);
+
+                IdCategoria = categoriaSelect.Key;
+                VerificaLiquido(IdCategoria);
 
             }
         }

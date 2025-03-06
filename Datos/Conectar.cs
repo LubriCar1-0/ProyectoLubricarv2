@@ -583,7 +583,7 @@ namespace Datos
             comando.Connection = conexion;
             comando.CommandText = "IngresaCategoria";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@NombreProdCat", nombreCat);
+            comando.Parameters.AddWithValue("@NombreCat", nombreCat);
             comando.Parameters.AddWithValue("@Descripcion", catedescripcion);
             comando.Parameters.AddWithValue("@Estado", estado);
             comando.Parameters.AddWithValue("@FechaCreacion", fechaHoraActual);

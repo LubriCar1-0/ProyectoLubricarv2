@@ -186,7 +186,7 @@ namespace Vista
 
         private void btnRecargar_Click(object sender, EventArgs e)
         {
-
+            CargatablaVentas();
         }
     }
 }

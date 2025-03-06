@@ -134,18 +134,18 @@ namespace Vista
 
         private void BtnAgregarMeClientes_Click(object sender, EventArgs e)
         {
-            if (idCondicion == 0)
+            if (idCondicion == 0 || TxtNombreCliente.Text == string.Empty || TxtapellidoCliente.Text == string.Empty  || TxtCuilCliente.Text == string.Empty || TxtLocalidadCliente.Text == string.Empty || TxtCalleCliente.Text == string.Empty || TxtNumCasaCliente.Text == string.Empty || TxtTelefonoCliente.Text == string.Empty)
             {
-                MessageBox.Show("Seleccione una condicion válida.");
-                return;
+                MessageBox.Show("Debe ingresar datos en los campos.");
+                
             }
-
-
-
-            Validarcliente.AgregarUnCliente(TxtNombreCliente.Text.ToUpper().Trim(), TxtapellidoCliente.Text.ToUpper().Trim(), TxtRazonSocialCliente.Text.Trim(), TxtCuilCliente.Text.Trim(), TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), Convert.ToInt32(TxtNumCasaCliente.Text.Trim()), Convert.ToInt32(TxtTelefonoCliente.Text.Trim()),   idCondicion);
-            MessageBox.Show("Se registro correctamente");
-            LimpiarTextBox();
-            CargarClientes();
+            else
+            {
+                Validarcliente.AgregarUnCliente(TxtNombreCliente.Text.ToUpper().Trim(), TxtapellidoCliente.Text.ToUpper().Trim(), TxtRazonSocialCliente.Text.Trim(), TxtCuilCliente.Text.Trim(), TxtLocalidadCliente.Text.Trim(), TxtCalleCliente.Text.Trim(), Convert.ToInt32(TxtNumCasaCliente.Text.Trim()), Convert.ToInt32(TxtTelefonoCliente.Text.Trim()), idCondicion);
+                MessageBox.Show("Se registro correctamente");
+                LimpiarTextBox();
+                CargarClientes();
+            }           
         }
 
         private void CMBIVA_SelectedIndexChanged(object sender, EventArgs e)
@@ -193,9 +193,9 @@ namespace Vista
                 {
                     DataGridViewRow filaSeleccionadaUPD = DgvTablaClientes.Rows[e.RowIndex];
                     int idClienteUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCliente"].Value);
-                    string NombreClienteUPD = filaSeleccionadaUPD.Cells["Nombre"].Value.ToString().Trim();
-                    string ApellidoClienteUPD = filaSeleccionadaUPD.Cells["Apellido"].Value.ToString().Trim();
-                    string RazonSocialClienteUpd = filaSeleccionadaUPD.Cells["Razon Social"].Value.ToString().Trim();
+                    string NombreClienteUPD = filaSeleccionadaUPD.Cells["Nombre"].Value.ToString().TrimEnd();
+                    string ApellidoClienteUPD = filaSeleccionadaUPD.Cells["Apellido"].Value.ToString().TrimEnd();
+                    string RazonSocialClienteUpd = filaSeleccionadaUPD.Cells["Razon Social"].Value.ToString().TrimEnd();
                     string CuilClienteUPD = filaSeleccionadaUPD.Cells["Cuit/Cuil"].Value.ToString().Trim();
                     string LocalidadClienteUPD = filaSeleccionadaUPD.Cells["Localidad"].Value.ToString().Trim();
                     string CalleClienteUPD = filaSeleccionadaUPD.Cells["Calle"].Value.ToString().Trim();
@@ -210,7 +210,7 @@ namespace Vista
                     if (resultado == DialogResult.Yes)
                     {
 
-                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.ToUpper().Trim(), ApellidoClienteUPD.ToUpper().Trim(), RazonSocialClienteUpd.Trim(), CuilClienteUPD.Trim(), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()), Convert.ToInt32(TelefonoClienteUPD.Trim()), idcondicionUPD);
+                        Validarcliente.Modificacioncliente(idClienteUPD, NombreClienteUPD.ToUpper().TrimEnd(), ApellidoClienteUPD.ToUpper().Trim(), RazonSocialClienteUpd.Trim(), CuilClienteUPD.Trim(), LocalidadClienteUPD, CalleClienteUPD, Convert.ToInt32(NumeroCasaClienteUPD.Trim()), Convert.ToInt32(TelefonoClienteUPD.Trim()), idcondicionUPD);
                         Console.WriteLine("Cambio realizado.");
                         LimpiarTextBox();
                         

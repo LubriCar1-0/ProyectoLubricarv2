@@ -86,6 +86,7 @@
             this.btnRecargar.Size = new System.Drawing.Size(59, 48);
             this.btnRecargar.TabIndex = 27;
             this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
             // btnBuscar
             // 
@@ -224,6 +225,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuHistorialVentServ";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuHistorialVentServ";
             this.Load += new System.EventHandler(this.MenuHistorialVentServ_Load);
             this.grpLista.ResumeLayout(false);

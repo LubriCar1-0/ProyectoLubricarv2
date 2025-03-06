@@ -174,5 +174,10 @@ namespace Vista
         {
             Close();
         }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            CargatablaVentasServ();
+        }
     }
 }

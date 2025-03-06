@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreProducto = new System.Windows.Forms.TextBox();
             this.TxtMarcaProducto = new System.Windows.Forms.TextBox();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
@@ -119,6 +119,7 @@
             this.TxtPrecioList.Name = "TxtPrecioList";
             this.TxtPrecioList.Size = new System.Drawing.Size(217, 35);
             this.TxtPrecioList.TabIndex = 7;
+            this.TxtPrecioList.Text = "0.0";
             this.TxtPrecioList.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtPrecioList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioList_KeyPress);
             // 
@@ -129,6 +130,7 @@
             this.txtPrecioVent.Name = "txtPrecioVent";
             this.txtPrecioVent.Size = new System.Drawing.Size(217, 35);
             this.txtPrecioVent.TabIndex = 8;
+            this.txtPrecioVent.Text = "0.0";
             this.txtPrecioVent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrecioVent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVent_KeyPress);
             // 
@@ -231,13 +233,13 @@
             // 
             // Editar
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Editar.HeaderText = "";
             this.Editar.MinimumWidth = 8;
@@ -249,13 +251,13 @@
             // 
             // CambiarEstado
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle2;
             this.CambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CambiarEstado.HeaderText = "";
             this.CambiarEstado.MinimumWidth = 8;
