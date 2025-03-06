@@ -223,7 +223,12 @@ namespace Vista
                     int idVehiculoUPD = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
                     int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
                     string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
-
+                    TxtModeloVehiculos.Enabled = false;
+                    TxtMarcaVehiculos.Enabled = false;
+                    TxtAñoVehiculos.Enabled = false;
+                    TxtPatenteVehiculo.Enabled = false;
+                    TxtKilometrajeVehiculos.Enabled = false;
+                    CbxClienteMeVehiculos.Enabled = false;
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
@@ -272,6 +277,13 @@ namespace Vista
             CbxClienteMeVehiculos.SelectedIndex = -1;
             idCliente = 0;
             TxtKilometrajeVehiculos.Text = string.Empty;
+
+            TxtModeloVehiculos.Enabled = true;
+            TxtMarcaVehiculos.Enabled = true;
+            TxtAñoVehiculos.Enabled = true;
+            TxtPatenteVehiculo.Enabled = true;
+            TxtKilometrajeVehiculos.Enabled = true;
+            CbxClienteMeVehiculos.Enabled = true;
 
         }
 

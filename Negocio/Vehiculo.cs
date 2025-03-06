@@ -56,16 +56,21 @@ namespace Negocio
             {
                 string Estado = "ACT";
                 Conectar.AgregarVehiculo(id, Modelo, Marca, año, Patente, Kilometraje, Estado);
-                //agregar a la bitacora
+                string detalle = "Carga de un Vehiculo";
+                string tabla = "Vehiculo";
+                Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, tabla);
             }
         }
+        
 
         public static void ModificarVehiculo(int idVehiculo, int idCliente, string modelo, string marca, int año, string patente, int kilometraje)
         {
             try
             {
                 Conectar.ActualizarVehiculo(idVehiculo, idCliente, modelo, marca, año, patente, kilometraje);
-                // agregar a la bitacora 
+                string detalle = "Modificacion de un Vehiculo";
+                string tabla = "Vehiculo";
+                Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, tabla);
             }
             catch (Exception ex)
             {
@@ -76,7 +81,9 @@ namespace Negocio
         {
             try
             {
-
+                string detalle = "Cambio de estado de un Vehiculo";
+                string tabla = "Vehiculo";
+                Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, tabla);
                 Conectar.EstadoVehiculo(idVehiculo, Estado);
             }
             catch (Exception ex)

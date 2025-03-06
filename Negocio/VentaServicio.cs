@@ -53,6 +53,10 @@ namespace Negocio
 
 
             Conectar.CargaLubriPuntos(idCliente, lubripuntos);
+
+            string detalle = "Carga de una venta de servicio";
+            string tabla = "VentaServicio";
+            Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, tabla);
         }
 
 

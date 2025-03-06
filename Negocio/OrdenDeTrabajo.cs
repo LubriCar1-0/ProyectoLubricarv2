@@ -43,13 +43,19 @@ namespace Negocio
 
             }
             string estado = "INICIADO";
+            string detalle = "Creacion de Orden De Trabajo";
+            string Tabla = "OrdenTrabajo";
             Conectar.CrearOrdenTrabajo(NombreCompleto, dia, descripcion, trabajadorId, idCliente, idVehiculo, estado, idTurno);
             Conectar.UpdateEstadoTurno(idTurno, estado);
+            Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, Tabla);
         }
-        public static void CambioDeEstado (int idOrden, string estado)
+        public static void CambioDeEstado (int idOrden, string estado, string descripcion)
         {
             Conectar capadatos = new Conectar();
-            Conectar.UpdateEstado(idOrden, estado);
+            Conectar.UpdateEstado(idOrden, estado, descripcion);
+            string detalle = "Cambio de estado de la Orden De Trabajo";
+            string Tabla = "OrdenTrabajo";
+            Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, Tabla);
         }
 
         #region Lista 
@@ -115,6 +121,9 @@ namespace Negocio
             {
                 Conectar.AgregaListProds(item.idOrdenTrabajo, item.FilaProducto, item.Producto, item.PrecioVenta, item.Cantidad, item.PrecioTotalProd, item.IdProducto);
                 Conectar.RestaCantidad(item.IdProducto, item.Cantidad);
+                string detalle = "Creacion de Orden De Trabajo";
+                string Tabla = "OrdenTrabajo";
+                Conectar.AgregarBitacora (Empleados.IdTrabajador, Tabla, detalle);
             }
         }
 
@@ -150,33 +159,7 @@ namespace Negocio
         }
         #endregion
 
-        #region Cargar Mano De Obra 
-        //public static void AgregarManoDeObra(int idOrden, double costoManoDeObra)
-        //{
-        //    int lastFila = (ListDeProductos != null && ListDeProductos.Any())
-        //                   ? ListDeProductos.Max(item => item.FilaProducto)
-        //                   : 0;
-        //    int nuevaFila = lastFila + 1;
-
-        //    // Crear el registro para mano de obra
-        //    OrdenDeTrabajo manoObra = new OrdenDeTrabajo
-        //    {
-        //        idOrdenTrabajo = idOrden,
-        //        IdProducto = Convert.ToInt32(null),            
-        //        FilaProducto = nuevaFila,   
-        //        Producto = "Mano de Obra",
-        //        PrecioVenta = 0,            
-        //        Cantidad = 1,               
-        //        PrecioTotalProd = costoManoDeObra  
-        //    };
-
-           
-        //    ListDeProductos.Add(manoObra);
-
-     
-        //    Conectar.AgregaListProds( manoObra.idOrdenTrabajo,  manoObra.FilaProducto,  manoObra.Producto,  manoObra.PrecioVenta, manoObra.Cantidad, manoObra.PrecioTotalProd,  manoObra.IdProducto);
-        //}
-        #endregion
+      
 
     }
 

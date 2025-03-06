@@ -1517,7 +1517,7 @@ namespace Datos
             desconectar();
             return dt;
         }
-        public static void UpdateEstado(int idOrden, string estado)
+        public static void UpdateEstado(int idOrden, string estado, string descripcion)
         {
             conectar();
             comando.Connection = conexion;
@@ -1525,6 +1525,7 @@ namespace Datos
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@idOrdenTrab", idOrden);
+            comando.Parameters.AddWithValue("@descripcion", descripcion);
             comando.Parameters.AddWithValue("@estado", estado);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();

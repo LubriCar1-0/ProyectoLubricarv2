@@ -474,9 +474,9 @@ namespace Vista
             return TablasOrdenes;
 
         }
-        public static void CambiarEstado(int idOrden, string estado)
+        public static void CambiarEstado(int idOrden, string estado, string descripcion)
         {
-            OrdenDeTrabajo.CambioDeEstado(idOrden, estado);
+            OrdenDeTrabajo.CambioDeEstado(idOrden, estado, descripcion);
         }
 
 

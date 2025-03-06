@@ -86,6 +86,9 @@ namespace Negocio
             {
                 string estado = "ACTIVO";
                 capaDatos.InsertarTurno(dia, horaTimeSpan, idCliente, idVehiculo, descripcion, estado);
+                string detalle = "Carga de un turno";
+                string tabla = "Turno";
+                Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, tabla);
             }
         }
 
@@ -94,7 +97,10 @@ namespace Negocio
             try
             {
                 Conectar.ActualizarTurno(idTurno, idVehiculoUPD, idClienteUPD, fechaupd, horaupd, DescUPD);
-                // agregar a la bitacora 
+                string detalle = "Modificacion de un turno";
+                string tabla = "Turno";
+                Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, tabla);
+            
             }
             catch (Exception ex)
             {
@@ -105,7 +111,10 @@ namespace Negocio
         {
             try
             {
-
+                string detalle = "Cancelacion de un turno";
+                string tabla = "Turno";
+                Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, tabla);
+            
                 Conectar.CancelarTurno(idTurno, Estado);
             }
             catch (Exception ex)

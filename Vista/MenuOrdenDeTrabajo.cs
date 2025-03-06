@@ -47,7 +47,7 @@ namespace Vista
             lblTEXTOlitros.Visible = false;
             lblIdCat.Visible = false;
             printDocument = new PrintDocument();
-            TxbDescripcion.ReadOnly = true;
+            
             txbEmpleado.ReadOnly = true;
             txbPatente.ReadOnly = true;
             txbVehiculo.ReadOnly = true;
@@ -339,8 +339,6 @@ namespace Vista
                 OrdenDeTrabajo.CargaList(idOrdenTrab);
                 VentaProducto.LimpiaLista();
                 CargaTablaLista();
-                //dgvVentas.Columns["idCliente"].Visible = false;
-                //dgvVentas.Columns["IdProducto"].Visible = false;
                 CargatablaProductos();
 
             }
@@ -426,7 +424,7 @@ namespace Vista
             {
                 estado = "FINALIZADO";
                 MessageBox.Show("La orden se ha finalizado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ValidarOrdenDeTrabajo.CambiarEstado(idOrdenTrab,estado);
+                ValidarOrdenDeTrabajo.CambiarEstado(idOrdenTrab,estado, TxbDescripcion.Text.Trim());
 
             }
 
