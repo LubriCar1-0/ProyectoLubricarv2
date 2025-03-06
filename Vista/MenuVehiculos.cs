@@ -183,7 +183,12 @@ namespace Vista
             TxtAñoVehiculos.Text = filaSeleccionada.Cells["añoVH"].Value.ToString();
             TxtPatenteVehiculo.Text = filaSeleccionada.Cells["patenteVH"].Value.ToString();
             TxtKilometrajeVehiculos.Text = filaSeleccionada.Cells["kilometrajeVH"].Value.ToString();
-
+            TxtModeloVehiculos.Enabled = false;
+            TxtMarcaVehiculos.Enabled = false;
+            TxtAñoVehiculos.Enabled = false;
+            TxtPatenteVehiculo.Enabled = false;
+            TxtKilometrajeVehiculos.Enabled = false;
+            CbxClienteMeVehiculos.Enabled = false;
             if (DgvTablaMeVehiculos.Columns[e.ColumnIndex].Name == "Editar")
             {
                 if (e.RowIndex >= 0)
@@ -223,12 +228,7 @@ namespace Vista
                     int idVehiculoUPD = Convert.ToInt32(filaSeleccionada.Cells["idVehiculo"].Value);
                     int idClienteUPD = Convert.ToInt32(filaSeleccionada.Cells["idCliente"].Value);
                     string Estado = filaSeleccionada.Cells["Estado"].Value.ToString().Trim();
-                    TxtModeloVehiculos.Enabled = false;
-                    TxtMarcaVehiculos.Enabled = false;
-                    TxtAñoVehiculos.Enabled = false;
-                    TxtPatenteVehiculo.Enabled = false;
-                    TxtKilometrajeVehiculos.Enabled = false;
-                    CbxClienteMeVehiculos.Enabled = false;
+                    
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
@@ -256,7 +256,7 @@ namespace Vista
                     }
                     else if (resultado == DialogResult.No)
                     {
-                        CargarDatosEnGrid(); ;
+                        CargarDatosEnGrid(); 
                     }
                     
                 }
@@ -326,6 +326,11 @@ namespace Vista
             {
                 e.Handled = true;
             }
+        }
+
+        private void TxtAñoVehiculos_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -509,6 +509,11 @@ namespace Vista
             txtcodigoProducto.Text= string.Empty;
 
         }
+
+        private void txtPrecioVent_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }    
 
 }

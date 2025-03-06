@@ -70,7 +70,7 @@
             this.BtnAgregar.Location = new System.Drawing.Point(19, 280);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(201, 44);
-            this.BtnAgregar.TabIndex = 16;
+            this.BtnAgregar.TabIndex = 8;
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
@@ -80,7 +80,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(412, 130);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(279, 26);
-            this.dtpFecha.TabIndex = 21;
+            this.dtpFecha.TabIndex = 1;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // dgvTurnos
@@ -124,7 +124,7 @@
             this.txtTelCliente.Location = new System.Drawing.Point(412, 165);
             this.txtTelCliente.Name = "txtTelCliente";
             this.txtTelCliente.Size = new System.Drawing.Size(266, 35);
-            this.txtTelCliente.TabIndex = 11;
+            this.txtTelCliente.TabIndex = 2;
             this.txtTelCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelCliente_KeyPress);
             // 
             // btnBuscar
@@ -135,7 +135,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(1065, 206);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
-            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.TabIndex = 5;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -147,7 +147,7 @@
             this.btnRecargar.Location = new System.Drawing.Point(1065, 260);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
-            this.btnRecargar.TabIndex = 13;
+            this.btnRecargar.TabIndex = 5;
             this.btnRecargar.UseVisualStyleBackColor = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click_1);
             // 
@@ -172,7 +172,7 @@
             this.BtnVolver.Location = new System.Drawing.Point(195, 126);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
-            this.BtnVolver.TabIndex = 22;
+            this.BtnVolver.TabIndex = 10;
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
@@ -183,7 +183,7 @@
             this.txtPatente.Location = new System.Drawing.Point(793, 165);
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(266, 35);
-            this.txtPatente.TabIndex = 23;
+            this.txtPatente.TabIndex = 3;
             // 
             // grpProductos
             // 
@@ -301,7 +301,7 @@
             this.btnVisualizarOrden.Location = new System.Drawing.Point(276, 280);
             this.btnVisualizarOrden.Name = "btnVisualizarOrden";
             this.btnVisualizarOrden.Size = new System.Drawing.Size(245, 44);
-            this.btnVisualizarOrden.TabIndex = 26;
+            this.btnVisualizarOrden.TabIndex = 9;
             this.btnVisualizarOrden.UseVisualStyleBackColor = true;
             this.btnVisualizarOrden.Click += new System.EventHandler(this.btnVisualizarOrden_Click);
             // 
@@ -320,7 +320,7 @@
             this.cmbTrabajador.Location = new System.Drawing.Point(306, 170);
             this.cmbTrabajador.Name = "cmbTrabajador";
             this.cmbTrabajador.Size = new System.Drawing.Size(208, 44);
-            this.cmbTrabajador.TabIndex = 25;
+            this.cmbTrabajador.TabIndex = 6;
             this.cmbTrabajador.SelectedIndexChanged += new System.EventHandler(this.cmbTrabajador_SelectedIndexChanged);
             // 
             // textBox3
@@ -350,7 +350,7 @@
             this.TxbDescripcion.Multiline = true;
             this.TxbDescripcion.Name = "TxbDescripcion";
             this.TxbDescripcion.Size = new System.Drawing.Size(285, 99);
-            this.TxbDescripcion.TabIndex = 14;
+            this.TxbDescripcion.TabIndex = 7;
             // 
             // DtpFechaCargada
             // 

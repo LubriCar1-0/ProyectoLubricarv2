@@ -18,14 +18,16 @@ namespace Vista
         public PantallaMenuPrincipal()
         {
             InitializeComponent();
-            this.Load += PantallaMenuPrincipal_Load; 
+            //VerificarNotificacionStock();
+            this.Load += PantallaMenuPrincipal_Load;
+            BtnNotificacion.Visible = false;
         }
 
         private void PantallaMenuPrincipal_Load(object sender, EventArgs e)
         {
-            VerificarNotificacionStock();
+            
             lblUsuario.Text = Empleados.NombreTrabajador;
-            BtnNotificacion.Visible = false;
+            
         }
 
         #region Llamados 
@@ -287,37 +289,40 @@ namespace Vista
 
             }
         }
-        private void VerificarNotificacionStock()
-        {
-            try
-            {
-                DataTable dt = ValidarProducto.ObtenerProductosFaltantes();
-
-                // Verificar si la tabla tiene datos
-                if (dt != null && dt.Rows.Count > 0)
-                {
-                    BtnNotificacion.Visible = true;
-                    Console.WriteLine("Hay productos faltantes. Se muestra la notificación.");
-                }
-                else
-                {
-                    BtnNotificacion.Visible = false;
-                    Console.WriteLine("No hay productos faltantes. Se oculta la notificación.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error en VerificarNotificacionStock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         //private void VerificarNotificacionStock()
         //{
-        //    DataTable dt = ValidarProducto.ObtenerProductosFaltantes();
-        //    // Si existe al menos un producto en falta, se muestra la notificación
-        //    if ( dt.Rows.Count > 0)
+        //    try
+        //    {
+        //        DataTable dt = ValidarProducto.ObtenerProductosFaltantes();
+
+        //        // Verificar si la tabla tiene datos
+        //        if (dt != null && dt.Rows.Count > 0)
+        //        {
+        //            BtnNotificacion.Visible = true;
+        //            Console.WriteLine("Hay productos faltantes. Se muestra la notificación.");
+        //        }
+        //        else
+        //        {
+        //            BtnNotificacion.Visible = false;
+        //            Console.WriteLine("No hay productos faltantes. Se oculta la notificación.");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error en VerificarNotificacionStock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
+
+        //public void VerificarNotificacionStock()
+        //{
+        //    DataTable dt = ValidarProducto.ObtenerProductosFaltantes();        
+        //    if (dt.Rows.Count > 0)
         //    {
         //        BtnNotificacion.Visible = true;
+        //    }
+        //    else
+        //    {
+        //        BtnNotificacion.Visible = false;
         //    }
         //}
 

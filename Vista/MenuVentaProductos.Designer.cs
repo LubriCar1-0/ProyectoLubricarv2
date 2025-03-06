@@ -106,7 +106,7 @@
             this.BtnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(78, 45);
-            this.BtnVolver.TabIndex = 4;
+            this.BtnVolver.TabIndex = 11;
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
@@ -184,7 +184,7 @@
             this.cmbCategoriaPrd.Location = new System.Drawing.Point(119, 48);
             this.cmbCategoriaPrd.Name = "cmbCategoriaPrd";
             this.cmbCategoriaPrd.Size = new System.Drawing.Size(218, 33);
-            this.cmbCategoriaPrd.TabIndex = 13;
+            this.cmbCategoriaPrd.TabIndex = 1;
             this.cmbCategoriaPrd.Text = "seleccionar categoria";
             this.cmbCategoriaPrd.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriaPrd_SelectedIndexChanged);
             // 
@@ -220,7 +220,7 @@
             this.txtCodigoProd.Location = new System.Drawing.Point(433, 46);
             this.txtCodigoProd.Name = "txtCodigoProd";
             this.txtCodigoProd.Size = new System.Drawing.Size(90, 35);
-            this.txtCodigoProd.TabIndex = 16;
+            this.txtCodigoProd.TabIndex = 2;
             // 
             // label6
             // 
@@ -378,7 +378,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(187, 135);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(85, 35);
-            this.txtCantidad.TabIndex = 34;
+            this.txtCantidad.TabIndex = 6;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // lblTEXTOlitros
@@ -414,7 +414,7 @@
             this.btnagregalista.Location = new System.Drawing.Point(424, 112);
             this.btnagregalista.Name = "btnagregalista";
             this.btnagregalista.Size = new System.Drawing.Size(154, 56);
-            this.btnagregalista.TabIndex = 25;
+            this.btnagregalista.TabIndex = 7;
             this.btnagregalista.Text = "Agregar";
             this.btnagregalista.UseVisualStyleBackColor = true;
             this.btnagregalista.Click += new System.EventHandler(this.btnagregalista_Click);
@@ -440,7 +440,7 @@
             this.btnRecargarProd.Location = new System.Drawing.Point(493, 93);
             this.btnRecargarProd.Name = "btnRecargarProd";
             this.btnRecargarProd.Size = new System.Drawing.Size(54, 48);
-            this.btnRecargarProd.TabIndex = 31;
+            this.btnRecargarProd.TabIndex = 5;
             this.btnRecargarProd.UseVisualStyleBackColor = false;
             this.btnRecargarProd.Click += new System.EventHandler(this.btnRecargarProd_Click);
             // 
@@ -452,7 +452,7 @@
             this.btnBuscarProd.Location = new System.Drawing.Point(438, 96);
             this.btnBuscarProd.Name = "btnBuscarProd";
             this.btnBuscarProd.Size = new System.Drawing.Size(49, 43);
-            this.btnBuscarProd.TabIndex = 14;
+            this.btnBuscarProd.TabIndex = 4;
             this.btnBuscarProd.UseVisualStyleBackColor = false;
             this.btnBuscarProd.Click += new System.EventHandler(this.btnBuscarProd_Click);
             // 
@@ -462,7 +462,7 @@
             this.txtNombreProd.Location = new System.Drawing.Point(105, 106);
             this.txtNombreProd.Name = "txtNombreProd";
             this.txtNombreProd.Size = new System.Drawing.Size(311, 35);
-            this.txtNombreProd.TabIndex = 30;
+            this.txtNombreProd.TabIndex = 3;
             // 
             // label21
             // 
@@ -567,7 +567,7 @@
             this.btnPresupuesto.Location = new System.Drawing.Point(12, 389);
             this.btnPresupuesto.Name = "btnPresupuesto";
             this.btnPresupuesto.Size = new System.Drawing.Size(259, 35);
-            this.btnPresupuesto.TabIndex = 22;
+            this.btnPresupuesto.TabIndex = 8;
             this.btnPresupuesto.Text = "Imprimir Presupuesto";
             this.btnPresupuesto.UseVisualStyleBackColor = true;
             this.btnPresupuesto.Click += new System.EventHandler(this.btnPresupuesto_Click);
@@ -579,7 +579,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(416, 389);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(113, 35);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -591,7 +591,7 @@
             this.btnCargaVenta.Location = new System.Drawing.Point(279, 389);
             this.btnCargaVenta.Name = "btnCargaVenta";
             this.btnCargaVenta.Size = new System.Drawing.Size(131, 35);
-            this.btnCargaVenta.TabIndex = 20;
+            this.btnCargaVenta.TabIndex = 9;
             this.btnCargaVenta.Text = "Confirmar";
             this.btnCargaVenta.UseVisualStyleBackColor = true;
             this.btnCargaVenta.Click += new System.EventHandler(this.btnCargaVenta_Click);

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreProducto = new System.Windows.Forms.TextBox();
             this.TxtMarcaProducto = new System.Windows.Forms.TextBox();
             this.TxtCantidad = new System.Windows.Forms.TextBox();
@@ -97,7 +97,7 @@
             this.TxtDescripcion.Multiline = true;
             this.TxtDescripcion.Name = "TxtDescripcion";
             this.TxtDescripcion.Size = new System.Drawing.Size(574, 190);
-            this.TxtDescripcion.TabIndex = 10;
+            this.TxtDescripcion.TabIndex = 11;
             // 
             // btnAgregar
             // 
@@ -108,7 +108,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(944, 625);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(157, 63);
-            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.TabIndex = 12;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -118,7 +118,7 @@
             this.TxtPrecioList.Location = new System.Drawing.Point(241, 471);
             this.TxtPrecioList.Name = "TxtPrecioList";
             this.TxtPrecioList.Size = new System.Drawing.Size(217, 35);
-            this.TxtPrecioList.TabIndex = 7;
+            this.TxtPrecioList.TabIndex = 9;
             this.TxtPrecioList.Text = "0.0";
             this.TxtPrecioList.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtPrecioList.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrecioList_KeyPress);
@@ -129,9 +129,10 @@
             this.txtPrecioVent.Location = new System.Drawing.Point(573, 471);
             this.txtPrecioVent.Name = "txtPrecioVent";
             this.txtPrecioVent.Size = new System.Drawing.Size(217, 35);
-            this.txtPrecioVent.TabIndex = 8;
+            this.txtPrecioVent.TabIndex = 10;
             this.txtPrecioVent.Text = "0.0";
             this.txtPrecioVent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPrecioVent.TextChanged += new System.EventHandler(this.txtPrecioVent_TextChanged);
             this.txtPrecioVent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVent_KeyPress);
             // 
             // txtLitros
@@ -140,7 +141,7 @@
             this.txtLitros.Location = new System.Drawing.Point(241, 392);
             this.txtLitros.Name = "txtLitros";
             this.txtLitros.Size = new System.Drawing.Size(217, 35);
-            this.txtLitros.TabIndex = 6;
+            this.txtLitros.TabIndex = 7;
             this.txtLitros.Text = "0.0";
             this.txtLitros.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLitros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLitros_KeyPress);
@@ -155,7 +156,7 @@
             this.button1.Location = new System.Drawing.Point(187, 123);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 52);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 13;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -165,7 +166,7 @@
             this.txtcodigoProducto.Location = new System.Drawing.Point(904, 301);
             this.txtcodigoProducto.Name = "txtcodigoProducto";
             this.txtcodigoProducto.Size = new System.Drawing.Size(217, 35);
-            this.txtcodigoProducto.TabIndex = 9;
+            this.txtcodigoProducto.TabIndex = 6;
             this.txtcodigoProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chPermiteEditar
@@ -213,7 +214,7 @@
             this.txtLitrosMinimos.Location = new System.Drawing.Point(573, 392);
             this.txtLitrosMinimos.Name = "txtLitrosMinimos";
             this.txtLitrosMinimos.Size = new System.Drawing.Size(217, 35);
-            this.txtLitrosMinimos.TabIndex = 23;
+            this.txtLitrosMinimos.TabIndex = 8;
             this.txtLitrosMinimos.Text = "0.0";
             this.txtLitrosMinimos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -233,13 +234,13 @@
             // 
             // Editar
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle3;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Editar.HeaderText = "";
             this.Editar.MinimumWidth = 8;
@@ -251,13 +252,13 @@
             // 
             // CambiarEstado
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle4;
             this.CambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CambiarEstado.HeaderText = "";
             this.CambiarEstado.MinimumWidth = 8;

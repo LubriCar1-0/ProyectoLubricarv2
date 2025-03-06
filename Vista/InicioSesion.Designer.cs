@@ -41,7 +41,7 @@
             this.BtnCerrar.Location = new System.Drawing.Point(472, 416);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(100, 30);
-            this.BtnCerrar.TabIndex = 12;
+            this.BtnCerrar.TabIndex = 4;
             this.BtnCerrar.Text = "Cerrar";
             this.BtnCerrar.UseVisualStyleBackColor = true;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
@@ -52,7 +52,7 @@
             this.BtnIngresar.Location = new System.Drawing.Point(314, 416);
             this.BtnIngresar.Name = "BtnIngresar";
             this.BtnIngresar.Size = new System.Drawing.Size(100, 30);
-            this.BtnIngresar.TabIndex = 11;
+            this.BtnIngresar.TabIndex = 3;
             this.BtnIngresar.Text = "Ingresar";
             this.BtnIngresar.UseVisualStyleBackColor = true;
             this.BtnIngresar.Click += new System.EventHandler(this.BtnIngresar_Click);
@@ -65,7 +65,7 @@
             this.TbxContra.Location = new System.Drawing.Point(360, 337);
             this.TbxContra.Name = "TbxContra";
             this.TbxContra.Size = new System.Drawing.Size(156, 35);
-            this.TbxContra.TabIndex = 10;
+            this.TbxContra.TabIndex = 2;
             // 
             // TbxDocumento
             // 
@@ -75,7 +75,7 @@
             this.TbxDocumento.Location = new System.Drawing.Point(360, 218);
             this.TbxDocumento.Name = "TbxDocumento";
             this.TbxDocumento.Size = new System.Drawing.Size(156, 35);
-            this.TbxDocumento.TabIndex = 9;
+            this.TbxDocumento.TabIndex = 1;
             // 
             // InicioSesion
             // 

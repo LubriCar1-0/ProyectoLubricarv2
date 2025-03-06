@@ -54,7 +54,7 @@
             this.BtnAgregarMeVehiculos.Location = new System.Drawing.Point(610, 713);
             this.BtnAgregarMeVehiculos.Name = "BtnAgregarMeVehiculos";
             this.BtnAgregarMeVehiculos.Size = new System.Drawing.Size(125, 43);
-            this.BtnAgregarMeVehiculos.TabIndex = 4;
+            this.BtnAgregarMeVehiculos.TabIndex = 7;
             this.BtnAgregarMeVehiculos.UseVisualStyleBackColor = true;
             this.BtnAgregarMeVehiculos.Click += new System.EventHandler(this.BtnAgregarMeVehiculos_Click);
             // 
@@ -109,7 +109,7 @@
             this.CbxClienteMeVehiculos.Location = new System.Drawing.Point(310, 297);
             this.CbxClienteMeVehiculos.Name = "CbxClienteMeVehiculos";
             this.CbxClienteMeVehiculos.Size = new System.Drawing.Size(234, 28);
-            this.CbxClienteMeVehiculos.TabIndex = 8;
+            this.CbxClienteMeVehiculos.TabIndex = 1;
             this.CbxClienteMeVehiculos.SelectedIndexChanged += new System.EventHandler(this.CbxClienteMeVehiculos_SelectedIndexChanged);
             // 
             // TxtMarcaVehiculos
@@ -118,7 +118,7 @@
             this.TxtMarcaVehiculos.Location = new System.Drawing.Point(310, 376);
             this.TxtMarcaVehiculos.Name = "TxtMarcaVehiculos";
             this.TxtMarcaVehiculos.Size = new System.Drawing.Size(234, 26);
-            this.TxtMarcaVehiculos.TabIndex = 9;
+            this.TxtMarcaVehiculos.TabIndex = 3;
             this.TxtMarcaVehiculos.TextChanged += new System.EventHandler(this.TxtMarcaVehiculos_TextChanged);
             // 
             // TxtModeloVehiculos
@@ -127,7 +127,7 @@
             this.TxtModeloVehiculos.Location = new System.Drawing.Point(792, 297);
             this.TxtModeloVehiculos.Name = "TxtModeloVehiculos";
             this.TxtModeloVehiculos.Size = new System.Drawing.Size(234, 26);
-            this.TxtModeloVehiculos.TabIndex = 10;
+            this.TxtModeloVehiculos.TabIndex = 2;
             // 
             // TxtPatenteVehiculo
             // 
@@ -135,7 +135,7 @@
             this.TxtPatenteVehiculo.Location = new System.Drawing.Point(310, 451);
             this.TxtPatenteVehiculo.Name = "TxtPatenteVehiculo";
             this.TxtPatenteVehiculo.Size = new System.Drawing.Size(234, 26);
-            this.TxtPatenteVehiculo.TabIndex = 11;
+            this.TxtPatenteVehiculo.TabIndex = 5;
             // 
             // TxtAñoVehiculos
             // 
@@ -143,7 +143,8 @@
             this.TxtAñoVehiculos.Location = new System.Drawing.Point(792, 378);
             this.TxtAñoVehiculos.Name = "TxtAñoVehiculos";
             this.TxtAñoVehiculos.Size = new System.Drawing.Size(234, 26);
-            this.TxtAñoVehiculos.TabIndex = 12;
+            this.TxtAñoVehiculos.TabIndex = 4;
+            this.TxtAñoVehiculos.TextChanged += new System.EventHandler(this.TxtAñoVehiculos_TextChanged);
             this.TxtAñoVehiculos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtAñoVehiculos_KeyPress);
             // 
             // TxtKilometrajeVehiculos
@@ -152,7 +153,7 @@
             this.TxtKilometrajeVehiculos.Location = new System.Drawing.Point(792, 453);
             this.TxtKilometrajeVehiculos.Name = "TxtKilometrajeVehiculos";
             this.TxtKilometrajeVehiculos.Size = new System.Drawing.Size(234, 26);
-            this.TxtKilometrajeVehiculos.TabIndex = 13;
+            this.TxtKilometrajeVehiculos.TabIndex = 6;
             this.TxtKilometrajeVehiculos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtKilometrajeVehiculos_KeyPress);
             // 
             // BtnVolver
@@ -164,7 +165,7 @@
             this.BtnVolver.Location = new System.Drawing.Point(200, 149);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
-            this.BtnVolver.TabIndex = 14;
+            this.BtnVolver.TabIndex = 9;
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
@@ -191,7 +192,7 @@
             this.btnBorraCampos.Location = new System.Drawing.Point(970, 713);
             this.btnBorraCampos.Name = "btnBorraCampos";
             this.btnBorraCampos.Size = new System.Drawing.Size(139, 30);
-            this.btnBorraCampos.TabIndex = 22;
+            this.btnBorraCampos.TabIndex = 8;
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);

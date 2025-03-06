@@ -52,7 +52,7 @@
             this.TxtNombreEmpleado.Location = new System.Drawing.Point(339, 198);
             this.TxtNombreEmpleado.Name = "TxtNombreEmpleado";
             this.TxtNombreEmpleado.Size = new System.Drawing.Size(243, 34);
-            this.TxtNombreEmpleado.TabIndex = 0;
+            this.TxtNombreEmpleado.TabIndex = 1;
             // 
             // TxtApellidoEmpleado
             // 
@@ -60,7 +60,7 @@
             this.TxtApellidoEmpleado.Location = new System.Drawing.Point(813, 198);
             this.TxtApellidoEmpleado.Name = "TxtApellidoEmpleado";
             this.TxtApellidoEmpleado.Size = new System.Drawing.Size(243, 34);
-            this.TxtApellidoEmpleado.TabIndex = 1;
+            this.TxtApellidoEmpleado.TabIndex = 2;
             // 
             // TxtDniEmpleado
             // 
@@ -68,8 +68,7 @@
             this.TxtDniEmpleado.Location = new System.Drawing.Point(339, 274);
             this.TxtDniEmpleado.Name = "TxtDniEmpleado";
             this.TxtDniEmpleado.Size = new System.Drawing.Size(243, 34);
-            this.TxtDniEmpleado.TabIndex = 2;
-            
+            this.TxtDniEmpleado.TabIndex = 3;
             // 
             // TxtCelularEmpleado
             // 
@@ -77,8 +76,9 @@
             this.TxtCelularEmpleado.Location = new System.Drawing.Point(339, 362);
             this.TxtCelularEmpleado.Name = "TxtCelularEmpleado";
             this.TxtCelularEmpleado.Size = new System.Drawing.Size(243, 34);
-            this.TxtCelularEmpleado.TabIndex = 3;
-            
+            this.TxtCelularEmpleado.TabIndex = 5;
+            this.TxtCelularEmpleado.TextChanged += new System.EventHandler(this.TxtCelularEmpleado_TextChanged);
+            this.TxtCelularEmpleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCelularEmpleado_KeyPress);
             // 
             // CmbCategoriaEmple
             // 
@@ -87,7 +87,7 @@
             this.CmbCategoriaEmple.Location = new System.Drawing.Point(813, 362);
             this.CmbCategoriaEmple.Name = "CmbCategoriaEmple";
             this.CmbCategoriaEmple.Size = new System.Drawing.Size(243, 36);
-            this.CmbCategoriaEmple.TabIndex = 4;
+            this.CmbCategoriaEmple.TabIndex = 6;
             this.CmbCategoriaEmple.SelectedIndexChanged += new System.EventHandler(this.CmbCategoriaEmple_SelectedIndexChanged);
             // 
             // BtnAgregarMeEmpleado
@@ -98,7 +98,7 @@
             this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(375, 700);
             this.BtnAgregarMeEmpleado.Name = "BtnAgregarMeEmpleado";
             this.BtnAgregarMeEmpleado.Size = new System.Drawing.Size(129, 43);
-            this.BtnAgregarMeEmpleado.TabIndex = 8;
+            this.BtnAgregarMeEmpleado.TabIndex = 7;
             this.BtnAgregarMeEmpleado.UseVisualStyleBackColor = true;
             this.BtnAgregarMeEmpleado.Click += new System.EventHandler(this.BtnAgregarMeEmpleado_Click);
             // 
@@ -109,7 +109,7 @@
             this.txtContraseña.MaxLength = 8;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(243, 34);
-            this.txtContraseña.TabIndex = 11;
+            this.txtContraseña.TabIndex = 4;
             // 
             // button1
             // 
@@ -120,7 +120,7 @@
             this.button1.Location = new System.Drawing.Point(190, 123);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 57);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -146,7 +146,7 @@
             this.btnBorraCampos.Location = new System.Drawing.Point(880, 713);
             this.btnBorraCampos.Name = "btnBorraCampos";
             this.btnBorraCampos.Size = new System.Drawing.Size(176, 30);
-            this.btnBorraCampos.TabIndex = 23;
+            this.btnBorraCampos.TabIndex = 8;
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);

@@ -102,7 +102,7 @@
             this.btnRecargarProduc.Location = new System.Drawing.Point(370, 57);
             this.btnRecargarProduc.Name = "btnRecargarProduc";
             this.btnRecargarProduc.Size = new System.Drawing.Size(54, 48);
-            this.btnRecargarProduc.TabIndex = 21;
+            this.btnRecargarProduc.TabIndex = 6;
             this.btnRecargarProduc.UseVisualStyleBackColor = false;
             this.btnRecargarProduc.Click += new System.EventHandler(this.btnRecargarProduc_Click);
             // 
@@ -114,7 +114,7 @@
             this.btnBuscarProduc.Location = new System.Drawing.Point(289, 57);
             this.btnBuscarProduc.Name = "btnBuscarProduc";
             this.btnBuscarProduc.Size = new System.Drawing.Size(54, 48);
-            this.btnBuscarProduc.TabIndex = 19;
+            this.btnBuscarProduc.TabIndex = 5;
             this.btnBuscarProduc.UseVisualStyleBackColor = false;
             this.btnBuscarProduc.Click += new System.EventHandler(this.btnBuscarProduc_Click);
             // 
@@ -125,7 +125,7 @@
             this.TxtFiltroProduc.Multiline = true;
             this.TxtFiltroProduc.Name = "TxtFiltroProduc";
             this.TxtFiltroProduc.Size = new System.Drawing.Size(245, 33);
-            this.TxtFiltroProduc.TabIndex = 14;
+            this.TxtFiltroProduc.TabIndex = 4;
             // 
             // DGVproductos
             // 
@@ -178,7 +178,7 @@
             this.BtnRecargarCliente.Location = new System.Drawing.Point(367, 61);
             this.BtnRecargarCliente.Name = "BtnRecargarCliente";
             this.BtnRecargarCliente.Size = new System.Drawing.Size(54, 48);
-            this.BtnRecargarCliente.TabIndex = 21;
+            this.BtnRecargarCliente.TabIndex = 3;
             this.BtnRecargarCliente.UseVisualStyleBackColor = false;
             this.BtnRecargarCliente.Click += new System.EventHandler(this.BtnRecargarCliente_Click);
             // 
@@ -190,7 +190,7 @@
             this.BtnBuscarCliente.Location = new System.Drawing.Point(283, 61);
             this.BtnBuscarCliente.Name = "BtnBuscarCliente";
             this.BtnBuscarCliente.Size = new System.Drawing.Size(54, 48);
-            this.BtnBuscarCliente.TabIndex = 19;
+            this.BtnBuscarCliente.TabIndex = 2;
             this.BtnBuscarCliente.UseVisualStyleBackColor = false;
             this.BtnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
@@ -201,7 +201,7 @@
             this.txtFiltroClientes.Multiline = true;
             this.txtFiltroClientes.Name = "txtFiltroClientes";
             this.txtFiltroClientes.Size = new System.Drawing.Size(245, 33);
-            this.txtFiltroClientes.TabIndex = 14;
+            this.txtFiltroClientes.TabIndex = 1;
             this.txtFiltroClientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltroClientes_KeyPress);
             // 
             // DGVclientes
@@ -247,7 +247,7 @@
             this.txtCantidadCanje.Multiline = true;
             this.txtCantidadCanje.Name = "txtCantidadCanje";
             this.txtCantidadCanje.Size = new System.Drawing.Size(54, 45);
-            this.txtCantidadCanje.TabIndex = 50;
+            this.txtCantidadCanje.TabIndex = 7;
             this.txtCantidadCanje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadCanje_KeyPress);
             // 
             // label7
@@ -349,7 +349,7 @@
             this.BtnConfirmar.Location = new System.Drawing.Point(537, 132);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(161, 42);
-            this.BtnConfirmar.TabIndex = 39;
+            this.BtnConfirmar.TabIndex = 8;
             this.BtnConfirmar.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BtnConfirmar.UseVisualStyleBackColor = true;
             this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
@@ -390,7 +390,7 @@
             this.button1.Location = new System.Drawing.Point(186, 127);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(58, 52);
-            this.button1.TabIndex = 22;
+            this.button1.TabIndex = 9;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

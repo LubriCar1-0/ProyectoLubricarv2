@@ -67,7 +67,7 @@
             this.cmbTrabajador.Location = new System.Drawing.Point(243, 102);
             this.cmbTrabajador.Name = "cmbTrabajador";
             this.cmbTrabajador.Size = new System.Drawing.Size(539, 21);
-            this.cmbTrabajador.TabIndex = 22;
+            this.cmbTrabajador.TabIndex = 2;
             this.cmbTrabajador.SelectedIndexChanged += new System.EventHandler(this.cmbTrabajador_SelectedIndexChanged);
             // 
             // dtpFecha
@@ -76,7 +76,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(243, 170);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(539, 26);
-            this.dtpFecha.TabIndex = 21;
+            this.dtpFecha.TabIndex = 3;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // dgvBitacora
@@ -120,7 +120,7 @@
             this.txtAccion.Location = new System.Drawing.Point(243, 19);
             this.txtAccion.Name = "txtAccion";
             this.txtAccion.Size = new System.Drawing.Size(539, 35);
-            this.txtAccion.TabIndex = 11;
+            this.txtAccion.TabIndex = 1;
             // 
             // btnBuscar
             // 
@@ -130,7 +130,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(824, 15);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
-            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.TabIndex = 4;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -142,7 +142,7 @@
             this.btnRecargar.Location = new System.Drawing.Point(33, 15);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
-            this.btnRecargar.TabIndex = 13;
+            this.btnRecargar.TabIndex = 5;
             this.btnRecargar.UseVisualStyleBackColor = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
@@ -168,6 +168,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 56);
             this.button1.TabIndex = 30;
+            this.button1.Text = "7";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

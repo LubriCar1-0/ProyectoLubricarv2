@@ -47,7 +47,7 @@
             this.dtpFechaHasta.Location = new System.Drawing.Point(535, 237);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(388, 34);
-            this.dtpFechaHasta.TabIndex = 31;
+            this.dtpFechaHasta.TabIndex = 2;
             // 
             // label2
             // 
@@ -68,7 +68,7 @@
             this.dtpFechaDesde.Location = new System.Drawing.Point(535, 193);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(388, 34);
-            this.dtpFechaDesde.TabIndex = 28;
+            this.dtpFechaDesde.TabIndex = 1;
             // 
             // btnRecargar
             // 
@@ -78,7 +78,7 @@
             this.btnRecargar.Location = new System.Drawing.Point(944, 237);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(59, 48);
-            this.btnRecargar.TabIndex = 27;
+            this.btnRecargar.TabIndex = 4;
             this.btnRecargar.UseVisualStyleBackColor = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
@@ -90,7 +90,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(944, 183);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 48);
-            this.btnBuscar.TabIndex = 26;
+            this.btnBuscar.TabIndex = 3;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -131,7 +131,7 @@
             this.BtnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(78, 45);
-            this.BtnVolver.TabIndex = 23;
+            this.BtnVolver.TabIndex = 6;
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 

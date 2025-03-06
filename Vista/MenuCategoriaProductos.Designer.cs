@@ -34,6 +34,8 @@
             this.TxtNombreProducto = new System.Windows.Forms.TextBox();
             this.TXTDescripcion = new System.Windows.Forms.TextBox();
             this.DGVCategoriasProdc = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EstadoNuevo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.btnagregarcat = new System.Windows.Forms.Button();
             this.txtEstado = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@
             this.chPermiteEditar = new System.Windows.Forms.CheckBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
             this.cbxLiquido = new System.Windows.Forms.CheckBox();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.EstadoNuevo = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCategoriasProdc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +87,38 @@
             this.DGVCategoriasProdc.TabIndex = 8;
             this.DGVCategoriasProdc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCategoriasProdc_CellContentClick);
             // 
+            // Editar
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Editar.HeaderText = "";
+            this.Editar.Name = "Editar";
+            this.Editar.Text = "Editar";
+            this.Editar.UseColumnTextForButtonValue = true;
+            this.Editar.Width = 75;
+            // 
+            // EstadoNuevo
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.EstadoNuevo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.EstadoNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EstadoNuevo.HeaderText = "";
+            this.EstadoNuevo.Name = "EstadoNuevo";
+            this.EstadoNuevo.Text = "Cambiar Estado";
+            this.EstadoNuevo.ToolTipText = "Cambiar el estado ACT/DES";
+            this.EstadoNuevo.UseColumnTextForButtonValue = true;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
@@ -96,7 +128,7 @@
             this.button1.Location = new System.Drawing.Point(190, 122);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 57);
-            this.button1.TabIndex = 13;
+            this.button1.TabIndex = 5;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -109,7 +141,7 @@
             this.btnagregarcat.Location = new System.Drawing.Point(803, 369);
             this.btnagregarcat.Name = "btnagregarcat";
             this.btnagregarcat.Size = new System.Drawing.Size(132, 48);
-            this.btnagregarcat.TabIndex = 14;
+            this.btnagregarcat.TabIndex = 3;
             this.btnagregarcat.UseVisualStyleBackColor = true;
             this.btnagregarcat.Click += new System.EventHandler(this.btnagregarcat_Click);
             // 
@@ -190,7 +222,7 @@
             this.btnBorraCampos.Location = new System.Drawing.Point(941, 372);
             this.btnBorraCampos.Name = "btnBorraCampos";
             this.btnBorraCampos.Size = new System.Drawing.Size(217, 39);
-            this.btnBorraCampos.TabIndex = 21;
+            this.btnBorraCampos.TabIndex = 4;
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
@@ -207,38 +239,6 @@
             this.cbxLiquido.Text = "Liquido?";
             this.cbxLiquido.UseVisualStyleBackColor = false;
             this.cbxLiquido.CheckedChanged += new System.EventHandler(this.cbxLiquido_CheckedChanged);
-            // 
-            // Editar
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Editar.HeaderText = "";
-            this.Editar.Name = "Editar";
-            this.Editar.Text = "Editar";
-            this.Editar.UseColumnTextForButtonValue = true;
-            this.Editar.Width = 75;
-            // 
-            // EstadoNuevo
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.EstadoNuevo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.EstadoNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EstadoNuevo.HeaderText = "";
-            this.EstadoNuevo.Name = "EstadoNuevo";
-            this.EstadoNuevo.Text = "Cambiar Estado";
-            this.EstadoNuevo.ToolTipText = "Cambiar el estado ACT/DES";
-            this.EstadoNuevo.UseColumnTextForButtonValue = true;
             // 
             // MenuCategoriaProductos
             // 

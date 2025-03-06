@@ -79,7 +79,7 @@
             this.txbPatente.Multiline = true;
             this.txbPatente.Name = "txbPatente";
             this.txbPatente.Size = new System.Drawing.Size(167, 28);
-            this.txbPatente.TabIndex = 20;
+            this.txbPatente.TabIndex = 2;
             // 
             // txbEmpleado
             // 
@@ -88,7 +88,7 @@
             this.txbEmpleado.Multiline = true;
             this.txbEmpleado.Name = "txbEmpleado";
             this.txbEmpleado.Size = new System.Drawing.Size(217, 28);
-            this.txbEmpleado.TabIndex = 21;
+            this.txbEmpleado.TabIndex = 3;
             // 
             // txbVehiculo
             // 
@@ -97,7 +97,7 @@
             this.txbVehiculo.Multiline = true;
             this.txbVehiculo.Name = "txbVehiculo";
             this.txbVehiculo.Size = new System.Drawing.Size(166, 28);
-            this.txbVehiculo.TabIndex = 22;
+            this.txbVehiculo.TabIndex = 1;
             // 
             // TxbDescripcion
             // 
@@ -106,7 +106,7 @@
             this.TxbDescripcion.Multiline = true;
             this.TxbDescripcion.Name = "TxbDescripcion";
             this.TxbDescripcion.Size = new System.Drawing.Size(220, 59);
-            this.TxbDescripcion.TabIndex = 23;
+            this.TxbDescripcion.TabIndex = 5;
             // 
             // cmbEstado
             // 
@@ -115,7 +115,7 @@
             this.cmbEstado.Location = new System.Drawing.Point(846, 253);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(217, 36);
-            this.cmbEstado.TabIndex = 24;
+            this.cmbEstado.TabIndex = 6;
             this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // DtpFechaDeInicio
@@ -123,7 +123,7 @@
             this.DtpFechaDeInicio.Location = new System.Drawing.Point(300, 253);
             this.DtpFechaDeInicio.Name = "DtpFechaDeInicio";
             this.DtpFechaDeInicio.Size = new System.Drawing.Size(221, 20);
-            this.DtpFechaDeInicio.TabIndex = 25;
+            this.DtpFechaDeInicio.TabIndex = 4;
             // 
             // grpProductos
             // 
@@ -216,7 +216,7 @@
             this.txtCantidad.Multiline = true;
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(76, 29);
-            this.txtCantidad.TabIndex = 34;
+            this.txtCantidad.TabIndex = 10;
             // 
             // lblTEXTOlitros
             // 
@@ -264,7 +264,7 @@
             this.btnagregalista.Location = new System.Drawing.Point(336, 91);
             this.btnagregalista.Name = "btnagregalista";
             this.btnagregalista.Size = new System.Drawing.Size(104, 39);
-            this.btnagregalista.TabIndex = 25;
+            this.btnagregalista.TabIndex = 11;
             this.btnagregalista.Text = "Agregar";
             this.btnagregalista.UseVisualStyleBackColor = true;
             this.btnagregalista.Click += new System.EventHandler(this.btnagregalista_Click_1);
@@ -339,7 +339,7 @@
             this.txtNombreProd.Multiline = true;
             this.txtNombreProd.Name = "txtNombreProd";
             this.txtNombreProd.Size = new System.Drawing.Size(237, 30);
-            this.txtNombreProd.TabIndex = 30;
+            this.txtNombreProd.TabIndex = 7;
             // 
             // label21
             // 
@@ -389,7 +389,7 @@
             this.txtCodigoProd.Multiline = true;
             this.txtCodigoProd.Name = "txtCodigoProd";
             this.txtCodigoProd.Size = new System.Drawing.Size(109, 30);
-            this.txtCodigoProd.TabIndex = 16;
+            this.txtCodigoProd.TabIndex = 9;
             // 
             // cmbCategoriaPrd
             // 
@@ -398,7 +398,7 @@
             this.cmbCategoriaPrd.Location = new System.Drawing.Point(116, 82);
             this.cmbCategoriaPrd.Name = "cmbCategoriaPrd";
             this.cmbCategoriaPrd.Size = new System.Drawing.Size(183, 33);
-            this.cmbCategoriaPrd.TabIndex = 13;
+            this.cmbCategoriaPrd.TabIndex = 8;
             this.cmbCategoriaPrd.Text = "selecc. categoria";
             this.cmbCategoriaPrd.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriaPrd_SelectedIndexChanged_1);
             // 
@@ -463,7 +463,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(239, 278);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(167, 46);
-            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -474,7 +474,7 @@
             this.btnGuardarLista.Location = new System.Drawing.Point(30, 278);
             this.btnGuardarLista.Name = "btnGuardarLista";
             this.btnGuardarLista.Size = new System.Drawing.Size(176, 46);
-            this.btnGuardarLista.TabIndex = 20;
+            this.btnGuardarLista.TabIndex = 11;
             this.btnGuardarLista.Text = "Guardar";
             this.btnGuardarLista.UseVisualStyleBackColor = true;
             this.btnGuardarLista.Click += new System.EventHandler(this.btnGuardarLista_Click);
@@ -509,7 +509,7 @@
             this.btnFinalizar.Location = new System.Drawing.Point(829, 681);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(183, 43);
-            this.btnFinalizar.TabIndex = 22;
+            this.btnFinalizar.TabIndex = 13;
             this.btnFinalizar.Text = "Finalizar Orden ";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);

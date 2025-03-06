@@ -55,7 +55,7 @@
             this.txtPatente.Multiline = true;
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(282, 31);
-            this.txtPatente.TabIndex = 37;
+            this.txtPatente.TabIndex = 2;
             // 
             // dgvOrdenesFinalizadas
             // 
@@ -74,7 +74,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(574, 166);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(282, 26);
-            this.dtpFecha.TabIndex = 36;
+            this.dtpFecha.TabIndex = 1;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // lblFecha
@@ -121,7 +121,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(895, 162);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
-            this.btnBuscar.TabIndex = 31;
+            this.btnBuscar.TabIndex = 4;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -133,7 +133,7 @@
             this.btnRecargar.Location = new System.Drawing.Point(386, 162);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
-            this.btnRecargar.TabIndex = 33;
+            this.btnRecargar.TabIndex = 1;
             this.btnRecargar.UseVisualStyleBackColor = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
@@ -146,7 +146,7 @@
             this.BtnVolver.Location = new System.Drawing.Point(185, 126);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
-            this.BtnVolver.TabIndex = 40;
+            this.BtnVolver.TabIndex = 9;
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
@@ -158,7 +158,7 @@
             this.txbCliente.Multiline = true;
             this.txbCliente.Name = "txbCliente";
             this.txbCliente.Size = new System.Drawing.Size(262, 34);
-            this.txbCliente.TabIndex = 41;
+            this.txbCliente.TabIndex = 5;
             // 
             // lblCliente
             // 
@@ -191,7 +191,7 @@
             this.txtVehiculo.Multiline = true;
             this.txtVehiculo.Name = "txtVehiculo";
             this.txtVehiculo.Size = new System.Drawing.Size(257, 34);
-            this.txtVehiculo.TabIndex = 43;
+            this.txtVehiculo.TabIndex = 6;
             // 
             // lblEmpleado
             // 
@@ -212,7 +212,7 @@
             this.txtTrabajador.Multiline = true;
             this.txtTrabajador.Name = "txtTrabajador";
             this.txtTrabajador.Size = new System.Drawing.Size(256, 34);
-            this.txtTrabajador.TabIndex = 45;
+            this.txtTrabajador.TabIndex = 7;
             // 
             // btnVisualizarOrden
             // 
@@ -222,7 +222,7 @@
             this.btnVisualizarOrden.Location = new System.Drawing.Point(535, 665);
             this.btnVisualizarOrden.Name = "btnVisualizarOrden";
             this.btnVisualizarOrden.Size = new System.Drawing.Size(266, 44);
-            this.btnVisualizarOrden.TabIndex = 47;
+            this.btnVisualizarOrden.TabIndex = 8;
             this.btnVisualizarOrden.UseVisualStyleBackColor = true;
             this.btnVisualizarOrden.Click += new System.EventHandler(this.btnVisualizarOrden_Click);
             // 
@@ -232,7 +232,7 @@
             this.cmbTrabajador.Location = new System.Drawing.Point(574, 259);
             this.cmbTrabajador.Name = "cmbTrabajador";
             this.cmbTrabajador.Size = new System.Drawing.Size(282, 21);
-            this.cmbTrabajador.TabIndex = 48;
+            this.cmbTrabajador.TabIndex = 3;
             this.cmbTrabajador.SelectedIndexChanged += new System.EventHandler(this.cmbTrabajador_SelectedIndexChanged);
             // 
             // MenuOrdenesFinalizadas

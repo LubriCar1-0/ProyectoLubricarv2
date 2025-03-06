@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TxtNombreCliente = new System.Windows.Forms.TextBox();
             this.TxtLocalidadCliente = new System.Windows.Forms.TextBox();
             this.TxtCuilCliente = new System.Windows.Forms.TextBox();
@@ -66,7 +66,7 @@
             this.TxtLocalidadCliente.Location = new System.Drawing.Point(362, 323);
             this.TxtLocalidadCliente.Name = "TxtLocalidadCliente";
             this.TxtLocalidadCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtLocalidadCliente.TabIndex = 2;
+            this.TxtLocalidadCliente.TabIndex = 5;
             // 
             // TxtCuilCliente
             // 
@@ -74,7 +74,7 @@
             this.TxtCuilCliente.Location = new System.Drawing.Point(816, 245);
             this.TxtCuilCliente.Name = "TxtCuilCliente";
             this.TxtCuilCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtCuilCliente.TabIndex = 3;
+            this.TxtCuilCliente.TabIndex = 4;
             this.TxtCuilCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCuilCliente_KeyPress_1);
             // 
             // DgvTablaClientes
@@ -91,13 +91,13 @@
             // 
             // Editar
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle3;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Editar.HeaderText = "Editar";
             this.Editar.Name = "Editar";
@@ -106,13 +106,13 @@
             // 
             // Eliminar
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle4;
             this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Eliminar.HeaderText = "Estado";
             this.Eliminar.Name = "Eliminar";
@@ -127,7 +127,7 @@
             this.BtnAgregarMeClientes.Location = new System.Drawing.Point(845, 498);
             this.BtnAgregarMeClientes.Name = "BtnAgregarMeClientes";
             this.BtnAgregarMeClientes.Size = new System.Drawing.Size(123, 43);
-            this.BtnAgregarMeClientes.TabIndex = 7;
+            this.BtnAgregarMeClientes.TabIndex = 10;
             this.BtnAgregarMeClientes.UseVisualStyleBackColor = true;
             this.BtnAgregarMeClientes.Click += new System.EventHandler(this.BtnAgregarMeClientes_Click);
             // 
@@ -140,7 +140,7 @@
             this.BtnVolver.Location = new System.Drawing.Point(188, 125);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(73, 49);
-            this.BtnVolver.TabIndex = 9;
+            this.BtnVolver.TabIndex = 12;
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
@@ -151,7 +151,7 @@
             this.TxtRazonSocialCliente.Location = new System.Drawing.Point(362, 245);
             this.TxtRazonSocialCliente.Name = "TxtRazonSocialCliente";
             this.TxtRazonSocialCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtRazonSocialCliente.TabIndex = 10;
+            this.TxtRazonSocialCliente.TabIndex = 3;
             // 
             // TxtapellidoCliente
             // 
@@ -159,7 +159,7 @@
             this.TxtapellidoCliente.Location = new System.Drawing.Point(816, 174);
             this.TxtapellidoCliente.Name = "TxtapellidoCliente";
             this.TxtapellidoCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtapellidoCliente.TabIndex = 11;
+            this.TxtapellidoCliente.TabIndex = 2;
             // 
             // TxtNumCasaCliente
             // 
@@ -167,7 +167,7 @@
             this.TxtNumCasaCliente.Location = new System.Drawing.Point(362, 419);
             this.TxtNumCasaCliente.Name = "TxtNumCasaCliente";
             this.TxtNumCasaCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtNumCasaCliente.TabIndex = 12;
+            this.TxtNumCasaCliente.TabIndex = 7;
             this.TxtNumCasaCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNumCasaCliente_KeyPress);
             // 
             // TxtCalleCliente
@@ -176,7 +176,7 @@
             this.TxtCalleCliente.Location = new System.Drawing.Point(816, 323);
             this.TxtCalleCliente.Name = "TxtCalleCliente";
             this.TxtCalleCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtCalleCliente.TabIndex = 13;
+            this.TxtCalleCliente.TabIndex = 6;
             // 
             // TxtTelefonoCliente
             // 
@@ -184,7 +184,7 @@
             this.TxtTelefonoCliente.Location = new System.Drawing.Point(364, 515);
             this.TxtTelefonoCliente.Name = "TxtTelefonoCliente";
             this.TxtTelefonoCliente.Size = new System.Drawing.Size(234, 26);
-            this.TxtTelefonoCliente.TabIndex = 14;
+            this.TxtTelefonoCliente.TabIndex = 9;
             this.TxtTelefonoCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefonoCliente_KeyPress);
             // 
             // CMBIVA
@@ -194,7 +194,7 @@
             this.CMBIVA.Location = new System.Drawing.Point(816, 419);
             this.CMBIVA.Name = "CMBIVA";
             this.CMBIVA.Size = new System.Drawing.Size(234, 28);
-            this.CMBIVA.TabIndex = 16;
+            this.CMBIVA.TabIndex = 8;
             this.CMBIVA.SelectedIndexChanged += new System.EventHandler(this.CMBIVA_SelectedIndexChanged);
             // 
             // chbeditar
@@ -217,7 +217,7 @@
             this.grpListado.Controls.Add(this.button1);
             this.grpListado.Controls.Add(this.chbeditar);
             this.grpListado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpListado.Location = new System.Drawing.Point(61, 254);
+            this.grpListado.Location = new System.Drawing.Point(34, 232);
             this.grpListado.Name = "grpListado";
             this.grpListado.Size = new System.Drawing.Size(1293, 362);
             this.grpListado.TabIndex = 18;
@@ -244,7 +244,7 @@
             this.btnListado.Location = new System.Drawing.Point(509, 622);
             this.btnListado.Name = "btnListado";
             this.btnListado.Size = new System.Drawing.Size(385, 54);
-            this.btnListado.TabIndex = 19;
+            this.btnListado.TabIndex = 11;
             this.btnListado.Text = "Mostrar clientes cargados";
             this.btnListado.UseVisualStyleBackColor = true;
             this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
@@ -256,6 +256,7 @@
             this.BackgroundImage = global::lubricar.Properties.Resources.MenuClientes1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.grpListado);
             this.Controls.Add(this.CMBIVA);
             this.Controls.Add(this.TxtTelefonoCliente);
             this.Controls.Add(this.TxtCalleCliente);
@@ -268,7 +269,6 @@
             this.Controls.Add(this.TxtLocalidadCliente);
             this.Controls.Add(this.TxtNombreCliente);
             this.Controls.Add(this.btnListado);
-            this.Controls.Add(this.grpListado);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuClientes";

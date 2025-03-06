@@ -53,7 +53,7 @@
             this.btnRecargar.Location = new System.Drawing.Point(17, 90);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(54, 48);
-            this.btnRecargar.TabIndex = 13;
+            this.btnRecargar.TabIndex = 5;
             this.btnRecargar.UseVisualStyleBackColor = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
@@ -63,7 +63,7 @@
             this.txtTelCliente.Location = new System.Drawing.Point(250, 22);
             this.txtTelCliente.Name = "txtTelCliente";
             this.txtTelCliente.Size = new System.Drawing.Size(468, 35);
-            this.txtTelCliente.TabIndex = 11;
+            this.txtTelCliente.TabIndex = 1;
             this.txtTelCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelCliente_KeyPress);
             // 
             // dgvTurnos
@@ -102,7 +102,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(779, 90);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(54, 48);
-            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.TabIndex = 4;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -127,7 +127,7 @@
             this.BtnVolver.Location = new System.Drawing.Point(186, 125);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
-            this.BtnVolver.TabIndex = 14;
+            this.BtnVolver.TabIndex = 6;
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
@@ -157,7 +157,7 @@
             this.txtPatente.Location = new System.Drawing.Point(250, 94);
             this.txtPatente.Name = "txtPatente";
             this.txtPatente.Size = new System.Drawing.Size(468, 35);
-            this.txtPatente.TabIndex = 22;
+            this.txtPatente.TabIndex = 2;
             // 
             // dtpFecha
             // 
@@ -165,7 +165,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(250, 166);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(278, 26);
-            this.dtpFecha.TabIndex = 21;
+            this.dtpFecha.TabIndex = 3;
             this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // lblFecha

@@ -400,6 +400,14 @@ namespace Vista
             CmbCategoriaEmple.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-       
+        private void TxtCelularEmpleado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtCelularEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

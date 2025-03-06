@@ -50,20 +50,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListVentas = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblPatente = new System.Windows.Forms.Label();
-            this.btnGuardarMano = new System.Windows.Forms.Button();
-            this.txbManoDeObra = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblModelo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnGuardarMano = new System.Windows.Forms.Button();
+            this.txbManoDeObra = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.gpbCliente.SuspendLayout();
             this.grpPresupuesto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListVentas)).BeginInit();
@@ -208,7 +208,7 @@
             this.btnPresupuesto.Location = new System.Drawing.Point(39, 453);
             this.btnPresupuesto.Name = "btnPresupuesto";
             this.btnPresupuesto.Size = new System.Drawing.Size(259, 35);
-            this.btnPresupuesto.TabIndex = 22;
+            this.btnPresupuesto.TabIndex = 4;
             this.btnPresupuesto.Text = "Imprimir Presupuesto";
             this.btnPresupuesto.UseVisualStyleBackColor = true;
             this.btnPresupuesto.Click += new System.EventHandler(this.btnPresupuesto_Click);
@@ -219,8 +219,8 @@
             this.btnCargaVenta.ForeColor = System.Drawing.Color.Black;
             this.btnCargaVenta.Location = new System.Drawing.Point(367, 453);
             this.btnCargaVenta.Name = "btnCargaVenta";
-            this.btnCargaVenta.Size = new System.Drawing.Size(131, 35);
-            this.btnCargaVenta.TabIndex = 20;
+            this.btnCargaVenta.Size = new System.Drawing.Size(148, 37);
+            this.btnCargaVenta.TabIndex = 5;
             this.btnCargaVenta.Text = "Confirmar";
             this.btnCargaVenta.UseVisualStyleBackColor = true;
             this.btnCargaVenta.Click += new System.EventHandler(this.btnCargaVenta_Click);
@@ -373,6 +373,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehiculo";
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 176);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(380, 93);
+            this.txtDescripcion.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label7.Location = new System.Drawing.Point(7, 129);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(197, 28);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "Trabajo Realizado:";
+            // 
             // lblPatente
             // 
             this.lblPatente.AutoSize = true;
@@ -385,27 +406,6 @@
             this.lblPatente.Size = new System.Drawing.Size(221, 28);
             this.lblPatente.TabIndex = 39;
             this.lblPatente.Text = "Patente del Vehiculo";
-            // 
-            // btnGuardarMano
-            // 
-            this.btnGuardarMano.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarMano.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardarMano.Location = new System.Drawing.Point(275, 31);
-            this.btnGuardarMano.Name = "btnGuardarMano";
-            this.btnGuardarMano.Size = new System.Drawing.Size(117, 35);
-            this.btnGuardarMano.TabIndex = 38;
-            this.btnGuardarMano.Text = "Guardar";
-            this.btnGuardarMano.UseVisualStyleBackColor = true;
-            this.btnGuardarMano.Click += new System.EventHandler(this.btnGuardarMano_Click);
-            // 
-            // txbManoDeObra
-            // 
-            this.txbManoDeObra.Location = new System.Drawing.Point(6, 33);
-            this.txbManoDeObra.Multiline = true;
-            this.txbManoDeObra.Name = "txbManoDeObra";
-            this.txbManoDeObra.Size = new System.Drawing.Size(263, 35);
-            this.txbManoDeObra.TabIndex = 37;
-            this.txbManoDeObra.TextChanged += new System.EventHandler(this.txbManoDeObra_TextChanged);
             // 
             // label2
             // 
@@ -480,6 +480,27 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "Modelo:";
             // 
+            // btnGuardarMano
+            // 
+            this.btnGuardarMano.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarMano.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardarMano.Location = new System.Drawing.Point(275, 31);
+            this.btnGuardarMano.Name = "btnGuardarMano";
+            this.btnGuardarMano.Size = new System.Drawing.Size(117, 35);
+            this.btnGuardarMano.TabIndex = 3;
+            this.btnGuardarMano.Text = "Guardar";
+            this.btnGuardarMano.UseVisualStyleBackColor = true;
+            this.btnGuardarMano.Click += new System.EventHandler(this.btnGuardarMano_Click);
+            // 
+            // txbManoDeObra
+            // 
+            this.txbManoDeObra.Location = new System.Drawing.Point(6, 33);
+            this.txbManoDeObra.Multiline = true;
+            this.txbManoDeObra.Name = "txbManoDeObra";
+            this.txbManoDeObra.Size = new System.Drawing.Size(263, 35);
+            this.txbManoDeObra.TabIndex = 2;
+            this.txbManoDeObra.TextChanged += new System.EventHandler(this.txbManoDeObra_TextChanged);
+            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
@@ -517,27 +538,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 28);
             this.label5.TabIndex = 32;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.label7.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label7.Location = new System.Drawing.Point(7, 129);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(197, 28);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Trabajo Realizado:";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(12, 176);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(380, 93);
-            this.txtDescripcion.TabIndex = 41;
             // 
             // MenuVentaServicio
             // 

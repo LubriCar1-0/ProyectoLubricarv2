@@ -26,7 +26,10 @@ namespace Vista
             DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvTablaClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DgvTablaClientes.CellClick += DgvTablaClientes_CellClick;
-
+            TxtCuilCliente.Tag = 11;
+            TxtTelefonoCliente.Tag = 10;
+            TxtNumCasaCliente.Tag = 4;
+            CMBIVA.Tag = 0;
         }
        
         private void CargarClientes() 

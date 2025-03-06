@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txbNomCat = new System.Windows.Forms.TextBox();
             this.txbDescripcion = new System.Windows.Forms.TextBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.txbNomCat.Multiline = true;
             this.txbNomCat.Name = "txbNomCat";
             this.txbNomCat.Size = new System.Drawing.Size(372, 32);
-            this.txbNomCat.TabIndex = 0;
+            this.txbNomCat.TabIndex = 1;
             // 
             // txbDescripcion
             // 
@@ -59,7 +59,7 @@
             this.txbDescripcion.Multiline = true;
             this.txbDescripcion.Name = "txbDescripcion";
             this.txbDescripcion.Size = new System.Drawing.Size(487, 92);
-            this.txbDescripcion.TabIndex = 1;
+            this.txbDescripcion.TabIndex = 3;
             // 
             // btnBorraCampos
             // 
@@ -71,7 +71,7 @@
             this.btnBorraCampos.Location = new System.Drawing.Point(921, 634);
             this.btnBorraCampos.Name = "btnBorraCampos";
             this.btnBorraCampos.Size = new System.Drawing.Size(215, 39);
-            this.btnBorraCampos.TabIndex = 22;
+            this.btnBorraCampos.TabIndex = 5;
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);
@@ -90,13 +90,13 @@
             // 
             // Editar
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Editar.HeaderText = "Editar";
             this.Editar.Name = "Editar";
@@ -105,13 +105,13 @@
             // 
             // CambiarEstado
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle2;
             this.CambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CambiarEstado.HeaderText = "Cambiar Estado";
             this.CambiarEstado.Name = "CambiarEstado";
@@ -127,7 +127,7 @@
             this.btnagregarcat.Location = new System.Drawing.Point(205, 642);
             this.btnagregarcat.Name = "btnagregarcat";
             this.btnagregarcat.Size = new System.Drawing.Size(207, 62);
-            this.btnagregarcat.TabIndex = 24;
+            this.btnagregarcat.TabIndex = 4;
             this.btnagregarcat.UseVisualStyleBackColor = true;
             this.btnagregarcat.Click += new System.EventHandler(this.btnagregarcat_Click);
             // 
@@ -153,7 +153,7 @@
             this.btnVolver.Location = new System.Drawing.Point(183, 126);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(63, 57);
-            this.btnVolver.TabIndex = 26;
+            this.btnVolver.TabIndex = 6;
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -163,7 +163,7 @@
             this.cmbCodPerm.Location = new System.Drawing.Point(667, 237);
             this.cmbCodPerm.Name = "cmbCodPerm";
             this.cmbCodPerm.Size = new System.Drawing.Size(245, 21);
-            this.cmbCodPerm.TabIndex = 27;
+            this.cmbCodPerm.TabIndex = 2;
             // 
             // MenuCategoriaEmpleado
             // 

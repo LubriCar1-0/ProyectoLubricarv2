@@ -47,7 +47,7 @@
             this.dtpSelecionarDia.Location = new System.Drawing.Point(316, 223);
             this.dtpSelecionarDia.Name = "dtpSelecionarDia";
             this.dtpSelecionarDia.Size = new System.Drawing.Size(298, 26);
-            this.dtpSelecionarDia.TabIndex = 0;
+            this.dtpSelecionarDia.TabIndex = 1;
             this.dtpSelecionarDia.ValueChanged += new System.EventHandler(this.dtpSelecionarDia_ValueChanged);
             // 
             // CbxSelectCL
@@ -57,7 +57,7 @@
             this.CbxSelectCL.Location = new System.Drawing.Point(316, 309);
             this.CbxSelectCL.Name = "CbxSelectCL";
             this.CbxSelectCL.Size = new System.Drawing.Size(298, 28);
-            this.CbxSelectCL.TabIndex = 1;
+            this.CbxSelectCL.TabIndex = 3;
             // 
             // CbxSelectVH
             // 
@@ -66,7 +66,7 @@
             this.CbxSelectVH.Location = new System.Drawing.Point(813, 309);
             this.CbxSelectVH.Name = "CbxSelectVH";
             this.CbxSelectVH.Size = new System.Drawing.Size(298, 28);
-            this.CbxSelectVH.TabIndex = 2;
+            this.CbxSelectVH.TabIndex = 4;
             this.CbxSelectVH.SelectedIndexChanged += new System.EventHandler(this.CbxSelectVH_SelectedIndexChanged);
             // 
             // TxtDescripcionTurno
@@ -76,7 +76,7 @@
             this.TxtDescripcionTurno.Multiline = true;
             this.TxtDescripcionTurno.Name = "TxtDescripcionTurno";
             this.TxtDescripcionTurno.Size = new System.Drawing.Size(458, 57);
-            this.TxtDescripcionTurno.TabIndex = 4;
+            this.TxtDescripcionTurno.TabIndex = 5;
             // 
             // BtnEditar
             // 
@@ -86,7 +86,7 @@
             this.BtnEditar.Location = new System.Drawing.Point(665, 707);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(96, 43);
-            this.BtnEditar.TabIndex = 5;
+            this.BtnEditar.TabIndex = 7;
             this.BtnEditar.UseVisualStyleBackColor = true;
             this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
@@ -108,7 +108,7 @@
             this.dtpHorario.Location = new System.Drawing.Point(813, 223);
             this.dtpHorario.Name = "dtpHorario";
             this.dtpHorario.Size = new System.Drawing.Size(298, 26);
-            this.dtpHorario.TabIndex = 8;
+            this.dtpHorario.TabIndex = 2;
             this.dtpHorario.ValueChanged += new System.EventHandler(this.dtpHorario_ValueChanged_1);
             // 
             // dgvTurnos
@@ -129,7 +129,7 @@
             this.BtnVolver.Location = new System.Drawing.Point(191, 127);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
-            this.BtnVolver.TabIndex = 15;
+            this.BtnVolver.TabIndex = 9;
             this.BtnVolver.UseVisualStyleBackColor = false;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
@@ -142,7 +142,7 @@
             this.btnBorraCampos.Location = new System.Drawing.Point(783, 707);
             this.btnBorraCampos.Name = "btnBorraCampos";
             this.btnBorraCampos.Size = new System.Drawing.Size(162, 43);
-            this.btnBorraCampos.TabIndex = 23;
+            this.btnBorraCampos.TabIndex = 8;
             this.btnBorraCampos.Text = "Borrar campos";
             this.btnBorraCampos.UseVisualStyleBackColor = true;
             this.btnBorraCampos.Click += new System.EventHandler(this.btnBorraCampos_Click);

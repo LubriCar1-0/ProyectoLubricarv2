@@ -148,7 +148,7 @@
             this.btnRecargar.Location = new System.Drawing.Point(959, 215);
             this.btnRecargar.Name = "btnRecargar";
             this.btnRecargar.Size = new System.Drawing.Size(59, 48);
-            this.btnRecargar.TabIndex = 16;
+            this.btnRecargar.TabIndex = 4;
             this.btnRecargar.UseVisualStyleBackColor = false;
             this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
             // 
@@ -160,7 +160,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(899, 215);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(59, 48);
-            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.TabIndex = 3;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -170,7 +170,7 @@
             this.dtpFechaDesde.Location = new System.Drawing.Point(378, 172);
             this.dtpFechaDesde.Name = "dtpFechaDesde";
             this.dtpFechaDesde.Size = new System.Drawing.Size(388, 34);
-            this.dtpFechaDesde.TabIndex = 17;
+            this.dtpFechaDesde.TabIndex = 1;
             // 
             // label3
             // 
@@ -204,7 +204,7 @@
             this.dtpFechaHasta.Location = new System.Drawing.Point(378, 216);
             this.dtpFechaHasta.Name = "dtpFechaHasta";
             this.dtpFechaHasta.Size = new System.Drawing.Size(388, 34);
-            this.dtpFechaHasta.TabIndex = 22;
+            this.dtpFechaHasta.TabIndex = 2;
             // 
             // MenuHistorialVentas
             // 
