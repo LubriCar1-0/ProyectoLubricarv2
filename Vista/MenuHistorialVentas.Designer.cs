@@ -53,7 +53,7 @@
             this.BtnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(183, 125);
             this.BtnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnVolver.Name = "BtnVolver";
@@ -118,7 +118,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.undo_arrow_icon_icons_com_53849;
+            this.button1.BackgroundImage = global::lubricar.Properties.Resources.undo_arrow_icon_icons_com_53849;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -143,7 +143,7 @@
             // btnRecargar
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargar.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargar.Location = new System.Drawing.Point(959, 215);
             this.btnRecargar.Name = "btnRecargar";
@@ -155,7 +155,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscar.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(899, 215);
             this.btnBuscar.Name = "btnBuscar";
@@ -210,7 +210,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaHistorialVenta1;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaHistorialVenta1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.dtpFechaHasta);

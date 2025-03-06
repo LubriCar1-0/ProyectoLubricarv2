@@ -44,7 +44,7 @@
             // 
             // BtnVerTurno
             // 
-            this.BtnVerTurno.BackgroundImage = global::Vista.Properties.Resources.BtnVerTurno;
+            this.BtnVerTurno.BackgroundImage = global::lubricar.Properties.Resources.BtnVerTurno;
             this.BtnVerTurno.FlatAppearance.BorderSize = 0;
             this.BtnVerTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVerTurno.Location = new System.Drawing.Point(256, 565);
@@ -55,7 +55,7 @@
             // 
             // BtnEditarTurno
             // 
-            this.BtnEditarTurno.BackgroundImage = global::Vista.Properties.Resources.BtnEditarTurno;
+            this.BtnEditarTurno.BackgroundImage = global::lubricar.Properties.Resources.BtnEditarTurno;
             this.BtnEditarTurno.FlatAppearance.BorderSize = 0;
             this.BtnEditarTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditarTurno.Location = new System.Drawing.Point(748, 565);
@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaHistorialDeTurnos;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaHistorialDeTurnos;
             this.ClientSize = new System.Drawing.Size(1131, 641);
             this.Controls.Add(this.BtnEditarTurno);
             this.Controls.Add(this.BtnVerTurno);

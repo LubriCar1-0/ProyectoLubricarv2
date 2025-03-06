@@ -121,7 +121,7 @@
             // 
             // BtnAgregarMeClientes
             // 
-            this.BtnAgregarMeClientes.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
+            this.BtnAgregarMeClientes.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeClientes.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregarMeClientes.Location = new System.Drawing.Point(845, 498);
@@ -136,7 +136,7 @@
             this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(188, 125);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(73, 49);
@@ -230,7 +230,7 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.button1.Location = new System.Drawing.Point(6, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(73, 49);
@@ -253,7 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuClientes1;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuClientes1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.CMBIVA);

@@ -92,7 +92,7 @@
             // 
             // BtnAgregarMeEmpleado
             // 
-            this.BtnAgregarMeEmpleado.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
+            this.BtnAgregarMeEmpleado.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregar;
             this.BtnAgregarMeEmpleado.FlatAppearance.BorderSize = 0;
             this.BtnAgregarMeEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregarMeEmpleado.Location = new System.Drawing.Point(375, 700);
@@ -114,7 +114,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.BackgroundImage = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(190, 123);
@@ -139,7 +139,7 @@
             // 
             // btnBorraCampos
             // 
-            this.btnBorraCampos.BackgroundImage = global::Vista.Properties.Resources.blanco;
+            this.btnBorraCampos.BackgroundImage = global::lubricar.Properties.Resources.blanco;
             this.btnBorraCampos.FlatAppearance.BorderSize = 0;
             this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuEmpleados1;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaMenuEmpleados1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.DgvMenuEmpleado);

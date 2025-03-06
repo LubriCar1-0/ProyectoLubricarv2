@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
@@ -79,7 +79,7 @@
             // btnRecargar
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargar.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargar.Location = new System.Drawing.Point(1003, 173);
             this.btnRecargar.Name = "btnRecargar";
@@ -91,7 +91,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscar.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(943, 173);
             this.btnBuscar.Name = "btnBuscar";
@@ -129,7 +129,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.undo_arrow_icon_icons_com_53849;
+            this.button1.BackgroundImage = global::lubricar.Properties.Resources.undo_arrow_icon_icons_com_53849;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -153,23 +153,23 @@
             // 
             // dgvVentServ
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentServ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentServ.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvVentServ.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVentServ.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVentServ.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvVentServ.Location = new System.Drawing.Point(206, 235);
             this.dgvVentServ.Name = "dgvVentServ";
             this.dgvVentServ.RowHeadersWidth = 62;
@@ -184,8 +184,8 @@
             this.BtnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
-            this.BtnVolver.Location = new System.Drawing.Point(179, 118);
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Location = new System.Drawing.Point(181, 124);
             this.BtnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(78, 45);
@@ -210,9 +210,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuVentasDeServicio;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuVentasDeServicio;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.dtpFechaHasta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpFechaDesde);

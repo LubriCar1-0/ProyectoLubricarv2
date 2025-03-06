@@ -80,7 +80,7 @@
             // 
             // BtnEditar
             // 
-            this.BtnEditar.BackgroundImage = global::Vista.Properties.Resources.BtnEditar;
+            this.BtnEditar.BackgroundImage = global::lubricar.Properties.Resources.BtnEditar;
             this.BtnEditar.FlatAppearance.BorderSize = 0;
             this.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditar.Location = new System.Drawing.Point(665, 707);
@@ -92,7 +92,7 @@
             // 
             // BtnCrearTurno
             // 
-            this.BtnCrearTurno.BackgroundImage = global::Vista.Properties.Resources.BtnCrearTurnoBlanco;
+            this.BtnCrearTurno.BackgroundImage = global::lubricar.Properties.Resources.BtnCrearTurnoBlanco;
             this.BtnCrearTurno.FlatAppearance.BorderSize = 0;
             this.BtnCrearTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCrearTurno.Location = new System.Drawing.Point(433, 707);
@@ -125,7 +125,7 @@
             this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(191, 127);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
@@ -135,7 +135,7 @@
             // 
             // btnBorraCampos
             // 
-            this.btnBorraCampos.BackgroundImage = global::Vista.Properties.Resources.blanco;
+            this.btnBorraCampos.BackgroundImage = global::lubricar.Properties.Resources.blanco;
             this.btnBorraCampos.FlatAppearance.BorderSize = 0;
             this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorraCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuCreacionDeTurnos;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuCreacionDeTurnos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.btnBorraCampos);

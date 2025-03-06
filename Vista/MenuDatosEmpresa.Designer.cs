@@ -41,7 +41,7 @@
             // 
             // BtnEditarEmpresa
             // 
-            this.BtnEditarEmpresa.BackgroundImage = global::Vista.Properties.Resources.BtnEditar;
+            this.BtnEditarEmpresa.BackgroundImage = global::lubricar.Properties.Resources.BtnEditar;
             this.BtnEditarEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnEditarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEditarEmpresa.Location = new System.Drawing.Point(742, 428);
@@ -53,7 +53,7 @@
             // 
             // BtnConfirmarEmpresa
             // 
-            this.BtnConfirmarEmpresa.BackgroundImage = global::Vista.Properties.Resources.BtnConfirmar;
+            this.BtnConfirmarEmpresa.BackgroundImage = global::lubricar.Properties.Resources.BtnConfirmar;
             this.BtnConfirmarEmpresa.FlatAppearance.BorderSize = 0;
             this.BtnConfirmarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConfirmarEmpresa.Location = new System.Drawing.Point(742, 501);
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaDatosEmpresa;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaDatosEmpresa;
             this.ClientSize = new System.Drawing.Size(1145, 644);
             this.Controls.Add(this.GridEmpresa);
             this.Controls.Add(this.TxtPuntoDeVenta);

@@ -97,7 +97,7 @@
             // btnRecargarProduc
             // 
             this.btnRecargarProduc.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargarProduc.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargarProduc.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargarProduc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargarProduc.Location = new System.Drawing.Point(370, 57);
             this.btnRecargarProduc.Name = "btnRecargarProduc";
@@ -109,7 +109,7 @@
             // btnBuscarProduc
             // 
             this.btnBuscarProduc.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscarProduc.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscarProduc.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscarProduc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarProduc.Location = new System.Drawing.Point(289, 57);
             this.btnBuscarProduc.Name = "btnBuscarProduc";
@@ -173,7 +173,7 @@
             // BtnRecargarCliente
             // 
             this.BtnRecargarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.BtnRecargarCliente.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.BtnRecargarCliente.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.BtnRecargarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnRecargarCliente.Location = new System.Drawing.Point(367, 61);
             this.BtnRecargarCliente.Name = "BtnRecargarCliente";
@@ -185,7 +185,7 @@
             // BtnBuscarCliente
             // 
             this.BtnBuscarCliente.BackColor = System.Drawing.Color.Transparent;
-            this.BtnBuscarCliente.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.BtnBuscarCliente.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.BtnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnBuscarCliente.Location = new System.Drawing.Point(283, 61);
             this.BtnBuscarCliente.Name = "BtnBuscarCliente";
@@ -343,7 +343,7 @@
             // 
             // BtnConfirmar
             // 
-            this.BtnConfirmar.BackgroundImage = global::Vista.Properties.Resources.BtnConfirmar;
+            this.BtnConfirmar.BackgroundImage = global::lubricar.Properties.Resources.BtnConfirmar;
             this.BtnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfirmar.Location = new System.Drawing.Point(537, 132);
@@ -383,7 +383,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.BackgroundImage = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -398,7 +398,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuCanjeoLubriPuntos;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuCanjeoLubriPuntos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.groupBox3);

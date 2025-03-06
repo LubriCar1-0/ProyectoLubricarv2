@@ -38,7 +38,7 @@
             // BtnProductosFaltantes
             // 
             this.BtnProductosFaltantes.AutoSize = true;
-            this.BtnProductosFaltantes.BackgroundImage = global::Vista.Properties.Resources.BtnProductosFaltantes;
+            this.BtnProductosFaltantes.BackgroundImage = global::lubricar.Properties.Resources.BtnProductosFaltantes;
             this.BtnProductosFaltantes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnProductosFaltantes.FlatAppearance.BorderSize = 0;
             this.BtnProductosFaltantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -52,7 +52,7 @@
             // BtnAgregarProducto
             // 
             this.BtnAgregarProducto.AutoSize = true;
-            this.BtnAgregarProducto.BackgroundImage = global::Vista.Properties.Resources.BtnAgregarProducto;
+            this.BtnAgregarProducto.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregarProducto;
             this.BtnAgregarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAgregarProducto.FlatAppearance.BorderSize = 0;
             this.BtnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -66,7 +66,7 @@
             // BtnControlDeStock
             // 
             this.BtnControlDeStock.AutoSize = true;
-            this.BtnControlDeStock.BackgroundImage = global::Vista.Properties.Resources.BtnControlStock;
+            this.BtnControlDeStock.BackgroundImage = global::lubricar.Properties.Resources.BtnControlStock;
             this.BtnControlDeStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnControlDeStock.FlatAppearance.BorderSize = 0;
             this.BtnControlDeStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -80,7 +80,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.BackgroundImage = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(218, 125);
@@ -92,7 +92,7 @@
             // 
             // btnABMCategoriasProductos
             // 
-            this.btnABMCategoriasProductos.BackgroundImage = global::Vista.Properties.Resources.BTNAgregarCategorias;
+            this.btnABMCategoriasProductos.BackgroundImage = global::lubricar.Properties.Resources.BTNAgregarCategorias;
             this.btnABMCategoriasProductos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnABMCategoriasProductos.FlatAppearance.BorderSize = 0;
             this.btnABMCategoriasProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuStock;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaMenuStock;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.btnABMCategoriasProductos);

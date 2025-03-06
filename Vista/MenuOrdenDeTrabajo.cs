@@ -53,7 +53,6 @@ namespace Vista
             txbVehiculo.ReadOnly = true;
             DtpFechaDeInicio.ShowUpDown = true; 
             DtpFechaDeInicio.Enabled = false;
-           
             
         }
 
@@ -190,8 +189,10 @@ namespace Vista
         {
             dgvVentas.DataSource = null;  // Limpia el DataGridView
             dgvVentas.DataSource = ValidarOrdenDeTrabajo.ObtenerLista();
+            dgvVentas.Columns["idOrdenTrabajo"].Visible = false;
+            dgvVentas.Columns["IdProducto"].Visible = false;
 
-            
+
         }
         
 
@@ -418,6 +419,7 @@ namespace Vista
             if (selectedEstado == "CANCELADO")
             {
                 estado = "CANCELADO";
+                ValidarOrdenDeTrabajo.CambiarEstado(idOrdenTrab, estado, TxbDescripcion.Text.Trim());
                 MessageBox.Show("La orden se ha cancelado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (selectedEstado == "FINALIZADO")

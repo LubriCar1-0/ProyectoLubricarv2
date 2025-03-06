@@ -483,7 +483,7 @@
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.btnVolver.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.btnVolver.BackgroundImage = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.btnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -543,7 +543,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuVentaServicio;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuVentaServicio;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.groupBox2);

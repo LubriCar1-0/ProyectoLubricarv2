@@ -37,7 +37,7 @@
             // 
             // BtnHistorialVentas
             // 
-            this.BtnHistorialVentas.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialVentas;
+            this.BtnHistorialVentas.BackgroundImage = global::lubricar.Properties.Resources.BtnHistorialVentas;
             this.BtnHistorialVentas.FlatAppearance.BorderSize = 0;
             this.BtnHistorialVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHistorialVentas.Location = new System.Drawing.Point(602, 285);
@@ -49,7 +49,7 @@
             // 
             // BtnHistorialLubriPuntos
             // 
-            this.BtnHistorialLubriPuntos.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialLubriPuntos;
+            this.BtnHistorialLubriPuntos.BackgroundImage = global::lubricar.Properties.Resources.BtnHistorialLubriPuntos;
             this.BtnHistorialLubriPuntos.FlatAppearance.BorderSize = 0;
             this.BtnHistorialLubriPuntos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHistorialLubriPuntos.Location = new System.Drawing.Point(602, 420);
@@ -63,7 +63,7 @@
             // 
             this.BtnBitacora.FlatAppearance.BorderSize = 0;
             this.BtnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBitacora.Image = global::Vista.Properties.Resources.BtnHistorialBitacora2;
+            this.BtnBitacora.Image = global::lubricar.Properties.Resources.BtnHistorialBitacora2;
             this.BtnBitacora.Location = new System.Drawing.Point(867, 427);
             this.BtnBitacora.Name = "BtnBitacora";
             this.BtnBitacora.Size = new System.Drawing.Size(243, 91);
@@ -76,7 +76,7 @@
             this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(195, 125);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
@@ -87,7 +87,7 @@
             // 
             // BtnHistVentServ
             // 
-            this.BtnHistVentServ.BackgroundImage = global::Vista.Properties.Resources.BtnHistorialVentServ;
+            this.BtnHistVentServ.BackgroundImage = global::lubricar.Properties.Resources.BtnHistorialVentServ;
             this.BtnHistVentServ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnHistVentServ.FlatAppearance.BorderSize = 0;
             this.BtnHistVentServ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuHistorial;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaMenuHistorial;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.BtnHistVentServ);

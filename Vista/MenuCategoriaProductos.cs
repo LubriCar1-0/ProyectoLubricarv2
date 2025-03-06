@@ -28,20 +28,30 @@ namespace Vista
 
         private void btnagregarcat_Click(object sender, EventArgs e)
         {
-            txtEstado.Text = " ";
-            string NombreProd = TxtNombreProducto.Text;
-            string Desc = TXTDescripcion.Text;
-            if (cbxLiquido.Checked)
+            if(TxtNombreProducto.Text == string.Empty && TXTDescripcion.Text == string.Empty) 
             {
-                ValidaCategoriasProducto.IngresaCat(NombreProd.Trim(), Desc.Trim(), "ACT", "S", _idTrabajador);
+
+                MessageBox.Show("Debe llenar los campos para poder ingresar categoria.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                ValidaCategoriasProducto.IngresaCat(NombreProd.Trim(), Desc.Trim(), "ACT","N", _idTrabajador);
+
+                txtEstado.Text = " ";
+                string NombreProd = TxtNombreProducto.Text;
+                string Desc = TXTDescripcion.Text;
+                if (cbxLiquido.Checked)
+                {
+                    ValidaCategoriasProducto.IngresaCat(NombreProd.Trim(), Desc.Trim(), "ACT", "S", _idTrabajador);
+                }
+                else
+                {
+                    ValidaCategoriasProducto.IngresaCat(NombreProd.Trim(), Desc.Trim(), "ACT", "N", _idTrabajador);
+                }
+
+                LimpiaTextBox();
+                CargarTablaCategoria();
             }
-               
-            LimpiaTextBox();
-            CargarTablaCategoria();
+
         }
 
         private void CargarTablaCategoria()

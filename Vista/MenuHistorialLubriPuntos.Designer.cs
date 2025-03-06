@@ -73,7 +73,7 @@
             // btnRecargar
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargar.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargar.Location = new System.Drawing.Point(944, 237);
             this.btnRecargar.Name = "btnRecargar";
@@ -85,7 +85,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscar.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(944, 183);
             this.btnBuscar.Name = "btnBuscar";
@@ -126,7 +126,7 @@
             this.BtnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(189, 124);
             this.BtnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnVolver.Name = "BtnVolver";
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuHistorialLubriPuntos;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuHistorialLubriPuntos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.dtpFechaHasta);

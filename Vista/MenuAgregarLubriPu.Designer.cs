@@ -36,7 +36,7 @@
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
+            this.BtnAgregar.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregar;
             this.BtnAgregar.FlatAppearance.BorderSize = 0;
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Location = new System.Drawing.Point(253, 531);
@@ -47,7 +47,7 @@
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackgroundImage = global::Vista.Properties.Resources.BtnCancelar;
+            this.BtnCancelar.BackgroundImage = global::lubricar.Properties.Resources.BtnCancelar;
             this.BtnCancelar.FlatAppearance.BorderSize = 0;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Location = new System.Drawing.Point(731, 531);
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaAgregarProductoLubriPu;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaAgregarProductoLubriPu;
             this.ClientSize = new System.Drawing.Size(1143, 638);
             this.Controls.Add(this.CmbSelecionarProducto);
             this.Controls.Add(this.TbxCantidadPuntos);

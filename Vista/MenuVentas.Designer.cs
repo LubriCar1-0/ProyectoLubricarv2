@@ -36,7 +36,7 @@
             // 
             // BtnClientesMeVentas
             // 
-            this.BtnClientesMeVentas.BackgroundImage = global::Vista.Properties.Resources.BtnClientes;
+            this.BtnClientesMeVentas.BackgroundImage = global::lubricar.Properties.Resources.BtnClientes;
             this.BtnClientesMeVentas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnClientesMeVentas.FlatAppearance.BorderSize = 0;
             this.BtnClientesMeVentas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
@@ -51,7 +51,7 @@
             // 
             // BtnVentasMeVentas
             // 
-            this.BtnVentasMeVentas.BackgroundImage = global::Vista.Properties.Resources.BtnVentas;
+            this.BtnVentasMeVentas.BackgroundImage = global::lubricar.Properties.Resources.BtnVentas;
             this.BtnVentasMeVentas.FlatAppearance.BorderSize = 0;
             this.BtnVentasMeVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVentasMeVentas.Location = new System.Drawing.Point(804, 198);
@@ -63,7 +63,7 @@
             // 
             // BtnVehiculosMeVentas
             // 
-            this.BtnVehiculosMeVentas.BackgroundImage = global::Vista.Properties.Resources.BtnVehiculos;
+            this.BtnVehiculosMeVentas.BackgroundImage = global::lubricar.Properties.Resources.BtnVehiculos;
             this.BtnVehiculosMeVentas.FlatAppearance.BorderSize = 0;
             this.BtnVehiculosMeVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVehiculosMeVentas.Location = new System.Drawing.Point(804, 511);
@@ -78,7 +78,7 @@
             this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(235, 133);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 47);
@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaMenuVentas;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaMenuVentas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.BtnVolver);

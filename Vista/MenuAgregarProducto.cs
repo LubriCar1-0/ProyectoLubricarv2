@@ -114,20 +114,29 @@ namespace Vista
             }
             else
             {
-                int Chequea = Conectar.BuscaDuplicadoProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria);
-                if (Chequea == 0)
+                if (TxtNombreProducto.Text == string.Empty && TxtMarcaProducto.Text == string.Empty)
                 {
-                    ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, litro, litroMin, cantidadmin, "ACT", _idTrabajador);
-                    MessageBox.Show("Producto agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    LimpiaCampos();
-                    Cargatabla();
 
-                    DGVProductos.Columns["IdProd"].Visible = false;
-                    DGVProductos.Columns["IdCategorias"].Visible = false;
+                    MessageBox.Show("Debe llenar los campos de nombre y marca para poder ingresar un producto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 }
                 else
                 {
-                    MessageBox.Show("Hay un duplicado del producto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    int Chequea = Conectar.BuscaDuplicadoProducto(TxtNombreProducto.Text.Trim(), TxtMarcaProducto.Text.Trim(), ValorCategoria);
+                    if (Chequea == 0)
+                    {
+                        ValidarProducto.AgregarUnProducto(TxtNombreProducto.Text.ToUpper().Trim(), TxtMarcaProducto.Text.ToUpper().Trim(), ValorCategoria, CodigoProducto.ToUpper().Trim(), TxtDescripcion.Text.Trim(), cantidad, precioLista, precioVenta, litro, litroMin, cantidadmin, "ACT", _idTrabajador);
+                        MessageBox.Show("Producto agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        LimpiaCampos();
+                        Cargatabla();
+
+                        DGVProductos.Columns["IdProd"].Visible = false;
+                        DGVProductos.Columns["IdCategorias"].Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hay un duplicado del producto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
         }

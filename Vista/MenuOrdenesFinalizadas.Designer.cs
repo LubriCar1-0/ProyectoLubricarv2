@@ -116,7 +116,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscar.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(895, 162);
             this.btnBuscar.Name = "btnBuscar";
@@ -128,7 +128,7 @@
             // btnRecargar
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargar.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargar.Location = new System.Drawing.Point(386, 162);
             this.btnRecargar.Name = "btnRecargar";
@@ -142,7 +142,7 @@
             this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(185, 126);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(64, 40);
@@ -218,7 +218,7 @@
             // 
             this.btnVisualizarOrden.FlatAppearance.BorderSize = 0;
             this.btnVisualizarOrden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarOrden.Image = global::Vista.Properties.Resources.BtnVentaDelServicio;
+            this.btnVisualizarOrden.Image = global::lubricar.Properties.Resources.BtnVentaDelServicio;
             this.btnVisualizarOrden.Location = new System.Drawing.Point(535, 665);
             this.btnVisualizarOrden.Name = "btnVisualizarOrden";
             this.btnVisualizarOrden.Size = new System.Drawing.Size(266, 44);
@@ -239,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenesFinalizadas;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuOrdenesFinalizadas;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.cmbTrabajador);

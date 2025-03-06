@@ -48,7 +48,6 @@ namespace Vista
         private void btnMenuCatEMP_Click(object sender, EventArgs e)
         {
             MenuCategoriaEmpleado LlamarMenuCategoriaEmpleados = new MenuCategoriaEmpleado();
-            Hide();
             LlamarMenuCategoriaEmpleados.ShowDialog();
         }
     }

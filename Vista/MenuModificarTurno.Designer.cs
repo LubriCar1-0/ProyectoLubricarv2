@@ -47,7 +47,7 @@
             // 
             // BtnCancelarMeModificar
             // 
-            this.BtnCancelarMeModificar.BackgroundImage = global::Vista.Properties.Resources.BtnCancelar;
+            this.BtnCancelarMeModificar.BackgroundImage = global::lubricar.Properties.Resources.BtnCancelar;
             this.BtnCancelarMeModificar.FlatAppearance.BorderSize = 0;
             this.BtnCancelarMeModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelarMeModificar.Location = new System.Drawing.Point(842, 586);
@@ -58,7 +58,7 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.BtnModificar;
+            this.button1.BackgroundImage = global::lubricar.Properties.Resources.BtnModificar;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(646, 586);
@@ -103,7 +103,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaModificarTurno;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaModificarTurno;
             this.ClientSize = new System.Drawing.Size(1159, 641);
             this.Controls.Add(this.BtnSelecionarClienteMeModificar);
             this.Controls.Add(this.BtnSeleccionarServioMeModificar);

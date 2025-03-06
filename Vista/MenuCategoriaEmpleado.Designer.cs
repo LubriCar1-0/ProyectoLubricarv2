@@ -63,7 +63,7 @@
             // 
             // btnBorraCampos
             // 
-            this.btnBorraCampos.BackgroundImage = global::Vista.Properties.Resources.blanco;
+            this.btnBorraCampos.BackgroundImage = global::lubricar.Properties.Resources.blanco;
             this.btnBorraCampos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBorraCampos.FlatAppearance.BorderSize = 0;
             this.btnBorraCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -120,7 +120,7 @@
             // 
             // btnagregarcat
             // 
-            this.btnagregarcat.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar2;
+            this.btnagregarcat.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregar2;
             this.btnagregarcat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnagregarcat.FlatAppearance.BorderSize = 0;
             this.btnagregarcat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -147,7 +147,7 @@
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.btnVolver.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.btnVolver.BackgroundImage = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Location = new System.Drawing.Point(183, 126);
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaCategoriaEmpleados;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaCategoriaEmpleados;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.cmbCodPerm);

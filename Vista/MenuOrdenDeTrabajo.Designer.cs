@@ -311,7 +311,7 @@
             // btnRecargarProd
             // 
             this.btnRecargarProd.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargarProd.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargarProd.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargarProd.Location = new System.Drawing.Point(6, 41);
             this.btnRecargarProd.Name = "btnRecargarProd";
@@ -323,7 +323,7 @@
             // btnBuscarProd
             // 
             this.btnBuscarProd.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscarProd.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscarProd.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarProd.Location = new System.Drawing.Point(406, 41);
             this.btnBuscarProd.Name = "btnBuscarProd";
@@ -493,7 +493,7 @@
             this.BtnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(189, 129);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(69, 41);
@@ -518,7 +518,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuOrdenDeTrabajo4;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuOrdenDeTrabajo4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.btnFinalizar);

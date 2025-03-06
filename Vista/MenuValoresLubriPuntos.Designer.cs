@@ -154,7 +154,7 @@
             // BtnAsignacion1
             // 
             this.BtnAsignacion1.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAsignacion1.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
+            this.BtnAsignacion1.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregar;
             this.BtnAsignacion1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAsignacion1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAsignacion1.Location = new System.Drawing.Point(742, 33);
@@ -166,7 +166,7 @@
             // 
             // BtnAsignacion2
             // 
-            this.BtnAsignacion2.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
+            this.BtnAsignacion2.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregar;
             this.BtnAsignacion2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAsignacion2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAsignacion2.Location = new System.Drawing.Point(742, 124);
@@ -178,7 +178,7 @@
             // 
             // BtnAsignacion3
             // 
-            this.BtnAsignacion3.BackgroundImage = global::Vista.Properties.Resources.BtnAgregar;
+            this.BtnAsignacion3.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregar;
             this.BtnAsignacion3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnAsignacion3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAsignacion3.Location = new System.Drawing.Point(742, 221);
@@ -227,7 +227,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.button1.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.button1.BackgroundImage = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(189, 122);
@@ -265,7 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuValoresLubri_Puntos;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuValoresLubri_Puntos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.groupBox1);

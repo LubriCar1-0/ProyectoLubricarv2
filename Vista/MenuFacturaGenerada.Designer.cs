@@ -34,7 +34,7 @@
             // 
             // BtnImprimir
             // 
-            this.BtnImprimir.BackgroundImage = global::Vista.Properties.Resources.BtnImprimir;
+            this.BtnImprimir.BackgroundImage = global::lubricar.Properties.Resources.BtnImprimir;
             this.BtnImprimir.FlatAppearance.BorderSize = 0;
             this.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnImprimir.Location = new System.Drawing.Point(741, 272);
@@ -45,7 +45,7 @@
             // 
             // BtnVolver
             // 
-            this.BtnVolver.BackgroundImage = global::Vista.Properties.Resources.BtnVolver1;
+            this.BtnVolver.BackgroundImage = global::lubricar.Properties.Resources.BtnVolver1;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVolver.Location = new System.Drawing.Point(776, 340);
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaFacturaGenerada;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaFacturaGenerada;
             this.ClientSize = new System.Drawing.Size(1138, 639);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnImprimir);

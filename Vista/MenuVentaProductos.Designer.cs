@@ -101,7 +101,7 @@
             this.BtnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnVolver.Image = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnVolver.Image = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnVolver.Location = new System.Drawing.Point(87, 132);
             this.BtnVolver.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnVolver.Name = "BtnVolver";
@@ -148,7 +148,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscar.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(464, 72);
             this.btnBuscar.Name = "btnBuscar";
@@ -168,7 +168,7 @@
             // 
             // btnAgregarclient
             // 
-            this.btnAgregarclient.BackgroundImage = global::Vista.Properties.Resources.BtnAgregarIcon;
+            this.btnAgregarclient.BackgroundImage = global::lubricar.Properties.Resources.BtnAgregarIcon;
             this.btnAgregarclient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgregarclient.Location = new System.Drawing.Point(535, 72);
             this.btnAgregarclient.Name = "btnAgregarclient";
@@ -435,7 +435,7 @@
             // btnRecargarProd
             // 
             this.btnRecargarProd.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargarProd.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargarProd.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargarProd.Location = new System.Drawing.Point(493, 93);
             this.btnRecargarProd.Name = "btnRecargarProd";
@@ -447,7 +447,7 @@
             // btnBuscarProd
             // 
             this.btnBuscarProd.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscarProd.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscarProd.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscarProd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarProd.Location = new System.Drawing.Point(438, 96);
             this.btnBuscarProd.Name = "btnBuscarProd";
@@ -498,7 +498,7 @@
             // btnRecargar
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargar.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargar.Location = new System.Drawing.Point(54, 72);
             this.btnRecargar.Name = "btnRecargar";
@@ -831,7 +831,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantallaVentaDeProductos;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantallaVentaDeProductos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.grpProductos);

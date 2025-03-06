@@ -109,7 +109,7 @@
             // btnRecargar
             // 
             this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
-            this.btnRecargar.BackgroundImage = global::Vista.Properties.Resources.BtnRecargarIcon;
+            this.btnRecargar.BackgroundImage = global::lubricar.Properties.Resources.BtnRecargarIcon;
             this.btnRecargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnRecargar.Location = new System.Drawing.Point(371, 65);
             this.btnRecargar.Name = "btnRecargar";
@@ -121,7 +121,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnBuscar.BackgroundImage = global::Vista.Properties.Resources.BtnBuscarIcon;
+            this.btnBuscar.BackgroundImage = global::lubricar.Properties.Resources.BtnBuscarIcon;
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscar.Location = new System.Drawing.Point(287, 65);
             this.btnBuscar.Name = "btnBuscar";
@@ -158,7 +158,7 @@
             // 
             // BtnConfirmar
             // 
-            this.BtnConfirmar.BackgroundImage = global::Vista.Properties.Resources.BtnConfirmar;
+            this.BtnConfirmar.BackgroundImage = global::lubricar.Properties.Resources.BtnConfirmar;
             this.BtnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfirmar.Location = new System.Drawing.Point(400, 152);
@@ -211,7 +211,7 @@
             // BtnVolver
             // 
             this.BtnVolver.BackColor = System.Drawing.Color.Transparent;
-            this.BtnVolver.BackgroundImage = global::Vista.Properties.Resources.undo_arrow_icon_icons_com_53849;
+            this.BtnVolver.BackgroundImage = global::lubricar.Properties.Resources.undo_arrow_icon_icons_com_53849;
             this.BtnVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnVolver.FlatAppearance.BorderSize = 0;
             this.BtnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -274,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.MenuAsignacionLubriPuntos;
+            this.BackgroundImage = global::lubricar.Properties.Resources.MenuAsignacionLubriPuntos;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.groupBox3);

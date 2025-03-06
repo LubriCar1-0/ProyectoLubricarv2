@@ -36,7 +36,7 @@
             // BtnRegresar
             // 
             this.BtnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(89)))));
-            this.BtnRegresar.BackgroundImage = global::Vista.Properties.Resources.Flechita_volver_64px;
+            this.BtnRegresar.BackgroundImage = global::lubricar.Properties.Resources.Flechita_volver_64px;
             this.BtnRegresar.FlatAppearance.BorderSize = 0;
             this.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRegresar.Location = new System.Drawing.Point(193, 122);
@@ -48,7 +48,7 @@
             // 
             // BtnEmpleados
             // 
-            this.BtnEmpleados.BackgroundImage = global::Vista.Properties.Resources.BtnEmpleados1;
+            this.BtnEmpleados.BackgroundImage = global::lubricar.Properties.Resources.BtnEmpleados1;
             this.BtnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnEmpleados.FlatAppearance.BorderSize = 0;
             this.BtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -61,7 +61,7 @@
             // 
             // btnMenuCatEMP
             // 
-            this.btnMenuCatEMP.BackgroundImage = global::Vista.Properties.Resources.BtnCatEMP;
+            this.btnMenuCatEMP.BackgroundImage = global::lubricar.Properties.Resources.BtnCatEMP;
             this.btnMenuCatEMP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMenuCatEMP.FlatAppearance.BorderSize = 0;
             this.btnMenuCatEMP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -76,7 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Vista.Properties.Resources.PantMenuConfiguracion;
+            this.BackgroundImage = global::lubricar.Properties.Resources.PantMenuConfiguracion;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.btnMenuCatEMP);
