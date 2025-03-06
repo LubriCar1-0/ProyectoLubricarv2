@@ -23,8 +23,8 @@ namespace Vista
             dgvTurnos.ReadOnly = true;
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.CustomFormat = " ";
-            //dgvTurnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //dgvTurnos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            cmbTrabajador.SelectedIndex = -1;
+            cmbTrabajador.DropDownStyle = ComboBoxStyle.DropDownList;
             dgvTurnos.DataSource = validarTurnos.BuscarTurnos();
             dgvTurnos.RowHeadersVisible = false;
 

@@ -99,7 +99,7 @@ namespace Vista
                     throw new Exception("Debe seleccionar una categoría.");
                 }
 
-                // Obtener el ID de la categoría seleccionada
+                
                 int idCategoriaSeleccionada = Convert.ToInt32(CmbCategoriaEmple.SelectedValue);
 
                 if (!int.TryParse(TxtDniEmpleado.Text.Trim(), out int dniEmpleado))
@@ -112,8 +112,7 @@ namespace Vista
                     throw new Exception("El número de celular debe ser un número válido.");
                 }
 
-                //MessageBox.Show(TxtNombreEmpleado.Text.Trim() + " " + TxtApellidoEmpleado.Text.Trim() + " " + dniEmpleado.ToString() + " " + txtContraseña.Text.Trim() + " " + celularEmpleado.ToString()+" " +idCategoriaSeleccionada.ToString());
-                // Llamar al método para agregar el empleado
+                
                 Validaciones.AgregarUnEmpleado(TxtNombreEmpleado.Text.Trim(), TxtApellidoEmpleado.Text.Trim(), dniEmpleado, txtContraseña.Text.Trim(), celularEmpleado, idCategoriaSeleccionada );
 
                 MessageBox.Show("El empleado ha sido cargado con éxito");
@@ -196,17 +195,17 @@ namespace Vista
         
         private void ConfigurarDataGridView()
         {
-            // Verificar si la columna de categorías ya existe
+            
             if (!DgvMenuEmpleado.Columns.Contains("CategoriaColumn"))
             {
                 var comboBoxColumn = new DataGridViewComboBoxColumn
                 {
                     Name = "CategoriaColumn",
                     HeaderText = "Categoría",
-                    DataPropertyName = "NombreCat", // Vincula la propiedad
+                    DataPropertyName = "NombreCat", 
                     DisplayMember = "Value",
                     ValueMember = "Key",
-                    //DataSource = new BindingSource(Validaciones.ObtenerCategoriasEmpleados(), null)
+                    
                 };
 
 
@@ -224,7 +223,10 @@ namespace Vista
         private void DgvMenuEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
                 return;
+            }
+                
 
             DataGridViewRow filaSeleccionada = DgvMenuEmpleado.Rows[e.RowIndex];
             int idTrabajador = Convert.ToInt32(filaSeleccionada.Cells["idTrabajador"].Value);

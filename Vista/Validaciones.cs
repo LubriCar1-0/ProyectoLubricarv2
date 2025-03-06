@@ -156,7 +156,7 @@ namespace Vista
         public static DataTable ObtenerClientes()
         {
             Conectar capaDatos = new Conectar();
-            DataTable TablaClientes = capaDatos.BuscarClientes();
+            DataTable TablaClientes = capaDatos.BuscarTodosClientes();
             return TablaClientes;
         }
         public static void Modificacioncliente(int idcliente, string NomCliente, string ApeCliente, string RazSocCliente, string ClaveCliente, string LocalidadCL, string CalleCliente, int NumeracionCl, int Telefonocl, int CondicionIVA)

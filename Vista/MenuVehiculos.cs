@@ -19,8 +19,8 @@ namespace Vista
             CargarClientes();
             CargarDatosEnGrid();
             DgvTablaMeVehiculos.ReadOnly = true;
-            //DgvTablaMeVehiculos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //DgvTablaMeVehiculos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            CbxClienteMeVehiculos.SelectedIndex = -1;
+            CbxClienteMeVehiculos.DropDownStyle = ComboBoxStyle.DropDownList;
             chbEditar.CheckedChanged += chbEditar_CheckedChanged;
             DgvTablaMeVehiculos.CellClick += DgvTablaMeVehiculos_CellClick;
             CbxClienteMeVehiculos.SelectedIndexChanged += CbxClienteMeVehiculos_SelectedIndexChanged;
@@ -91,7 +91,7 @@ namespace Vista
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
            
-            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
+            
 
            
             dgv.RowHeadersVisible = false; 
@@ -118,7 +118,7 @@ namespace Vista
 
         private void TxtMarcaVehiculos_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void BtnAgregarMeVehiculos_Click(object sender, EventArgs e)
@@ -238,7 +238,7 @@ namespace Vista
                             ValidarClientes.BajaAltaVehiculo(idVehiculoUPD, "DES");
                             MessageBox.Show("Vehiculo DADO DE BAJA.");
                             CargarDatosEnGrid();
-                            //ConfigurarDataGridView();
+                            
 
                             DgvTablaMeVehiculos.Columns["idVehiculo"].Visible = false;
                             DgvTablaMeVehiculos.Columns["idCliente"].Visible = false;
@@ -248,7 +248,7 @@ namespace Vista
                             ValidarClientes.BajaAltaVehiculo(idVehiculoUPD, "ACT");
                             MessageBox.Show("Empleado DADO DE ALTA");
                             CargarDatosEnGrid();
-                            //ConfigurarDataGridView();
+                            
 
                             DgvTablaMeVehiculos.Columns["idVehiculo"].Visible = false;
                             DgvTablaMeVehiculos.Columns["idCliente"].Visible = false;
@@ -318,6 +318,19 @@ namespace Vista
             {
                 e.Handled = true;
             }
+            TextBox txt = sender as TextBox;
+            if (txt != null && txt.Tag != null)
+            {
+                int maxLength;
+                if (int.TryParse(txt.Tag.ToString(), out maxLength))
+                {
+                    if (txt.Text.Length >= maxLength && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            TxtAñoVehiculos.Tag = 4;
         }
 
         private void TxtKilometrajeVehiculos_KeyPress(object sender, KeyPressEventArgs e)
@@ -326,11 +339,60 @@ namespace Vista
             {
                 e.Handled = true;
             }
+            TxtKilometrajeVehiculos.Tag = 6;
+            TextBox txt = sender as TextBox;
+            if (txt != null && txt.Tag != null)
+            {
+                int maxLength;
+                if (int.TryParse(txt.Tag.ToString(), out maxLength))
+                {
+                    if (txt.Text.Length >= maxLength && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
         }
 
         private void TxtAñoVehiculos_TextChanged(object sender, EventArgs e)
         {
+            
+            
+        }
 
+        private void TxtModeloVehiculos_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtMarcaVehiculos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtPatenteVehiculo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtPatenteVehiculo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox txt = sender as TextBox;
+            if (txt != null && txt.Tag != null)
+            {
+                int maxLength;
+                if (int.TryParse(txt.Tag.ToString(), out maxLength))
+                {
+                    if (txt.Text.Length >= maxLength && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            TxtPatenteVehiculo.Tag = 7;
         }
     }
 }

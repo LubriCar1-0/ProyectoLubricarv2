@@ -27,6 +27,14 @@ namespace Vista
             CargarTurnos();
             ConfigurarDateTimePickerHora();
             dgvTurnos.ReadOnly = true;
+
+            CbxSelectCL.SelectedIndex = -1;
+            CbxSelectCL.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            CbxSelectVH.SelectedIndex = -1;
+            CbxSelectVH.DropDownStyle = ComboBoxStyle.DropDownList;
+
+
         }
 
         private bool cargandoTurno = false;
@@ -118,6 +126,10 @@ namespace Vista
         TimeSpan hora;
         private void dgvTurnos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
+            }
             cargandoTurno = true;
             DataGridViewRow filaSeleccionada = dgvTurnos.Rows[e.RowIndex];
             idTurno = Convert.ToInt32(filaSeleccionada.Cells["idTurno"].Value);

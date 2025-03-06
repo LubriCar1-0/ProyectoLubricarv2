@@ -26,10 +26,11 @@ namespace Vista
             DgvTablaClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgvTablaClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DgvTablaClientes.CellClick += DgvTablaClientes_CellClick;
-            TxtCuilCliente.Tag = 11;
-            TxtTelefonoCliente.Tag = 10;
-            TxtNumCasaCliente.Tag = 4;
-            CMBIVA.Tag = 0;
+            //TxtCuilCliente.Tag = 11;
+            //TxtTelefonoCliente.Tag = 10;
+            //TxtNumCasaCliente.Tag = 4;
+            CMBIVA.SelectedIndex = -1;
+            CMBIVA.DropDownStyle = ComboBoxStyle.DropDownList;
         }
        
         private void CargarClientes() 
@@ -54,7 +55,7 @@ namespace Vista
         {
             dgv.ReadOnly = true;
 
-            // General
+            
             dgv.EnableHeadersVisualStyles = false;
             dgv.BackgroundColor = Color.White;
             dgv.BorderStyle = BorderStyle.None;
@@ -63,28 +64,22 @@ namespace Vista
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            // Cabecera
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); // Azul elegante
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); 
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             
-            // Filas
+            
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul mÃ¡s claro
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); 
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            // Alternancia de color en filas
-            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
-
-            // Otros ajustes
-            dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
-            //dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            //dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            //dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
+           
+            dgv.RowHeadersVisible = false; 
+            
 
 
         }
@@ -317,6 +312,19 @@ namespace Vista
             {
                 e.Handled = true;
             }
+            TextBox txt = sender as TextBox;
+            if (txt != null && txt.Tag != null)
+            {
+                int maxLength;
+                if (int.TryParse(txt.Tag.ToString(), out maxLength))
+                {
+                    if (txt.Text.Length >= maxLength && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            TxtCuilCliente.Tag = 11;
         }
 
         private void TxtNumCasaCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -325,11 +333,53 @@ namespace Vista
             {
                 e.Handled = true;
             }
+            TextBox txt = sender as TextBox;
+            if (txt != null && txt.Tag != null)
+            {
+                int maxLength;
+                if (int.TryParse(txt.Tag.ToString(), out maxLength))
+                {
+                    if (txt.Text.Length >= maxLength && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            TxtNumCasaCliente.Tag = 5;
         }
 
         private void TxtTelefonoCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            TextBox txt = sender as TextBox;
+            if (txt != null && txt.Tag != null)
+            {
+                int maxLength;
+                if (int.TryParse(txt.Tag.ToString(), out maxLength))
+                {
+                    if (txt.Text.Length >= maxLength && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+            TxtTelefonoCliente.Tag = 10;
+        }
+
+        private void TxtapellidoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtNombreCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
             {
                 e.Handled = true;
             }

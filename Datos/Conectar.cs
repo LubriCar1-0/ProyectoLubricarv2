@@ -258,7 +258,18 @@ namespace Datos
             desconectar();
             return dt;
         }
-
+        public DataTable BuscarTodosClientes()
+        {
+            conectar();
+            comando.Connection = conexion;
+            comando.CommandText = "TraerTodosClientes";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.Clear();
+            leer = comando.ExecuteReader();
+            dt.Load(leer);
+            desconectar();
+            return dt;
+        }
         public string TraerCodindionIva(int IdCondicionIVA)
         {
             conectar();
@@ -938,13 +949,14 @@ namespace Datos
             comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@Fecha", fecha.Date);
             comando.Parameters.AddWithValue("@Hora", hora);
-            comando.Parameters.AddWithValue("@Estado", "ACT");
+            comando.Parameters.AddWithValue("@Estado", "ACTIVO");   
 
             int count = Convert.ToInt32(comando.ExecuteScalar());
             desconectar();
 
-            return count > 0; // Si count > 0, el turno ya existe
+            return count > 0;
         }
+
         public static void CancelarTurno(int idTurno, string Estado)
         {
             conectar();
@@ -1033,7 +1045,7 @@ namespace Datos
             conectar();
             comando.Parameters.Clear();
             comando.Connection = conexion;
-            comando.CommandText = "TablaClientes";
+            comando.CommandText = "TraerClientesActivos";
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             dt.Load(leer);
@@ -1072,15 +1084,15 @@ namespace Datos
         {
             conectar();
             comando.Connection = conexion;
+            comando.Parameters.Clear();
             comando.CommandText = "TablaProductossConFiltro";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.Clear();
             comando.Parameters.AddWithValue("@IdCategoria", IdCategoria);
             comando.Parameters.AddWithValue("@codigo", codigo);
             comando.Parameters.AddWithValue("@nombre", nombre);
             leer = comando.ExecuteReader();
             dt.Load(leer);
-
+            comando.Parameters.Clear();
             desconectar();
             return dt;
         }

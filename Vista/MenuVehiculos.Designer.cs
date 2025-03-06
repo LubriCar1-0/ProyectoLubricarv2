@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnAgregarMeVehiculos = new System.Windows.Forms.Button();
             this.DgvTablaMeVehiculos = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -72,13 +72,13 @@
             // 
             // Editar
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle7;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Editar.Frozen = true;
             this.Editar.HeaderText = "Editar";
@@ -88,13 +88,13 @@
             // 
             // Eliminar
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.Eliminar.DefaultCellStyle = dataGridViewCellStyle8;
             this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Eliminar.Frozen = true;
             this.Eliminar.HeaderText = "Estado";
@@ -120,6 +120,7 @@
             this.TxtMarcaVehiculos.Size = new System.Drawing.Size(234, 26);
             this.TxtMarcaVehiculos.TabIndex = 3;
             this.TxtMarcaVehiculos.TextChanged += new System.EventHandler(this.TxtMarcaVehiculos_TextChanged);
+            this.TxtMarcaVehiculos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtMarcaVehiculos_KeyPress);
             // 
             // TxtModeloVehiculos
             // 
@@ -128,6 +129,7 @@
             this.TxtModeloVehiculos.Name = "TxtModeloVehiculos";
             this.TxtModeloVehiculos.Size = new System.Drawing.Size(234, 26);
             this.TxtModeloVehiculos.TabIndex = 2;
+            this.TxtModeloVehiculos.TextChanged += new System.EventHandler(this.TxtModeloVehiculos_TextChanged);
             // 
             // TxtPatenteVehiculo
             // 
@@ -136,6 +138,8 @@
             this.TxtPatenteVehiculo.Name = "TxtPatenteVehiculo";
             this.TxtPatenteVehiculo.Size = new System.Drawing.Size(234, 26);
             this.TxtPatenteVehiculo.TabIndex = 5;
+            this.TxtPatenteVehiculo.TextChanged += new System.EventHandler(this.TxtPatenteVehiculo_TextChanged);
+            this.TxtPatenteVehiculo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPatenteVehiculo_KeyPress);
             // 
             // TxtAñoVehiculos
             // 

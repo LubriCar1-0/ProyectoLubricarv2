@@ -340,6 +340,7 @@ namespace Vista
         {
             CargatablaProductos();
             cmbCategoriaPrd.Text = "Seleccionar Categoria";    
+            
         }
 
         private void btnBuscarProd_Click(object sender, EventArgs e)
@@ -350,7 +351,7 @@ namespace Vista
             if (idcat == 0 && codprod == string.Empty && nombreprod == string.Empty)
             {
                 MessageBox.Show("Debe llenar alguno de los campos para poder filtrar", "error");
-                //MessageBox.Show(idcat.ToString(), "Error");
+                
 
             }
             else

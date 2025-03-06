@@ -410,6 +410,7 @@
             this.Name = "MenuCanjeoLubriPuntos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuCanjeoLubriPuntos";
+            this.Load += new System.EventHandler(this.MenuCanjeoLubriPuntos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVproductos)).EndInit();

@@ -173,6 +173,10 @@ namespace Vista
         }
         private void DGVproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
+            }
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow filaSeleccionada = DGVproductos.Rows[e.RowIndex];
@@ -196,6 +200,11 @@ namespace Vista
 
         private void DGVclientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
+            }
+
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow filaSeleccionada = DGVclientes.Rows[e.RowIndex];
@@ -320,6 +329,11 @@ namespace Vista
         }
 
         private void DGVclientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void MenuCanjeoLubriPuntos_Load(object sender, EventArgs e)
         {
 
         }

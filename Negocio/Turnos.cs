@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Datos;
@@ -94,19 +95,36 @@ namespace Negocio
 
         public static void ModificarTurnos(int idTurno, int idVehiculoUPD, int idClienteUPD, DateTime fechaupd, TimeSpan horaupd, string DescUPD)
         {
+            DateTime fechaTurnoActualizada = fechaupd.Date.Add(horaupd);
+
+            if (fechaTurnoActualizada < DateTime.Now)
+            {
+                throw new Exception("La fecha y hora del turno no pueden ser anteriores a la fecha y hora actual.");
+            }
+
+            Conectar capaDatos = new Conectar();
+            
+            bool turnoExistente = capaDatos.ExisteTurno(fechaupd, horaupd );
+
+            if (turnoExistente)
+            {
+                throw new Exception("Ya existe un turno registrado para esa fecha y horario.");
+            }
+
             try
             {
                 Conectar.ActualizarTurno(idTurno, idVehiculoUPD, idClienteUPD, fechaupd, horaupd, DescUPD);
                 string detalle = "Modificacion de un turno";
                 string tabla = "Turno";
                 Conectar.AgregarBitacora(Empleados.IdTrabajador, detalle, tabla);
-            
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al actualizar el vehículo en la base de datos: {ex.Message}");
+                throw new Exception($"Error al actualizar el turno en la base de datos: {ex.Message}");
             }
         }
+
+
         public static void CancelarElTurno(int idTurno, string Estado)
         {
             try

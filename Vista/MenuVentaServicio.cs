@@ -36,6 +36,7 @@ namespace Vista
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
             txbManoDeObra.KeyPress += txbManoDeObra_KeyPress;
+            dgvListVentas.ReadOnly = true;
 
         }
 
