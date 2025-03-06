@@ -246,6 +246,7 @@ namespace Vista
         private void btnRecargar_Click(object sender, EventArgs e)
         {
             CargatablaProductosSinFiltro();
+            TxtCodProducto.Text = string.Empty;
         }
 
         private void MenuControlDeStock_Load(object sender, EventArgs e)

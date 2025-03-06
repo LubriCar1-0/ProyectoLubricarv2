@@ -116,6 +116,7 @@ namespace Vista
                     MessageBox.Show("Producto agregado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     LimpiaCampos();
                     Cargatabla();
+                    DGVProductos.Columns["IdProd"].Visible = false;
 
             }
             else

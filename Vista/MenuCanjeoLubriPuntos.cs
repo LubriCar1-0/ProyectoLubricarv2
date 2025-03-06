@@ -16,12 +16,14 @@ namespace Vista
         public MenuCanjeoLubriPuntos()
         {
             InitializeComponent();
-            CargartablaClientes();
-            CargarProductosParaCanje();
+            CargartablaClientes();                     
+            CargarProductosParaCanje();           
             ConfiguraDataGrid(DGVclientes);
             ConfiguraDataGrid(DGVproductos);
             txtCantidadCanje.Text = "0";
             DGVclientes.CellClick += DGVclientes_CellContentClick;
+            DGVclientes.Columns["idCliente"].Visible = false;
+            DGVproductos.Columns["idProd"].Visible = false;
         }
 
         int Idproducto;
@@ -215,15 +217,19 @@ namespace Vista
         private void btnBuscarProduc_Click(object sender, EventArgs e)
         {
             CargarProductosconfiltro(TxtFiltroProduc.Text);
-;       }
+            DGVproductos.Columns["idProd"].Visible = false;
+          
+        }
 
         private void btnRecargarProduc_Click(object sender, EventArgs e)
         {
             CargarProductosParaCanje();
+            DGVproductos.Columns["idProd"].Visible = false;
         }
         private void BtnBuscarCliente_Click(object sender, EventArgs e)
         {
             CargarClientesconfiltro(txtFiltroClientes.Text);
+            DGVclientes.Columns["idCliente"].Visible = false;
         }
 
         private void BtnConfirmar_Click(object sender, EventArgs e)
@@ -311,6 +317,11 @@ namespace Vista
             {
                 e.Handled = true;
             }
+        }
+
+        private void DGVclientes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

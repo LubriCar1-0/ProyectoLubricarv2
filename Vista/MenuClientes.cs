@@ -79,9 +79,9 @@ namespace Vista
 
             // Otros ajustes
             dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
+            //dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            //dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            //dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
 
 
         }
