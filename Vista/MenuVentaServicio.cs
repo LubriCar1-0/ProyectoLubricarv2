@@ -194,40 +194,34 @@ namespace Vista
         private string GenerarPresupuesto()
         {
             StringBuilder ticket = new StringBuilder();
-           
             DataTable dtProductos = _dtProductos;
-
             if (dtProductos == null || dtProductos.Rows.Count == 0)
-            {
                 return string.Empty;
-            }
 
-            // Encabezado del ticket
             ticket.AppendLine("==============================================");
             ticket.AppendLine("              PRESUPUESTO - LubriCar          ");
             ticket.AppendLine("==============================================");
             ticket.AppendLine($"Fecha: {DateTime.Now}");
             ticket.AppendLine($"Cliente: {lblNombreCliente.Text}");
             ticket.AppendLine("==============================================");
-            ticket.AppendLine("Cant.   Producto       Precio   Total");
-            ticket.AppendLine("----------------------------------------------");
-
-            // Datos de los productos
+            ticket.AppendLine("Cant Prod              Precio   Total");
+            ticket.AppendLine("--------------------------------------");
             foreach (DataRow row in dtProductos.Rows)
             {
                 int cantidad = Convert.ToInt32(row["Cantidad"]);
-                string producto = row["Producto"].ToString();
+                string producto = row["Producto"].ToString().Trim();
                 double precioUnitario = Convert.ToDouble(row["PrecioUnitario"]);
                 double precioTotal = Convert.ToDouble(row["PrecioTotal"]);
 
-                ticket.AppendLine($"{cantidad,5}   {producto,-12}  {precioUnitario,6:C}  {precioTotal,6:C}");
+                
+                ticket.AppendLine(
+                    $"{cantidad,2} {producto,-16} {precioUnitario,8:C} {precioTotal,8:C}"
+                );
             }
 
-            ticket.AppendLine("----------------------------------------------");
-
-            // Totales calculados a partir del DataTable
-            double subtotal = dtProductos.AsEnumerable().Sum(row => Convert.ToDouble(row["PrecioTotal"]));
-            double iva = subtotal * 0.21; // IVA 21%
+            ticket.AppendLine("------------------------------------------");
+            double subtotal = dtProductos.AsEnumerable().Sum(r => Convert.ToDouble(r["PrecioTotal"]));
+            double iva = subtotal * 0.21;
             double total = subtotal + iva;
 
             ticket.AppendLine($"Subtotal: {subtotal,10:C}");
@@ -240,9 +234,12 @@ namespace Vista
             return ticket.ToString();
         }
 
+
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
+            
             Font font = new Font("Courier New", 10);
+
             float yPos = 0;
             int leftMargin = 10;
             float lineHeight = font.GetHeight(e.Graphics);
@@ -257,53 +254,51 @@ namespace Vista
                 }
             }
         }
+
         private string GenerarTicket()
         {
             StringBuilder ticket = new StringBuilder();
-
             DataTable dtProductos = _dtProductos;
-
             if (dtProductos == null || dtProductos.Rows.Count == 0)
             {
                 return string.Empty;
             }
-
-            // Encabezado del ticket
             ticket.AppendLine("==============================================");
-            ticket.AppendLine("               FACTURA C - LubriCar          ");
+            ticket.AppendLine("               FACTURA C - LubriCar           ");
             ticket.AppendLine("==============================================");
             ticket.AppendLine($"Fecha: {DateTime.Now}");
             ticket.AppendLine($"Cliente: {lblNombreCliente.Text}");
             ticket.AppendLine("==============================================");
-            ticket.AppendLine("Cant.   Producto       Precio   Total");
-            ticket.AppendLine("----------------------------------------------");
+            ticket.AppendLine("Cant Prod              Precio   Total");
+            ticket.AppendLine("--------------------------------------");
 
-            // Datos de los productos
             foreach (DataRow row in dtProductos.Rows)
             {
                 int cantidad = Convert.ToInt32(row["Cantidad"]);
-                string producto = row["Producto"].ToString();
+                string producto = row["Producto"].ToString().Trim();
                 double precioUnitario = Convert.ToDouble(row["PrecioUnitario"]);
                 double precioTotal = Convert.ToDouble(row["PrecioTotal"]);
-                ticket.AppendLine($"{cantidad,5}   {producto,-12}  {precioUnitario,6:C}  {precioTotal,6:C}");
+                ticket.AppendLine(
+                    $"{cantidad,2} {producto,-16} {precioUnitario,8:C} {precioTotal,8:C}"
+                );
             }
 
-            ticket.AppendLine("----------------------------------------------");
 
-            // Totales
-            double subtotal = dtProductos.AsEnumerable().Sum(row => Convert.ToDouble(row["PrecioTotal"]));
-            double iva = subtotal * 0.21; // IVA 21%
+            ticket.AppendLine("----------------------------------------------");
+            double subtotal = dtProductos.AsEnumerable().Sum(r => Convert.ToDouble(r["PrecioTotal"]));
+            double iva = subtotal * 0.21; 
             double total = subtotal + iva;
 
             ticket.AppendLine($"Subtotal: {subtotal,10:C}");
             ticket.AppendLine($"IVA 21% : {iva,10:C}");
             ticket.AppendLine($"Total   : {total,10:C}");
             ticket.AppendLine("==============================================");
-            ticket.AppendLine("           Â¡Gracias por su compra!            ");
+            ticket.AppendLine("           ¡Gracias por su compra!            ");
             ticket.AppendLine("==============================================");
 
             return ticket.ToString();
         }
+
 
         #endregion
 

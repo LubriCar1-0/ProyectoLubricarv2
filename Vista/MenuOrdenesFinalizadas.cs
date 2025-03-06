@@ -18,6 +18,7 @@ namespace Vista
             InitializeComponent();
             CargarTrabajador();
             CargarOrdenes();
+
             
         }
         int idOrdenTrab;
@@ -25,6 +26,8 @@ namespace Vista
         {
             dtpFecha.Format = DateTimePickerFormat.Custom;
             dtpFecha.CustomFormat = " ";
+
+            cmbTrabajador.DropDownStyle = ComboBoxStyle.DropDownList;
 
             txbCliente.ReadOnly = true;
             txtTrabajador.ReadOnly = true;
@@ -146,6 +149,8 @@ namespace Vista
 
         private void dgvOrdenesFinalizadas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
             DataGridViewRow filaSeleccionada = dgvOrdenesFinalizadas.Rows[e.RowIndex];
             idOrdenTrab = Convert.ToInt32(filaSeleccionada.Cells["idOrdenTrab"].Value);
             txbCliente.Text = filaSeleccionada.Cells["Cliente"].Value.ToString().Trim();
@@ -155,8 +160,14 @@ namespace Vista
 
         private void btnVisualizarOrden_Click(object sender, EventArgs e)
         {
+            
+            if (idOrdenTrab <= 0 || string.IsNullOrEmpty(txbCliente.Text.Trim()))
+            {
+                MessageBox.Show("Debe seleccionar una orden de trabajo válida antes de continuar.",
+                                "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DataTable dtVentasServ = ValidarVentaServicio.TraerLaTablaVentServ();
-
             if (dtVentasServ.AsEnumerable().Any(row => Convert.ToInt32(row["idOrdenTrab"]) == idOrdenTrab))
             {
                 MessageBox.Show("No se puede volver a cargar la venta con la misma orden de trabajo.",
@@ -165,7 +176,6 @@ namespace Vista
             }
             MenuVentaServicio llamarVentaServ = new MenuVentaServicio(idOrdenTrab);
             llamarVentaServ.ShowDialog();
-                
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)
@@ -173,7 +183,7 @@ namespace Vista
             this.Close();
         }
 
-
+       
 
         #region Configurar la grid
         private void ConfiguraDataGrid(DataGridView dgv)

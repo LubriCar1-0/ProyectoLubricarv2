@@ -24,22 +24,24 @@ namespace Vista
 
         private void btnagregarcat_Click(object sender, EventArgs e)
         {
-            
             string NombreCat = txbNomCat.Text;
             string Desc = txbDescripcion.Text;
-            int CodPerm = Convert.ToInt32(txbCodPerm.Text);
-            
+            int CodPerm = Convert.ToInt32(cmbCodPerm.SelectedItem);
+
             Validaciones.IngresaCategoriaEMP(NombreCat.Trim(), Desc.Trim(), CodPerm, "ACT");
-            
-            LimpiaTextBox();
+
+            LimpiaCampos();
             CargarTablaCategoriasEMP();
         }
-        private void LimpiaTextBox()
+
+        private void LimpiaCampos()
         {
             txbNomCat.Text = string.Empty;
             txbDescripcion.Text = string.Empty;
-            txbCodPerm.Text = string.Empty;
+
+            cmbCodPerm.SelectedIndex = -1;
         }
+
         private void CargarTablaCategoriasEMP()
         {
             dgvCategoriasEmpleados.DataSource = null;
@@ -49,11 +51,10 @@ namespace Vista
             dgvCategoriasEmpleados.RowHeadersVisible = false;
             ConfiguraDataGrid(dgvCategoriasEmpleados);
         }
+
         private void ConfiguraDataGrid(DataGridView dgv)
         {
             dgv.ReadOnly = true;
-
-            // General
             dgv.EnableHeadersVisualStyles = false;
             dgv.BackgroundColor = Color.White;
             dgv.BorderStyle = BorderStyle.None;
@@ -61,7 +62,7 @@ namespace Vista
             dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
 
             // Cabecera
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185); // Azul elegante
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 128, 185);
             dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -70,21 +71,18 @@ namespace Vista
             dgv.DefaultCellStyle.BackColor = Color.White;
             dgv.DefaultCellStyle.ForeColor = Color.Black;
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219); // Azul mÃ¡s claro
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219);
             dgv.DefaultCellStyle.SelectionForeColor = Color.White;
             dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
-            // Alternancia de color en filas
-            //dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(230, 240, 250);
-
-            // Otros ajustes
-            dgv.RowHeadersVisible = false; // Ocultar la primera columna de encabezado
+            dgv.RowHeadersVisible = false;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv.ScrollBars = ScrollBars.Both; // Asegurar barras de desplazamiento
+            dgv.ScrollBars = ScrollBars.Both;
 
             AplicarTrimDataGridView(dgv);
         }
+
         private void AplicarTrimDataGridView(DataGridView dgv)
         {
             foreach (DataGridViewRow fila in dgv.Rows)
@@ -98,17 +96,19 @@ namespace Vista
                 }
             }
         }
+
         private void dgvCategoriasEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0)
                 return;
+
             DataGridViewRow filaSeleccionada = dgvCategoriasEmpleados.Rows[e.RowIndex];
             int IdCategoria = Convert.ToInt32(filaSeleccionada.Cells["idCategoria"].Value);
             txbNomCat.Text = filaSeleccionada.Cells["NombreCat"].Value.ToString().Trim();
             int CodPerm = Convert.ToInt32(filaSeleccionada.Cells["PermisoCat"].Value);
-            txbCodPerm.Text = Convert.ToString(CodPerm);
+            cmbCodPerm.SelectedItem = CodPerm.ToString();
+
             txbDescripcion.Text = filaSeleccionada.Cells["Descripcion"].Value.ToString().Trim();
-            
 
             if (dgvCategoriasEmpleados.Columns[e.ColumnIndex].Name == "Editar")
             {
@@ -120,12 +120,11 @@ namespace Vista
                     int CodPermUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["PermisoCat"].Value);
                     string DescUPD = filaSeleccionada.Cells["Descripcion"].Value.ToString().Trim();
 
-
                     DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (resultado == DialogResult.Yes)
                     {
-                        Validaciones.UpdateCatergoriasEmpleados(IdCategoriaUPD, NombreCat.Trim(),CodPerm, DescUPD.Trim());
+                        Validaciones.UpdateCatergoriasEmpleados(IdCategoriaUPD, NombreCat.Trim(), CodPermUPD, DescUPD.Trim());
                         MessageBox.Show("Cambio realizado.");
                         CargarTablaCategoriasEMP();
                     }
@@ -133,8 +132,6 @@ namespace Vista
                     {
                         CargarTablaCategoriasEMP();
                     }
-
-
                 }
             }
             else if (dgvCategoriasEmpleados.Columns[e.ColumnIndex].Name == "CambiarEstado")
@@ -142,7 +139,6 @@ namespace Vista
                 DataGridViewRow filaSeleccionadaUPD = dgvCategoriasEmpleados.Rows[e.RowIndex];
                 int IdCategoriaUPD = Convert.ToInt32(filaSeleccionadaUPD.Cells["idCategoria"].Value);
                 string Estado = filaSeleccionada.Cells["ESTADO"].Value.ToString().Trim();
-
 
                 if (Estado == "ACT")
                 {
@@ -156,35 +152,34 @@ namespace Vista
                     MessageBox.Show("Estado Modificado.");
                     CargarTablaCategoriasEMP();
                 }
-
-
-
-
-
             }
         }
 
         private void chPermiteEditar_CheckedChanged(object sender, EventArgs e)
         {
-            if (chPermiteEditar.Checked)
-            {
-                dgvCategoriasEmpleados.ReadOnly = false;
-            }
-            else
-            {
-                dgvCategoriasEmpleados.ReadOnly = true;
-
-            }
+            dgvCategoriasEmpleados.ReadOnly = !chPermiteEditar.Checked;
         }
 
         private void btnBorraCampos_Click(object sender, EventArgs e)
         {
-            LimpiaTextBox();
+            LimpiaCampos();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-           Close();
+            Close();
+        }
+
+        private void MenuCategoriaEmpleado_Load(object sender, EventArgs e)
+        {
+            cmbCodPerm.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCodPerm.Items.Clear();
+            cmbCodPerm.Items.Add("9");
+            cmbCodPerm.Items.Add("5");
+            cmbCodPerm.Items.Add("3");
+            cmbCodPerm.Items.Add("4");
+            cmbCodPerm.SelectedIndex = -1;
         }
     }
+
 }

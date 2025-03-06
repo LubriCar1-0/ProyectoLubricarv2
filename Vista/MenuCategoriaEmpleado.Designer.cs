@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txbNomCat = new System.Windows.Forms.TextBox();
             this.txbDescripcion = new System.Windows.Forms.TextBox();
-            this.txbCodPerm = new System.Windows.Forms.TextBox();
             this.btnBorraCampos = new System.Windows.Forms.Button();
             this.dgvCategoriasEmpleados = new System.Windows.Forms.DataGridView();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -40,6 +39,7 @@
             this.btnagregarcat = new System.Windows.Forms.Button();
             this.chPermiteEditar = new System.Windows.Forms.CheckBox();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.cmbCodPerm = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriasEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,15 +60,6 @@
             this.txbDescripcion.Name = "txbDescripcion";
             this.txbDescripcion.Size = new System.Drawing.Size(487, 92);
             this.txbDescripcion.TabIndex = 1;
-            // 
-            // txbCodPerm
-            // 
-            this.txbCodPerm.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCodPerm.Location = new System.Drawing.Point(659, 237);
-            this.txbCodPerm.Multiline = true;
-            this.txbCodPerm.Name = "txbCodPerm";
-            this.txbCodPerm.Size = new System.Drawing.Size(372, 32);
-            this.txbCodPerm.TabIndex = 2;
             // 
             // btnBorraCampos
             // 
@@ -99,13 +90,13 @@
             // 
             // Editar
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.Editar.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.Editar.DefaultCellStyle = dataGridViewCellStyle3;
             this.Editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Editar.HeaderText = "Editar";
             this.Editar.Name = "Editar";
@@ -114,13 +105,13 @@
             // 
             // CambiarEstado
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.CambiarEstado.DefaultCellStyle = dataGridViewCellStyle4;
             this.CambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CambiarEstado.HeaderText = "Cambiar Estado";
             this.CambiarEstado.Name = "CambiarEstado";
@@ -166,6 +157,14 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // cmbCodPerm
+            // 
+            this.cmbCodPerm.FormattingEnabled = true;
+            this.cmbCodPerm.Location = new System.Drawing.Point(667, 237);
+            this.cmbCodPerm.Name = "cmbCodPerm";
+            this.cmbCodPerm.Size = new System.Drawing.Size(245, 21);
+            this.cmbCodPerm.TabIndex = 27;
+            // 
             // MenuCategoriaEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,12 +172,12 @@
             this.BackgroundImage = global::Vista.Properties.Resources.PantallaCategoriaEmpleados;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.cmbCodPerm);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.chPermiteEditar);
             this.Controls.Add(this.btnagregarcat);
             this.Controls.Add(this.dgvCategoriasEmpleados);
             this.Controls.Add(this.btnBorraCampos);
-            this.Controls.Add(this.txbCodPerm);
             this.Controls.Add(this.txbDescripcion);
             this.Controls.Add(this.txbNomCat);
             this.DoubleBuffered = true;
@@ -186,6 +185,7 @@
             this.Name = "MenuCategoriaEmpleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuCategoriaEmpleado";
+            this.Load += new System.EventHandler(this.MenuCategoriaEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriasEmpleados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,7 +196,6 @@
 
         private System.Windows.Forms.TextBox txbNomCat;
         private System.Windows.Forms.TextBox txbDescripcion;
-        private System.Windows.Forms.TextBox txbCodPerm;
         private System.Windows.Forms.Button btnBorraCampos;
         private System.Windows.Forms.DataGridView dgvCategoriasEmpleados;
         private System.Windows.Forms.Button btnagregarcat;
@@ -204,5 +203,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn CambiarEstado;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.ComboBox cmbCodPerm;
     }
 }

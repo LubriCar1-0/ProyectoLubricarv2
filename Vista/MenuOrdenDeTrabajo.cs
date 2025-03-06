@@ -104,7 +104,7 @@ namespace Vista
                 dgvProductos.Columns["LitrosMinimo"].Visible = false;
                 
 
-                //DGVProductos.Columns["IdCategorias"].Visible = false;
+                
                 ConfiguraDataGrid(dgvProductos);
 
             }
@@ -128,11 +128,9 @@ namespace Vista
                 dgvProductos.Columns["LitrosDisp"].Visible = false;
                 dgvProductos.Columns["LitrosMinimo"].Visible = false;
 
-                //DGVProductos.Columns["IdCategorias"].Visible = false;
+                
                 ConfiguraDataGrid(dgvProductos);
-                //Categoria = 0;
-                //codigo = string.Empty;
-                //nombre = string.Empty;
+                
             }
             catch (Exception ex)
             {
@@ -258,11 +256,11 @@ namespace Vista
             int idcat = IdCategorias;
             string codprod = txtCodigoProd.Text.ToUpper();
             string nombreprod = txtNombreProd.Text.ToUpper();
-            MessageBox.Show(idcat.ToString() + "," + codprod + "," + nombreprod, "Error");
+            
             if (idcat == 0 && codprod == string.Empty && nombreprod == string.Empty)
             {
                 MessageBox.Show("Debe llenar alguno de los campos para poder filtrar", "error");
-                //MessageBox.Show(idcat.ToString(), "Error");
+                
 
             }
             else
