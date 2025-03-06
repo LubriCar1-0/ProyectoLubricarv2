@@ -251,6 +251,8 @@ namespace Vista
         private void btnRecargarProd_Click_1(object sender, EventArgs e)
         {
             CargatablaProductos();
+            cmbCategoriaPrd.Text = "Seleccionar Categoria";
+            IdCategorias = 0;
         }
         private void btnBuscarProd_Click_1(object sender, EventArgs e)
         {

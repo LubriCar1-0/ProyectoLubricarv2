@@ -378,9 +378,10 @@ namespace Vista
 
             
             DtpFechaCargada.CustomFormat = " ";
+            dtpFecha.CustomFormat = " ";
 
-          
-            
+
+
             txtPatente.Clear();
             txtTelCliente.Clear();
             txbApellido.Clear();

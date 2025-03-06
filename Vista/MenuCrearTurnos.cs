@@ -156,6 +156,7 @@ namespace Vista
         }
         private void dtpHorario_ValueChanged_1(object sender, EventArgs e)
         {
+
             if (cargandoTurno) return;
 
             DateTime horaSeleccionada = dtpHorario.Value;
@@ -340,8 +341,8 @@ namespace Vista
 
         public void LimpiaTextBox()
         {
-            CbxSelectCL.Text = string.Empty;
-            CbxSelectVH.Text = string.Empty;
+            CbxSelectCL.SelectedIndex = -1;
+            CbxSelectVH.SelectedIndex = -1;
             CbxSelectCL.Enabled = true;
             CbxSelectVH.Enabled = true;
             dtpSelecionarDia.Format = DateTimePickerFormat.Short;
